@@ -1,0 +1,59 @@
+@import "../../../assets/colors";
+
+#infoView {
+  display: flex;
+  width: 100%;
+  min-height: 60px;
+  position: fixed;
+  padding: 5px 20px;
+  font-size: 19px;
+  text-align: center;
+  color: #f5f2f2;
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  z-index: 10;
+  bottom: 0;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  > div {
+    text-align: center;
+    width: 90%;
+  }
+
+  &.display-info {
+    opacity: 1;
+  }
+
+  &.hide-info {
+    transform: translateY(100%);
+    opacity: 0;
+    z-index: -1 !important;
+    pointer-events: none;
+  }
+
+  .loading-background {
+    animation: loading-animation 5s linear infinite;
+  }
+
+  .remove-info {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 145%;
+    color: white;
+    opacity: 0.5;
+    transform-origin: center;
+    transition: all 0.1s ease-in;
+
+    &:hover {
+      transform: translateY(-50%) scale(1.2, 1.2);
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+import { NativeModules } from 'react-native';
+import { subjects, moments, reccurences } from 'src/utils'
+
+import moment from 'moment'
+
+export const Notifier = NativeModules.Notifier;
+
+export const notifierAuthorization = () => {
+  Notifier.authorization()
+}
+
+export const notifierAdd = ({title, body, date}) => {
+  return Notifier.addNotification({
+    title: title,
+    body: body
+  }, date /*  fr.add(2, 'm').toDate().getTime() */)
+}
+
+export const notifierAddMessage = (message) => {
+  const { activite, diffusion_end_date, diffusion_start_date, moment, moment_time, location, subject } = message
+  
+
+}
+
+export const notifierAddMany = (messages) => {
+
+  messages.forEach( (message) => {
+    
+  
+  })
+/**
+ 
+activite: "Prendre votre tahor"
+auxiliary: {id: 2, firstname: "aidant", lastname: "super", __typename: "auxiliaries"}
+created_at: null
+diffusion_end_date: "2023-12-02T00:00:00"
+diffusion_start_date: "2019-08-01T00:00:00"
+id: 37
+location: "pendant les repas"
+moment: "0"
+moment_time: "12:05:00"
+picture_url: "tahor.jpeg"
+reccurence: null
+subjet: "1"
+updated_at: null
+video_url: "testounet.mp4" 
+ 
+ */
+  console.log(messages)
+}
