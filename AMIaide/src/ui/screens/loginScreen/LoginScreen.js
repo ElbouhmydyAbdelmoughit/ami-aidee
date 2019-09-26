@@ -5,23 +5,11 @@ import { Container, Header, Content, Card, CardItem, Body, Title, H1, H2, H3, Le
 import LinearGradient from 'react-native-linear-gradient';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 
-import { notifierAuthorization, notifierAdd } from 'src/utils'
-
 import { AuthentForm } from 'src/ui/components'
 import AppStyles from 'src/config/styles';
 
 import moment from 'moment'
 import momentFR from 'moment/locale/fr'
-var fr = moment().locale("fr", momentFR)
-
-notifierAuthorization()
-notifierAdd({
-  title: "test",
-  body: "body test",
-  date: fr.add(2, 'm').toDate().getTime()
-}).then((result) => {
-  console.log(result)
-})
 
 export default ({ loginRequest }) => {
   const notifDate = moment().format('YYYY-MM-dd hh:mm')

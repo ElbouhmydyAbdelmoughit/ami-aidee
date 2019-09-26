@@ -1,10 +1,8 @@
 import React from 'react';
-import Video from 'react-native-video'
-import { Image } from 'react-native';
+
 import { Body, Card, CardItem, View, Text, H1, H2, H3, Left, Right  } from 'native-base';
 
 import { subjects, moments, reccurences } from 'src/utils'
-
 import moment from 'moment'
 import momentFR from 'moment/locale/fr' 
 
@@ -12,7 +10,6 @@ const BOLD = (text) => (<Text style={{fontWeight: 'bold'}}>{text}</Text>)
 const BR = (<Text>{'\n'}</Text>)
 
 export default ({ message, me }) => {
-
 
 /*
 activite: "prendre un doliprane"
@@ -40,7 +37,7 @@ video_url: ""
   const reccurence_value = reccurences[reccurence] && reccurences[reccurence].value || ""
   const day = fr.format("dddd, MMMM Do YYYY")
   const hour = fr.format("hh:mm")
-  const text = `Bonjour ${username}, \n\nnous sommes le ${day} il est ${hour}.\n\nPenser à  ${activite} ${reccurence_value} ${moment_value} ${moment_time}, ${location}`
+  const text = `\nBonjour ${username}, \n\nnous sommes le ${day} il est ${hour}.\n\nPenser à  ${activite} ${reccurence_value} ${moment_value} ${moment_time}, ${location}`
 
   return (
     <Card style={{ flex: 1 }}>

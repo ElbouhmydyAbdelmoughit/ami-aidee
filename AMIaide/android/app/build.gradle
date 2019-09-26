@@ -187,13 +187,28 @@ android {
     }
 }
 
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+
+        if (requested.group == 'com.android.support' &&
+                (requested.name != 'multidex' && requested.name != 'multidex-instrumentation')) {
+            project.logger.lifecycle(requested.name)
+            details.useVersion "${rootProject.ext.supportLibVersion}"
+        }
+    }
+}
+
 dependencies {
-    implementation project(':react-native-video')
-    implementation "androidx.appcompat:appcompat:1.0.0"
+    compile 'com.yqritc:android-scalablevideoview:1.0.4'
+    implementation "com.android.support:multidex-instrumentation:1.0.3"
+    //implementation "androidx.appcompat:appcompat:1.0.0"
     implementation project(':react-native-linear-gradient')
     implementation project(':react-native-svg')
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation "com.facebook.react:react-native:+"
+    implementation 'androidx.core:core-ktx:1.1.0'// From node_modules
+
 
     if (enableHermes) {
       def hermesPath = "../../node_modules/hermesvm/android/";

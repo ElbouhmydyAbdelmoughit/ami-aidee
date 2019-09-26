@@ -159,8 +159,8 @@ export default ({ onPress, date, solarIcon, moonIcon }) => {
         fill="transparent"
       />
       <Rect
-        x={position.x}
-        y={position.y}
+        x={moonPosition.x}
+        y={moonPosition.y}
         width="20%"
         height="20%"
         fill="transparent"
@@ -176,7 +176,7 @@ export default ({ onPress, date, solarIcon, moonIcon }) => {
         href={solarIcon}
     />}
 
-    <Image
+    {moonIcon != null && <Image
         x={moonPosition.x}
         y={moonPosition.y}
         width="20%"
@@ -184,7 +184,7 @@ export default ({ onPress, date, solarIcon, moonIcon }) => {
         preserveAspectRatio="xMidYMid meet"
         opacity="1"
         href={moonIcon} 
-      />
+      />}
     </Svg>
   );
 }

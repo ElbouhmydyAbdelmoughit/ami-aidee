@@ -26,7 +26,7 @@ export default ({ messagesRequest, list, loading, me }) => {
 
   const messages = Object.values(list)
   const [message, setMessage] = useState(messages[0] || {})
-  const [volume, setVolume] = useState(1)
+  //const [volume, setVolume] = useState(1)
 
   const videoRef = createRef()
 
@@ -36,8 +36,9 @@ export default ({ messagesRequest, list, loading, me }) => {
 
 
   const onVolumeChange = (value) => {
-    console.log(value)
-    setVolume(value)
+    video = videoRef && videoRef.current || {}
+    console.log(video)
+    video.setVolume(value)
   }
 
   const reload = () => {
@@ -71,8 +72,7 @@ export default ({ messagesRequest, list, loading, me }) => {
   if ((message.id == null || message.id == undefined) && messages.length > 0) {
     setMessage(messages[0] || {})
   }
-  const text = "Bonjour Didier, il est 9h20. Pensez à prendre votre doliprane ce midi."
-  const videoURI = (video_url) ? { uri: `${Env.API_URL}/${video_url}` } : {}
+  const videoURI = (video_url) ? `${Env.API_URL}/${video_url}` : ''
   console.log(video_url)
   console.log(videoURI)
   { uri: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" }
@@ -85,35 +85,7 @@ export default ({ messagesRequest, list, loading, me }) => {
         start={{ x: 0.0, y: 0.0 }} end={{ x: 1.0, y: 1.0 }}
         colors={color}
         style={{ flex: 1 }}>
-        <Grid style={{ padding: 30 }}>
-          <Col size={25}>
-            <Row size={50}>
-              <VideoCard ref={videoRef} uri={videoURI} volume={volume} />
-            </Row>
-            <Row size={50}>
-              <NavigateCard
-                onNext={next}
-                onPrevious={previous}
-                onReload={reload}
-                onVolumeChange={onVolumeChange}
-              />
-            </Row>
-          </Col>
-
-          <Col size={2}></Col>
-          <Col size={70}>
-            <Row size={40}>
-              <MessageCard
-                me={me}
-                message={message} />
-            </Row>
-            <Row size={3}></Row>
-            <Row size={45}>
-              <PictureCard
-                uri={imageURI} />
-            </Row>
-          </Col>
-        </Grid>
+   
       </LinearGradient>
     </Container>
   );

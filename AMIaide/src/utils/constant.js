@@ -17,11 +17,11 @@ import React from 'react'
     }]
 
     export const reccurences = [
-        { value: 'aujourd\'hui' },
-        { value: 'demain' },
-        { value: 'une fois par semaine' },
-        { value: 'tous les jours' },
-        { value: 'une fois par mois' }
+        { value: 'aujourd\'hui' }, //0
+        { value: 'demain' }, //1
+        { value: 'une fois par semaine' }, //2
+        { value: 'tous les jours' }, //3
+        { value: 'une fois par mois' } //4
     ]
 
 //}

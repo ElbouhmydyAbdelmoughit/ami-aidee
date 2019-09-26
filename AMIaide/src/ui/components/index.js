@@ -13,3 +13,4 @@ export { default as AuthentForm } from './authentForm';
 export { default as BR } from './br'
 export { default as BOLD } from './br'
 export { default as CircleButton} from './circleButton'
+export { default as VideoView} from './videoView'

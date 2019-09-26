@@ -1,21 +1,14 @@
 package com.amiaide;
 
 import android.app.Application;
-import android.util.Log;
 
-import com.crashlytics.android.Crashlytics;
+import com.amiaide.videoView.VideoViewPackage;
 import com.facebook.react.PackageList;
-import com.facebook.hermes.reactexecutor.HermesExecutorFactory;
-import com.facebook.react.bridge.JavaScriptExecutorFactory;
 import com.facebook.react.ReactApplication;
-import com.brentvatne.react.ReactVideoPackage;
-import com.BV.LinearGradient.LinearGradientPackage;
-import com.horcrux.svg.SvgPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 
-import io.fabric.sdk.android.Fabric;
 import java.util.List;
 
 public class MainApplication extends Application implements ReactApplication {
@@ -31,7 +24,8 @@ public class MainApplication extends Application implements ReactApplication {
       @SuppressWarnings("UnnecessaryLocalVariable")
       List<ReactPackage> packages = new PackageList(this).getPackages();
       // Packages that cannot be autolinked yet can be added manually here, for example:
-      // packages.add(new MyReactNativePackage());
+       packages.add(new NotifierPackage());
+       packages.add(new VideoViewPackage());
       return packages;
     }
 
@@ -49,7 +43,6 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public void onCreate() {
     super.onCreate();
-    Fabric.with(this, new Crashlytics());
     SoLoader.init(this, /* native exopackage */ false);
   }
 }
