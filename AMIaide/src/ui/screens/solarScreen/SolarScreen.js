@@ -13,9 +13,9 @@ import moment from 'moment'
 import momentFR from 'moment/locale/fr'
 import { times } from 'src/utils'
 
-import { notifierAuthorization, notifierAdd } from 'src/utils'
+//import { notifierAuthorization, notifierAdd } from 'src/utils'
 //notifierAuthorization()
-
+/*
 var fr = moment().locale("fr", momentFR)
 notifierAdd({
   title: "test",
@@ -23,12 +23,12 @@ notifierAdd({
   date: fr.add(15, 's').toDate().getTime()
 }).then((result) => {
   console.log(result)
-})
+})*/
 
 const BOLD = (text) => (<Text style={{fontWeight: 'bold'}}>{text}</Text>)
 const BR = (<Text>{'\n'}</Text>)
 
-export default ({ me }) => {
+export default ({ me, messagesRequest }) => {
 
   const { username } = me
 
@@ -41,6 +41,7 @@ export default ({ me }) => {
   useEffect(() => {
     //loop()
     setHelloText(moment())
+    messagesRequest({})
   }, [])
 
   const getMessage = (date) => {

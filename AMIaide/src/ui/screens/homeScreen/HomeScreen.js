@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createRef } from 'react';
-import { Container, Header, View, Icon, Content, Form, Item, Input, Label, Button, Text, Body, Title, Card, CardItem } from 'native-base';
+import { Container, Header, View, Icon, Content, Form, Item, Input, Label, Button, Text, Body, Title, Card, CardItem, H1 } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 
 import LinearGradient from 'react-native-linear-gradient';
@@ -36,8 +36,10 @@ export default ({ messagesRequest, list, loading, me }) => {
 
 
   const onVolumeChange = (value) => {
+    console.log(value)
+    //setVolume(value)
+
     video = videoRef && videoRef.current || {}
-    console.log(video)
     video.setVolume(value)
   }
 
@@ -70,8 +72,9 @@ export default ({ messagesRequest, list, loading, me }) => {
 
   console.log(message)
   if ((message.id == null || message.id == undefined) && messages.length > 0) {
-    setMessage(messages[0] || {})
+   // setMessage(messages[0] || {})
   }
+  const text = "Bonjour Didier, il est 9h20. Pensez à prendre votre doliprane ce midi."
   const videoURI = (video_url) ? `${Env.API_URL}/${video_url}` : ''
   console.log(video_url)
   console.log(videoURI)
@@ -85,8 +88,49 @@ export default ({ messagesRequest, list, loading, me }) => {
         start={{ x: 0.0, y: 0.0 }} end={{ x: 1.0, y: 1.0 }}
         colors={color}
         style={{ flex: 1 }}>
-   
+          {messages.length == 0 && <H1 style={styles.title}>{"Pas de nouveau messages"}</H1>}
+        {messages.length > 0 && <Grid style={{ padding: 30 }}>
+          <Col size={25}>
+            <Row size={50}>
+              <VideoCard ref={videoRef} uri={videoURI} />
+            </Row>
+            <Row size={50}>
+              <NavigateCard
+                onNext={next}
+                onPrevious={previous}
+                onReload={reload}
+                onVolumeChange={onVolumeChange}
+              />
+            </Row>
+          </Col>
+
+          <Col size={2}></Col>
+          <Col size={70}>
+            <Row size={40}>
+              <MessageCard
+                me={me}
+                message={message} />
+            </Row>
+            <Row size={3}></Row>
+            <Row size={45}>
+              <PictureCard
+                uri={imageURI} />
+            </Row>
+          </Col>
+        </Grid>}
       </LinearGradient>
     </Container>
   );
+}
+
+const styles = {
+
+  title: {
+    color: '#fff',
+    fontFamily: 'Roboto',
+    fontSize: 80,
+    paddingTop: 80,
+    textAlign:'center',
+    height: 120
+  }
 }

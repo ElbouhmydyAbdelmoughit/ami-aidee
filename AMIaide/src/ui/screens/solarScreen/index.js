@@ -9,6 +9,7 @@ const mapStateToProps = ({auth}) => ({
  });
  
  const mapDispatchToProps = dispatch => ({
+  messagesRequest: (filters) => dispatch(MessageActions.messagesRequest(filters))
  });
  
 export default connect(mapStateToProps, mapDispatchToProps)(SolarScreen);

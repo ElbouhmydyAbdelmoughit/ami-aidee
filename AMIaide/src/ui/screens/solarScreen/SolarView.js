@@ -62,7 +62,7 @@ export default ({ onPress, date, solarIcon, moonIcon }) => {
       y: 0
     }
 
-    const degree = isSolar == true ? solarDegree(date) : moonDegree(date)
+    const degree = isSolar == true ? solarDegree(date) : (moonDegree(date) + 90)
     const point = pointForAngle(degree)
 
     const xCenter = ellipseSize.width // 50 / 100
@@ -159,8 +159,8 @@ export default ({ onPress, date, solarIcon, moonIcon }) => {
         fill="transparent"
       />
       <Rect
-        x={moonPosition.x}
-        y={moonPosition.y}
+        x={position.x}
+        y={position.y}
         width="20%"
         height="20%"
         fill="transparent"

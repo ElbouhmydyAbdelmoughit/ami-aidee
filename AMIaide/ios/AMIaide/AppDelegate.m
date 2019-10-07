@@ -10,6 +10,8 @@
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 @implementation AppDelegate
 
@@ -28,6 +30,8 @@
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
   
+  [Fabric with:@[[Crashlytics class]]];
+
   return YES;
 }
 

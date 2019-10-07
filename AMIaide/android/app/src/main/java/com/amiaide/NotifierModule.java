@@ -72,8 +72,6 @@ public class NotifierModule extends ReactContextBaseJavaModule {
         notificationIntent.putExtra(MyNotificationPublisher.NOTIFICATION, notification);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(reactContext, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-
-
         AlarmManager alarmManager = (AlarmManager) reactContext.getSystemService(Context.ALARM_SERVICE);
         assert alarmManager != null;
         alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, timeInMillis, pendingIntent);

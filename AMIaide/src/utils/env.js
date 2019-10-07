@@ -1,4 +1,4 @@
 export const Env = {
-  API_URL: "http://192.168.1.25:3333",
-  GRAPHQL_URL: "http://192.168.1.25:8080/v1/graphql"
+  API_URL: "http://15.188.62.36:3333",
+  GRAPHQL_URL: "http://15.188.62.36:8080/v1/graphql"
 }

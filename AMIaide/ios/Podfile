@@ -32,6 +32,8 @@ target 'AMIaide' do
 
   pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
 
+  pod 'Fabric'
+  pod 'Crashlytics'
 
 
   target 'AMIaideTests' do

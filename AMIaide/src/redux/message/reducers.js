@@ -19,7 +19,9 @@ const stopLoader = (state = initialState) => (
 const messagesSuccess = (state = initialState, action) => {
   console.log("messagesSuccess")
   const {messages} = action;
+  console.log("1. get new messages")
   const {list} = state;
+  console.log("2. get old messages")
   const data = {};
   console.log(messages)
   messages.forEach(message => {

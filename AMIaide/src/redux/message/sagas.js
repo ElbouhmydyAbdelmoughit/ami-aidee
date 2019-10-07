@@ -3,7 +3,7 @@ import { MessagesService, UploadService } from '../../services';
 import { LoaderActions } from '../loader';
 import { SnackActions } from '../snackBar';
 import { types, default as MessageAction } from './actions';
-import { notifierAuthorization, notifierAdd, notifierAddMany } from 'src/utils'
+//import { notifierAuthorization, notifierAdd, notifierAddMany } from 'src/utils'
 import axios from 'axios'
 import moment from 'moment'
 
@@ -43,7 +43,7 @@ function* messagesRequest({filters}) {
   console.log(error)
   console.log(response)
   if (!error && response) { 
-    notifierAddMany(response.messages)
+    //notifierAddMany(response.messages)
     yield put(MessageAction.messagesSuccess(response.messages))
   }
   else {

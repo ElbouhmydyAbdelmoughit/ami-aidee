@@ -31,6 +31,9 @@
 		80ECE403BB2F41C786ECE486 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21EEA92D68174FA38A636BC6 /* FontAwesome.ttf */; };
 		8CBC48BC74614CA0BADBBE14 /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CD4D8C1E9314E6F8F0B8032 /* rubicon-icon-font.ttf */; };
 		ACF118E61D3947CBA6AE4EF0 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BB4C0070AEC4BF786D414D0 /* Feather.ttf */; };
+		CA65F2FD234A4F0400166C29 /* RCTVideoViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA65F2FA234A4F0400166C29 /* RCTVideoViewManager.m */; };
+		CA65F2FE234A4F0400166C29 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA65F2FB234A4F0400166C29 /* VideoView.swift */; };
+		CA65F2FF234A4F0400166C29 /* VideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA65F2FC234A4F0400166C29 /* VideoView.xib */; };
 		CACE3D282325726E00C31142 /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACE3D272325726E00C31142 /* Notifier.swift */; };
 		CACE3D2C23257A3200C31142 /* NotifierBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = CACE3D2B23257A3100C31142 /* NotifierBridge.m */; };
 		E1E3A3CA5CC20889D841B03D /* libPods-AMIaide.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 474D62E74FD023C1BE7437AF /* libPods-AMIaide.a */; };
@@ -96,6 +99,9 @@
 		B0AB7AFA232243F8B48DC64E /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		B67A8643401F418A81712148 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/native-base/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		C83499AF5602682A9D3D9E89 /* Pods-AMIaideTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMIaideTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AMIaideTests/Pods-AMIaideTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CA65F2FA234A4F0400166C29 /* RCTVideoViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCTVideoViewManager.m; path = AMIaide/RCTVideoViewManager.m; sourceTree = "<group>"; };
+		CA65F2FB234A4F0400166C29 /* VideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoView.swift; path = AMIaide/VideoView.swift; sourceTree = "<group>"; };
+		CA65F2FC234A4F0400166C29 /* VideoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VideoView.xib; path = AMIaide/VideoView.xib; sourceTree = "<group>"; };
 		CACE3D2423253E6E00C31142 /* libRNNotifications.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNNotifications.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACE3D262325726D00C31142 /* AMIaide-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AMIaide-Bridging-Header.h"; sourceTree = "<group>"; };
 		CACE3D272325726E00C31142 /* Notifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Notifier.swift; path = AMIaide/Notifier.swift; sourceTree = "<group>"; };
@@ -169,6 +175,9 @@
 		13B07FAE1A68108700A75B9A /* AMIaide */ = {
 			isa = PBXGroup;
 			children = (
+				CA65F2FA234A4F0400166C29 /* RCTVideoViewManager.m */,
+				CA65F2FB234A4F0400166C29 /* VideoView.swift */,
+				CA65F2FC234A4F0400166C29 /* VideoView.xib */,
 				CACE3D2B23257A3100C31142 /* NotifierBridge.m */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -313,6 +322,7 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				5C1DF826140E81977B08E77F /* [CP] Copy Pods Resources */,
+				CA65F28F2348A33F00166C29 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -373,11 +383,13 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = WKPY8W8Q8X;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = WKPY8W8Q8X;
 						LastSwiftMigration = 1010;
+						ProvisioningStyle = Manual;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -437,6 +449,7 @@
 				E5DA01BC00614A5796A70FD7 /* Ionicons.ttf in Resources */,
 				2D93958E61E54C8EBE016E4C /* MaterialCommunityIcons.ttf in Resources */,
 				EBDA7634B3974072B5E77E35 /* MaterialIcons.ttf in Resources */,
+				CA65F2FF234A4F0400166C29 /* VideoView.xib in Resources */,
 				EDA97B19309E40469D49F9B6 /* Octicons.ttf in Resources */,
 				E5699F5A455A4EA180F10E23 /* Roboto_medium.ttf in Resources */,
 				0D97C16CF70044B79899E745 /* Roboto.ttf in Resources */,
@@ -635,6 +648,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CA65F28F2348A33F00166C29 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 47aec3a37c75913d3d68cd61640afb8fce6551fb 91a627260456def2c7bb633263a5e2accb4054a3fa478f5549315f93556b29c2\n";
+		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -688,7 +718,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA65F2FE234A4F0400166C29 /* VideoView.swift in Sources */,
 				CACE3D2C23257A3200C31142 /* NotifierBridge.m in Sources */,
+				CA65F2FD234A4F0400166C29 /* RCTVideoViewManager.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				CACE3D282325726E00C31142 /* Notifier.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
@@ -746,6 +778,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = WKPY8W8Q8X;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -772,6 +805,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = WKPY8W8Q8X;
 				INFOPLIST_FILE = AMIaideTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -793,8 +827,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = WKPY8W8Q8X;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -838,8 +875,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mellon.AMIaide;
 				PRODUCT_NAME = AMIaide;
+				PROVISIONING_PROFILE_SPECIFIER = "mellon ami aidee ad hoc";
 				SWIFT_OBJC_BRIDGING_HEADER = "AMIaide-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -854,7 +892,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = WKPY8W8Q8X;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -898,8 +939,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mellon.AMIaide;
 				PRODUCT_NAME = AMIaide;
+				PROVISIONING_PROFILE_SPECIFIER = "mellon ami aidee ad hoc";
 				SWIFT_OBJC_BRIDGING_HEADER = "AMIaide-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

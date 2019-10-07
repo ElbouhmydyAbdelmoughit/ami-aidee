@@ -30,7 +30,7 @@ public class VideoViewManager extends SimpleViewManager<VideoView> {
 
     @ReactProp(name = "replay")
     public void setReplay(HgLVideoTrimmer view, @Nullable Boolean replay) {
-        if (replay == true) {
+        if (replay) {
             view.replay();
         }
     }
