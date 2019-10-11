@@ -92,6 +92,7 @@ export default ({ me, messagesRequest }) => {
     case "DAWN":
       color = dawnColor
       solarIcon = require('src/assets/images/sun_dawn.png')
+      moonIcon = null;
       break
     case "SUN":
       color = sunColor
