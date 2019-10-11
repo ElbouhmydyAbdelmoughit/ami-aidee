@@ -38,11 +38,11 @@ export default ({ onPress, date, solarIcon, moonIcon }) => {
     y: 0
   })
 
-  useEffect(() => {
-    //setSunPos()
+  /*useEffect(() => {
+    setSunPos()
   }, [])
 
-  /*const setSunPos = () => {
+  const setSunPos = () => {
     if (points.length == 0) return
 
     const degree = solarDegree(date)
@@ -62,7 +62,7 @@ export default ({ onPress, date, solarIcon, moonIcon }) => {
       y: 0
     }
 
-    const degree = isSolar == true ? solarDegree(date) : (moonDegree(date) + 90)
+    const degree = isSolar == true ? (solarDegree(date) + 30) : (moonDegree(date) + 30)
     const point = pointForAngle(degree)
 
     const xCenter = ellipseSize.width // 50 / 100
