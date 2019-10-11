@@ -75,7 +75,7 @@ export const solarDegree = (now) => {
   Math.asin
 
   if (sunAzimuth >= 0) {
-    degree = Math.abs(360 - sunAltitude) - 45
+    degree = Math.abs(360 - sunAltitude) - 80
   } else {
     degree = sunAltitude + 200
   }
@@ -100,7 +100,7 @@ export const moonDegree = (now) => {
   Math.asin
 
   if (sunAzimuth >= 0) {
-    degree = Math.abs(360 - sunAltitude) - 45
+    degree = Math.abs(360 - sunAltitude) - 80
   } else {
     degree = sunAltitude + 200
   }
