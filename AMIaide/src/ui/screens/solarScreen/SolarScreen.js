@@ -28,6 +28,8 @@ notifierAdd({
 const BOLD = (text) => (<Text style={{fontWeight: 'bold'}}>{text}</Text>)
 const BR = (<Text>{'\n'}</Text>)
 
+const DURATION_WHEN_REFRESH_SOLAR = 60000 * 1
+
 export default ({ me, messagesRequest }) => {
 
   const { username } = me
@@ -42,6 +44,7 @@ export default ({ me, messagesRequest }) => {
     //loop()
     setHelloText(moment())
     messagesRequest({})
+    startTimer()
   }, [])
 
   const getMessage = (date) => {
@@ -77,6 +80,14 @@ export default ({ me, messagesRequest }) => {
       //loop() 
     },
       500)
+  }
+
+  const timerAction = () => {
+    setHelloText(moment())
+  }
+  
+  const startTimer = () => {
+    timerIdentifier = setInterval(timerAction, DURATION_WHEN_REFRESH_SOLAR);
   }
 
   const dawnColor = ['#BEDDFC', '#EFEEF3', '#FEF7E4', '#FDF2D6']
