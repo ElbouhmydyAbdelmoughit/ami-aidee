@@ -12,6 +12,9 @@ import AVFoundation
 @objc(VideoView)
 public class VideoView: UIView {
   
+  var onLoadStart: RCTBubblingEventBlock?;
+  var onReady: RCTBubblingEventBlock?;
+  
   @objc(instanceFromNib)
   public static func instanceFromNib() -> VideoView {
     return UINib(nibName: "VideoView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! VideoView
@@ -44,11 +47,15 @@ public class VideoView: UIView {
   
   
   public func setToPlayer(url: URL) {
+    //start loading
+    self.onLoadStart?()
     let asset = AVURLAsset(url: url)
     let item = AVPlayerItem(asset: asset)
     
     queuePlayer.replaceCurrentItem(with: item)
     
+    //is ready
+    self.onReady?()
     queuePlayer.seek(to: CMTime.zero)
     queuePlayer.play()
   }

@@ -31,6 +31,10 @@ RCT_EXPORT_MODULE(RCTVideoView)
  replay={replay}
  volume={volume}
  */
+
+RCT_EXPORT_VIEW_PROPERTY(onLoadStart, RCTBubblingEventBlock)
+RCT_EXPORT_VIEW_PROPERTY(onReady, RCTBubblingEventBlock)
+
 RCT_CUSTOM_VIEW_PROPERTY(urlPath, NSString, VideoView) {
   NSString* url = [RCTConvert NSString:json];
   if (url != nil) {
