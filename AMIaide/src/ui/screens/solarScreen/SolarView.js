@@ -38,24 +38,6 @@ export default ({ onPress, date, solarIcon, moonIcon }) => {
     y: 0
   })
 
-  /*useEffect(() => {
-    setSunPos()
-  }, [])
-
-  const setSunPos = () => {
-    if (points.length == 0) return
-
-    const degree = solarDegree(date)
-    console.log(`SolarView.degree: ${degree}`)
-    updateWithAngle(degree)
-  }
-  
-  const updateWithAngle = (angle) => {
-    const pt = pointForAngle(angle)
-    console.log(pt)
-    update(pt)
-  }*/
-
   const positionForDate = (date, isSolar) => {
     if (points.length == 0) return {
       x: 0,

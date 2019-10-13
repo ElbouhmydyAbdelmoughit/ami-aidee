@@ -1,8 +1,11 @@
 package com.amiaide.videoView;
 
+import com.facebook.react.common.MapBuilder;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.annotations.ReactProp;
+
+import java.util.Map;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -20,6 +23,27 @@ public class VideoViewManager extends SimpleViewManager<VideoView> {
     @Override
     public VideoView createViewInstance(ThemedReactContext context) {
         return new VideoView(context, null);
+    }
+
+    @Override
+    public Map getExportedCustomBubblingEventTypeConstants() {
+        return MapBuilder.builder()
+                .put(
+                        "onReadyEvent",
+                        MapBuilder.of(
+                                "phasedRegistrationNames",
+                                MapBuilder.of("bubbled", "onReady")))
+                .put(
+                        "onLoadStartEvent",
+                        MapBuilder.of(
+                                "phasedRegistrationNames",
+                                MapBuilder.of("bubbled", "onLoadStart")))
+                .put(
+                        "onErrorEvent",
+                        MapBuilder.of(
+                                "phasedRegistrationNames",
+                                MapBuilder.of("bubbled", "onError")))
+                .build();
     }
 
 

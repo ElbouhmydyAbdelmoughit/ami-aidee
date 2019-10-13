@@ -430,6 +430,7 @@ public class TrimVideoView extends ScalableVideoView implements
 
     public void setVolumeModifier(final float volume) {
         mVolume = volume;
+        setVolume(mVolume, mVolume);
         setMutedModifier(mMuted);
     }
 

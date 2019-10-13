@@ -7,6 +7,10 @@ import { types, default as MessageAction } from './actions';
 import axios from 'axios'
 import moment from 'moment'
 
+/**
+ * Use it for upload a file
+ * @param {*} formData 
+ */
 function* sendFormData(formData) {
   const cancelSource = axios.CancelToken.source();
   const uploadCallBack = () => { }
@@ -29,6 +33,10 @@ function* sendFormData(formData) {
   }
 }
 
+/**
+ * Saga - Fetch all current message
+ * @param {*} param0 
+ */
 function* messagesRequest({filters}) {
   console.log(filters)
 
@@ -51,6 +59,10 @@ function* messagesRequest({filters}) {
   }
 }
 
+/**
+ * Saga - Create a new message
+ * @param {*} param0 
+ */
 function* messageCreateRequest({data}) {
   console.log(data)
 
