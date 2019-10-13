@@ -11,6 +11,8 @@ import MessageCard from './MessageCard'
 import NavigateCard from './NavigateCard'
 import PictureCard from './PictureCard'
 
+import moment from 'moment'
+
 /**
  * 
  * - Get only today messages (filter with moment().dayOfYear())
@@ -24,7 +26,16 @@ export default ({ messagesRequest, list, loading, me }) => {
   console.log(list)
   console.log(me)
 
-  const messages = Object.values(list)
+  const sortMessage = (a, b) => {
+    //2019-10-10T00:00:00
+    const aStr = `${a.diffusion_start_date.split('T')[0]}T${a.moment_time}`
+    const bStr = `${b.diffusion_start_date.split('T')[0]}T${b.moment_time}`
+    const aDate = moment(aStr)
+    const bDate = moment(bStr)
+    return aDate.unix() - bDate.unix()
+  }
+
+  const messages = Object.values(list).sort(sortMessage)
   const [message, setMessage] = useState(messages[0] || {})
   //const [volume, setVolume] = useState(1)
 
@@ -74,11 +85,10 @@ export default ({ messagesRequest, list, loading, me }) => {
   if ((message.id == null || message.id == undefined) && messages.length > 0) {
    // setMessage(messages[0] || {})
   }
-  const text = "Bonjour Didier, il est 9h20. Pensez à prendre votre doliprane ce midi."
   const videoURI = (video_url) ? `${Env.API_URL}/${video_url}` : ''
   console.log(video_url)
   console.log(videoURI)
-  { uri: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" }
+  //{ uri: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" }
   const imageURI = (picture_url) ? { uri: `${Env.API_URL}/${picture_url}` } : {}
 
   const color = ['#3FEDFF', '#8772FF']

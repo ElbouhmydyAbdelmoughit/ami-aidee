@@ -40,6 +40,10 @@ import android.widget.RelativeLayout;
 import android.widget.VideoView;
 
 import com.amiaide.R;
+import com.facebook.react.bridge.Arguments;
+import com.facebook.react.bridge.ReactContext;
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.uimanager.events.RCTEventEmitter;
 
 import java.io.File;
 import java.io.IOException;
@@ -104,6 +108,7 @@ public class HgLVideoTrimmer extends FrameLayout /*implements TrimVideoView.Vide
 
         mVideoView = ((TrimVideoView)findViewById(R.id.video_view));
 
+        //mVideoView.listener = this;
 
 
         /*if (URLUtil.isNetworkUrl(parsedUrl.toString())) {
@@ -620,26 +625,6 @@ public class HgLVideoTrimmer extends FrameLayout /*implements TrimVideoView.Vide
     }
 
     /**
-     * Listener for events such as trimming operation success and cancel
-     *
-     * @param onTrimVideoListener interface for events
-     */
-    @SuppressWarnings("unused")
-  /*  public void setOnTrimVideoListener(OnTrimVideoListener onTrimVideoListener) {
-        mOnTrimVideoListener = onTrimVideoListener;
-    }
-*/
-    /**
-     * Listener for some {@link VideoView} events
-     *
-     * @param onHgLVideoListener interface for events
-     */
-    //@SuppressWarnings("unused")
-    /*public void setOnHgLVideoListener(OnHgLVideoListener onHgLVideoListener) {
-        mOnHgLVideoListener = onHgLVideoListener;
-    }*/
-
-    /**
      * Sets the path where the trimmed video will be saved
      * Ex: /storage/emulated/0/MyAppFolder/
      *
@@ -704,11 +689,15 @@ public class HgLVideoTrimmer extends FrameLayout /*implements TrimVideoView.Vide
             mVideoView.setDataSource(urlString);
             mVideoView.setLooping(false);
 
+            onLoadStart();
             mVideoView.prepareAsync(new MediaPlayer.OnPreparedListener() {
                 @Override
                 public void onPrepared(MediaPlayer mp) {
+                    ready(mp.getDuration());
                     mVideoView.start();
                 }
+
+
 
 
             });
@@ -720,61 +709,44 @@ public class HgLVideoTrimmer extends FrameLayout /*implements TrimVideoView.Vide
     /**
      * TrimVideoView LISTENER
      */
-/*
-    @Override
+
+    public void ready(double duration) {
+        onPrepared(duration);
+    }
+
     public void onLoadStart() {
-        Log.d("TEST", "ON LOAD START");
+        WritableMap event = Arguments.createMap();
+        ReactContext reactContext = (ReactContext)getContext();
+        reactContext.getJSModule(RCTEventEmitter.class).receiveEvent(
+                getId(),
+                "onLoadStartEvent",
+                event);
     }
 
-    @Override
     public void onPrepared(double duration) {
-        Log.d("TEST", "ON VIDEO PREPARED: " + duration);
-        this.onVideoPrepared();
-
-
-
+        WritableMap event = Arguments.createMap();
+        ReactContext reactContext = (ReactContext)getContext();
+        reactContext.getJSModule(RCTEventEmitter.class).receiveEvent(
+                getId(),
+                "onReadyEvent",
+                event);
     }
 
-    @Override
     public void onError() {
-        mOnTrimVideoListener.onError("MediaPlayer.Unknown.Error");
+        WritableMap event = Arguments.createMap();
+        ReactContext reactContext = (ReactContext)getContext();
+        reactContext.getJSModule(RCTEventEmitter.class).receiveEvent(
+                getId(),
+                "onErrorEvent",
+                event);
     }
 
-    @Override
     public void onSeek(double currentPos, double seekTime) {
-        //Log.d("TEST", "ON SEEK. currentPos: " + currentPos + " | seekTIME: " + seekTime);
-        //mOnTrimVideoListener.onChangedSeekBar();
-        updateVideoProgress((int) currentPos);
-        //int value = (int) (currentPos * 100 / mDuration);
-        //setProgressBarPosition(value);
-    }*/
-/*
-    @Override
-    public void onInfo(int what) {
-        //Log.d("TEST", "ON INFO: State: " + what);
+
     }
 
-    private static class MessageHandler extends Handler {
+    public void onInfo(int what) {
 
-        @NonNull
-        private final WeakReference<HgLVideoTrimmer> mView;
-
-        MessageHandler(HgLVideoTrimmer view) {
-            mView = new WeakReference<>(view);
-        }
-
-        @Override
-        public void handleMessage(Message msg) {
-            HgLVideoTrimmer view = mView.get();
-            if (view == null || view.mVideoView == null) {
-                return;
-            }
-
-            view.notifyProgressUpdate(true);
-            if (view.mVideoView.isPlaying()) {
-                sendEmptyMessageDelayed(0, 10);
-            }
-        }
-    }*/
+    }
 }
 

@@ -159,7 +159,7 @@ const styles = {
 
   content: {
     position: 'absolute',
-    top: 150,
+    top: 200,
     left: 230,
     right: 230,
     bottom: 0,
