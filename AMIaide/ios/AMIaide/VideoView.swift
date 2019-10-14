@@ -12,8 +12,9 @@ import AVFoundation
 @objc(VideoView)
 public class VideoView: UIView {
   
-  var onLoadStart: RCTBubblingEventBlock?;
-  var onReady: RCTBubblingEventBlock?;
+  var observer: NSKeyValueObservation?
+  var onLoadStart: RCTBubblingEventBlock?
+  var onReady: RCTBubblingEventBlock?
   
   @objc(instanceFromNib)
   public static func instanceFromNib() -> VideoView {
@@ -39,6 +40,16 @@ public class VideoView: UIView {
     }
   }
   
+  @objc(setOnLoadStart:)
+  public func setOnLoadStart(event: @escaping RCTBubblingEventBlock) {
+    self.onLoadStart = event
+  }
+  
+  @objc(setOnReady:)
+  public func setOnReady(event: @escaping RCTBubblingEventBlock) {
+    self.onReady = event
+  }
+  
   @objc(initializePlayer)
   public func initializePlayer() {
     player = queuePlayer
@@ -47,15 +58,32 @@ public class VideoView: UIView {
   
   
   public func setToPlayer(url: URL) {
+    self.observer?.invalidate()
     //start loading
-    self.onLoadStart?()
+    self.onLoadStart?([:])
     let asset = AVURLAsset(url: url)
-    let item = AVPlayerItem(asset: asset)
+   // let item = AVPlayerItem(asset: asset)
     
-    queuePlayer.replaceCurrentItem(with: item)
+    let assetKeys = [
+      "playable",
+      "hasProtectedContent"
+    ]
+    // Create a new AVPlayerItem with the asset and an
+    // array of asset keys to be automatically loaded
+    let playerItem = AVPlayerItem(asset: asset,
+                                  automaticallyLoadedAssetKeys: assetKeys)
+    
+    // Register as an observer of the player item's status property
+    self.observer = playerItem.observe(\.status, options:  [.new, .old], changeHandler: { (playerItem, change) in
+      if playerItem.status == .readyToPlay {
+        //Do your work here
+        self.onReady?([:])
+      }
+    })
+    
+    queuePlayer.replaceCurrentItem(with: playerItem)
     
     //is ready
-    self.onReady?()
     queuePlayer.seek(to: CMTime.zero)
     queuePlayer.play()
   }
