@@ -161,7 +161,7 @@ const CameraRecord = ({
     name, activite, reccurence, location
   } = form;
   const day = fr.format('dddd, MMMM Do YYYY');
-  const hour = fr.format('hh:mm');
+  const hour = fr.format('HH:mm');
   const text = `Bonjour ${name}, nous sommes le ${day} il est ${hour}.\n\n penser à ${activite}, ${reccurence} ${form.moment} ${form.momentDate}\n${location}`;
   return (
     <View style={style}>

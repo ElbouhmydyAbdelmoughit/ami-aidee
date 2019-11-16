@@ -34,7 +34,6 @@ const App = () => {
             <PersistGate loading={null} persistor={persistor}>
                 <StyleProvider style={getTheme(material)} >
                     <>
-                        <Timer />
                         <Loader />
                         <AppRouter />
                     </>

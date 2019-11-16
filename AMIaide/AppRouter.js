@@ -9,7 +9,7 @@ export default () => (
     <Scene key="master" hideNavBar transitionConfig={transitionConfig} >  
       <Scene key="splash" hideNavBar initial component={SplashScreen} type={ActionConst.RESET} />    
       <Scene key="login" hideNavBar component={LoginScreen} type={ActionConst.RESET} />
-      <Scene key="sleep" component={SleepScreen} />
+      <Scene key="sleep" component={SleepScreen} type={ActionConst.RESET}/>
 
       <Stack key="root" type={ActionConst.REPLACE}>  
         <Scene key="accueil" hideNavBar component={SolarScreen} initial />

@@ -9,11 +9,13 @@ import SolarView from './SolarView'
 import { Actions } from 'react-native-router-flux';
 import LinearGradient from 'react-native-linear-gradient';
 
+import { Timer } from 'src/ui/components'
+
 import moment from 'moment'
 import momentFR from 'moment/locale/fr'
 import { times } from 'src/utils'
 
-//import { notifierAuthorization, notifierAdd } from 'src/utils'
+import { notifierAuthorization, notifierAdd } from 'src/utils'
 //notifierAuthorization()
 /*
 var fr = moment().locale("fr", momentFR)
@@ -23,9 +25,9 @@ notifierAdd({
   date: fr.add(15, 's').toDate().getTime()
 }).then((result) => {
   console.log(result)
-})*/
-
-const BOLD = (text) => (<Text style={{fontWeight: 'bold'}}>{text}</Text>)
+})
+*/
+const BOLD = (text) => (<Text style={{ fontWeight: 'bold' }}>{text}</Text>)
 const BR = (<Text>{'\n'}</Text>)
 
 const DURATION_WHEN_REFRESH_SOLAR = 60000 * 1
@@ -34,10 +36,12 @@ export default ({ me, messagesRequest }) => {
 
   const { username } = me
 
+  const [fadeIn, setFadeIn] = useState(0)
   const [date, setDate] = useState(moment())
   const [hello, setHello] = useState({
     title: 'Bonjour',
-    content: ''
+    content: '',
+    footer: ''
   })
 
   useEffect(() => {
@@ -48,12 +52,20 @@ export default ({ me, messagesRequest }) => {
   }, [])
 
   const getMessage = (date) => {
+    const time = times(date)
     var fr = date.locale("fr", momentFR)
     const day = fr.format("dddd Do MMMM YYYY")
     const hour = fr.format("HH:mm")
+    if (time == 'NIGHT') {
+      return {
+        title: `C'est la nuit`,
+        content: (<Text>{BR}il est {BOLD(hour)}{BR}Dormir est nécessaire pour que ton cerveau répare ton corps.</Text>),
+        footer: <Text>Retourne dans ton lit</Text>
+      }
+    }
     return {
-      title: `Bonjour ${username}`,
-      content: <Text>nous sommes le {BR} {BOLD(day)} {BR}{BR} il est {BR}{BOLD(hour)} </Text>  
+      title: `Bonjour toi`,
+      content: <Text>nous sommes le {BR} {BOLD(day)} {BR}{BR} il est {BR}{BOLD(hour)} </Text>
     }
   }
 
@@ -62,9 +74,32 @@ export default ({ me, messagesRequest }) => {
     setHello(msg)
   }
 
+  const startBlinking = () => {
+
+    let opacity = 0
+    let add = true
+    const interval = setInterval(() => {
+      setFadeIn(opacity)
+      if (add == true) opacity += 0.1
+      else opacity = opacity - 0.1
+
+      add = !(opacity == 1)
+    }, 100)
+
+    const tst = setTimeout(() => {
+      //blinkInter.in
+      clearImmediate(interval)
+      setFadeIn(0)
+    }, 10000);
+  }
+
   const onPress = () => {
+    const time = times(date)
     console.log("ON PRESS")
-    Actions.home()
+    if (time == "NIGHT")
+      startBlinking()
+    else
+      Actions.home()
   }
 
   const incrementHours = () => {
@@ -85,7 +120,7 @@ export default ({ me, messagesRequest }) => {
   const timerAction = () => {
     setHelloText(moment())
   }
-  
+
   const startTimer = () => {
     timerIdentifier = setInterval(timerAction, DURATION_WHEN_REFRESH_SOLAR);
   }
@@ -93,7 +128,7 @@ export default ({ me, messagesRequest }) => {
   const dawnColor = ['#BEDDFC', '#EFEEF3', '#FEF7E4', '#FDF2D6']
   const sunColor = ['#3EA2E8', '#44BCFC', '#87CFFF', '#BEDDFC']
   const duskColor = ['#C6D9BC', '#DBCFA5', '#E7BF8E', '#DCA27F']
-  const nightColor = ['#012D5B', '#19689F', '#4F94BB', '#A7BCBC'] 
+  const nightColor = ['#012D5B', '#19689F', '#4F94BB', '#A7BCBC']
   let color = []
   const time = times(date)
 
@@ -116,7 +151,7 @@ export default ({ me, messagesRequest }) => {
       break;
     case "NIGHT":
       color = nightColor
-      solarIcon= null
+      solarIcon = null
       break;
     default:
       color = sunColor
@@ -127,13 +162,16 @@ export default ({ me, messagesRequest }) => {
 
   return (
     <Container style={{ backgroundColor: material.brandPrimary }}>
+      <Timer mode={"awake"} />
       <LinearGradient
         start={{ x: 0.0, y: 0.0 }} end={{ x: 0.0, y: 1.0 }}
         colors={color}
         style={{ flex: 1 }}>
-        <H1 style={ {color: textColor, ...styles.title} }>{BOLD(hello.title)}</H1>
+        <H1 style={{ color: textColor, ...styles.title }}>{BOLD(hello.title)}</H1>
         <View style={styles.content}>
           <H1 style={{ textAlign: 'center', color: textColor }}>{hello.content}</H1>
+          {BR}
+          <H1 style={{ textAlign: 'center', color: textColor, opacity: fadeIn}}>{hello.footer}</H1>
         </View>
         <SolarView
           date={date}

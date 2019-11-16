@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Image, Slider } from 'react-native';
-import { Body, Card, CardItem, View, Text, Button, Icon, Left, Right } from 'native-base';
+import { Body, Card, CardItem, View, Text, Button, Icon, Left, Right, H3 } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 //import Slider from '@react-native-community/slider';
 
 import { CircleButton } from 'src/ui/components'
-export default ({ onNext, onPrevious, onReload, onVolumeChange }) => {
+export default ({ current, total, onNext, onPrevious, onReload, onVolumeChange }) => {
 
   const [size, setSize] = useState({ width: 50, height: 50 })
   const [volume, setVolume] = useState(1)
@@ -42,11 +42,14 @@ export default ({ onNext, onPrevious, onReload, onVolumeChange }) => {
               maximumTrackTintColor="#C7C7C7"
             />
           </Row>
-          <Row size={8}></Row>
-          <Row size={55} style={styles.row}>
+          <Row size={6}></Row>
+          <Row size={50} style={styles.row}>
               <CircleButton onPress={onPrevious} size={size.width / 2.4} source={require('src/assets/images/back.png')} />
               <View style={{width: 20}}/>
               <CircleButton onPress={onNext} size={size.width / 2.4} source={require('src/assets/images/next.png')} />
+          </Row>
+          <Row size={7} style={styles.row}>
+            <H3 style={{color: '#fff'}}>{`${current} / ${total}`}</H3>
           </Row>
         </Grid>
 

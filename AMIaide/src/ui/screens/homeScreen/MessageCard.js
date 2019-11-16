@@ -35,9 +35,9 @@ video_url: ""
 
   const moment_value = moments[moment_id] && moments[moment_id].value || ""
   const reccurence_value = reccurences[reccurence] && reccurences[reccurence].value || ""
-  const day = fr.format("dddd, MMMM Do YYYY")
-  const hour = fr.format("hh:mm")
-  const text = `\nBonjour ${username}, \n\nnous sommes le ${day} il est ${hour}.\n\nPenser à  ${activite} ${reccurence_value} ${moment_value} ${moment_time}, ${location}`
+  const day = fr.format("dddd Do MMMM YYYY")
+  const hour = fr.format("HH:mm")
+  const text = `\nNous sommes le ${day} il est ${hour}.\n\nPenser à  ${activite} ${reccurence_value} ${moment_value} ${moment_time}, ${location}`
 
   return (
     <Card style={{ flex: 1 }}>

@@ -141,8 +141,8 @@ export default ({ onPress, date, solarIcon, moonIcon }) => {
         fill="transparent"
       />
       <Rect
-        x={position.x}
-        y={position.y}
+        x={solarIcon != null ? position.x : moonPosition.x}
+        y={solarIcon != null ? position.y : moonPosition.y}
         width="20%"
         height="20%"
         fill="transparent"

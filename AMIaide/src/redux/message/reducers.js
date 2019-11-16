@@ -25,7 +25,7 @@ const messagesSuccess = (state = initialState, action) => {
   messages.forEach(message => {
     data[message.id] = message;
   })
-  return {...state, list: {...list, ...data}, loading: false, hasMore: messages.length > 0};
+  return {...state, list: data, loading: false, hasMore: messages.length > 0};
 };
 
 const messageCreateRequest = (state = initialState) => (

@@ -36,6 +36,8 @@ target 'AMIaide' do
   pod 'Crashlytics'
 
 
+  pod 'react-native-video', :path => '../node_modules/react-native-video'
+
   target 'AMIaideTests' do
     inherit! :search_paths
     # Pods for testing

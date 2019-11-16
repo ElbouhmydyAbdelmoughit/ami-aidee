@@ -4,6 +4,7 @@ import React, { useState, forwardRef, useImperativeHandle } from 'react';
 import { StyleSheet, View, ActivityIndicator } from 'react-native'
 import { VideoView } from 'src/ui/components'
 import { Body, Card, CardItem, H3 } from 'native-base';
+import Video from 'react-native-video'
 
 const VideoCard = ({ uri }, ref) => {
 
@@ -25,10 +26,11 @@ const VideoCard = ({ uri }, ref) => {
 
   const reload = () => {
     console.log(player)
-    setReplay(true)
+    player.seek(0)
+    /*setReplay(true)
     setTimeout(function () {
       setReplay(false)
-    }, 200);
+    }, 200);*/
   }
 
   const onReady = (isReady) => {
@@ -47,11 +49,29 @@ const VideoCard = ({ uri }, ref) => {
   }
 
   return (
-    <View style={{
-      width: '100%',
-      height: '100%',
-      backgroundColor: '#000'
-    }}>
+    <View style={{ width: '100%', height: '100%', backgroundColor: '#000' }}>
+      <Video
+        source={{ uri: uri }}
+        ref={(ref) => { player = ref }}  // Store reference
+        style={styles.backgroundVideo}
+        resizeMode={"contain"}
+        volume={volume}
+        controls={false}
+        onLoadStart={onLoadStart}                // Callback when remote video is buffering
+        onError={onError}
+        onLoad={onReady}
+      />
+      {lastState == "LOADING" && <View style={styles.activityIndicatorWrapper}>
+        <ActivityIndicator animating={true} />
+      </View>}
+      {lastState == "ERROR" && <View style={styles.activityIndicatorWrapper}>
+        <H3 style={{ textAlign: 'center', color: '#fff' }}>{"Oops. La vidéo ne peut pas être chargé."}</H3>
+      </View>}
+    </View>
+  )
+}
+/*
+
 
 {<VideoView
         ref={(ref) => player = ref}
@@ -69,12 +89,16 @@ const VideoCard = ({ uri }, ref) => {
       {lastState == "ERROR" && <View style={styles.activityIndicatorWrapper}>
           <H3>{"Oops. La vidéo ne peut pas être chargé."}</H3>
       </View>}
-    </View>
-  )
-}
+ */
 
-const styles = StyleSheet.create({
-
+var styles = StyleSheet.create({
+  backgroundVideo: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+  },
   activityIndicatorWrapper: {
     backgroundColor: '#000',
     position: 'absolute',

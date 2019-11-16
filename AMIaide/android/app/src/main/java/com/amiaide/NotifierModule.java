@@ -74,7 +74,7 @@ public class NotifierModule extends ReactContextBaseJavaModule {
 
         AlarmManager alarmManager = (AlarmManager) reactContext.getSystemService(Context.ALARM_SERVICE);
         assert alarmManager != null;
-        alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, timeInMillis, pendingIntent);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, timeInMillis, pendingIntent);
     }
 
     private Notification getNotification(String title, String content) {

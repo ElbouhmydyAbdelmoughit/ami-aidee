@@ -6,6 +6,7 @@ import com.amiaide.videoView.VideoViewPackage;
 import com.crashlytics.android.Crashlytics;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import com.brentvatne.react.ReactVideoPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;

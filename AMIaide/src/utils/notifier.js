@@ -17,42 +17,16 @@ export const notifierAdd = ({title, body, date}) => {
 }
 
 export const notifierAddMessage = (message) => {
+  notifierAuthorization()
   const { activite, diffusion_end_date, diffusion_start_date, moment, moment_time, location, subject, reccurence } = message
   
-  //const recc = moments[moment]
-  switch (reccurence) {
-    case 2: // une fois par semaine
-    /*
-    moment().add('weeks', 1)
-    moment().below(date) ?
-    date = moment(diffusion_start_date)
-    end = moment(diffusion_end_date)
-      for date = diffus_start_date; date < diffus_end_date; date += 1 semaine
-        notifierAdd()
-    */
-    break 
-    case 3: // tous les jours
-    /*
-    moment().add('days', 1)
-      for date = diffus_start_date; date < diffus_end_date; date += 1 jour
-        notifierAdd()
-    */
-    break 
-    case 4: // une fois par mois
-    /*
-    moment().add('months', 1)
-      for date = diffus_start_date; date < diffus_end_date; date += 1 mois
-        notifierAdd()
-    */
-    break 
-
-    default: break
-  }
-
+  const aStr = `${diffusion_start_date.split('T')[0]}T${moment_time}`
+  console.log("notify " + aStr)
+  const aDate = moment(aStr)
   notifierAdd({
     title: subjects[subject],
     body: activite,
-    date: moment_time
+    date: aDate.toDate().getTime()
   })
 }
 

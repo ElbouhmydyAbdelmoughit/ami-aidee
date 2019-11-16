@@ -8,5 +8,6 @@ export { fetchPatientMock } from './patientMock';
 export { fetchRecipeMock } from './recipeMock';
 export { subjects, moments, reccurences } from './constant'
 export { Env } from './env'
+export { closestMessage, sortMessage } from './messageHelper'
 export { solarDegree, moonDegree, times } from './sun'
 export { notifierAuthorization, notifierAdd, notifierAddMany, notifierAddMessage } from './notifier'
