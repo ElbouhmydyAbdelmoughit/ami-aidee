@@ -25,31 +25,41 @@ nauticalDawn: Mon Sep 02 2019 05:57:02 GMT+0200 (heure d’été d’Europe cent
 nauticalDusk: Mon Sep 02 2019 21:46:55 GMT+0200 (heure d’été d’Europe centrale) {}
  */
 import moment from 'moment'
+import SunCalc from 'suncalc'
 
- export const times = (now) => {
-  var SunCalc = require('suncalc')
- 
-  const times = SunCalc.getTimes(now.toDate(), 48.84605, 2.34515)
- 
+const PANTHEON_POSITION = {
+  latitude: 48.84605,
+  longitude: 2.34515,
+}
+
+const getTimes = (now) => {
+  const times = SunCalc.getTimes(now.toDate(), PANTHEON_POSITION.latitude, PANTHEON_POSITION.longitude)
   console.log(times)
   const dawn = moment(times.dawn)
   const solarNoon = moment(times.solarNoon)
   const dusk = moment(times.dusk)
   const night = moment(times.night)
-  const nightEnd = moment(times.nightEnd).add(1, 'days')
+  return {
+    dawn,
+    solarNoon,
+    dusk,
+    night,
+    nightEnd: moment(times.nightEnd).add(1, 'day'),
+    sunrise: moment(times.sunrise),
+    sunset: moment(times.sunset),
+  }
+}
+ export const times = (now) => {
+  const times = getTimes(now)
+  const isDawn = now.isBetween(times.dawn, times.solarNoon)  //is dawn => now >= dawn && now <= sunriseEnd
+  const isSunNoon = now.isAfter(times.solarNoon) && now.isBefore(times.dusk) //is sunNoon => now > sunriseEnd && now < dusk <= default
+  const isDusk = now.isBetween(times.dusk, times.night)
+  const isNight = now.isAfter(times.night)
 
-  console.log(nightEnd.format())
-  const isDawn = now.isBetween(dawn, solarNoon)  //is dawn => now >= dawn && now <= sunriseEnd
-  const isSunNoon = now.isAfter(solarNoon) && now.isBefore(dusk) //is sunNoon => now > sunriseEnd && now < dusk <= default
-  const isDusk = now.isBetween(dusk, night)
-  const isNight = now.isAfter(night)
-  //is dusk => now >= dusk && now < night
-//is night => now >= night && now <= nightEnd
-
-  console.log(`isDanw: ${isDawn}`)
+  console.log(`isDawn: ${isDawn}`)
   console.log(`isSunNoon: ${isSunNoon}`)
   console.log(`isDusk: ${isDawn}`)
-  console.log(`isNight: ${isDawn}`)
+  console.log(`isNight: ${isNight}`)
   
   if (isDawn) return "DAWN"
   else if (isSunNoon) return "SUN"
@@ -58,18 +68,13 @@ import moment from 'moment'
   else return "NIGHT"
  }
 
-export const solarDegree = (now) => {
-  var SunCalc = require('suncalc');
-  const t = times(now)
-  const sunPos = //t != "NIGHT" ? 
-  SunCalc.getPosition(/*Date*/ now.toDate(), /*Number*/ 48.84605, /*Number*/  2.34515) 
-  //: SunCalc.getMoonPosition(/*Date*/ now.toDate(), /*Number*/ 48.84605, /*Number*/  2.34515)
-  var sunAzimuth = sunPos.azimuth * 180 / Math.PI;
-  var sunAltitude = sunPos.altitude * 180 / Math.PI;
 
-  console.log(sunPos)
-  console.log(`Sun.azimuth: ${sunAzimuth}`)
-  console.log(`Sun.altitude: ${sunAltitude}`)
+const getDegree = (pos) => {
+  //: SunCalc.getMoonPosition(/*Date*/ now.toDate(), /*Number*/ 48.84605, /*Number*/  2.34515)
+  var sunAzimuth = pos.azimuth * 180 / Math.PI;
+  var sunAltitude = pos.altitude * 180 / Math.PI;
+  console.log(`azimuth: ${sunAzimuth}`)
+  console.log(`altitude: ${sunAltitude}`)
 
   var degree = 0.0
   Math.asin
@@ -83,27 +88,30 @@ export const solarDegree = (now) => {
   return degree
 }
 
-export const moonDegree = (now) => {
-  var SunCalc = require('suncalc');
-  const t = times(now)
-  const sunPos = //t != "NIGHT" ? 
-  SunCalc.getMoonPosition(/*Date*/ now.toDate(), /*Number*/ 48.84605, /*Number*/  2.34515) 
-  //: SunCalc.getMoonPosition(/*Date*/ now.toDate(), /*Number*/ 48.84605, /*Number*/  2.34515)
-  var sunAzimuth = sunPos.azimuth * 180 / Math.PI;
-  var sunAltitude = sunPos.altitude * 180 / Math.PI;
+const getPercent = (timeStart, timeEnd, timeBetween) => {
+  const totalDuration = timeEnd.diff(timeStart)
+  const passedDuration = timeBetween.diff(timeStart)
+  return passedDuration / totalDuration
+}
 
-  console.log(sunPos)
-  console.log(`Sun.azimuth: ${sunAzimuth}`)
-  console.log(`Sun.altitude: ${sunAltitude}`)
+const ELLIPSE_START_DEGREE = 180
+const ELLIPSE_PEAK_DEGREE = 270
 
-  var degree = 0.0
-  Math.asin
-
-  if (sunAzimuth >= 0) {
-    degree = Math.abs(360 - sunAltitude) - 80
-  } else {
-    degree = sunAltitude + 200
+export const solarDegree = (now) => {
+  const times = getTimes(now)
+  if (now.isBefore(times.solarNoon)) {
+    const percent =  getPercent(times.sunrise, times.solarNoon, now)
+    console.log('percent', percent)
+    return percent * 90 + ELLIPSE_START_DEGREE
   }
-  console.log(`degree: ${degree}`)
-  return degree
+  const percent =  getPercent(times.solarNoon, times.sunset, now)
+  console.log('percent', percent)
+  return percent * 90 + ELLIPSE_PEAK_DEGREE
+}
+
+export const moonDegree = (now) => {
+  const times = getTimes(now)
+  const percent =  getPercent(times.night, times.nightEnd, now)
+  console.log('percent', percent)
+  return percent * 180 + ELLIPSE_START_DEGREE
 }

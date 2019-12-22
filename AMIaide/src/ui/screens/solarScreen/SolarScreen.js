@@ -37,7 +37,20 @@ export default ({ me, messagesRequest }) => {
   const { username } = me
 
   const [fadeIn, setFadeIn] = useState(0)
-  const [date, setDate] = useState(moment())
+  const [date, setDate] = useState(moment(
+    // sunrise
+    // "Sun, 22 Dec 2019 08:42:54 +0100"
+    // sunpeak 
+    //"Sun, 22 Dec 2019 12:50:15 +0100"
+    // sunset 
+    // "Sun, 22 Dec 2019 16:57:06 +0100",
+    // night
+    // "Sun Dec 22 2019 18:53:53 +0100",
+    // midnight
+    // "Sun Dec 23 2019 00:00:00 +0100",
+    // night end
+    // "Sun Dec 23 2019 06:46:38 +0100",
+  ))
   const [hello, setHello] = useState({
     title: 'Bonjour',
     content: '',
@@ -46,7 +59,7 @@ export default ({ me, messagesRequest }) => {
 
   useEffect(() => {
     //loop()
-    setHelloText(moment())
+    setHelloText(date)
     messagesRequest({})
     startTimer()
   }, [])

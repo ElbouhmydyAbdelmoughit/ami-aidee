@@ -25,7 +25,7 @@ import Svg, {
   Pattern
 } from 'react-native-svg';
 
-export default ({ onPress, date, solarIcon, moonIcon }) => {
+const SolarView = ({ onPress, date, solarIcon, moonIcon }) => {
 
   console.log("SOLARVIEW")
   const [points, setPoints] = useState([])
@@ -44,8 +44,9 @@ export default ({ onPress, date, solarIcon, moonIcon }) => {
       y: 0
     }
 
-    const degree = isSolar == true ? (solarDegree(date) + 30) : (moonDegree(date) + 30)
+    const degree = isSolar == true ? solarDegree(date) : moonDegree(date)
     const point = pointForAngle(degree)
+    console.log('pointForAngle', point);
 
     const xCenter = ellipseSize.width // 50 / 100
     const yCenter = ellipseSize.height * 70 / 100
@@ -170,3 +171,5 @@ export default ({ onPress, date, solarIcon, moonIcon }) => {
     </Svg>
   );
 }
+
+export default SolarView;
