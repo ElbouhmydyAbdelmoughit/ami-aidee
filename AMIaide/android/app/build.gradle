@@ -200,6 +200,9 @@ configurations.all {
 }
 
 dependencies {
+    implementation project(':appcenter-crashes')
+    implementation project(':appcenter-analytics')
+    implementation project(':appcenter')
     implementation project(':react-native-video')
     compile 'com.yqritc:android-scalablevideoview:1.0.4'
     implementation "com.android.support:multidex-instrumentation:1.0.3"

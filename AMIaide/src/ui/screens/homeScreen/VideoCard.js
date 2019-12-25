@@ -50,17 +50,15 @@ const VideoCard = ({ uri }, ref) => {
 
   return (
     <View style={{ width: '100%', height: '100%', backgroundColor: '#000' }}>
-      <Video
-        source={{ uri: uri }}
-        ref={(ref) => { player = ref }}  // Store reference
-        style={styles.backgroundVideo}
-        resizeMode={"contain"}
+      <VideoView
+        ref={(ref) => player = ref}
+        urlPath={uri}
+        replay={replay}
         volume={volume}
-        controls={false}
-        onLoadStart={onLoadStart}                // Callback when remote video is buffering
+        onReady={onReady}
+        onLoadStart={onLoadStart}
         onError={onError}
-        onLoad={onReady}
-      />
+        style={{ width: '100%', height: '100%'}}></VideoView>
       {lastState == "LOADING" && <View style={styles.activityIndicatorWrapper}>
         <ActivityIndicator animating={true} />
       </View>}
@@ -93,11 +91,9 @@ const VideoCard = ({ uri }, ref) => {
 
 var styles = StyleSheet.create({
   backgroundVideo: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: 0,
+    aspectRatio: 1,
+    width: "100%",
+    height: '100%'
   },
   activityIndicatorWrapper: {
     backgroundColor: '#000',

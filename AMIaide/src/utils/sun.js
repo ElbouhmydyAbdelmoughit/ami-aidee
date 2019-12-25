@@ -35,6 +35,7 @@ const PANTHEON_POSITION = {
 const getTimes = (now) => {
   const times = SunCalc.getTimes(now.toDate(), PANTHEON_POSITION.latitude, PANTHEON_POSITION.longitude)
   console.log(times)
+  console.log('now', now.toString())
   const dawn = moment(times.dawn)
   const solarNoon = moment(times.solarNoon)
   const dusk = moment(times.dusk)
@@ -44,7 +45,7 @@ const getTimes = (now) => {
     solarNoon,
     dusk,
     night,
-    nightEnd: moment(times.nightEnd).add(1, 'day'),
+    nightEnd: moment(times.nightEnd).add(1, 'days'),
     sunrise: moment(times.sunrise),
     sunset: moment(times.sunset),
   }

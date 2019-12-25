@@ -110,7 +110,8 @@ export default ({ me, messagesRequest }) => {
     const time = times(date)
     console.log("ON PRESS")
     if (time == "NIGHT")
-      startBlinking()
+    Actions.home()
+     // startBlinking()
     else
       Actions.home()
   }
