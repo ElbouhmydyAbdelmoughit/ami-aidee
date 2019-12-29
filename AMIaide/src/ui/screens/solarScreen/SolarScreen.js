@@ -62,6 +62,9 @@ export default ({ me, messagesRequest }) => {
     setHelloText(date)
     messagesRequest({})
     startTimer()
+    return () => {
+      stopTimer();
+    }
   }, [])
 
   const getMessage = (date) => {
@@ -116,27 +119,18 @@ export default ({ me, messagesRequest }) => {
       Actions.home()
   }
 
-  const incrementHours = () => {
-    const newDate = date.add(30, 'm')
-    console.log(newDate)
-    //setDate(newDate)
-    setHelloText(newDate)
-  }
-  const loop = () => {
-    setInterval(function () {
-      console.log("setDate")
-      incrementHours()
-      //loop() 
-    },
-      500)
-  }
-
   const timerAction = () => {
-    setHelloText(moment())
+    const updatedDate = moment()
+    setHelloText(updatedDate)
+    setDate(updatedDate)
   }
 
   const startTimer = () => {
     timerIdentifier = setInterval(timerAction, DURATION_WHEN_REFRESH_SOLAR);
+  }
+
+  const stopTimer = () => {
+    clearInterval(timerIdentifier)
   }
 
   const dawnColor = ['#BEDDFC', '#EFEEF3', '#FEF7E4', '#FDF2D6']
