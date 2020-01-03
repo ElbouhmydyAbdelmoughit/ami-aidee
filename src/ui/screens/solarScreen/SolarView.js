@@ -56,6 +56,7 @@ const SolarView = ({ onPress, date, solarIcon, moonIcon, times }) => {
     //y: 870.8098158189582
     const x = (point.x) - (sunWidth / 2)
     const y = (point.y) - (sunHeight / 2)
+    console.log(`SolarView.onLayout: sunWidth ${sunWidth}, sunHeight ${sunHeight}`)
 
     return {
       x: x,
@@ -65,7 +66,7 @@ const SolarView = ({ onPress, date, solarIcon, moonIcon, times }) => {
 
   const onLayout = (event) => {
     var { x, y, width, height } = event.nativeEvent.layout;
-    console.log(`(${x} ; ${y}) | (${width} ; ${height})`)
+    console.log(`SolarView.onLayout: (${x} ; ${y}) | (${width} ; ${height})`)
 
     setEllipseSize({
       width: width,
@@ -112,8 +113,7 @@ const SolarView = ({ onPress, date, solarIcon, moonIcon, times }) => {
   }
 
 
-  const position = positionForDate(date, true)
-  const moonPosition = positionForDate(date, false)
+  const position = positionForDate(date)
 
   const color = ['#FFFFFF00', '#FFFFFF', '#FFFFFF00']
   return (
@@ -142,8 +142,8 @@ const SolarView = ({ onPress, date, solarIcon, moonIcon, times }) => {
         fill="transparent"
       />
       <Rect
-        x={solarIcon != null ? position.x : moonPosition.x}
-        y={solarIcon != null ? position.y : moonPosition.y}
+        x={position.x}
+        y={position.y}
         width="20%"
         height="20%"
         fill="transparent"
@@ -160,8 +160,8 @@ const SolarView = ({ onPress, date, solarIcon, moonIcon, times }) => {
     />}
 
     {moonIcon != null && <Image
-        x={moonPosition.x}
-        y={moonPosition.y}
+        x={position.x}
+        y={position.y}
         width="20%"
         height="20%"
         preserveAspectRatio="xMidYMid meet"

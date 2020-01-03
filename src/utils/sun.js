@@ -105,7 +105,13 @@ const getPercent = (timeStart, timeEnd, timeBetween) => {
   const passedDuration = timeBetween.diff(timeStart)
   console.log('totalDuration',totalDuration)
   console.log('passedDuration', passedDuration)
-  return passedDuration / totalDuration
+  let percent = passedDuration / totalDuration
+  if (percent < 0) {
+    percent = 0
+  } else if (percent > 1) {
+    percent = 1
+  }
+  return percent
 }
 
 const ELLIPSE_START_DEGREE = 180
@@ -123,9 +129,20 @@ export const solarDegree = (now) => {
   return percent * 90 + ELLIPSE_PEAK_DEGREE
 }
 
+
+/**
+ * Moon image is particular (with blanks in upper left and lower right corners)
+ * so wee need to do some corrections for the moon to be visible in edge positions
+ */
+const MOON_DEGREE_UPPER_LIMIT = 345
+
 export const moonDegree = (now) => {
   const times = getTimes(now)
-  const percent =  getPercent(times.night, times.nightEnd, now)
+  let percent =  getPercent(times.night, times.nightEnd, now)
   console.log('percent', percent)
-  return percent * 180 + ELLIPSE_START_DEGREE
+  let result = percent * 180 + ELLIPSE_START_DEGREE;
+  if (result > MOON_DEGREE_UPPER_LIMIT) {
+    result = MOON_DEGREE_UPPER_LIMIT;
+  }
+  return result
 }
