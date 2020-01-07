@@ -26,8 +26,6 @@ import momentFR from "moment/locale/fr"
 import { times } from "src/utils"
 
 import { notifierAuthorization, notifierAdd } from "src/utils"
-import { TimerSelectors } from "../../../redux/timer"
-import useMinuteTick from "../../hooks/useMinuteTick"
 // notifierAuthorization()
 /*
 var fr = moment().locale("fr", momentFR)

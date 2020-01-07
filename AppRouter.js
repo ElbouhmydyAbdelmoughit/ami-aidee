@@ -22,10 +22,12 @@ import {
 } from "./src/ui/screens"
 import StackViewStyleInterpolator from "react-navigation-stack"
 import TimerInitiator from "./src/ui/business/TimerInitiator"
+import MessageAlertManager from "./src/ui/business/MessageAlertManager"
 
 export default () => (
   <React.Fragment>
     <TimerInitiator />
+    <MessageAlertManager />
     <Router>
       <Scene key="master" hideNavBar transitionConfig={transitionConfig}>
         <Scene

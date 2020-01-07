@@ -4,11 +4,9 @@ import SolarScreen from "./SolarScreen"
 
 import { MessageActions } from "src/redux/message"
 import { TimerSelectors } from "src/redux/timer"
-import { messageToNotify } from "src/utils"
 
 const mapStateToProps = ({ auth, message, timer }) => ({
   me: auth.user || {},
-  messageToNotify: messageToNotify(Object.values(message.list)),
   minuteTick: TimerSelectors.getMinuteTick({ timer }),
 })
 
