@@ -49,7 +49,8 @@ export const messageToAlert = (messages, alerted, minuteTick) => {
     const messageDate = moment(getDateStrFromMessage(message))
     const difference = messageDate.diff(now, "minutes")
     return (
-      difference === REMINDER_DELAY_IN_MINUTES &&
+      difference > 0 &&
+      difference <= REMINDER_DELAY_IN_MINUTES &&
       (!alerted || alerted.indexOf(message.id) === -1)
     )
   })

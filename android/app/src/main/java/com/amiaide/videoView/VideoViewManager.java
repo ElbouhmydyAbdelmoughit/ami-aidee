@@ -4,14 +4,16 @@ import com.facebook.react.common.MapBuilder;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.annotations.ReactProp;
-
+import com.facebook.react.bridge.ReadableArray;
 import java.util.Map;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+
 
 public class VideoViewManager extends SimpleViewManager<VideoView> {
-
     public static final String REACT_CLASS = "RCTVideoView";
 
     @Override
@@ -19,10 +21,18 @@ public class VideoViewManager extends SimpleViewManager<VideoView> {
         return REACT_CLASS;
     }
 
-    @Nonnull
+    @NonNull
     @Override
     public VideoView createViewInstance(ThemedReactContext context) {
         return new VideoView(context, null);
+    }
+
+    @Override
+    public void receiveCommand(@Nonnull VideoView root, int commandId, @javax.annotation.Nullable ReadableArray args) {
+        super.receiveCommand(root, commandId, args);
+        if (commandId == 0) {
+            root.replay();
+        }
     }
 
     @Override

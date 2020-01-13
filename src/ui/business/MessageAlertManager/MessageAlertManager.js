@@ -1,5 +1,4 @@
 import React, { useEffect } from "react"
-import { Text } from "react-native"
 import { useSelector, useDispatch } from "react-redux"
 import { MessageSelectors, MessageActions } from "src/redux/message"
 import { Actions } from "react-native-router-flux"
@@ -28,7 +27,7 @@ const MessageAlertManager = () => {
     console.log("no new message")
   }, [immediateMessage, messageToAlert])
 
-  return <Text>ahihi</Text>
+  return null
 }
 
 export default MessageAlertManager
