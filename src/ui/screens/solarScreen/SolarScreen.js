@@ -118,9 +118,11 @@ const SolarScreen = ({ minuteTick, me, messagesRequest }) => {
   const onPress = () => {
     const time = times(date)
     console.log("ON PRESS")
-    if (time == "NIGHT") Actions.home()
-    // startBlinking()
-    else Actions.home()
+    if (time == "NIGHT") {
+      startBlinking()
+    } else {
+      Actions.home()
+    }
   }
 
   const dawnColor = ["#BEDDFC", "#EFEEF3", "#FEF7E4", "#FDF2D6"]
