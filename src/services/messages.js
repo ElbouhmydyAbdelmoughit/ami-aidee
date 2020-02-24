@@ -1,18 +1,21 @@
-import { methods, query, mutation } from '../utils';
-import { service, authenticatedService, authenticatedQuery } from './middleware';
+import { methods, query, mutation } from "../utils"
+import { service, authenticatedService, authenticatedQuery } from "./middleware"
 
-const { GET } = methods;
+const { GET } = methods
 /**
  * REST ROUTES
  */
-const routes = {
-};
+const routes = {}
 
 /**
  * GRAPHQL QUERIES
  */
 const queries = {
-  messageBetween: (startDate, endDate) => `messages(where: {diffusion_end_date: {_gte: "${startDate}"}, _and: {diffusion_start_date: {_lte: "${endDate}"}}}) {
+  messageBetween: ({
+    startDate,
+    endDate,
+    helpedUserId,
+  }) => `messages(where: {diffusion_end_date: {_gte: "${startDate}"}, diffusion_start_date: {_lte: "${endDate}"}, helped_user_id: { _eq: ${helpedUserId} }}) {
     id
     subjet
     activite
@@ -56,7 +59,7 @@ const queries = {
     aggregate {
       count
     }
-  }`
+  }`,
 }
 
 /**
@@ -103,14 +106,19 @@ const mutations = {
     }
       }
     }
-  }`
+  }`,
 }
 
 /**
  * SERVICES
  */
 export default {
-  messageBetween: ({startDate, endDate}) => authenticatedQuery(queries.messageBetween(startDate, endDate)),
-  messages: ({ limit, offset }) => authenticatedQuery(queries.messages(limit, offset)),
-  createMessage: message => { console.log(message); return mutation(mutations.createMessage(message)) },
-};
+  messageBetween: (...args) =>
+    authenticatedQuery(queries.messageBetween(...args)),
+  messages: ({ limit, offset }) =>
+    authenticatedQuery(queries.messages(limit, offset)),
+  createMessage: message => {
+    console.log(message)
+    return mutation(mutations.createMessage(message))
+  },
+}

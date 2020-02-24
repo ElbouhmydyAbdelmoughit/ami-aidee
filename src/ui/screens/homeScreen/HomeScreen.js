@@ -43,7 +43,7 @@ import moment from "moment"
  *  - si tap sur veille alors show accueilScreen
  *  - Ajouter un bouton Replay
  */
-export default ({
+const HomeScreen = ({
   awake,
   messagesRequest,
   list,
@@ -63,7 +63,7 @@ export default ({
   let timerRef = createRef()
   useEffect(() => {
     awake()
-    messagesRequest({})
+    messagesRequest(me.helped_users[0].id)
     if (redirectFromSolarView) {
       Toast.show({
         text: "Appuie sur l'écran pour revenir à la page d'accueil",
@@ -193,3 +193,5 @@ const styles = {
     height: 120,
   },
 }
+
+export default HomeScreen

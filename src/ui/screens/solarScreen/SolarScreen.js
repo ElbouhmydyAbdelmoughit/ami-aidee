@@ -55,7 +55,7 @@ const SolarScreen = ({ minuteTick, me, messagesRequest }) => {
   useEffect(() => {
     //loop()
     setHelloText(date)
-    messagesRequest({})
+    messagesRequest(me.helped_users[0].id)
   }, [])
 
   useEffect(() => {
@@ -118,7 +118,8 @@ const SolarScreen = ({ minuteTick, me, messagesRequest }) => {
   const onPress = () => {
     const time = times(date)
     console.log("ON PRESS")
-    if (time == "NIGHT") {
+    if (false) {
+      //time == "NIGHT") {
       startBlinking()
     } else {
       Actions.home()
@@ -168,6 +169,7 @@ const SolarScreen = ({ minuteTick, me, messagesRequest }) => {
         end={{ x: 0.0, y: 1.0 }}
         colors={color}
         style={{ flex: 1 }}
+        onPress={onPress}
       >
         <H1 style={{ color: textColor, ...styles.title }}>
           {BOLD(hello.title)}

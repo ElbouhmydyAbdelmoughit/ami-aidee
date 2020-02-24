@@ -18,8 +18,7 @@ export default {
   immediateMessageAlerted: id =>
     createAction(types.IMMEDIATE_MESSAGE_ALERTED, { id }),
   /** REQUEST */
-  messagesRequest: (filters = {}) =>
-    createAction(types.MESSAGES_REQUEST, { filters }),
+  messagesRequest: id => createAction(types.MESSAGES_REQUEST, { id }),
 
   messagesSuccess: messages =>
     createAction(types.MESSAGES_SUCCESS, { messages }),
