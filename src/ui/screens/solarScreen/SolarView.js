@@ -172,6 +172,7 @@ const SolarView = ({ onPress, date, solarIcon, moonIcon, times }) => {
           preserveAspectRatio="xMidYMid meet"
           opacity="1"
           href={solarIcon}
+          onPress={onPress}
         />
       )}
 

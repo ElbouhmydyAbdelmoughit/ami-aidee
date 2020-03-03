@@ -118,8 +118,7 @@ const SolarScreen = ({ minuteTick, me, messagesRequest }) => {
   const onPress = () => {
     const time = times(date)
     console.log("ON PRESS")
-    if (false) {
-      //time == "NIGHT") {
+    if (time == "NIGHT") {
       startBlinking()
     } else {
       Actions.home()
@@ -169,7 +168,6 @@ const SolarScreen = ({ minuteTick, me, messagesRequest }) => {
         end={{ x: 0.0, y: 1.0 }}
         colors={color}
         style={{ flex: 1 }}
-        onPress={onPress}
       >
         <H1 style={{ color: textColor, ...styles.title }}>
           {BOLD(hello.title)}
