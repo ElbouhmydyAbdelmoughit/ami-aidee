@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "api-5190189070690170425-724634",
+  "private_key_id": "f5239e0723b12f3711453be7b3cf31540c70c036",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDXcCH9RcRyrODa\ny5Eq3QcLhvDxKFQt1LTuX43bVnIB0sdfHIFyYhnfpLYaH7/nucuvpSCpwMcaewiT\nx3yHDPpKy4U8SADxEYOJrlx6OrZjlzdBKaxUvD6aqARpK8dnZVaVnqnUgkrr0ZjX\nA1TI2d/zuPPrp1Lf1Rp9UKK+lN5xRTUAGQbzrjYNgHPVorUfWJ10mt9VrkDXjYdP\n1/LfzhyooU3J5Yc0UJSPBd1CbQpNaLvh7FWv3dlv/sXBDw3hVUNres9Be2BBrpTG\nFuuaSFUPi+Qe2feEmKnXb8ZDG7rcoXfR1C/AJRA1a9DE5deTqJeLmgqqWxK2dRNN\nlhjzvrg3AgMBAAECggEAFn1otvFlEBmXAZA1r9VSCnSES5CLtRsa5jWIcAjGrwUL\ndhTaOJAgJlYiAnklBfJB3qysy7vJrSyB2Td+evSyXkN/varAmmnbIvDWS5Y8ewoK\npR1OFaxvFqMKjtYYo2UTVFwzW3Fck+CWBYAeBjekZuN8ZzHY92/eK43S53VQAV/o\nnJTTsD50IjabZzoAG3xyowP/qLv5Ff4c7qI4V3pnRTb/qEUdI0LyUZ0Nlx95ytXz\ns584vccxnSwJSj0NcpBdGuFX5ol+NuQv11OBA/OoiSUIJTuYECyArnIGjFDBpAqE\nnZgcHfB2d4upN8ggIzy9HApKIK8YOFtNwNsRvqJqJQKBgQDwKcpDtyMSQ+T4HHsS\npqQsnDqaGfLcHApX2H5v4/RzDtKlINx1Ck4rf4LgurLQxZDkk2rhg0zCoQp3NdTp\nM6QVJzY+5ZRAPIlrWWGLeMeUSYoddrmOm93FHFQ6rNCYIJTk2YFnQv8TafAp4jyS\nkaxs914MRjAH8e9k+mMtPQS58wKBgQDlpPRntS0S4wFx42w/f+Mds8aHeXL+uvsr\n2JhbdlTHiAX36/ejJcJdg8H0WP0wS5cDAkljEuGZdfeQTAOeBeBXNlmZ9hv4Nf+8\nAws9FwTqk9g6+0fbU1CS3FirP864XF0TFmF/4ER8uqPK1ASEn+pN/EMY1B3WO8/l\nliD+Umt1rQKBgD0B4Kei9f3F0XxVf84VFs9eQGS1AsR3OwllrXiu54Hy2f+ogVgZ\n7hGOqqh7xMDT7yKhcB0pRW6LiiUOP6+dtqjI9Ta1CxvmROJIKkdLvyckJzmk1y4q\n2gMgVyUwkSyT2j7oIb8hfbpoxuFc3xY8exiTHgjwK3NZOf7kvBzZy0GRAoGAZt4+\ncRpSZ4xygD68pbE23n5CZzs7DOpbSufKT+Yw0fSXn9f+5QEsENHNlxQpznF94uYq\nU4wIrMKQM/4o/KdrOAXrmzEIlGYz+VdvuFzQYff6O2mGZbPreu3jdkqt4h3Vv5Ad\n+rdOVoUQi/HvWC1+OpLOx5d1Chte5FwcyW/IHT0CgYALwYhV99yimlsm6RsuIiEH\nnsLKv+l+IzRnKLkrquAYMcuJnZZrIfeInYERPlmCyK0BC6+HGRIrlJF8/hB4h0pm\n6m5gQJ3+qyK/sp5Wiu/sgxZNTIVUOu2laSyOvEg4MKZd+E7bN9XBt3HxGtMYMQ95\nNITI+jPtF3NuPsw3vdwiNA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "ami-deploy-bot-659@api-5190189070690170425-724634.iam.gserviceaccount.com",
+  "client_id": "115235482194595713343",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ami-deploy-bot-659%40api-5190189070690170425-724634.iam.gserviceaccount.com"
+}

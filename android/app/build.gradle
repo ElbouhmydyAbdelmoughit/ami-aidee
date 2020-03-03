@@ -1,4 +1,7 @@
-apply plugin: "com.android.application"
+plugins {
+    id 'com.android.application'
+    id 'com.github.triplet.play' version '2.6.2'
+}
 apply plugin: 'io.fabric'
 import com.android.build.OutputFile
 
@@ -131,8 +134,8 @@ android {
         applicationId "com.amiaide"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 11
-        versionName "1.0-alpha.2"
+        versionCode 14
+        versionName "1.3"
     }
     splits {
         abi {
@@ -247,6 +250,12 @@ dependencies {
 task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.compile
     into 'libs'
+}
+
+play {
+    track = 'production'
+    serviceAccountCredentials = file("api-5190189070690170425-724634-f5239e0723b1.json")
+    defaultToAppBundles = true
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
