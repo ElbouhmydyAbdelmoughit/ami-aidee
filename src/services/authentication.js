@@ -21,6 +21,7 @@ const queries = {
       phone
       lastname
       firstname
+      surname
       email
     }
     permission {

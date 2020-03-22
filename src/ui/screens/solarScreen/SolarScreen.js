@@ -41,9 +41,13 @@ notifierAdd({
 const BOLD = text => <Text style={{ fontWeight: "bold" }}>{text}</Text>
 const BR = <Text>{"\n"}</Text>
 
-const SolarScreen = ({ minuteTick, me, messagesRequest }) => {
-  const { username } = me
+const getDisplayName = me => {
+  const helpedUser = me.helped_users && me.helped_users[0]
+  return helpedUser.surname ? helpedUser.surname : helpedUser.firstname
+}
 
+const SolarScreen = ({ minuteTick, me, messagesRequest }) => {
+  const displayName = getDisplayName(me)
   const [fadeIn, setFadeIn] = useState(0)
   const [date, setDate] = useState(moment())
   const [hello, setHello] = useState({
@@ -81,7 +85,7 @@ const SolarScreen = ({ minuteTick, me, messagesRequest }) => {
       }
     }
     return {
-      title: `Bonjour toi`,
+      title: `Bonjour ${displayName}`,
       content: (
         <Text>
           nous sommes le {BR} {BOLD(day)} {BR}
