@@ -1,12 +1,11 @@
-import { methods, query, mutation } from '../utils';
-import { service, authenticatedService } from './middleware';
+import { methods, query, mutation } from "../utils"
+import { service, authenticatedService } from "./middleware"
 
-const {GET} = methods;
+const { GET } = methods
 /**
  * REST ROUTES
  */
-const routes = {
-};
+const routes = {}
 
 /**
  * GRAPHQL QUERIES
@@ -18,13 +17,14 @@ const queries = {
     lastname
     email
     phone
+    surname
     updated_at
   }`,
   count: () => ` helped_users_aggregate {
     aggregate {
       count
     }
-  }`
+  }`,
 }
 
 /**
@@ -85,8 +85,8 @@ const mutations = {
  * SERVICES
  */
 export default {
-  users: ({limit, offset}) => query(queries.users(limit, offset)),
+  users: ({ limit, offset }) => query(queries.users(limit, offset)),
   createUser: user => mutation(mutations.createUser(user)),
-  modifyUser: ({id, user}) => mutation(mutations.modifyUser(id, user)),
+  modifyUser: ({ id, user }) => mutation(mutations.modifyUser(id, user)),
   deleteUser: id => mutation(mutations.deleteUser(id)),
-};
+}
