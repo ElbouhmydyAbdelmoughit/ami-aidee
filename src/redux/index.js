@@ -22,8 +22,9 @@ const reducers = {
   auxiliary: resettable(AuxiliaryReducers),
   address: resettable(AddressReducers),
   message: resettable(MessageReducers),
+  register: resettable(RegisterReducers),
   snackBar: SnackReducers,
-};
+}
 
 export const rootSaga = [
   ...AuthSagas,
@@ -32,6 +33,7 @@ export const rootSaga = [
   ...AuxiliarySagas,
   ...AddressSagas,
   ...MessageSagas,
-];
+  ...RegisterSagas,
+]
 
 export default reducers

@@ -18,6 +18,7 @@ import {
   LoginScreen,
   HomeScreen,
   SolarScreen,
+  RegisterScreen,
   SleepScreen,
 } from "./src/ui/screens"
 import StackViewStyleInterpolator from "react-navigation-stack"
@@ -37,12 +38,15 @@ export default () => (
           component={SplashScreen}
           type={ActionConst.RESET}
         />
-        <Scene
-          key="login"
-          hideNavBar
-          component={LoginScreen}
-          type={ActionConst.RESET}
-        />
+        <Scene key="login" type={ActionConst.RESET}>
+          <Scene key="login" hideNavBar component={LoginScreen} initial />
+          <Scene
+            key="register"
+            path="/register/:step"
+            hideNavBar
+            component={RegisterScreen}
+          />
+        </Scene>
         <Scene key="sleep" component={SleepScreen} type={ActionConst.RESET} />
 
         <Stack key="root" type={ActionConst.REPLACE}>
