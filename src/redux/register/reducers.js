@@ -1,5 +1,4 @@
 import { createReducer } from "reduxsauce"
-import { levelColor } from "../../ui/components/snackBar/levelColor"
 import { types } from "./actions"
 
 const initialState = {
