@@ -4,7 +4,7 @@ import SolarScreen from "./SolarScreen"
 
 import { MessageActions } from "src/redux/message"
 import { TimerSelectors } from "src/redux/timer"
-import { UserActions } from "src/redux/user"
+import { HelpedUserActions } from "src/redux/helpedUsers"
 
 const getDisplayName = state => {
   const me = state.auth.user
@@ -30,7 +30,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   messagesRequest: filters => dispatch(MessageActions.messagesRequest(filters)),
-  helpedUserRequest: id => dispatch(UserActions.usersRequest({ id })),
+  helpedUserRequest: id => dispatch(HelpedUserActions.usersRequest({ id })),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SolarScreen)
