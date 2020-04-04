@@ -23,6 +23,8 @@ const queries = {
       firstname
       surname
       email
+      status
+      created_at
     }
     permission {
       id

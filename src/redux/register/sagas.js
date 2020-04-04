@@ -2,11 +2,11 @@ import { delay } from "redux-saga"
 import { takeLatest, put, select, call } from "redux-saga/effects"
 import actions, { types } from "./actions"
 import { LoaderActions } from "../loader"
-import { UsersService } from "src/services"
+import { UsersService, HelpedUsersService } from "src/services"
 import { SnackActions } from "../snackBar"
+import { AuthActions } from "../auth"
 
 function* userCreateOnError(error) {
-  yield put(LoaderActions.loaded())
   if (
     error &&
     error.response &&
@@ -26,15 +26,31 @@ function* registerRequest() {
 
   console.log(userToRegister)
   yield put(LoaderActions.loading())
-  const [userCreateError, userResponse] = yield call(
-    UsersService.createUser,
-    userToRegister
-  )
-  if (userCreateError) {
-    yield call(userCreateOnError, userCreateError)
-    return
+  try {
+    const [userCreateError, userResponse] = yield call(
+      UsersService.createUser,
+      userToRegister
+    )
+    if (userCreateError) {
+      yield call(userCreateOnError, userCreateError)
+      return
+    }
+    const [error, response] = yield call(HelpedUsersService.createUser, {
+      ...userToRegister,
+      user_id: userResponse.data.id,
+    })
+    console.log(error)
+    if (error) {
+      console.log("impossible")
+      return
+    }
+    yield put(SnackActions.displayInfo("Votre compte a été créé"))
+  } finally {
+    yield put(LoaderActions.loaded())
   }
-  console.log("hihi")
+  yield put(
+    AuthActions.loginRequest(userToRegister.email, userToRegister.password)
+  )
 }
 
 export default [takeLatest(types.REGISTER_REQUEST, registerRequest)]

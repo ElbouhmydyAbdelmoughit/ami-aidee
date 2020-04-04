@@ -1,5 +1,5 @@
 import { methods, query, mutation } from "../utils"
-import { service, authenticatedService } from "./middleware"
+import { service, authenticatedQuery } from "./middleware"
 
 const { GET } = methods
 /**
@@ -11,12 +11,17 @@ const routes = {}
  * GRAPHQL QUERIES
  */
 const queries = {
-  users: (limit, offset) => `helped_users {
+  users: ({ id }) => `helped_users(where: {
+    id: {
+      _eq: \"${id}\"
+    }}) {
     id
     firstname
     lastname
     email
     phone
+    status
+    created_at
     surname
     updated_at
   }`,
@@ -37,15 +42,9 @@ const mutations = {
       firstname: \"${user.firstname}\" 
       lastname: \"${user.lastname}\"
       phone: \"${user.phone}\"
+      user_id: "${user.user_id}"
     }) {
-      returning {
-        id
-        firstname
-        lastname
-        email
-        phone
-        updated_at
-      }
+      affected_rows
     }
   }`,
   modifyUser: (id, user) => `mutation {
@@ -85,8 +84,12 @@ const mutations = {
  * SERVICES
  */
 export default {
-  users: ({ limit, offset }) => query(queries.users(limit, offset)),
-  createUser: user => mutation(mutations.createUser(user)),
+  users: filters =>
+    console.log(filters) || authenticatedQuery(queries.users(filters)),
+  createUser: user => {
+    const mutationQuery = mutations.createUser(user)
+    return mutation({ mutationString: mutationQuery })
+  },
   modifyUser: ({ id, user }) => mutation(mutations.modifyUser(id, user)),
   deleteUser: id => mutation(mutations.deleteUser(id)),
 }
