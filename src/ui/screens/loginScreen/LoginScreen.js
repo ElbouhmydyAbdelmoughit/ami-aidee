@@ -44,13 +44,9 @@ export default ({ loginRequest }) => {
         style={{ flex: 1 }}
       >
         <Content contentContainerStyle={styles.content}>
-          <H1 style={styles.title}>{"A.M.I"}</H1>
-          <Card style={{ width: "60%", marginTop: 80 }}>
+          <H2 style={styles.title}>{"A.M.I"}</H2>
+          <Card style={{ width: "60%", marginTop: 16 }}>
             <CardItem header style={styles.header}>
-              <Image
-                style={{ width: 50, height: 50 }}
-                source={require("src/assets/images/user.png")}
-              />
               <H3 style={styles.headerTitle}>Se connecter</H3>
             </CardItem>
             <CardItem body>
@@ -69,16 +65,10 @@ export default ({ loginRequest }) => {
 
 const styles = {
   title: {
+    marginTop: 16,
     color: "#fff",
     fontFamily: "Roboto",
-    fontSize: 80,
-    position: "absolute",
     textAlign: "center",
-    paddingTop: 50,
-    height: 80,
-    top: 25,
-    left: 0,
-    right: 0,
   },
 
   header: {

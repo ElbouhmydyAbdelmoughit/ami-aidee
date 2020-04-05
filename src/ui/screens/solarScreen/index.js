@@ -8,7 +8,7 @@ import { HelpedUserActions } from "src/redux/helpedUsers"
 
 const getDisplayName = state => {
   const me = state.auth.user
-  const helpedUser = me.helped_users && me.helped_users[0]
+  const helpedUser = (me && me.helped_users && me.helped_users[0]) || {}
   if (state.user.list[helpedUser.id]) {
     // this should be the info with fresher data
     // TODO: normalize the store so there is no more need for these types of conditional fetches
@@ -25,6 +25,11 @@ const mapStateToProps = state => {
     me: auth.user || {},
     minuteTick: TimerSelectors.getMinuteTick({ timer }),
     displayName: getDisplayName(state),
+    helpedUserId:
+      auth.user &&
+      auth.user.helped_users &&
+      auth.user.helped_users[0] &&
+      auth.user.helped_users[0].id,
   }
 }
 

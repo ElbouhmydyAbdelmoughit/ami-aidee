@@ -69,18 +69,14 @@ export default ({ style, form, onValidate }) => {
           value={password}
         />
       </Item>
-
-      <BR />
-
       <Button
         block
         disabled={!isFormValid()}
         onPress={validate}
-        style={{ borderRadius: 10 }}
+        style={{ borderRadius: 10, marginTop: 16 }}
       >
         <Text>Se connecter</Text>
       </Button>
-      <BR />
       <BR />
       <H3
         style={{

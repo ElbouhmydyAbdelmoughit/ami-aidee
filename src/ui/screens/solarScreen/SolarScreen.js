@@ -46,6 +46,7 @@ const SolarScreen = ({
   messagesRequest,
   helpedUserRequest,
   displayName,
+  helpedUserId,
 }) => {
   const [fadeIn, setFadeIn] = useState(0)
   const [date, setDate] = useState(moment())
@@ -58,9 +59,14 @@ const SolarScreen = ({
   useEffect(() => {
     //loop()
     setHelloText(date)
-    messagesRequest(me.helped_users[0].id)
-    helpedUserRequest(me.helped_users[0].id)
   }, [])
+
+  useEffect(() => {
+    if (helpedUserId) {
+      messagesRequest(helpedUserId)
+      helpedUserRequest(helpedUserId)
+    }
+  }, [helpedUserId])
 
   useEffect(() => {
     setHelloText(minuteTick)
@@ -121,7 +127,6 @@ const SolarScreen = ({
 
   const onPress = () => {
     const time = times(date)
-    console.log("ON PRESS")
     if (time == "NIGHT") {
       startBlinking()
     } else {

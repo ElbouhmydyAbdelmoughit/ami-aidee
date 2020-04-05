@@ -1,15 +1,15 @@
 import React, { useState } from "react"
-import { Form, Input, View, H2, Item, Button, Text, Icon } from "native-base"
+import { Form, Input, View, H3, Item, Button, Text, Icon } from "native-base"
 import { Actions } from "react-native-router-flux"
 
 const PhoneForm = ({ setRegisterUser }) => {
-  const [phone, setPhone] = useState("+123")
+  const [phone, setPhone] = useState("")
   const [errorText, setErrorText] = useState(undefined)
   return (
     <View style={{ width: "100%" }}>
-      <H2 style={{ marginTop: 16, marginBottom: 64, color: "#848484" }}>
+      <H3 style={{ marginBottom: 32, color: "#848484" }}>
         {errorText ? errorText : "Renseigner votre numéro de téléphone"}
-      </H2>
+      </H3>
       <Form>
         <Item
           regular

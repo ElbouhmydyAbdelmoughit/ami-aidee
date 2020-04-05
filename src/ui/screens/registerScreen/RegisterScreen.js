@@ -9,7 +9,6 @@ import {
   CardItem,
   Body,
   Title,
-  H1,
   H2,
   H3,
   Left,
@@ -45,8 +44,8 @@ const RegisterScreen = ({ loginRequest, step }) => {
         style={{ flex: 1 }}
       >
         <Content contentContainerStyle={styles.content}>
-          <H1 style={styles.title}>{"A.M.I"}</H1>
-          <Card style={{ width: "60%", marginTop: 80 }}>
+          <H2 style={styles.title}>{"A.M.I"}</H2>
+          <Card style={{ width: "60%", marginTop: 16 }}>
             <CardItem header style={styles.header}>
               <Icon name="account-plus" size={50} color={"#BBB"} />
               <H3 style={styles.headerTitle}>S'inscrire</H3>
@@ -63,16 +62,10 @@ const RegisterScreen = ({ loginRequest, step }) => {
 
 const styles = {
   title: {
+    marginTop: 16,
     color: "#fff",
     fontFamily: "Roboto",
-    fontSize: 80,
-    position: "absolute",
     textAlign: "center",
-    paddingTop: 50,
-    height: 80,
-    top: 25,
-    left: 0,
-    right: 0,
   },
 
   header: {

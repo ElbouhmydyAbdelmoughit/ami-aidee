@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Form, Input, View, H2, Item, Button, Text } from "native-base"
+import { Form, Input, View, H3, Item, Button, Text } from "native-base"
 import { Actions } from "react-native-router-flux"
 
 const PasswordForm = ({
@@ -7,14 +7,14 @@ const PasswordForm = ({
   registerUser,
   requestRegistration,
 }) => {
-  const [password, setPassword] = useState("abcdef")
+  const [password, setPassword] = useState("")
 
   const [errorText, setErrorText] = useState(undefined)
   return (
     <View style={{ width: "100%" }}>
-      <H2 style={{ marginTop: 16, marginBottom: 64, color: "#848484" }}>
+      <H3 style={{ marginBottom: 32, color: "#848484" }}>
         {errorText ? errorText : "Enfin, choisir un mot de passe sécurisé"}
-      </H2>
+      </H3>
       <Form>
         <Item
           regular

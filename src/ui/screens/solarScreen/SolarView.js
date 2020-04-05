@@ -36,7 +36,6 @@ import Svg, {
 } from "react-native-svg"
 
 const SolarView = ({ onPress, date, solarIcon, moonIcon, times }) => {
-  console.log("SOLARVIEW")
   const [points, setPoints] = useState([])
   const [ellipseSize, setEllipseSize] = useState({
     width: 0,
@@ -56,7 +55,6 @@ const SolarView = ({ onPress, date, solarIcon, moonIcon, times }) => {
 
     const degree = times !== "NIGHT" ? solarDegree(date) : moonDegree(date)
     const point = pointForAngle(degree)
-    console.log("pointForAngle", point)
 
     const xCenter = ellipseSize.width // 50 / 100
     const yCenter = (ellipseSize.height * 70) / 100
@@ -66,9 +64,6 @@ const SolarView = ({ onPress, date, solarIcon, moonIcon, times }) => {
     //y: 870.8098158189582
     const x = point.x - sunWidth / 2
     const y = point.y - sunHeight / 2
-    console.log(
-      `SolarView.onLayout: sunWidth ${sunWidth}, sunHeight ${sunHeight}`
-    )
 
     return {
       x: x,
@@ -78,7 +73,6 @@ const SolarView = ({ onPress, date, solarIcon, moonIcon, times }) => {
 
   const onLayout = event => {
     var { x, y, width, height } = event.nativeEvent.layout
-    console.log(`SolarView.onLayout: (${x} ; ${y}) | (${width} ; ${height})`)
 
     setEllipseSize({
       width: width,
@@ -90,10 +84,7 @@ const SolarView = ({ onPress, date, solarIcon, moonIcon, times }) => {
     const rx = (width * 50) / 100 //"50%"
     const ry = (height * 70) / 100 //"70%"
 
-    console.log((width * 50) / 100)
-    console.log((height * 70) / 100)
     const points = getBorderPoints(cx, cy, rx, ry)
-    console.log(points)
     setPoints(points)
     //setSunPos()
   }
@@ -113,8 +104,6 @@ const SolarView = ({ onPress, date, solarIcon, moonIcon, times }) => {
     let points = []
     var angleStep = 0.05,
       angle = angleStep
-    //ctx.moveTo(cx + rx, cy);                   // start at angle 0
-    //console.log(angle)
     while (angle < Math.PI * 2) {
       points.push({
         x: cx + rx * Math.cos(angle),
@@ -123,7 +112,6 @@ const SolarView = ({ onPress, date, solarIcon, moonIcon, times }) => {
       })
 
       angle += angleStep
-      //console.log(angle)
     }
     return points
   }

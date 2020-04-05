@@ -36,7 +36,7 @@ const AccountChecker = ({ helpedUser }) => {
     } else if (getIsAccountExpired(helpedUser)) {
       title = "Compte expiré"
       firstText =
-        "Vous avez dépassé les 30 jours d'essai gratuit de l'application Aidee."
+        "Vous avez dépassé les 30 jours d'essai de l'application Aidee."
       secondText =
         "Veuillez contacter l'administrateur de l'application par email pour activer votre compte & continuer l'utilisation."
       setDialogVisible(true)
