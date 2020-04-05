@@ -9,6 +9,8 @@
 import React from "react"
 import AppRouter from "./AppRouter"
 import { StyleProvider, Root } from "native-base"
+import { Provider as PaperProvider } from "react-native-paper"
+
 import getTheme from "./native-base-theme/components"
 import material from "./native-base-theme/variables/material"
 
@@ -33,12 +35,14 @@ const App = () => {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <StyleProvider style={getTheme(material)}>
-          <>
-            <Loader />
-            <Root>
-              <AppRouter />
-            </Root>
-          </>
+          <PaperProvider>
+            <>
+              <Loader />
+              <Root>
+                <AppRouter />
+              </Root>
+            </>
+          </PaperProvider>
         </StyleProvider>
       </PersistGate>
     </Provider>

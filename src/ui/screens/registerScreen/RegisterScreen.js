@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Image } from "react-native"
+import { Image, View } from "react-native"
 import {
   Container,
   Header,
@@ -9,7 +9,6 @@ import {
   CardItem,
   Body,
   Title,
-  H1,
   H2,
   H3,
   Left,
@@ -17,14 +16,15 @@ import {
 } from "native-base"
 import LinearGradient from "react-native-linear-gradient"
 import { Col, Row, Grid } from "react-native-easy-grid"
+import Icon from "react-native-vector-icons/MaterialCommunityIcons"
 
-import { AuthentForm } from "src/ui/components"
+import { RegisterForm } from "src/ui/components"
 import AppStyles from "src/config/styles"
 
 import moment from "moment"
 import momentFR from "moment/locale/fr"
 
-export default ({ loginRequest }) => {
+const RegisterScreen = ({ loginRequest, step }) => {
   const notifDate = moment().format("YYYY-MM-dd hh:mm")
   console.log(notifDate)
 
@@ -47,14 +47,11 @@ export default ({ loginRequest }) => {
           <H2 style={styles.title}>{"A.M.I"}</H2>
           <Card style={{ width: "60%", marginTop: 16 }}>
             <CardItem header style={styles.header}>
-              <H3 style={styles.headerTitle}>Se connecter</H3>
+              <Icon name="account-plus" size={50} color={"#BBB"} />
+              <H3 style={styles.headerTitle}>S'inscrire</H3>
             </CardItem>
             <CardItem body>
-              <AuthentForm
-                style={{ flex: 1, paddingRight: 30, paddingLeft: 30 }}
-                form={{ username: "didier@gmail.com", password: "testounet" }}
-                onValidate={onValidate}
-              />
+              <RegisterForm step={step} />
             </CardItem>
           </Card>
         </Content>
@@ -90,3 +87,5 @@ const styles = {
     flexDirection: "column",
   },
 }
+
+export default RegisterScreen

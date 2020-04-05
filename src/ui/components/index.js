@@ -7,10 +7,12 @@
 //export { default as ReminderForm } from './ReminderForm/index';
 //export { default as ReminderList } from './ReminderList/index';
 //export { default as SnackBar } from './snackBar';
-export { default as Loader } from './loader';
-export { default as Timer } from './timer/Timer';
-export { default as AuthentForm } from './authentForm';
-export { default as BR } from './br'
-export { default as BOLD } from './br'
-export { default as CircleButton} from './circleButton'
-export { default as VideoView} from './videoView'
+export { default as Loader } from "./loader"
+export { default as Timer } from "./timer/Timer"
+export { default as AuthentForm } from "./authentForm"
+export { default as BR } from "./br"
+export { default as BOLD } from "./br"
+export { default as CircleButton } from "./circleButton"
+export { default as VideoView } from "./videoView"
+export { default as RegisterForm } from "./RegisterForm"
+export { default as SnackBar } from "./snackBar"

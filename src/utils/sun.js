@@ -56,10 +56,8 @@ const getTimes = now => {
   const dawn = moment(times.dawn)
   const solarNoon = moment(times.solarNoon)
   const dusk = moment(times.dusk)
-  console.log("nowHour", now.hour())
   const [night, nightEnd] = correctNightBounds(times.night, times.nightEnd, now)
-  console.log(times)
-  console.log("now", now.toString())
+
   return {
     dawn,
     solarNoon,
@@ -77,11 +75,6 @@ export const times = now => {
   const isDusk = now.isBetween(times.dusk, times.night)
   const isNight = now.isAfter(times.night)
 
-  console.log(`isDawn: ${isDawn}`)
-  console.log(`isSunNoon: ${isSunNoon}`)
-  console.log(`isDusk: ${isDawn}`)
-  console.log(`isNight: ${isNight}`)
-
   if (isDawn) return "DAWN"
   else if (isSunNoon) return "SUN"
   else if (isDusk) return "DUSK"
@@ -93,8 +86,6 @@ const getDegree = pos => {
   //: SunCalc.getMoonPosition(/*Date*/ now.toDate(), /*Number*/ 48.84605, /*Number*/  2.34515)
   var sunAzimuth = (pos.azimuth * 180) / Math.PI
   var sunAltitude = (pos.altitude * 180) / Math.PI
-  console.log(`azimuth: ${sunAzimuth}`)
-  console.log(`altitude: ${sunAltitude}`)
 
   var degree = 0.0
   Math.asin
@@ -104,18 +95,12 @@ const getDegree = pos => {
   } else {
     degree = sunAltitude + 200
   }
-  console.log(`degree: ${degree}`)
   return degree
 }
 
 const getPercent = (timeStart, timeEnd, timeBetween) => {
-  console.log("timeEnd", timeEnd.toString())
-  console.log("timeStart", timeStart.toString())
-  console.log("timeBetween", timeBetween.toString())
   const totalDuration = timeEnd.diff(timeStart)
   const passedDuration = timeBetween.diff(timeStart)
-  console.log("totalDuration", totalDuration)
-  console.log("passedDuration", passedDuration)
   let percent = passedDuration / totalDuration
   if (percent < 0) {
     percent = 0
@@ -132,11 +117,9 @@ export const solarDegree = now => {
   const times = getTimes(now)
   if (now.isBefore(times.solarNoon)) {
     const percent = getPercent(times.sunrise, times.solarNoon, now)
-    console.log("percent", percent)
     return percent * 90 + ELLIPSE_START_DEGREE
   }
   const percent = getPercent(times.solarNoon, times.sunset, now)
-  console.log("percent", percent)
   return percent * 90 + ELLIPSE_PEAK_DEGREE
 }
 
@@ -149,7 +132,6 @@ const MOON_DEGREE_UPPER_LIMIT = 345
 export const moonDegree = now => {
   const times = getTimes(now)
   let percent = getPercent(times.night, times.nightEnd, now)
-  console.log("percent", percent)
   let result = percent * 180 + ELLIPSE_START_DEGREE
   if (result > MOON_DEGREE_UPPER_LIMIT) {
     result = MOON_DEGREE_UPPER_LIMIT

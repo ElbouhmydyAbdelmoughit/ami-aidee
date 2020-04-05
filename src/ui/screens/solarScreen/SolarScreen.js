@@ -18,9 +18,8 @@ import { Env } from "src/utils/env"
 import SolarView from "./SolarView"
 import { Actions } from "react-native-router-flux"
 import LinearGradient from "react-native-linear-gradient"
-
 import { Timer } from "src/ui/components"
-
+import AccountChecker from "src/ui/business/AccountChecker"
 import moment from "moment"
 import momentFR from "moment/locale/fr"
 import { times } from "src/utils"
@@ -47,6 +46,7 @@ const SolarScreen = ({
   messagesRequest,
   helpedUserRequest,
   displayName,
+  helpedUserId,
 }) => {
   const [fadeIn, setFadeIn] = useState(0)
   const [date, setDate] = useState(moment())
@@ -59,9 +59,14 @@ const SolarScreen = ({
   useEffect(() => {
     //loop()
     setHelloText(date)
-    messagesRequest(me.helped_users[0].id)
-    helpedUserRequest(me.helped_users[0].id)
   }, [])
+
+  useEffect(() => {
+    if (helpedUserId) {
+      messagesRequest(helpedUserId)
+      helpedUserRequest(helpedUserId)
+    }
+  }, [helpedUserId])
 
   useEffect(() => {
     setHelloText(minuteTick)
@@ -122,7 +127,6 @@ const SolarScreen = ({
 
   const onPress = () => {
     const time = times(date)
-    console.log("ON PRESS")
     if (time == "NIGHT") {
       startBlinking()
     } else {
@@ -168,6 +172,7 @@ const SolarScreen = ({
   return (
     <Container style={{ backgroundColor: material.brandPrimary }}>
       <Timer mode={"awake"} />
+      <AccountChecker />
       <LinearGradient
         start={{ x: 0.0, y: 0.0 }}
         end={{ x: 0.0, y: 1.0 }}
