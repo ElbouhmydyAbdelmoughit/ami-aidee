@@ -38,11 +38,11 @@ target 'AMIaide' do
 
   pod 'react-native-video', :path => '../node_modules/react-native-video'
 
-  pod 'appcenter', :path => '../node_modules/appcenter'
+  pod 'appcenter', :path => '../node_modules/appcenter/ios'
 
-  pod 'appcenter-analytics', :path => '../node_modules/appcenter-analytics'
+  pod 'appcenter-analytics', :path => '../node_modules/appcenter-analytics/ios'
 
-  pod 'appcenter-crashes', :path => '../node_modules/appcenter-crashes'
+  pod 'appcenter-crashes', :path => '../node_modules/appcenter-crashes/ios'
 
   target 'AMIaideTests' do
     inherit! :search_paths
