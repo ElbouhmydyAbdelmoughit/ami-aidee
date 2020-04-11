@@ -1,6 +1,12 @@
 /**
  * @format
  */
+import * as Sentry from "@sentry/react-native"
+
+Sentry.init({
+  dsn:
+    "https://bc5993540c3f493bb71bf2430e3640fc@o374533.ingest.sentry.io/5197127",
+})
 
 import { AppRegistry } from "react-native"
 import App from "./App"
