@@ -1,32 +1,19 @@
-import React, { useState, useEffect } from "react"
-import { Text, View } from "react-native"
-import {
-  Container,
-  Header,
-  Content,
-  Title,
-  Card,
-  CardItem,
-  H1,
-  H2,
-  H3,
-} from "native-base"
-import { Col, Row, Grid } from "react-native-easy-grid"
-import material from "AMIaide/native-base-theme/variables/material"
+import React, { useState, useEffect } from 'react'
+import { Text, View } from 'react-native'
+import { Container, H1 } from 'native-base'
+import material from 'AMIaide/native-base-theme/variables/material'
 
-import { Env } from "src/utils/env"
-import SolarView from "./SolarView"
-import { Actions } from "react-native-router-flux"
-import LinearGradient from "react-native-linear-gradient"
-import { Timer } from "src/ui/components"
-import AccountChecker from "src/ui/business/AccountChecker"
-import moment from "moment"
-import momentFR from "moment/locale/fr"
-import { times } from "src/utils"
-import TimerInitiator from "src/ui/business/TimerInitiator"
-import MessageAlertManager from "src/ui/business/MessageAlertManager"
+import { Actions } from 'react-native-router-flux'
+import LinearGradient from 'react-native-linear-gradient'
+import { Timer } from 'src/ui/components'
+import AccountChecker from 'src/ui/business/AccountChecker'
+import moment from 'moment'
+import momentFR from 'moment/locale/fr'
+import { times } from 'src/utils'
+import TimerInitiator from 'src/ui/business/TimerInitiator'
+import MessageAlertManager from 'src/ui/business/MessageAlertManager'
 
-import { notifierAuthorization, notifierAdd } from "src/utils"
+import SolarView from './SolarView'
 // notifierAuthorization()
 /*
 var fr = moment().locale("fr", momentFR)
@@ -39,12 +26,43 @@ notifierAdd({
 })
 */
 
-const BOLD = text => <Text style={{ fontWeight: "bold" }}>{text}</Text>
-const BR = <Text>{"\n"}</Text>
+const BOLD = text => <Text style={{ fontWeight: 'bold' }}>{text}</Text>
+const BR = <Text>{'\n'}</Text>
+
+/**
+ * Styles
+ */
+const styles = {
+  title: {
+    position: 'absolute',
+    top: 100,
+    left: 0,
+    right: 0,
+    textAlign: 'center',
+  },
+
+  content: {
+    position: 'absolute',
+    top: 200,
+    left: 230,
+    right: 230,
+    bottom: 0,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  footer: {
+    position: 'absolute',
+    left: 230,
+    right: 230,
+    bottom: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+}
 
 const SolarScreen = ({
   minuteTick,
-  me,
   messagesRequest,
   helpedUserRequest,
   displayName,
@@ -53,10 +71,44 @@ const SolarScreen = ({
   const [fadeIn, setFadeIn] = useState(0)
   const [date, setDate] = useState(moment())
   const [hello, setHello] = useState({
-    title: "Bonjour",
-    content: "",
-    footer: "",
+    title: 'Bonjour',
+    content: '',
+    footer: '',
   })
+
+  const getMessage = dateInput => {
+    const time = times(dateInput)
+    const fr = dateInput.locale('fr', momentFR)
+    const day = fr.format('dddd Do MMMM YYYY')
+    const hour = fr.format('HH:mm')
+    if (time === 'NIGHT') {
+      return {
+        title: "C'est la nuit",
+        content: (
+          <Text>
+            {BR}il est {BOLD(hour)}
+            {BR}Dormir est nécessaire pour que ton cerveau répare ton corps.
+          </Text>
+        ),
+        footer: <Text>Retourne dans ton lit</Text>,
+      }
+    }
+    return {
+      title: `Bonjour ${displayName}`,
+      content: (
+        <Text>
+          nous sommes le {BR} {BOLD(day)} {BR}
+          {BR} il est {BR}
+          {BOLD(hour)}{' '}
+        </Text>
+      ),
+    }
+  }
+
+  const setHelloText = dateInput => {
+    const msg = getMessage(dateInput)
+    setHello(msg)
+  }
 
   useEffect(() => {
     //loop()
@@ -75,49 +127,15 @@ const SolarScreen = ({
     setDate(minuteTick)
   }, [minuteTick])
 
-  const getMessage = date => {
-    const time = times(date)
-    var fr = date.locale("fr", momentFR)
-    const day = fr.format("dddd Do MMMM YYYY")
-    const hour = fr.format("HH:mm")
-    if (time == "NIGHT") {
-      return {
-        title: `C'est la nuit`,
-        content: (
-          <Text>
-            {BR}il est {BOLD(hour)}
-            {BR}Dormir est nécessaire pour que ton cerveau répare ton corps.
-          </Text>
-        ),
-        footer: <Text>Retourne dans ton lit</Text>,
-      }
-    }
-    return {
-      title: `Bonjour ${displayName}`,
-      content: (
-        <Text>
-          nous sommes le {BR} {BOLD(day)} {BR}
-          {BR} il est {BR}
-          {BOLD(hour)}{" "}
-        </Text>
-      ),
-    }
-  }
-
-  const setHelloText = date => {
-    const msg = getMessage(date)
-    setHello(msg)
-  }
-
   const startBlinking = () => {
     let opacity = 0
     let add = true
     const interval = setInterval(() => {
       setFadeIn(opacity)
-      if (add == true) opacity += 0.1
-      else opacity = opacity - 0.1
+      if (add) opacity += 0.1
+      else opacity -= 0.1
 
-      add = !(opacity == 1)
+      add = !(opacity === 1)
     }, 100)
 
     const tst = setTimeout(() => {
@@ -129,38 +147,38 @@ const SolarScreen = ({
 
   const onPress = () => {
     const time = times(date)
-    if (time == "NIGHT") {
+    if (time === 'NIGHT') {
       startBlinking()
     } else {
       Actions.home()
     }
   }
 
-  const dawnColor = ["#BEDDFC", "#EFEEF3", "#FEF7E4", "#FDF2D6"]
-  const sunColor = ["#3EA2E8", "#44BCFC", "#87CFFF", "#BEDDFC"]
-  const duskColor = ["#C6D9BC", "#DBCFA5", "#E7BF8E", "#DCA27F"]
-  const nightColor = ["#012D5B", "#19689F", "#4F94BB", "#A7BCBC"]
+  const dawnColor = ['#BEDDFC', '#EFEEF3', '#FEF7E4', '#FDF2D6']
+  const sunColor = ['#3EA2E8', '#44BCFC', '#87CFFF', '#BEDDFC']
+  const duskColor = ['#C6D9BC', '#DBCFA5', '#E7BF8E', '#DCA27F']
+  const nightColor = ['#012D5B', '#19689F', '#4F94BB', '#A7BCBC']
   let color = []
   const time = times(date)
 
-  let solarIcon = require("src/assets/images/sun.png")
-  let moonIcon = require("src/assets/images/moon.png")
+  let solarIcon = require('src/assets/images/sun.png')
+  let moonIcon = require('src/assets/images/moon.png')
   switch (time) {
-    case "DAWN":
+    case 'DAWN':
       color = dawnColor
-      solarIcon = require("src/assets/images/sun_dawn.png")
+      solarIcon = require('src/assets/images/sun_dawn.png')
       moonIcon = null
       break
-    case "SUN":
+    case 'SUN':
       color = sunColor
       moonIcon = null
       break
-    case "DUSK":
+    case 'DUSK':
       color = duskColor
-      solarIcon = require("src/assets/images/sun_dusk.png")
+      solarIcon = require('src/assets/images/sun_dusk.png')
       moonIcon = null
       break
-    case "NIGHT":
+    case 'NIGHT':
       color = nightColor
       solarIcon = null
       break
@@ -169,13 +187,13 @@ const SolarScreen = ({
       break
   }
 
-  const textColor = time == "DAWN" ? "#848484" : "#fff"
+  const textColor = time == 'DAWN' ? '#848484' : '#fff'
 
   return (
     <Container style={{ backgroundColor: material.brandPrimary }}>
       <TimerInitiator />
       <MessageAlertManager />
-      <Timer mode={"awake"} />
+      <Timer mode={'awake'} />
       <AccountChecker />
       <LinearGradient
         start={{ x: 0.0, y: 0.0 }}
@@ -187,12 +205,12 @@ const SolarScreen = ({
           {BOLD(hello.title)}
         </H1>
         <View style={styles.content}>
-          <H1 style={{ textAlign: "center", color: textColor }}>
+          <H1 style={{ textAlign: 'center', color: textColor }}>
             {hello.content}
           </H1>
           {BR}
           <H1
-            style={{ textAlign: "center", color: textColor, opacity: fadeIn }}
+            style={{ textAlign: 'center', color: textColor, opacity: fadeIn }}
           >
             {hello.footer}
           </H1>
@@ -208,36 +226,4 @@ const SolarScreen = ({
     </Container>
   )
 }
-/**
- * Styles
- */
-const styles = {
-  title: {
-    position: "absolute",
-    top: 100,
-    left: 0,
-    right: 0,
-    textAlign: "center",
-  },
-
-  content: {
-    position: "absolute",
-    top: 200,
-    left: 230,
-    right: 230,
-    bottom: 0,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-
-  footer: {
-    position: "absolute",
-    left: 230,
-    right: 230,
-    bottom: 20,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-}
-
 export default SolarScreen

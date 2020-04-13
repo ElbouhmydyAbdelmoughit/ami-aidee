@@ -1,39 +1,14 @@
-import React, { useState, useEffect } from "react"
-import {
-  Container,
-  Header,
-  Content,
-  Title,
-  Card,
-  CardItem,
-  H1,
-  H2,
-  H3,
-} from "native-base"
-import { Col, Row, Grid } from "react-native-easy-grid"
+import React, { useState } from 'react'
 
-import material from "AMIaide/native-base-theme/variables/material"
-import { Env } from "src/utils/env"
-import { solarDegree, moonDegree, times } from "src/utils"
+import { solarDegree, moonDegree } from 'src/utils'
 import Svg, {
-  Circle,
   Ellipse,
-  G,
   LinearGradient,
-  RadialGradient,
-  Line,
-  Path,
-  Polygon,
-  Polyline,
   Rect,
   Image,
-  Symbol,
-  Text,
-  Use,
   Defs,
   Stop,
-  Pattern,
-} from "react-native-svg"
+} from 'react-native-svg'
 
 const SolarView = ({ onPress, date, solarIcon, moonIcon, times }) => {
   const [points, setPoints] = useState([])
@@ -41,23 +16,29 @@ const SolarView = ({ onPress, date, solarIcon, moonIcon, times }) => {
     width: 0,
     height: 0,
   })
-  const [point, setPoint] = useState({
-    x: 0,
-    y: 0,
-  })
 
-  const positionForDate = (date, isSolar) => {
-    if (points.length == 0)
+  const positionForDate = dateInput => {
+    if (points.length === 0) {
       return {
         x: 0,
         y: 0,
       }
+    }
 
-    const degree = times !== "NIGHT" ? solarDegree(date) : moonDegree(date)
+    const pointForAngle = angle => {
+      return points.reduce((prev, curr) => {
+        if (prev.angle === angle) return prev
+        if (curr.angle === angle) return curr
+
+        return Math.abs(curr.angle - angle) < Math.abs(prev.angle - angle)
+          ? curr
+          : prev
+      })
+    }
+    const degree =
+      times !== 'NIGHT' ? solarDegree(dateInput) : moonDegree(dateInput)
     const point = pointForAngle(degree)
 
-    const xCenter = ellipseSize.width // 50 / 100
-    const yCenter = (ellipseSize.height * 70) / 100
     const sunWidth = (ellipseSize.width * 20) / 100
     const sunHeight = (ellipseSize.height * 20) / 100
 
@@ -66,46 +47,17 @@ const SolarView = ({ onPress, date, solarIcon, moonIcon, times }) => {
     const y = point.y - sunHeight / 2
 
     return {
-      x: x,
-      y: y,
+      x,
+      y,
     }
   }
 
-  const onLayout = event => {
-    var { x, y, width, height } = event.nativeEvent.layout
-
-    setEllipseSize({
-      width: width,
-      height: height,
-    })
-
-    const cx = (width * 50) / 100 // "50%"
-    const cy = height //"100%"
-    const rx = (width * 50) / 100 //"50%"
-    const ry = (height * 70) / 100 //"70%"
-
-    const points = getBorderPoints(cx, cy, rx, ry)
-    setPoints(points)
-    //setSunPos()
-  }
-
-  const pointForAngle = angle => {
-    return points.reduce(function(prev, curr) {
-      if (prev.angle == angle) return prev
-      else if (curr.angle == angle) return curr
-      else
-        return Math.abs(curr.angle - angle) < Math.abs(prev.angle - angle)
-          ? curr
-          : prev
-    })
-  }
-
   const getBorderPoints = (cx, cy, rx, ry) => {
-    let points = []
-    var angleStep = 0.05,
-      angle = angleStep
+    const borderPoints = []
+    const angleStep = 0.05
+    let angle = angleStep
     while (angle < Math.PI * 2) {
-      points.push({
+      borderPoints.push({
         x: cx + rx * Math.cos(angle),
         y: cy + ry * Math.sin(angle),
         angle: Math.ceil((angle * 180) / Math.PI),
@@ -113,12 +65,30 @@ const SolarView = ({ onPress, date, solarIcon, moonIcon, times }) => {
 
       angle += angleStep
     }
-    return points
+    return borderPoints
+  }
+
+  const onLayout = event => {
+    const { width, height } = event.nativeEvent.layout
+
+    setEllipseSize({
+      width,
+      height,
+    })
+
+    const cx = (width * 50) / 100 // "50%"
+    const cy = height //"100%"
+    const rx = (width * 50) / 100 //"50%"
+    const ry = (height * 70) / 100 //"70%"
+
+    const borderPoints = getBorderPoints(cx, cy, rx, ry)
+    setPoints(borderPoints)
+    //setSunPos()
   }
 
   const position = positionForDate(date)
 
-  const color = ["#FFFFFF00", "#FFFFFF", "#FFFFFF00"]
+  const color = ['#FFFFFF00', '#FFFFFF', '#FFFFFF00']
   return (
     <Svg onLayout={onLayout} height="100%" width="100%">
       <Defs>
