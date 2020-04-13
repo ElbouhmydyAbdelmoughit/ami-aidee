@@ -1,5 +1,5 @@
-import { methods, query, mutation } from "../utils"
-import { service, authenticatedQuery } from "./middleware"
+import { methods, query, mutation } from '../utils'
+import { service, authenticatedQuery } from './middleware'
 
 const { GET } = methods
 /**
@@ -21,6 +21,9 @@ const queries = {
     email
     phone
     status
+    bedtime_hour
+    waking_hour
+    sun_culmination_hour
     created_at
     surname
     updated_at

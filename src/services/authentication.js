@@ -1,9 +1,9 @@
-import { methods, loginFetchMock, fetch } from "../utils"
-import { service, authenticatedQuery } from "./middleware"
+import { methods, loginFetchMock, fetch } from '../utils'
+import { service, authenticatedQuery } from './middleware'
 
 const { POST } = methods
 const routes = {
-  login: () => "api/login",
+  login: () => 'api/login',
 }
 
 /**
@@ -23,6 +23,9 @@ const queries = {
       firstname
       surname
       email
+      waking_hour
+      bedtime_hour
+      sun_culmination_hour
       status
       created_at
     }

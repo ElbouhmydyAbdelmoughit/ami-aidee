@@ -1,5 +1,5 @@
-import { methods, query, mutation } from "../utils"
-import { service, authenticatedService, authenticatedQuery } from "./middleware"
+import { methods, query, mutation } from '../utils'
+import { service, authenticatedService, authenticatedQuery } from './middleware'
 
 const { GET } = methods
 /**
@@ -27,6 +27,7 @@ const queries = {
     created_at
     diffusion_start_date
     diffusion_end_date
+    prediffusion_before_mn
     picture_url
     video_url
     auxiliary {
@@ -47,6 +48,7 @@ const queries = {
     created_at
     diffusion_start_date
     diffusion_end_date
+    prediffusion_before_mn
     picture_url
     video_url
     auxiliary {

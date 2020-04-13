@@ -1,20 +1,27 @@
-import { connect } from "react-redux"
-import { getTranslate } from "react-localize-redux"
-import SolarScreen from "./SolarScreen"
+import { connect } from 'react-redux'
+import { getTranslate } from 'react-localize-redux'
+import SolarScreen from './SolarScreen'
 
-import { MessageActions } from "src/redux/message"
-import { TimerSelectors } from "src/redux/timer"
-import { HelpedUserActions } from "src/redux/helpedUsers"
+import { MessageActions } from 'src/redux/message'
+import { TimerSelectors } from 'src/redux/timer'
+import { HelpedUserActions } from 'src/redux/helpedUsers'
+
+const getHelpedUser = state => {
+  const me = state.auth.user
+
+  const helpedUser = me && me.helped_users && me.helped_users[0]
+  if (!helpedUser) {
+    // this should be the info with fresher data
+    // TODO: normalize the store so there is no more need for these types of conditional data retrieval
+    return undefined
+  }
+  return state.user.list[helpedUser.id] || helpedUser
+}
 
 const getDisplayName = state => {
-  const me = state.auth.user
-  const helpedUser = (me && me.helped_users && me.helped_users[0]) || {}
-  if (state.user.list[helpedUser.id]) {
-    // this should be the info with fresher data
-    // TODO: normalize the store so there is no more need for these types of conditional fetches
-    return state.user.list[helpedUser.id].surname
-      ? state.user.list[helpedUser.id].surname
-      : state.user.list[helpedUser.id].firstname
+  const helpedUser = getHelpedUser(state)
+  if (!helpedUser) {
+    return ''
   }
   return helpedUser.surname ? helpedUser.surname : helpedUser.firstname
 }
@@ -25,6 +32,7 @@ const mapStateToProps = state => {
     me: auth.user || {},
     minuteTick: TimerSelectors.getMinuteTick({ timer }),
     displayName: getDisplayName(state),
+    helpedUser: getHelpedUser(state),
     helpedUserId:
       auth.user &&
       auth.user.helped_users &&

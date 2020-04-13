@@ -23,6 +23,8 @@ import AccountChecker from "src/ui/business/AccountChecker"
 import moment from "moment"
 import momentFR from "moment/locale/fr"
 import { times } from "src/utils"
+import TimerInitiator from "src/ui/business/TimerInitiator"
+import MessageAlertManager from "src/ui/business/MessageAlertManager"
 
 import { notifierAuthorization, notifierAdd } from "src/utils"
 // notifierAuthorization()
@@ -171,6 +173,8 @@ const SolarScreen = ({
 
   return (
     <Container style={{ backgroundColor: material.brandPrimary }}>
+      <TimerInitiator />
+      <MessageAlertManager />
       <Timer mode={"awake"} />
       <AccountChecker />
       <LinearGradient

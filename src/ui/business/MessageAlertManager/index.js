@@ -1,3 +1,3 @@
-import MessageAlertManager from "./MessageAlertManager"
+import MessageAlertManager from './MessageAlertManager'
 
 export default MessageAlertManager

@@ -1,17 +1,23 @@
 //import { addTranslationForLanguage, initialize, localizeReducer } from 'react-localize-redux';
-import { applyMiddleware, combineReducers, compose, createStore } from "redux"
-import createSagaMiddleware from "redux-saga"
-import { loadState, saveState } from "src/utils/storage"
-import { languages, strings } from "../assets"
-import appReducers, { rootSaga } from "../redux"
-import { createLogger } from "redux-logger"
+import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
+import createSagaMiddleware from 'redux-saga'
+import { loadState, saveState } from 'src/utils/storage'
+import { languages, strings } from '../assets'
+import appReducers, { rootSaga } from '../redux'
+import { createLogger } from 'redux-logger'
 
-import { persistStore, persistReducer } from "redux-persist"
-import storage from "redux-persist/lib/storage"
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
 
 const persistConfig = {
-  key: "root",
+  key: 'root',
   storage,
+  blacklist: [
+    // In message there are "view" state like message_alerted,
+    // which is not ideal for persist
+    'message',
+    'user',
+  ],
 }
 
 const logger = createLogger({
@@ -29,7 +35,7 @@ const middleware = [
   applyMiddleware(logger),
   applyMiddleware(sagaMiddleware),
 ].concat(
-  process.env.NODE_ENV === "development"
+  process.env.NODE_ENV === 'development'
     ? [
         window.__REDUX_DEVTOOLS_EXTENSION__ &&
         window.__REDUX_DEVTOOLS_EXTENSION__()
@@ -79,11 +85,9 @@ store.subscribe(() => {
   saveState({ auth, user })
 })
 
-let persistor = persistStore(store)
-
-console.log(persistor)
+const persistor = persistStore(store)
 
 export default {
-  store: store,
-  persistor: persistor,
+  store,
+  persistor,
 }

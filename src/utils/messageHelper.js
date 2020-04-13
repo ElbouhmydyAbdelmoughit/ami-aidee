@@ -1,7 +1,7 @@
-import moment from "moment"
+import moment from 'moment'
 
 const getDateStrFromMessage = message => {
-  return `${message.diffusion_start_date.split("T")[0]}T${message.moment_time}`
+  return `${message.diffusion_start_date.split('T')[0]}T${message.moment_time}`
 }
 export const getClosestFutureDate = dates => {
   if (dates.length === 0) {
@@ -14,7 +14,7 @@ export const getClosestFutureDate = dates => {
     var currentDate = moment(date)
     if (
       currentDate.isAfter(moment()) &&
-      currentDate.diff(moment(), "days") <= minDiff
+      currentDate.diff(moment(), 'days') <= minDiff
     ) {
       break
     }
@@ -22,23 +22,7 @@ export const getClosestFutureDate = dates => {
   return currentDate
 }
 
-export const closestMessage = messages => {
-  const now = moment()
-
-  //let closest = Infinity;
-  let dates = messages.map(getDateStrFromMessage)
-
-  let date = getClosestFutureDate(dates)
-  console.log(date)
-  let index = dates.indexOf(date.format("YYYY-MM-DDTHH:mm:ss"))
-  console.log(index)
-  return messages[index]
-}
-
-/**
- * Duration before message time where user should be alerted
- */
-const REMINDER_DELAY_IN_MINUTES = 15
+const DEFAULT_PREDIFFUSION_BEFORE_IN_MIN = 15
 export const messageToAlert = (messages, alerted, minuteTick) => {
   if (!messages) {
     return undefined
@@ -47,21 +31,22 @@ export const messageToAlert = (messages, alerted, minuteTick) => {
   const now = minuteTick.second(0)
   const result = messagesList.find(message => {
     const messageDate = moment(getDateStrFromMessage(message))
-    const difference = messageDate.diff(now, "minutes")
+    const difference = messageDate.diff(now, 'minutes')
+    const prediffusionBefore =
+      message.prediffusion_before_mn || DEFAULT_PREDIFFUSION_BEFORE_IN_MIN
     return (
       difference > 0 &&
-      difference <= REMINDER_DELAY_IN_MINUTES &&
+      difference <= prediffusionBefore &&
       (!alerted || alerted.indexOf(message.id) === -1)
     )
   })
 
-  console.log("messageToAlert", result)
   return result
 }
 
 const isSameMinute = (moment1, moment2) => {
   return (
-    moment1.isSame(moment2, "days") &&
+    moment1.isSame(moment2, 'days') &&
     moment1.hour() === moment2.hour() &&
     moment1.minute() === moment2.minute()
   )
@@ -80,14 +65,21 @@ export const immediateMessage = (messages, alerted, minuteTick) => {
     )
   })
 
-  console.log("immediate message", result)
   return result
+}
+
+export const closestMessage = messages => {
+  const dates = messages.map(getDateStrFromMessage)
+
+  const date = getClosestFutureDate(dates)
+  const index = dates.indexOf(date.format('YYYY-MM-DDTHH:mm:ss'))
+  return messages[index]
 }
 
 export const sortMessage = (a, b) => {
   //2019-10-10T00:00:00
-  const aStr = `${a.diffusion_start_date.split("T")[0]}T${a.moment_time}`
-  const bStr = `${b.diffusion_start_date.split("T")[0]}T${b.moment_time}`
+  const aStr = `${a.diffusion_start_date.split('T')[0]}T${a.moment_time}`
+  const bStr = `${b.diffusion_start_date.split('T')[0]}T${b.moment_time}`
   const aDate = moment(aStr)
   const bDate = moment(bStr)
   return aDate.unix() - bDate.unix()
