@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createRef } from "react"
+import React, { useState, useEffect, createRef } from 'react'
 import {
   Container,
   Header,
@@ -17,23 +17,23 @@ import {
   CardItem,
   H1,
   Toast,
-} from "native-base"
-import { Col, Row, Grid } from "react-native-easy-grid"
-import { Actions } from "react-native-router-flux"
-import { TouchableWithoutFeedback } from "react-native"
+} from 'native-base'
+import { Col, Row, Grid } from 'react-native-easy-grid'
+import { Actions } from 'react-native-router-flux'
+import { TouchableWithoutFeedback } from 'react-native'
 
-import LinearGradient from "react-native-linear-gradient"
+import LinearGradient from 'react-native-linear-gradient'
 
-import { Env } from "src/utils/env"
-import { closestMessage, sortMessage } from "src/utils"
-import { Timer } from "src/ui/components"
+import { Env } from 'src/utils/env'
+import { closestMessage, sortMessage } from 'src/utils'
+import { Timer } from 'src/ui/components'
 
-import VideoCard from "./VideoCard"
-import MessageCard from "./MessageCard"
-import NavigateCard from "./NavigateCard"
-import PictureCard from "./PictureCard"
+import VideoCard from './VideoCard'
+import MessageCard from './MessageCard'
+import NavigateCard from './NavigateCard'
+import PictureCard from './PictureCard'
 
-import moment from "moment"
+import moment from 'moment'
 
 /**
  *
@@ -68,6 +68,7 @@ const HomeScreen = ({
       Toast.show({
         text: "Appuie sur l'écran pour revenir à la page d'accueil",
         buttonText: "D'accord",
+        duration: 6000,
       })
     }
   }, [])
@@ -121,16 +122,16 @@ const HomeScreen = ({
   if ((message.id == null || message.id == undefined) && messages.length > 0) {
     // setMessage(messages[0] || {})
   }
-  const videoURI = video_url ? `${Env.MEDIA_URL}/${video_url}` : ""
+  const videoURI = video_url ? `${Env.MEDIA_URL}/${video_url}` : ''
   console.log(video_url)
   console.log(videoURI)
   //{ uri: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" }
   const imageURI = picture_url ? { uri: `${Env.MEDIA_URL}/${picture_url}` } : {}
 
-  const color = ["#3FEDFF", "#8772FF"]
+  const color = ['#3FEDFF', '#8772FF']
   return (
     <Container>
-      <Timer ref={timerRef} mode={"awake"} />
+      <Timer ref={timerRef} mode={'awake'} />
       <TouchableWithoutFeedback
         onPress={() => {
           if (redirectFromSolarView) {
@@ -145,7 +146,7 @@ const HomeScreen = ({
           style={{ flex: 1 }}
         >
           {messages.length == 0 && (
-            <H1 style={styles.title}>{"Pas de nouveau messages"}</H1>
+            <H1 style={styles.title}>{'Pas de nouveau messages'}</H1>
           )}
           {messages.length > 0 && (
             <Grid style={{ padding: 30 }}>
@@ -185,11 +186,11 @@ const HomeScreen = ({
 
 const styles = {
   title: {
-    color: "#fff",
-    fontFamily: "Roboto",
+    color: '#fff',
+    fontFamily: 'Roboto',
     fontSize: 80,
     paddingTop: 80,
-    textAlign: "center",
+    textAlign: 'center',
     height: 120,
   },
 }

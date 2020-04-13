@@ -23,13 +23,9 @@ import {
 } from "./src/ui/screens"
 import { SnackBar } from "./src/ui/components"
 import StackViewStyleInterpolator from "react-navigation-stack"
-import TimerInitiator from "./src/ui/business/TimerInitiator"
-import MessageAlertManager from "./src/ui/business/MessageAlertManager"
 
 export default () => (
   <React.Fragment>
-    <TimerInitiator />
-    <MessageAlertManager />
     <SnackBar />
     <Router>
       <Scene key="master" hideNavBar transitionConfig={transitionConfig}>

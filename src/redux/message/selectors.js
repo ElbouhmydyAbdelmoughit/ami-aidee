@@ -1,7 +1,6 @@
-import moment from "moment"
-import { createSelector } from "reselect"
-import TimerSelectors from "../timer/selectors"
-import { messageToAlert, immediateMessage } from "src/utils"
+import { createSelector } from 'reselect'
+import { messageToAlert, immediateMessage } from 'src/utils'
+import TimerSelectors from '../timer/selectors'
 
 const getMessages = state => {
   return state.message.list
