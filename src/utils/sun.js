@@ -22,8 +22,8 @@ nadir: Mon Sep 02 2019 01:51:58 GMT+0200 (heure d’été d’Europe centrale)
 nauticalDawn: Mon Sep 02 2019 05:57:02 GMT+0200 (heure d’été d’Europe centrale) {}
 nauticalDusk: Mon Sep 02 2019 21:46:55 GMT+0200 (heure d’été d’Europe centrale) {}
  */
-import moment from "moment"
-import SunCalc from "suncalc"
+import moment from 'moment'
+import SunCalc from 'suncalc'
 
 const PANTHEON_POSITION = {
   latitude: 48.84605,
@@ -34,52 +34,84 @@ const correctNightBounds = (night, nightEnd, now) => {
   const momentNight = moment(night)
   const momentNightEnd = moment(nightEnd)
   if (now.hour() > 12) {
-    momentNightEnd.add(1, "days")
+    momentNightEnd.add(1, 'days')
     return [momentNight, momentNightEnd]
   }
 
-  if (momentNight.isSameOrAfter(now, "day")) {
-    momentNight.subtract(1, "days")
-  } else if (momentNightEnd.isBefore(now, "day")) {
-    momentNightEnd.add(1, "days")
+  if (momentNight.isSameOrAfter(now, 'day')) {
+    momentNight.subtract(1, 'days')
+  } else if (momentNightEnd.isBefore(now, 'day')) {
+    momentNightEnd.add(1, 'days')
   }
   return [momentNight, momentNightEnd]
 }
 
-const getTimes = now => {
-  const times = SunCalc.getTimes(
+const hasUserCustomizedTimes = helpedUser => {
+  return (
+    helpedUser &&
+    helpedUser.bedtime_hour &&
+    helpedUser.waking_hour &&
+    helpedUser.sun_culmination_hour
+  )
+}
+
+const concatDateAndTime = (date, time) => {
+  return moment(`${date.format('YYYY-MM-DDTHH:mm:ss').split('T')[0]}T${time}`)
+}
+
+const getTimes = (now, helpedUser) => {
+  if (hasUserCustomizedTimes(helpedUser)) {
+    const today = moment()
+    const bedtimeHour = concatDateAndTime(today, helpedUser.bedtime_hour)
+    const wakingHour = concatDateAndTime(today, helpedUser.waking_hour)
+    const sunCulminationHour = concatDateAndTime(
+      today,
+      helpedUser.sun_culmination_hour
+    )
+    return {
+      dawn: bedtimeHour,
+      solarNoon: sunCulminationHour,
+      dusk: wakingHour,
+      night: bedtimeHour,
+      nightEnd: wakingHour,
+      sunrise: wakingHour,
+      sunset: bedtimeHour,
+    }
+  }
+  const suncalcTimes = SunCalc.getTimes(
     now.toDate(),
     PANTHEON_POSITION.latitude,
     PANTHEON_POSITION.longitude
   )
-
-  const dawn = moment(times.dawn)
-  const solarNoon = moment(times.solarNoon)
-  const dusk = moment(times.dusk)
-  const [night, nightEnd] = correctNightBounds(times.night, times.nightEnd, now)
-
+  const [night, nightEnd] = correctNightBounds(
+    suncalcTimes.night,
+    suncalcTimes.nightEnd,
+    now
+  )
   return {
-    dawn,
-    solarNoon,
-    dusk,
+    dawn: moment(suncalcTimes.dawn),
+    solarNoon: moment(suncalcTimes.solarNoon),
+    dusk: moment(suncalcTimes.dusk),
     night,
-    nightEnd: nightEnd,
-    sunrise: moment(times.sunrise),
-    sunset: moment(times.sunset),
+    nightEnd,
+
+    sunrise: moment(suncalcTimes.sunrise),
+    sunset: moment(suncalcTimes.sunset),
   }
 }
-export const times = now => {
-  const times = getTimes(now)
-  const isDawn = now.isBetween(times.dawn, times.solarNoon) //is dawn => now >= dawn && now <= sunriseEnd
-  const isSunNoon = now.isAfter(times.solarNoon) && now.isBefore(times.dusk) //is sunNoon => now > sunriseEnd && now < dusk <= default
-  const isDusk = now.isBetween(times.dusk, times.night)
-  const isNight = now.isAfter(times.night)
+export const times = (now, helpedUser) => {
+  const computedTimes = getTimes(now, helpedUser)
+  const isDawn = now.isBetween(computedTimes.dawn, computedTimes.solarNoon) //is dawn => now >= dawn && now <= sunriseEnd
+  const isSunNoon =
+    now.isAfter(computedTimes.solarNoon) && now.isBefore(computedTimes.dusk) //is sunNoon => now > sunriseEnd && now < dusk <= default
+  const isDusk = now.isBetween(computedTimes.dusk, computedTimes.night)
+  const isNight = now.isAfter(computedTimes.night)
 
-  if (isDawn) return "DAWN"
-  else if (isSunNoon) return "SUN"
-  else if (isDusk) return "DUSK"
-  else if (isNight) return "NIGHT"
-  else return "NIGHT"
+  if (isDawn) return 'DAWN'
+  if (isSunNoon) return 'SUN'
+  if (isDusk) return 'DUSK'
+  if (isNight) return 'NIGHT'
+  return 'NIGHT'
 }
 
 const getDegree = pos => {
@@ -113,13 +145,17 @@ const getPercent = (timeStart, timeEnd, timeBetween) => {
 const ELLIPSE_START_DEGREE = 180
 const ELLIPSE_PEAK_DEGREE = 270
 
-export const solarDegree = now => {
-  const times = getTimes(now)
-  if (now.isBefore(times.solarNoon)) {
-    const percent = getPercent(times.sunrise, times.solarNoon, now)
+export const solarDegree = (now, helpedUser) => {
+  const computedTimes = getTimes(now, helpedUser)
+  if (now.isBefore(computedTimes.solarNoon)) {
+    const percent = getPercent(
+      computedTimes.sunrise,
+      computedTimes.solarNoon,
+      now
+    )
     return percent * 90 + ELLIPSE_START_DEGREE
   }
-  const percent = getPercent(times.solarNoon, times.sunset, now)
+  const percent = getPercent(computedTimes.solarNoon, computedTimes.sunset, now)
   return percent * 90 + ELLIPSE_PEAK_DEGREE
 }
 
@@ -129,9 +165,9 @@ export const solarDegree = now => {
  */
 const MOON_DEGREE_UPPER_LIMIT = 345
 
-export const moonDegree = now => {
-  const times = getTimes(now)
-  let percent = getPercent(times.night, times.nightEnd, now)
+export const moonDegree = (now, helpedUser) => {
+  const computedTimes = getTimes(now, helpedUser)
+  const percent = getPercent(computedTimes.night, computedTimes.nightEnd, now)
   let result = percent * 180 + ELLIPSE_START_DEGREE
   if (result > MOON_DEGREE_UPPER_LIMIT) {
     result = MOON_DEGREE_UPPER_LIMIT

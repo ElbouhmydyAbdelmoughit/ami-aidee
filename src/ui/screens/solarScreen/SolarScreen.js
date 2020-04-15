@@ -67,6 +67,7 @@ const SolarScreen = ({
   helpedUserRequest,
   displayName,
   helpedUserId,
+  helpedUser,
 }) => {
   const [fadeIn, setFadeIn] = useState(0)
   const [date, setDate] = useState(moment())
@@ -77,7 +78,7 @@ const SolarScreen = ({
   })
 
   const getMessage = dateInput => {
-    const time = times(dateInput)
+    const time = times(dateInput, helpedUser)
     const fr = dateInput.locale('fr', momentFR)
     const day = fr.format('dddd Do MMMM YYYY')
     const hour = fr.format('HH:mm')
@@ -146,7 +147,7 @@ const SolarScreen = ({
   }
 
   const onPress = () => {
-    const time = times(date)
+    const time = times(date, helpedUser)
     if (time === 'NIGHT') {
       startBlinking()
     } else {
@@ -159,7 +160,7 @@ const SolarScreen = ({
   const duskColor = ['#C6D9BC', '#DBCFA5', '#E7BF8E', '#DCA27F']
   const nightColor = ['#012D5B', '#19689F', '#4F94BB', '#A7BCBC']
   let color = []
-  const time = times(date)
+  const time = times(date, helpedUser)
 
   let solarIcon = require('src/assets/images/sun.png')
   let moonIcon = require('src/assets/images/moon.png')
@@ -219,8 +220,9 @@ const SolarScreen = ({
           date={date}
           onPress={onPress}
           solarIcon={solarIcon}
-          times={times(date)}
+          times={times(date, helpedUser)}
           moonIcon={moonIcon}
+          helpedUser={helpedUser}
         />
       </LinearGradient>
     </Container>

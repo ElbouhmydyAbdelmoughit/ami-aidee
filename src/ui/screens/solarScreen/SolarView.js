@@ -10,7 +10,14 @@ import Svg, {
   Stop,
 } from 'react-native-svg'
 
-const SolarView = ({ onPress, date, solarIcon, moonIcon, times }) => {
+const SolarView = ({
+  onPress,
+  date,
+  solarIcon,
+  moonIcon,
+  times,
+  helpedUser,
+}) => {
   const [points, setPoints] = useState([])
   const [ellipseSize, setEllipseSize] = useState({
     width: 0,
@@ -36,7 +43,9 @@ const SolarView = ({ onPress, date, solarIcon, moonIcon, times }) => {
       })
     }
     const degree =
-      times !== 'NIGHT' ? solarDegree(dateInput) : moonDegree(dateInput)
+      times !== 'NIGHT'
+        ? solarDegree(dateInput, helpedUser)
+        : moonDegree(dateInput, helpedUser)
     const point = pointForAngle(degree)
 
     const sunWidth = (ellipseSize.width * 20) / 100
