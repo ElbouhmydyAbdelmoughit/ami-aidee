@@ -18,6 +18,7 @@ const persistConfig = {
     'message',
     'user',
   ],
+  timeout: null,
 }
 
 const logger = createLogger({

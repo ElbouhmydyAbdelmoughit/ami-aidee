@@ -68,14 +68,15 @@ const getTimes = (now, helpedUser) => {
       today,
       helpedUser.sun_culmination_hour
     )
+    const [night, nightEnd] = correctNightBounds(bedtimeHour, wakingHour, now)
     return {
-      dawn: bedtimeHour,
+      dawn: night,
       solarNoon: sunCulminationHour,
-      dusk: wakingHour,
-      night: bedtimeHour,
-      nightEnd: wakingHour,
-      sunrise: wakingHour,
-      sunset: bedtimeHour,
+      dusk: night,
+      night,
+      nightEnd,
+      sunrise: nightEnd,
+      sunset: night,
     }
   }
   const suncalcTimes = SunCalc.getTimes(
