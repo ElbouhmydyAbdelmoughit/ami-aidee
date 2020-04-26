@@ -70,7 +70,7 @@ const getTimes = (now, helpedUser) => {
     )
     const [night, nightEnd] = correctNightBounds(bedtimeHour, wakingHour, now)
     return {
-      dawn: night,
+      dawn: nightEnd,
       solarNoon: sunCulminationHour,
       dusk: night,
       night,

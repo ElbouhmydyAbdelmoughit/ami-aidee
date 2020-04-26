@@ -1,7 +1,7 @@
-import { useEffect } from "react"
-import moment from "moment"
-import { useSelector, useDispatch } from "react-redux"
-import { TimerActions, TimerSelectors } from "src/redux/timer"
+import { useEffect } from 'react'
+import moment from 'moment'
+import { useSelector, useDispatch } from 'react-redux'
+import { TimerActions, TimerSelectors } from 'src/redux/timer'
 
 /**
  * Set this to true to "accelerate" time for easier debugging
@@ -13,7 +13,7 @@ const MINUTE_TO_MS = DEBUG ? 1000 : 60000
 let acc = 0
 const getTimeNow = () => {
   acc += 1
-  return DEBUG ? moment().add(acc * 30, "minutes") : moment()
+  return DEBUG ? moment().add(acc * 30, 'minutes') : moment()
 }
 
 const getOffsetToNextMinuteToMs = () => {
