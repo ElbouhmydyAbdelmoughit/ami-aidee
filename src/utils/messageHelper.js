@@ -69,6 +69,9 @@ export const immediateMessage = (messages, alerted, minuteTick) => {
 }
 
 export const closestMessage = messages => {
+  if (messages.length === 0) {
+    return undefined
+  }
   const dates = messages.map(getDateStrFromMessage)
 
   const date = getClosestFutureDate(dates)

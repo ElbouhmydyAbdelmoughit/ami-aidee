@@ -188,7 +188,7 @@ const styles = {
   title: {
     color: '#fff',
     fontFamily: 'Roboto',
-    fontSize: 80,
+    fontWeight: 'bold',
     paddingTop: 80,
     textAlign: 'center',
     height: 120,
