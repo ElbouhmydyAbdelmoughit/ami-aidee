@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 import {
   Scene,
@@ -12,7 +12,7 @@ import {
   Drawer,
   Stack,
   Lightbox,
-} from "react-native-router-flux"
+} from 'react-native-router-flux'
 import {
   SplashScreen,
   LoginScreen,
@@ -20,9 +20,9 @@ import {
   SolarScreen,
   RegisterScreen,
   SleepScreen,
-} from "./src/ui/screens"
-import { SnackBar } from "./src/ui/components"
-import StackViewStyleInterpolator from "react-navigation-stack"
+} from './src/ui/screens'
+import { SnackBar } from './src/ui/components'
+import StackViewStyleInterpolator from 'react-navigation-stack'
 
 export default () => (
   <React.Fragment>
