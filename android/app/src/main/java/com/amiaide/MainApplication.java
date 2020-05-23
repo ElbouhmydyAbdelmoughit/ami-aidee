@@ -6,6 +6,7 @@ import com.amiaide.videoView.VideoViewPackage;
 import com.crashlytics.android.Crashlytics;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import com.syan.agora.AgoraPackage;
 import com.microsoft.appcenter.reactnative.crashes.AppCenterReactNativeCrashesPackage;
 import com.microsoft.appcenter.reactnative.analytics.AppCenterReactNativeAnalyticsPackage;
 import com.microsoft.appcenter.reactnative.appcenter.AppCenterReactNativePackage;

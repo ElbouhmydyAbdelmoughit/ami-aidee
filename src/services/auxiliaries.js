@@ -1,29 +1,37 @@
-import { methods, query, mutation } from '../utils';
-import { service, authenticatedService } from './middleware';
+import { methods, mutation } from '../utils'
+import { service, authenticatedService, authenticatedQuery } from './middleware'
 
-const { GET } = methods;
+const { GET } = methods
 /**
  * REST ROUTES
  */
-const routes = {
-};
+const routes = {}
 
 /**
  * GRAPHQL QUERIES
  */
 const queries = {
-  auxiliaries: (limit, offset) => `auxiliaries {
+  auxiliaries: ({ limit, offset, helpedUserId }) => {
+    const filters =
+      helpedUserId !== undefined
+        ? `(where: {auxiliaries_helped_users: {helped_user_id: {_eq: ${helpedUserId}}}})`
+        : ''
+    return `auxiliaries${filters} {
     id
     email
     firstname
     lastname
     phone
-  }`,
+    auxiliaries_helped_users {
+      helped_user_id
+    }
+  }`
+  },
   count: () => ` auxiliaries_aggregate {
     aggregate {
       count
     }
-  }`
+  }`,
 }
 
 /**
@@ -81,15 +89,28 @@ const mutations = {
       id
     }
     }
-  }`
+  }`,
 }
 
 /**
  * SERVICES
  */
 export default {
-  auxiliaries: ({ limit, offset }) => query(queries.auxiliaries(limit, offset)),
-  createAuxiliary: aux => { console.log(aux); return mutation(mutations.createAuxiliary(aux)) },
-  modifyAuxiliary: ({ id, aux }) => { console.log(aux); return mutation(mutations.modifyAuxiliary(id, aux)) },
-  deleteAuxiliary: id => { console.log(id); return mutation(mutations.deleteAuxiliary(id)) },
-};
+  auxiliaries: ({ limit, offset, helpedUserId }) => {
+    return authenticatedQuery(
+      queries.auxiliaries({ limit, offset, helpedUserId })
+    )
+  },
+  createAuxiliary: aux => {
+    console.log(aux)
+    return mutation(mutations.createAuxiliary(aux))
+  },
+  modifyAuxiliary: ({ id, aux }) => {
+    console.log(aux)
+    return mutation(mutations.modifyAuxiliary(id, aux))
+  },
+  deleteAuxiliary: id => {
+    console.log(id)
+    return mutation(mutations.deleteAuxiliary(id))
+  },
+}

@@ -36,6 +36,7 @@
     "react": "16.8.6",
     "react-localize-redux": "^3.5.3",
     "react-native": "0.60.5",
+    "react-native-agora": "^2.9.1-alpha.3",
     "react-native-datepicker": "^1.7.2",
     "react-native-elements": "^0.19.1",
     "react-native-formik": "^1.7.4",

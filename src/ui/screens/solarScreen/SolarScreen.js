@@ -12,6 +12,7 @@ import momentFR from 'moment/locale/fr'
 import { times } from 'src/utils'
 import TimerInitiator from 'src/ui/business/TimerInitiator'
 import MessageAlertManager from 'src/ui/business/MessageAlertManager'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import SolarView from './SolarView'
 // notifierAuthorization()
@@ -202,6 +203,14 @@ const SolarScreen = ({
         colors={color}
         style={{ flex: 1 }}
       >
+        <Icon
+          name="account-heart"
+          size={30}
+          color={'#BBB'}
+          onPress={() => {
+            Actions.contactsList()
+          }}
+        />
         <H1 style={{ color: textColor, ...styles.title }}>
           {BOLD(hello.title)}
         </H1>

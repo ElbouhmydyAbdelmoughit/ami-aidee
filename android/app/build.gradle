@@ -219,6 +219,7 @@ configurations.all {
 }
 
 dependencies {
+    implementation project(':react-native-agora')
     implementation project(':appcenter-crashes')
     implementation project(':appcenter-analytics')
     implementation project(':appcenter')

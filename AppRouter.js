@@ -20,6 +20,8 @@ import {
   SolarScreen,
   RegisterScreen,
   SleepScreen,
+  ContactsList,
+  VideoCallScreen,
 } from './src/ui/screens'
 import { SnackBar } from './src/ui/components'
 import StackViewStyleInterpolator from 'react-navigation-stack'
@@ -50,6 +52,8 @@ export default () => (
         <Stack key="root" type={ActionConst.REPLACE}>
           <Scene key="accueil" hideNavBar component={SolarScreen} initial />
           <Scene key="home" hideNavBar component={HomeScreen} />
+          <Scene key="contactsList" hideNavBar component={ContactsList} />
+          <Scene key="videoCall" hideNavBar component={VideoCallScreen} />
         </Stack>
       </Scene>
     </Router>
