@@ -135,10 +135,11 @@ android {
 
     defaultConfig {
         applicationId "com.amiaide"
-        minSdkVersion 21
+        minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 28
         versionName "1.17"
+        multiDexEnabled true
     }
     splits {
         abi {
@@ -225,6 +226,7 @@ dependencies {
     implementation project(':appcenter')
     implementation project(':react-native-video')
     compile 'com.yqritc:android-scalablevideoview:1.0.4'
+    implementation 'com.android.support:multidex:1.0.3'
     implementation "com.android.support:multidex-instrumentation:1.0.3"
     //implementation "androidx.appcompat:appcompat:1.0.0"
     implementation project(':react-native-linear-gradient')

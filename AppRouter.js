@@ -24,11 +24,13 @@ import {
   VideoCallScreen,
 } from './src/ui/screens'
 import { SnackBar } from './src/ui/components'
-import StackViewStyleInterpolator from 'react-navigation-stack'
+import VideoCallWaiter from './src/ui/components/VideoCallWaiter'
+import VideoReceivingScreen from './src/ui/screens/videoReceivingScreen'
 
 export default () => (
   <React.Fragment>
     <SnackBar />
+    <VideoCallWaiter />
     <Router>
       <Scene key="master" hideNavBar transitionConfig={transitionConfig}>
         <Scene
@@ -54,6 +56,11 @@ export default () => (
           <Scene key="home" hideNavBar component={HomeScreen} />
           <Scene key="contactsList" hideNavBar component={ContactsList} />
           <Scene key="videoCall" hideNavBar component={VideoCallScreen} />
+          <Scene
+            key="receivingScreen"
+            hideNavBar
+            component={VideoReceivingScreen}
+          />
         </Stack>
       </Scene>
     </Router>

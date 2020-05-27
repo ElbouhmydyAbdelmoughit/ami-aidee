@@ -2,26 +2,35 @@ import React from 'react'
 
 //export const constant = () => {
 
-    export const subjects = [{
-        value: 'Rappel de \"A FAIRE\"',
-    }, {
-        value: 'Prise de Medicament',
-    }, {
-        value: 'Rendez-vous',
-    }]
+export const subjects = [
+  {
+    value: 'Rappel de "A FAIRE"',
+  },
+  {
+    value: 'Prise de Medicament',
+  },
+  {
+    value: 'Rendez-vous',
+  },
+]
 
-    export const moments = [{
-        value: 'A partir de',
-    }, {
-        value: 'Après',
-    }]
+export const moments = [
+  {
+    value: 'A partir de',
+  },
+  {
+    value: 'Après',
+  },
+]
 
-    export const reccurences = [
-        { value: 'aujourd\'hui' }, //0
-        { value: 'demain' }, //1
-        { value: 'une fois par semaine' }, //2
-        { value: 'tous les jours' }, //3
-        { value: 'une fois par mois' } //4
-    ]
+export const reccurences = [
+  { value: "aujourd'hui" }, //0
+  { value: 'demain' }, //1
+  { value: 'une fois par semaine' }, //2
+  { value: 'tous les jours' }, //3
+  { value: 'une fois par mois' }, //4
+]
 
 //}
+
+export const AGORA_APP_ID = '55c1121c594a4daca6862e44a7ed08e3'

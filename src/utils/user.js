@@ -4,4 +4,11 @@ const getUserAbbr = user => {
   return `${firstLetterFirstname}${firstLetterLastname}`
 }
 
-export { getUserAbbr }
+const getUserDisplayName = user => {
+  if (user.surname) {
+    return user.surname
+  }
+  return `${user.firstname} ${user.lastname}`
+}
+
+export { getUserAbbr, getUserDisplayName }

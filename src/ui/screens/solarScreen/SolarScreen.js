@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Text, View } from 'react-native'
 import { Container, H1 } from 'native-base'
 import material from 'AMIaide/native-base-theme/variables/material'
+import { Button, TouchableRipple } from 'react-native-paper'
 
 import { Actions } from 'react-native-router-flux'
 import LinearGradient from 'react-native-linear-gradient'
@@ -203,14 +204,6 @@ const SolarScreen = ({
         colors={color}
         style={{ flex: 1 }}
       >
-        <Icon
-          name="account-heart"
-          size={30}
-          color={'#BBB'}
-          onPress={() => {
-            Actions.contactsList()
-          }}
-        />
         <H1 style={{ color: textColor, ...styles.title }}>
           {BOLD(hello.title)}
         </H1>
@@ -234,6 +227,40 @@ const SolarScreen = ({
           helpedUser={helpedUser}
         />
       </LinearGradient>
+      <View
+        style={{
+          position: 'absolute',
+          right: 32,
+          top: 32,
+        }}
+      >
+        <TouchableRipple
+          onPress={() => {
+            Actions.replace('contactsList')
+          }}
+        >
+          <View
+            style={{
+              alignItems: 'center',
+              borderWidth: 1,
+              borderColor: 'rgba(255, 255, 255, 0.4)',
+              borderRadius: 8,
+              padding: 20,
+              minWidth: 100,
+            }}
+          >
+            <Icon name="account-heart" size={30} color={'white'} />
+            <Text
+              style={{
+                color: 'white',
+                fontWeight: 'bold',
+              }}
+            >
+              Coucou
+            </Text>
+          </View>
+        </TouchableRipple>
+      </View>
     </Container>
   )
 }

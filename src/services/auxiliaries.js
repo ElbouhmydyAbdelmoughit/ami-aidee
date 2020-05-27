@@ -25,6 +25,7 @@ const queries = {
     auxiliaries_helped_users {
       helped_user_id
     }
+    user_id
   }`
   },
   count: () => ` auxiliaries_aggregate {

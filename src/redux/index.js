@@ -1,14 +1,15 @@
-import { resettableReducer } from "reduxsauce"
-import { CommonTypes } from "./common"
-import { AuthReducers, AuthSagas } from "./auth"
-import { LoaderReducers } from "./loader"
-import { SnackReducers, SnackSagas } from "./snackBar"
-import { HelpedUserReducers, HelpedUserSagas } from "./helpedUsers"
-import { AuxiliaryReducers, AuxiliarySagas } from "./auxiliaries"
-import { AddressReducers, AddressSagas } from "./address"
-import { MessageReducers, MessageSagas } from "./message"
-import { TimerReducers } from "./timer"
-import { RegisterReducers, RegisterSagas } from "./register"
+import { resettableReducer } from 'reduxsauce'
+import { CommonTypes } from './common'
+import { AuthReducers, AuthSagas } from './auth'
+import { LoaderReducers } from './loader'
+import { SnackReducers, SnackSagas } from './snackBar'
+import { HelpedUserReducers, HelpedUserSagas } from './helpedUsers'
+import { AuxiliaryReducers, AuxiliarySagas } from './auxiliaries'
+import { AddressReducers, AddressSagas } from './address'
+import { MessageReducers, MessageSagas } from './message'
+import { TimerReducers } from './timer'
+import { RegisterReducers, RegisterSagas } from './register'
+import { VideoCallReducers, VideoCallSagas } from './videoCall'
 
 // Specify reset action type rule
 const resettable = resettableReducer(CommonTypes.RESET_REDUCERS)
@@ -24,6 +25,7 @@ const reducers = {
   message: resettable(MessageReducers),
   register: resettable(RegisterReducers),
   snackBar: SnackReducers,
+  videoCall: resettable(VideoCallReducers),
 }
 
 export const rootSaga = [
@@ -34,6 +36,7 @@ export const rootSaga = [
   ...AddressSagas,
   ...MessageSagas,
   ...RegisterSagas,
+  ...VideoCallSagas,
 ]
 
 export default reducers
