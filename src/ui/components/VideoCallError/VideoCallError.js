@@ -24,8 +24,8 @@ const CallErrorPage = ({ errorAcknowledged }) => {
             fontWeight: 'bold',
           }}
         >
-          Une erreur est survenue lors de l'établissement de l'appel video.
-          Veuillez ré-essayer plus tard.
+          L'aidant a raccroché ou une erreur s'est reproduite. Veuillez
+          ré-essayer plus tard.
         </Headline>
         <Br />
         <Button

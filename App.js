@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import AppRouter from './AppRouter'
 import { StyleProvider, Root } from 'native-base'
 import { Provider as PaperProvider } from 'react-native-paper'
@@ -23,13 +23,12 @@ import { Core } from 'src/core'
 
 import { Loader, Timer } from 'src/ui/components'
 
-import AppStyles from 'src/config/styles'
-
 console.log(Core)
 const { store, persistor } = Core
 
 console.log(persistor)
 console.log(store)
+
 const App = () => {
   return (
     <Provider store={store}>
