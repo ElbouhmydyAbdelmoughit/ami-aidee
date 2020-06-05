@@ -44,7 +44,7 @@ const VideoCallPage = ({
   }
 
   const onCallCancel = () => {
-    if (status === 'INVITATION_SENT') {
+    if (['INVITATION_SENT', 'RECEIVED'].indexOf(status) !== -1) {
       videoCallInvitationCancelRequest()
     }
     stopSound()

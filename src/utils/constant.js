@@ -33,4 +33,4 @@ export const reccurences = [
 
 //}
 
-export const AGORA_APP_ID = '55c1121c594a4daca6862e44a7ed08e3'
+export const AGORA_APP_ID = '2c07e05a54064384b1653247599224c5'

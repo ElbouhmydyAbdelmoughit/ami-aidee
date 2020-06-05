@@ -81,6 +81,12 @@ const videoCallLocalInvitationRequestSuccess = (
   state = initialState,
   action
 ) => {
+  if (
+    state.localInvitationProps &&
+    state.localInvitationProps.status === 'INVITATION_RECEIVED'
+  ) {
+    return state
+  }
   return {
     ...state,
     localInvitationProps: {
