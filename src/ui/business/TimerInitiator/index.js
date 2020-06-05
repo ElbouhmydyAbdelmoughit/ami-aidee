@@ -1,3 +1,3 @@
-import TimerInitiator from "./TimerInitiator"
+import TimerInitiator from './TimerInitiator'
 
 export default TimerInitiator

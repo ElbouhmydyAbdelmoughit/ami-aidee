@@ -17,6 +17,7 @@ const persistConfig = {
     // which is not ideal for persist
     'message',
     'user',
+    'videoCall',
   ],
   timeout: null,
 }

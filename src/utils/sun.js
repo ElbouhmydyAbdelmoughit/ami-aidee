@@ -30,19 +30,15 @@ const PANTHEON_POSITION = {
   longitude: 2.34515,
 }
 
-const correctNightBounds = (night, nightEnd, now) => {
+const correctNightBounds = (night, nightEnd, solarNoon, now) => {
   const momentNight = moment(night)
   const momentNightEnd = moment(nightEnd)
-  if (now.hour() > 12) {
+  if (now.isAfter(solarNoon)) {
     momentNightEnd.add(1, 'days')
     return [momentNight, momentNightEnd]
   }
 
-  if (momentNight.isSameOrAfter(now, 'day')) {
-    momentNight.subtract(1, 'days')
-  } else if (momentNightEnd.isBefore(now, 'day')) {
-    momentNightEnd.add(1, 'days')
-  }
+  momentNight.subtract(1, 'days')
   return [momentNight, momentNightEnd]
 }
 
@@ -68,7 +64,12 @@ const getTimes = (now, helpedUser) => {
       today,
       helpedUser.sun_culmination_hour
     )
-    const [night, nightEnd] = correctNightBounds(bedtimeHour, wakingHour, now)
+    const [night, nightEnd] = correctNightBounds(
+      bedtimeHour,
+      wakingHour,
+      sunCulminationHour,
+      now
+    )
     return {
       dawn: nightEnd,
       solarNoon: sunCulminationHour,
@@ -87,6 +88,7 @@ const getTimes = (now, helpedUser) => {
   const [night, nightEnd] = correctNightBounds(
     suncalcTimes.night,
     suncalcTimes.nightEnd,
+    suncalcTimes.solarNoon,
     now
   )
   return {

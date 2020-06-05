@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Text, View } from 'react-native'
 import { Container, H1 } from 'native-base'
 import material from 'AMIaide/native-base-theme/variables/material'
+import { Button, TouchableRipple } from 'react-native-paper'
 
 import { Actions } from 'react-native-router-flux'
 import LinearGradient from 'react-native-linear-gradient'
@@ -12,6 +13,7 @@ import momentFR from 'moment/locale/fr'
 import { times } from 'src/utils'
 import TimerInitiator from 'src/ui/business/TimerInitiator'
 import MessageAlertManager from 'src/ui/business/MessageAlertManager'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import SolarView from './SolarView'
 // notifierAuthorization()
@@ -225,6 +227,40 @@ const SolarScreen = ({
           helpedUser={helpedUser}
         />
       </LinearGradient>
+      <View
+        style={{
+          position: 'absolute',
+          right: 32,
+          top: 32,
+        }}
+      >
+        <TouchableRipple
+          onPress={() => {
+            Actions.replace('contactsList')
+          }}
+        >
+          <View
+            style={{
+              alignItems: 'center',
+              borderWidth: 1,
+              borderColor: 'rgba(255, 255, 255, 0.4)',
+              borderRadius: 8,
+              padding: 20,
+              minWidth: 100,
+            }}
+          >
+            <Icon name="account-heart" size={30} color={'white'} />
+            <Text
+              style={{
+                color: 'white',
+                fontWeight: 'bold',
+              }}
+            >
+              Coucou
+            </Text>
+          </View>
+        </TouchableRipple>
+      </View>
     </Container>
   )
 }

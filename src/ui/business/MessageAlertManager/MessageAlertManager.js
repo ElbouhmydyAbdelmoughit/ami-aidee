@@ -3,23 +3,30 @@ import { useSelector, useDispatch } from 'react-redux'
 import { MessageSelectors, MessageActions } from 'src/redux/message'
 import { Actions } from 'react-native-router-flux'
 
-const MessageAlertManager = () => {
+const MessageAlertManager = ({ onRedirect }) => {
   const immediateMessage = useSelector(MessageSelectors.getImmediateMessage)
   const messageToAlert = useSelector(MessageSelectors.getNextMessageToAlert)
   const dispatch = useDispatch()
+
+  const redirect = () => {
+    if (onRedirect) {
+      onRedirect()
+    }
+    Actions.home({ redirectFromSolarView: true })
+  }
   useEffect(() => {
     if (immediateMessage) {
       console.log('message happening now', immediateMessage)
-      if (Actions.currentScene === 'accueil') {
-        Actions.home({ redirectFromSolarView: true })
+      if (Actions.currentScene !== 'home') {
+        redirect(immediateMessage.id)
         dispatch(MessageActions.immediateMessageAlerted(immediateMessage.id))
       }
       return
     }
     if (messageToAlert) {
       console.log('new message to alert', messageToAlert)
-      if (Actions.currentScene === 'accueil') {
-        Actions.home({ redirectFromSolarView: true })
+      if (Actions.currentScene !== 'home') {
+        redirect(messageToAlert.id)
         dispatch(MessageActions.messageAlerted(messageToAlert.id))
       }
       return

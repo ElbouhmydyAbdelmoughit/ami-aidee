@@ -2,10 +2,13 @@ package com.amiaide;
 
 import android.app.Application;
 
+import androidx.multidex.MultiDexApplication;
+
 import com.amiaide.videoView.VideoViewPackage;
 import com.crashlytics.android.Crashlytics;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import com.syan.agora.AgoraPackage;
 import com.microsoft.appcenter.reactnative.crashes.AppCenterReactNativeCrashesPackage;
 import com.microsoft.appcenter.reactnative.analytics.AppCenterReactNativeAnalyticsPackage;
 import com.microsoft.appcenter.reactnative.appcenter.AppCenterReactNativePackage;
@@ -17,7 +20,7 @@ import com.facebook.soloader.SoLoader;
 import io.fabric.sdk.android.Fabric;
 import java.util.List;
 
-public class MainApplication extends Application implements ReactApplication {
+public class MainApplication extends MultiDexApplication implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
     @Override

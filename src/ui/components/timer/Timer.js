@@ -1,60 +1,55 @@
-import React, { Component, forwardRef, useImperativeHandle } from 'react';
-import {
-  StyleSheet,
-  View,
-  Modal,
-  ActivityIndicator
-} from 'react-native';
+import React, { Component, forwardRef, useImperativeHandle } from 'react'
+import { StyleSheet, View, Modal, ActivityIndicator } from 'react-native'
 
 const DURATION_WHEN_AWAKE = 60000 * 2
 const DURATION_WHEN_SLEEP = 60000 * 15
 
-import { Actions } from 'react-native-router-flux';
+import { Actions } from 'react-native-router-flux'
 
-
-let currentMode = "sleep"
+let currentMode = 'sleep'
 let duration = DURATION_WHEN_AWAKE
 let timerIdentifier = null
 
 const timerAction = () => {
-  console.log("timer ended")
+  console.log('timer ended')
   console.log(`timer was in ${currentMode} mode`)
   switch (currentMode) {
-    case "awake":
+    case 'awake':
+      console.log('sleeping')
       Actions.sleep()
       //currentMode = "sleep"
       // duration = DURATION_WHEN_SLEEP
       //startTimer()
-      break;
+      break
 
-    case "sleep":
+    case 'sleep':
+      console.log('imm backk')
       Actions.root()
       // currentMode = "awake"
       // duration = DURATION_WHEN_AWAKE
       // startTimer()
-      break;
+      break
   }
 }
 
-const startTimer = (mode) => {
-  console.log("startTimer")
+const startTimer = mode => {
+  console.log('startTimer')
   switch (mode) {
-    case "awake":
+    case 'awake':
       currentMode = mode
       duration = DURATION_WHEN_AWAKE
-      break;
+      break
 
-    case "sleep":
+    case 'sleep':
       currentMode = mode
       duration = DURATION_WHEN_SLEEP
-      break;
+      break
   }
-  timerIdentifier = setTimeout(timerAction, duration);
+  timerIdentifier = setTimeout(timerAction, duration)
 }
 
 const resetTimer = () => {
-  if (timerIdentifier)
-    clearTimeout(timerIdentifier)
+  if (timerIdentifier) clearTimeout(timerIdentifier)
   startTimer(currentMode)
 }
 
@@ -62,18 +57,18 @@ const Timer = ({ user, mode }, ref) => {
   console.log(mode)
 
   useImperativeHandle(ref, () => ({
-    reset: () => { resetTimer() }
+    reset: () => {
+      resetTimer()
+    },
   }))
 
   if (currentMode != mode) {
-
-    console.log("start " + currentMode)
-    if (timerIdentifier)
-      clearTimeout(timerIdentifier)
+    console.log('start ' + currentMode)
+    if (timerIdentifier) clearTimeout(timerIdentifier)
     startTimer(mode)
   }
 
-  return (<></>)
+  return <></>
 }
 
 export default forwardRef(Timer)

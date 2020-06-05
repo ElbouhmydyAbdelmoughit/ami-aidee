@@ -1,0 +1,154 @@
+import React, { useEffect } from 'react'
+import { View, StyleSheet, Text } from 'react-native'
+import { Actions } from 'react-native-router-flux'
+import Sound from 'react-native-sound'
+import { IconButton } from 'react-native-paper'
+
+import VideoCallRoom from '../VideoCallRoom'
+import UserAvatar from '../UserAvatar'
+import VideoCallError from '../VideoCallError'
+import GradientBackground from '../GradientBackground'
+import { usePrevious } from '../../../utils/hooks'
+import { playHangupTone } from '../../../utils/sound'
+
+const styles = StyleSheet.create({
+  root: {
+    marginTop: 24,
+    padding: 20,
+    height: '100%',
+    alignItems: 'center',
+  },
+})
+
+// much needed delay for users to cancel calls
+// in case of mistake
+const CALL_DELAY = 3000
+
+let callTone
+const VideoCallPage = ({
+  auxiliary,
+  videoCallInvitationRequest,
+  videoCallInvitationCancelRequest,
+  videoCallInvitationInit,
+  errored,
+  localInvitation,
+  myUid,
+}) => {
+  const { status, channelId, calleeId } = localInvitation || {}
+
+  const stopSound = () => {
+    if (callTone) {
+      callTone.stop()
+      callTone.release()
+    }
+  }
+
+  const onCallCancel = () => {
+    if (['INVITATION_SENT', 'RECEIVED'].indexOf(status) !== -1) {
+      videoCallInvitationCancelRequest()
+    }
+    stopSound()
+    playHangupTone()
+    setTimeout(() => Actions.pop(), 0)
+  }
+
+  useEffect(() => {
+    videoCallInvitationInit()
+    const timeout = setTimeout(() => {
+      videoCallInvitationRequest({ calleeId: auxiliary.user_id })
+    }, CALL_DELAY)
+    return () => {
+      if (timeout) {
+        clearTimeout(timeout)
+      }
+    }
+  }, [])
+  if (errored) {
+    return <VideoCallError />
+  }
+
+  const previousStatus = usePrevious(status)
+
+  useEffect(() => {
+    if (['INVITATION_SENT', 'RECEIVED'].indexOf(previousStatus) === -1) {
+      return
+    }
+    if (status === 'RECEIVED') {
+      callTone = new Sound('calltone.wav', Sound.MAIN_BUNDLE, error => {
+        if (error) {
+          // ignore
+          return
+        }
+        callTone.play()
+      })
+      callTone.setNumberOfLoops(-1)
+    }
+    if (['REFUSED_BY_CALLEE', 'FAILURE'].indexOf(status) !== -1) {
+      setTimeout(() => {
+        stopSound()
+        playHangupTone()
+        Actions.pop()
+      }, 2000)
+    }
+    if (status === 'ACCEPTED') {
+      stopSound()
+    }
+  }, [status])
+
+  const getText = () => {
+    switch (status) {
+      case 'INVITATION_SENT':
+        return ''
+      case 'RECEIVED':
+        return 'Ça sonne...'
+      case 'REFUSED_BY_CALLEE':
+      case 'FAILURE':
+        return 'Pas de réponse'
+      default:
+        return null
+    }
+  }
+  if (
+    ['INVITATION_SENT', 'RECEIVED'].indexOf(previousStatus) !== -1 &&
+    status === 'ACCEPTED' &&
+    channelId
+  ) {
+    return (
+      <VideoCallRoom channelId={channelId} uid={myUid} remoteId={calleeId} />
+    )
+  }
+
+  const waiting = ['INIT', 'INVITATION_SENT', 'RECEIVED'].indexOf(status) !== -1
+  return (
+    <GradientBackground>
+      <View style={styles.root}>
+        <View style={{ flex: 1 }}>
+          <UserAvatar user={auxiliary} />
+          <View style={{ marginTop: 32, alignItems: 'center' }}>
+            <Text style={{ color: 'white' }}>{getText()}</Text>
+          </View>
+        </View>
+        {waiting && (
+          <View style={{ marginBottom: 32 }}>
+            <IconButton
+              size={40}
+              onPress={onCallCancel}
+              icon="call"
+              color="white"
+              style={{
+                width: 60,
+                height: 60,
+                backgroundColor: 'red',
+                borderRadius: 30,
+              }}
+            >
+              Annuler
+            </IconButton>
+          </View>
+        )}
+      </View>
+    </GradientBackground>
+  )
+}
+
+export default VideoCallPage

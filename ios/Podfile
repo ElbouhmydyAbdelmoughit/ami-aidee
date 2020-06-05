@@ -44,6 +44,8 @@ target 'AMIaide' do
 
   pod 'appcenter-crashes', :path => '../node_modules/appcenter-crashes/ios'
 
+  pod 'react-native-agora', :path => '../node_modules/react-native-agora'
+
   target 'AMIaideTests' do
     inherit! :search_paths
     # Pods for testing

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "490814614528",
+    "firebase_url": "https://ami-aidee-7f5d0.firebaseio.com",
+    "project_id": "ami-aidee-7f5d0",
+    "storage_bucket": "ami-aidee-7f5d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:490814614528:android:55bc32e4b951c531c57ce5",
+        "android_client_info": {
+          "package_name": "com.amiaide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "490814614528-93oj2qn02gnjep9b7vq6j79ab59p30vq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwXLQi-zKWxpk5GOLQR8JlN_Z_NTQrWPs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "490814614528-93oj2qn02gnjep9b7vq6j79ab59p30vq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

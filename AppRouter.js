@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 import {
   Scene,
@@ -12,7 +12,7 @@ import {
   Drawer,
   Stack,
   Lightbox,
-} from "react-native-router-flux"
+} from 'react-native-router-flux'
 import {
   SplashScreen,
   LoginScreen,
@@ -20,13 +20,17 @@ import {
   SolarScreen,
   RegisterScreen,
   SleepScreen,
-} from "./src/ui/screens"
-import { SnackBar } from "./src/ui/components"
-import StackViewStyleInterpolator from "react-navigation-stack"
+  ContactsList,
+  VideoCallScreen,
+} from './src/ui/screens'
+import { SnackBar } from './src/ui/components'
+import VideoCallWaiter from './src/ui/components/VideoCallWaiter'
+import VideoReceivingScreen from './src/ui/screens/videoReceivingScreen'
 
 export default () => (
   <React.Fragment>
     <SnackBar />
+    <VideoCallWaiter />
     <Router>
       <Scene key="master" hideNavBar transitionConfig={transitionConfig}>
         <Scene
@@ -50,6 +54,13 @@ export default () => (
         <Stack key="root" type={ActionConst.REPLACE}>
           <Scene key="accueil" hideNavBar component={SolarScreen} initial />
           <Scene key="home" hideNavBar component={HomeScreen} />
+          <Scene key="contactsList" hideNavBar component={ContactsList} />
+          <Scene key="videoCall" hideNavBar component={VideoCallScreen} />
+          <Scene
+            key="receivingScreen"
+            hideNavBar
+            component={VideoReceivingScreen}
+          />
         </Stack>
       </Scene>
     </Router>
