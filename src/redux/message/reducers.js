@@ -1,5 +1,5 @@
-import { createReducer } from "reduxsauce"
-import { types } from "./actions"
+import { createReducer } from 'reduxsauce'
+import { types } from './actions'
 
 const initialState = {
   list: {},
@@ -15,9 +15,8 @@ const startLoader = (state = initialState) => ({ ...state, loading: true })
 const stopLoader = (state = initialState) => ({ ...state, loading: false })
 
 const messagesSuccess = (state = initialState, action) => {
-  console.log("messagesSuccess")
+  console.log('messagesSuccess')
   const { messages } = action
-  const { list } = state
   const data = {}
   console.log(messages)
   messages.forEach(message => {
@@ -38,7 +37,7 @@ const messageCreateRequest = (state = initialState) => ({
 })
 
 const messageCreateSuccess = (state = initialState, action) => {
-  console.log("messageCreateSuccess")
+  console.log('messageCreateSuccess')
   const { messages } = action
   const { list } = state
   const data = list

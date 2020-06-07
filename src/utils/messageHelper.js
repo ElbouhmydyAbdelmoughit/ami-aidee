@@ -1,25 +1,55 @@
 import moment from 'moment'
 
-const getDateStrFromMessage = message => {
-  return `${message.diffusion_start_date.split('T')[0]}T${message.moment_time}`
-}
-export const getClosestFutureDate = dates => {
-  if (dates.length === 0) {
-    return null
-  }
+const getNextDiffusionDate = (message, now) => {
+  const diffusionStartDate = moment(message.diffusion_start_date)
+  const isStartDateTodayOrAfter = diffusionStartDate.isSameOrAfter(now, 'day')
 
-  let minDiff = 0
-  for (const date of dates) {
-    minDiff += minDiff + 30
-    var currentDate = moment(date)
-    if (
-      currentDate.isAfter(moment()) &&
-      currentDate.diff(moment(), 'days') <= minDiff
-    ) {
-      break
+  const todayDiffusion = moment(
+    `${now.format('YYYY-MM-DD')}T${message.moment_time}`
+  )
+  switch (message.reccurence) {
+    case '0':
+    case '1': {
+      return diffusionStartDate
     }
+    case '2': {
+      // une fois par semaine
+      if (isStartDateTodayOrAfter) {
+        return diffusionStartDate
+      }
+      const weeksToAdd = now.isAfter(todayDiffusion)
+        ? Math.ceil(now.diff(diffusionStartDate, 'week', true))
+        : 0
+      return diffusionStartDate.add(weeksToAdd, 'week')
+    }
+    case '3': {
+      // tous les jours
+      if (isStartDateTodayOrAfter) {
+        return diffusionStartDate
+      }
+      const dayToAdd = now.isAfter(todayDiffusion) ? 1 : 0
+
+      return moment(now).add(dayToAdd, 'day')
+    }
+    case '4': {
+      // une fois par mois
+      if (isStartDateTodayOrAfter) {
+        return diffusionStartDate
+      }
+      const monthsToAdd = Math.ceil(now.diff(diffusionStartDate, 'month', true))
+      return diffusionStartDate.add(monthsToAdd, 'month')
+    }
+    default:
+      return diffusionStartDate
   }
-  return currentDate
+}
+
+export const getMessageNextDiffusionDatetime = (message, now) => {
+  return moment(
+    `${getNextDiffusionDate(message, now).format('YYYY-MM-DD')}T${
+      message.moment_time
+    }`
+  )
 }
 
 const isSameMinute = (moment1, moment2) => {
@@ -35,11 +65,14 @@ export const messageToAlert = (messages, alerted, minuteTick) => {
   if (!messages) {
     return undefined
   }
-  const messagesList = Object.values(messages)
   const now = minuteTick.second(0)
+  const messagesList = Object.values(messages)
   const result = messagesList.find(message => {
-    const messageDate = moment(getDateStrFromMessage(message))
-    const prediffusionDate = moment(getDateStrFromMessage(message)).subtract(
+    const messageDate = getMessageNextDiffusionDatetime(message, now)
+    const prediffusionDate = getMessageNextDiffusionDatetime(
+      message,
+      now
+    ).subtract(
       message.prediffusion_before_mn || DEFAULT_PREDIFFUSION_BEFORE_IN_MIN,
       'minutes'
     )
@@ -60,7 +93,7 @@ export const immediateMessage = (messages, alerted, minuteTick) => {
   const messagesList = Object.values(messages)
   const now = minuteTick.second(0)
   const result = messagesList.find(message => {
-    const messageDate = moment(getDateStrFromMessage(message))
+    const messageDate = getMessageNextDiffusionDatetime(message, now)
     return (
       isSameMinute(messageDate, now) &&
       (!alerted || alerted.indexOf(message.id) === -1)
@@ -70,22 +103,37 @@ export const immediateMessage = (messages, alerted, minuteTick) => {
   return result
 }
 
-export const closestMessage = messages => {
+export const sortMessage = now => (a, b) => {
+  const aDiffusionDate = getMessageNextDiffusionDatetime(a, now)
+  const bDiffusionDate = getMessageNextDiffusionDatetime(b, now)
+  if (aDiffusionDate.isAfter(bDiffusionDate)) {
+    return 1
+  }
+  return -1
+}
+
+const findArrayMinIndex = array => {
+  return array.reduce((acc, cur, curIndex) => {
+    if (cur > 0 && array[acc] < 0) {
+      return curIndex
+    }
+    if (cur < 0 && array[acc] > 0) {
+      return acc
+    }
+    if (Math.abs(cur) < Math.abs(array[acc])) {
+      return curIndex
+    }
+    return acc
+  }, 0)
+}
+export const closestMessage = (messages, now) => {
   if (messages.length === 0) {
     return undefined
   }
-  const dates = messages.map(getDateStrFromMessage)
-
-  const date = getClosestFutureDate(dates)
-  const index = dates.indexOf(date.format('YYYY-MM-DDTHH:mm:ss'))
-  return messages[index]
-}
-
-export const sortMessage = (a, b) => {
-  //2019-10-10T00:00:00
-  const aStr = `${a.diffusion_start_date.split('T')[0]}T${a.moment_time}`
-  const bStr = `${b.diffusion_start_date.split('T')[0]}T${b.moment_time}`
-  const aDate = moment(aStr)
-  const bDate = moment(bStr)
-  return aDate.unix() - bDate.unix()
+  const closestFutureDateIndex = findArrayMinIndex(
+    messages
+      .map(message => getMessageNextDiffusionDatetime(message, now))
+      .map(diffusionDate => diffusionDate.diff(now, 'seconds'))
+  )
+  return messages[closestFutureDateIndex]
 }
