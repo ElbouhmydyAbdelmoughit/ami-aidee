@@ -25,7 +25,7 @@ public class MainApplication extends MultiDexApplication implements ReactApplica
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
     @Override
     public boolean getUseDeveloperSupport() {
-      return true;
+      return false;
     }
 
     @Override
