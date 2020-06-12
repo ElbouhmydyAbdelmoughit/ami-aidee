@@ -1,4 +1,5 @@
 import moment from 'moment'
+import { getDatestamp } from './time'
 
 const getNextDiffusionDate = (message, now) => {
   const diffusionStartDate = moment(message.diffusion_start_date)
@@ -17,7 +18,7 @@ const getNextDiffusionDate = (message, now) => {
       if (isStartDateTodayOrAfter) {
         return diffusionStartDate
       }
-      const weeksToAdd = now.isAfter(todayDiffusion)
+      const weeksToAdd = now.isAfter(todayDiffusion, 'minute')
         ? Math.ceil(now.diff(diffusionStartDate, 'week', true))
         : 0
       return diffusionStartDate.add(weeksToAdd, 'week')
@@ -27,7 +28,7 @@ const getNextDiffusionDate = (message, now) => {
       if (isStartDateTodayOrAfter) {
         return diffusionStartDate
       }
-      const dayToAdd = now.isAfter(todayDiffusion) ? 1 : 0
+      const dayToAdd = now.isAfter(todayDiffusion, 'minute') ? 1 : 0
 
       return moment(now).add(dayToAdd, 'day')
     }
@@ -61,11 +62,21 @@ const isSameMinute = (moment1, moment2) => {
 }
 
 const DEFAULT_PREDIFFUSION_BEFORE_IN_MIN = 15
-export const messageToAlert = (messages, alerted, minuteTick) => {
+
+const messageIsAlerted = (alertedList, message) => {
+  if (!alertedList) {
+    return false
+  }
+  return alertedList.some(
+    alertedItem =>
+      alertedItem.id === message.id && getDatestamp() === alertedItem.datestamp
+  )
+}
+
+export const messageToAlert = (messages, alerted, now) => {
   if (!messages) {
     return undefined
   }
-  const now = minuteTick.second(0)
   const messagesList = Object.values(messages)
   const result = messagesList.find(message => {
     const messageDate = getMessageNextDiffusionDatetime(message, now)
@@ -78,26 +89,22 @@ export const messageToAlert = (messages, alerted, minuteTick) => {
     )
     return (
       now.isSameOrAfter(prediffusionDate) &&
-      now.isBefore(messageDate) &&
-      (!alerted || alerted.indexOf(message.id) === -1)
+      now.isBefore(messageDate, 'minute') &&
+      !messageIsAlerted(alerted, message)
     )
   })
 
   return result
 }
 
-export const immediateMessage = (messages, alerted, minuteTick) => {
+export const immediateMessage = (messages, alerted, now) => {
   if (!messages) {
     return undefined
   }
   const messagesList = Object.values(messages)
-  const now = minuteTick.second(0)
   const result = messagesList.find(message => {
     const messageDate = getMessageNextDiffusionDatetime(message, now)
-    return (
-      isSameMinute(messageDate, now) &&
-      (!alerted || alerted.indexOf(message.id) === -1)
-    )
+    return isSameMinute(messageDate, now) && !messageIsAlerted(alerted, message)
   })
 
   return result

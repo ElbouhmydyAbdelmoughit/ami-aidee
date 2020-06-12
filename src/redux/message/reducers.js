@@ -1,4 +1,5 @@
 import { createReducer } from 'reduxsauce'
+
 import { types } from './actions'
 
 const initialState = {
@@ -63,12 +64,24 @@ const messageCreateFailure = (state = initialState) => ({
 
 const messageAlerted = (state = initialState, action) => ({
   ...state,
-  alerted: [...(state.alerted || []), action.id],
+  alerted: [
+    ...(state.alerted || []),
+    {
+      id: action.id,
+      datestamp: action.datestamp,
+    },
+  ],
 })
 
 const immediateMessageAlerted = (state = initialState, action) => ({
   ...state,
-  immediate_alerted: [...(state.immediate_alerted || []), action.id],
+  immediate_alerted: [
+    ...(state.immediate_alerted || []),
+    {
+      id: action.id,
+      datestamp: action.datestamp,
+    },
+  ],
 })
 
 export default createReducer(initialState, {
