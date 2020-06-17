@@ -8,6 +8,8 @@ import com.amiaide.videoView.VideoViewPackage;
 import com.crashlytics.android.Crashlytics;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+
+import com.github.yamill.orientation.OrientationPackage;
 import com.syan.agora.AgoraPackage;
 import com.microsoft.appcenter.reactnative.crashes.AppCenterReactNativeCrashesPackage;
 import com.microsoft.appcenter.reactnative.analytics.AppCenterReactNativeAnalyticsPackage;
@@ -25,7 +27,7 @@ public class MainApplication extends MultiDexApplication implements ReactApplica
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
     @Override
     public boolean getUseDeveloperSupport() {
-      return false;
+      return BuildConfig.DEBUG;
     }
 
     @Override
