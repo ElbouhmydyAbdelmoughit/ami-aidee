@@ -2,7 +2,6 @@ import React, { useState, useEffect, createRef } from 'react'
 import {
   Container,
   Header,
-  View,
   Icon,
   Content,
   Form,
@@ -20,7 +19,7 @@ import {
 } from 'native-base'
 import { Col, Row, Grid } from 'react-native-easy-grid'
 import { Actions } from 'react-native-router-flux'
-import { TouchableWithoutFeedback } from 'react-native'
+import { TouchableWithoutFeedback, View } from 'react-native'
 
 import LinearGradient from 'react-native-linear-gradient'
 
@@ -47,15 +46,15 @@ const HomeScreen = ({
   awake,
   messagesRequest,
   list,
-  loading,
+  now,
   me,
   redirectFromSolarView,
 }) => {
   console.log(list)
   console.log(me)
 
-  const messages = Object.values(list).sort(sortMessage)
-  const msg = closestMessage(messages || [])
+  const messages = Object.values(list).sort(sortMessage(now))
+  const msg = closestMessage(messages || [], now)
   console.log(msg)
   const [message, setMessage] = useState(msg || {})
   //const [volume, setVolume] = useState(1)
@@ -149,9 +148,9 @@ const HomeScreen = ({
             <H1 style={styles.title}>{'Pas de nouveau messages'}</H1>
           )}
           {messages.length > 0 && (
-            <Grid style={{ padding: 30 }}>
+            <Grid style={{ padding: 30, paddingTop: 0 }}>
               <Col size={25}>
-                <Row size={50}>
+                <Row size={50} style={{ paddingTop: 34 }}>
                   <VideoCard ref={videoRef} uri={videoURI} />
                 </Row>
                 <Row size={50}>

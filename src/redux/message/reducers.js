@@ -1,5 +1,6 @@
-import { createReducer } from "reduxsauce"
-import { types } from "./actions"
+import { createReducer } from 'reduxsauce'
+
+import { types } from './actions'
 
 const initialState = {
   list: {},
@@ -15,9 +16,8 @@ const startLoader = (state = initialState) => ({ ...state, loading: true })
 const stopLoader = (state = initialState) => ({ ...state, loading: false })
 
 const messagesSuccess = (state = initialState, action) => {
-  console.log("messagesSuccess")
+  console.log('messagesSuccess')
   const { messages } = action
-  const { list } = state
   const data = {}
   console.log(messages)
   messages.forEach(message => {
@@ -38,7 +38,7 @@ const messageCreateRequest = (state = initialState) => ({
 })
 
 const messageCreateSuccess = (state = initialState, action) => {
-  console.log("messageCreateSuccess")
+  console.log('messageCreateSuccess')
   const { messages } = action
   const { list } = state
   const data = list
@@ -64,12 +64,24 @@ const messageCreateFailure = (state = initialState) => ({
 
 const messageAlerted = (state = initialState, action) => ({
   ...state,
-  alerted: [...(state.alerted || []), action.id],
+  alerted: [
+    ...(state.alerted || []),
+    {
+      id: action.id,
+      datestamp: action.datestamp,
+    },
+  ],
 })
 
 const immediateMessageAlerted = (state = initialState, action) => ({
   ...state,
-  immediate_alerted: [...(state.immediate_alerted || []), action.id],
+  immediate_alerted: [
+    ...(state.immediate_alerted || []),
+    {
+      id: action.id,
+      datestamp: action.datestamp,
+    },
+  ],
 })
 
 export default createReducer(initialState, {

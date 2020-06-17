@@ -16,10 +16,10 @@ export const subjects = [
 
 export const moments = [
   {
-    value: 'A partir de',
+    value: 'à partir de',
   },
   {
-    value: 'Après',
+    value: 'après',
   },
 ]
 

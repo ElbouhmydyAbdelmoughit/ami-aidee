@@ -242,11 +242,13 @@ const SolarScreen = ({
           <View
             style={{
               alignItems: 'center',
-              borderWidth: 1,
-              borderColor: 'rgba(255, 255, 255, 0.4)',
+              justifyContent: 'center',
+              borderWidth: 4,
+              borderColor: 'rgba(255, 255, 255, 0.8)',
               borderRadius: 8,
               padding: 20,
-              minWidth: 100,
+              minWidth: 170,
+              minHeight: 140,
             }}
           >
             <Icon name="account-heart" size={30} color={'white'} />
@@ -254,6 +256,7 @@ const SolarScreen = ({
               style={{
                 color: 'white',
                 fontWeight: 'bold',
+                fontSize: 20,
               }}
             >
               Coucou
