@@ -62,6 +62,11 @@ const styles = StyleSheet.create({
     width: dimensions.width,
     height: dimensions.height,
   },
+  remoteVideoStyle: {
+    width: (9 * dimensions.height) / 16,
+    height: dimensions.height,
+    alignSelf: 'center',
+  },
   emptyView: {
     backgroundColor: 'rgb(50, 209, 231)',
   },
@@ -70,7 +75,7 @@ const styles = StyleSheet.create({
   },
 
   localVideoStyle: {
-    width: 120,
+    width: 200,
     height: 150,
     position: 'absolute',
     top: 5,
@@ -95,6 +100,11 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '100%',
     backgroundColor: 'rgba(50, 209, 231, 0.44)',
+  },
+  infoText: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 24,
   },
 })
 
@@ -169,7 +179,7 @@ const VideoCallRoom = ({ remoteAuxiliary }) => {
         <View style={{ flex: 1, marginTop: 64 }}>
           <UserAvatar user={remoteAuxiliary} />
           <View style={{ marginTop: 32, alignItems: 'center' }}>
-            <Text style={{ color: 'white' }}>En cours de connexion..</Text>
+            <Text style={styles.infoText}>En cours de connexion..</Text>
           </View>
         </View>
         <View style={{ marginBottom: 32, alignItems: 'center' }}>
@@ -191,7 +201,7 @@ const VideoCallRoom = ({ remoteAuxiliary }) => {
           <View style={{ flex: 1, marginTop: 64 }}>
             <UserAvatar user={remoteAuxiliary} />
             <View style={{ marginTop: 32, alignItems: 'center' }}>
-              <Text style={{ color: 'white ' }}>En cours de connexion..</Text>
+              <Text style={styles.infoText}>En cours de connexion..</Text>
             </View>
           </View>
           <View style={{ marginBottom: 32, alignItems: 'center' }}>
@@ -204,9 +214,13 @@ const VideoCallRoom = ({ remoteAuxiliary }) => {
 
   const getRemoteStreamView = () => {
     return (
-      <React.Fragment>
+      <GradientBackground>
         <View />
-        <AgoraView style={styles.full} remoteUid={peerIds[0]} mode={1} />
+        <AgoraView
+          style={styles.remoteVideoStyle}
+          remoteUid={peerIds[0]}
+          mode={1}
+        />
         <AgoraView
           style={styles.localVideoStyle}
           zOrderMediaOverlay={true}
@@ -214,7 +228,7 @@ const VideoCallRoom = ({ remoteAuxiliary }) => {
           mode={1}
         />
         <View style={styles.buttonsBox}>{getEndCallBtn()}</View>
-      </React.Fragment>
+      </GradientBackground>
     )
   }
 

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text } from 'react-native'
 import { Headline, Button } from 'react-native-paper'
 import Br from 'src/ui/components/br'
@@ -8,6 +8,22 @@ import GradientBackground from '../GradientBackground'
 import { getUserDisplayName } from '../../../utils/user'
 
 const VideoCallEnded = ({ auxiliary }) => {
+  const [countdown, setCountdown] = useState(3)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (countdown > 0) {
+        setCountdown(cd => cd - 1)
+      }
+    }, 1000)
+    return () => {
+      clearInterval(interval)
+    }
+  }, [])
+  useEffect(() => {
+    if (countdown === 0) {
+      Actions.pop()
+    }
+  }, [countdown])
   return (
     <GradientBackground>
       <View
@@ -25,7 +41,9 @@ const VideoCallEnded = ({ auxiliary }) => {
           <View style={{ flex: 1, marginTop: 64 }}>
             <UserAvatar user={auxiliary} />
             <View style={{ marginTop: 32, alignItems: 'center' }}>
-              <Text style={{ color: 'white' }}>
+              <Text
+                style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}
+              >
                 {getUserDisplayName(auxiliary)} a raccroché
               </Text>
             </View>
@@ -36,8 +54,18 @@ const VideoCallEnded = ({ auxiliary }) => {
                 Actions.pop()
               }}
               color="white"
+              labelStyle={{
+                fontSize: 24,
+              }}
             >
-              Revenir
+              <Text
+                style={{
+                  fontSize: 24,
+                  fontWeight: 'bold',
+                }}
+              >
+                Revenir dans {countdown} secondes
+              </Text>
             </Button>
           </View>
         </View>

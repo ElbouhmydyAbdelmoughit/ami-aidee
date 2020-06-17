@@ -125,7 +125,9 @@ const VideoCallPage = ({
         <View style={{ flex: 1 }}>
           <UserAvatar user={auxiliary} />
           <View style={{ marginTop: 32, alignItems: 'center' }}>
-            <Text style={{ color: 'white' }}>{getText()}</Text>
+            <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 24 }}>
+              {getText()}
+            </Text>
           </View>
         </View>
         {waiting && (

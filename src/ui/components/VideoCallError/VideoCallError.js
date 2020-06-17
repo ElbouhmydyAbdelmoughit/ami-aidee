@@ -1,11 +1,29 @@
-import React from 'react'
-import { View } from 'react-native'
+import React, { useState, useEffect } from 'react'
+import { View, Text } from 'react-native'
 import { Headline, Button } from 'react-native-paper'
 import { Actions } from 'react-native-router-flux'
 import Br from 'src/ui/components/br'
 import GradientBackground from '../GradientBackground'
 
 const CallErrorPage = ({ errorAcknowledged }) => {
+  const [countdown, setCountdown] = useState(3)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (countdown > 0) {
+        setCountdown(cd => cd - 1)
+      }
+    }, 1000)
+
+    return () => {
+      clearInterval(interval)
+    }
+  }, [])
+  useEffect(() => {
+    if (countdown === 0) {
+      Actions.pop()
+      errorAcknowledged()
+    }
+  }, [countdown])
   return (
     <GradientBackground>
       <View
@@ -19,7 +37,7 @@ const CallErrorPage = ({ errorAcknowledged }) => {
         <Headline
           style={{
             textAlign: 'center',
-            fontSize: 15,
+            fontSize: 24,
             color: 'white',
             fontWeight: 'bold',
           }}
@@ -35,7 +53,14 @@ const CallErrorPage = ({ errorAcknowledged }) => {
           }}
           color="white"
         >
-          Revenir
+          <Text
+            style={{
+              fontSize: 24,
+              fontWeight: 'bold',
+            }}
+          >
+            Revenir dans {countdown} secondes
+          </Text>
         </Button>
       </View>
     </GradientBackground>

@@ -247,16 +247,16 @@ const SolarScreen = ({
               borderColor: 'rgba(255, 255, 255, 0.8)',
               borderRadius: 8,
               padding: 20,
-              minWidth: 170,
-              minHeight: 140,
+              minWidth: 200,
+              minHeight: 170,
             }}
           >
-            <Icon name="account-heart" size={30} color={'white'} />
+            <Icon name="account-heart" size={64} color={'white'} />
             <Text
               style={{
                 color: 'white',
                 fontWeight: 'bold',
-                fontSize: 20,
+                fontSize: 24,
               }}
             >
               Coucou
