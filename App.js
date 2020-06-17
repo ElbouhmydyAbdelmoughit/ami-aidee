@@ -7,21 +7,20 @@
  */
 
 import React, { useEffect } from 'react'
-import AppRouter from './AppRouter'
 import { StyleProvider, Root } from 'native-base'
 import { Provider as PaperProvider } from 'react-native-paper'
 
-import getTheme from './native-base-theme/components'
-import material from './native-base-theme/variables/material'
-
 import { Provider } from 'react-redux'
 
-import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 import { PersistGate } from 'redux-persist/integration/react'
-
+import Orientation from 'react-native-orientation'
 import { Core } from 'src/core'
 
-import { Loader, Timer } from 'src/ui/components'
+import { Loader } from 'src/ui/components'
+
+import AppRouter from './AppRouter'
+import getTheme from './native-base-theme/components'
+import material from './native-base-theme/variables/material'
 
 console.log(Core)
 const { store, persistor } = Core
@@ -30,6 +29,10 @@ console.log(persistor)
 console.log(store)
 
 const App = () => {
+  useEffect(() => {
+    Orientation.lockToLandscape()
+    return () => {}
+  }, [])
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
