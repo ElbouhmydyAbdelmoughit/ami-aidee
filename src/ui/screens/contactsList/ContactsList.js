@@ -25,8 +25,8 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     padding: 16,
     marginRight: 32,
-    width: 150,
-    height: 150,
+    width: 200,
+    height: 200,
     alignItems: 'center',
     marginTop: 16,
   },
@@ -93,6 +93,7 @@ const ContactsList = ({
               style={{
                 color: 'white',
                 fontWeight: 'bold',
+                fontSize: 24,
               }}
             >
               Revenir
@@ -120,7 +121,7 @@ const ContactsList = ({
                 }}
               >
                 <Avatar.Text
-                  size={56}
+                  size={64}
                   label={getUserAbbr(auxiliary)}
                   style={{
                     backgroundColor: '#15E6CD',
@@ -128,7 +129,15 @@ const ContactsList = ({
                   color="white"
                 />
               </View>
-              <Text style={{ color: 'white', alignSelf: 'center' }}>
+              <Text
+                style={{
+                  color: 'white',
+                  alignSelf: 'center',
+                  fontWeight: 'bold',
+                  fontSize: 24,
+                  textAlign: 'center',
+                }}
+              >
                 {auxiliary.firstname} {auxiliary.lastname}
               </Text>
             </View>

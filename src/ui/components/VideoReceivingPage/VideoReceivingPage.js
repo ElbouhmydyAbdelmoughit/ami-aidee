@@ -65,7 +65,6 @@ const CallReceivingScreen = ({
     })
     return () => {
       stopSound()
-      onRefuseCall()
     }
   }, [])
   if (errored) {

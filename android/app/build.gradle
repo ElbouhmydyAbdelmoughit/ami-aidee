@@ -138,8 +138,8 @@ android {
         applicationId "com.amiaide"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 35
-        versionName "1.24"
+        versionCode 37
+        versionName "1.28"
         multiDexEnabled true
     }
     splits {
@@ -221,6 +221,7 @@ configurations.all {
 }
 
 dependencies {
+    implementation project(':react-native-orientation')
     implementation project(':react-native-agora')
     implementation project(':appcenter-crashes')
     implementation project(':appcenter-analytics')

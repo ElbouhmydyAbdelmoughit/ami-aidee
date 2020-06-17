@@ -128,11 +128,6 @@ function* videoCallInvitationAcceptRequest() {
   } catch (e) {
     console.log('accept error')
     yield put(VideoCallActions.invitationAcceptError({ error: e }))
-    try {
-      yield put(VideoCallActions.invitationRefuseRequest())
-    } catch (e) {
-      // what todo?
-    }
   }
 }
 
