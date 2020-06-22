@@ -14,7 +14,6 @@ import {
 } from 'native-base'
 import { MessageSelectors } from 'src/redux/message'
 import { subjects, moments, reccurences } from 'src/utils'
-import Icon from 'react-native-vector-icons/MaterialIcons'
 import moment from 'moment'
 import momentFR from 'moment/locale/fr'
 
@@ -42,21 +41,21 @@ video_url: ""
     MessageSelectors.getMessageNextDiffusionDate(message)
   )
   var fr = moment().locale('fr', momentFR)
-  const { activite, reccurence, location, moment_time } = message
+  const { activite, reccurence, moment_time } = message
   const moment_id = message.moment
   const { username } = me
 
   const styles = {
+    datetime: {
+      fontSize: 20,
+      color: '#777',
+      marginBottom: 16,
+      fontWeight: '700',
+    },
     text: {
       fontSize: 24,
       fontWeight: '700',
       color: '#555',
-      marginBottom: 16,
-    },
-    secondaryInfo: {
-      fontSize: 20,
-      fontWeight: '500',
-      color: '#777',
       marginBottom: 16,
     },
   }
@@ -65,7 +64,7 @@ video_url: ""
     (reccurences[reccurence] && reccurences[reccurence].value) || ''
   const day = fr.format('dddd Do MMMM YYYY')
   const hour = fr.format('HH:mm')
-  const text = `\nNous sommes le ${day} il est ${hour}.`
+  const text = `\n${day}, ${hour}`
   const now = moment()
   return (
     <View>
@@ -81,24 +80,13 @@ video_url: ""
         {diffusionDate.isBefore(now) ? 'Dernier' : 'Prochain'} rappel:{' '}
         {diffusionDate.format('LLL')}
       </Text>
-      <Card style={{ flex: 1 }}>
-        <CardItem body style={{ width: '100%' }}>
+      <Card style={{ margin: 0, padding: 0 }}>
+        <CardItem body style={{ margin: 0, padding: 0, width: '100%' }}>
           <View style={{ flexDirection: 'column', width: '100%' }}>
-            <Text style={styles.text}>{text}</Text>
+            <Text style={styles.datetime}>{text}</Text>
             <Text style={styles.text}>
               {`Penser à  ${activite} ${reccurence_value} ${moment_value} ${moment_time}`}
             </Text>
-            {location ? (
-              <View style={{ flexDirection: 'row', marginTop: 8 }}>
-                <Icon
-                  name={'location-on'}
-                  size={24}
-                  color={'#999'}
-                  style={{ marginRight: 8 }}
-                />
-                <Text style={styles.secondaryInfo}>{location}</Text>
-              </View>
-            ) : null}
           </View>
         </CardItem>
       </Card>

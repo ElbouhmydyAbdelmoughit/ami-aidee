@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import VideoReceivingPage from './VideoReceivingPage'
 import { VideoCallActions, VideoCallSelectors } from '../../../redux/videoCall'
+import { AuthSelectors } from '../../../redux/auth'
 
 export default connect(
   state => ({
@@ -12,6 +13,7 @@ export default connect(
       state.videoCall.remoteInvitationProps &&
         state.videoCall.remoteInvitationProps.callerId
     ),
+    currentHelpedUser: AuthSelectors.getCurrentHelpedUser(state),
   }),
   dispatch => ({
     refuseCallInvitation: () =>

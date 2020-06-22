@@ -172,7 +172,7 @@ const HomeScreen = ({
                 </Row>
                 <Row size={3}></Row>
                 <Row size={45}>
-                  <PictureCard uri={imageURI} />
+                  <PictureCard uri={imageURI} message={message} />
                 </Row>
               </Col>
             </Grid>

@@ -1,5 +1,9 @@
 import { methods, query, mutation } from '../utils'
-import { service, authenticatedQuery } from './middleware'
+import {
+  service,
+  authenticatedQuery,
+  authenticatedMutation,
+} from './middleware'
 
 const { GET } = methods
 /**
@@ -27,6 +31,7 @@ const queries = {
     created_at
     surname
     updated_at
+    automatic_pickup
   }`,
   count: () => ` helped_users_aggregate {
     aggregate {
@@ -56,11 +61,12 @@ const mutations = {
         _eq: \"${id}\"
       }}, 
       _set: {
-        email: \"${user.email}\"
-        firstname: \"${user.firstname}\" 
-        lastname: \"${user.lastname}\"
-        phone: \"${user.phone}\"
-    }) {
+        ${
+          typeof user.automatic_pickup === 'boolean'
+            ? `automatic_pickup: ${user.automatic_pickup}`
+            : ''
+        }
+      }) {
       returning {
         id
         firstname
@@ -68,6 +74,7 @@ const mutations = {
         email
         phone
         updated_at
+        automatic_pickup
       }
     }
   }`,
@@ -87,12 +94,12 @@ const mutations = {
  * SERVICES
  */
 export default {
-  users: filters =>
-    console.log(filters) || authenticatedQuery(queries.users(filters)),
+  users: filters => authenticatedQuery(queries.users(filters)),
   createUser: user => {
     const mutationQuery = mutations.createUser(user)
     return mutation({ mutationString: mutationQuery })
   },
-  modifyUser: ({ id, user }) => mutation(mutations.modifyUser(id, user)),
+  modifyUser: ({ id, user }) =>
+    authenticatedMutation(mutations.modifyUser(id, user)),
   deleteUser: id => mutation(mutations.deleteUser(id)),
 }

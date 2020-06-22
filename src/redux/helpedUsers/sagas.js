@@ -1,8 +1,8 @@
-import { takeLatest, put, call } from "redux-saga/effects"
-import { HelpedUsersService } from "../../services"
-import { LoaderActions } from "../loader"
-import { SnackActions } from "../snackBar"
-import { types, default as UserAction } from "./actions"
+import { takeLatest, put, call } from 'redux-saga/effects'
+import { HelpedUsersService } from '../../services'
+import { LoaderActions } from '../loader'
+import { SnackActions } from '../snackBar'
+import { types, default as UserAction } from './actions'
 
 function* usersRequest({ filters }) {
   console.log(filters)
@@ -26,16 +26,16 @@ function* usersCreateRequest({ filters }) {
   yield put(UserAction.usersCreateSuccess(users))
   if (error) {
     yield put(LoaderActions.loaded())
-    yield put(SnackActions.displayError("user_create_error"))
+    yield put(SnackActions.displayError('user_create_error'))
     return
   } else {
     yield put(LoaderActions.loaded())
-    yield put(SnackActions.displayInfo("user_create_success"))
+    yield put(SnackActions.displayInfo('user_create_success'))
   }
 }
 
 function* usersDeleteRequest({ id }) {
-  console.log("delete user")
+  console.log('delete user')
   console.log(id)
   const [error, response] = yield call(HelpedUsersService.deleteUser, id)
   console.log(error)
@@ -43,25 +43,26 @@ function* usersDeleteRequest({ id }) {
   yield put(UserAction.usersDeleteSuccess(id))
   if (error) {
     yield put(LoaderActions.loaded())
-    yield put(SnackActions.displayError("user_delete_error"))
+    yield put(SnackActions.displayError('user_delete_error'))
     return
   } else {
     yield put(LoaderActions.loaded())
-    yield put(SnackActions.displayInfo("user_delete_success"))
+    yield put(SnackActions.displayInfo('user_delete_success'))
   }
 }
 
 function* usersModifyRequest({ user }) {
-  console.log("user")
+  console.log('user')
   console.log(user)
   yield put(LoaderActions.loading())
-  const id = user.id
+  const { id, ...otherUserData } = user
+
   const [error, response] = yield call(HelpedUsersService.modifyUser, {
     id,
-    user,
+    user: otherUserData,
   })
 
-  console.log("response")
+  console.log('response')
   console.log(error)
   console.log(response)
   const users = response.update_helped_users.returning
@@ -69,12 +70,10 @@ function* usersModifyRequest({ user }) {
   yield put(UserAction.usersModifySuccess(users))
   if (error) {
     yield put(LoaderActions.loaded())
-    yield put(SnackActions.displayError("user_modify_error"))
+    yield put(SnackActions.displayError('user_modify_error'))
     return
-  } else {
-    yield put(LoaderActions.loaded())
-    yield put(SnackActions.displayInfo("user_modify_success"))
   }
+  yield put(LoaderActions.loaded())
 }
 
 export default [

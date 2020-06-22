@@ -26,6 +26,7 @@ import {
 import { SnackBar } from './src/ui/components'
 import VideoCallWaiter from './src/ui/components/VideoCallWaiter'
 import VideoReceivingScreen from './src/ui/screens/videoReceivingScreen'
+import UserSettingsScreen from './src/ui/screens/userSettings'
 
 export default () => (
   <React.Fragment>
@@ -56,6 +57,7 @@ export default () => (
           <Scene key="home" hideNavBar component={HomeScreen} />
           <Scene key="contactsList" hideNavBar component={ContactsList} />
           <Scene key="videoCall" hideNavBar component={VideoCallScreen} />
+          <Scene key="userSettings" hideNavBar component={UserSettingsScreen} />
           <Scene
             key="receivingScreen"
             hideNavBar

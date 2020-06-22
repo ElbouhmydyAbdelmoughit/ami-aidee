@@ -1,27 +1,5 @@
-import React, { Component } from 'react';
-import {
-  StyleSheet,
-  View,
-  Modal,
-  ActivityIndicator
-} from 'react-native';
-
-export default ({loading}) => {
-  return (
-    <Modal
-      transparent={true}
-      animationType={'none'}
-      visible={loading}
-      onRequestClose={() => {}}>
-      <View style={styles.modalBackground}>
-        <View style={styles.activityIndicatorWrapper}>
-          <ActivityIndicator
-            animating={loading} />
-        </View>
-      </View>
-    </Modal>
-  )
-}
+import React, { Component } from 'react'
+import { StyleSheet, View, Modal, ActivityIndicator } from 'react-native'
 
 const styles = StyleSheet.create({
   modalBackground: {
@@ -29,7 +7,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'column',
     justifyContent: 'space-around',
-    backgroundColor: '#00000040'
+    backgroundColor: '#00000040',
   },
   activityIndicatorWrapper: {
     backgroundColor: '#FFFFFF',
@@ -38,6 +16,25 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-around'
-  }
-});
+    justifyContent: 'space-around',
+  },
+})
+
+const Loader = ({ loading }) => {
+  return (
+    <Modal
+      transparent={true}
+      animationType={'none'}
+      visible={loading}
+      onRequestClose={() => {}}
+    >
+      <View style={styles.modalBackground}>
+        <View style={styles.activityIndicatorWrapper}>
+          {loading && <ActivityIndicator animating />}
+        </View>
+      </View>
+    </Modal>
+  )
+}
+
+export default Loader

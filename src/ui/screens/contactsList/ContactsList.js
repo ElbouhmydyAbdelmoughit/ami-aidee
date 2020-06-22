@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import { View, Text, Dimensions, StyleSheet } from 'react-native'
-import { Avatar, TouchableRipple, IconButton } from 'react-native-paper'
+import { View, Text, Dimensions, StyleSheet, ScrollView } from 'react-native'
+import { Avatar, TouchableRipple, IconButton, Button } from 'react-native-paper'
 import { H1, H3 } from 'native-base'
 import { getUserAbbr } from 'src/utils/user'
 import moment from 'moment'
@@ -67,83 +67,106 @@ const ContactsList = ({
       colors={gradientColors}
       style={{ flex: 1 }}
     >
-      <View style={{ marginLeft: 64 }}>
-        <H1 style={styles.title}>Mes contacts</H1>
-        <H3 style={styles.subtitle}>
-          Appuyer sur la carte pour appeler la personne
-        </H3>
-      </View>
-      <View
-        style={{
-          padding: 64,
-          paddingTop: 24,
-          flexDirection: 'row',
-          width: Dimensions.get('window').width,
-          flexWrap: 'wrap',
-        }}
-      >
-        <TouchableRipple
-          onPress={() => {
-            Actions.accueil()
-          }}
-        >
-          <View style={StyleSheet.compose(styles.box, styles.returnBox)}>
-            <Icon name="keyboard-return" size={40} color={'white'} />
-            <Text
-              style={{
-                color: 'white',
-                fontWeight: 'bold',
-                fontSize: 24,
+      <ScrollView>
+        <View style={{ flexDirection: 'row' }}>
+          <View style={{ marginLeft: 64, flex: 1 }}>
+            <H1 style={styles.title}>Mes contacts</H1>
+            <H3 style={styles.subtitle}>
+              Appuyer sur la carte pour appeler la personne
+            </H3>
+          </View>
+          <View style={{ marginTop: 32, marginRight: 32 }}>
+            <Button
+              mode="outlined"
+              style={{ borderColor: 'white' }}
+              onPress={() => {
+                Actions.userSettings()
               }}
             >
-              Revenir
-            </Text>
-          </View>
-        </TouchableRipple>
-        {auxiliaries.map(auxiliary => (
-          <TouchableRipple
-            onPress={() => {
-              Actions.push('videoCall', { auxiliary })
-            }}
-          >
-            <View
-              key={auxiliary.id}
-              style={StyleSheet.compose(styles.box, {
-                backgroundColor: gradientColors[1],
-                paddingTop: 0,
-              })}
-            >
-              <View
-                style={{
-                  flex: 1,
-                  alignItems: 'center',
-                  justifyContent: 'space-around',
-                }}
-              >
-                <Avatar.Text
-                  size={64}
-                  label={getUserAbbr(auxiliary)}
-                  style={{
-                    backgroundColor: '#15E6CD',
-                  }}
-                  color="white"
-                />
-              </View>
               <Text
                 style={{
                   color: 'white',
-                  alignSelf: 'center',
-                  fontWeight: 'bold',
-                  fontSize: 24,
-                  textAlign: 'center',
+                  textTransform: 'uppercase',
+                  fontSize: 18,
                 }}
               >
-                {auxiliary.firstname} {auxiliary.lastname}
+                Options
+              </Text>
+            </Button>
+          </View>
+        </View>
+        <View
+          style={{
+            padding: 64,
+            paddingTop: 24,
+            flexDirection: 'row',
+            width: Dimensions.get('window').width,
+            flexWrap: 'wrap',
+          }}
+        >
+          <TouchableRipple
+            onPress={() => {
+              Actions.accueil()
+            }}
+          >
+            <View style={StyleSheet.compose(styles.box, styles.returnBox)}>
+              <Icon name="keyboard-return" size={40} color={'white'} />
+              <Text
+                style={{
+                  color: 'white',
+                  fontWeight: 'bold',
+                  fontSize: 24,
+                }}
+              >
+                Revenir
               </Text>
             </View>
           </TouchableRipple>
-        ))}
-      </View>
+          {auxiliaries.map(auxiliary => (
+            <TouchableRipple
+              onPress={() => {
+                Actions.push('videoCall', { auxiliary })
+              }}
+            >
+              <View
+                key={auxiliary.id}
+                style={StyleSheet.compose(styles.box, {
+                  backgroundColor: gradientColors[1],
+                  paddingTop: 0,
+                })}
+              >
+                <View
+                  style={{
+                    flex: 1,
+                    alignItems: 'center',
+                    justifyContent: 'space-around',
+                  }}
+                >
+                  <Avatar.Text
+                    size={64}
+                    label={getUserAbbr(auxiliary)}
+                    style={{
+                      backgroundColor: '#15E6CD',
+                    }}
+                    color="white"
+                  />
+                </View>
+                <Text
+                  style={{
+                    color: 'white',
+                    alignSelf: 'center',
+                    fontWeight: 'bold',
+                    fontSize: 24,
+                    textAlign: 'center',
+                  }}
+                >
+                  {auxiliary.firstname} {auxiliary.lastname}
+                </Text>
+              </View>
+            </TouchableRipple>
+          ))}
+        </View>
+      </ScrollView>
     </LinearGradient>
   )
 }

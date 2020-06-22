@@ -28,6 +28,7 @@ const queries = {
       sun_culmination_hour
       status
       created_at
+      automatic_pickup
     }
     permission {
       id

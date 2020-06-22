@@ -1,21 +1,21 @@
 /* Service utils */
-import axios from "axios"
-import * as AxiosLogger from "axios-logger"
+import axios from 'axios'
+import * as AxiosLogger from 'axios-logger'
 
-import { Env } from "src/utils/env"
+import { Env } from 'src/utils/env'
 
 /** GRAPHQL */
-import { InMemoryCache } from "apollo-cache-inmemory"
-import { HttpLink } from "apollo-link-http"
-import ApolloClient, { gql } from "apollo-boost"
+import { InMemoryCache } from 'apollo-cache-inmemory'
+import { HttpLink } from 'apollo-link-http'
+import ApolloClient, { gql } from 'apollo-boost'
 const defaultOptions = {
   watchQuery: {
-    fetchPolicy: "no-cache",
-    errorPolicy: "ignore",
+    fetchPolicy: 'no-cache',
+    errorPolicy: 'ignore',
   },
   query: {
-    fetchPolicy: "no-cache",
-    errorPolicy: "all",
+    fetchPolicy: 'no-cache',
+    errorPolicy: 'all',
   },
 }
 console.log(Env)
@@ -27,14 +27,14 @@ const client = new ApolloClient({
 })
 
 /** GRAPHQL - MUTATION */
-export const mutation = ({ mutationString, headers = {} }) =>
-  client
+export const mutation = ({ mutationString, headers = {} }) => {
+  return client
     .mutate({
       mutation: gql`
         ${mutationString}
       `,
       context: {
-        headers: headers,
+        headers,
       },
     })
     .then(({ data: response }) => {
@@ -43,13 +43,14 @@ export const mutation = ({ mutationString, headers = {} }) =>
     .catch(error => {
       return Promise.resolve([error])
     })
+}
 
 /** GRAPHQL - QUERY */
 export const query = ({ queryString, headers = {} }) =>
   client
     .query({
       query: gql`{${queryString}}`,
-      fetchPolicy: "network-only",
+      fetchPolicy: 'network-only',
       context: {
         headers: headers,
       },
@@ -64,11 +65,11 @@ export const query = ({ queryString, headers = {} }) =>
 
 /** Method types */
 export const methods = {
-  GET: "get",
-  POST: "post",
-  PUT: "put",
-  PATCH: "patch",
-  DELETE: "delete",
+  GET: 'get',
+  POST: 'post',
+  PUT: 'put',
+  PATCH: 'patch',
+  DELETE: 'delete',
 }
 
 export const fetch = ({
@@ -105,9 +106,9 @@ export const fetch = ({
       responseType,
       headers: {
         ...headers,
-        "Access-Control-Allow-Origin": "*",
+        'Access-Control-Allow-Origin': '*',
         //"User-Agent": "PostmanRuntime/7.15.0",
-        Accept: "*/*",
+        Accept: '*/*',
         //"Cache-Control":"no-cache",
         //"Postman-Token":"d09afd28-67b6-41e7-8425-cfdfce9fca59",
         //"Host":"platform.dietea.fr",
@@ -134,9 +135,9 @@ export const fetch = ({
 /** FILE */
 export const fileFromObjectURL = objectURL => {
   return axios({
-    method: "get",
+    method: 'get',
     url: objectURL, // blob url eg. blob:http://127.0.0.1:8000/e89c5d87-a634-4540-974c-30dc476825cc
-    responseType: "blob",
+    responseType: 'blob',
   }) /*.then(function(response){
      var reader = new FileReader();
      reader.readAsDataURL(response.data); 

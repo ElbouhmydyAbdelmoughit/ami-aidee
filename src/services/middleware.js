@@ -1,41 +1,36 @@
-import { UNAUTHORIZED } from 'http-status-codes';
-import { call, put, select } from 'redux-saga/effects';
-import { default as AuthActions } from '../redux/auth/actions';
-import { fetch, query, mutation } from '../utils/index';
+import { UNAUTHORIZED } from 'http-status-codes'
+import { call, put, select } from 'redux-saga/effects'
+import { default as AuthActions } from '../redux/auth/actions'
+import { fetch, query, mutation } from '../utils/index'
 
 function* authorize(service) {
-  const {jwt} = yield select(state => state.auth);
-  service.headers = {...service.headers, Authorization: `Bearer ${jwt}`};
-  let [error, response] = yield call(fetch, service);
+  const { jwt } = yield select(state => state.auth)
+  service.headers = { ...service.headers, Authorization: `Bearer ${jwt}` }
+  let [error, response] = yield call(fetch, service)
 
   if (error && error.response.status === UNAUTHORIZED) {
-    yield put(AuthActions.logout());
-    return [error];
+    yield put(AuthActions.logout())
+    return [error]
   }
 
-  return [error, response];
+  return [error, response]
 }
 
+export function* authenticatedMutation(mutationString, headers = {}) {
+  console.log(mutationString)
 
-export function* authenticatedMutation(
-  queryString,
-  headers = {}
-) {
-  const {jwt} = yield select(state => state.auth);
-  headers = {...headers, Authorization: `Bearer ${jwt}`};
-  return yield call(mutation, {queryString , headers})
+  const { jwt } = yield select(state => state.auth)
+  headers = { ...headers, Authorization: `Bearer ${jwt}` }
+  return yield call(mutation, { mutationString, headers })
 }
 
-export function* authenticatedQuery(
-  queryString,
-  headers = {}
-) {
-  const {jwt} = yield select(state => state.auth);
-  headers = {...headers, Authorization: `Bearer ${jwt}`};
+export function* authenticatedQuery(queryString, headers = {}) {
+  const { jwt } = yield select(state => state.auth)
+  headers = { ...headers, Authorization: `Bearer ${jwt}` }
 
   console.log(queryString)
   console.log(headers)
-  return yield call(query, {queryString , headers})
+  return yield call(query, { queryString, headers })
 }
 
 export function* authenticatedService(
@@ -44,7 +39,7 @@ export function* authenticatedService(
   data = {},
   params = {},
   headers = {},
-  responseType = '' ,
+  responseType = '',
   uploadCallBack = () => {}
 ) {
   return yield call(authorize, {
@@ -54,8 +49,8 @@ export function* authenticatedService(
     params,
     headers,
     responseType,
-    uploadCallBack
-  });
+    uploadCallBack,
+  })
 }
 
 export function* service(
@@ -72,7 +67,6 @@ export function* service(
     data,
     params,
     headers,
-    responseType
-  });
+    responseType,
+  })
 }
-

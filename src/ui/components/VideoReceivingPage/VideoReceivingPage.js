@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet, Text } from 'react-native'
 import { IconButton } from 'react-native-paper'
 import Sound from 'react-native-sound'
 import UserAvatar from '../UserAvatar'
@@ -7,6 +7,7 @@ import CallErrorPage from '../VideoCallError'
 import VideoCallRoom from '../VideoCallRoom'
 import GradientBackground from '../GradientBackground'
 import { playHangupTone } from '../../../utils/sound'
+import useCountdown from '../../hooks/use-countdown'
 
 const styles = StyleSheet.create({
   root: {
@@ -24,6 +25,7 @@ const CallReceivingScreen = ({
   remoteInvitationProps,
   myUid,
   callingRemoteAuxiliary,
+  currentHelpedUser,
 }) => {
   const { status, channelId, callerId } = remoteInvitationProps || {}
 
@@ -33,6 +35,8 @@ const CallReceivingScreen = ({
       ringtone.release()
     }
   }
+
+  const { automatic_pickup: automaticPickup } = currentHelpedUser
 
   const onRefuseCall = () => {
     if (answered) {
@@ -52,6 +56,13 @@ const CallReceivingScreen = ({
     stopSound()
     acceptCallInvitation()
   }
+
+  const countdown = useCountdown(10)
+  useEffect(() => {
+    if (automaticPickup && countdown === 0) {
+      onAcceptCall()
+    }
+  }, [countdown])
 
   useEffect(() => {
     answered = false
@@ -80,6 +91,18 @@ const CallReceivingScreen = ({
       <View style={styles.root}>
         <View style={{ flex: 1, alignItems: 'center', marginTop: 64 }}>
           <UserAvatar user={callingRemoteAuxiliary} />
+          {automaticPickup && (
+            <Text
+              style={{
+                fontSize: 24,
+                fontWeight: 'bold',
+                color: 'white',
+                marginTop: 64,
+              }}
+            >
+              Décrochage automatique dans {countdown} secondes
+            </Text>
+          )}
         </View>
         <View style={{ width: '100%', alignItems: 'center' }}>
           <View
