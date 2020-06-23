@@ -73,6 +73,12 @@ const mutations = {
         lastname
         email
         phone
+        status
+        bedtime_hour
+        waking_hour
+        sun_culmination_hour
+        created_at
+        surname
         updated_at
         automatic_pickup
       }
