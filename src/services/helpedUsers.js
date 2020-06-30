@@ -51,6 +51,8 @@ const mutations = {
       lastname: \"${user.lastname}\"
       phone: \"${user.phone}\"
       user_id: "${user.user_id}"
+      postal_code: "${user.postalCode}"
+      ${user.invitationCode ? `invitation_code: "${user.invitationCode}"` : ''}
     }) {
       affected_rows
     }

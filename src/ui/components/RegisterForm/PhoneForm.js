@@ -1,45 +1,102 @@
-import React, { useState } from "react"
-import { Form, Input, View, H3, Item, Button, Text, Icon } from "native-base"
-import { Actions } from "react-native-router-flux"
+import React, { useState } from 'react'
+import { Form, Input, View, H3, Item, Button, Text, Icon } from 'native-base'
+import { Actions } from 'react-native-router-flux'
 
 const PhoneForm = ({ setRegisterUser }) => {
-  const [phone, setPhone] = useState("")
+  const [phone, setPhone] = useState('')
+
+  const [invitationCode, setInvitationCode] = useState('')
+  const [postalCode, setPostalCode] = useState('')
   const [errorText, setErrorText] = useState(undefined)
+  const [errorField, setErrorField] = useState(undefined)
   return (
-    <View style={{ width: "100%" }}>
-      <H3 style={{ marginBottom: 32, color: "#848484" }}>
-        {errorText ? errorText : "Renseigner votre numéro de téléphone"}
+    <View style={{ width: '100%' }}>
+      <H3 style={{ marginBottom: 32, color: '#848484' }}>
+        {errorText
+          ? errorText
+          : 'Renseigner votre numéro de téléphone, votre code départementale et le code parrainage (optionnel)'}
       </H3>
       <Form>
         <Item
           regular
           style={{
             borderRadius: 10,
-            backgroundColor: "#EBEBEB",
+            backgroundColor: '#EBEBEB',
             marginBottom: 16,
           }}
-          error={!!errorText}
+          error={errorField === 'phone'}
         >
           <Input
             autoCapitalize="none"
-            placeholder={"Numéro de téléphone"}
+            placeholder={'Numéro de téléphone'}
             onChangeText={setPhone}
             value={phone}
             autoFocus
           />
-          {errorText && <Icon name="close-circle" />}
+          {errorField === 'phone' && <Icon name="close-circle" />}
         </Item>
+        <View
+          style={{
+            borderRadius: 10,
+            flexDirection: 'row',
+            width: '100%',
+            marginBottom: 16,
+          }}
+        >
+          <Item
+            regular
+            style={{
+              borderRadius: 10,
+              backgroundColor: '#EBEBEB',
+              marginBottom: 16,
+              flex: 1,
+            }}
+            error={errorField === 'postalCode'}
+          >
+            <Input
+              autoCapitalize="none"
+              placeholder="Code départementale (ex. : 75)"
+              onChangeText={setPostalCode}
+              value={postalCode}
+            />
+            {errorField === 'postalCode' && <Icon name="close-circle" />}
+          </Item>
+          <Item
+            regular
+            style={{
+              borderRadius: 10,
+              backgroundColor: '#EBEBEB',
+              marginBottom: 16,
+              flex: 1,
+            }}
+          >
+            <Input
+              autoCapitalize="none"
+              placeholder="Code parrainage (optionnel)"
+              onChangeText={setInvitationCode}
+              value={invitationCode}
+            />
+          </Item>
+        </View>
         <Button
           full
           block
           onPress={() => {
             let hasError = false
             if (!phone) {
-              setErrorText("Veuillez renseigner un numéro de téléphone")
+              setErrorText('Veuillez renseigner un numéro de téléphone')
+
+              setErrorField('phone')
               hasError = true
             } else if (!/\+?[0-9]+/.test(phone)) {
               hasError = true
-              setErrorText("Veuillez renseigner un numéro de téléphone valide")
+              setErrorText('Veuillez renseigner un numéro de téléphone valide')
+
+              setErrorField('phone')
+            }
+            if (!postalCode) {
+              setErrorText('Veuillez renseigner un code départemental')
+              setErrorField('postalCode')
             }
             if (hasError) {
               return
@@ -47,9 +104,11 @@ const PhoneForm = ({ setRegisterUser }) => {
             setErrorText(undefined)
             setRegisterUser({
               phone,
+              postalCode,
+              invitationCode,
             })
             Actions.register({
-              step: "password",
+              step: 'password',
             })
           }}
           style={{ borderRadius: 10 }}
