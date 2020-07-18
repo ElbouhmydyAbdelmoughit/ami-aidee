@@ -14,7 +14,7 @@ const PhoneForm = ({ setRegisterUser }) => {
       <H3 style={{ marginBottom: 32, color: '#848484' }}>
         {errorText
           ? errorText
-          : 'Renseigner votre numéro de téléphone, votre code départementale et le code parrainage (optionnel)'}
+          : 'Renseigner votre numéro de téléphone, votre code départementale et le code de parrainage (optionnel)'}
       </H3>
       <Form>
         <Item
@@ -72,7 +72,7 @@ const PhoneForm = ({ setRegisterUser }) => {
           >
             <Input
               autoCapitalize="none"
-              placeholder="Code parrainage (optionnel)"
+              placeholder="Code de parrainage (optionnel)"
               onChangeText={setInvitationCode}
               value={invitationCode}
             />

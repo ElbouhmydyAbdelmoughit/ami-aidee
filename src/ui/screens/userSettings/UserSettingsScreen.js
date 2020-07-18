@@ -63,7 +63,7 @@ const UserSettingsScreen = ({ currentHelpedUser, userModifyRequest }) => {
             <React.Fragment>
               <Text style={styles.text}>Décrochage automatique</Text>
               <Text style={styles.helpText}>
-                L'appel entrant sera décroché automatiquement après 4 secondes.
+                L'appel entrant sera décroché automatiquement après 3 secondes.
               </Text>
             </React.Fragment>
           </TouchableRipple>

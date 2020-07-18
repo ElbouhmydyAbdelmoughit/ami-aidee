@@ -57,7 +57,7 @@ const CallReceivingScreen = ({
     acceptCallInvitation()
   }
 
-  const countdown = useCountdown(10)
+  const countdown = useCountdown(3)
   useEffect(() => {
     if (automaticPickup && countdown === 0) {
       onAcceptCall()
@@ -69,6 +69,7 @@ const CallReceivingScreen = ({
     ringtone = new Sound('ringtone.mp3', Sound.MAIN_BUNDLE, error => {
       if (error) {
         // ignore
+        console.log('sound error', error)
         return
       }
       ringtone.setNumberOfLoops(-1)
