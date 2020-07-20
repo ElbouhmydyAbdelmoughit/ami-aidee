@@ -20,6 +20,8 @@ const CALLBACK_EVENTS = {
   REMOTE_INVITATION_ACCEPTED: 'remoteInvitationAccepted',
   REMOTE_INVITATION_RECEIVED: 'remoteInvitationReceived',
   REMOTE_INVITATION_FAILURE: 'remoteInvitationFailure',
+  REMOTE_INVITATION_CANCELED: 'remoteInvitationCanceled',
+
   REMOTE_INVITATION_REFUSED: 'remoteInvitationRefused',
   LOCAL_INVITATION_ACCEPTED: 'localInvitationAccepted',
   LOCAL_INVITATION_CANCELED: 'localInvitationCanceled',
@@ -92,6 +94,8 @@ const EVENT_ACTIONS = {
     VideoCallActions.localInvitationReceived,
   [CALLBACK_EVENTS.REMOTE_INVITATION_ACCEPTED]:
     VideoCallActions.remoteInvitationAccepted,
+  [CALLBACK_EVENTS.REMOTE_INVITATION_CANCELED]:
+    VideoCallActions.remoteInvitationCanceled,
 }
 function* videoCallCallbackEvent({ event, type, ...args }) {
   if (EVENT_ACTIONS[event]) {

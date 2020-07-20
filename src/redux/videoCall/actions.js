@@ -23,6 +23,7 @@ export const types = {
   LOCAL_INVITATION_CANCEL_REQUEST: 'VC_LOCAL_INVITATION_CANCEL_REQUEST',
 
   REMOTE_INVITATION_ACCEPTED: 'VC_REMOTE_INVITATION_ACCEPTED',
+  REMOTE_INVITATION_CANCELED: 'VC_REMOTE_INVITATION_CANCELED',
 
   ERROR_ACKED: 'VC_ERROR_ACKNOWLEDGED',
 }
@@ -63,5 +64,7 @@ export default {
 
   remoteInvitationAccepted: () =>
     createAction(types.REMOTE_INVITATION_ACCEPTED),
+  remoteInvitationCanceled: () =>
+    createAction(types.REMOTE_INVITATION_CANCELED),
   errorAcknowledged: () => createAction(types.ERROR_ACKED),
 }

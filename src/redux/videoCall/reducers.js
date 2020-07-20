@@ -51,6 +51,16 @@ const remoteInvitationAccepted = (state = initialState) => {
     },
   }
 }
+const remoteInvitationCanceled = (state = initialState) => {
+  return {
+    ...state,
+    incomingCall: false,
+    remoteInvitationProps: {
+      ...state.remoteInvitationProps,
+      status: 'CANCELED_BY_CALLER',
+    },
+  }
+}
 
 const videoCallInvitationAcceptRequestError = (state = initialState) => {
   return {
@@ -144,6 +154,7 @@ export default createReducer(initialState, {
   [types.INVITATION_REFUSE_REQUEST_ERROR]: videoCallInvitationRefuseRequestError,
   [types.INVITATION_ACCEPT_REQUEST_ERROR]: videoCallInvitationAcceptRequestError,
   [types.REMOTE_INVITATION_ACCEPTED]: remoteInvitationAccepted,
+  [types.REMOTE_INVITATION_CANCELED]: remoteInvitationCanceled,
 
   // local invitation
   [types.LOCAL_INVITATION_INIT]: localInvitationInit,

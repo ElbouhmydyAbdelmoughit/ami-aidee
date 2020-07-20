@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { View, StyleSheet, Text } from 'react-native'
 import { IconButton } from 'react-native-paper'
+import { Actions } from 'react-native-router-flux'
+
 import Sound from 'react-native-sound'
 import UserAvatar from '../UserAvatar'
 import CallErrorPage from '../VideoCallError'
@@ -28,6 +30,8 @@ const CallReceivingScreen = ({
   currentHelpedUser,
 }) => {
   const { status, channelId, callerId } = remoteInvitationProps || {}
+
+  const callCanceledByCaller = status === 'CANCELED_BY_CALLER'
 
   const stopSound = () => {
     if (ringtone) {
@@ -59,7 +63,7 @@ const CallReceivingScreen = ({
 
   const countdown = useCountdown(3)
   useEffect(() => {
-    if (automaticPickup && countdown === 0) {
+    if (automaticPickup && countdown === 0 && !callCanceledByCaller) {
       onAcceptCall()
     }
   }, [countdown])
@@ -79,6 +83,15 @@ const CallReceivingScreen = ({
       stopSound()
     }
   }, [])
+
+  useEffect(() => {
+    if (callCanceledByCaller) {
+      setTimeout(() => {
+        playHangupTone()
+        Actions.pop()
+      }, 2000)
+    }
+  }, [status])
   if (errored) {
     return <CallErrorPage />
   }
@@ -87,12 +100,23 @@ const CallReceivingScreen = ({
       <VideoCallRoom channelId={channelId} uid={myUid} remoteId={callerId} />
     )
   }
+
+  const getText = () => {
+    if (callCanceledByCaller) {
+      return "L'aidant a raccroché"
+    }
+    if (automaticPickup) {
+      return `Décrochage automatique dans ${countdown} secondes`
+    }
+    return null
+  }
+  const text = getText()
   return (
     <GradientBackground>
       <View style={styles.root}>
         <View style={{ flex: 1, alignItems: 'center', marginTop: 64 }}>
           <UserAvatar user={callingRemoteAuxiliary} />
-          {automaticPickup && (
+          {text && (
             <Text
               style={{
                 fontSize: 24,
@@ -101,7 +125,7 @@ const CallReceivingScreen = ({
                 marginTop: 64,
               }}
             >
-              Décrochage automatique dans {countdown} secondes
+              {text}
             </Text>
           )}
         </View>
@@ -115,34 +139,38 @@ const CallReceivingScreen = ({
               alignItems: 'center',
             }}
           >
-            <IconButton
-              style={{
-                width: 60,
-                height: 60,
-                backgroundColor: 'red',
-                borderRadius: 30,
-              }}
-              size={40}
-              onPress={onRefuseCall}
-              icon="close"
-              color="white"
-            >
-              Annuler
-            </IconButton>
-            <IconButton
-              size={40}
-              onPress={onAcceptCall}
-              icon="call"
-              color="white"
-              style={{
-                width: 60,
-                height: 60,
-                backgroundColor: '#0B8167',
-                borderRadius: 30,
-              }}
-            >
-              Accepter
-            </IconButton>
+            {!callCanceledByCaller && (
+              <IconButton
+                style={{
+                  width: 60,
+                  height: 60,
+                  backgroundColor: 'red',
+                  borderRadius: 30,
+                }}
+                size={40}
+                onPress={onRefuseCall}
+                icon="close"
+                color="white"
+              >
+                Annuler
+              </IconButton>
+            )}
+            {!callCanceledByCaller && (
+              <IconButton
+                size={40}
+                onPress={onAcceptCall}
+                icon="call"
+                color="white"
+                style={{
+                  width: 60,
+                  height: 60,
+                  backgroundColor: '#0B8167',
+                  borderRadius: 30,
+                }}
+              >
+                Accepter
+              </IconButton>
+            )}
           </View>
         </View>
       </View>
