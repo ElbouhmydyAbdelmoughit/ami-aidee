@@ -11,6 +11,7 @@ const VideoCallWaiter = ({ myUid, videoCallInit, dispatch, incomingCall }) => {
 
   useEffect(() => {
     if (incomingCall) {
+      Actions.root()
       Actions.receivingScreen()
     }
   }, [incomingCall])

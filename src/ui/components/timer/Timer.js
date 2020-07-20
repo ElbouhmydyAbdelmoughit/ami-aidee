@@ -1,33 +1,41 @@
-import React, { Component, forwardRef, useImperativeHandle } from 'react'
+import React, { useEffect, forwardRef, useImperativeHandle } from 'react'
 import { StyleSheet, View, Modal, ActivityIndicator } from 'react-native'
-
-const DURATION_WHEN_AWAKE = 60000 * 2
-const DURATION_WHEN_SLEEP = 60000 * 15
-
 import { Actions } from 'react-native-router-flux'
 
+import {
+  ECO_FRIENDLY_SCREENS,
+  SCREENSAVING_DURATION,
+  WAKEUP_DURATION,
+} from 'src/utils/constant'
+
 let currentMode = 'sleep'
-let duration = DURATION_WHEN_AWAKE
+let duration = SCREENSAVING_DURATION
 let timerIdentifier = null
 
 const timerAction = () => {
   console.log('timer ended')
   console.log(`timer was in ${currentMode} mode`)
   switch (currentMode) {
-    case 'awake':
+    case 'awake': {
       console.log('sleeping')
-      Actions.sleep()
+      if (ECO_FRIENDLY_SCREENS.indexOf(Actions.currentScene) !== -1) {
+        Actions.sleep()
+      } else {
+        setTimeout(timerAction, SCREENSAVING_DURATION)
+      }
       //currentMode = "sleep"
-      // duration = DURATION_WHEN_SLEEP
+      // duration = WAKEUP_DURATION
       //startTimer()
       break
-
+    }
     case 'sleep':
       console.log('imm backk')
       Actions.root()
       // currentMode = "awake"
-      // duration = DURATION_WHEN_AWAKE
+      // duration = SCREENSAVING_DURATION
       // startTimer()
+      break
+    default:
       break
   }
 }
@@ -37,12 +45,12 @@ const startTimer = mode => {
   switch (mode) {
     case 'awake':
       currentMode = mode
-      duration = DURATION_WHEN_AWAKE
+      duration = SCREENSAVING_DURATION
       break
 
     case 'sleep':
       currentMode = mode
-      duration = DURATION_WHEN_SLEEP
+      duration = WAKEUP_DURATION
       break
   }
   timerIdentifier = setTimeout(timerAction, duration)
@@ -62,8 +70,7 @@ const Timer = ({ user, mode }, ref) => {
     },
   }))
 
-  if (currentMode != mode) {
-    console.log('start ' + currentMode)
+  if (currentMode !== mode) {
     if (timerIdentifier) clearTimeout(timerIdentifier)
     startTimer(mode)
   }

@@ -34,3 +34,19 @@ export const reccurences = [
 //}
 
 export const AGORA_APP_ID = '2c07e05a54064384b1653247599224c5'
+
+/**
+ * Screens that enter sleep mode after SCREENSAVING_DURATION
+ */
+const ECO_FRIENDLY_SCREENS = ['accueil', 'home']
+
+/**
+ * Duration after which screen enters sleep mode
+ */
+const SCREENSAVING_DURATION = 60000 * 2
+/**
+ * Duration after which screen exits sleep mode
+ */
+const WAKEUP_DURATION = 60000 * 15
+
+export { ECO_FRIENDLY_SCREENS, SCREENSAVING_DURATION, WAKEUP_DURATION }
