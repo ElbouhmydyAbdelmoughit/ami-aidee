@@ -52,6 +52,8 @@ const startTimer = mode => {
       currentMode = mode
       duration = WAKEUP_DURATION
       break
+    default:
+      break
   }
   timerIdentifier = setTimeout(timerAction, duration)
 }

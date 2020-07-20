@@ -137,8 +137,8 @@ const VideoCallRoom = ({ remoteAuxiliary }) => {
     RtcEngine.on('userJoined', data => {
       if (peerIds.indexOf(data.uid) === -1) {
         //If new user has joined
-        setPeerIds(list => [...list, data.uid])
-        setStatus('remote_joined')
+        // setPeerIds(list => [...list, data.uid])
+        // setStatus('remote_joined')
       }
     })
     RtcEngine.on('userOffline', data => {
@@ -197,17 +197,17 @@ const VideoCallRoom = ({ remoteAuxiliary }) => {
           showLocalVideo={true}
           mode={1}
         />
-        <GradientBackground>
+        <View style={styles.overlay}>
           <View style={{ flex: 1, marginTop: 64 }}>
             <UserAvatar user={remoteAuxiliary} />
             <View style={{ marginTop: 32, alignItems: 'center' }}>
               <Text style={styles.infoText}>En cours de connexion..</Text>
             </View>
           </View>
-          <View style={{ marginBottom: 32, alignItems: 'center' }}>
-            {getEndCallBtn()}
-          </View>
-        </GradientBackground>
+        </View>
+        <View style={{ marginBottom: 32, alignItems: 'center' }}>
+          {getEndCallBtn()}
+        </View>
       </React.Fragment>
     )
   }
