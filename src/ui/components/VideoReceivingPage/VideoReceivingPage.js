@@ -85,8 +85,9 @@ const CallReceivingScreen = ({
   }, [])
 
   useEffect(() => {
-    if (callCanceledByCaller) {
+    if (status === 'CANCELED_BY_CALLER') {
       setTimeout(() => {
+        stopSound()
         playHangupTone()
         Actions.pop()
       }, 2000)

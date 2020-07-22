@@ -137,8 +137,8 @@ const VideoCallRoom = ({ remoteAuxiliary }) => {
     RtcEngine.on('userJoined', data => {
       if (peerIds.indexOf(data.uid) === -1) {
         //If new user has joined
-        // setPeerIds(list => [...list, data.uid])
-        // setStatus('remote_joined')
+        setPeerIds(list => [...list, data.uid])
+        setStatus('remote_joined')
       }
     })
     RtcEngine.on('userOffline', data => {
