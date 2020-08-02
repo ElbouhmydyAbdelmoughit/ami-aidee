@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { Text, View } from 'react-native'
 import { Container, H1 } from 'native-base'
 import material from 'AMIaide/native-base-theme/variables/material'
-import { Button, TouchableRipple } from 'react-native-paper'
 
 import { Actions } from 'react-native-router-flux'
 import LinearGradient from 'react-native-linear-gradient'
@@ -13,9 +12,9 @@ import momentFR from 'moment/locale/fr'
 import { times } from 'src/utils'
 import TimerInitiator from 'src/ui/business/TimerInitiator'
 import MessageAlertManager from 'src/ui/business/MessageAlertManager'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import SolarView from './SolarView'
+import ContactButton from './ContactButton'
 // notifierAuthorization()
 /*
 var fr = moment().locale("fr", momentFR)
@@ -34,6 +33,7 @@ const BR = <Text>{'\n'}</Text>
 /**
  * Styles
  */
+
 const styles = {
   title: {
     position: 'absolute',
@@ -63,13 +63,18 @@ const styles = {
   },
 }
 
+let instantMessagesFetched = false
+
 const SolarScreen = ({
   minuteTick,
   messagesRequest,
+  instantMessagesRequest,
   helpedUserRequest,
   displayName,
   helpedUserId,
   helpedUser,
+  auxiliaries,
+  hasNewMessage,
 }) => {
   const [fadeIn, setFadeIn] = useState(0)
   const [date, setDate] = useState(moment())
@@ -124,6 +129,13 @@ const SolarScreen = ({
       helpedUserRequest(helpedUserId)
     }
   }, [helpedUserId])
+
+  useEffect(() => {
+    if (auxiliaries && auxiliaries.length > 0 && !instantMessagesFetched) {
+      instantMessagesRequest(auxiliaries)
+      instantMessagesFetched = true
+    }
+  }, [auxiliaries])
 
   useEffect(() => {
     setHelloText(minuteTick)
@@ -234,35 +246,7 @@ const SolarScreen = ({
           top: 32,
         }}
       >
-        <TouchableRipple
-          onPress={() => {
-            Actions.replace('contactsList')
-          }}
-        >
-          <View
-            style={{
-              alignItems: 'center',
-              justifyContent: 'center',
-              borderWidth: 4,
-              borderColor: 'rgba(255, 255, 255, 0.8)',
-              borderRadius: 8,
-              padding: 20,
-              minWidth: 200,
-              minHeight: 170,
-            }}
-          >
-            <Icon name="account-heart" size={64} color={'white'} />
-            <Text
-              style={{
-                color: 'white',
-                fontWeight: 'bold',
-                fontSize: 24,
-              }}
-            >
-              Coucou
-            </Text>
-          </View>
-        </TouchableRipple>
+        <ContactButton hasNewMessage={hasNewMessage} />
       </View>
     </Container>
   )

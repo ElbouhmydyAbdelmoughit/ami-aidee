@@ -19,6 +19,7 @@ const persistConfig = {
     'user',
     'videoCall',
     'loader',
+    'instantMessage',
   ],
   timeout: null,
 }

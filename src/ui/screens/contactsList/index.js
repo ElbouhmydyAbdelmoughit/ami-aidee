@@ -4,6 +4,10 @@ import {
   AuxiliarySelectors,
   AuxiliaryActions,
 } from '../../../redux/auxiliaries'
+import {
+  InstantMessagesSelectors,
+  InstantMessagesActions,
+} from '../../../redux/instantMessages'
 
 const getHelpedUser = state => {
   const me = state.auth.user
@@ -16,7 +20,7 @@ const getHelpedUser = state => {
   }
   return state.user.list[helpedUser.id] || helpedUser
 }
-export default connect(
+const outerConnect = connect(
   state => ({
     auxiliaries: AuxiliarySelectors.getMyAuxiliaries(state),
     loading: state.auxiliary.loading,
@@ -26,4 +30,23 @@ export default connect(
     myAuxiliariesRequest: () =>
       dispatch(AuxiliaryActions.myAuxiliariesRequest()),
   })
-)(ContactsList)
+)
+
+const hasNewMessagesSelector = (state, { auxiliaries }) =>
+  auxiliaries.map(auxiliary =>
+    InstantMessagesSelectors.hasNewMessageForAuxiliary(auxiliary)(state)
+  )
+
+const innerConnect = connect(
+  (state, { auxiliaries }) => ({
+    hasNewMessages: hasNewMessagesSelector(state, { auxiliaries }),
+  }),
+  (dispatch, { auxiliaries }) => ({
+    messagesRequest: () =>
+      dispatch(
+        InstantMessagesActions.lastHelpedUsersMessagesRequest(auxiliaries)
+      ),
+  })
+)
+
+export default outerConnect(innerConnect(ContactsList))

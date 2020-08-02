@@ -1,10 +1,42 @@
-import { call } from "redux-saga/effects"
-import { methods, fetch } from "../utils"
+import { call } from 'redux-saga/effects'
+import { methods, fetch } from '../utils'
+import { authenticatedQuery, authenticatedMutation } from './middleware'
 
 const { POST } = methods
 
 const routes = {
-  create: () => "api/users",
+  create: () => 'api/users',
+}
+
+const queries = {
+  regTokens: ({ userId, token }) => `
+  user_google_reg_tokens(
+    where: {
+      user_id: {_eq: ${userId} }, 
+      token: {_eq: "${token}"}
+    }
+  ) {
+    id
+    user_id
+    created_at
+  }
+  `,
+}
+
+const mutations = {
+  createRegToken: ({ userId, token, os }) => `mutation {
+    insert_user_google_reg_tokens(
+      objects: {
+        user_id: ${userId},
+        token: "${token}",
+        os: "${os}"
+      }
+    ) {
+      returning {
+        id
+      }
+    }
+  }`,
 }
 
 /**
@@ -15,7 +47,7 @@ const routes = {
  * SERVICES
  */
 export default {
-  createUser: function*(user) {
+  createUser: function* createUser(user) {
     return yield call(fetch, {
       method: POST,
       url: routes.create(),
@@ -23,8 +55,11 @@ export default {
         email: user.email,
         password: user.password,
         username: `${user.firstname} ${user.lastname}`,
-        type: "helped_user",
+        type: 'helped_user',
       },
     })
   },
+  regToken: (...args) => authenticatedQuery(queries.regTokens(...args)),
+  createRegToken: (...args) =>
+    authenticatedMutation(mutations.createRegToken(...args)),
 }

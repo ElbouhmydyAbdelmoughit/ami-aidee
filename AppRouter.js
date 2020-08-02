@@ -24,14 +24,17 @@ import {
   VideoCallScreen,
 } from './src/ui/screens'
 import { SnackBar } from './src/ui/components'
-import VideoCallWaiter from './src/ui/components/VideoCallWaiter'
+import RemoteEventReceiver from './src/ui/components/RemoteEventReceiver'
 import VideoReceivingScreen from './src/ui/screens/videoReceivingScreen'
 import UserSettingsScreen from './src/ui/screens/userSettings'
+import MessagingScreen, {
+  MessagingNavBar,
+} from './src/ui/screens/messagingScreen'
 
 export default () => (
   <React.Fragment>
     <SnackBar />
-    <VideoCallWaiter />
+    <RemoteEventReceiver />
     <Router>
       <Scene key="master" hideNavBar transitionConfig={transitionConfig}>
         <Scene
@@ -53,11 +56,12 @@ export default () => (
         <Scene key="sleep" component={SleepScreen} type={ActionConst.RESET} />
 
         <Stack key="root" type={ActionConst.REPLACE}>
-          <Scene key="accueil" hideNavBar component={SolarScreen} initial />
+          <Scene key="accueil" initial hideNavBar component={SolarScreen} />
           <Scene key="home" hideNavBar component={HomeScreen} />
           <Scene key="contactsList" hideNavBar component={ContactsList} />
           <Scene key="videoCall" hideNavBar component={VideoCallScreen} />
           <Scene key="userSettings" hideNavBar component={UserSettingsScreen} />
+          <Scene key="messaging" hideNavBar component={MessagingScreen} />
           <Scene
             key="receivingScreen"
             hideNavBar

@@ -24,6 +24,9 @@ const queries = {
     phone
     auxiliaries_helped_users {
       helped_user_id
+      id
+      helped_user_last_read
+      auxiliary_last_read
     }
     user_id
   }`

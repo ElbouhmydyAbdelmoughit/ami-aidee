@@ -1,10 +1,14 @@
 import { connect } from 'react-redux'
-import { getTranslate } from 'react-localize-redux'
-import SolarScreen from './SolarScreen'
 
 import { MessageActions } from 'src/redux/message'
 import { TimerSelectors } from 'src/redux/timer'
 import { HelpedUserActions } from 'src/redux/helpedUsers'
+import SolarScreen from './SolarScreen'
+import { AuxiliarySelectors } from '../../../redux/auxiliaries'
+import {
+  InstantMessagesActions,
+  InstantMessagesSelectors,
+} from '../../../redux/instantMessages'
 
 const getHelpedUser = state => {
   const me = state.auth.user
@@ -38,12 +42,18 @@ const mapStateToProps = state => {
       auth.user.helped_users &&
       auth.user.helped_users[0] &&
       auth.user.helped_users[0].id,
+    auxiliaries: AuxiliarySelectors.getMyAuxiliaries(state),
+    hasNewMessage: InstantMessagesSelectors.hasNewMessage(state),
   }
 }
 
 const mapDispatchToProps = dispatch => ({
   messagesRequest: filters => dispatch(MessageActions.messagesRequest(filters)),
   helpedUserRequest: id => dispatch(HelpedUserActions.usersRequest({ id })),
+  instantMessagesRequest: auxiliaries =>
+    dispatch(
+      InstantMessagesActions.lastHelpedUsersMessagesRequest(auxiliaries)
+    ),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SolarScreen)

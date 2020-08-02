@@ -6,9 +6,9 @@ import { getUserAbbr } from 'src/utils/user'
 import moment from 'moment'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { Actions } from 'react-native-router-flux'
-import Loader from '../../components/loader/Loader'
 import LinearGradient from 'react-native-linear-gradient'
 import { times } from 'src/utils'
+import Loader from '../../components/loader/Loader'
 import { getGradientColors } from '../../../utils/colors'
 
 const styles = StyleSheet.create({
@@ -50,6 +50,7 @@ const ContactsList = ({
   auxiliaries,
   loading,
   helpedUser,
+  hasNewMessages,
 }) => {
   useEffect(() => {
     myAuxiliariesRequest()
@@ -72,7 +73,7 @@ const ContactsList = ({
           <View style={{ marginLeft: 64, flex: 1 }}>
             <H1 style={styles.title}>Mes contacts</H1>
             <H3 style={styles.subtitle}>
-              Appuyer sur la carte pour appeler la personne
+              Appuyer sur la carte pour contacter la personne
             </H3>
           </View>
           <View style={{ marginTop: 32, marginRight: 32 }}>
@@ -122,10 +123,10 @@ const ContactsList = ({
               </Text>
             </View>
           </TouchableRipple>
-          {auxiliaries.map(auxiliary => (
+          {auxiliaries.map((auxiliary, index) => (
             <TouchableRipple
               onPress={() => {
-                Actions.push('videoCall', { auxiliary })
+                Actions.push('messaging', { auxiliary })
               }}
             >
               <View
@@ -135,6 +136,34 @@ const ContactsList = ({
                   paddingTop: 0,
                 })}
               >
+                {hasNewMessages[index] ? (
+                  <View
+                    style={{
+                      marginTop: 8,
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <View
+                      style={{
+                        borderColor: 'white',
+                        backgroundColor: 'white',
+                        borderRadius: 4,
+                        borderWidth: 1,
+                        paddingTop: 2,
+                        paddingRight: 8,
+                        paddingLeft: 8,
+                        paddingBottom: 2,
+                      }}
+                    >
+                      <Text style={{ color: 'rgba(224, 41, 41, 0.9)' }}>
+                        NOUVEAU MESSAGE
+                      </Text>
+                    </View>
+                  </View>
+                ) : (
+                  <View style={{ height: 32 }} />
+                )}
                 <View
                   style={{
                     flex: 1,
