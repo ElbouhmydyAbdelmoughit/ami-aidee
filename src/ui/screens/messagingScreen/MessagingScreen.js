@@ -61,7 +61,7 @@ const MessagingScreen = ({
           <View>
             <TouchableRipple
               onPress={() => {
-                Actions.push('videoCall', { auxiliary })
+                Actions.push('videoCall', { auxiliary, startMode: 'video' })
               }}
             >
               <View
@@ -79,7 +79,7 @@ const MessagingScreen = ({
             </TouchableRipple>
             <TouchableRipple
               onPress={() => {
-                Alert.alert('Coming soon !')
+                Actions.push('videoCall', { auxiliary, startMode: 'audio' })
               }}
             >
               <View style={styles.box}>

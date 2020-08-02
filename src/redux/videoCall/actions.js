@@ -35,8 +35,8 @@ export default {
   event: (event, args) =>
     createAction(types.CALLBACK_EVENT, { ...args, event }),
 
-  invitationRequest: ({ calleeId }) =>
-    createAction(types.INVITATION_REQUEST, { calleeId }),
+  invitationRequest: ({ calleeId, mode = 'video' }) =>
+    createAction(types.INVITATION_REQUEST, { calleeId, mode }),
   invitationReceived: args =>
     createAction(types.INVITATION_RECEIVED, { data: args }),
   invitationRefuseRequest: () => createAction(types.INVITATION_REFUSE_REQUEST),

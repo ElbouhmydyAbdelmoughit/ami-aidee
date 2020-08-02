@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import {
   NativeModules,
   Platform,
@@ -9,11 +9,15 @@ import {
 import { Text, IconButton } from 'react-native-paper'
 import { RtcEngine, AgoraView } from 'react-native-agora'
 import { Actions } from 'react-native-router-flux'
-import requestCameraAndAudioPermission from './permission'
+import {
+  requestCameraAndAudioPermission,
+  requestAudioPermission,
+} from './permission'
 import { AGORA_APP_ID } from '../../../utils/constant'
 import UserAvatar from '../UserAvatar'
 import VideoCallEnded from './VideoCallEnded'
 import GradientBackground from '../GradientBackground'
+import RemoteAudioView from './RemoteAudioView'
 import { playHangupTone } from '../../../utils/sound'
 
 const { Agora } = NativeModules
@@ -108,30 +112,53 @@ const styles = StyleSheet.create({
   },
 })
 
-const VideoCallRoom = ({ remoteAuxiliary }) => {
+// TOFIX: for an unknown reason status is set back to initial on unmount,
+// making it unusable for checking whether endCall is called.
+// This hasEnded is used as a workaround to this problem
+let hasEnded
+const VideoCallRoom = ({ remoteAuxiliary, mode }) => {
   const [peerIds, setPeerIds] = useState([])
   const [joinSucceed, setJoinSucceed] = useState(false)
   const [channelName, setChannelName] = useState('abcxyz')
   const [uid, setUid] = useState(Math.floor(Math.random() * 100))
   const [status, setStatus] = useState('initial')
+
   const startCall = () => {
+    hasEnded = false
     RtcEngine.joinChannel(channelName, uid) //Join Channel
-    RtcEngine.enableAudio() //Enable the audio
   }
 
   const endCall = () => {
+    if (hasEnded) {
+      return
+    }
+    hasEnded = true
     RtcEngine.leaveChannel()
     setJoinSucceed(false)
     setPeerIds([])
     Actions.pop()
   }
+
   useEffect(() => {
-    RtcEngine.init(config)
+    console.log(hasEnded)
+  }, [hasEnded])
+
+  useEffect(() => {
+    console.log('hihi')
+    RtcEngine.init({
+      ...config,
+      mode: mode === 'audio' ? 0 : undefined,
+    })
     if (Platform.OS === 'android') {
-      //Request required permissions from Android
-      requestCameraAndAudioPermission().then(_ => {
-        console.log('requested!')
-      })
+      if (mode === 'audio') {
+        requestAudioPermission().then(_ => {
+          console.log('requested!')
+        })
+      } else {
+        requestCameraAndAudioPermission().then(_ => {
+          console.log('requested!')
+        })
+      }
     }
 
     RtcEngine.on('userJoined', data => {
@@ -160,6 +187,7 @@ const VideoCallRoom = ({ remoteAuxiliary }) => {
 
     startCall()
     return () => {
+      console.log(hasEnded)
       endCall()
     }
   }, [])
@@ -211,22 +239,31 @@ const VideoCallRoom = ({ remoteAuxiliary }) => {
       </React.Fragment>
     )
   }
-
   const getRemoteStreamView = () => {
-    return (
-      <GradientBackground>
-        <View />
+    const remoteView =
+      mode === 'audio' ? (
+        <RemoteAudioView remoteAuxiliary={remoteAuxiliary} />
+      ) : (
         <AgoraView
           style={styles.remoteVideoStyle}
           remoteUid={peerIds[0]}
           mode={1}
         />
+      )
+    const localView =
+      mode === 'audio' ? null : (
         <AgoraView
           style={styles.localVideoStyle}
           zOrderMediaOverlay={true}
           showLocalVideo={true}
           mode={1}
         />
+      )
+    return (
+      <GradientBackground>
+        <View />
+        {remoteView}
+        {localView}
         <View style={styles.buttonsBox}>{getEndCallBtn()}</View>
       </GradientBackground>
     )

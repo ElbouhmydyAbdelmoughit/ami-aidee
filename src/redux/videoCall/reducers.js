@@ -13,6 +13,14 @@ const videoCallInitSuccess = (state = initialState, action) => {
   return { ...state, uid: action.uid }
 }
 
+const getMode = data => {
+  try {
+    return JSON.parse(data.content).mode
+  } catch (e) {
+    return 'video'
+  }
+}
+
 const videoCallInvitationReceived = (state = initialState, action) => {
   return {
     ...state,
@@ -20,6 +28,7 @@ const videoCallInvitationReceived = (state = initialState, action) => {
     remoteInvitationProps: {
       ...action.data,
       status: 'INVITATION_RECEIVED',
+      mode: getMode(action.data),
     },
     errored: false,
   }

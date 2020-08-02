@@ -98,7 +98,12 @@ const CallReceivingScreen = ({
   }
   if (status === 'ACCEPTED' && channelId) {
     return (
-      <VideoCallRoom channelId={channelId} uid={myUid} remoteId={callerId} />
+      <VideoCallRoom
+        channelId={channelId}
+        uid={myUid}
+        remoteId={callerId}
+        mode={remoteInvitationProps.mode || 'video'}
+      />
     )
   }
 

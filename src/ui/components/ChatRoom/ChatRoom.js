@@ -96,7 +96,7 @@ const ChatRoom = ({
         <Composer
           {...props}
           textInputStyle={{
-            fontSize: 20,
+            fontSize: 24,
           }}
         />
       )}
@@ -113,7 +113,7 @@ const ChatRoom = ({
           <Text
             style={{
               fontWeight: 'bold',
-              fontSize: 20,
+              fontSize: 24,
               marginRight: 8,
               color: '#0084ff',
             }}
@@ -127,8 +127,8 @@ const ChatRoom = ({
         <MessageText
           {...props}
           textStyle={{
-            left: { fontSize: 20 },
-            right: { fontSize: 20 },
+            left: { fontSize: 24, lineHeight: 24 },
+            right: { fontSize: 24, lineHeight: 24 },
           }}
         />
       )}

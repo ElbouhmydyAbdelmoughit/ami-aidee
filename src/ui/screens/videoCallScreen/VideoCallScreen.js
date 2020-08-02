@@ -1,8 +1,8 @@
 import React from 'react'
 import VideoCallPage from '../../components/VideoCallPage'
 
-const VideoCallScreen = ({ auxiliary }) => {
-  return <VideoCallPage auxiliary={auxiliary} />
+const VideoCallScreen = ({ auxiliary, startMode = 'video' }) => {
+  return <VideoCallPage auxiliary={auxiliary} startMode={startMode} />
 }
 
 export default VideoCallScreen

@@ -52,7 +52,7 @@ function* videoCallInit({ dispatch }) {
   yield put(VideoCallActions.initSuccess({ uid }))
 }
 
-function* videoCallInvitationRequest({ calleeId }) {
+function* videoCallInvitationRequest({ calleeId, mode }) {
   if (!rtmEngine) {
     console.error(
       'rtm engine not initialized. Please dispatch videoCallInit action first'
@@ -65,6 +65,7 @@ function* videoCallInvitationRequest({ calleeId }) {
     uid: calleeId.toString(),
     calleeId: calleeId.toString(),
     channelId: `${uid}-${calleeId}`,
+    content: JSON.stringify({ mode }),
   }
   try {
     yield call(rtmEngine.sendLocalInvitation, localInvitation)

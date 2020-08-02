@@ -33,6 +33,7 @@ const VideoCallPage = ({
   errored,
   localInvitation,
   myUid,
+  startMode,
 }) => {
   const { status, channelId, calleeId } = localInvitation || {}
 
@@ -55,7 +56,10 @@ const VideoCallPage = ({
   useEffect(() => {
     videoCallInvitationInit()
     const timeout = setTimeout(() => {
-      videoCallInvitationRequest({ calleeId: auxiliary.user_id })
+      videoCallInvitationRequest({
+        calleeId: auxiliary.user_id,
+        mode: startMode,
+      })
     }, CALL_DELAY)
     return () => {
       if (timeout) {
@@ -114,7 +118,12 @@ const VideoCallPage = ({
     channelId
   ) {
     return (
-      <VideoCallRoom channelId={channelId} uid={myUid} remoteId={calleeId} />
+      <VideoCallRoom
+        channelId={channelId}
+        uid={myUid}
+        remoteId={calleeId}
+        mode={startMode}
+      />
     )
   }
 
