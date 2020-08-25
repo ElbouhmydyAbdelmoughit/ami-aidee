@@ -6,8 +6,10 @@ import { Actions } from 'react-native-router-flux'
 import UserAvatar from '../UserAvatar'
 import GradientBackground from '../GradientBackground'
 import { getUserDisplayName } from '../../../utils/user'
+import useActivityLog from '../../hooks/use-activity-log'
 
 const VideoCallEnded = ({ auxiliary }) => {
+  const logActivity = useActivityLog()
   const [countdown, setCountdown] = useState(3)
   useEffect(() => {
     const interval = setInterval(() => {
@@ -51,6 +53,7 @@ const VideoCallEnded = ({ auxiliary }) => {
           <View style={{ marginBottom: 32, alignItems: 'center' }}>
             <Button
               onPress={() => {
+                logActivity('press_end_video_call_btn')
                 Actions.pop()
               }}
               color="white"

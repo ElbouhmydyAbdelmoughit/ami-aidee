@@ -1,33 +1,36 @@
-import React, { useState } from "react"
-import { Form, Input, View, H3, Item, Button, Text, Icon } from "native-base"
-import { Actions } from "react-native-router-flux"
+import React, { useState } from 'react'
+import { Form, Input, View, H3, Item, Button, Text, Icon } from 'native-base'
+import { Actions } from 'react-native-router-flux'
+import useActivityLog from '../../hooks/use-activity-log'
+
 const NameForm = ({ setRegisterUser }) => {
-  const [firstname, setFirstname] = useState("")
+  const [firstname, setFirstname] = useState('')
   const [firstnameError, setFirstnameError] = useState(false)
-  const [lastname, setLastname] = useState("")
+  const [lastname, setLastname] = useState('')
   const [lastnameError, setLastnameError] = useState(false)
   const [errorText, setErrorText] = useState(undefined)
+  const logActivity = useActivityLog()
   return (
-    <View style={{ width: "100%" }}>
-      <H3 style={{ marginBottom: 32, color: "#848484" }}>
-        {errorText ? errorText : "Renseigner votre nom et prénom"}
+    <View style={{ width: '100%' }}>
+      <H3 style={{ marginBottom: 32, color: '#848484' }}>
+        {errorText ? errorText : 'Renseigner votre nom et prénom'}
       </H3>
       <Form>
         <View
           style={{
             borderRadius: 10,
-            flexDirection: "row",
-            width: "100%",
+            flexDirection: 'row',
+            width: '100%',
             marginBottom: 16,
           }}
         >
           <Item
             regular
             error={firstnameError}
-            style={{ borderRadius: 10, flex: 1, backgroundColor: "#EBEBEB" }}
+            style={{ borderRadius: 10, flex: 1, backgroundColor: '#EBEBEB' }}
           >
             <Input
-              placeholder={"Prénom"}
+              placeholder={'Prénom'}
               onChangeText={setFirstname}
               value={firstname}
               autoFocus
@@ -41,11 +44,11 @@ const NameForm = ({ setRegisterUser }) => {
               borderRadius: 10,
               flex: 1,
               marginLeft: 8,
-              backgroundColor: "#EBEBEB",
+              backgroundColor: '#EBEBEB',
             }}
           >
             <Input
-              placeholder={"Nom"}
+              placeholder={'Nom'}
               onChangeText={setLastname}
               value={lastname}
             />
@@ -56,19 +59,20 @@ const NameForm = ({ setRegisterUser }) => {
           full
           block
           onPress={() => {
+            logActivity('press_register_name_step')
             let hasError = false
             if (!firstname) {
-              setErrorText("Veuillez renseigner votre prénom")
+              setErrorText('Veuillez renseigner votre prénom')
               setFirstnameError(true)
               hasError = true
             }
             if (!lastname) {
-              setErrorText("Veuillez renseigner votre nom")
+              setErrorText('Veuillez renseigner votre nom')
               setLastnameError(true)
               hasError = true
             }
             if (!firstname && !lastname) {
-              setErrorText("Veuillez renseigner votre nom et prénom")
+              setErrorText('Veuillez renseigner votre nom et prénom')
             }
             if (hasError) {
               return
@@ -81,7 +85,7 @@ const NameForm = ({ setRegisterUser }) => {
               lastname,
             })
             Actions.register({
-              step: "email",
+              step: 'email',
             })
           }}
           style={{ borderRadius: 10 }}

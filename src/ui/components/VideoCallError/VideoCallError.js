@@ -4,9 +4,11 @@ import { Headline, Button } from 'react-native-paper'
 import { Actions } from 'react-native-router-flux'
 import Br from 'src/ui/components/br'
 import GradientBackground from '../GradientBackground'
+import useActivityLog from '../../hooks/use-activity-log'
 
 const CallErrorPage = ({ errorAcknowledged }) => {
   const [countdown, setCountdown] = useState(3)
+  const logActivity = useActivityLog()
   useEffect(() => {
     const interval = setInterval(() => {
       if (countdown > 0) {
@@ -48,6 +50,7 @@ const CallErrorPage = ({ errorAcknowledged }) => {
         <Br />
         <Button
           onPress={() => {
+            logActivity('press_end_video_call_btn')
             Actions.pop()
             errorAcknowledged()
           }}

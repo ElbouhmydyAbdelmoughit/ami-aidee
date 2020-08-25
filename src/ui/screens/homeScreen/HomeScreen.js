@@ -33,6 +33,7 @@ import NavigateCard from './NavigateCard'
 import PictureCard from './PictureCard'
 
 import moment from 'moment'
+import useActivityLog from '../../hooks/use-activity-log'
 
 /**
  *
@@ -52,7 +53,7 @@ const HomeScreen = ({
 }) => {
   console.log(list)
   console.log(me)
-
+  const logActivity = useActivityLog()
   const messages = Object.values(list).sort(sortMessage(now))
   const msg = closestMessage(messages || [], now)
   console.log(msg)
@@ -134,6 +135,7 @@ const HomeScreen = ({
       <TouchableWithoutFeedback
         onPress={() => {
           if (redirectFromSolarView) {
+            logActivity('return_from_reminders_list')
             Actions.accueil()
           }
         }}

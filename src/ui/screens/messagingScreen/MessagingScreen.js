@@ -7,6 +7,7 @@ import GradientBackground from '../../components/GradientBackground'
 import MessagingNavBar from './MessagingNavBar'
 import ChatRoom from '../../components/ChatRoom'
 import MessageUpdater from './MessageUpdater'
+import useActivityLog from '../../hooks/use-activity-log'
 
 const styles = StyleSheet.create({
   box: {
@@ -35,6 +36,7 @@ const MessagingScreen = ({
   updateLastReadRequest,
   messagesRequest,
 }) => {
+  const logActivity = useActivityLog()
   useEffect(() => {
     updateLastReadRequest(auxiliary)
     return () => {
@@ -61,6 +63,7 @@ const MessagingScreen = ({
           <View>
             <TouchableRipple
               onPress={() => {
+                logActivity('start_video_call')
                 Actions.push('videoCall', { auxiliary, startMode: 'video' })
               }}
             >
@@ -79,6 +82,7 @@ const MessagingScreen = ({
             </TouchableRipple>
             <TouchableRipple
               onPress={() => {
+                logActivity('start_audio_call')
                 Actions.push('videoCall', { auxiliary, startMode: 'audio' })
               }}
             >

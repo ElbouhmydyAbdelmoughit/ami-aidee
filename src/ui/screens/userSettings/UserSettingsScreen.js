@@ -5,6 +5,7 @@ import { Checkbox, Button, TouchableRipple } from 'react-native-paper'
 import { H1 } from 'native-base'
 import { View, StyleSheet, Text, TouchableHighlight } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import useActivityLog from '../../hooks/use-activity-log'
 
 const styles = StyleSheet.create({
   title: {
@@ -29,8 +30,10 @@ const styles = StyleSheet.create({
 
 const UserSettingsScreen = ({ currentHelpedUser, userModifyRequest }) => {
   const [checked, setChecked] = useState(currentHelpedUser.automatic_pickup)
+  const logActivity = useActivityLog()
 
-  const onModifyAutomaticPickup = () => {
+  const onPress = () => {
+    logActivity('toggle_automatic_pickup_checkbox')
     userModifyRequest({
       id: currentHelpedUser.id,
       automatic_pickup: !checked,
@@ -56,10 +59,10 @@ const UserSettingsScreen = ({ currentHelpedUser, userModifyRequest }) => {
           <Checkbox
             color="white"
             status={checked ? 'checked' : 'unchecked'}
-            onPress={onModifyAutomaticPickup}
+            onPress={onPress}
             uncheckedColor="white"
           />
-          <TouchableRipple onPress={onModifyAutomaticPickup}>
+          <TouchableRipple onPress={onPress}>
             <React.Fragment>
               <Text style={styles.text}>Décrochage automatique</Text>
               <Text style={styles.helpText}>
@@ -78,7 +81,10 @@ const UserSettingsScreen = ({ currentHelpedUser, userModifyRequest }) => {
               borderWidth: 1,
               marginTop: 80,
             }}
-            onPress={() => Actions.pop()}
+            onPress={() => {
+              logActivity('return_from_user_settings')
+              Actions.pop()
+            }}
           >
             <View
               style={{

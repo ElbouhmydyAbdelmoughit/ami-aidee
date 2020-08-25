@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Form, Input, View, H3, Item, Button, Text, Icon } from 'native-base'
 import { Actions } from 'react-native-router-flux'
+import useActivityLog from '../../hooks/use-activity-log'
 
 const PhoneForm = ({ setRegisterUser }) => {
   const [phone, setPhone] = useState('')
@@ -9,6 +10,8 @@ const PhoneForm = ({ setRegisterUser }) => {
   const [postalCode, setPostalCode] = useState('')
   const [errorText, setErrorText] = useState(undefined)
   const [errorField, setErrorField] = useState(undefined)
+  const logActivity = useActivityLog()
+
   return (
     <View style={{ width: '100%' }}>
       <H3 style={{ marginBottom: 32, color: '#848484' }}>
@@ -82,6 +85,7 @@ const PhoneForm = ({ setRegisterUser }) => {
           full
           block
           onPress={() => {
+            logActivity('press_register_phone_step')
             let hasError = false
             if (!phone) {
               setErrorText('Veuillez renseigner un numéro de téléphone')

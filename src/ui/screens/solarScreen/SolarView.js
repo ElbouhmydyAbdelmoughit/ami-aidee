@@ -9,6 +9,7 @@ import Svg, {
   Defs,
   Stop,
 } from 'react-native-svg'
+import useActivityLog from '../../hooks/use-activity-log'
 
 const SolarView = ({
   onPress,
@@ -23,7 +24,7 @@ const SolarView = ({
     width: 0,
     height: 0,
   })
-
+  const logActivity = useActivityLog()
   const positionForDate = dateInput => {
     if (points.length === 0) {
       return {
@@ -128,7 +129,10 @@ const SolarView = ({
         width="20%"
         height="20%"
         fill="transparent"
-        onPress={onPress}
+        onPress={(...args) => {
+          logActivity('press_rect_icon')
+          onPress(...args)
+        }}
       />
       {solarIcon != null && (
         <Image
@@ -139,7 +143,10 @@ const SolarView = ({
           preserveAspectRatio="xMidYMid meet"
           opacity="1"
           href={solarIcon}
-          onPress={onPress}
+          onPress={(...args) => {
+            logActivity('press_solar_icon')
+            onPress(...args)
+          }}
         />
       )}
 
@@ -152,7 +159,10 @@ const SolarView = ({
           preserveAspectRatio="xMidYMid meet"
           opacity="1"
           href={moonIcon}
-          onPress={onPress}
+          onPress={(...args) => {
+            onPress(...args)
+            logActivity('press_moon_icon')
+          }}
         />
       )}
     </Svg>

@@ -10,6 +10,7 @@ import VideoCallError from '../VideoCallError'
 import GradientBackground from '../GradientBackground'
 import { usePrevious } from '../../../utils/hooks'
 import { playHangupTone } from '../../../utils/sound'
+import useActivityLog from '../../hooks/use-activity-log'
 
 const styles = StyleSheet.create({
   root: {
@@ -36,7 +37,7 @@ const VideoCallPage = ({
   startMode,
 }) => {
   const { status, channelId, calleeId } = localInvitation || {}
-
+  const logActivity = useActivityLog()
   const stopSound = () => {
     if (callTone) {
       callTone.stop()
@@ -143,7 +144,10 @@ const VideoCallPage = ({
           <View style={{ marginBottom: 32 }}>
             <IconButton
               size={40}
-              onPress={onCallCancel}
+              onPress={(...args) => {
+                logActivity('press_cancel_video_btn')
+                onCallCancel(...args)
+              }}
               icon="call"
               color="white"
               style={{

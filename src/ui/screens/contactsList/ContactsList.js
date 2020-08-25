@@ -10,6 +10,7 @@ import LinearGradient from 'react-native-linear-gradient'
 import { times } from 'src/utils'
 import Loader from '../../components/loader/Loader'
 import { getGradientColors } from '../../../utils/colors'
+import useActivityLog from '../../hooks/use-activity-log'
 
 const styles = StyleSheet.create({
   box: {
@@ -58,7 +59,7 @@ const ContactsList = ({
   if (loading) {
     return <Loader loading />
   }
-
+  const logActivity = useActivityLog()
   const time = times(moment(), helpedUser)
   const gradientColors = getGradientColors(time)
   return (
@@ -81,6 +82,7 @@ const ContactsList = ({
               mode="outlined"
               style={{ borderColor: 'white' }}
               onPress={() => {
+                logActivity('select_user_settings')
                 Actions.userSettings()
               }}
             >
@@ -107,6 +109,7 @@ const ContactsList = ({
         >
           <TouchableRipple
             onPress={() => {
+              logActivity('return_from_contacts_list')
               Actions.accueil()
             }}
           >
@@ -126,6 +129,7 @@ const ContactsList = ({
           {auxiliaries.map((auxiliary, index) => (
             <TouchableRipple
               onPress={() => {
+                logActivity('select_auxiliary_messaging')
                 Actions.push('messaging', { auxiliary })
               }}
             >
