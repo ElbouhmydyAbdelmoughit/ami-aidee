@@ -61,7 +61,7 @@ const BlockerDialog = ({ helpedUser }) => {
           </Text>
           <Text style={{ fontSize: 20, marginBottom: 24 }}>{secondText}</Text>
           <Text style={{ fontSize: 20 }}>
-            Email de l'administrateur : amidev2020@gmail.com
+            Email de l'administrateur : ami.contact.info@gmail.com
           </Text>
         </Dialog.Content>
       </Dialog>

@@ -72,7 +72,7 @@ const WarningDialog = ({
           </Text>
           <Text style={{ marginBottom: 24 }}>{secondText}</Text>
           <Text style={{ marginBottom: 24 }}>
-            Email de l'administrateur : amidev2020@gmail.com
+            Email de l'administrateur : ami.contact.info@gmail.com
           </Text>
           <Button
             onPress={() => {
