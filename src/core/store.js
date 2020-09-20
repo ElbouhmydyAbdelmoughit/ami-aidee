@@ -20,6 +20,7 @@ const persistConfig = {
     'videoCall',
     'loader',
     'instantMessage',
+    'resetPasswordRequest',
   ],
   timeout: null,
 }

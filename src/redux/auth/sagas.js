@@ -1,11 +1,11 @@
-import { takeLatest, put, call } from "redux-saga/effects"
-import jwtDecode from "jwt-decode"
-import { AuthenticationService } from "../../services"
-import { CommonActions } from "../common"
-import { LoaderActions } from "../loader"
-import { types, default as AuthActions } from "./actions"
-import { SnackActions } from "../snackBar"
-import { Actions } from "react-native-router-flux"
+import { takeLatest, put, call } from 'redux-saga/effects'
+import jwtDecode from 'jwt-decode'
+import { AuthenticationService } from '../../services'
+import { CommonActions } from '../common'
+import { LoaderActions } from '../loader'
+import { types, default as AuthActions } from './actions'
+import { SnackActions } from '../snackBar'
+import { Actions } from 'react-native-router-flux'
 
 function* login({ username, password }) {
   yield put(LoaderActions.loading())
@@ -20,7 +20,7 @@ function* login({ username, password }) {
   if (error) {
     yield put(LoaderActions.loaded())
     yield put(AuthActions.loginFailure())
-    yield put(SnackActions.displayError("authentication_failed"))
+    yield put(SnackActions.displayError('authentication_failed'))
     return
   }
 
@@ -31,7 +31,7 @@ function* login({ username, password }) {
   console.log(decodedToken)
   yield call(
     me,
-    decodedToken["https://hasura.io/jwt/claims"]["x-hasura-user-id"]
+    decodedToken['https://hasura.io/jwt/claims']['x-hasura-user-id']
   )
   yield put(LoaderActions.loaded())
 
@@ -44,7 +44,7 @@ function* me(id) {
   console.log(response)
   if (error) {
     yield put(AuthActions.loginFailure())
-    yield put(SnackActions.displayError("authentication_failed"))
+    yield put(SnackActions.displayError('authentication_failed'))
     return
   }
   const user = response.users[0]
@@ -55,10 +55,43 @@ function* me(id) {
 function* logout() {
   yield put(AuthenticationService.logout())
   yield put(CommonActions.resetReducers())
-  yield put(push("/"))
+  yield put(push('/'))
+}
+
+function* passwordResetRequest({ email }) {
+  yield call(AuthenticationService.passwordResetRequest, {
+    email,
+  })
+  Actions.passwordResetRequestConfirmed()
+}
+
+function* modifyPasswordUsingResetCodeRequest({
+  userId,
+  resetCode,
+  newPassword,
+}) {
+  const [error] = yield call(AuthenticationService.resetPassword, {
+    userId,
+    resetCode,
+    newPassword,
+  })
+  if (error) {
+    yield put(
+      SnackActions.displayError(
+        'Erreur inconnue lors du demande de changement du mot de passe'
+      )
+    )
+    return
+  }
+  Actions.resetPasswordConfirmed()
 }
 
 export default [
   takeLatest(types.LOGIN_REQUEST, login),
   takeLatest(types.LOGOUT, logout),
+  takeLatest(types.PASSWORD_RESET_REQUEST, passwordResetRequest),
+  takeLatest(
+    types.MODIFY_PASSWORD_USING_RESET_CODE_REQUEST,
+    modifyPasswordUsingResetCodeRequest
+  ),
 ]

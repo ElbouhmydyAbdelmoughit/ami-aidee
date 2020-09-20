@@ -14,6 +14,10 @@ import { InstantMessagesSagas, InstantMessagesReducer } from './instantMessages'
 import { UserSagas } from './users'
 import { NavigationReducers } from './navigation'
 import { UserActivitiesSagas } from './user-activities'
+import {
+  ResetPasswordRequestSagas,
+  ResetPasswordRequestReducers,
+} from './resetPasswordRequest'
 
 // Specify reset action type rule
 const resettable = resettableReducer(CommonTypes.RESET_REDUCERS)
@@ -32,6 +36,7 @@ const reducers = {
   videoCall: resettable(VideoCallReducers),
   instantMessage: resettable(InstantMessagesReducer),
   navigation: resettable(NavigationReducers),
+  resetPasswordRequest: resettable(ResetPasswordRequestReducers),
 }
 
 export const rootSaga = [
@@ -46,6 +51,7 @@ export const rootSaga = [
   ...InstantMessagesSagas,
   ...UserSagas,
   ...UserActivitiesSagas,
+  ...ResetPasswordRequestSagas,
 ]
 
 export default reducers

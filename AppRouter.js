@@ -22,14 +22,16 @@ import {
   SleepScreen,
   ContactsList,
   VideoCallScreen,
+  PasswordResetRequestScreen,
+  PasswordResetRequestConfirmedScreen,
+  ResetPasswordScreen,
+  ResetPasswordConfirmedScreen,
 } from './src/ui/screens'
 import { SnackBar } from './src/ui/components'
 import RemoteEventReceiver from './src/ui/components/RemoteEventReceiver'
 import VideoReceivingScreen from './src/ui/screens/videoReceivingScreen'
 import UserSettingsScreen from './src/ui/screens/userSettings'
-import MessagingScreen, {
-  MessagingNavBar,
-} from './src/ui/screens/messagingScreen'
+import MessagingScreen from './src/ui/screens/messagingScreen'
 
 export default () => (
   <React.Fragment>
@@ -51,6 +53,27 @@ export default () => (
             path="/register/:step"
             hideNavBar
             component={RegisterScreen}
+          />
+          <Scene
+            key="passwordResetRequest"
+            hideNavBar
+            component={PasswordResetRequestScreen}
+          />
+          <Scene
+            key="passwordResetRequestConfirmed"
+            hideNavBar
+            component={PasswordResetRequestConfirmedScreen}
+          />
+
+          <Scene
+            key="resetPassword"
+            hideNavBar
+            component={ResetPasswordScreen}
+          />
+          <Scene
+            key="resetPasswordConfirmed"
+            hideNavBar
+            component={ResetPasswordConfirmedScreen}
           />
         </Scene>
         <Scene key="sleep" component={SleepScreen} type={ActionConst.RESET} />

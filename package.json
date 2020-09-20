@@ -9,7 +9,8 @@
     "postinstall": "jetifier",
     "bundle": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/",
     "bundle:release": "cd ./android; ./gradlew bundleRelease; cd ..",
-    "assemble": "cd ./android; ./gradlew assembleRelease; cd .."
+    "assemble": "cd ./android; ./gradlew assembleRelease; cd ..",
+    "deploy": " aws s3 cp build s3://admin.ami-app.com/ --recursive"
   },
   "dependencies": {
     "@ami-app/agora-react-native-rtm": "^1.0.1-alpha.1",
@@ -69,7 +70,8 @@
     "reduxsauce": "^1.1.0",
     "remote-redux-devtools": "^0.5.12",
     "reselect": "^4.0.0",
-    "suncalc": "^1.8.0"
+    "suncalc": "^1.8.0",
+    "yup": "^0.29.3"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

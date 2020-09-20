@@ -15,6 +15,7 @@ import {
 import { BR } from 'src/ui/components'
 import { Actions } from 'react-native-router-flux'
 import useActivityLog from '../../hooks/use-activity-log'
+import { View, TouchableHighlight } from 'react-native'
 
 export default ({ style, form, onValidate }) => {
   const [username, setUsername] = useState((form && form.username) || '')
@@ -80,10 +81,22 @@ export default ({ style, form, onValidate }) => {
       >
         <Text>Se connecter</Text>
       </Button>
+      <View style={{ marginTop: 8 }}>
+        <TouchableHighlight onPress={() => Actions.passwordResetRequest()}>
+          <View>
+            <Text
+              style={{
+                color: '#848484',
+              }}
+            >
+              Mot de passe oublié ?
+            </Text>
+          </View>
+        </TouchableHighlight>
+      </View>
       <BR />
       <H3
         style={{
-          padding: 10,
           textAlign: 'center',
           color: '#848484',
         }}

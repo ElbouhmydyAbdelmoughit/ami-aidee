@@ -1,0 +1,3 @@
+import ResetPasswordConfirmedScreen from './ResetPasswordConfirmedScreen'
+
+export default ResetPasswordConfirmedScreen

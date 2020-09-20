@@ -19,7 +19,7 @@ const getGradientColors = time => {
       color = nightColor
       break
     default:
-      color = sunColor
+      color = dawnColor
       break
   }
   return color
