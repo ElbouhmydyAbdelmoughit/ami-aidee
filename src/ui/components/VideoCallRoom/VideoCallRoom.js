@@ -5,6 +5,7 @@ import {
   View,
   StyleSheet,
   Dimensions,
+  Alert,
 } from 'react-native'
 import { Text, IconButton } from 'react-native-paper'
 import { RtcEngine, AgoraView } from 'react-native-agora'
@@ -19,6 +20,7 @@ import VideoCallEnded from './VideoCallEnded'
 import GradientBackground from '../GradientBackground'
 import RemoteAudioView from './RemoteAudioView'
 import { playHangupTone } from '../../../utils/sound'
+import useActivityLog from '../../hooks/use-activity-log'
 
 const { Agora } = NativeModules
 const { FPS30, AudioProfileDefault, AudioScenarioDefault, Adaptative } = Agora
@@ -117,6 +119,7 @@ const styles = StyleSheet.create({
 // This hasEnded is used as a workaround to this problem
 let hasEnded
 const VideoCallRoom = ({ remoteAuxiliary, mode }) => {
+  const logActivity = useActivityLog()
   const [peerIds, setPeerIds] = useState([])
   const [joinSucceed, setJoinSucceed] = useState(false)
   const [channelName, setChannelName] = useState('abcxyz')
@@ -129,6 +132,7 @@ const VideoCallRoom = ({ remoteAuxiliary, mode }) => {
   }
 
   const endCall = () => {
+    logActivity('press_cancel_video_btn')
     if (hasEnded) {
       return
     }
@@ -144,48 +148,65 @@ const VideoCallRoom = ({ remoteAuxiliary, mode }) => {
   }, [hasEnded])
 
   useEffect(() => {
-    console.log('hihi')
-    RtcEngine.init({
-      ...config,
-      mode: mode === 'audio' ? 0 : undefined,
-    })
-    if (Platform.OS === 'android') {
-      if (mode === 'audio') {
-        requestAudioPermission().then(_ => {
-          console.log('requested!')
-        })
-      } else {
-        requestCameraAndAudioPermission().then(_ => {
-          console.log('requested!')
-        })
+    const asyncFn = async () => {
+      RtcEngine.init({
+        ...config,
+        mode: mode === 'audio' ? 0 : undefined,
+      })
+      if (Platform.OS === 'android') {
+        //Request required permissions from Android
+        if (mode === 'audio') {
+          try {
+            await requestAudioPermission()
+          } catch (e) {
+            Alert.alert(
+              "L'appel ne peut pas être abouti",
+              "L'application n'a pas la permission pour accéder à l'audio."
+            )
+            Actions.pop()
+            return
+          }
+        } else {
+          try {
+            await requestCameraAndAudioPermission()
+          } catch (e) {
+            Alert.alert(
+              "L'appel ne peut pas être abouti",
+              "L'application n'a pas la permission pour accéder à l'audio et la caméra."
+            )
+            Actions.pop()
+            return
+          }
+        }
       }
+
+      RtcEngine.on('userJoined', data => {
+        if (peerIds.indexOf(data.uid) === -1) {
+          //If new user has joined
+          setPeerIds(list => [...list, data.uid])
+          setStatus('remote_joined')
+        }
+      })
+      RtcEngine.on('userOffline', data => {
+        //If user leaves
+        setPeerIds(list => list.filter(uid => uid !== data.uid))
+        setStatus('remote_leaved')
+        playHangupTone()
+      })
+      RtcEngine.on('joinChannelSuccess', () => {
+        //If Local user joins RTC channel
+        RtcEngine.startPreview() //Start RTC preview
+        setJoinSucceed(true)
+        setStatus('local_joined')
+      })
+
+      RtcEngine.on('error', error => {
+        console.log('error', error)
+      })
+
+      startCall()
     }
-
-    RtcEngine.on('userJoined', data => {
-      if (peerIds.indexOf(data.uid) === -1) {
-        //If new user has joined
-        setPeerIds(list => [...list, data.uid])
-        setStatus('remote_joined')
-      }
-    })
-    RtcEngine.on('userOffline', data => {
-      //If user leaves
-      setPeerIds(list => list.filter(uid => uid !== data.uid))
-      setStatus('remote_leaved')
-      playHangupTone()
-    })
-    RtcEngine.on('joinChannelSuccess', () => {
-      //If Local user joins RTC channel
-      RtcEngine.startPreview() //Start RTC preview
-      setJoinSucceed(true)
-      setStatus('local_joined')
-    })
-
-    RtcEngine.on('error', error => {
-      console.log('error', error)
-    })
-
-    startCall()
+    asyncFn()
     return () => {
       console.log(hasEnded)
       endCall()

@@ -8,9 +8,12 @@ import { Container, Content, Text } from 'native-base'
 import material from 'AMIaide/native-base-theme/variables/material'
 import MessageAlertManager from 'src/ui/business/MessageAlertManager'
 import TimerInitiator from '../../business/TimerInitiator'
+import useActivityLog from '../../hooks/use-activity-log'
 
 const SleepScreen = ({ auth, awake }) => {
+  const logActivity = useActivityLog()
   const handlePress = () => {
+    logActivity('wake_up')
     awake()
     Actions.root()
   }

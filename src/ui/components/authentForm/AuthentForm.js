@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from 'react'
 import {
   Form,
   Item,
@@ -10,14 +10,16 @@ import {
   Title,
   Icon,
   H3,
-} from "native-base"
+} from 'native-base'
 
-import { BR } from "src/ui/components"
-import { Actions } from "react-native-router-flux"
+import { BR } from 'src/ui/components'
+import { Actions } from 'react-native-router-flux'
+import useActivityLog from '../../hooks/use-activity-log'
 
 export default ({ style, form, onValidate }) => {
-  const [username, setUsername] = useState((form && form.username) || "")
-  const [password, setPassword] = useState((form && form.password) || "")
+  const [username, setUsername] = useState((form && form.username) || '')
+  const [password, setPassword] = useState((form && form.password) || '')
+  const logActivity = useActivityLog()
 
   //const []
 
@@ -33,10 +35,11 @@ export default ({ style, form, onValidate }) => {
   }
 
   const isFormValid = () => {
-    return !(username == "" || password == "")
+    return !(username == '' || password == '')
   }
 
   const validate = () => {
+    logActivity('press_login_btn')
     if (isFormValid()) {
       onValidate({
         username: username,
@@ -47,11 +50,11 @@ export default ({ style, form, onValidate }) => {
 
   return (
     <Form style={style}>
-      <Item regular style={{ borderRadius: 10, backgroundColor: "#EBEBEB" }}>
-        <Icon active name="mail" style={{ color: "#6E6D6D" }} />
+      <Item regular style={{ borderRadius: 10, backgroundColor: '#EBEBEB' }}>
+        <Icon active name="mail" style={{ color: '#6E6D6D' }} />
         <Input
           autoCapitalize="none"
-          placeholder={"Email"}
+          placeholder={'Email'}
           onChangeText={setUsername}
           value={username}
         />
@@ -59,13 +62,13 @@ export default ({ style, form, onValidate }) => {
 
       <Item
         regular
-        style={{ borderRadius: 10, marginTop: 16, backgroundColor: "#EBEBEB" }}
+        style={{ borderRadius: 10, marginTop: 16, backgroundColor: '#EBEBEB' }}
       >
-        <Icon active name="lock" style={{ color: "#6E6D6D" }} />
+        <Icon active name="lock" style={{ color: '#6E6D6D' }} />
         <Input
           secureTextEntry
           onChangeText={setPassword}
-          placeholder={"Password"}
+          placeholder={'Password'}
           value={password}
         />
       </Item>
@@ -81,8 +84,8 @@ export default ({ style, form, onValidate }) => {
       <H3
         style={{
           padding: 10,
-          textAlign: "center",
-          color: "#848484",
+          textAlign: 'center',
+          color: '#848484',
         }}
       >
         Vous n'avez pas encore de compte ?
@@ -92,7 +95,8 @@ export default ({ style, form, onValidate }) => {
         bordered
         disabled={!isFormValid()}
         onPress={() => {
-          Actions.register({ step: "name" })
+          logActivity('press_register_btn')
+          Actions.register({ step: 'name' })
         }}
         style={{ borderRadius: 10 }}
       >

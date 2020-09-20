@@ -4,8 +4,10 @@ import { View, Text } from 'react-native'
 import { Avatar, IconButton } from 'react-native-paper'
 import { Actions } from 'react-native-router-flux'
 import { getUserDisplayName, getUserAbbr } from '../../../utils/user'
+import useActivityLog from '../../hooks/use-activity-log'
 
 const MessagingNavBar = ({ user }) => {
+  const logActivity = useActivityLog()
   return (
     <View
       style={{
@@ -20,7 +22,10 @@ const MessagingNavBar = ({ user }) => {
         style={{ marginLeft: 16 }}
         color="white"
         icon="arrow-back"
-        onPress={() => Actions.pop()}
+        onPress={() => {
+          logActivity('return_from_messaging')
+          Actions.pop()
+        }}
       >
         Retour
       </IconButton>

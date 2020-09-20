@@ -10,6 +10,7 @@ import VideoCallRoom from '../VideoCallRoom'
 import GradientBackground from '../GradientBackground'
 import { playHangupTone } from '../../../utils/sound'
 import useCountdown from '../../hooks/use-countdown'
+import useActivityLog from '../../hooks/use-activity-log'
 
 const styles = StyleSheet.create({
   root: {
@@ -39,10 +40,11 @@ const CallReceivingScreen = ({
       ringtone.release()
     }
   }
-
+  const logActivity = useActivityLog()
   const { automatic_pickup: automaticPickup } = currentHelpedUser
 
   const onRefuseCall = () => {
+    logActivity('press_cancel_video_btn')
     if (answered) {
       return
     }
@@ -53,6 +55,7 @@ const CallReceivingScreen = ({
   }
 
   const onAcceptCall = () => {
+    logActivity('press_accept_video_btn')
     if (answered) {
       return
     }

@@ -1,5 +1,6 @@
-import { connect } from "react-redux"
-import AccountChecker from "./AccountChecker"
+import { connect } from 'react-redux'
+import AccountChecker from './AccountChecker'
+import { HelpedUserSelectors } from '../../../redux/helpedUsers'
 
 const getCurrentHelpedUser = ({ auth, user }) => {
   const me = auth.user
@@ -14,4 +15,5 @@ const getCurrentHelpedUser = ({ auth, user }) => {
 
 export default connect(state => ({
   helpedUser: getCurrentHelpedUser(state),
+  isLoading: HelpedUserSelectors.isLoading(state),
 }))(AccountChecker)

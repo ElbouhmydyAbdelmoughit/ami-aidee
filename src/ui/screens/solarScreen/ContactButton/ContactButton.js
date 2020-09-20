@@ -4,14 +4,17 @@ import { TouchableRipple } from 'react-native-paper'
 
 import { Actions } from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import useActivityLog from '../../../hooks/use-activity-log'
 
 const ContactButton = ({ hasNewMessage }) => {
   const primaryColor = hasNewMessage
     ? 'rgba(224, 41, 41, 0.9)'
     : 'rgb(255, 255, 255)'
+  const logActivity = useActivityLog()
   return (
     <TouchableRipple
       onPress={() => {
+        logActivity('navigate_to_contacts_list')
         Actions.replace('contactsList')
       }}
     >

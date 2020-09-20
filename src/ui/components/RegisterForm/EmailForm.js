@@ -1,27 +1,30 @@
-import React, { useState } from "react"
-import { Form, Input, View, H3, Item, Button, Text, Icon } from "native-base"
-import { Actions } from "react-native-router-flux"
+import React, { useState } from 'react'
+import { Form, Input, View, H3, Item, Button, Text, Icon } from 'native-base'
+import { Actions } from 'react-native-router-flux'
+import useActivityLog from '../../hooks/use-activity-log'
+
 const EmailForm = ({ setRegisterUser }) => {
-  const [email, setEmail] = useState("")
+  const [email, setEmail] = useState('')
   const [errorText, setErrorText] = useState(undefined)
+  const logActivity = useActivityLog()
   return (
-    <View style={{ width: "100%" }}>
-      <H3 style={{ marginBottom: 32, color: "#848484" }}>
-        {errorText ? errorText : "Renseigner votre email"}
+    <View style={{ width: '100%' }}>
+      <H3 style={{ marginBottom: 32, color: '#848484' }}>
+        {errorText ? errorText : 'Renseigner votre email'}
       </H3>
       <Form>
         <Item
           regular
           style={{
             borderRadius: 10,
-            backgroundColor: "#EBEBEB",
+            backgroundColor: '#EBEBEB',
             marginBottom: 16,
           }}
           error={!!errorText}
         >
           <Input
             autoCapitalize="none"
-            placeholder={"Email"}
+            placeholder={'Email'}
             autoFocus
             onChangeText={setEmail}
             value={email}
@@ -32,15 +35,16 @@ const EmailForm = ({ setRegisterUser }) => {
           full
           block
           onPress={() => {
+            logActivity('press_register_email_step')
             let hasError = false
             if (!email) {
-              setErrorText("Veuillez renseigner un adresse mail")
+              setErrorText('Veuillez renseigner un adresse mail')
               hasError = true
             } else if (
               !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)
             ) {
               hasError = true
-              setErrorText("Veuillez renseigner un adresse mail valide")
+              setErrorText('Veuillez renseigner un adresse mail valide')
             }
             if (hasError) {
               return
@@ -50,7 +54,7 @@ const EmailForm = ({ setRegisterUser }) => {
               email,
             })
             Actions.register({
-              step: "phone",
+              step: 'phone',
             })
           }}
           style={{ borderRadius: 10 }}

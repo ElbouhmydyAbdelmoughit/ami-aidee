@@ -17,8 +17,11 @@ import styles from './styles'
 import { subjects, moments, reccurences } from 'src/utils'
 
 import _ from 'lodash'
+import useActivityLog from '../../hooks/use-activity-log'
 
 const ReminderForm = ({ handleChange, handleSubmit, handleCancel, values }) => {
+  const logActivity = useActivityLog()
+
   const state = {
     isDateTimePickerVisible: false,
     checked: false,
@@ -123,8 +126,21 @@ const ReminderForm = ({ handleChange, handleSubmit, handleCancel, values }) => {
         <Divider style={styles.divider} />
 
         <View style={styles.momentSection}>
-          <Button onPress={handleCancel}>Annuler</Button>
-          <Button mode={'contained'} onPress={handleSubmit}>
+          <Button
+            onPress={(...args) => {
+              logActivity('press_cancel_reminder_btn')
+              handleCancel(...args)
+            }}
+          >
+            Annuler
+          </Button>
+          <Button
+            mode={'contained'}
+            onPress={(...args) => {
+              logActivity('press_cancel_submit_btn')
+              handleSubmit(...args)
+            }}
+          >
             Valider
           </Button>
         </View>

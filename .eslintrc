@@ -51,7 +51,8 @@
     "no-underscore-dangle": "warn",
     /* what does prop-types ever do good for private code anyway */
     "react/prop-types": "off",
-    "react/jsx-one-expression-per-line": "off"
+    "react/jsx-one-expression-per-line": "off",
+    "yoda": ["off"]
   },
   "parserOptions": {
     "ecmaFeatures": {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import { Dimensions } from 'react-native'
 import { solarDegree, moonDegree } from 'src/utils'
 import Svg, {
   Ellipse,
@@ -9,6 +9,34 @@ import Svg, {
   Defs,
   Stop,
 } from 'react-native-svg'
+import useActivityLog from '../../hooks/use-activity-log'
+
+const { width: WINDOW_WIDTH, height: WINDOW_HEIGHT } = Dimensions.get('window')
+
+const PADDING = 20
+const SUN_WIDTH = WINDOW_WIDTH * 0.2
+const SUN_HEIGHT = WINDOW_HEIGHT * 0.2
+const CX = WINDOW_WIDTH / 2
+const CY = WINDOW_HEIGHT - SUN_HEIGHT / 2 - PADDING
+const RX = WINDOW_WIDTH / 2 - SUN_WIDTH / 4
+const RY = WINDOW_HEIGHT * 0.55
+
+const getBorderPoints = (cx, cy, rx, ry) => {
+  const borderPoints = []
+  const angleStep = 0.05
+  let angle = angleStep
+  while (angle < Math.PI * 2) {
+    borderPoints.push({
+      x: cx + rx * Math.cos(angle),
+      y: cy + ry * Math.sin(angle),
+      angle: Math.ceil((angle * 180) / Math.PI),
+    })
+
+    angle += angleStep
+  }
+  console.log(borderPoints)
+  return borderPoints
+}
 
 const SolarView = ({
   onPress,
@@ -19,11 +47,7 @@ const SolarView = ({
   helpedUser,
 }) => {
   const [points, setPoints] = useState([])
-  const [ellipseSize, setEllipseSize] = useState({
-    width: 0,
-    height: 0,
-  })
-
+  const logActivity = useActivityLog()
   const positionForDate = dateInput => {
     if (points.length === 0) {
       return {
@@ -48,12 +72,9 @@ const SolarView = ({
         : moonDegree(dateInput, helpedUser)
     const point = pointForAngle(degree)
 
-    const sunWidth = (ellipseSize.width * 20) / 100
-    const sunHeight = (ellipseSize.height * 20) / 100
-
     //y: 870.8098158189582
-    const x = point.x - sunWidth / 2
-    const y = point.y - sunHeight / 2
+    const x = point.x - SUN_WIDTH / 2
+    const y = point.y - SUN_HEIGHT / 2
 
     return {
       x,
@@ -61,43 +82,15 @@ const SolarView = ({
     }
   }
 
-  const getBorderPoints = (cx, cy, rx, ry) => {
-    const borderPoints = []
-    const angleStep = 0.05
-    let angle = angleStep
-    while (angle < Math.PI * 2) {
-      borderPoints.push({
-        x: cx + rx * Math.cos(angle),
-        y: cy + ry * Math.sin(angle),
-        angle: Math.ceil((angle * 180) / Math.PI),
-      })
-
-      angle += angleStep
-    }
-    return borderPoints
-  }
-
-  const onLayout = event => {
-    const { width, height } = event.nativeEvent.layout
-
-    setEllipseSize({
-      width,
-      height,
-    })
-
-    const cx = (width * 50) / 100 // "50%"
-    const cy = height //"100%"
-    const rx = (width * 50) / 100 //"50%"
-    const ry = (height * 70) / 100 //"70%"
-
-    const borderPoints = getBorderPoints(cx, cy, rx, ry)
+  const onLayout = () => {
+    const borderPoints = getBorderPoints(CX, CY, RX, RY)
     setPoints(borderPoints)
     //setSunPos()
   }
 
   const position = positionForDate(date)
 
-  const color = ['#FFFFFF00', '#FFFFFF', '#FFFFFF00']
+  const color = ['#FFFFFF50', '#FFFFFF', '#FFFFFF50']
   return (
     <Svg onLayout={onLayout} height="100%" width="100%">
       <Defs>
@@ -114,10 +107,10 @@ const SolarView = ({
         </LinearGradient>
       </Defs>
       <Ellipse
-        cx="50%"
-        cy="100%"
-        rx="50%"
-        ry="70%"
+        cx={CX}
+        cy={CY}
+        rx={RX}
+        ry={RY}
         stroke="url(#grad)"
         strokeWidth="3"
         fill="transparent"
@@ -128,7 +121,10 @@ const SolarView = ({
         width="20%"
         height="20%"
         fill="transparent"
-        onPress={onPress}
+        onPress={(...args) => {
+          logActivity('press_rect_icon')
+          onPress(...args)
+        }}
       />
       {solarIcon != null && (
         <Image
@@ -139,7 +135,10 @@ const SolarView = ({
           preserveAspectRatio="xMidYMid meet"
           opacity="1"
           href={solarIcon}
-          onPress={onPress}
+          onPress={(...args) => {
+            logActivity('press_solar_icon')
+            onPress(...args)
+          }}
         />
       )}
 
@@ -152,7 +151,10 @@ const SolarView = ({
           preserveAspectRatio="xMidYMid meet"
           opacity="1"
           href={moonIcon}
-          onPress={onPress}
+          onPress={(...args) => {
+            onPress(...args)
+            logActivity('press_moon_icon')
+          }}
         />
       )}
     </Svg>
