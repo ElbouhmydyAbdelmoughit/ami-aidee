@@ -1,4 +1,11 @@
 const getMyAuxiliaries = state => {
+  if (
+    !state.auth.user ||
+    !state.auth.user.helped_users ||
+    !state.auth.user.helped_users.length > 0
+  ) {
+    return []
+  }
   const myHelpedUserId = state.auth.user.helped_users[0].id
 
   return Object.values(state.auxiliary.list).filter(auxiliary =>
