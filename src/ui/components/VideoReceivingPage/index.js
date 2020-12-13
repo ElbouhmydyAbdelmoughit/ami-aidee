@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import VideoReceivingPage from './VideoReceivingPage'
-import { VideoCallActions, VideoCallSelectors } from '../../../redux/videoCall'
-import { AuthSelectors } from '../../../redux/auth'
+import { VideoCallActions, VideoCallSelectors } from '../../../store/videoCall'
+import { AuthSelectors } from '../../../store/auth'
 
 export default connect(
   state => ({

@@ -1,6 +1,6 @@
 import { UNAUTHORIZED } from 'http-status-codes'
 import { call, put, select } from 'redux-saga/effects'
-import { default as AuthActions } from '../redux/auth/actions'
+import { default as AuthActions } from '../store/auth/actions'
 import { fetch, query, mutation } from '../utils/index'
 
 function* authorize(service) {

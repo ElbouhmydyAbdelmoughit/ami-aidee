@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
 import ContactButton from './ContactButton'
-import { InstantMessagesSelectors } from '../../../../redux/instantMessages'
+import { InstantMessagesSelectors } from '../../../../store/instantMessages'
 
 export default connect((state, { auxiliary }) => ({}))(ContactButton)

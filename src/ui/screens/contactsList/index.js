@@ -3,11 +3,11 @@ import ContactsList from './ContactsList'
 import {
   AuxiliarySelectors,
   AuxiliaryActions,
-} from '../../../redux/auxiliaries'
+} from '../../../store/auxiliaries'
 import {
   InstantMessagesSelectors,
   InstantMessagesActions,
-} from '../../../redux/instantMessages'
+} from '../../../store/instantMessages'
 
 const getHelpedUser = state => {
   const me = state.auth.user

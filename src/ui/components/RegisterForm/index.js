@@ -1,6 +1,6 @@
-import { connect } from "react-redux"
-import RegisterForm from "./RegisterForm"
-import { RegisterActions } from "../../../redux/register"
+import { connect } from 'react-redux'
+import RegisterForm from './RegisterForm'
+import { RegisterActions } from '../../../store/register'
 
 const mapStateToProps = state => ({
   registerUser: state.register.data,

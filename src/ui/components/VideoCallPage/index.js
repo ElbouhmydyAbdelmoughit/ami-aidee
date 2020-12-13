@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 
 import VideoCallPage from './VideoCallPage'
-import { VideoCallActions, VideoCallSelectors } from '../../../redux/videoCall'
+import { VideoCallActions, VideoCallSelectors } from '../../../store/videoCall'
 
 export default connect(
   state => ({

@@ -1,14 +1,14 @@
 import { connect } from 'react-redux'
 
-import { MessageActions } from 'src/redux/message'
-import { TimerSelectors } from 'src/redux/timer'
-import { HelpedUserActions } from 'src/redux/helpedUsers'
+import { MessageActions } from 'src/store/message'
+import { TimerSelectors } from 'src/store/timer'
+import { HelpedUserActions } from 'src/store/helpedUsers'
 import SolarScreen from './SolarScreen'
-import { AuxiliarySelectors } from '../../../redux/auxiliaries'
+import { AuxiliarySelectors } from '../../../store/auxiliaries'
 import {
   InstantMessagesActions,
   InstantMessagesSelectors,
-} from '../../../redux/instantMessages'
+} from '../../../store/instantMessages'
 
 const getHelpedUser = state => {
   const me = state.auth.user

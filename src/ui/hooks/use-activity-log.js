@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux'
-import { UserActivitiesActions } from '../../redux/user-activities'
+import { UserActivitiesActions } from '../../store/user-activities'
 
 const useActivityLog = () => {
   const dispatch = useDispatch()

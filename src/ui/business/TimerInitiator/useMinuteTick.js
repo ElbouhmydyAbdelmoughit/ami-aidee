@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import moment from 'moment'
 import { useSelector, useDispatch } from 'react-redux'
-import { TimerActions, TimerSelectors } from 'src/redux/timer'
+import { TimerActions, TimerSelectors } from 'src/store/timer'
 
 /**
  * Set this to true to "accelerate" time for easier debugging

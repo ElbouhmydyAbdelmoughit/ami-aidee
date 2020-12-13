@@ -1,4 +1,4 @@
-import { AuthSelectors } from 'src/redux/auth'
+import { AuthSelectors } from 'src/store/auth'
 
 const getCurrentTopic = auxiliary => state => {
   const currentHelpedUser = AuthSelectors.getCurrentHelpedUser(state)

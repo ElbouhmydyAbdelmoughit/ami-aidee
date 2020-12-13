@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import VideoCallRoom from './VideoCallRoom'
-import { VideoCallSelectors } from '../../../redux/videoCall'
+import { VideoCallSelectors } from '../../../store/videoCall'
 
 export default connect((state, ownProps) => ({
   remoteAuxiliary: VideoCallSelectors.getRemoteAuxiliary(

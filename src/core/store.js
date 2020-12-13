@@ -3,11 +3,12 @@ import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import { loadState, saveState } from 'src/utils/storage'
 import { languages, strings } from '../assets'
-import appReducers, { rootSaga } from '../redux'
+import appReducers, { rootSaga } from 'store'
 import { createLogger } from 'redux-logger'
 
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
+import errorReporter from './error-reporter'
 
 const persistConfig = {
   key: 'root',
@@ -29,7 +30,11 @@ const logger = createLogger({
   // ...options
 })
 
-const sagaMiddleware = createSagaMiddleware()
+const sagaMiddleware = createSagaMiddleware({
+  onError: error => {
+    errorReporter.report(error)
+  },
+})
 
 // Retrieves state from local storage
 const persistedState = loadState()

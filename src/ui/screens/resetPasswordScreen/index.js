@@ -3,7 +3,7 @@ import ResetPasswordScreen from './ResetPassWordScreen'
 import {
   ResetPasswordRequestActions,
   ResetPasswordRequestSelectors,
-} from '../../../redux/resetPasswordRequest'
+} from '../../../store/resetPasswordRequest'
 
 export default connect(
   (state, { data }) => ({

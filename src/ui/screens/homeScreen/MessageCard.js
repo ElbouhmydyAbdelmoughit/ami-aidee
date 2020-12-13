@@ -12,7 +12,7 @@ import {
   Left,
   Right,
 } from 'native-base'
-import { MessageSelectors } from 'src/redux/message'
+import { MessageSelectors } from 'src/store/message'
 import { subjects, moments, reccurences } from 'src/utils'
 import moment from 'moment'
 import momentFR from 'moment/locale/fr'

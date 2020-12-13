@@ -2,9 +2,9 @@ import { connect } from 'react-redux'
 import { getTranslate } from 'react-localize-redux'
 import HomeScreen from './HomeScreen'
 
-import { MessageActions } from 'src/redux/message'
-import { TimerActions } from 'src/redux/timer'
-import TimerSelectors from '../../../redux/timer/selectors'
+import { MessageActions } from 'src/store/message'
+import { TimerActions } from 'src/store/timer'
+import TimerSelectors from '../../../store/timer/selectors'
 
 const mapStateToProps = state => {
   const { auth, message } = state

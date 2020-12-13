@@ -3,8 +3,8 @@ import ChatRoom from './ChatRoom'
 import {
   InstantMessagesActions,
   InstantMessagesSelectors,
-} from '../../../redux/instantMessages'
-import { AuthSelectors } from '../../../redux/auth'
+} from '../../../store/instantMessages'
+import { AuthSelectors } from '../../../store/auth'
 
 export default connect(
   (state, { auxiliary }) => ({

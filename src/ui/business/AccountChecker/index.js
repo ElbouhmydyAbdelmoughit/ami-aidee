@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import AccountChecker from './AccountChecker'
-import { HelpedUserSelectors } from '../../../redux/helpedUsers'
+import { HelpedUserSelectors } from '../../../store/helpedUsers'
 
 const getCurrentHelpedUser = ({ auth, user }) => {
   const me = auth.user

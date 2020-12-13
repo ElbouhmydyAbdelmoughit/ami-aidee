@@ -6,7 +6,7 @@ import { TRIAL_DURATION_IN_DAYS } from '../../../utils/constant'
 import {
   NavigationActions,
   NavigationSelectors,
-} from '../../../redux/navigation'
+} from '../../../store/navigation'
 
 const getAccountExpiresIn = helpedUser => {
   if (!helpedUser) {

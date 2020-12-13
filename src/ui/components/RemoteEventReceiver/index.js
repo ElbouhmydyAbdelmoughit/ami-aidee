@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
-import { InstantMessagesActions } from '../../../redux/instantMessages'
+import { InstantMessagesActions } from '../../../store/instantMessages'
 import RemoteEventReceiver from './RemoteEventReceiver'
-import { VideoCallActions, VideoCallSelectors } from '../../../redux/videoCall'
+import { VideoCallActions, VideoCallSelectors } from '../../../store/videoCall'
 
 export default connect(
   state => ({

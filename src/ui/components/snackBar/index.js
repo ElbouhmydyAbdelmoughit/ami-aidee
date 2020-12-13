@@ -1,6 +1,6 @@
-import { connect } from "react-redux"
-import { SnackActions } from "src/redux/snackBar"
-import { SnackBar } from "./SnackBar"
+import { connect } from 'react-redux'
+import { SnackActions } from 'src/store/snackBar'
+import { SnackBar } from './SnackBar'
 
 const mapStateToProps = state => ({
   message: state.snackBar.message,
