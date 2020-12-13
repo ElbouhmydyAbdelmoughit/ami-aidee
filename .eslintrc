@@ -52,7 +52,8 @@
     /* what does prop-types ever do good for private code anyway */
     "react/prop-types": "off",
     "react/jsx-one-expression-per-line": "off",
-    "yoda": ["off"]
+    "yoda": ["off"],
+    "quotes": ["error", "double"]
   },
   "parserOptions": {
     "ecmaFeatures": {

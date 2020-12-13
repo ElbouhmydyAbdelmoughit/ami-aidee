@@ -39,13 +39,9 @@ target 'AMIaide' do
 
   pod 'react-native-video', :path => '../node_modules/react-native-video'
 
-  pod 'appcenter', :path => '../node_modules/appcenter/ios'
-
-  pod 'appcenter-analytics', :path => '../node_modules/appcenter-analytics/ios'
-
-  pod 'appcenter-crashes', :path => '../node_modules/appcenter-crashes/ios'
-
   pod 'react-native-agora', :path => '../node_modules/react-native-agora'
+
+  pod 'RNCPushNotificationIOS', :path => '../node_modules/@react-native-community/push-notification-ios'
 
   target 'AMIaideTests' do
     inherit! :search_paths

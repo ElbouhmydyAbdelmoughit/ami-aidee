@@ -224,9 +224,6 @@ dependencies {
     implementation project(':react-native-orientation')
     implementation project(':react-native-agora')
     implementation project(':react-native-push-notification')
-    implementation project(':appcenter-crashes')
-    implementation project(':appcenter-analytics')
-    implementation project(':appcenter')
     implementation project(':react-native-video')
     compile 'com.yqritc:android-scalablevideoview:1.0.4'
     implementation 'com.android.support:multidex:1.0.3'

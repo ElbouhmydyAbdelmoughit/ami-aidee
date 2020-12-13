@@ -60,6 +60,7 @@ class Notifier: NSObject {
     print(date)
     let notificationCenter = UNUserNotificationCenter.current()
     getStatus(notificationCenter: notificationCenter) { [weak self] status in
+      
       switch status {
       case .authorized, .provisional:
         self?.prepareNotification(notificationCenter: notificationCenter, notification: notification, date: date) { error in
@@ -74,6 +75,8 @@ class Notifier: NSObject {
         reject("Notifier.statusFailure", "denied", nil)
       case .notDetermined:
         reject("Notifier.statusFailure", "notDetermined", nil)
+      default:
+        reject("Notifier.statusFailure", "unknown", nil)
       }
     }
     

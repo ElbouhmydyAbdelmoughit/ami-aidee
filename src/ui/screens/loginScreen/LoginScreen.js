@@ -52,7 +52,6 @@ export default ({ loginRequest }) => {
             <CardItem body>
               <AuthentForm
                 style={{ flex: 1, paddingRight: 30, paddingLeft: 30 }}
-                form={{ username: "didier@gmail.com", password: "testounet" }}
                 onValidate={onValidate}
               />
             </CardItem>
