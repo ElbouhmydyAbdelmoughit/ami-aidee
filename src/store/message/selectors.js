@@ -3,7 +3,7 @@ import {
   messageToAlert,
   immediateMessage,
   getMessageNextDiffusionDatetime,
-} from 'src/utils'
+} from 'utils'
 import TimerSelectors from '../timer/selectors'
 
 const getMessages = state => {

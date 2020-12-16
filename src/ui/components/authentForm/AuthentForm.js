@@ -106,7 +106,6 @@ export default ({ style, form, onValidate }) => {
       <Button
         full
         bordered
-        disabled={!isFormValid()}
         onPress={() => {
           logActivity('press_register_btn')
           Actions.register({ step: 'name' })

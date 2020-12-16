@@ -1,9 +1,10 @@
-import { methods, loginFetchMock, fetch } from '../utils'
+import { methods } from '../utils'
 import { service, authenticatedQuery } from './middleware'
 
 const { POST } = methods
 const routes = {
   login: () => 'api/login',
+  logout: () => 'api/logout',
   requestResetPassword: () => 'api/request_password_reset',
   resetPassword: () => 'api/reset_password',
 }
@@ -43,6 +44,8 @@ const queries = {
 export default {
   login: ({ email, password }) =>
     service(POST, routes.login(), { email: email, password: password }),
+
+  logout: () => service(POST, routes.logout()),
   me: id => authenticatedQuery(queries.me(id)),
   passwordResetRequest: ({ email }) =>
     service(POST, routes.requestResetPassword(), { email, app_id: 'aide' }),

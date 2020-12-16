@@ -66,8 +66,9 @@ video_url: ""
   const hour = fr.format('HH:mm')
   const text = `\n${day}, ${hour}`
   const now = moment()
+  const formattedMomentTime = moment_time && moment_time.substr(0, 5)
   return (
-    <View>
+    <View style={{ marginTop: 24 }}>
       <Text
         style={{
           color: 'rgba(255,255,255,0.7)',
@@ -85,7 +86,7 @@ video_url: ""
           <View style={{ flexDirection: 'column', width: '100%' }}>
             <Text style={styles.datetime}>{text}</Text>
             <Text style={styles.text}>
-              {`Penser à  ${activite} ${reccurence_value} ${moment_value} ${moment_time}`}
+              {`Penser à  ${activite} ${reccurence_value} ${moment_value} ${formattedMomentTime}`}
             </Text>
           </View>
         </CardItem>

@@ -11,7 +11,7 @@ import moment from 'moment'
 import momentFR from 'moment/locale/fr'
 import { times } from 'src/utils'
 import TimerInitiator from 'src/ui/business/TimerInitiator'
-import MessageAlertManager from 'src/ui/business/MessageAlertManager'
+import MessageAlertManager from 'ui/business/MessageAlertManager'
 
 import SolarView from './SolarView'
 import ContactButton from './ContactButton'
@@ -147,11 +147,11 @@ const SolarScreen = ({
     let add = true
     const interval = setInterval(() => {
       setFadeIn(opacity)
-      if (add) opacity += 0.1
-      else opacity -= 0.1
+      if (add) opacity += 1
+      else opacity -= 1
 
       add = !(opacity === 1)
-    }, 100)
+    }, 600)
 
     const tst = setTimeout(() => {
       //blinkInter.in
@@ -162,7 +162,7 @@ const SolarScreen = ({
 
   const onPress = () => {
     const time = times(date, helpedUser)
-    if (time === 'NIGHT') {
+    if (time === 'NIGHT' && false) {
       startBlinking()
     } else {
       Actions.home()

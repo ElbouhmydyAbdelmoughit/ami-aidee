@@ -79,6 +79,7 @@
     "@babel/preset-env": "7.2.3",
     "@babel/runtime": "^7.5.5",
     "@react-native-community/eslint-config": "^0.0.5",
+    "@types/react-redux": "^7.1.12",
     "axios-logger": "^2.1.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.0.1",

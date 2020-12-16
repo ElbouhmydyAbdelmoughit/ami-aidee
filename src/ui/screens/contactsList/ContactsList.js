@@ -93,7 +93,7 @@ const ContactsList = ({
                   fontSize: 18,
                 }}
               >
-                Options
+                Paramètres
               </Text>
             </Button>
           </View>

@@ -53,9 +53,9 @@ function* me(id) {
 }
 
 function* logout() {
-  yield put(AuthenticationService.logout())
+  yield call(AuthenticationService.logout)
   yield put(CommonActions.resetReducers())
-  yield put(push('/'))
+  Actions.splash()
 }
 
 function* passwordResetRequest({ email }) {

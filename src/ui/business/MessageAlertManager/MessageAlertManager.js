@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { MessageSelectors, MessageActions } from 'src/store/message'
+import { MessageSelectors, MessageActions } from 'store/message'
 import { Actions } from 'react-native-router-flux'
 
 const MessageAlertManager = ({ onRedirect }) => {

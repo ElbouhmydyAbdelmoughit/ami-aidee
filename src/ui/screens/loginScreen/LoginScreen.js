@@ -18,7 +18,7 @@ import {
 import LinearGradient from "react-native-linear-gradient"
 import { Col, Row, Grid } from "react-native-easy-grid"
 
-import { AuthentForm } from "src/ui/components"
+import { AuthentForm } from "ui/components"
 import AppStyles from "src/config/styles"
 
 import moment from "moment"
