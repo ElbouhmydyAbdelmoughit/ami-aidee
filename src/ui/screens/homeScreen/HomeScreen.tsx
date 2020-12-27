@@ -59,7 +59,7 @@ const HomeScreen = ({
 
   const resetTimer = () => {
     console.log(timerRef)
-    tim = (timerRef && timerRef.current) || {}
+    const tim = (timerRef && timerRef.current) || {}
     tim.reset()
   }
 
@@ -67,13 +67,12 @@ const HomeScreen = ({
     console.log(value)
     //setVolume(value)
 
-    video = (videoRef && videoRef.current) || {}
-    video.setVolume(value)
+    videoRef.current?.setVolume(value)
     resetTimer()
   }
 
   const reload = () => {
-    video = (videoRef && videoRef.current) || {}
+    const video = (videoRef && videoRef.current) || {}
     video.reload()
     resetTimer()
   }

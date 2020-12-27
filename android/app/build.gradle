@@ -138,8 +138,8 @@ android {
         applicationId "com.amiaide"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 59
-        versionName "1.48"
+        versionCode 60
+        versionName "1.49"
         multiDexEnabled true
     }
     splits {
@@ -242,9 +242,14 @@ dependencies {
         transitive = true;
     }
 
+    if (enableHermes) {
+        def hermesPath = "../../node_modules/hermes-engine/android/";
 
-
-    implementation jscFlavor
+        debugImplementation files(hermesPath + "hermes-debug.aar")
+        releaseImplementation files(hermesPath + "hermes-release.aar")
+    } else {
+        implementation jscFlavor
+    }
 
 }
 

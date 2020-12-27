@@ -162,7 +162,7 @@ const SolarScreen = ({
 
   const onPress = () => {
     const time = times(date, helpedUser)
-    if (time === 'NIGHT' && false) {
+    if (time === 'NIGHT') {
       startBlinking()
     } else {
       Actions.home()
