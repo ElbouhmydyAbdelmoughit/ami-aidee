@@ -41,6 +41,10 @@ const UserSettingsScreen = ({
   userModifyRequest,
 }: Props) => {
   const [checked, setChecked] = useState(currentHelpedUser.automatic_pickup)
+  const [minVolumeChecked, setMinVolumeChecked] = useState(
+    currentHelpedUser.min_volume === 0.5
+  )
+
   const logActivity = useActivityLog()
   const dispatch = useDispatch()
   const onPress = () => {
@@ -50,6 +54,14 @@ const UserSettingsScreen = ({
       automatic_pickup: !checked,
     })
     setChecked(c => !c)
+  }
+  const onMinVolumePress = () => {
+    logActivity(TrackedActivity.TOGGLE_MIN_VOLUME_SET)
+    userModifyRequest({
+      id: currentHelpedUser.id,
+      min_volume: minVolumeChecked ? 0 : 0.5,
+    })
+    setMinVolumeChecked(c => !c)
   }
   return (
     <GradientBackground>
@@ -121,6 +133,23 @@ const UserSettingsScreen = ({
                 <Text style={styles.helpText}>
                   L'appel entrant sera décroché automatiquement après 3
                   secondes.
+                </Text>
+              </React.Fragment>
+            </TouchableRipple>
+          </View>
+          <View style={{ flexDirection: 'row', marginTop: 24 }}>
+            <Checkbox
+              color="white"
+              status={minVolumeChecked ? 'checked' : 'unchecked'}
+              onPress={onMinVolumePress}
+              uncheckedColor="white"
+            />
+            <TouchableRipple onPress={onMinVolumePress}>
+              <React.Fragment>
+                <Text style={styles.text}>Volume activé</Text>
+                <Text style={styles.helpText}>
+                  Le volume sera toujours activé et ne descend pas au dessous de
+                  50%
                 </Text>
               </React.Fragment>
             </TouchableRipple>

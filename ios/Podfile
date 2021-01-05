@@ -43,6 +43,10 @@ target 'AMIaide' do
 
   pod 'RNCPushNotificationIOS', :path => '../node_modules/@react-native-community/push-notification-ios'
 
+  pod 'RCTSystemSetting', :path => '../node_modules/react-native-system-setting'
+
+  pod 'react-native-device-battery', :path => '../node_modules/react-native-device-battery'
+
   target 'AMIaideTests' do
     inherit! :search_paths
     # Pods for testing

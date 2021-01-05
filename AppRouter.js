@@ -26,17 +26,21 @@ import {
   PasswordResetRequestConfirmedScreen,
   ResetPasswordScreen,
   ResetPasswordConfirmedScreen,
-} from './src/ui/screens'
-import { SnackBar } from './src/ui/components'
-import RemoteEventReceiver from './src/ui/components/RemoteEventReceiver'
-import VideoReceivingScreen from './src/ui/screens/videoReceivingScreen'
-import UserSettingsScreen from './src/ui/screens/userSettings'
-import MessagingScreen from './src/ui/screens/messagingScreen'
+} from 'ui/screens'
+import { SnackBar } from 'ui/components'
+import RemoteEventReceiver from 'ui/components/RemoteEventReceiver'
+import VideoReceivingScreen from 'ui/screens/videoReceivingScreen'
+import UserSettingsScreen from 'ui/screens/userSettings'
+import MessagingScreen from '/ui/screens/messagingScreen'
+import SystemVolumeManager from 'ui/business/SystemVolumeManager'
+import BatteryChecker from 'ui/business/BatteryChecker'
 
 export default () => (
   <React.Fragment>
     <SnackBar />
     <RemoteEventReceiver />
+    <SystemVolumeManager />
+    <BatteryChecker />
     <Router>
       <Scene key="master" hideNavBar transitionConfig={transitionConfig}>
         <Scene

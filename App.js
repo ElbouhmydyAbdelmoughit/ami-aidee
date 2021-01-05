@@ -22,11 +22,7 @@ import AppRouter from './AppRouter'
 import getTheme from './native-base-theme/components'
 import material from './native-base-theme/variables/material'
 
-console.log(Core)
 const { store, persistor } = Core
-
-console.log(persistor)
-console.log(store)
 
 const App = () => {
   useEffect(() => {

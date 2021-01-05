@@ -1,4 +1,3 @@
+import { requireNativeComponent } from 'react-native'
 
-import {requireNativeComponent} from 'react-native';
-
-module.exports = requireNativeComponent('RCTVideoView');
+module.exports = requireNativeComponent('RCTVideoView')

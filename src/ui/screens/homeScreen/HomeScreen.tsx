@@ -1,8 +1,16 @@
 import React, { useState, useEffect, createRef } from 'react'
-import { Container, Text, H1, Toast } from 'native-base'
+import { Container, Text, H1, H3, Toast } from 'native-base'
 import { Col, Row, Grid } from 'react-native-easy-grid'
 import { Actions } from 'react-native-router-flux'
-import { TouchableWithoutFeedback, View } from 'react-native'
+import {
+  TouchableWithoutFeedback,
+  View,
+  StatusBar,
+  StyleSheet,
+  TouchableOpacity,
+  Pressable,
+  Dimensions,
+} from 'react-native'
 
 import LinearGradient from 'react-native-linear-gradient'
 
@@ -13,11 +21,13 @@ import { Timer } from 'src/ui/components'
 import VideoCard from './VideoCard'
 import MessageCard from './MessageCard'
 import NavigateCard from './NavigateCard'
-import PictureCard from './PictureCard'
 
 import useActivityLog from 'ui/hooks/use-activity-log'
 import { TrackedActivity } from 'core/types'
 import { Button, IconButton } from 'react-native-paper'
+import { CircleButton } from 'ui/components'
+import Icon from 'react-native-vector-icons/MaterialIcons'
+import useDebounce from 'ui/hooks/use-debounce'
 
 /**
  *
@@ -112,97 +122,181 @@ const HomeScreen = ({
   const imageURI = picture_url ? { uri: `${Env.MEDIA_URL}/${picture_url}` } : {}
 
   const color = ['#3FEDFF', '#8772FF']
+  const [zooming, setZooming] = useState(false)
+  const debouncedZooming = useDebounce(zooming, 200)
   return (
-    <Container>
-      <Timer ref={timerRef} mode={'awake'} />
-      <TouchableWithoutFeedback
-        onPress={() => {
-          if (redirectFromSolarView) {
-            logActivity(
-              TrackedActivity.RETURN_FROM_REMINDER_LIST_ON_SCREEN_PRESS
-            )
-            Actions.accueil()
-          }
-        }}
-      >
-        <LinearGradient
-          start={{ x: 0.0, y: 0.0 }}
-          end={{ x: 1.0, y: 1.0 }}
-          colors={color}
-          style={{ flex: 1 }}
-        >
+    <>
+      {zooming && debouncedZooming && (
+        <>
           <IconButton
-            size={40}
+            icon="close"
+            color="#555"
+            size={60}
             style={{
               position: 'absolute',
-              left: 12,
-              top: 0,
+              right: 32,
+              top: 48,
+              zIndex: 201,
               width: 60,
-              marginBottom: 16,
+              height: 60,
+              backgroundColor: 'white',
+              borderRadius: 30,
             }}
-            color="white"
-            icon="arrow-back"
             onPress={() => {
-              logActivity(TrackedActivity.RETURN_FROM_REMINDER_LIST)
-              Actions.pop()
+              setZooming(false)
             }}
           />
-          {messages.length == 0 && (
-            <View style={{ alignItems: 'center' }}>
-              <H1 style={styles.title}>{'Pas de nouveau messages'}</H1>
-              <Button
-                mode="outlined"
-                style={{ borderColor: 'white' }}
-                onPress={() => {
-                  logActivity(TrackedActivity.RETURN_FROM_REMINDER_LIST)
-                  Actions.pop()
-                }}
-              >
-                <Text
-                  style={{
-                    color: 'white',
-                    textTransform: 'uppercase',
-                    fontSize: 18,
+        </>
+      )}
+      <Container>
+        <StatusBar backgroundColor="transparent" translucent />
+        <Timer ref={timerRef} mode={'awake'} />
+        <TouchableWithoutFeedback
+          onPress={() => {
+            if (redirectFromSolarView) {
+              logActivity(
+                TrackedActivity.RETURN_FROM_REMINDER_LIST_ON_SCREEN_PRESS
+              )
+              Actions.accueil()
+            }
+          }}
+        >
+          <LinearGradient
+            start={{ x: 0.0, y: 0.0 }}
+            end={{ x: 1.0, y: 1.0 }}
+            colors={color}
+            style={{ flex: 1 }}
+          >
+            <IconButton
+              size={30}
+              style={{
+                position: 'absolute',
+                left: 30,
+                top: 16,
+                width: 50,
+                height: 50,
+                borderRadius: 25,
+                backgroundColor: 'white',
+                marginBottom: 16,
+              }}
+              color="#555"
+              icon="arrow-back"
+              onPress={() => {
+                logActivity(TrackedActivity.RETURN_FROM_REMINDER_LIST)
+                Actions.pop()
+              }}
+            />
+            {messages.length == 0 && (
+              <View style={{ alignItems: 'center' }}>
+                <H1 style={styles.title}>{'Pas de nouveau messages'}</H1>
+                <Button
+                  mode="outlined"
+                  style={{ borderColor: 'white' }}
+                  onPress={() => {
+                    logActivity(TrackedActivity.RETURN_FROM_REMINDER_LIST)
+                    Actions.pop()
                   }}
                 >
-                  Retour
-                </Text>
-              </Button>
-            </View>
-          )}
-          {messages.length > 0 && (
-            <Grid style={{ padding: 30, paddingTop: 0 }}>
-              <Col size={25}>
-                <Row size={50} style={{ paddingTop: 60 }}>
-                  <VideoCard ref={videoRef} uri={videoURI} />
+                  <Text
+                    style={{
+                      color: 'white',
+                      textTransform: 'uppercase',
+                      fontSize: 18,
+                    }}
+                  >
+                    Retour
+                  </Text>
+                </Button>
+              </View>
+            )}
+            {messages.length > 0 && (
+              <Grid style={{ paddingHorizontal: 30, marginTop: 32 }}>
+                <Row size={100}>
+                  <Col size={30}>
+                    <View style={{ flex: 1, marginTop: 56 }}>
+                      <View
+                        style={{
+                          backgroundColor: 'black',
+                          borderRadius: 16,
+                          flex: 1,
+                          paddingTop: 16,
+                          maxWidth: 500,
+                        }}
+                      >
+                        <View style={{ flex: 1, backgroundColor: 'black' }}>
+                          <VideoCard ref={videoRef} uri={videoURI} />
+                        </View>
+                        <NavigateCard
+                          onReload={reload}
+                          onVolumeChange={onVolumeChange}
+                        />
+                      </View>
+                    </View>
+                  </Col>
+                  <Col
+                    size={70}
+                    style={{
+                      marginLeft: 16,
+                      alignItems: 'center',
+                    }}
+                  >
+                    <Row size={50}>
+                      <MessageCard
+                        onUnzoom={() => {
+                          setZooming(false)
+                        }}
+                        me={me}
+                        message={message}
+                        uri={imageURI}
+                        zooming={zooming}
+                        onZoom={() => {
+                          setZooming(true)
+                        }}
+                      />
+                    </Row>
+                  </Col>
                 </Row>
-                <Row size={50}>
-                  <NavigateCard
-                    current={messages.indexOf(message) + 1}
-                    total={messages.length}
-                    onNext={next}
-                    onPrevious={previous}
-                    onReload={reload}
-                    onVolumeChange={onVolumeChange}
-                  />
-                </Row>
-              </Col>
-
-              <Col size={2}></Col>
-              <Col size={70}>
-                <Row size={40}>
-                  <MessageCard me={me} message={message} />
-                </Row>
-                <Row size={3}></Row>
-                <Row size={45}>
-                  <PictureCard uri={imageURI} message={message} />
-                </Row>
-              </Col>
-            </Grid>
-          )}
-        </LinearGradient>
-      </TouchableWithoutFeedback>
-    </Container>
+                <View
+                  style={{
+                    height: 60,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexDirection: 'row',
+                    marginVertical: 15,
+                  }}
+                >
+                  {!zooming && !debouncedZooming && (
+                    <>
+                      <CircleButton
+                        onPress={(...args) => {
+                          logActivity('prev_reminder')
+                          previous(...args)
+                        }}
+                        size={60}
+                        source={require('src/assets/images/back.png')}
+                      />
+                      <H3
+                        style={{ color: '#fff', marginHorizontal: 8 }}
+                      >{`${messages.indexOf(message) + 1} / ${
+                        messages.length
+                      }`}</H3>
+                      <CircleButton
+                        onPress={(...args) => {
+                          logActivity('next_reminder')
+                          next(...args)
+                        }}
+                        size={60}
+                        source={require('src/assets/images/next.png')}
+                      />
+                    </>
+                  )}
+                </View>
+              </Grid>
+            )}
+          </LinearGradient>
+        </TouchableWithoutFeedback>
+      </Container>
+    </>
   )
 }
 

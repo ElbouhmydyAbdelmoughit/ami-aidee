@@ -138,8 +138,8 @@ android {
         applicationId "com.amiaide"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 60
-        versionName "1.49"
+        versionCode 61
+        versionName "1.50"
         multiDexEnabled true
     }
     splits {
@@ -172,7 +172,7 @@ android {
         }
         release {
             // Caution! In production, you need to generate your own keystore file.
-            // see https://facebook.github.io/react-native/docs/signed-apk-android.
+            // facebook.github.io/react-native/docs/signed-apk-android.
             signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
@@ -221,6 +221,8 @@ configurations.all {
 }
 
 dependencies {
+    implementation project(':react-native-device-battery')
+    implementation project(':react-native-system-setting')
     implementation project(':react-native-orientation')
     implementation project(':react-native-agora')
     implementation project(':react-native-push-notification')

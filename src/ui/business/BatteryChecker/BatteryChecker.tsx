@@ -1,0 +1,80 @@
+import { Alert, Animated, View } from 'react-native'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { IconButton } from 'react-native-paper'
+import DeviceBattery from 'react-native-device-battery'
+
+const BatteryChecker = () => {
+  const opacityAnim = useRef(new Animated.Value(0)).current
+  const [isCharging, setIsCharging] = useState(true)
+
+  const onBatteryStateChanged = useCallback(state => {
+    setIsCharging(state.charging)
+  }, [])
+
+  useEffect(() => {
+    DeviceBattery.isCharging().then(isCharging => {
+      console.log('isCharging', isCharging)
+      setIsCharging(isCharging)
+    })
+    DeviceBattery.addListener(onBatteryStateChanged)
+    return () => {
+      DeviceBattery.removeListener(onBatteryStateChanged)
+    }
+  }, [])
+  const loop = Animated.loop(
+    Animated.sequence([
+      Animated.timing(opacityAnim, {
+        toValue: 1,
+        useNativeDriver: true,
+        duration: 500,
+      }),
+      Animated.timing(opacityAnim, {
+        toValue: 0,
+        useNativeDriver: true,
+        duration: 500,
+      }),
+    ])
+  )
+  useEffect(() => {
+    console.log('starting')
+    if (!isCharging) {
+      loop.start()
+    } else {
+      loop.stop()
+    }
+  }, [isCharging])
+  if (isCharging) {
+    return null
+  }
+  return (
+    <View style={{ position: 'absolute', left: 24, bottom: 24 }}>
+      <Animated.View
+        style={{
+          opacity: opacityAnim.interpolate({
+            inputRange: [0, 1],
+            outputRange: [1, 0.1],
+          }),
+          zIndex: 30,
+        }}
+      >
+        <IconButton
+          icon="battery-alert"
+          color="rgba(255,0,0,0.8)"
+          size={100}
+          style={{
+            width: 100,
+            height: 100,
+            zIndex: 30,
+          }}
+          onPress={() => {
+            Alert.alert(
+              "Veuillez brancher l'alimentation de la tablette pour assurer un fonctionnement continu de l'application"
+            )
+          }}
+        />
+      </Animated.View>
+    </View>
+  )
+}
+
+export default BatteryChecker

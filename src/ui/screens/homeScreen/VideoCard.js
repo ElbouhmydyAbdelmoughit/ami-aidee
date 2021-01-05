@@ -14,7 +14,7 @@ import {
   findNodeHandle,
   UIManager,
 } from 'react-native'
-import { VideoView } from 'src/ui/components'
+import VideoView from 'ui/components/videoView'
 import { Body, Card, CardItem, H3 } from 'native-base'
 
 let playerHandle
@@ -71,7 +71,6 @@ const VideoCard = ({ uri }, ref) => {
       style={{
         width: '100%',
         height: '100%',
-        backgroundColor: '#000',
       }}
     >
       <VideoView

@@ -32,6 +32,7 @@ const queries = {
       status
       created_at
       automatic_pickup
+      min_volume
     }
     permission {
       id

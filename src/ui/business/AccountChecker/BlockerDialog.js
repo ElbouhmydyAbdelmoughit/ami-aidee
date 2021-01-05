@@ -25,7 +25,6 @@ const getIsAccountExpired = helpedUser => {
 let title, firstText, secondText
 
 const BlockerDialog = ({ helpedUser }) => {
-  console.log(helpedUser)
   const [dialogVisible, setDialogVisible] = useState(false)
   useEffect(() => {
     if (getIsAccountSuspended(helpedUser)) {
@@ -36,7 +35,6 @@ const BlockerDialog = ({ helpedUser }) => {
         "Veuillez contacter l'administrateur de l'application par email si vous pensez que ceci est une erreur."
       setDialogVisible(true)
     } else if (getIsAccountExpired(helpedUser)) {
-      console.log('hihi')
       title = 'Compte expiré'
       firstText =
         "Vous avez dépassé les 30 jours d'essai de l'application Aidee."
@@ -44,11 +42,9 @@ const BlockerDialog = ({ helpedUser }) => {
         "Veuillez contacter l'administrateur de l'application par email pour activer votre compte & continuer l'utilisation."
       setDialogVisible(true)
     } else {
-      console.log('haha')
       setDialogVisible(false)
     }
   }, [helpedUser])
-  console.log(dialogVisible)
   return (
     <Portal>
       <Dialog visible={dialogVisible}>

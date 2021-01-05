@@ -1,10 +1,9 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { useSelector } from 'react-redux'
 import {
   Body,
   Card,
   CardItem,
-  View,
   Text,
   H1,
   H2,
@@ -12,15 +11,19 @@ import {
   Left,
   Right,
 } from 'native-base'
+import { Animated, View } from 'react-native'
 import { MessageSelectors } from 'src/store/message'
 import { subjects, moments, reccurences } from 'src/utils'
 import moment from 'moment'
 import momentFR from 'moment/locale/fr'
+import { IconButton } from 'react-native-paper'
+import Icon from 'react-native-vector-icons/MaterialIcons'
+import ZoomableImage from './ZoomableImage'
 
 const BOLD = text => <Text style={{ fontWeight: 'bold' }}>{text}</Text>
 const BR = <Text>{'\n'}</Text>
 
-export default ({ message, me }) => {
+const MessageCard = ({ message, me, uri, zooming, onZoom, onUnzoom }) => {
   /*
 activite: "prendre un doliprane"
 auxiliary: {id: 2, firstname: "aidant", lastname: "super", __typename: "auxiliaries"}
@@ -41,21 +44,27 @@ video_url: ""
     MessageSelectors.getMessageNextDiffusionDate(message)
   )
   var fr = moment().locale('fr', momentFR)
-  const { activite, reccurence, moment_time } = message
+  const { activite, reccurence, moment_time, location } = message
   const moment_id = message.moment
   const { username } = me
 
   const styles = {
     datetime: {
       fontSize: 20,
-      color: '#777',
+      color: '#eee',
       marginBottom: 16,
       fontWeight: '700',
     },
     text: {
       fontSize: 24,
       fontWeight: '700',
-      color: '#555',
+      color: 'white',
+      marginBottom: 16,
+    },
+    secondaryInfo: {
+      fontSize: 20,
+      fontWeight: '700',
+      color: '#eee',
       marginBottom: 16,
     },
   }
@@ -68,12 +77,12 @@ video_url: ""
   const now = moment()
   const formattedMomentTime = moment_time && moment_time.substr(0, 5)
   return (
-    <View style={{ marginTop: 24 }}>
+    <View style={{ marginTop: 24, width: '100%', flex: 1 }}>
       <Text
         style={{
-          color: 'rgba(255,255,255,0.7)',
+          color: '#eee',
           fontWeight: 'bold',
-          fontSize: 16,
+          fontSize: 20,
           textAlign: 'right',
           lineHeight: 30,
         }}
@@ -81,16 +90,49 @@ video_url: ""
         {diffusionDate.isBefore(now) ? 'Dernier' : 'Prochain'} rappel:{' '}
         {diffusionDate.format('LLL')}
       </Text>
-      <Card style={{ margin: 0, padding: 0 }}>
-        <CardItem body style={{ margin: 0, padding: 0, width: '100%' }}>
-          <View style={{ flexDirection: 'column', width: '100%' }}>
-            <Text style={styles.datetime}>{text}</Text>
-            <Text style={styles.text}>
-              {`Penser à  ${activite} ${reccurence_value} ${moment_value} ${formattedMomentTime}`}
-            </Text>
+      <View
+        style={{
+          backgroundColor: 'rgba(0,0,0,0.3)',
+          width: '100%',
+          marginRight: 16,
+          borderRadius: 16,
+          flex: 1,
+        }}
+      >
+        <View style={{ flexDirection: 'column', paddingHorizontal: 16 }}>
+          <Text style={styles.datetime}>{text}</Text>
+          <Text style={styles.text}>
+            {`Penser à  ${activite} ${reccurence_value} ${moment_value} ${formattedMomentTime}`}
+          </Text>
+        </View>
+        {location ? (
+          <View
+            style={{
+              flexDirection: 'row',
+              marginTop: 8,
+              alignSelf: 'flex-start',
+              paddingHorizontal: 16,
+            }}
+          >
+            <Icon
+              name={'location-on'}
+              size={24}
+              color={'#999'}
+              style={{ marginRight: 8 }}
+            />
+            <Text style={styles.secondaryInfo}>{location}</Text>
           </View>
-        </CardItem>
-      </Card>
+        ) : null}
+        <ZoomableImage
+          uri={uri}
+          zooming={zooming}
+          onZoom={onZoom}
+          key={uri}
+          onUnzoom={onUnzoom}
+        />
+      </View>
     </View>
   )
 }
+
+export default MessageCard

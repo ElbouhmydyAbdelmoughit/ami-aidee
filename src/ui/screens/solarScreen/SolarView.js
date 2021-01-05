@@ -34,7 +34,6 @@ const getBorderPoints = (cx, cy, rx, ry) => {
 
     angle += angleStep
   }
-  console.log(borderPoints)
   return borderPoints
 }
 

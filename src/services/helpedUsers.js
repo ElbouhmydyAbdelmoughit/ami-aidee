@@ -32,6 +32,7 @@ const queries = {
     surname
     updated_at
     automatic_pickup
+    min_volume
   }`,
   count: () => ` helped_users_aggregate {
     aggregate {
@@ -68,6 +69,11 @@ const mutations = {
             ? `automatic_pickup: ${user.automatic_pickup}`
             : ''
         }
+        ${
+          typeof user.min_volume === 'number'
+            ? `min_volume: ${user.min_volume}`
+            : ''
+        }
       }) {
       returning {
         id
@@ -83,6 +89,7 @@ const mutations = {
         surname
         updated_at
         automatic_pickup
+        min_volume
       }
     }
   }`,
