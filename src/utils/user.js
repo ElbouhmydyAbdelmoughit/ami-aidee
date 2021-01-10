@@ -5,6 +5,9 @@ const getUserAbbr = user => {
 }
 
 const getUserDisplayName = user => {
+  if (!user) {
+    return
+  }
   if (user.surname) {
     return user.surname
   }

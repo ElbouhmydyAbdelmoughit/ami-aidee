@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, View, Modal, ActivityIndicator } from 'react-native'
 
-const styles = StyleSheet.create({
+export const modalStyles = StyleSheet.create({
   modalBackground: {
     flex: 1,
     alignItems: 'center',
@@ -28,8 +28,8 @@ const Loader = ({ loading }) => {
       visible={loading}
       onRequestClose={() => {}}
     >
-      <View style={styles.modalBackground}>
-        <View style={styles.activityIndicatorWrapper}>
+      <View style={modalStyles.modalBackground}>
+        <View style={modalStyles.activityIndicatorWrapper}>
           {loading && <ActivityIndicator animating />}
         </View>
       </View>

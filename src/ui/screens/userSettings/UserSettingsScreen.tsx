@@ -44,6 +44,9 @@ const UserSettingsScreen = ({
   const [minVolumeChecked, setMinVolumeChecked] = useState(
     currentHelpedUser.min_volume === 0.5
   )
+  const [dischargingAlertChecked, setDischargingAlertChecked] = useState(
+    currentHelpedUser.alert_on_discharge
+  )
 
   const logActivity = useActivityLog()
   const dispatch = useDispatch()
@@ -63,6 +66,15 @@ const UserSettingsScreen = ({
     })
     setMinVolumeChecked(c => !c)
   }
+  const onAlertOnDischargePress = () => {
+    logActivity(TrackedActivity.TOGGLE_ALERT_ON_DISCHARGE)
+    userModifyRequest({
+      id: currentHelpedUser.id,
+      alert_on_discharge: !dischargingAlertChecked,
+    })
+    setDischargingAlertChecked(c => !c)
+  }
+
   return (
     <GradientBackground>
       <View
@@ -154,44 +166,65 @@ const UserSettingsScreen = ({
               </React.Fragment>
             </TouchableRipple>
           </View>
-        </View>
-        <TouchableRipple
-          mode="outlined"
-          dark
-          style={{
-            borderColor: AppStyles.colors.danger,
-            borderRadius: 4,
-            borderWidth: 1,
-            marginBottom: 80,
-            alignSef: 'flex-end',
-          }}
-          onPress={() => {
-            dispatch(AuthActions.logout())
-          }}
-        >
+          <View style={{ flexDirection: 'row', marginTop: 24, flex: 1 }}>
+            <Checkbox
+              color="white"
+              status={dischargingAlertChecked ? 'checked' : 'unchecked'}
+              onPress={onAlertOnDischargePress}
+              uncheckedColor="white"
+            />
+            <TouchableRipple onPress={onAlertOnDischargePress}>
+              <React.Fragment>
+                <Text style={styles.text}>Alerte débranchement</Text>
+                <Text style={styles.helpText}>
+                  Lorsque la tablette est débranché, l'aidé sera alerté pour
+                  rebrancher sa tablette
+                </Text>
+              </React.Fragment>
+            </TouchableRipple>
+          </View>
           <View
-            style={{
-              alignItems: 'baseline',
-              flexDirection: 'row',
-              padding: 16,
-              paddingTop: 8,
-              paddingBottom: 8,
-            }}
+            style={{ alignItems: 'flex-start', justifyContent: 'flex-end' }}
           >
-            <Icon name="logout" size={16} color={AppStyles.colors.danger} />
-            <Text
+            <TouchableRipple
+              mode="outlined"
+              dark
               style={{
-                color: AppStyles.colors.danger,
-                fontSize: 18,
-                textTransform: 'uppercase',
-                fontWeight: '700',
-                marginLeft: 8,
+                borderColor: AppStyles.colors.danger,
+                borderRadius: 4,
+                borderWidth: 1,
+
+                marginBottom: 80,
+              }}
+              onPress={() => {
+                dispatch(AuthActions.logout())
               }}
             >
-              Déconnexion
-            </Text>
+              <View
+                style={{
+                  alignItems: 'baseline',
+                  flexDirection: 'row',
+                  padding: 16,
+                  paddingTop: 8,
+                  paddingBottom: 8,
+                }}
+              >
+                <Icon name="logout" size={16} color={AppStyles.colors.danger} />
+                <Text
+                  style={{
+                    color: AppStyles.colors.danger,
+                    fontSize: 18,
+                    textTransform: 'uppercase',
+                    fontWeight: '700',
+                    marginLeft: 8,
+                  }}
+                >
+                  Déconnexion
+                </Text>
+              </View>
+            </TouchableRipple>
           </View>
-        </TouchableRipple>
+        </View>
       </View>
     </GradientBackground>
   )

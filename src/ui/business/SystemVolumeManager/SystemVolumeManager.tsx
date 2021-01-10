@@ -1,10 +1,24 @@
-import { View, Animated, Alert } from 'react-native'
+import {
+  View,
+  Animated,
+  Alert,
+  Modal,
+  useWindowDimensions,
+  StyleSheet,
+} from 'react-native'
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import Setting from 'react-native-system-setting'
 import { useSelector } from 'react-redux'
 import { AuthSelectors } from 'store/auth'
 import { IconButton } from 'react-native-paper'
 import { Text } from 'react-native-svg'
+import { useAppState, useDimensions } from '@react-native-community/hooks'
+import { modalStyles } from 'ui/components/loader/Loader'
+import ProgressBar from 'react-native-progress/Bar'
+import AppStyles from 'config/styles'
+import { getGradientColors } from 'utils/colors'
+import { moments, times } from 'utils'
+import moment from 'moment'
 
 const SystemVolumeManager = () => {
   const helpedUser = useSelector(AuthSelectors.getCurrentHelpedUser)
@@ -25,66 +39,97 @@ const SystemVolumeManager = () => {
       }),
     ])
   )
+
+  const [progress, setProgress] = useState(0)
   useEffect(() => {
     if (!sufficientVolume) {
       loop.start()
+      setTimeout(() => {
+        Setting.setVolume(helpedUser.min_volume)
+        setProgress(helpedUser.min_volume)
+      }, 1000)
+      setTimeout(() => {
+        setSufficientVolume(true)
+      }, 2000)
     } else {
       loop.stop()
     }
   }, [sufficientVolume])
-  useEffect(() => {
-    Setting.getVolume().then(volume => {
-      console.log('volume', volume, helpedUser)
+  const appState = useAppState()
 
-      if (volume < helpedUser.min_volume - 0.1) {
-        setSufficientVolume(false)
-      }
-    })
-    const unsubscribe = Setting.addVolumeListener(data => {
-      console.log('volume', data)
-      const volume = data.value
+  useEffect(() => {
+    console.log(appState)
+    Setting.getVolume().then(volume => {
+      setProgress(volume)
       if (volume < helpedUser.min_volume - 0.1) {
         setSufficientVolume(false)
       } else {
         setSufficientVolume(true)
       }
     })
-    return () => {
-      Setting.removeListener(unsubscribe)
-    }
-  }, [helpedUser.min_volume])
-  if (sufficientVolume) {
-    return null
-  }
+  }, [helpedUser.min_volume, appState])
+
+  const time = times(moment(), helpedUser)
+  const color = getGradientColors(time)[0]
+  const window = useDimensions()
+  console.log('progress', progress, color)
+
   return (
-    <View style={{ position: 'absolute', left: 124, bottom: 24 }}>
-      <Animated.View
-        style={{
-          opacity: opacityAnim.interpolate({
-            inputRange: [0, 1],
-            outputRange: [1, 0.1],
-          }),
-          zIndex: 30,
-        }}
-      >
-        <Text>hihi</Text>
-        <IconButton
-          icon="volume-off"
-          color="rgba(255,0,0,0.8)"
-          size={100}
+    <Modal transparent visible={!sufficientVolume} pointerEvents="none">
+      <View style={modalStyles.modalBackground}>
+        <View
           style={{
-            width: 100,
-            height: 100,
-            zIndex: 30,
+            paddingHorizontal: 32,
+            paddingVertical: 16,
+            backgroundColor: 'rgba(0,0,0,0.8)',
+            borderRadius: 10,
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: window.window.width / 2,
           }}
-          onPress={() => {
-            console.log('set volume', helpedUser.min_volume)
-            Setting.setVolume(helpedUser.min_volume)
-            setSufficientVolume(true)
-          }}
-        />
-      </Animated.View>
-    </View>
+        >
+          <Animated.View
+            style={{
+              opacity: opacityAnim.interpolate({
+                inputRange: [0, 1],
+                outputRange: [1, 0.1],
+              }),
+              zIndex: 30,
+            }}
+          >
+            <Text>hihi</Text>
+            <IconButton
+              icon="volume-off"
+              color={color}
+              size={60}
+              style={{
+                width: 60,
+                height: 60,
+                zIndex: 30,
+              }}
+            />
+          </Animated.View>
+          <View
+            style={{
+              flex: 1,
+              justifyContent: 'flex-start',
+            }}
+          >
+            <ProgressBar
+              useNativeDriver
+              color={color}
+              height={10}
+              width={null}
+              progress={progress}
+              style={{ width: null }}
+              borderColor="transparent"
+              unfilledColor="rgba(255,255,255,0.4)"
+            />
+          </View>
+        </View>
+      </View>
+    </Modal>
   )
 }
 

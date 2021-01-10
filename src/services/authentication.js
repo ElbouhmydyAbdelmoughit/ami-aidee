@@ -26,6 +26,7 @@ const queries = {
       firstname
       surname
       email
+      is_charging
       waking_hour
       bedtime_hour
       sun_culmination_hour
@@ -33,6 +34,7 @@ const queries = {
       created_at
       automatic_pickup
       min_volume
+      alert_on_discharge
     }
     permission {
       id

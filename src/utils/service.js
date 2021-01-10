@@ -8,6 +8,7 @@ import { Env } from 'src/utils/env'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 import { HttpLink } from 'apollo-link-http'
 import ApolloClient, { gql } from 'apollo-boost'
+import errorReporter from 'core/error-reporter'
 const defaultOptions = {
   watchQuery: {
     fetchPolicy: 'no-cache',
@@ -87,7 +88,7 @@ export const fetch = ({
 
   instance.interceptors.response.use(AxiosLogger.responseLogger, err => {
     // write down your error intercept.
-    console.log(err)
+    errorReporter.report(err)
     return AxiosLogger.errorLogger(err)
   })
 

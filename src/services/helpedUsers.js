@@ -26,6 +26,7 @@ const queries = {
     phone
     status
     bedtime_hour
+    is_charging
     waking_hour
     sun_culmination_hour
     created_at
@@ -33,6 +34,7 @@ const queries = {
     updated_at
     automatic_pickup
     min_volume
+    alert_on_discharge
   }`,
   count: () => ` helped_users_aggregate {
     aggregate {
@@ -74,6 +76,16 @@ const mutations = {
             ? `min_volume: ${user.min_volume}`
             : ''
         }
+        ${
+          typeof user.is_charging === 'boolean'
+            ? `is_charging: ${user.is_charging}`
+            : ''
+        }
+        ${
+          typeof user.alert_on_discharge === 'boolean'
+            ? `alert_on_discharge: ${user.alert_on_discharge}`
+            : ''
+        }
       }) {
       returning {
         id
@@ -87,9 +99,12 @@ const mutations = {
         sun_culmination_hour
         created_at
         surname
+        is_charging
         updated_at
         automatic_pickup
         min_volume
+        alert_on_discharge
+
       }
     }
   }`,

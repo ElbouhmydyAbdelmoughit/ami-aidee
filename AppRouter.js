@@ -39,7 +39,6 @@ export default () => (
   <React.Fragment>
     <SnackBar />
     <RemoteEventReceiver />
-    <SystemVolumeManager />
     <BatteryChecker />
     <Router>
       <Scene key="master" hideNavBar transitionConfig={transitionConfig}>
@@ -97,6 +96,7 @@ export default () => (
         </Stack>
       </Scene>
     </Router>
+    <SystemVolumeManager />
   </React.Fragment>
 )
 

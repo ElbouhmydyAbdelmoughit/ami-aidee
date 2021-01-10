@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { View, Text, Dimensions, StyleSheet, ScrollView } from 'react-native'
-import { Avatar, TouchableRipple, IconButton, Button } from 'react-native-paper'
+import { Avatar, TouchableRipple, Button } from 'react-native-paper'
 import { H1, H3 } from 'native-base'
 import { getUserAbbr } from 'src/utils/user'
 import moment from 'moment'

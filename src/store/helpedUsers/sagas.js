@@ -1,3 +1,4 @@
+import errorReporter from 'core/error-reporter'
 import { takeLatest, put, call } from 'redux-saga/effects'
 import { HelpedUsersService } from '../../services'
 import { LoaderActions } from '../loader'
@@ -52,8 +53,6 @@ function* usersDeleteRequest({ id }) {
 }
 
 function* usersModifyRequest({ user }) {
-  console.log('user')
-  console.log(user)
   yield put(LoaderActions.loading())
   const { id, ...otherUserData } = user
 
@@ -62,17 +61,16 @@ function* usersModifyRequest({ user }) {
     user: otherUserData,
   })
 
-  console.log('response')
-  console.log(error)
-  console.log(response)
-  const users = response.update_helped_users.returning
-  console.log(users)
-  yield put(UserAction.usersModifySuccess(users))
   if (error) {
     yield put(LoaderActions.loaded())
     yield put(SnackActions.displayError('user_modify_error'))
+    errorReporter.report(error)
     return
   }
+  const users = response.update_helped_users.returning
+
+  yield put(UserAction.usersModifySuccess(users))
+
   yield put(LoaderActions.loaded())
 }
 

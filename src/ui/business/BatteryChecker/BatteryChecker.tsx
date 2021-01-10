@@ -2,17 +2,21 @@ import { Alert, Animated, View } from 'react-native'
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { IconButton } from 'react-native-paper'
 import DeviceBattery from 'react-native-device-battery'
+import { useDispatch, useSelector } from 'react-redux'
+import { HelpedUserActions } from 'store/helpedUsers'
+import { AuthSelectors } from 'store/auth'
 
 const BatteryChecker = () => {
   const opacityAnim = useRef(new Animated.Value(0)).current
   const [isCharging, setIsCharging] = useState(true)
-
+  const currentHelpedUser = useSelector(AuthSelectors.getCurrentHelpedUser)
+  const dispatch = useDispatch()
   const onBatteryStateChanged = useCallback(state => {
     setIsCharging(state.charging)
   }, [])
 
   useEffect(() => {
-    DeviceBattery.isCharging().then(isCharging => {
+    DeviceBattery.isCharging().then((isCharging: boolean) => {
       console.log('isCharging', isCharging)
       setIsCharging(isCharging)
     })
@@ -36,11 +40,22 @@ const BatteryChecker = () => {
     ])
   )
   useEffect(() => {
-    console.log('starting')
     if (!isCharging) {
       loop.start()
+      dispatch(
+        HelpedUserActions.usersModifyRequest({
+          id: currentHelpedUser.id,
+          is_charging: false,
+        })
+      )
     } else {
       loop.stop()
+      dispatch(
+        HelpedUserActions.usersModifyRequest({
+          id: currentHelpedUser.id,
+          is_charging: true,
+        })
+      )
     }
   }, [isCharging])
   if (isCharging) {
@@ -77,4 +92,10 @@ const BatteryChecker = () => {
   )
 }
 
-export default BatteryChecker
+export default () => {
+  const currentHelpedUser = useSelector(AuthSelectors.getCurrentHelpedUser)
+  if (!currentHelpedUser.alert_on_discharge) {
+    return null
+  }
+  return <BatteryChecker />
+}

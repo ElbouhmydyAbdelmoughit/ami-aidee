@@ -1,11 +1,12 @@
 import { Actions } from 'react-native-router-flux'
-import RtmEngine from '@ami-app/agora-react-native-rtm'
+import RtmEngine from 'agora-react-native-rtm'
 import { takeLatest, put, select, call } from 'redux-saga/effects'
 import VideoCallSelectors from './selectors'
 import VideoCallActions, { types } from './actions'
 import { AGORA_APP_ID } from '../../utils/constant'
 import { PushNotificationService } from '../../services'
 import { AuthSelectors } from '../auth'
+import errorReporter from 'core/error-reporter'
 
 let rtmEngine
 
@@ -70,16 +71,16 @@ function* videoCallInvitationRequest({ calleeId, mode }) {
   try {
     yield call(rtmEngine.sendLocalInvitation, localInvitation)
     const me = yield select(AuthSelectors.getCurrentHelpedUser)
+    yield put(VideoCallActions.localInvitationRequestSuccess(localInvitation))
+
     yield call(PushNotificationService.sendIncomingCallNotification, {
       calleeId,
       caller: me,
     })
   } catch (e) {
-    console.log('invitation error', e)
-    throw e
+    errorReporter.report(e)
+    return
   }
-
-  yield put(VideoCallActions.localInvitationRequestSuccess(localInvitation))
 }
 
 const EVENT_ACTIONS = {

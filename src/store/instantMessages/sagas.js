@@ -36,13 +36,17 @@ function* messagesRequest({ auxiliary }) {
 
 function* lastHelpedUsersMessagesRequest({ auxiliaries }) {
   const currentUserId = yield select(AuthSelectors.getUserId)
-  const [, response] = yield call(
+  const [error, response] = yield call(
     InstantMessagesService.lastHelpedUsersMessages,
     {
       receiver_id: currentUserId,
       sender_ids: auxiliaries.map(auxiliary => auxiliary.user_id),
     }
   )
+  if (error) {
+    // TODO: display error messages ?
+    return
+  }
   yield put(InstantMessagesActions.messagesRequestSuccess(response))
 }
 

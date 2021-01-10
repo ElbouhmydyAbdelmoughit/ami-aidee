@@ -7,10 +7,14 @@ import { AuthSelectors } from '../auth'
 function* registerTokenRequest({ token, os }) {
   const currentUserId = yield select(AuthSelectors.getUserId)
 
-  const [, response] = yield call(UsersService.regToken, {
+  const [error, response] = yield call(UsersService.regToken, {
     userId: currentUserId,
     token,
   })
+  if (error) {
+    // TODO: handle error
+    return
+  }
   if (response.user_google_reg_tokens.length === 1) {
     yield put(UserActions.tokenAlreadyExists())
     return
