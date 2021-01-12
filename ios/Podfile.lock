@@ -1,9 +1,9 @@
 PODS:
-  - agora-react-native-rtm (1.0.1-alpha.1):
-    - AgoraRtm_iOS (= 1.0.1)
+  - agora-react-native-rtm (1.2.2-alpha.3):
+    - AgoraRtm_iOS (= 1.2.2)
     - React
   - AgoraRtcEngine_iOS (2.9.1)
-  - AgoraRtm_iOS (1.0.1)
+  - AgoraRtm_iOS (1.2.2)
   - boost-for-react-native (1.63.0)
   - BVLinearGradient (2.5.6):
     - React
@@ -22,6 +22,8 @@ PODS:
     - glog
   - glog (0.3.5)
   - IQKeyboardManager (4.0.13)
+  - RCTSystemSetting (1.7.6):
+    - React
   - React (0.60.5):
     - React-Core (= 0.60.5)
     - React-DevSupport (= 0.60.5)
@@ -69,6 +71,8 @@ PODS:
   - React-jsinspector (0.60.5)
   - react-native-agora (2.9.1-alpha.3):
     - AgoraRtcEngine_iOS (= 2.9.1)
+    - React
+  - react-native-device-battery (2.1.0):
     - React
   - react-native-orientation (3.1.3):
     - React
@@ -130,13 +134,14 @@ PODS:
   - yoga (0.60.5.React)
 
 DEPENDENCIES:
-  - "agora-react-native-rtm (from `../node_modules/@ami-app/agora-react-native-rtm`)"
+  - agora-react-native-rtm (from `../node_modules/agora-react-native-rtm`)
   - BVLinearGradient (from `../node_modules/react-native-linear-gradient`)
   - Crashlytics
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - Fabric
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
+  - RCTSystemSetting (from `../node_modules/react-native-system-setting`)
   - React (from `../node_modules/react-native/`)
   - React-Core (from `../node_modules/react-native/React`)
   - React-cxxreact (from `../node_modules/react-native/ReactCommon/cxxreact`)
@@ -145,6 +150,7 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - react-native-agora (from `../node_modules/react-native-agora`)
+  - react-native-device-battery (from `../node_modules/react-native-device-battery`)
   - react-native-orientation (from `../node_modules/react-native-orientation`)
   - "react-native-slider (from `../node_modules/@react-native-community/slider`)"
   - react-native-video (from `../node_modules/react-native-video`)
@@ -180,7 +186,7 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   agora-react-native-rtm:
-    :path: "../node_modules/@ami-app/agora-react-native-rtm"
+    :path: "../node_modules/agora-react-native-rtm"
   BVLinearGradient:
     :path: "../node_modules/react-native-linear-gradient"
   DoubleConversion:
@@ -189,6 +195,8 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/Folly.podspec"
   glog:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
+  RCTSystemSetting:
+    :path: "../node_modules/react-native-system-setting"
   React:
     :path: "../node_modules/react-native/"
   React-Core:
@@ -205,6 +213,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   react-native-agora:
     :path: "../node_modules/react-native-agora"
+  react-native-device-battery:
+    :path: "../node_modules/react-native-device-battery"
   react-native-orientation:
     :path: "../node_modules/react-native-orientation"
   react-native-slider:
@@ -251,9 +261,9 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
-  agora-react-native-rtm: c6295e5f4d1c8475c88e677da239ad9c3c3ec4c0
+  agora-react-native-rtm: 46282635c00a56e9b4e937c88237fa0c79bb4ba5
   AgoraRtcEngine_iOS: b2eedd8f9ab47b71163f3285e836bd23feb43fff
-  AgoraRtm_iOS: e452117df04d1b1542ac82fe5328326ba1482cb6
+  AgoraRtm_iOS: c6ba986a3af73dd0f02e6e2995ae4fe9c155e6ae
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   BVLinearGradient: e3aad03778a456d77928f594a649e96995f1c872
   Crashlytics: 9220f5bc89e7a618df411b4f639389dbfb0e03d2
@@ -262,6 +272,7 @@ SPEC CHECKSUMS:
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
   IQKeyboardManager: 8eab4d8111418414619d1df8e4779ce5d0f8d7e2
+  RCTSystemSetting: 5107b7350d63b3f7b42a1277d07e4e5d9df879be
   React: 53c53c4d99097af47cf60594b8706b4e3321e722
   React-Core: ba421f6b4f4cbe2fb17c0b6fc675f87622e78a64
   React-cxxreact: 8384287780c4999351ad9b6e7a149d9ed10a2395
@@ -270,6 +281,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 90ad2f9db09513fc763bc757fdc3c4ff8bde2a30
   React-jsinspector: e08662d1bf5b129a3d556eb9ea343a3f40353ae4
   react-native-agora: 6c6fd3ad003ab2560b9689f9486e15fee01fdf11
+  react-native-device-battery: 24dbc8568000b0d9f73262a3b61fbe898c8b3313
   react-native-orientation: d4a97266b06ec8d45d74e626656a730ebbebbb6f
   react-native-slider: b2f361499888302147205f17f6fffa921a7bda70
   react-native-video: 961749da457e73bf0b5565edfbaffc25abfb8974
@@ -294,6 +306,6 @@ SPEC CHECKSUMS:
   Sentry: 14bdd673870e8cf64932b149fad5bbbf39a9b390
   yoga: 312528f5bbbba37b4dcea5ef00e8b4033fdd9411
 
-PODFILE CHECKSUM: f134654bc97e784b029487ce1e6f92b40f210f0b
+PODFILE CHECKSUM: c8fce3ec6c50236bf1acba629f9372a0752e61fa
 
 COCOAPODS: 1.9.3

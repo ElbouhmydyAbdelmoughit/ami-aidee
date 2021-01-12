@@ -19,3 +19,7 @@ export type HelpedUser = {
   alert_on_discharge: boolean
   is_charging: boolean
 }
+
+export type Message = {
+  subjet: string
+}

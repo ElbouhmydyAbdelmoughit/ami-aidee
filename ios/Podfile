@@ -47,6 +47,8 @@ target 'AMIaide' do
 
   pod 'react-native-device-battery', :path => '../node_modules/react-native-device-battery'
 
+  pod 'agora-react-native-rtm', :path => '../node_modules/agora-react-native-rtm'
+
   target 'AMIaideTests' do
     inherit! :search_paths
     # Pods for testing

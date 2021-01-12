@@ -13,15 +13,27 @@ import {
 } from 'native-base'
 import { Animated, View } from 'react-native'
 import { MessageSelectors } from 'src/store/message'
-import { subjects, moments, reccurences } from 'src/utils'
+import { subjects, moments, reccurences } from 'utils'
 import moment from 'moment'
 import momentFR from 'moment/locale/fr'
 import { IconButton } from 'react-native-paper'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import ZoomableImage from './ZoomableImage'
+import { Message } from 'core/types'
 
 const BOLD = text => <Text style={{ fontWeight: 'bold' }}>{text}</Text>
 const BR = <Text>{'\n'}</Text>
+
+const getSubject = (message: Message) => {
+  console.log('message subjet', message.subjet)
+  let index
+  try {
+    index = Number.parseInt(message.subjet)
+  } catch (e) {
+    return message.subjet
+  }
+  return subjects[index] ? subjects[index].value : message.subjet
+}
 
 const MessageCard = ({ message, me, uri, zooming, onZoom, onUnzoom }) => {
   /*
@@ -50,10 +62,15 @@ video_url: ""
 
   const styles = {
     datetime: {
-      fontSize: 20,
+      fontSize: 12,
       color: '#eee',
       marginBottom: 16,
       fontWeight: '700',
+    },
+    title: {
+      fontSize: 32,
+      marginBottom: 8,
+      color: 'white',
     },
     text: {
       fontSize: 24,
@@ -101,6 +118,7 @@ video_url: ""
       >
         <View style={{ flexDirection: 'column', paddingHorizontal: 16 }}>
           <Text style={styles.datetime}>{text}</Text>
+          <Text style={styles.title}>{getSubject(message)}</Text>
           <Text style={styles.text}>
             {`Penser à  ${activite} ${reccurence_value} ${moment_value} ${formattedMomentTime}`}
           </Text>

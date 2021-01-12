@@ -17,7 +17,6 @@ const BatteryChecker = () => {
 
   useEffect(() => {
     DeviceBattery.isCharging().then((isCharging: boolean) => {
-      console.log('isCharging', isCharging)
       setIsCharging(isCharging)
     })
     DeviceBattery.addListener(onBatteryStateChanged)
