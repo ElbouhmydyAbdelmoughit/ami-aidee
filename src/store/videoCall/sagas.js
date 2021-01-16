@@ -110,7 +110,7 @@ function* videoCallInvitationRefuseRequest() {
   try {
     yield call(rtmEngine.refuseRemoteInvitation, {
       ...videoCallState.remoteInvitationProps,
-      uid: videoCallState.uid,
+      uid: videoCallState.remoteInvitationProps.callerId,
     })
     console.log('refused success')
     yield put(VideoCallActions.invitationRefuseSuccess())
@@ -127,12 +127,12 @@ function* videoCallInvitationAcceptRequest() {
   try {
     yield call(rtmEngine.acceptRemoteInvitation, {
       ...videoCallState.remoteInvitationProps,
-      uid: videoCallState.uid,
+      uid: videoCallState.remoteInvitationProps.callerId,
     })
     console.log('accept success')
     yield put(VideoCallActions.invitationAcceptSuccess())
   } catch (e) {
-    console.log('accept error')
+    console.log('accept error', e)
     yield put(VideoCallActions.invitationAcceptError({ error: e }))
   }
 }
