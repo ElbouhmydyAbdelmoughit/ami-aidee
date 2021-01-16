@@ -10,6 +10,8 @@ export const types = {
   PASSWORD_RESET_REQUEST: 'PASSWORD_RESET_REQUEST',
   MODIFY_PASSWORD_USING_RESET_CODE_REQUEST:
     'MODIFY_PASSWORD_USING_RESET_CODE_REQUEST',
+  FETCH_USER: 'FETCH_USER',
+  FETCH_USER_SUCCESS: 'FETCH_USER_SUCCESS',
 }
 
 // Actions
@@ -26,7 +28,8 @@ export default {
   logout: () => createAction(types.LOGOUT),
   passwordResetRequest: email =>
     createAction(types.PASSWORD_RESET_REQUEST, { email }),
-
+  fetchUser: () => createAction(types.FETCH_USER),
+  fetchUserSuccess: user => createAction(types.FETCH_USER_SUCCESS, { user }),
   modifyPasswordUsingResetCodeRequest: ({ userId, resetCode, newPassword }) =>
     createAction(types.MODIFY_PASSWORD_USING_RESET_CODE_REQUEST, {
       userId,

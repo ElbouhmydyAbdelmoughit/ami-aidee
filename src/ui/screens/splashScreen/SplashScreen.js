@@ -41,7 +41,7 @@ const useInitialURL = () => {
   }
 }
 
-const SplashScreen = ({ auth }) => {
+const SplashScreen = ({ auth, fetchUser }) => {
   const {
     url: initialUrl,
     processing: processingInitialUrl,
@@ -59,8 +59,10 @@ const SplashScreen = ({ auth }) => {
         return
       }
     }
-    if (auth && auth.jwt) Actions.root()
-    else Actions.login()
+    if (auth && auth.jwt) {
+      fetchUser()
+      Actions.root()
+    } else Actions.login()
   }, [processingInitialUrl, auth])
 
   return (
