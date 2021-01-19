@@ -69,19 +69,20 @@ video_url: ""
     },
     title: {
       fontSize: 32,
+      fontWeight: 'bold',
       marginBottom: 8,
       color: 'white',
     },
     text: {
       fontSize: 24,
-      fontWeight: '700',
+      fontWeight: '500',
       color: 'white',
       marginBottom: 16,
     },
     secondaryInfo: {
       fontSize: 20,
       fontWeight: '700',
-      color: '#eee',
+      color: 'rgba(255,255,255,0.6)',
       marginBottom: 16,
     },
   }
@@ -135,7 +136,7 @@ video_url: ""
             <Icon
               name={'location-on'}
               size={24}
-              color={'#999'}
+              color={'rgba(255,255,255,0.6)'}
               style={{ marginRight: 8 }}
             />
             <Text style={styles.secondaryInfo}>{location}</Text>
