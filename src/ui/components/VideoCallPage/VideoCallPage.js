@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { View, StyleSheet, Text } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 import Sound from 'react-native-sound'
@@ -25,7 +25,6 @@ const styles = StyleSheet.create({
 // in case of mistake
 const CALL_DELAY = 3000
 
-let callTone
 const VideoCallPage = ({
   auxiliary,
   videoCallInvitationRequest,
@@ -38,10 +37,11 @@ const VideoCallPage = ({
 }) => {
   const { status, channelId, calleeId } = localInvitation || {}
   const logActivity = useActivityLog()
+  const callTone = useRef()
   const stopSound = () => {
-    if (callTone) {
-      callTone.stop()
-      callTone.release()
+    if (callTone.current) {
+      callTone.current.stop()
+      callTone.current.release()
     }
   }
 
@@ -79,14 +79,14 @@ const VideoCallPage = ({
       return
     }
     if (status === 'RECEIVED') {
-      callTone = new Sound('calltone.wav', Sound.MAIN_BUNDLE, error => {
+      callTone.current = new Sound('calltone.wav', Sound.MAIN_BUNDLE, error => {
         if (error) {
           // ignore
           return
         }
-        callTone.play()
+        callTone.current.play()
       })
-      callTone.setNumberOfLoops(-1)
+      callTone.current.setNumberOfLoops(-1)
     }
     if (['REFUSED_BY_CALLEE', 'FAILURE'].indexOf(status) !== -1) {
       setTimeout(() => {

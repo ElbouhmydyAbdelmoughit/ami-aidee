@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { View, Text, StyleSheet, Alert } from 'react-native'
+import _ from 'lodash'
 import { TouchableRipple } from 'react-native-paper'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { Actions } from 'react-native-router-flux'
@@ -43,6 +44,7 @@ const MessagingScreen = ({
       updateLastReadRequest(auxiliary)
     }
   }, [])
+
   return (
     <GradientBackground>
       <MessageUpdater messagesRequest={messagesRequest} />
@@ -62,10 +64,10 @@ const MessagingScreen = ({
           </View>
           <View>
             <TouchableRipple
-              onPress={() => {
+              onPress={_.debounce(() => {
                 logActivity('start_video_call')
                 Actions.push('videoCall', { auxiliary, startMode: 'video' })
-              }}
+              }, 400)}
             >
               <View
                 style={StyleSheet.compose(styles.box, {
