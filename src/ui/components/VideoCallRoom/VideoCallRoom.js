@@ -210,6 +210,7 @@ const VideoCallRoom = ({ remoteAuxiliary, mode }) => {
     return () => {
       console.log(hasEnded)
       endCall()
+      RtcEngine.removeAllListeners()
     }
   }, [])
 

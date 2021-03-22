@@ -80,7 +80,7 @@ const MessagingScreen = ({
                 </Text>
               </View>
             </TouchableRipple>
-            <TouchableRipple
+            {/*<TouchableRipple
               onPress={() => {
                 logActivity('start_audio_call')
                 Actions.push('videoCall', { auxiliary, startMode: 'audio' })
@@ -94,7 +94,7 @@ const MessagingScreen = ({
                   Appel audio
                 </Text>
               </View>
-            </TouchableRipple>
+            </TouchableRipple>*/}
           </View>
         </View>
       </View>
