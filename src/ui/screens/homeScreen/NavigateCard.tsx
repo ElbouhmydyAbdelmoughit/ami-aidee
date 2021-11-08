@@ -62,7 +62,6 @@ export default ({ onReload, onVolumeChange }: Props) => {
       </View>
       <IconButton
         onPress={(...args) => {
-          console.log('toto')
           logActivity('reload_video')
           onReload(...args)
         }}

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { View, Text, Dimensions, StyleSheet, ScrollView } from 'react-native'
-import { Avatar, TouchableRipple, Button } from 'react-native-paper'
+import { Avatar, TouchableRipple, Button, IconButton } from 'react-native-paper'
 import { H1, H3 } from 'native-base'
 import { getUserAbbr } from 'src/utils/user'
 import moment from 'moment'
@@ -15,14 +15,7 @@ import useActivityLog from '../../hooks/use-activity-log'
 const styles = StyleSheet.create({
   box: {
     borderWidth: 1,
-    borderColor: 'rgba(255, 255, 255, 0.4)',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowColor: 'white',
-    shadowOpacity: 1,
-    shadowRadius: 2,
+    borderColor: 'rgba(255, 255, 255, 0.8)',
     borderRadius: 4,
     padding: 16,
     marginRight: 32,
@@ -38,7 +31,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontFamily: 'Roboto',
     fontWeight: 'bold',
-    paddingTop: 32,
   },
   subtitle: {
     color: '#fff',
@@ -72,7 +64,28 @@ const ContactsList = ({
       <ScrollView>
         <View style={{ flexDirection: 'row' }}>
           <View style={{ marginLeft: 64, flex: 1 }}>
-            <H1 style={styles.title}>Mes contacts</H1>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'flex-start',
+                paddingTop: 32,
+              }}
+            >
+              <IconButton
+                size={32}
+                color="white"
+                icon="arrow-back"
+                onPress={() => {
+                  logActivity('return_from_messaging')
+                  Actions.pop()
+                }}
+                style={{ marginBottom: 16 }}
+              >
+                Retour
+              </IconButton>
+              <H1 style={styles.title}>Mes contacts</H1>
+            </View>
             <H3 style={styles.subtitle}>
               Appuyer sur la carte pour contacter la personne
             </H3>
@@ -107,27 +120,9 @@ const ContactsList = ({
             flexWrap: 'wrap',
           }}
         >
-          <TouchableRipple
-            onPress={() => {
-              logActivity('return_from_contacts_list')
-              Actions.accueil()
-            }}
-          >
-            <View style={StyleSheet.compose(styles.box, styles.returnBox)}>
-              <Icon name="keyboard-return" size={40} color={'white'} />
-              <Text
-                style={{
-                  color: 'white',
-                  fontWeight: 'bold',
-                  fontSize: 24,
-                }}
-              >
-                Revenir
-              </Text>
-            </View>
-          </TouchableRipple>
           {auxiliaries.map((auxiliary, index) => (
             <TouchableRipple
+              key={auxiliary.id}
               onPress={() => {
                 logActivity('select_auxiliary_messaging')
                 Actions.push('messaging', { auxiliary })

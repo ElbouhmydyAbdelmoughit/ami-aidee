@@ -15,7 +15,7 @@ const ContactButton = ({ hasNewMessage }) => {
     <TouchableRipple
       onPress={() => {
         logActivity('navigate_to_contacts_list')
-        Actions.replace('contactsList')
+        Actions.push('contactsList')
       }}
     >
       <View

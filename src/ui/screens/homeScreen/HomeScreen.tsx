@@ -164,25 +164,6 @@ const HomeScreen = ({
           colors={color}
           style={{ flex: 1 }}
         >
-          <IconButton
-            size={30}
-            style={{
-              position: 'absolute',
-              left: 30,
-              top: 16,
-              width: 50,
-              height: 50,
-              borderRadius: 25,
-              backgroundColor: 'white',
-              marginBottom: 16,
-            }}
-            color="#555"
-            icon="arrow-back"
-            onPress={() => {
-              logActivity(TrackedActivity.RETURN_FROM_REMINDER_LIST)
-              Actions.pop()
-            }}
-          />
           {messages.length == 0 && (
             <View style={{ alignItems: 'center' }}>
               <H1 style={styles.title}>{'Pas de nouveau messages'}</H1>
@@ -290,6 +271,25 @@ const HomeScreen = ({
               </View>
             </Grid>
           )}
+          <IconButton
+            size={30}
+            style={{
+              position: 'absolute',
+              left: 30,
+              top: 16,
+              width: 50,
+              height: 50,
+              borderRadius: 25,
+              backgroundColor: 'white',
+              marginBottom: 16,
+            }}
+            color="#555"
+            icon="arrow-back"
+            onPress={() => {
+              logActivity(TrackedActivity.RETURN_FROM_REMINDER_LIST)
+              Actions.pop()
+            }}
+          />
         </LinearGradient>
       </TouchableWithoutFeedback>
     </>

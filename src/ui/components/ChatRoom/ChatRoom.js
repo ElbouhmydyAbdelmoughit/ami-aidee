@@ -43,6 +43,7 @@ const ChatRoom = ({
       user={{
         _id: currentUserId,
       }}
+      isKeyboardInternallyHandled={false}
       renderAvatar={() => {
         return (
           <View style={{ width: 35 }}>
@@ -97,7 +98,9 @@ const ChatRoom = ({
           {...props}
           textInputStyle={{
             fontSize: 24,
+            lineHeight: 32,
           }}
+          composerHeight={48}
         />
       )}
       renderSend={props => (

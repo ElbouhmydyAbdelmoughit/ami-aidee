@@ -121,7 +121,7 @@ video_url: ""
           <Text style={styles.datetime}>{text}</Text>
           <Text style={styles.title}>{getSubject(message)}</Text>
           <Text style={styles.text}>
-            {`Penser à  ${activite} ${reccurence_value} ${moment_value} ${formattedMomentTime}`}
+            {`Penser à ${activite} ${reccurence_value} ${moment_value} ${formattedMomentTime}`}
           </Text>
         </View>
         {location ? (

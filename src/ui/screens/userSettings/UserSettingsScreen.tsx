@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
 import GradientBackground from 'ui/components/GradientBackground'
 import { Actions } from '@ami-app/react-native-router-flux'
-import { Checkbox, Button, TouchableRipple } from 'react-native-paper'
+import {
+  Checkbox,
+  Button,
+  TouchableRipple,
+  IconButton,
+} from 'react-native-paper'
 import { H1 } from 'native-base'
 import { View, StyleSheet, Text, ScrollView } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
@@ -16,7 +21,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontFamily: 'Roboto',
     fontWeight: 'bold',
-    paddingTop: 32,
     marginLeft: 4,
   },
   text: {
@@ -78,7 +82,6 @@ const UserSettingsScreen = ({
   return (
     <GradientBackground>
       <ScrollView
-        style={{ flex: 1 }}
         contentContainerStyle={{
           marginLeft: 64,
         }}
@@ -89,49 +92,29 @@ const UserSettingsScreen = ({
             marginBottom: 64,
           }}
         >
-          <H1 style={styles.title}>Paramètres</H1>
-        </View>
-        <View style={{ flex: 1 }}>
-          <View style={{ flexDirection: 'row' }}>
-            <TouchableRipple
-              mode="outlined"
-              dark
-              style={{
-                borderColor: 'white',
-                borderRadius: 4,
-                borderWidth: 1,
-                marginBottom: 24,
-              }}
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'flex-start',
+            }}
+          >
+            <IconButton
+              size={32}
+              color="white"
+              icon="arrow-back"
               onPress={() => {
-                logActivity(TrackedActivity.RETURN_FROM_USER_SETTINGS)
                 Actions.pop()
               }}
+              style={{ marginBottom: 16 }}
             >
-              <View
-                style={{
-                  alignItems: 'baseline',
-                  flexDirection: 'row',
-                  padding: 16,
-                  paddingTop: 8,
-                  paddingBottom: 8,
-                }}
-              >
-                <Icon name="keyboard-return" size={16} color={'white'} />
-                <Text
-                  style={{
-                    color: 'white',
-                    fontSize: 18,
-                    textTransform: 'uppercase',
-                    fontWeight: '700',
-                    marginLeft: 8,
-                  }}
-                >
-                  Revenir
-                </Text>
-              </View>
-            </TouchableRipple>
+              Retour
+            </IconButton>
+            <H1 style={styles.title}>Paramètres</H1>
           </View>
-          <View style={{ flex: 1 }}>
+        </View>
+        <View>
+          <View>
             <View style={{ flexDirection: 'row' }}>
               <Checkbox
                 color="white"
@@ -166,7 +149,7 @@ const UserSettingsScreen = ({
                 </React.Fragment>
               </TouchableRipple>
             </View>
-            <View style={{ flexDirection: 'row', marginTop: 24, flex: 1 }}>
+            <View style={{ flexDirection: 'row', marginTop: 24 }}>
               <Checkbox
                 color="white"
                 status={dischargingAlertChecked ? 'checked' : 'unchecked'}

@@ -55,7 +55,7 @@ function* me(id) {
 }
 
 function* logout() {
-  yield call(AuthenticationService.logout)
+  // yield call(AuthenticationService.logout)
   yield put(CommonActions.resetReducers())
   Actions.splash()
 }

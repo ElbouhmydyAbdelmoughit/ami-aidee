@@ -57,7 +57,7 @@ const MessagingScreen = ({
               backgroundColor: 'rgba(255,255,255,0.6)',
               borderRadius: 16,
               marginLeft: 16,
-              marginBottom: 16,
+              marginBottom: 48,
             }}
           >
             <ChatRoom auxiliary={auxiliary} />
