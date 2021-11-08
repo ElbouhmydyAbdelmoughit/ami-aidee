@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Form, Input, View, H3, Item, Button, Text, Icon } from 'native-base'
-import { Actions } from 'react-native-router-flux'
+import { Actions } from '@ami-app/react-native-router-flux'
 import useActivityLog from '../../hooks/use-activity-log'
 
 const PhoneForm = ({ setRegisterUser }) => {
@@ -17,7 +17,7 @@ const PhoneForm = ({ setRegisterUser }) => {
       <H3 style={{ marginBottom: 32, color: '#848484' }}>
         {errorText
           ? errorText
-          : 'Renseigner votre numéro de téléphone, votre code départementale et le code de parrainage (optionnel)'}
+          : 'Renseigner votre numéro de téléphone, votre code départemental et le code de parrainage (optionnel)'}
       </H3>
       <Form>
         <Item
@@ -58,7 +58,7 @@ const PhoneForm = ({ setRegisterUser }) => {
           >
             <Input
               autoCapitalize="none"
-              placeholder="Code départementale (ex. : 75)"
+              placeholder="Code départemental (ex. : 75)"
               onChangeText={setPostalCode}
               value={postalCode}
             />

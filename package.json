@@ -13,6 +13,7 @@
     "deploy": " aws s3 cp build s3://admin.ami-app.com/ --recursive"
   },
   "dependencies": {
+    "@ami-app/react-native-router-flux": "4.0.6",
     "@react-native-community/hooks": "^2.6.0",
     "@react-native-community/push-notification-ios": "^1.2.0",
     "@react-native-community/slider": "^2.0.0",
@@ -54,7 +55,6 @@
     "react-native-paper": "^2.12.0",
     "react-native-progress": "^4.1.2",
     "react-native-push-notification": "^4.0.0",
-    "react-native-router-flux": "^4.0.6",
     "react-native-sound": "^0.11.0",
     "react-native-svg": "^9.6.4",
     "react-native-system-setting": "^1.7.6",

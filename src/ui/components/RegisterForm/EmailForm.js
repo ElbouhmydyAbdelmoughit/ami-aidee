@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Form, Input, View, H3, Item, Button, Text, Icon } from 'native-base'
-import { Actions } from 'react-native-router-flux'
+import { Actions } from '@ami-app/react-native-router-flux'
 import useActivityLog from '../../hooks/use-activity-log'
 
 const EmailForm = ({ setRegisterUser }) => {

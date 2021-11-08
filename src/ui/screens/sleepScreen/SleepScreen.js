@@ -2,7 +2,7 @@ import React from 'react'
 import { View, TouchableHighlight } from 'react-native'
 import { Timer } from 'src/ui/components'
 
-import { Actions } from 'react-native-router-flux'
+import { Actions } from '@ami-app/react-native-router-flux'
 
 import { Container, Content, Text } from 'native-base'
 import material from 'AMIaide/native-base-theme/variables/material'

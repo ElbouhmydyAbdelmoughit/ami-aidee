@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { View, Text } from 'react-native'
 import { Headline, Button } from 'react-native-paper'
-import { Actions } from 'react-native-router-flux'
+import { Actions } from '@ami-app/react-native-router-flux'
 import Br from 'src/ui/components/br'
 import GradientBackground from '../GradientBackground'
 import useActivityLog from '../../hooks/use-activity-log'

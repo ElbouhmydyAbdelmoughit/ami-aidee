@@ -13,7 +13,7 @@ import {
 } from 'native-base'
 
 import { BR } from 'src/ui/components'
-import { Actions } from 'react-native-router-flux'
+import { Actions } from '@ami-app/react-native-router-flux'
 import useActivityLog from '../../hooks/use-activity-log'
 import { View, TouchableHighlight } from 'react-native'
 

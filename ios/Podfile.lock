@@ -261,7 +261,7 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
-  agora-react-native-rtm: 46282635c00a56e9b4e937c88237fa0c79bb4ba5
+  agora-react-native-rtm: e17d4992e3af6868985066b1bd87ae440cbf2d91
   AgoraRtcEngine_iOS: b2eedd8f9ab47b71163f3285e836bd23feb43fff
   AgoraRtm_iOS: c6ba986a3af73dd0f02e6e2995ae4fe9c155e6ae
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
@@ -280,11 +280,11 @@ SPEC CHECKSUMS:
   React-jsi: 4d8c9efb6312a9725b18d6fc818ffc103f60fec2
   React-jsiexecutor: 90ad2f9db09513fc763bc757fdc3c4ff8bde2a30
   React-jsinspector: e08662d1bf5b129a3d556eb9ea343a3f40353ae4
-  react-native-agora: 6c6fd3ad003ab2560b9689f9486e15fee01fdf11
-  react-native-device-battery: 24dbc8568000b0d9f73262a3b61fbe898c8b3313
-  react-native-orientation: d4a97266b06ec8d45d74e626656a730ebbebbb6f
-  react-native-slider: b2f361499888302147205f17f6fffa921a7bda70
-  react-native-video: 961749da457e73bf0b5565edfbaffc25abfb8974
+  react-native-agora: 701d3d6ec5dc7142d3fa7855baed71d0b834a891
+  react-native-device-battery: a81f323a2634b22e9b7cccda97881977f0b1ed0a
+  react-native-orientation: f1caf84d65f1a4fd4511a18f2b924e634ad7a628
+  react-native-slider: 3a1cfd00c9c31068251b536822f7192e8d1d6b6f
+  react-native-video: d01ed7ff1e38fa7dcc6c15c94cf505e661b7bfd0
   React-RCTActionSheet: b0f1ea83f4bf75fb966eae9bfc47b78c8d3efd90
   React-RCTAnimation: 359ba1b5690b1e87cc173558a78e82d35919333e
   React-RCTBlob: 5e2b55f76e9a1c7ae52b826923502ddc3238df24
@@ -295,12 +295,12 @@ SPEC CHECKSUMS:
   React-RCTText: b074d89033583d4f2eb5faf7ea2db3a13c7553a2
   React-RCTVibration: 2105b2e0e2b66a6408fc69a46c8a7fb5b2fdade0
   React-RCTWebSocket: cd932a16b7214898b6b7f788c8bddb3637246ac4
-  ReactNativeKeyboardManager: 6ad756e9c23a02de98f15dd2024f8103e4f7c6a4
+  ReactNativeKeyboardManager: 8fc2819040c5787194a890fbe3928bc5980b3f19
   ReactNativeNavigation: 55fde2ac2cb38be1d5dc5fee29e173961c559a5a
-  RNCPushNotificationIOS: 9aa40ed0ff0e53f8ecf3baaaa7e5ccbaa5ba3894
+  RNCPushNotificationIOS: 4d9ffd08f00ef6c1029ebbf4d72fc711eca3ff01
   RNFS: a8fbe7060fa49157d819466404794ad9c58e58cf
   RNSentry: 05cc998036c027785e466c896211b5c75b3e0ffd
-  RNSound: c980916b596cc15c8dcd2f6ecd3b13c4881dbe20
+  RNSound: da030221e6ac7e8290c6b43f2b5f2133a8e225b0
   RNSVG: 8ba35cbeb385a52fd960fd28db9d7d18b4c2974f
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   Sentry: 14bdd673870e8cf64932b149fad5bbbf39a9b390
@@ -308,4 +308,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: c8fce3ec6c50236bf1acba629f9372a0752e61fa
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.11.2

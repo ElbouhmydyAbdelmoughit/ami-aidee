@@ -1,6 +1,6 @@
 import React, { useEffect, forwardRef, useImperativeHandle } from 'react'
 import { StyleSheet, View, Modal, ActivityIndicator } from 'react-native'
-import { Actions } from 'react-native-router-flux'
+import { Actions } from '@ami-app/react-native-router-flux'
 
 import {
   ECO_FRIENDLY_SCREENS,

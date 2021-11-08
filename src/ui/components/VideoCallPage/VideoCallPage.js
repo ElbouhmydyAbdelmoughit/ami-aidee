@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { View, StyleSheet, Text } from 'react-native'
-import { Actions } from 'react-native-router-flux'
+import { Actions } from '@ami-app/react-native-router-flux'
 import Sound from 'react-native-sound'
 import { IconButton } from 'react-native-paper'
 

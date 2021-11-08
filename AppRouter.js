@@ -12,7 +12,7 @@ import {
   Drawer,
   Stack,
   Lightbox,
-} from 'react-native-router-flux'
+} from '@ami-app/react-native-router-flux'
 import {
   SplashScreen,
   LoginScreen,

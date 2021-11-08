@@ -9,7 +9,7 @@ import {
 } from 'react-native'
 import { Text, IconButton } from 'react-native-paper'
 import { RtcEngine, AgoraView } from 'react-native-agora'
-import { Actions } from 'react-native-router-flux'
+import { Actions } from '@ami-app/react-native-router-flux'
 import {
   requestCameraAndAudioPermission,
   requestAudioPermission,

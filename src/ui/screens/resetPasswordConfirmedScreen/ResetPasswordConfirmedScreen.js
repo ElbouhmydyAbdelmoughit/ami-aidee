@@ -1,7 +1,7 @@
 import React from 'react'
 import { Subheading } from 'react-native-paper'
 import { Button, Text } from 'native-base'
-import { Actions } from 'react-native-router-flux'
+import { Actions } from '@ami-app/react-native-router-flux'
 import CenterCardLayout from '../../components/layout/CenterCardLayout'
 
 const ResetPasswordConfirmedScreen = () => {

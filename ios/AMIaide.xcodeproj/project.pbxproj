@@ -92,6 +92,7 @@
 		544DD376505F4E21AA16C3F8 /* Roboto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto.ttf; path = "../node_modules/native-base/Fonts/Roboto.ttf"; sourceTree = "<group>"; };
 		5B915F8C16A1430AB47A5718 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		75BC277192A1461384512C68 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
+		79A004DE2738703900B36503 /* libRNCPushNotificationIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNCPushNotificationIOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		79E0C5F2257435B9004489BC /* AMIaide.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = AMIaide.entitlements; path = AMIaide/AMIaide.entitlements; sourceTree = "<group>"; };
 		7AB99FB5FBA0B4C1F24E8E15 /* Pods-AMIaide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMIaide.release.xcconfig"; path = "Pods/Target Support Files/Pods-AMIaide/Pods-AMIaide.release.xcconfig"; sourceTree = "<group>"; };
 		94CD66289A0043F192C9FFF6 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/native-base/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
@@ -197,6 +198,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				79A004DE2738703900B36503 /* libRNCPushNotificationIOS.a */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				CACE3D2423253E6E00C31142 /* libRNNotifications.a */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,

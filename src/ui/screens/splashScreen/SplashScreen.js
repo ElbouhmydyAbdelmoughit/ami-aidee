@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { View, Linking } from 'react-native'
-import { Actions } from 'react-native-router-flux'
+import { Actions } from '@ami-app/react-native-router-flux'
 
 import { Container, Content, Text, H1 } from 'native-base'
 import material from 'AMIaide/native-base-theme/variables/material'
