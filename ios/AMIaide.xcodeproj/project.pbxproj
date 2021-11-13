@@ -831,7 +831,7 @@
 				CODE_SIGN_ENTITLEMENTS = AMIaide/AMIaide.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 70;
 				DEAD_CODE_STRIPPING = NO;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 3CUM5YB5JD;
@@ -872,7 +872,7 @@
 				INFOPLIST_FILE = AMIaide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.7;
+				MARKETING_VERSION = 1.71;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -898,7 +898,7 @@
 				CODE_SIGN_ENTITLEMENTS = AMIaide/AMIaide.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 70;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 3CUM5YB5JD;
 				HEADER_SEARCH_PATHS = (
@@ -938,7 +938,7 @@
 				INFOPLIST_FILE = AMIaide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.7;
+				MARKETING_VERSION = 1.71;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
