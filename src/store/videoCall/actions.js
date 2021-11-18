@@ -37,8 +37,10 @@ export default {
 
   invitationRequest: ({ calleeId, mode = 'video' }) =>
     createAction(types.INVITATION_REQUEST, { calleeId, mode }),
-  invitationReceived: args =>
-    createAction(types.INVITATION_RECEIVED, { data: args }),
+  invitationReceived: args => {
+    const { response, ...otherData } = args
+    return createAction(types.INVITATION_RECEIVED, { data: otherData })
+  },
   invitationRefuseRequest: () => createAction(types.INVITATION_REFUSE_REQUEST),
   invitationRefuseSuccess: () =>
     createAction(types.INVITATION_REFUSE_REQUEST_SUCCESS),
