@@ -11,6 +11,8 @@ import {
 } from 'react-native-gifted-chat'
 import { Avatar } from 'react-native-paper'
 import { getUserAbbr, getUserDisplayName } from '../../../utils/user'
+import { useTranslation } from 'react-i18next'
+import { Translations } from 'core/i18n'
 
 const messageTransformer = serverFormatMessage => ({
   text: serverFormatMessage.content,
@@ -32,6 +34,7 @@ const ChatRoom = ({
     messagesRequest()
   }, [])
 
+  const { t } = useTranslation()
   const onSend = useCallback((newMessages = []) => {
     sendMessage(newMessages[0].text)
   }, [])
@@ -74,7 +77,10 @@ const ChatRoom = ({
                 fontSize: 18,
               }}
             >
-              Commencez la conversation avec {getUserDisplayName(auxiliary)}
+              {t('screen.chat.begin_conversation', {
+                defaultValue: ' Commencez la conversation avec {{name}}',
+                name: getUserDisplayName(auxiliary),
+              })}
             </Text>
           </View>
         )
@@ -96,6 +102,7 @@ const ChatRoom = ({
       renderComposer={props => (
         <Composer
           {...props}
+          placeholder={t('screen.chat.input_placeholder', 'Envoyer un message')}
           textInputStyle={{
             fontSize: 24,
             lineHeight: 32,
@@ -119,9 +126,10 @@ const ChatRoom = ({
               fontSize: 24,
               marginRight: 8,
               color: '#0084ff',
+              textTransform: 'uppercase',
             }}
           >
-            ENVOYER
+            {Translations.common.to_send}
           </Text>
         </Send>
       )}

@@ -15,6 +15,8 @@ import { HelpedUser, TrackedActivity } from 'core/types'
 import { useDispatch } from 'react-redux'
 import { AuthActions } from 'store/auth'
 import AppStyles from 'config/styles'
+import { Translations } from 'core/i18n'
+import { useTranslation } from 'react-i18next'
 
 const styles = StyleSheet.create({
   title: {
@@ -78,7 +80,7 @@ const UserSettingsScreen = ({
     })
     setDischargingAlertChecked(c => !c)
   }
-
+  const { t } = useTranslation()
   return (
     <GradientBackground>
       <ScrollView
@@ -108,9 +110,9 @@ const UserSettingsScreen = ({
               }}
               style={{ marginBottom: 16 }}
             >
-              Retour
+              {Translations.common.go_back}
             </IconButton>
-            <H1 style={styles.title}>Paramètres</H1>
+            <H1 style={styles.title}>{Translations.common.settings}</H1>
           </View>
         </View>
         <View>
@@ -124,10 +126,17 @@ const UserSettingsScreen = ({
               />
               <TouchableRipple onPress={onPress}>
                 <React.Fragment>
-                  <Text style={styles.text}>Décrochage automatique</Text>
+                  <Text style={styles.text}>
+                    {t(
+                      'sceen.settings.automatic_pickup',
+                      'Décrochage automatique'
+                    )}
+                  </Text>
                   <Text style={styles.helpText}>
-                    L'appel entrant sera décroché automatiquement après 3
-                    secondes.
+                    {t(
+                      'sceen.settings.automatic_pickup_description',
+                      "L'appel entrant sera décroché automatiquement après 3 secondes."
+                    )}
                   </Text>
                 </React.Fragment>
               </TouchableRipple>
@@ -141,10 +150,14 @@ const UserSettingsScreen = ({
               />
               <TouchableRipple onPress={onMinVolumePress}>
                 <React.Fragment>
-                  <Text style={styles.text}>Volume activé</Text>
+                  <Text style={styles.text}>
+                    {t('sceen.settings.min_volume', 'Volume activé')}
+                  </Text>
                   <Text style={styles.helpText}>
-                    Le volume sera toujours activé et ne descend pas au dessous
-                    de 50%
+                    {t(
+                      'sceen.settings.min_volume_description',
+                      'Le volume sera toujours activé et ne descend pas au dessous de 50%'
+                    )}
                   </Text>
                 </React.Fragment>
               </TouchableRipple>
@@ -158,10 +171,17 @@ const UserSettingsScreen = ({
               />
               <TouchableRipple onPress={onAlertOnDischargePress}>
                 <React.Fragment>
-                  <Text style={styles.text}>Alerte débranchement</Text>
+                  <Text style={styles.text}>
+                    {t(
+                      'sceen.settings.discharge_alert',
+                      'Alerte débranchement'
+                    )}
+                  </Text>
                   <Text style={styles.helpText}>
-                    Lorsque la tablette est débranché, l'aidé sera alerté pour
-                    rebrancher sa tablette
+                    {t(
+                      'sceen.settings.discharge_alert_description',
+                      "Lorsque la tablette est débranché, l'aidé sera alerté pour rebrancher sa tablette"
+                    )}
                   </Text>
                 </React.Fragment>
               </TouchableRipple>
@@ -203,7 +223,7 @@ const UserSettingsScreen = ({
                     marginLeft: 8,
                   }}
                 >
-                  Déconnexion
+                  {Translations.common.to_signout}
                 </Text>
               </View>
             </TouchableRipple>

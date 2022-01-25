@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Form, Input, View, H3, Item, Button, Text, Icon } from 'native-base'
 import { Actions } from '@ami-app/react-native-router-flux'
 import useActivityLog from '../../hooks/use-activity-log'
+import { useTranslation } from 'react-i18next'
+import { Translations } from 'core/i18n'
 
 const NameForm = ({ setRegisterUser }) => {
   const [firstname, setFirstname] = useState('')
@@ -10,10 +12,13 @@ const NameForm = ({ setRegisterUser }) => {
   const [lastnameError, setLastnameError] = useState(false)
   const [errorText, setErrorText] = useState(undefined)
   const logActivity = useActivityLog()
+  const { t } = useTranslation()
   return (
     <View style={{ width: '100%' }}>
       <H3 style={{ marginBottom: 32, color: '#848484' }}>
-        {errorText ? errorText : 'Renseigner votre nom et prénom'}
+        {errorText
+          ? errorText
+          : t('screen.register.name_title', 'Renseigner votre nom et prénom')}
       </H3>
       <Form>
         <View
@@ -30,7 +35,7 @@ const NameForm = ({ setRegisterUser }) => {
             style={{ borderRadius: 10, flex: 1, backgroundColor: '#EBEBEB' }}
           >
             <Input
-              placeholder={'Prénom'}
+              placeholder={Translations.common.firstname}
               onChangeText={setFirstname}
               value={firstname}
               autoFocus
@@ -48,7 +53,7 @@ const NameForm = ({ setRegisterUser }) => {
             }}
           >
             <Input
-              placeholder={'Nom'}
+              placeholder={Translations.common.lastname}
               onChangeText={setLastname}
               value={lastname}
             />
@@ -62,17 +67,32 @@ const NameForm = ({ setRegisterUser }) => {
             logActivity('press_register_name_step')
             let hasError = false
             if (!firstname) {
-              setErrorText('Veuillez renseigner votre prénom')
+              setErrorText(
+                t(
+                  'screen.register.missing_firstname_error',
+                  'Veuillez renseigner votre prénom'
+                )
+              )
               setFirstnameError(true)
               hasError = true
             }
             if (!lastname) {
-              setErrorText('Veuillez renseigner votre nom')
+              setErrorText(
+                t(
+                  'screen.register.missing_lastname_error',
+                  'Veuillez renseigner votre nom'
+                )
+              )
               setLastnameError(true)
               hasError = true
             }
             if (!firstname && !lastname) {
-              setErrorText('Veuillez renseigner votre nom et prénom')
+              setErrorText(
+                t(
+                  'screen.register.missing_firstname_lastname_error',
+                  'Veuillez renseigner votre nom et prénom'
+                )
+              )
             }
             if (hasError) {
               return
@@ -90,7 +110,7 @@ const NameForm = ({ setRegisterUser }) => {
           }}
           style={{ borderRadius: 10 }}
         >
-          <Text>Continuer</Text>
+          <Text>{Translations.common.to_continue}</Text>
         </Button>
       </Form>
     </View>

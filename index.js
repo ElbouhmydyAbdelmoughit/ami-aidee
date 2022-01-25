@@ -1,5 +1,6 @@
 /* eslint-disable import/first */
 import * as Sentry from '@sentry/react-native'
+import './src/core/i18n'
 
 Sentry.init({
   dsn:

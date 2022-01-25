@@ -1,6 +1,6 @@
-import React from "react"
+import React from 'react'
 
-import { Image, View } from "react-native"
+import { Image, View } from 'react-native'
 import {
   Container,
   Header,
@@ -13,19 +13,20 @@ import {
   H3,
   Left,
   Right,
-} from "native-base"
-import LinearGradient from "react-native-linear-gradient"
-import { Col, Row, Grid } from "react-native-easy-grid"
-import Icon from "react-native-vector-icons/MaterialCommunityIcons"
+} from 'native-base'
+import LinearGradient from 'react-native-linear-gradient'
+import { Col, Row, Grid } from 'react-native-easy-grid'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
-import { RegisterForm } from "src/ui/components"
-import AppStyles from "src/config/styles"
+import { RegisterForm } from 'src/ui/components'
+import AppStyles from 'src/config/styles'
 
-import moment from "moment"
-import momentFR from "moment/locale/fr"
+import moment from 'moment'
+import momentFR from 'moment/locale/fr'
+import { Translations } from 'core/i18n'
 
 const RegisterScreen = ({ loginRequest, step }) => {
-  const notifDate = moment().format("YYYY-MM-dd hh:mm")
+  const notifDate = moment().format('YYYY-MM-dd hh:mm')
   console.log(notifDate)
 
   const onValidate = form => {
@@ -34,7 +35,7 @@ const RegisterScreen = ({ loginRequest, step }) => {
     loginRequest(username, password)
   }
 
-  const color = ["#3FEDFF", "#8772FF"]
+  const color = ['#3FEDFF', '#8772FF']
   return (
     <Container>
       <LinearGradient
@@ -44,11 +45,13 @@ const RegisterScreen = ({ loginRequest, step }) => {
         style={{ flex: 1 }}
       >
         <Content contentContainerStyle={styles.content}>
-          <H2 style={styles.title}>{"A.M.I"}</H2>
-          <Card style={{ width: "60%", marginTop: 16 }}>
+          <H2 style={styles.title}>{'A.M.I'}</H2>
+          <Card style={{ width: '60%', marginTop: 16 }}>
             <CardItem header style={styles.header}>
-              <Icon name="account-plus" size={50} color={"#BBB"} />
-              <H3 style={styles.headerTitle}>S'inscrire</H3>
+              <Icon name="account-plus" size={50} color={'#BBB'} />
+              <H3 style={styles.headerTitle}>
+                {Translations.common.to_signup}
+              </H3>
             </CardItem>
             <CardItem body>
               <RegisterForm step={step} />
@@ -63,28 +66,28 @@ const RegisterScreen = ({ loginRequest, step }) => {
 const styles = {
   title: {
     marginTop: 16,
-    color: "#fff",
-    fontFamily: "Roboto",
-    textAlign: "center",
+    color: '#fff',
+    fontFamily: 'Roboto',
+    textAlign: 'center',
   },
 
   header: {
-    backgroundColor: "#fff",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: '#fff',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 
   headerTitle: {
     padding: 10,
-    color: "#848484",
+    color: '#848484',
   },
 
   content: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    flexDirection: "column",
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
   },
 }
 

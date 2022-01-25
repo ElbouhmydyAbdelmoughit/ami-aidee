@@ -11,6 +11,8 @@ import GradientBackground from '../GradientBackground'
 import { playHangupTone } from '../../../utils/sound'
 import useCountdown from '../../hooks/use-countdown'
 import useActivityLog from '../../hooks/use-activity-log'
+import { Translations } from 'core/i18n'
+import { useTranslation } from 'react-i18next'
 
 const styles = StyleSheet.create({
   root: {
@@ -110,12 +112,16 @@ const CallReceivingScreen = ({
     )
   }
 
+  const { t } = useTranslation()
   const getText = () => {
     if (callCanceledByCaller) {
-      return "L'aidant a raccroché"
+      return  t('screen.video_call.other_hung_up', "L'aidant a raccroché")}
     }
     if (automaticPickup) {
-      return `Décrochage automatique dans ${countdown} secondes`
+      return t('screen.video_call.automatic_pickup_in',{
+        defaultValue: "Décrochage automatique dans {{count}} secondes",
+        count: countdown
+      })
     }
     return null
   }
@@ -161,7 +167,7 @@ const CallReceivingScreen = ({
                 icon="close"
                 color="white"
               >
-                Annuler
+                {Translations.common.to_cancel}
               </IconButton>
             )}
             {!callCanceledByCaller && (
@@ -177,7 +183,7 @@ const CallReceivingScreen = ({
                   borderRadius: 30,
                 }}
               >
-                Accepter
+                {Translations.common.to_accept}
               </IconButton>
             )}
           </View>

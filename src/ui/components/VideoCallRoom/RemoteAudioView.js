@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { View, StyleSheet, Text } from 'react-native'
-import moment from 'moment'
+import moment from 'src/core/moment'
 import UserAvatar from '../UserAvatar'
 
 const styles = StyleSheet.create({

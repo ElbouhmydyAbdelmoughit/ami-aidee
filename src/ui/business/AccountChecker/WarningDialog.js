@@ -7,6 +7,8 @@ import {
   NavigationActions,
   NavigationSelectors,
 } from '../../../store/navigation'
+import { useTranslation } from 'react-i18next'
+import { Translations } from 'core/i18n'
 
 const getAccountExpiresIn = helpedUser => {
   if (!helpedUser) {
@@ -32,7 +34,7 @@ const WarningDialog = ({
   isExpirationIn10DaysExpired,
 }) => {
   const [dialogVisible, setDialogVisible] = useState(false)
-
+  const { t } = useTranslation()
   useEffect(() => {
     console.log('hihi')
     const accountExpiresIn = getAccountExpiresIn(helpedUser)
@@ -42,10 +44,16 @@ const WarningDialog = ({
       accountExpiresIn <= 10 &&
       !isExpirationIn10DaysExpired
     ) {
-      title = "Bientôt la fin pour l'essai"
-      firstText = `Votre compte prendra fin de la période d'essai dans ${accountExpiresIn} jours. Vous n'aurez bientôt plus l'accès aux fonctionnalités de l'application Aidé.`
-      secondText =
+      title = t('modal.expiring_soon.title', "Bientôt la fin pour l'essai")
+      firstText = t('modal.expiring_soon.description_1', {
+        defaultValue:
+          "Votre compte prendra fin de la période d'essai dans {{accountExpiresIn}} jours. Vous n'aurez bientôt plus l'accès aux fonctionnalités de l'application Aidé.",
+        accountExpiresIn,
+      })
+      secondText = t(
+        'modal.expiring_soon.description_2',
         "Veuillez contacter l'administrateur de l'application afin d'activer votre compte & continuer l'utilisation."
+      )
       setDialogVisible(true)
       expirationIn10DaysDisplayed()
     } else if (
@@ -53,10 +61,19 @@ const WarningDialog = ({
       accountExpiresIn <= 5 &&
       !isExpirationIn5DaysExpired
     ) {
-      title = "Dernier rappel avant l'expiration"
-      firstText = `Votre compte prendra fin de la période d'essai dans ${accountExpiresIn} jours. Vous n'aurez bientôt plus l'accès aux fonctionnalités de l'application Aidé.`
-      secondText =
+      title = t(
+        'modal.expiring_soon_2.title',
+        "Dernier rappel avant l'expiration"
+      )
+      firstText = t('modal.expiring_soon.description_1', {
+        defaultValue:
+          "Votre compte prendra fin de la période d'essai dans {{accountExpiresIn}} jours. Vous n'aurez bientôt plus l'accès aux fonctionnalités de l'application Aidé.",
+        accountExpiresIn,
+      })
+      secondText = t(
+        'modal.expiring_soon.description_2',
         "Veuillez contacter l'administrateur de l'application afin d'activer votre compte & continuer l'utilisation."
+      )
       setDialogVisible(true)
       expirationIn5DaysDisplayed()
     } else {
@@ -73,7 +90,10 @@ const WarningDialog = ({
           </Text>
           <Text style={{ marginBottom: 24 }}>{secondText}</Text>
           <Text style={{ marginBottom: 24 }}>
-            Email de l'administrateur : ami.contact.info@gmail.com
+            {t(
+              'modal.account_expired.account_info',
+              "Email de l'administrateur : ami.contact.info@gmail.com"
+            )}{' '}
           </Text>
           <Button
             onPress={() => {
@@ -81,7 +101,7 @@ const WarningDialog = ({
             }}
             mode="contained"
           >
-            OK
+            {Translations.common.ok}
           </Button>
         </Dialog.Content>
       </Dialog>

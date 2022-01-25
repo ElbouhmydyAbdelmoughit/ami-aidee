@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import {
   Scene,
@@ -34,71 +34,96 @@ import UserSettingsScreen from 'ui/screens/userSettings'
 import MessagingScreen from '/ui/screens/messagingScreen'
 import SystemVolumeManager from 'ui/business/SystemVolumeManager'
 import BatteryChecker from 'ui/business/BatteryChecker'
+import { useDispatch } from 'react-redux'
+import { NavigationActions } from 'store/navigation'
 
-export default () => (
-  <React.Fragment>
-    <SnackBar />
-    <RemoteEventReceiver />
-    <BatteryChecker />
-    <Router>
-      <Scene key="master" hideNavBar transitionConfig={transitionConfig}>
-        <Scene
-          key="splash"
-          hideNavBar
-          initial
-          component={SplashScreen}
-          type={ActionConst.RESET}
-        />
-        <Scene key="login" type={ActionConst.RESET}>
-          <Scene key="login" hideNavBar component={LoginScreen} initial />
+export default () => {
+  const [key, setKey] = useState(0)
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(NavigationActions.initializeApplicationLanguage())
+  }, [])
+  return (
+    <React.Fragment key={key}>
+      <SnackBar />
+      <RemoteEventReceiver />
+      <BatteryChecker />
+      <Router>
+        <Scene key="master" hideNavBar transitionConfig={transitionConfig}>
           <Scene
-            key="register"
-            path="/register/:step"
+            key="splash"
             hideNavBar
-            component={RegisterScreen}
+            initial
+            component={SplashScreen}
+            type={ActionConst.RESET}
           />
-          <Scene
-            key="passwordResetRequest"
-            hideNavBar
-            component={PasswordResetRequestScreen}
-          />
-          <Scene
-            key="passwordResetRequestConfirmed"
-            hideNavBar
-            component={PasswordResetRequestConfirmedScreen}
-          />
+          <Scene key="login" type={ActionConst.RESET}>
+            <Scene
+              key="login"
+              hideNavBar
+              component={props => (
+                <LoginScreen
+                  {...props}
+                  onRefresh={() => {
+                    setKey(k => k + 1)
+                  }}
+                />
+              )}
+              initial
+            />
+            <Scene
+              key="register"
+              path="/register/:step"
+              hideNavBar
+              component={RegisterScreen}
+            />
+            <Scene
+              key="passwordResetRequest"
+              hideNavBar
+              component={PasswordResetRequestScreen}
+            />
+            <Scene
+              key="passwordResetRequestConfirmed"
+              hideNavBar
+              component={PasswordResetRequestConfirmedScreen}
+            />
 
-          <Scene
-            key="resetPassword"
-            hideNavBar
-            component={ResetPasswordScreen}
-          />
-          <Scene
-            key="resetPasswordConfirmed"
-            hideNavBar
-            component={ResetPasswordConfirmedScreen}
-          />
+            <Scene
+              key="resetPassword"
+              hideNavBar
+              component={ResetPasswordScreen}
+            />
+            <Scene
+              key="resetPasswordConfirmed"
+              hideNavBar
+              component={ResetPasswordConfirmedScreen}
+            />
+          </Scene>
+          <Scene key="sleep" component={SleepScreen} type={ActionConst.RESET} />
+
+          <Stack key="root" type={ActionConst.REPLACE}>
+            <Scene key="accueil" initial hideNavBar component={SolarScreen} />
+            <Scene key="home" hideNavBar component={HomeScreen} />
+            <Scene key="contactsList" hideNavBar component={ContactsList} />
+            <Scene key="videoCall" hideNavBar component={VideoCallScreen} />
+            <Scene
+              key="userSettings"
+              hideNavBar
+              component={UserSettingsScreen}
+            />
+            <Scene key="messaging" hideNavBar component={MessagingScreen} />
+            <Scene
+              key="receivingScreen"
+              hideNavBar
+              component={VideoReceivingScreen}
+            />
+          </Stack>
         </Scene>
-        <Scene key="sleep" component={SleepScreen} type={ActionConst.RESET} />
-
-        <Stack key="root" type={ActionConst.REPLACE}>
-          <Scene key="accueil" initial hideNavBar component={SolarScreen} />
-          <Scene key="home" hideNavBar component={HomeScreen} />
-          <Scene key="contactsList" hideNavBar component={ContactsList} />
-          <Scene key="videoCall" hideNavBar component={VideoCallScreen} />
-          <Scene key="userSettings" hideNavBar component={UserSettingsScreen} />
-          <Scene key="messaging" hideNavBar component={MessagingScreen} />
-          <Scene
-            key="receivingScreen"
-            hideNavBar
-            component={VideoReceivingScreen}
-          />
-        </Stack>
-      </Scene>
-    </Router>
-    <SystemVolumeManager />
-  </React.Fragment>
-)
+      </Router>
+      <SystemVolumeManager />
+    </React.Fragment>
+  )
+}
 
 const MyTransitionSpec = {
   duration: 1000,

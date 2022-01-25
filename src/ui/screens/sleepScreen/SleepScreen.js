@@ -27,7 +27,6 @@ const SleepScreen = ({ auth, awake }) => {
           Actions.root()
         }}
       />
-      <Timer mode={'sleep'} />
       <TouchableHighlight style={{ flex: 1 }} onPress={handlePress}>
         <View
           style={{

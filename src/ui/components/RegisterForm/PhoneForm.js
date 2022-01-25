@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Form, Input, View, H3, Item, Button, Text, Icon } from 'native-base'
 import { Actions } from '@ami-app/react-native-router-flux'
 import useActivityLog from '../../hooks/use-activity-log'
+import { useTranslation } from 'react-i18next'
+import { Translations } from 'core/i18n'
 
 const PhoneForm = ({ setRegisterUser }) => {
   const [phone, setPhone] = useState('')
@@ -11,13 +13,16 @@ const PhoneForm = ({ setRegisterUser }) => {
   const [errorText, setErrorText] = useState(undefined)
   const [errorField, setErrorField] = useState(undefined)
   const logActivity = useActivityLog()
-
+  const { t } = useTranslation()
   return (
     <View style={{ width: '100%' }}>
       <H3 style={{ marginBottom: 32, color: '#848484' }}>
         {errorText
           ? errorText
-          : 'Renseigner votre numéro de téléphone, votre code départemental et le code de parrainage (optionnel)'}
+          : t(
+              'screen.register.phone_title',
+              'Renseigner votre numéro de téléphone, votre code départemental et le code de parrainage (optionnel)'
+            )}
       </H3>
       <Form>
         <Item
@@ -31,7 +36,7 @@ const PhoneForm = ({ setRegisterUser }) => {
         >
           <Input
             autoCapitalize="none"
-            placeholder={'Numéro de téléphone'}
+            placeholder={Translations.common.phone_number}
             onChangeText={setPhone}
             value={phone}
             autoFocus
@@ -58,7 +63,10 @@ const PhoneForm = ({ setRegisterUser }) => {
           >
             <Input
               autoCapitalize="none"
-              placeholder="Code départemental (ex. : 75)"
+              placeholder={t(
+                'screen.register.postal_code_placeholder',
+                'Code départemental (ex. : 75)'
+              )}
               onChangeText={setPostalCode}
               value={postalCode}
             />
@@ -75,7 +83,10 @@ const PhoneForm = ({ setRegisterUser }) => {
           >
             <Input
               autoCapitalize="none"
-              placeholder="Code de parrainage (optionnel)"
+              placeholder={t(
+                'screen.register.referral_code_placeholder',
+                'Code de parrainage (optionnel)'
+              )}
               onChangeText={setInvitationCode}
               value={invitationCode}
             />
@@ -88,18 +99,33 @@ const PhoneForm = ({ setRegisterUser }) => {
             logActivity('press_register_phone_step')
             let hasError = false
             if (!phone) {
-              setErrorText('Veuillez renseigner un numéro de téléphone')
+              setErrorText(
+                t(
+                  'screen.register.missing_phone_number_error',
+                  'Veuillez renseigner un numéro de téléphone'
+                )
+              )
 
               setErrorField('phone')
               hasError = true
             } else if (!/\+?[0-9]+/.test(phone)) {
               hasError = true
-              setErrorText('Veuillez renseigner un numéro de téléphone valide')
+              setErrorText(
+                t(
+                  'screen.register.invalid_phone_number_error',
+                  'Veuillez renseigner un numéro de téléphone valide'
+                )
+              )
 
               setErrorField('phone')
             }
             if (!postalCode) {
-              setErrorText('Veuillez renseigner un code départemental')
+              setErrorText(
+                t(
+                  'screen.register.missing_postal_code_error',
+                  'Veuillez renseigner un code départemental'
+                )
+              )
               setErrorField('postalCode')
             }
             if (hasError) {
@@ -117,7 +143,7 @@ const PhoneForm = ({ setRegisterUser }) => {
           }}
           style={{ borderRadius: 10 }}
         >
-          <Text>Continuer</Text>
+          <Text>{Translations.common.to_continue}</Text>
         </Button>
       </Form>
     </View>

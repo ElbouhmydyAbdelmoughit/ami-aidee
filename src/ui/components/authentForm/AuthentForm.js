@@ -16,12 +16,14 @@ import { BR } from 'src/ui/components'
 import { Actions } from '@ami-app/react-native-router-flux'
 import useActivityLog from '../../hooks/use-activity-log'
 import { View, TouchableHighlight } from 'react-native'
+import { Translations } from 'core/i18n'
+import { useTranslation } from 'react-i18next'
 
 export default ({ style, form, onValidate }) => {
   const [username, setUsername] = useState((form && form.username) || '')
   const [password, setPassword] = useState((form && form.password) || '')
   const logActivity = useActivityLog()
-
+  const { t } = useTranslation()
   //const []
 
   /**
@@ -55,7 +57,7 @@ export default ({ style, form, onValidate }) => {
         <Icon active name="mail" style={{ color: '#6E6D6D' }} />
         <Input
           autoCapitalize="none"
-          placeholder={'Email'}
+          placeholder={Translations.common.email}
           onChangeText={setUsername}
           value={username}
         />
@@ -69,7 +71,7 @@ export default ({ style, form, onValidate }) => {
         <Input
           secureTextEntry
           onChangeText={setPassword}
-          placeholder={'Password'}
+          placeholder={Translations.common.password}
           value={password}
         />
       </Item>
@@ -79,7 +81,7 @@ export default ({ style, form, onValidate }) => {
         onPress={validate}
         style={{ borderRadius: 10, marginTop: 16 }}
       >
-        <Text>Se connecter</Text>
+        <Text>{Translations.common.to_login}</Text>
       </Button>
       <View style={{ marginTop: 8 }}>
         <TouchableHighlight onPress={() => Actions.passwordResetRequest()}>
@@ -89,7 +91,7 @@ export default ({ style, form, onValidate }) => {
                 color: '#848484',
               }}
             >
-              Mot de passe oublié ?
+              {Translations.common.forgot_password}
             </Text>
           </View>
         </TouchableHighlight>
@@ -101,7 +103,7 @@ export default ({ style, form, onValidate }) => {
           color: '#848484',
         }}
       >
-        Vous n'avez pas encore de compte ?
+        {t('screen.login.no_account', "Vous n'avez pas encore de compte ?")}
       </H3>
       <Button
         full
@@ -112,7 +114,7 @@ export default ({ style, form, onValidate }) => {
         }}
         style={{ borderRadius: 10 }}
       >
-        <Text style={{}}>S'inscrire</Text>
+        <Text style={{}}>{Translations.common.to_signup}</Text>
       </Button>
       <BR />
     </Form>

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import moment from 'moment'
+import moment from 'src/core/moment'
 import { Dialog, Portal, Text, Title } from 'react-native-paper'
 import { TRIAL_DURATION_IN_DAYS } from '../../../utils/constant'
+import { useTranslation } from 'react-i18next'
 
 const getIsAccountSuspended = helpedUser => {
   if (helpedUser.status === 'refused') {
@@ -26,20 +27,29 @@ let title, firstText, secondText
 
 const BlockerDialog = ({ helpedUser }) => {
   const [dialogVisible, setDialogVisible] = useState(false)
+  const { t } = useTranslation()
   useEffect(() => {
     if (getIsAccountSuspended(helpedUser)) {
-      title = 'Compte suspendu'
-      firstText =
+      title = t('modal.account_suspended.title', 'Compte suspendu')
+      firstText = t(
+        'modal.account_suspended.description_1',
         "Votre compte a été suspendu. Vous n'avez désormais plus l'accès aux fonctionnalités de l'application Aidee."
-      secondText =
+      )
+      secondText = t(
+        'modal.account_suspended.description_2',
         "Veuillez contacter l'administrateur de l'application par email si vous pensez que ceci est une erreur."
+      )
       setDialogVisible(true)
     } else if (getIsAccountExpired(helpedUser)) {
-      title = 'Compte expiré'
-      firstText =
+      title = t('modal.account_expired.title', 'Compte expiré')
+      firstText = t(
+        'modal.account_expired.description_1',
         "Vous avez dépassé les 30 jours d'essai de l'application Aidee."
-      secondText =
+      )
+      secondText = t(
+        'modal.account_expired.description_2',
         "Veuillez contacter l'administrateur de l'application par email pour activer votre compte & continuer l'utilisation."
+      )
       setDialogVisible(true)
     } else {
       setDialogVisible(false)
@@ -57,7 +67,10 @@ const BlockerDialog = ({ helpedUser }) => {
           </Text>
           <Text style={{ fontSize: 20, marginBottom: 24 }}>{secondText}</Text>
           <Text style={{ fontSize: 20 }}>
-            Email de l'administrateur : ami.contact.info@gmail.com
+            {t(
+              'modal.account_expired.account_info',
+              "Email de l'administrateur : ami.contact.info@gmail.com"
+            )}
           </Text>
         </Dialog.Content>
       </Dialog>

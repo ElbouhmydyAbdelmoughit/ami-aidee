@@ -5,6 +5,7 @@ import { TouchableRipple } from 'react-native-paper'
 import { Actions } from '@ami-app/react-native-router-flux'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import useActivityLog from '../../../hooks/use-activity-log'
+import { Translations } from 'core/i18n'
 
 const ContactButton = ({ hasNewMessage }) => {
   const primaryColor = hasNewMessage
@@ -50,7 +51,9 @@ const ContactButton = ({ hasNewMessage }) => {
                 paddingBottom: 2,
               }}
             >
-              <Text style={{ color: primaryColor }}>NOUVEAU MESSAGE</Text>
+              <Text style={{ color: primaryColor, textTransform: 'uppercase' }}>
+                {Translations.common.new_message}
+              </Text>
             </View>
           </View>
         ) : null}
@@ -62,7 +65,7 @@ const ContactButton = ({ hasNewMessage }) => {
             fontSize: 24,
           }}
         >
-          Coucou
+          {Translations.common.coucou}
         </Text>
       </View>
     </TouchableRipple>

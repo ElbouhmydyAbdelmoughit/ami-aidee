@@ -4,17 +4,20 @@ import { Formik } from 'formik'
 import * as Yup from 'yup'
 import { TextField } from 'react-native-material-textfield'
 import { View } from 'react-native'
+import { t, Translations } from 'core/i18n'
+import { useTranslation } from 'react-i18next'
 
 const formSchema = Yup.object().shape({
   password: Yup.string()
-    .required('Mot de passe est obligatoire')
-    .min(6, 'Mot de passe trop court'),
+    .required(t('validation.password_required', 'Mot de passe est obligatoire'))
+    .min(6, t('validation.password_too_short', 'Mot de passe trop court')),
 })
 
 const PasswordForm = ({
   resetRequest,
   modifyPasswordUsingResetCodeRequest,
 }) => {
+  const { t } = useTranslation()
   const [submitClicked, setSubmitClicked] = useState(false)
   const onSubmit = async (values, { setSubmitting }) => {
     await modifyPasswordUsingResetCodeRequest({
@@ -36,7 +39,10 @@ const PasswordForm = ({
         {({ errors, values, handleChange, handleSubmit }) => (
           <React.Fragment>
             <TextField
-              label="Votre nouveau mot de passe"
+              label={t(
+                'screen.reset_password.password_field_label',
+                'Votre nouveau mot de passe'
+              )}
               mode="flat"
               secureTextEntry
               textContentType="newPassword"
@@ -52,7 +58,7 @@ const PasswordForm = ({
                 handleSubmit(...args)
               }}
             >
-              <Text>Confirmer</Text>
+              <Text>{Translations.common.to_confirm}</Text>
             </Button>
           </React.Fragment>
         )}

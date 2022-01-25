@@ -1,0 +1,129 @@
+{
+  "common": {
+    "back_to_home": "Retourner à l'accueil",
+    "connection_in_progress": "En cours de connexion..",
+    "coucou": "Coucou",
+    "email": "Email",
+    "firstname": "Prénom",
+    "forgot_password": "Mot de passe oublié ?",
+    "go_back": "Retour",
+    "language": "Langue",
+    "lastname": "Nom",
+    "loading": "Chargement...",
+    "new_messages": "New message",
+    "no_response": "Pas de réponse",
+    "ok": "OK",
+    "password": "Mot de passe",
+    "phone_number": "Numéro de téléphone",
+    "ringing": "Ça sonne...",
+    "settings": "Paramètres",
+    "to_accept": "Accepter",
+    "to_cancel": "Annuler",
+    "to_confirm": "Confirmer",
+    "to_continue": "Continuer",
+    "to_login": "Se connecter",
+    "to_logout": "Se déconnecter",
+    "to_send": "Envoyer",
+    "to_signup": "S'inscrire",
+    "unknown_error": "Erreur inconnue",
+    "video_call": "Appel vidéo",
+    "your_email": "Votre email"
+  },
+  "modal": {
+    "account_expired": {
+      "account_info": "Email de l'administrateur : ami.contact.info@gmail.com",
+      "description_1": "Vous avez dépassé les 30 jours d'essai de l'application Aidee.",
+      "description_2": "Veuillez contacter l'administrateur de l'application par email pour activer votre compte & continuer l'utilisation.",
+      "title": "Compte expiré"
+    },
+    "account_suspended": {
+      "description_1": "Votre compte a été suspendu. Vous n'avez désormais plus l'accès aux fonctionnalités de l'application Aidee.",
+      "description_2": "Veuillez contacter l'administrateur de l'application par email si vous pensez que ceci est une erreur.",
+      "title": "Compte suspendu"
+    },
+    "call_error": {
+      "no_audio_and_camera_permission": "L'application n'a pas la permission pour accéder à l'audio et la caméra.",
+      "no_audio_permission": "L'application n'a pas la permission pour accéder à l'audio.",
+      "title": "L'appel ne peut pas être abouti"
+    },
+    "expiring_soon": {
+      "description_1": "Votre compte prendra fin de la période d'essai dans {{accountExpiresIn}} jours. Vous n'aurez bientôt plus l'accès aux fonctionnalités de l'application Aidé.",
+      "description_2": "Veuillez contacter l'administrateur de l'application afin d'activer votre compte & continuer l'utilisation.",
+      "title": "Bientôt la fin pour l'essai"
+    },
+    "expiring_soon_2": {
+      "title": "Dernier rappel avant l'expiration"
+    }
+  },
+  "sceen": {
+    "settings": {
+      "automatic_pickup": "Décrochage automatique",
+      "automatic_pickup_description": "L'appel entrant sera décroché automatiquement après 3 secondes.",
+      "discharge_alert": "Alerte débranchement",
+      "discharge_alert_description": "Lorsque la tablette est débranché, l'aidé sera alerté pour rebrancher sa tablette",
+      "min_volume": "Volume activé",
+      "min_volume_description": "Le volume sera toujours activé et ne descend pas au dessous de 50%"
+    }
+  },
+  "screen": {
+    "chat": {
+      "begin_conversation": " Commencez la conversation avec {{name}}",
+      "input_placeholder": "Envoyer un message"
+    },
+    "contacts": {
+      "subtitle": "Appuyer sur la carte pour contacter la personne",
+      "title": "Mes contacts"
+    },
+    "forget_password": "Veuillez renseigner votre adresse email pour recevoir l'email de ré-initialisation de mot de passe.",
+    "login": {
+      "no_account": "Vous n'avez pas encore de compte ?"
+    },
+    "password_reset_confirmed": "Votre demande de mot de passe a été bien prise en compte. Si votre compte existe, un email de ré-initialisation vous sera bientôt envoyé.",
+    "register": {
+      "account_created": "Votre compte a été créé",
+      "duplicate_email_error": "Il existe déjà un compte lié à cet email",
+      "email_title": "Renseigner votre email",
+      "invalid_email_error": "Veuillez renseigner un adresse mail valide",
+      "invalid_phone_number_error": "Veuillez renseigner un numéro de téléphone valide",
+      "missing_email_error": "Veuillez renseigner un adresse mail",
+      "missing_firstname_error": "Veuillez renseigner votre prénom",
+      "missing_firstname_lastname_error": "Veuillez renseigner votre nom et prénom",
+      "missing_lastname_error": "Veuillez renseigner votre nom",
+      "missing_password_error": "Veuillez renseigner un mot de passe",
+      "missing_phone_number_error": "Veuillez renseigner un numéro de téléphone",
+      "missing_postal_code_error": "Veuillez renseigner un code départemental",
+      "name_title": "Renseigner votre nom et prénom",
+      "password_title": "Enfin, choisir un mot de passe sécurisé",
+      "password_too_short_error": "Veuillez renseigner un mot de passe plus long",
+      "phone_title": "Renseigner votre numéro de téléphone, votre code départemental et le code de parrainage (optionnel)",
+      "postal_code_placeholder": "Code départemental (ex. : 75)",
+      "referral_code_placeholder": "Code de parrainage (optionnel)",
+      "unknown_create_error": "Le compte n'a pas pu être créé"
+    },
+    "reset_password": {
+      "invalid_request": "Demande de réinitialisation de mot de passe invalide (utilisé ou expiré). Veuillez formuler une autre demande.",
+      "password_field_label": "Votre nouveau mot de passe",
+      "title": "Veuillez renseigner votre nouveau mot de passe"
+    },
+    "reset_password_confirmed": "Votre demande de réinitialisation de mot de passe a été prise en compte.",
+    "solar": {
+      "daytime_description": "<0>nous sommes le <1>\n</1> <3><0>{{hour}}</0></3> <5>\n</5><6>\n</6> il est <8>\n</8><9>{{hour}}</9> </0>",
+      "daytime_title": "Bonjour {{name}}",
+      "nighttime_description": "<0><0>\n</0>il est <3><0>{{hour}}</0></3><4>\n</4>Dormir est nécessaire pour que ton cerveau répare ton corps.</0>",
+      "nighttime_footer": "Retourne dans ton lit",
+      "nighttime_title": "C'est la nuit"
+    },
+    "video_call": {
+      "automatic_pickup_in": "Décrochage automatique dans {{count}} seconde",
+      "automatic_pickup_in_plural": "Décrochage automatique dans {{count}} secondes",
+      "hung_up": "{{name}} a raccroché",
+      "other_hung_up": "L'aidant a raccroché",
+      "return_in_secs": " Revenir dans {{count}} seconde",
+      "return_in_secs_plural": " Revenir dans {{count}} secondes"
+    }
+  },
+  "validation": {
+    "password_required": "Mot de passe est obligatoire",
+    "password_too_short": "Mot de passe trop court"
+  }
+}

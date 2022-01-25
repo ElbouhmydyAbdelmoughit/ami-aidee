@@ -4,6 +4,7 @@ import * as Yup from 'yup'
 import { TextField } from 'react-native-material-textfield'
 import { Button, Text } from 'native-base'
 import { View } from 'react-native'
+import { Translations } from 'core/i18n'
 
 const formSchema = Yup.object().shape({
   email: Yup.string()
@@ -29,7 +30,7 @@ const ForgetPasswordForm = ({ requestPasswordReset }) => {
         {({ errors, values, handleChange, handleSubmit }) => (
           <React.Fragment>
             <TextField
-              label="Votre email"
+              label={Translations.common.your_email}
               mode="flat"
               error={submitClicked ? errors.email : undefined}
               value={values.email}
@@ -43,7 +44,7 @@ const ForgetPasswordForm = ({ requestPasswordReset }) => {
                 handleSubmit(...args)
               }}
             >
-              <Text>Confirmer</Text>
+              <Text>{Translations.common.to_confirm}</Text>
             </Button>
           </React.Fragment>
         )}

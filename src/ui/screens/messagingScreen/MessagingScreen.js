@@ -9,6 +9,7 @@ import MessagingNavBar from './MessagingNavBar'
 import ChatRoom from '../../components/ChatRoom'
 import MessageUpdater from './MessageUpdater'
 import useActivityLog from '../../hooks/use-activity-log'
+import { Translations } from 'core/i18n'
 
 const styles = StyleSheet.create({
   box: {
@@ -78,7 +79,7 @@ const MessagingScreen = ({
                 <Text
                   style={{ color: 'white', fontSize: 20, fontWeight: 'bold' }}
                 >
-                  Appel vidéo
+                  {Translations.common.video_call}
                 </Text>
               </View>
             </TouchableRipple>

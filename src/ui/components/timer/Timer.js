@@ -13,11 +13,8 @@ let duration = SCREENSAVING_DURATION
 let timerIdentifier = null
 
 const timerAction = () => {
-  console.log('timer ended')
-  console.log(`timer was in ${currentMode} mode`)
   switch (currentMode) {
     case 'awake': {
-      console.log('sleeping')
       if (ECO_FRIENDLY_SCREENS.indexOf(Actions.currentScene) !== -1) {
         Actions.sleep()
       } else {
@@ -29,7 +26,6 @@ const timerAction = () => {
       break
     }
     case 'sleep':
-      console.log('imm backk')
       Actions.root()
       // currentMode = "awake"
       // duration = SCREENSAVING_DURATION
@@ -41,7 +37,6 @@ const timerAction = () => {
 }
 
 const startTimer = mode => {
-  console.log('startTimer')
   switch (mode) {
     case 'awake':
       currentMode = mode
@@ -64,7 +59,6 @@ const resetTimer = () => {
 }
 
 const Timer = ({ user, mode }, ref) => {
-  console.log(mode)
 
   useImperativeHandle(ref, () => ({
     reset: () => {

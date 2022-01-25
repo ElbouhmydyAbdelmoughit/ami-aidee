@@ -138,8 +138,8 @@ android {
         applicationId "com.amiaide"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 70
-        versionName "1.71"
+        versionCode 71
+        versionName "1.72"
         multiDexEnabled true
     }
     splits {
@@ -221,6 +221,7 @@ configurations.all {
 }
 
 dependencies {
+    implementation project(':react-native-localize')
     implementation project(':agora-react-native-rtm')
     implementation project(':react-native-device-battery')
     implementation project(':react-native-system-setting')

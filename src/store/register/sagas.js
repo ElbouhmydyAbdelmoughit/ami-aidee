@@ -1,23 +1,36 @@
-import { delay } from "redux-saga"
-import { takeLatest, put, select, call } from "redux-saga/effects"
-import actions, { types } from "./actions"
-import { LoaderActions } from "../loader"
-import { UsersService, HelpedUsersService } from "src/services"
-import { SnackActions } from "../snackBar"
-import { AuthActions } from "../auth"
+import { delay } from 'redux-saga'
+import { takeLatest, put, select, call } from 'redux-saga/effects'
+import actions, { types } from './actions'
+import { LoaderActions } from '../loader'
+import { UsersService, HelpedUsersService } from 'src/services'
+import { SnackActions } from '../snackBar'
+import { AuthActions } from '../auth'
+import { t } from 'i18next'
 
 function* userCreateOnError(error) {
   if (
     error &&
     error.response &&
     error.response.data &&
-    error.response.data.error === "user_existed"
+    error.response.data.error === 'user_existed'
   ) {
     yield put(
-      SnackActions.displayError("Il existe déjà un compte lié à cet email")
+      SnackActions.displayError(
+        t(
+          'screen.register.duplicate_email_error',
+          'Il existe déjà un compte lié à cet email'
+        )
+      )
     )
   } else {
-    yield put(SnackActions.displayError("Le compte n'a pas pu être créer"))
+    yield put(
+      SnackActions.displayError(
+        t(
+          'screen.register.unknown_create_error',
+          "Le compte n'a pas pu être créé"
+        )
+      )
+    )
   }
 }
 
@@ -41,10 +54,14 @@ function* registerRequest() {
     })
     console.log(error)
     if (error) {
-      console.log("impossible")
+      console.log('impossible')
       return
     }
-    yield put(SnackActions.displayInfo("Votre compte a été créé"))
+    yield put(
+      SnackActions.displayInfo(
+        t('screen.register.account_created', 'Votre compte a été créé')
+      )
+    )
   } finally {
     yield put(LoaderActions.loaded())
   }

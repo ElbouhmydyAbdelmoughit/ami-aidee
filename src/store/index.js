@@ -12,7 +12,7 @@ import { RegisterReducers, RegisterSagas } from './register'
 import { VideoCallReducers, VideoCallSagas } from './videoCall'
 import { InstantMessagesSagas, InstantMessagesReducer } from './instantMessages'
 import { UserSagas } from './users'
-import { NavigationReducers } from './navigation'
+import { NavigationReducers, NavigationSagas } from './navigation'
 import { UserActivitiesSagas } from './user-activities'
 import {
   ResetPasswordRequestSagas,
@@ -51,6 +51,7 @@ export const rootSaga = [
   ...InstantMessagesSagas,
   ...UserSagas,
   ...UserActivitiesSagas,
+  ...NavigationSagas,
   ...ResetPasswordRequestSagas,
 ]
 

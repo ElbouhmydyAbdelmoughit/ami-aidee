@@ -21,6 +21,8 @@ import GradientBackground from '../GradientBackground'
 import RemoteAudioView from './RemoteAudioView'
 import { playHangupTone } from '../../../utils/sound'
 import useActivityLog from '../../hooks/use-activity-log'
+import { useTranslation } from 'react-i18next'
+import { Translations } from 'core/i18n'
 
 const { Agora } = NativeModules
 const { FPS30, AudioProfileDefault, AudioScenarioDefault, Adaptative } = Agora
@@ -142,7 +144,7 @@ const VideoCallRoom = ({ remoteAuxiliary, mode }) => {
     setPeerIds([])
     Actions.pop()
   }
-
+  const { t } = useTranslation()
   useEffect(() => {
     console.log(hasEnded)
   }, [hasEnded])
@@ -160,8 +162,11 @@ const VideoCallRoom = ({ remoteAuxiliary, mode }) => {
             await requestAudioPermission()
           } catch (e) {
             Alert.alert(
-              "L'appel ne peut pas être abouti",
-              "L'application n'a pas la permission pour accéder à l'audio."
+              t('modal.call_error.title', "L'appel ne peut pas être abouti"),
+              t(
+                'modal.call_error.no_audio_permission',
+                "L'application n'a pas la permission pour accéder à l'audio."
+              )
             )
             Actions.pop()
             return
@@ -171,8 +176,11 @@ const VideoCallRoom = ({ remoteAuxiliary, mode }) => {
             await requestCameraAndAudioPermission()
           } catch (e) {
             Alert.alert(
-              "L'appel ne peut pas être abouti",
-              "L'application n'a pas la permission pour accéder à l'audio et la caméra."
+              t('modal.call_error.title', "L'appel ne peut pas être abouti"),
+              t(
+                'modal.call_error.no_audio_and_camera_permission',
+                "L'application n'a pas la permission pour accéder à l'audio et la caméra."
+              )
             )
             Actions.pop()
             return
@@ -218,7 +226,7 @@ const VideoCallRoom = ({ remoteAuxiliary, mode }) => {
     return (
       <View style={styles.endCallBtn}>
         <IconButton size={40} onPress={endCall} icon="call" color="white">
-          Annuler
+          {Translations.common.to_cancel}
         </IconButton>
       </View>
     )
@@ -229,7 +237,9 @@ const VideoCallRoom = ({ remoteAuxiliary, mode }) => {
         <View style={{ flex: 1, marginTop: 64 }}>
           <UserAvatar user={remoteAuxiliary} />
           <View style={{ marginTop: 32, alignItems: 'center' }}>
-            <Text style={styles.infoText}>En cours de connexion..</Text>
+            <Text style={styles.infoText}>
+              {Translations.common.connection_in_progress}
+            </Text>
           </View>
         </View>
         <View style={{ marginBottom: 32, alignItems: 'center' }}>
@@ -251,7 +261,9 @@ const VideoCallRoom = ({ remoteAuxiliary, mode }) => {
           <View style={{ flex: 1, marginTop: 64 }}>
             <UserAvatar user={remoteAuxiliary} />
             <View style={{ marginTop: 32, alignItems: 'center' }}>
-              <Text style={styles.infoText}>En cours de connexion..</Text>
+              <Text style={styles.infoText}>
+                {Translations.common.connection_in_progress}
+              </Text>
             </View>
           </View>
         </View>

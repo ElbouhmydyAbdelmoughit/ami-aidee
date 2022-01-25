@@ -53,7 +53,6 @@ const HomeScreen = ({
   const [message, setMessage] = useState(msg || {})
   //const [volume, setVolume] = useState(1)
   let videoRef = createRef()
-  let timerRef = createRef()
   useEffect(() => {
     awake()
     messagesRequest(me.helped_users[0].id)
@@ -66,24 +65,16 @@ const HomeScreen = ({
     }
   }, [])
 
-  const resetTimer = () => {
-    console.log(timerRef)
-    const tim = (timerRef && timerRef.current) || {}
-    tim.reset()
-  }
-
   const onVolumeChange = value => {
     console.log(value)
     //setVolume(value)
 
     videoRef.current?.setVolume(value)
-    resetTimer()
   }
 
   const reload = () => {
     const video = (videoRef && videoRef.current) || {}
     video.reload()
-    resetTimer()
   }
 
   const next = () => {
@@ -94,7 +85,6 @@ const HomeScreen = ({
     if (messages.length > index + 1) {
       setMessage(messages[index + 1] || {})
     }
-    resetTimer()
   }
 
   const previous = () => {
@@ -105,7 +95,6 @@ const HomeScreen = ({
     if (index > 0) {
       setMessage(messages[index - 1] || {})
     }
-    resetTimer()
   }
 
   const { video_url, picture_url } = message
@@ -147,7 +136,6 @@ const HomeScreen = ({
         </>
       )}
       <StatusBar backgroundColor="transparent" translucent />
-      <Timer ref={timerRef} mode={'awake'} />
       <TouchableWithoutFeedback
         onPress={() => {
           if (redirectFromSolarView) {

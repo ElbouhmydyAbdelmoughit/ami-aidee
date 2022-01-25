@@ -26,6 +26,7 @@ const VideoCallEnded = ({ auxiliary }) => {
       Actions.pop()
     }
   }, [countdown])
+  const { t } = useTranslation()
   return (
     <GradientBackground>
       <View
@@ -46,7 +47,10 @@ const VideoCallEnded = ({ auxiliary }) => {
               <Text
                 style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}
               >
-                {getUserDisplayName(auxiliary)} a raccroché
+                {t('screen.video_call.hung_up', {
+                  defaultValue: '{{name}} a raccroché',
+                  name: getUserDisplayName(auxiliary),
+                })}
               </Text>
             </View>
           </View>
@@ -67,7 +71,10 @@ const VideoCallEnded = ({ auxiliary }) => {
                   fontWeight: 'bold',
                 }}
               >
-                Revenir dans {countdown} secondes
+                {t('screen.video_call.return_in_secs', {
+                  defaultValue: ' Revenir dans {{count}} seconde',
+                  count: countdown,
+                })}
               </Text>
             </Button>
           </View>

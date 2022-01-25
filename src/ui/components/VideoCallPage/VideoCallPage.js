@@ -11,6 +11,7 @@ import GradientBackground from '../GradientBackground'
 import { usePrevious } from '../../../utils/hooks'
 import { playHangupTone } from '../../../utils/sound'
 import useActivityLog from '../../hooks/use-activity-log'
+import { Translations } from 'core/i18n'
 
 const styles = StyleSheet.create({
   root: {
@@ -105,10 +106,10 @@ const VideoCallPage = ({
       case 'INVITATION_SENT':
         return ''
       case 'RECEIVED':
-        return 'Ça sonne...'
+        return Translations.common.ringing
       case 'REFUSED_BY_CALLEE':
       case 'FAILURE':
-        return 'Pas de réponse'
+        return Translations.common.no_response
       default:
         return null
     }
@@ -157,7 +158,7 @@ const VideoCallPage = ({
                 borderRadius: 30,
               }}
             >
-              Annuler
+              {Translations.common.to_cancel}
             </IconButton>
           </View>
         )}

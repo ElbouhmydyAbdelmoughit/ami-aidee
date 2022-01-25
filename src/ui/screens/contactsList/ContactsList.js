@@ -11,6 +11,8 @@ import { times } from 'src/utils'
 import Loader from '../../components/loader/Loader'
 import { getGradientColors } from '../../../utils/colors'
 import useActivityLog from '../../hooks/use-activity-log'
+import { Translations } from 'core/i18n'
+import { useTranslation } from 'react-i18next'
 
 const styles = StyleSheet.create({
   box: {
@@ -48,10 +50,12 @@ const ContactsList = ({
   useEffect(() => {
     myAuxiliariesRequest()
   }, [])
+  const { t } = useTranslation()
+  const logActivity = useActivityLog()
+
   if (loading) {
     return <Loader loading />
   }
-  const logActivity = useActivityLog()
   const time = times(moment(), helpedUser)
   const gradientColors = getGradientColors(time)
   return (
@@ -82,12 +86,17 @@ const ContactsList = ({
                 }}
                 style={{ marginBottom: 16 }}
               >
-                Retour
+                {Translations.common.go_back}
               </IconButton>
-              <H1 style={styles.title}>Mes contacts</H1>
+              <H1 style={styles.title}>
+                {t('screen.contacts.title', 'Mes contacts')}
+              </H1>
             </View>
             <H3 style={styles.subtitle}>
-              Appuyer sur la carte pour contacter la personne
+              {t(
+                'screen.contacts.subtitle',
+                'Appuyer sur la carte pour contacter la personne'
+              )}
             </H3>
           </View>
           <View style={{ marginTop: 32, marginRight: 32 }}>
@@ -106,7 +115,7 @@ const ContactsList = ({
                   fontSize: 18,
                 }}
               >
-                Paramètres
+                {Translations.common.settings}
               </Text>
             </Button>
           </View>
@@ -155,8 +164,13 @@ const ContactsList = ({
                         paddingBottom: 2,
                       }}
                     >
-                      <Text style={{ color: 'rgba(224, 41, 41, 0.9)' }}>
-                        NOUVEAU MESSAGE
+                      <Text
+                        style={{
+                          color: 'rgba(224, 41, 41, 0.9)',
+                          textTransform: 'uppercase',
+                        }}
+                      >
+                        {Translations.common.new_message}
                       </Text>
                     </View>
                   </View>

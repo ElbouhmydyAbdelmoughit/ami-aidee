@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Form, Input, View, H3, Item, Button, Text } from 'native-base'
 import { Actions } from '@ami-app/react-native-router-flux'
 import useActivityLog from '../../hooks/use-activity-log'
+import { useTranslation } from 'react-i18next'
+import { Translations } from 'core/i18n'
 
 const PasswordForm = ({
   setRegisterUser,
@@ -12,10 +14,16 @@ const PasswordForm = ({
   const logActivity = useActivityLog()
 
   const [errorText, setErrorText] = useState(undefined)
+  const { t } = useTranslation()
   return (
     <View style={{ width: '100%' }}>
       <H3 style={{ marginBottom: 32, color: '#848484' }}>
-        {errorText ? errorText : 'Enfin, choisir un mot de passe sécurisé'}
+        {errorText
+          ? errorText
+          : t(
+              'screen.register.password_title',
+              'Enfin, choisir un mot de passe sécurisé'
+            )}
       </H3>
       <Form>
         <Item
@@ -28,7 +36,7 @@ const PasswordForm = ({
         >
           <Input
             secureTextEntry
-            placeholder={'Mot de passe'}
+            placeholder={Translations.common.password}
             onChangeText={setPassword}
             value={password}
             autoFocus
@@ -41,11 +49,21 @@ const PasswordForm = ({
             logActivity('press_register_password_step')
             let hasError = false
             if (!password) {
-              setErrorText('Veuillez renseigner un mot de passe')
+              setErrorText(
+                t(
+                  'screen.register.missing_password_error',
+                  'Veuillez renseigner un mot de passe'
+                )
+              )
               hasError = true
             } else if (password.length < 6) {
               hasError = true
-              setErrorText('Veuillez renseigner un mot de passe plus long')
+              setErrorText(
+                t(
+                  'screen.register.password_too_short_error',
+                  'Veuillez renseigner un mot de passe plus long'
+                )
+              )
             }
             if (hasError) {
               return
@@ -58,7 +76,7 @@ const PasswordForm = ({
           }}
           style={{ borderRadius: 10 }}
         >
-          <Text>Continuer</Text>
+          <Text>{Translations.common.to_continue}</Text>
         </Button>
       </Form>
     </View>

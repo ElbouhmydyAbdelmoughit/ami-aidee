@@ -1,4 +1,6 @@
 rootProject.name = 'AMIaide'
+include ':react-native-localize'
+project(':react-native-localize').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-localize/android')
 include ':agora-react-native-rtm'
 project(':agora-react-native-rtm').projectDir = new File(rootProject.projectDir, '../node_modules/agora-react-native-rtm/android')
 include ':react-native-device-battery'

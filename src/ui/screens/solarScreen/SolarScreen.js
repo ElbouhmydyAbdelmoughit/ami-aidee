@@ -7,14 +7,14 @@ import { Actions } from '@ami-app/react-native-router-flux'
 import LinearGradient from 'react-native-linear-gradient'
 import { Timer } from 'src/ui/components'
 import AccountChecker from 'src/ui/business/AccountChecker'
-import moment from 'moment'
-import momentFR from 'moment/locale/fr'
+import moment from 'src/core/moment'
 import { times } from 'src/utils'
 import TimerInitiator from 'src/ui/business/TimerInitiator'
 import MessageAlertManager from 'ui/business/MessageAlertManager'
 
 import SolarView from './SolarView'
 import ContactButton from './ContactButton'
+import { Trans, useTranslation } from 'react-i18next'
 // notifierAuthorization()
 /*
 var fr = moment().locale("fr", momentFR)
@@ -83,32 +83,47 @@ const SolarScreen = ({
     content: '',
     footer: '',
   })
+  const { t } = useTranslation()
 
   const getMessage = dateInput => {
     const time = times(dateInput, helpedUser)
-    const fr = dateInput.locale('fr', momentFR)
-    const day = fr.format('dddd Do MMMM YYYY')
-    const hour = fr.format('HH:mm')
+    const day = moment().format('dddd Do MMMM YYYY')
+    const hour = moment().format('HH:mm')
     if (time === 'NIGHT') {
       return {
-        title: "C'est la nuit",
+        title: t('screen.solar.nighttime_title', "C'est la nuit"),
         content: (
+          <Trans i18nKey="screen.solar.nighttime_description">
+            <Text>
+              <Text>{'\n'}</Text>il est{' '}
+              <Text style={{ fontWeight: 'bold' }}>{{ hour: hour }}</Text>
+              <Text>{'\n'}</Text>Dormir est nécessaire pour que ton cerveau
+              répare ton corps.
+            </Text>
+          </Trans>
+        ),
+        footer: (
           <Text>
-            {BR}il est {BOLD(hour)}
-            {BR}Dormir est nécessaire pour que ton cerveau répare ton corps.
+            {t('screen.solar.nighttime_footer', 'Retourne dans ton lit')}
           </Text>
         ),
-        footer: <Text>Retourne dans ton lit</Text>,
       }
     }
     return {
-      title: `Bonjour ${displayName}`,
+      title: t('screen.solar.daytime_title', {
+        defaultValue: 'Bonjour {{name}}',
+        name: displayName,
+      }),
       content: (
-        <Text>
-          nous sommes le {BR} {BOLD(day)} {BR}
-          {BR} il est {BR}
-          {BOLD(hour)}{' '}
-        </Text>
+        <Trans i18nKey="screen.solar.daytime_description">
+          <Text>
+            nous sommes le <Text>{'\n'}</Text>{' '}
+            <Text style={{ fontWeight: 'bold' }}>{{ hour: hour }}</Text>{' '}
+            <Text>{'\n'}</Text>
+            <Text>{'\n'}</Text> il est <Text>{'\n'}</Text>
+            {{ hour: BOLD(hour) }}{' '}
+          </Text>
+        </Trans>
       ),
     }
   }
@@ -208,7 +223,6 @@ const SolarScreen = ({
     <Container style={{ backgroundColor: material.brandPrimary }}>
       <TimerInitiator />
       <MessageAlertManager />
-      <Timer mode={'awake'} />
       <AccountChecker />
       <LinearGradient
         start={{ x: 0.0, y: 0.0 }}

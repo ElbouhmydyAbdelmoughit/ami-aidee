@@ -16,7 +16,6 @@ const MessageAlertManager = ({ onRedirect }) => {
   }
   useEffect(() => {
     if (immediateMessage) {
-      console.log('message happening now', immediateMessage)
       if (Actions.currentScene !== 'home') {
         redirect(immediateMessage.id)
         dispatch(MessageActions.immediateMessageAlerted(immediateMessage.id))
@@ -24,14 +23,12 @@ const MessageAlertManager = ({ onRedirect }) => {
       return
     }
     if (messageToAlert) {
-      console.log('new message to alert', messageToAlert)
       if (Actions.currentScene !== 'home') {
         redirect(messageToAlert.id)
         dispatch(MessageActions.messageAlerted(messageToAlert.id))
       }
       return
     }
-    console.log('no new message')
   }, [immediateMessage, messageToAlert])
 
   return null

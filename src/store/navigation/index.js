@@ -4,3 +4,4 @@ export {
 } from './actions'
 export { default as NavigationSelectors } from './selectors'
 export { default as NavigationReducers } from './reducers'
+export { default as NavigationSagas } from './sagas'

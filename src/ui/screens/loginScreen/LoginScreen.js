@@ -1,6 +1,6 @@
-import React from "react"
+import React from 'react'
 
-import { Image } from "react-native"
+import { Image } from 'react-native'
 import {
   Container,
   Header,
@@ -14,18 +14,20 @@ import {
   H3,
   Left,
   Right,
-} from "native-base"
-import LinearGradient from "react-native-linear-gradient"
-import { Col, Row, Grid } from "react-native-easy-grid"
+} from 'native-base'
+import LinearGradient from 'react-native-linear-gradient'
+import { Col, Row, Grid } from 'react-native-easy-grid'
 
-import { AuthentForm } from "ui/components"
-import AppStyles from "src/config/styles"
+import { AuthentForm } from 'ui/components'
+import AppStyles from 'src/config/styles'
 
-import moment from "moment"
-import momentFR from "moment/locale/fr"
+import moment from 'moment'
+import momentFR from 'moment/locale/fr'
+import { Translations } from 'core/i18n'
+import LangSelector from './LangSelector'
 
-export default ({ loginRequest }) => {
-  const notifDate = moment().format("YYYY-MM-dd hh:mm")
+export default ({ loginRequest, onRefresh }) => {
+  const notifDate = moment().format('YYYY-MM-dd hh:mm')
   console.log(notifDate)
 
   const onValidate = form => {
@@ -34,7 +36,7 @@ export default ({ loginRequest }) => {
     loginRequest(username, password)
   }
 
-  const color = ["#3FEDFF", "#8772FF"]
+  const color = ['#3FEDFF', '#8772FF']
   return (
     <Container>
       <LinearGradient
@@ -44,10 +46,11 @@ export default ({ loginRequest }) => {
         style={{ flex: 1 }}
       >
         <Content contentContainerStyle={styles.content}>
-          <H2 style={styles.title}>{"A.M.I"}</H2>
-          <Card style={{ width: "60%", marginTop: 16 }}>
+          <H2 style={styles.title}>{'A.M.I'}</H2>
+          <LangSelector onRefresh={onRefresh} />
+          <Card style={{ width: '60%', marginTop: 16 }}>
             <CardItem header style={styles.header}>
-              <H3 style={styles.headerTitle}>Se connecter</H3>
+              <H3 style={styles.headerTitle}>{Translations.common.to_login}</H3>
             </CardItem>
             <CardItem body>
               <AuthentForm
@@ -65,27 +68,27 @@ export default ({ loginRequest }) => {
 const styles = {
   title: {
     marginTop: 16,
-    color: "#fff",
-    fontFamily: "Roboto",
-    textAlign: "center",
+    color: '#fff',
+    fontFamily: 'Roboto',
+    textAlign: 'center',
   },
 
   header: {
-    backgroundColor: "#fff",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: '#fff',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 
   headerTitle: {
     padding: 10,
-    color: "#848484",
+    color: '#848484',
   },
 
   content: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    flexDirection: "column",
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
   },
 }

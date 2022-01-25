@@ -49,6 +49,8 @@ target 'AMIaide' do
 
   pod 'agora-react-native-rtm', :path => '../node_modules/agora-react-native-rtm'
 
+  pod 'RNLocalize', :path => '../node_modules/react-native-localize'
+
   target 'AMIaideTests' do
     inherit! :search_paths
     # Pods for testing

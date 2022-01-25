@@ -8,6 +8,7 @@ import com.amiaide.videoView.VideoViewPackage;
 import com.crashlytics.android.Crashlytics;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import com.zoontek.rnlocalize.RNLocalizePackage;
 import com.robinpowered.react.battery.DeviceBatteryPackage;
 import com.ninty.system.setting.SystemSettingPackage;
 
