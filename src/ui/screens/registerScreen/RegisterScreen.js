@@ -21,8 +21,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { RegisterForm } from 'src/ui/components'
 import AppStyles from 'src/config/styles'
 
-import moment from 'moment'
-import momentFR from 'moment/locale/fr'
+import moment from 'core/moment'
 import { Translations } from 'core/i18n'
 
 const RegisterScreen = ({ loginRequest, step }) => {

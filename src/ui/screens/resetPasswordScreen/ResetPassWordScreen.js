@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import moment from 'moment'
+import moment from 'core/moment'
 import { Subheading } from 'react-native-paper'
 import { Actions } from '@ami-app/react-native-router-flux'
 import { Button, Text } from 'native-base'

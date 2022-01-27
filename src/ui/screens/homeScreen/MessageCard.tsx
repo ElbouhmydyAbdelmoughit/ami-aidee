@@ -14,12 +14,13 @@ import {
 import { Animated, View } from 'react-native'
 import { MessageSelectors } from 'src/store/message'
 import { subjects, moments, reccurences } from 'utils'
-import moment from 'moment'
-import momentFR from 'moment/locale/fr'
+import moment from 'core/moment'
 import { IconButton } from 'react-native-paper'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import ZoomableImage from './ZoomableImage'
 import { Message } from 'core/types'
+import { Translations } from 'core/i18n'
+import { useTranslation } from 'react-i18next'
 
 const BOLD = text => <Text style={{ fontWeight: 'bold' }}>{text}</Text>
 const BR = <Text>{'\n'}</Text>
@@ -55,7 +56,6 @@ video_url: ""
   const diffusionDate = useSelector(
     MessageSelectors.getMessageNextDiffusionDate(message)
   )
-  var fr = moment().locale('fr', momentFR)
   const { activite, reccurence, moment_time, location } = message
   const moment_id = message.moment
   const { username } = me
@@ -89,11 +89,12 @@ video_url: ""
   const moment_value = (moments[moment_id] && moments[moment_id].value) || ''
   const reccurence_value =
     (reccurences[reccurence] && reccurences[reccurence].value) || ''
-  const day = fr.format('dddd Do MMMM YYYY')
-  const hour = fr.format('HH:mm')
+  const day = moment().format('dddd Do MMMM YYYY')
+  const hour = moment().format('HH:mm')
   const text = `\n${day}, ${hour}`
   const now = moment()
   const formattedMomentTime = moment_time && moment_time.substr(0, 5)
+  const { t } = useTranslation()
   return (
     <View style={{ marginTop: 24, width: '100%', flex: 1 }}>
       <Text
@@ -105,7 +106,9 @@ video_url: ""
           lineHeight: 30,
         }}
       >
-        {diffusionDate.isBefore(now) ? 'Dernier' : 'Prochain'} rappel:{' '}
+        {diffusionDate.isBefore(now)
+          ? t('screen.reminders_list.last_reminder', 'Dernier rappel :')
+          : t('screen.reminders_list.next_reminder', 'Prochain rappel :')}{' '}
         {diffusionDate.format('LLL')}
       </Text>
       <View
@@ -121,7 +124,12 @@ video_url: ""
           <Text style={styles.datetime}>{text}</Text>
           <Text style={styles.title}>{getSubject(message)}</Text>
           <Text style={styles.text}>
-            {`Penser à ${activite} ${reccurence_value} ${moment_value} ${formattedMomentTime}`}
+            {t('screen.reminders_list.reminder_message', {
+              defaultValue: 'Penser à {{activity}} {{recurrence}} {{datetime}}',
+              activity: activite,
+              reccurence: reccurence_value,
+              datetime: `${moment_value} ${formattedMomentTime}`,
+            })}
           </Text>
         </View>
         {location ? (

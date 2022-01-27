@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import moment from 'src/core/moment'
+import moment from 'core/moment'
 import { Dialog, Portal, Text, Title } from 'react-native-paper'
 import { TRIAL_DURATION_IN_DAYS } from '../../../utils/constant'
 import { useTranslation } from 'react-i18next'

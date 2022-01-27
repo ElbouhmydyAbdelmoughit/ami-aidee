@@ -25,6 +25,7 @@ import NavigateCard from './NavigateCard'
 import useActivityLog from 'ui/hooks/use-activity-log'
 import { TrackedActivity } from 'core/types'
 import { Button, IconButton } from 'react-native-paper'
+import { Translations } from 'core/i18n'
 import { CircleButton } from 'ui/components'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
@@ -170,7 +171,7 @@ const HomeScreen = ({
                     fontSize: 18,
                   }}
                 >
-                  Retour
+                  {Translations.common.go_back}
                 </Text>
               </Button>
             </View>

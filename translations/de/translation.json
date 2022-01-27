@@ -1,5 +1,129 @@
 {
   "common": {
-    "to_login": "Einloggen"
+    "back_to_home": "Zurück zur Startseite",
+    "connection_in_progress": "Verbindung wird erstellt…",
+    "coucou": "Hallo!",
+    "email": "E-Mail-Adresse",
+    "firstname": "Vorname",
+    "forgot_password": "Passwort vergessen?",
+    "go_back": "Zurück",
+    "language": "Sprache",
+    "lastname": "Nachname",
+    "loading": "Wird geladen…",
+    "new_messages": "Neue Nachricht",
+    "no_response": "Keine Antwort",
+    "ok": "OK",
+    "password": "Passwort",
+    "phone_number": "Telefonnummer",
+    "ringing": "Es klingelt…",
+    "settings": "Einstellungen",
+    "to_accept": "Akzeptieren",
+    "to_cancel": "Abbrechen",
+    "to_confirm": "Bestätigen",
+    "to_continue": "Weiter",
+    "to_login": "Einloggen",
+    "to_logout": "Ausloggen",
+    "to_send": "Senden",
+    "to_signup": "Anmelden",
+    "unknown_error": "Unbekannter Fehler",
+    "video_call": "Videoanruf",
+    "your_email": "Ihre E-Mail-Adresse"
+  },
+  "modal": {
+    "account_expired": {
+      "account_info": "E-Mail des Administrators: ami.sav@lbdc.eu",
+      "description_1": "Sie haben die 30-tägige Probezeit der Pflegeempfänger-App überschritten.",
+      "description_2": "Bitte kontaktieren Sie den Administrator der App per E-Mail, um Ihr Konto zu aktivieren und die Nutzung fortzusetzen.",
+      "title": "Abgelaufenes Konto"
+    },
+    "account_suspended": {
+      "description_1": "Ihr Konto wurde ausgesetzt. Sie haben nun keinen Zugriff mehr auf die Funktionen der Pflegeempfänger-App.",
+      "description_2": "Bitte kontaktieren Sie den Administrator der App per E-Mail, wenn Sie glauben, dass es sich um einen Fehler handelt.",
+      "title": "Konto ausgesetzt"
+    },
+    "call_error": {
+      "no_audio_and_camera_permission": "Die App hat keine Berechtigung, auf Audio und Kamera zuzugreifen.",
+      "no_audio_permission": "Die App hat keine Berechtigung, auf das Audio zuzugreifen.",
+      "title": "Der Anruf kann nicht abgeschlossen werden"
+    },
+    "expiring_soon_2": {
+      "title": "Letzte Erinnerung vor Ablaufdatum"
+    },
+    "expiring_soon": {
+      "description_1": "Die Probezeit Ihres Kontos endet in {{accountExpiresIn}} Tagen. Sie werden bald keinen Zugriff auf die Funktionen der Pflegeempfänger-App mehr haben.",
+      "description_2": "Bitte kontaktieren Sie den Administrator der App, um Ihr Konto zu aktivieren und die Nutzung fortzusetzen.",
+      "title": "Die Probezeit geht ihrem Ende zu"
+    }
+  },
+  "sceen": {
+    "settings": {
+      "automatic_pickup": "Automatisches Abheben",
+      "automatic_pickup_description": "Der eingehende Anruf wird nach 3 Sekunden automatisch abgehoben",
+      "discharge_alert": "Benachrichtigung Trennung",
+      "discharge_alert_description": "Ist das Tablett nicht angeschlossen, wird der Assistierte mit einem Alarm informiert.",
+      "min_volume": "Ton aktiviert",
+      "min_volume_description": "Die Lautstärke ist immer aktiviert und kann nicht unter 50% sinken"
+    }
+  },
+  "screen": {
+    "chat": {
+      "begin_conversation": "Das Gespräch mit beginnen {{name}}",
+      "input_placeholder": "Eine Nachricht schicken"
+    },
+    "contacts": {
+      "subtitle": "Klicken Sie auf den Namen des Kontakts, um mit ihm in Kontakt zu treten",
+      "title": "Meine Kontakte"
+    },
+    "forget_password": "Bitte geben Sie Ihre E-Mail-Adresse ein, um eine E-Mail zum Zurücksetzen des Passworts zu erhalten.",
+    "login": {
+      "no_account": "Sie haben noch kein Konto?"
+    },
+    "password_reset_confirmed": "Ihre Anfrage zum Zurücksetzen des Passworts wurde berücksichtigt. Wenn Ihr Konto gültig ist, erhalten Sie umgehend eine E-Mail.",
+    "register": {
+      "account_created": "Ihr Konto wurde erstellt",
+      "duplicate_email_error": "Es gibt bereits ein Konto, das mit dieser E-Mail verknüpft ist.",
+      "email_title": "Geben Sie Ihre E-Mail-Adresse an",
+      "invalid_email_error": "Bitte geben Sie eine gültige E-Mail-Adresse an",
+      "invalid_phone_number_error": "Bitte geben Sie eine gültige Telefonnummer an",
+      "missing_email_error": "Bitte geben Sie Ihre E-Mail-Adresse an",
+      "missing_firstname_error": "Bitte geben Sie Ihren Vornamen an",
+      "missing_firstname_lastname_error": "Bitte geben Sie ihren Nach- und Vornamen an",
+      "missing_lastname_error": "Bitte geben Sie Ihren Nachnamen an",
+      "missing_password_error": "Bitte geben Sie ein Passwort ein",
+      "missing_phone_number_error": "Bitte geben Sie eine Telefonnummer an",
+      "missing_postal_code_error": "Postleitzahl",
+      "name_title": "Vor- und Nachname eingeben",
+      "password_title": "Wählen Sie abschließend ein sicheres Passwort",
+      "password_too_short_error": "Bitte geben Sie ein längeres Passwort ein",
+      "phone_title": "Bitte Telefonnummer, land und Aktionscode (Optional) eingeben",
+      "postal_code_placeholder": "Postleitzahl",
+      "referral_code_placeholder": "Aktionscode (optional)",
+      "unknown_create_error": "Das Konto konnte nicht erstellt werden"
+    },
+    "reset_password_confirmed": "Ihre Anfrage zum Zurücksetzen des Passworts wurde berücksichtigt.",
+    "reset_password": {
+      "invalid_request": "Ungültige Anfrage zum Zurücksetzen des Passworts (verwendet oder abgelaufen). Bitte stellen Sie eine weitere Anfrage.",
+      "password_field_label": "Ihr neues Passwort",
+      "title": "Bitte geben Sie Ihr neues Passwort ein"
+    },
+    "solar": {
+      "daytime_description": "<0>Heute ist der <1>\n</1> <3><0>{{hour}}</0></3> <5>\n</5><6>\n</6> Es ist  <8>\n</8><9>{{hour}}</9> </0>",
+      "daytime_title": "Guten Tag {{name}}",
+      "nighttime_description": "<0><0>\n </0>Es ist <3><0>{{hour}}</0></3><4>\n </4> Schlafen ist notwendig, damit Gehirn und Körper sich regenerieren.</0>",
+      "nighttime_footer": "Geh wieder ins Bett",
+      "nighttime_title": "Es ist Nacht"
+    },
+    "video_call": {
+      "automatic_pickup_in": "Automatisches Abheben in {{count}} sekunde",
+      "automatic_pickup_in_plural": "Automatisches Abheben in {{count}} sekunden",
+      "hung_up": "{{Name}} hat aufgelegt",
+      "other_hung_up": "Der Helfer hat aufgelegt",
+      "return_in_secs": "In {{count}} Sekunde wiederkommen",
+      "return_in_secs_plural": "In {{count}} Sekunden wiederkommen"
+    }
+  },
+  "validation": {
+    "password_required": "Passwort erforderlich",
+    "password_too_short": "Passwort zu kurz"
   }
 }

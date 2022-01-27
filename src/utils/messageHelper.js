@@ -1,4 +1,4 @@
-import moment from 'moment'
+import moment from 'core/moment'
 import { getDatestamp } from './time'
 
 const getNextDiffusionDate = (message, now) => {

@@ -14,5 +14,4 @@ export { default as ResetPasswordConfirmedScreen } from './resetPasswordConfirme
 
 //export { default as ReminderListScreen } from './ReminderListScreen';
 //export { default as ReminderEditScreen } from './ReminderEditScreen';
-//export { default as CameraRecordScreen } from './CameraRecordScreen';
 //export { default as PreviewScreen } from './PreviewScreen';

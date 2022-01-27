@@ -1,4 +1,4 @@
-import moment from 'moment'
+import moment from 'core/moment'
 
 const getDatestamp = () => {
   return moment().format('YYYY-MM-DD')

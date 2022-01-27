@@ -18,7 +18,7 @@ import ProgressBar from 'react-native-progress/Bar'
 import AppStyles from 'config/styles'
 import { getGradientColors } from 'utils/colors'
 import { moments, times } from 'utils'
-import moment from 'moment'
+import moment from 'core/moment'
 import useDebounce from 'ui/hooks/use-debounce'
 
 const SystemVolumeManager = () => {

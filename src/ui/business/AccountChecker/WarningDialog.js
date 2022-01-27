@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
-import moment from 'moment'
+import moment from 'core/moment'
 import { Dialog, Portal, Text, Button } from 'react-native-paper'
 import { TRIAL_DURATION_IN_DAYS } from '../../../utils/constant'
 import {

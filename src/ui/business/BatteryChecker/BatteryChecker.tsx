@@ -5,6 +5,7 @@ import DeviceBattery from 'react-native-device-battery'
 import { useDispatch, useSelector } from 'react-redux'
 import { HelpedUserActions } from 'store/helpedUsers'
 import { AuthSelectors } from 'store/auth'
+import { useTranslation } from 'react-i18next'
 
 const BatteryChecker = () => {
   const opacityAnim = useRef(new Animated.Value(0)).current
@@ -14,7 +15,7 @@ const BatteryChecker = () => {
   const onBatteryStateChanged = useCallback(state => {
     setIsCharging(state.charging)
   }, [])
-
+  const { t } = useTranslation()
   useEffect(() => {
     DeviceBattery.isCharging().then((isCharging: boolean) => {
       setIsCharging(isCharging)
@@ -82,7 +83,10 @@ const BatteryChecker = () => {
           }}
           onPress={() => {
             Alert.alert(
-              "Veuillez brancher l'alimentation de la tablette pour assurer un fonctionnement continu de l'application"
+              t(
+                'modal.battery_check.alert',
+                "Veuillez brancher l'alimentation de la tablette pour assurer un fonctionnement continu de l'application"
+              )
             )
           }}
         />

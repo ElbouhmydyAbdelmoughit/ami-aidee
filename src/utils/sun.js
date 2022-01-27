@@ -22,7 +22,7 @@ nadir: Mon Sep 02 2019 01:51:58 GMT+0200 (heure d’été d’Europe centrale)
 nauticalDawn: Mon Sep 02 2019 05:57:02 GMT+0200 (heure d’été d’Europe centrale) {}
 nauticalDusk: Mon Sep 02 2019 21:46:55 GMT+0200 (heure d’été d’Europe centrale) {}
  */
-import moment from 'moment'
+import moment from 'core/moment'
 import SunCalc from 'suncalc'
 
 const PANTHEON_POSITION = {

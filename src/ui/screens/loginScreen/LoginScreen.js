@@ -21,8 +21,7 @@ import { Col, Row, Grid } from 'react-native-easy-grid'
 import { AuthentForm } from 'ui/components'
 import AppStyles from 'src/config/styles'
 
-import moment from 'moment'
-import momentFR from 'moment/locale/fr'
+import moment from 'core/moment'
 import { Translations } from 'core/i18n'
 import LangSelector from './LangSelector'
 
