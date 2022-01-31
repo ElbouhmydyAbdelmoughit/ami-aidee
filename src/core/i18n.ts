@@ -67,6 +67,5 @@ let Translations = getTranslations(t)
 const changeLanguage = (lng: string) => {
   i18n.changeLanguage(lng)
   Translations = getTranslations(i18n.t.bind(i18n))
-  console.log(lng, Translations)
 }
 export { i18n, t, Translations, changeLanguage }

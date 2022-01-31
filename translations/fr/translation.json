@@ -105,7 +105,8 @@
     },
     "reminders_list": {
       "last_reminder": "Dernier rappel :",
-      "next_reminder": "Prochain rappel :"
+      "next_reminder": "Prochain rappel :",
+      "reminder_message": "Penser à {{activity}} {{recurrence}} {{datetime}}"
     },
     "reset_password": {
       "invalid_request": "Demande de réinitialisation de mot de passe invalide (utilisée ou expirée). Veuillez formuler une autre demande.",
@@ -114,9 +115,9 @@
     },
     "reset_password_confirmed": "Votre demande de réinitialisation de mot de passe a été prise en compte.",
     "solar": {
-      "daytime_description": "<0>Nous sommes le <1>\n</1> <3><0>{{hour}}</0></3> <5>\n</5><6>\n</6> Il est <8>\n</8><9>{{hour}}</9> </0>",
+      "daytime_description": "<0>nous sommes le <1>\n</1> <3><0>{{day}}</0></3> <5>\n</5><6>\n</6> il est <8>\n</8><9><0>{{hour}}</0></9> </0>",
       "daytime_title": "Bonjour {{name}}",
-      "nighttime_description": "<0><0>\n</0>Il est <3><0>{{hour}}</0></3><4>\n</4>Dormir est nécessaire pour que ton cerveau répare ton corps.</0>",
+      "nighttime_description": "<0>il est <2><0>{{hour}}</0></2><3>\n</3>Dormir est nécessaire pour que ton cerveau répare ton corps.</0>",
       "nighttime_footer": "Retourne au lit",
       "nighttime_title": "C'est la nuit"
     },

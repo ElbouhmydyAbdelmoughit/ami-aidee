@@ -33,6 +33,7 @@ const CallReceivingScreen = ({
   currentHelpedUser,
 }) => {
   const { status, channelId, callerId } = remoteInvitationProps || {}
+  const { t } = useTranslation()
 
   const callCanceledByCaller = status === 'CANCELED_BY_CALLER'
 
@@ -112,15 +113,14 @@ const CallReceivingScreen = ({
     )
   }
 
-  const { t } = useTranslation()
   const getText = () => {
     if (callCanceledByCaller) {
-      return  t('screen.video_call.other_hung_up', "L'aidant a raccroché")}
+      return t('screen.video_call.other_hung_up', "L'aidant a raccroché")
     }
     if (automaticPickup) {
-      return t('screen.video_call.automatic_pickup_in',{
-        defaultValue: "Décrochage automatique dans {{count}} secondes",
-        count: countdown
+      return t('screen.video_call.automatic_pickup_in', {
+        defaultValue: 'Décrochage automatique dans {{count}} secondes',
+        count: countdown,
       })
     }
     return null

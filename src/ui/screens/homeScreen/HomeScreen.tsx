@@ -28,6 +28,7 @@ import { Button, IconButton } from 'react-native-paper'
 import { Translations } from 'core/i18n'
 import { CircleButton } from 'ui/components'
 import Icon from 'react-native-vector-icons/MaterialIcons'
+import { useTranslation } from 'react-i18next'
 
 /**
  *
@@ -54,13 +55,17 @@ const HomeScreen = ({
   const [message, setMessage] = useState(msg || {})
   //const [volume, setVolume] = useState(1)
   let videoRef = createRef()
+  const { t } = useTranslation()
   useEffect(() => {
     awake()
     messagesRequest(me.helped_users[0].id)
     if (redirectFromSolarView) {
       Toast.show({
-        text: "Appuie sur l'écran pour revenir à la page d'accueil",
-        buttonText: "D'accord",
+        text: t(
+          'screen.reminders_list.go_back_instruction',
+          "Appuie sur l'écran pour revenir à la page d'accueil"
+        ),
+        buttonText: Translations.common.ok,
         duration: 6000,
       })
     }
@@ -155,7 +160,12 @@ const HomeScreen = ({
         >
           {messages.length == 0 && (
             <View style={{ alignItems: 'center' }}>
-              <H1 style={styles.title}>{'Pas de nouveau messages'}</H1>
+              <H1 style={styles.title}>
+                {t(
+                  'screen.reminders_list.no_new_messages',
+                  'Pas de nouveau messages'
+                )}
+              </H1>
               <Button
                 mode="outlined"
                 style={{ borderColor: 'white' }}

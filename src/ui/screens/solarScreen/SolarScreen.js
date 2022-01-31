@@ -95,7 +95,7 @@ const SolarScreen = ({
         content: (
           <Trans i18nKey="screen.solar.nighttime_description">
             <Text>
-              <Text>{'\n'}</Text>il est{' '}
+              il est{' '}
               <Text style={{ fontWeight: 'bold' }}>{{ hour: hour }}</Text>
               <Text>{'\n'}</Text>Dormir est nécessaire pour que ton cerveau
               répare ton corps.
@@ -118,10 +118,10 @@ const SolarScreen = ({
         <Trans i18nKey="screen.solar.daytime_description">
           <Text>
             nous sommes le <Text>{'\n'}</Text>{' '}
-            <Text style={{ fontWeight: 'bold' }}>{{ hour: hour }}</Text>{' '}
+            <Text style={{ fontWeight: 'bold' }}>{{ day }}</Text>{' '}
             <Text>{'\n'}</Text>
             <Text>{'\n'}</Text> il est <Text>{'\n'}</Text>
-            {{ hour: BOLD(hour) }}{' '}
+            <Text style={{ fontWeight: 'bold' }}>{{ hour }}</Text>{' '}
           </Text>
         </Trans>
       ),
@@ -223,6 +223,7 @@ const SolarScreen = ({
     <Container style={{ backgroundColor: material.brandPrimary }}>
       <TimerInitiator />
       <MessageAlertManager />
+      <Timer mode={'awake'} />
       <AccountChecker />
       <LinearGradient
         start={{ x: 0.0, y: 0.0 }}
