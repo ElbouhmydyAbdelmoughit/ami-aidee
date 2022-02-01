@@ -3,7 +3,6 @@
 //export { default as ImageInput } from './ImageInput/index';
 //export { default as Loader } from './Loader/index';
 //export { default as Preview } from './Preview/index';
-//export { default as ReminderForm } from './ReminderForm/index';
 //export { default as ReminderList } from './ReminderList/index';
 //export { default as SnackBar } from './snackBar';
 export { default as Loader } from './loader'

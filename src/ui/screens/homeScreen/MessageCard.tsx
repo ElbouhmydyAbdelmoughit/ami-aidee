@@ -12,8 +12,8 @@ import {
   Right,
 } from 'native-base'
 import { Animated, View } from 'react-native'
-import { MessageSelectors } from 'src/store/message'
-import { subjects, moments, reccurences } from 'utils'
+import { MessageSelectors } from 'store/message'
+import { getSubjects, moments, getRecurrences } from 'utils'
 import moment from 'core/moment'
 import { IconButton } from 'react-native-paper'
 import Icon from 'react-native-vector-icons/MaterialIcons'
@@ -27,6 +27,7 @@ const BR = <Text>{'\n'}</Text>
 
 const getSubject = (message: Message) => {
   console.log('message subjet', message.subjet)
+  const subjects = getSubjects()
   let index
   try {
     index = Number.parseInt(message.subjet)
@@ -87,6 +88,7 @@ video_url: ""
     },
   }
   const moment_value = (moments[moment_id] && moments[moment_id].value) || ''
+  const reccurences = getRecurrences()
   const reccurence_value =
     (reccurences[reccurence] && reccurences[reccurence].value) || ''
   const day = moment().format('dddd Do MMMM YYYY')
@@ -127,7 +129,7 @@ video_url: ""
             {t('screen.reminders_list.reminder_message', {
               defaultValue: 'Penser à {{activity}} {{recurrence}} {{datetime}}',
               activity: activite,
-              reccurence: reccurence_value,
+              recurrence: reccurence_value,
               datetime: `${moment_value} ${formattedMomentTime}`,
             })}
           </Text>

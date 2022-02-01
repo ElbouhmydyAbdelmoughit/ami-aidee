@@ -5,8 +5,8 @@ import { changeLanguage } from 'core/i18n'
 import { setLocale } from 'core/moment'
 
 function* setApplicationLanguage({ lang }) {
-  changeLanguage(lang)
-  setLocale(lang)
+  changeLanguage(lang || 'en')
+  setLocale(lang || 'en')
 }
 
 function* initializeApplicationLanguage() {

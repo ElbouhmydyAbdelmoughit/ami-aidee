@@ -17,7 +17,7 @@ import { modalStyles } from 'ui/components/loader/Loader'
 import ProgressBar from 'react-native-progress/Bar'
 import AppStyles from 'config/styles'
 import { getGradientColors } from 'utils/colors'
-import { moments, times } from 'utils'
+import { times } from 'utils'
 import moment from 'core/moment'
 import useDebounce from 'ui/hooks/use-debounce'
 

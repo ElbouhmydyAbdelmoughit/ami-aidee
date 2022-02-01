@@ -1,5 +1,5 @@
 import { NativeModules } from 'react-native'
-import { subjects, moments, reccurences } from 'src/utils'
+import { getSubjects } from 'utils'
 
 export const Notifier = NativeModules.Notifier
 
@@ -32,6 +32,7 @@ export const notifierAddMessage = message => {
 
   const aStr = `${diffusion_start_date.split('T')[0]}T${moment_time}`
   console.log('notify ' + aStr)
+  const subjects = getSubjects()
   const aDate = moment(aStr)
   notifierAdd({
     title: subjects[subject],

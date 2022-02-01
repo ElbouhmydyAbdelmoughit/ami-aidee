@@ -8,6 +8,7 @@ import de from '../../translations/de/translation.json'
 
 const getTranslations = (t: TFunction) => ({
   common: {
+    after: t('common.after', 'Après'),
     back_to_home: t('common.back_to_home', "Retourner à l'accueil"),
     connection_in_progress: t(
       'common.connection_in_progress',
@@ -15,8 +16,10 @@ const getTranslations = (t: TFunction) => ({
     ),
     coucou: t('common.coucou', 'Coucou'),
     email: t('common.email', 'Email'),
+    everyday: t('common.everyday', 'tous les jours'),
     firstname: t('common.firstname', 'Prénom'),
     forgot_password: t('common.forgot_password', 'Mot de passe oublié ?'),
+    from: t('common.from', 'A partir de'),
     go_back: t('common.go_back', 'Retour'),
     lastname: t('common.lastname', 'Nom'),
     language: t('common.language', 'Langue'),
@@ -24,10 +27,14 @@ const getTranslations = (t: TFunction) => ({
     new_message: t('common.new_messages', 'New message'),
     no_response: t('common.no_response', 'Pas de réponse'),
     ok: t('common.ok', 'OK'),
+    once_a_week: t('common.once_a_week', 'une fois par semaine'),
+    one_time: t('common.one_time', 'une fois'),
     password: t('common.password', 'Mot de passe'),
     phone_number: t('common.phone_number', 'Numéro de téléphone'),
     ringing: t('common.ringing', 'Ça sonne...'),
     settings: t('common.settings', 'Paramètres'),
+    today: t('common.today', "Aujourd'hui"),
+    tomorrow: t('common.tomorrow', 'Demain'),
     to_accept: t('common.to_accept', 'Accepter'),
     to_cancel: t('common.to_cancel', 'Annuler'),
     to_continue: t('common.to_continue', 'Continuer'),

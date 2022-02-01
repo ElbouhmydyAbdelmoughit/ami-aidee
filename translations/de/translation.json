@@ -12,7 +12,7 @@
     "loading": "Wird geladen…",
     "new_messages": "Neue Nachricht",
     "no_response": "Keine Antwort",
-    "ok": "OK",
+    "ok": "Ok",
     "password": "Passwort",
     "phone_number": "Telefonnummer",
     "ringing": "Es klingelt…",
@@ -91,12 +91,12 @@
       "missing_lastname_error": "Bitte geben Sie Ihren Nachnamen an",
       "missing_password_error": "Bitte geben Sie ein Passwort ein",
       "missing_phone_number_error": "Bitte geben Sie eine Telefonnummer an",
-      "missing_postal_code_error": "Postleitzahl",
+      "missing_postal_code_error": "Land",
       "name_title": "Vor- und Nachname eingeben",
       "password_title": "Wählen Sie abschließend ein sicheres Passwort",
       "password_too_short_error": "Bitte geben Sie ein längeres Passwort ein",
       "phone_title": "Bitte Telefonnummer, land und Aktionscode (Optional) eingeben",
-      "postal_code_placeholder": "Postleitzahl",
+      "postal_code_placeholder": "Land",
       "referral_code_placeholder": "Aktionscode (optional)",
       "unknown_create_error": "Das Konto konnte nicht erstellt werden"
     },
@@ -107,7 +107,7 @@
       "title": "Bitte geben Sie Ihr neues Passwort ein"
     },
     "solar": {
-      "daytime_description": "<0>Heute ist der <1>\n</1> <3><0>{{hour}}</0></3> <5>\n</5><6>\n</6> Es ist  <8>\n</8><9><0>{{hour}}</0></9> </0>",
+      "daytime_description": "<0>Heute ist der <1>\n</1> <3><0>{{day}}</0></3> <5>\n</5><6>\n</6> Es ist  <8>\n</8><9><0>{{hour}}</0></9> </0",
       "daytime_title": "Guten Tag {{name}}",
       "nighttime_description": "<0>Es ist <2><0>{{hour}}</0></2><3>\n </3> Schlafen ist notwendig, damit Gehirn und Körper sich regenerieren.</0>",
       "nighttime_footer": "Geh wieder ins Bett",

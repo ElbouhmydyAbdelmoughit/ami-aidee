@@ -6,7 +6,7 @@ export { pathResolver, createAction } from './redux-helper'
 export { loginFetchMock } from './mocks'
 export { fetchPatientMock } from './patientMock'
 export { fetchRecipeMock } from './recipeMock'
-export { subjects, moments, reccurences } from './constant'
+export { getSubjects, getMoments, getRecurrences } from './constant'
 export { Env } from './env'
 export {
   closestMessage,

@@ -1,34 +1,35 @@
 //export const constant = () => {
 
-export const subjects = [
+import { t, Translations } from 'core/i18n'
+
+export const getSubjects = () => [
   {
-    value: 'Rappel de "A FAIRE"',
+    value: t('common.subject_to_do', 'Rappel de "A FAIRE"'),
   },
   {
-    value: 'Prise de Medicament',
+    value: t('common.subject_pill', 'Prise de Medicament'),
   },
   {
-    value: 'Rendez-vous',
+    value: t('common.subject_meeting', 'Rendez-vous'),
   },
 ]
 
-export const moments = [
+export const getMoments = () => [
   {
-    value: 'à partir de',
+    value: Translations.common.from,
   },
   {
-    value: 'après',
+    value: Translations.common.after,
   },
 ]
 
-export const reccurences = [
-  { value: "aujourd'hui" }, //0
-  { value: 'demain' }, //1
-  { value: 'une fois par semaine' }, //2
-  { value: 'tous les jours' }, //3
-  { value: 'une fois par mois' }, //4
+export const getRecurrences = () => [
+  { value: "aujourd'hui", label: Translations.common.today }, //0
+  { value: 'demain', label: Translations.common.tommorrow }, //1
+  { value: 'une fois par semaine', label: Translations.common.once_a_week }, //2
+  { value: 'tous les jours', label: Translations.common.everyday }, //3
+  { value: 'une fois', label: Translations.common.one_time }, //4
 ]
-
 //}
 
 export const AGORA_APP_ID = '2c07e05a54064384b1653247599224c5'
