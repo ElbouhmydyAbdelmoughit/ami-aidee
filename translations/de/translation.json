@@ -1,11 +1,14 @@
 {
   "common": {
+    "after": "Nach",
     "back_to_home": "Zurück zur Startseite",
     "connection_in_progress": "Verbindung wird erstellt…",
     "coucou": "Hallo!",
     "email": "E-Mail-Adresse",
+    "everyday": "Täglich",
     "firstname": "Vorname",
     "forgot_password": "Passwort vergessen?",
+    "from": "Ab",
     "go_back": "Zurück",
     "language": "Sprache",
     "lastname": "Nachname",
@@ -13,10 +16,15 @@
     "new_messages": "Neue Nachricht",
     "no_response": "Keine Antwort",
     "ok": "Ok",
+    "once_a_week": "Einmal pro Woche",
+    "one_time": "Einmal",
     "password": "Passwort",
     "phone_number": "Telefonnummer",
     "ringing": "Es klingelt…",
     "settings": "Einstellungen",
+    "subject_meeting": "Termin",
+    "subject_pill": "Einnahme von Medikamenten",
+    "subject_to_do": "Erinnerung \"zu erledigen\"",
     "to_accept": "Akzeptieren",
     "to_cancel": "Abbrechen",
     "to_confirm": "Bestätigen",
@@ -25,6 +33,8 @@
     "to_logout": "Ausloggen",
     "to_send": "Senden",
     "to_signup": "Anmelden",
+    "today": "Heute",
+    "tomorrow": "Morgen",
     "unknown_error": "Unbekannter Fehler",
     "video_call": "Videoanruf",
     "your_email": "Ihre E-Mail-Adresse"
@@ -40,6 +50,9 @@
       "description_1": "Ihr Konto wurde ausgesetzt. Sie haben nun keinen Zugriff mehr auf die Funktionen der Pflegeempfänger-App.",
       "description_2": "Bitte kontaktieren Sie den Administrator der App per E-Mail, wenn Sie glauben, dass es sich um einen Fehler handelt.",
       "title": "Konto ausgesetzt"
+    },
+    "battery_check": {
+      "alert": "Bitte schließen Sie das Netzteil des Tablets an, um einen kontinuierlichen Betrieb der Anwendung zu gewährleisten"
     },
     "call_error": {
       "no_audio_and_camera_permission": "Die App hat keine Berechtigung, auf Audio und Kamera zuzugreifen.",
@@ -67,8 +80,8 @@
   },
   "screen": {
     "chat": {
-      "begin_conversation": "Das Gespräch mit beginnen {{name}}",
-      "input_placeholder": "Eine Nachricht schicken"
+      "begin_conversation": "Das Gespräch mit {{name}} beginnen",
+      "input_placeholder": "Eine Nachricht schreiben"
     },
     "contacts": {
       "subtitle": "Klicken Sie auf den Namen des Kontakts, um mit ihm in Kontakt zu treten",
@@ -99,6 +112,13 @@
       "postal_code_placeholder": "Land",
       "referral_code_placeholder": "Aktionscode (optional)",
       "unknown_create_error": "Das Konto konnte nicht erstellt werden"
+    },
+    "reminders_list": {
+      "go_back_instruction": "Klicken Sie auf den Bildschirm, um zum Startbildschirm zurückzukehren",
+      "last_reminder": "Letzte Erinnerung:",
+      "next_reminder": "Nächste Erinnerung:",
+      "no_new_messages": "Keine neue Nachricht",
+      "reminder_message": "Erinnere dich an {{activity}} {{recurrence}} {{datetime}}"
     },
     "reset_password_confirmed": "Ihre Anfrage zum Zurücksetzen des Passworts wurde berücksichtigt.",
     "reset_password": {

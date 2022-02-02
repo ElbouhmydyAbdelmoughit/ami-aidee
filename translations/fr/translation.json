@@ -81,7 +81,7 @@
   "screen": {
     "chat": {
       "begin_conversation": "Commencez la conversation avec {{name}}",
-      "input_placeholder": "Envoyer un message"
+      "input_placeholder": "Ecrire un message"
     },
     "contacts": {
       "subtitle": "Appuyez sur le nom du contact pour entrer en contact",
@@ -114,10 +114,10 @@
       "unknown_create_error": "Le compte n'a pas pu être créé"
     },
     "reminders_list": {
-      "go_back_instruction": "Appuie sur l'écran pour revenir à la page d'accueil",
+      "go_back_instruction": "Appuyez sur l'écran pour revenir à la page d'accueil",
       "last_reminder": "Dernier rappel :",
       "next_reminder": "Prochain rappel :",
-      "no_new_messages": "Pas de nouveau messages",
+      "no_new_messages": "Pas de nouveau message",
       "reminder_message": "Penser à {{activity}} {{recurrence}} {{datetime}}"
     },
     "reset_password": {

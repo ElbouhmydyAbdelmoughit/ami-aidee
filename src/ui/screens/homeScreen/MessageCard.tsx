@@ -13,7 +13,7 @@ import {
 } from 'native-base'
 import { Animated, View } from 'react-native'
 import { MessageSelectors } from 'store/message'
-import { getSubjects, moments, getRecurrences } from 'utils'
+import { getSubjects, getMoments, getRecurrences } from 'utils'
 import moment from 'core/moment'
 import { IconButton } from 'react-native-paper'
 import Icon from 'react-native-vector-icons/MaterialIcons'
@@ -87,6 +87,7 @@ video_url: ""
       marginBottom: 16,
     },
   }
+  const moments = getMoments()
   const moment_value = (moments[moment_id] && moments[moment_id].value) || ''
   const reccurences = getRecurrences()
   const reccurence_value =
@@ -129,7 +130,8 @@ video_url: ""
             {t('screen.reminders_list.reminder_message', {
               defaultValue: 'Penser à {{activity}} {{recurrence}} {{datetime}}',
               activity: activite,
-              recurrence: reccurence_value,
+              recurrence:
+                reccurences[reccurence] && reccurences[reccurence].label,
               datetime: `${moment_value} ${formattedMomentTime}`,
             })}
           </Text>

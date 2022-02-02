@@ -87,8 +87,8 @@ function updateRemote(auth) {
             '* Conflict between source defaultValue and Google Sheets: please fix now\nKey: %s\nRemote value:\n%s\nLocal value:\n%s\n\n'
           ),
           key,
-          oldObj[key][2] && oldObj[key][2].replace(/\n/g, '\\n'),
-          newObj[key] && newObj[key].replace(/\n/g, '\\n')
+          oldObj[key][2] && oldObj[key][2].replace(/\n/g, '\n'),
+          newObj[key] && newObj[key].replace(/\n/g, '\n')
         )
         // keep Google Sheets value
         return oldObj[key]

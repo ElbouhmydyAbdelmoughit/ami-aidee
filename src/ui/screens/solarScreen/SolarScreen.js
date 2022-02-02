@@ -15,17 +15,6 @@ import MessageAlertManager from 'ui/business/MessageAlertManager'
 import SolarView from './SolarView'
 import ContactButton from './ContactButton'
 import { Trans, useTranslation } from 'react-i18next'
-// notifierAuthorization()
-/*
-var fr = moment().locale("fr", momentFR)
-notifierAdd({
-  title: "test",
-  body: "body test",
-  date: fr.add(15, 's').toDate().getTime()
-}).then((result) => {
-  console.log(result)
-})
-*/
 
 const BOLD = text => <Text style={{ fontWeight: 'bold' }}>{text}</Text>
 const BR = <Text>{'\n'}</Text>
