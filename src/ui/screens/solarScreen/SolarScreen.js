@@ -206,7 +206,16 @@ const SolarScreen = ({
       break
   }
 
-  const textColor = time == 'DAWN' ? '#848484' : '#fff'
+  const getTextColor = () => {
+    if (time === 'DAWN') {
+      return '#848484'
+    }
+    if (time === 'SUN' || time === 'DUSK') {
+      return '#00000077'
+    }
+    return '#fff'
+  }
+  const textColor = getTextColor()
 
   return (
     <Container style={{ backgroundColor: material.brandPrimary }}>
@@ -250,7 +259,7 @@ const SolarScreen = ({
           top: 32,
         }}
       >
-        <ContactButton hasNewMessage={hasNewMessage} />
+        <ContactButton hasNewMessage={hasNewMessage} color={textColor} />
       </View>
     </Container>
   )

@@ -7,10 +7,8 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import useActivityLog from '../../../hooks/use-activity-log'
 import { Translations } from 'core/i18n'
 
-const ContactButton = ({ hasNewMessage }) => {
-  const primaryColor = hasNewMessage
-    ? 'rgba(224, 41, 41, 0.9)'
-    : 'rgb(255, 255, 255)'
+const ContactButton = ({ hasNewMessage, color }) => {
+  const primaryColor = hasNewMessage ? 'rgba(224, 41, 41, 0.9)' : color
   const logActivity = useActivityLog()
   return (
     <TouchableRipple
@@ -24,7 +22,7 @@ const ContactButton = ({ hasNewMessage }) => {
           alignItems: 'center',
           justifyContent: 'center',
           borderWidth: 4,
-          borderColor: 'rgba(255, 255, 255, 0.8)',
+          borderColor: color,
           borderRadius: 8,
           padding: 20,
           paddingTop: 8,

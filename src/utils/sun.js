@@ -109,7 +109,6 @@ export const times = (now, helpedUser) => {
     now.isAfter(computedTimes.solarNoon) && now.isBefore(computedTimes.dusk) //is sunNoon => now > sunriseEnd && now < dusk <= default
   const isDusk = now.isBetween(computedTimes.dusk, computedTimes.night)
   const isNight = now.isAfter(computedTimes.night)
-
   if (isDawn) return 'DAWN'
   if (isSunNoon) return 'SUN'
   if (isDusk) return 'DUSK'
