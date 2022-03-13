@@ -1,5 +1,4 @@
 import { connect } from 'react-redux'
-import { getTranslate } from 'react-localize-redux'
 import SleepScreen from './SleepScreen'
 
 import { TimerActions } from 'src/store/timer'

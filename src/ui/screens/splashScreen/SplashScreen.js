@@ -1,69 +1,77 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { View, Linking } from 'react-native'
 import { Actions } from '@ami-app/react-native-router-flux'
 
-import { Container, Content, Text, H1 } from 'native-base'
-import material from 'AMIaide/native-base-theme/variables/material'
+import { Container, H1 } from 'native-base'
 import LinearGradient from 'react-native-linear-gradient'
 
 const color = ['#3FEDFF', '#8772FF']
 
-const useMount = func => useEffect(() => func(), [])
-
-let urlUsed = false
 const useInitialURL = () => {
   const [url, setUrl] = useState(null)
-  const [processing, setProcessing] = useState(true)
+  const processedRef = useRef(false)
 
-  useMount(() => {
+  useEffect(() => {
     const getUrlAsync = async () => {
-      if (urlUsed) {
-        setProcessing(false)
+      if (processedRef.current) {
         return
       }
       // Get the deep link used to open the app
       const initialUrl = await Linking.getInitialURL()
-      console.log('linking', initialUrl)
       setUrl(initialUrl)
-      setProcessing(false)
+      processedRef.current = true
     }
 
     getUrlAsync()
-  })
+  }, [])
 
   return {
     url,
     markUrlAsUsed: () => {
       setUrl(null)
-      urlUsed = true
+      processedRef.current = true
     },
-    processing,
+    processedRef,
   }
 }
 
-const SplashScreen = ({ auth, fetchUser }) => {
-  const {
-    url: initialUrl,
-    processing: processingInitialUrl,
-    markUrlAsUsed,
-  } = useInitialURL()
+const SplashScreen = ({ auth, fetchUser, onReady }) => {
+  const { url: initialUrl, processedRef, markUrlAsUsed } = useInitialURL()
+  const redirectedRef = useRef(false)
 
   useEffect(() => {
-    if (initialUrl) {
+    console.log('SplashScreen: redirectedRef', redirectedRef.current)
+    if (redirectedRef.current) {
+      return
+    }
+    redirectedRef.current = true
+
+    if (initialUrl && !processedRef.current) {
       if (initialUrl.indexOf('reset-password') !== -1) {
         const resetCode = initialUrl.substr(
           initialUrl.indexOf('reset-password') + 15
         )
         markUrlAsUsed()
+        redirectedRef.current = true
+        console.log('SplashScreen: redirecting to reset password')
         Actions.resetPassword(resetCode)
+        onReady()
         return
       }
     }
     if (auth && auth.jwt) {
       fetchUser()
+      redirectedRef.current = true
+      console.log('SplashScreen: redirecting to root')
       Actions.root()
-    } else Actions.login()
-  }, [processingInitialUrl, auth])
+      onReady()
+    } else {
+      console.log('SplashScreen: redirecting to login')
+      redirectedRef.current = true
+      Actions.login()
+      onReady()
+    }
+  }, [redirectedRef.current, initialUrl, auth && auth.jwt])
 
   return (
     <Container>

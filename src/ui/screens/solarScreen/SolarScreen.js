@@ -5,7 +5,6 @@ import material from 'AMIaide/native-base-theme/variables/material'
 
 import { Actions } from '@ami-app/react-native-router-flux'
 import LinearGradient from 'react-native-linear-gradient'
-import { Timer } from 'src/ui/components'
 import AccountChecker from 'src/ui/business/AccountChecker'
 import moment from 'core/moment'
 import { times } from 'utils'
@@ -221,7 +220,6 @@ const SolarScreen = ({
     <Container style={{ backgroundColor: material.brandPrimary }}>
       <TimerInitiator />
       <MessageAlertManager />
-      <Timer mode={'awake'} />
       <AccountChecker />
       <LinearGradient
         start={{ x: 0.0, y: 0.0 }}

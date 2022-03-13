@@ -5,7 +5,6 @@ import { Actions } from '@ami-app/react-native-router-flux'
 import {
   TouchableWithoutFeedback,
   View,
-  StatusBar,
   StyleSheet,
   TouchableOpacity,
   Pressable,
@@ -141,7 +140,6 @@ const HomeScreen = ({
           />
         </>
       )}
-      <StatusBar backgroundColor="transparent" translucent />
       <TouchableWithoutFeedback
         onPress={() => {
           if (redirectFromSolarView) {

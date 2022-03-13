@@ -35,7 +35,7 @@ const reducers = {
   snackBar: SnackReducers,
   videoCall: resettable(VideoCallReducers),
   instantMessage: resettable(InstantMessagesReducer),
-  navigation: resettable(NavigationReducers),
+  navigation: NavigationReducers,
   resetPasswordRequest: resettable(ResetPasswordRequestReducers),
 }
 

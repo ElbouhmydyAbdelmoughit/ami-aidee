@@ -118,7 +118,7 @@
       "last_reminder": "Last reminder:",
       "next_reminder": "Next reminder:",
       "no_new_messages": "No new message",
-      "reminder_message": "Remember to {{activity}} {{recurrence}} {{datetime}}"
+      "reminder_message": "Remember to {{activity}} {{datetime}}"
     },
     "reset_password_confirmed": "Your password reset request has been taken into account.",
     "reset_password": {

@@ -1,5 +1,7 @@
 import React, { useEffect, useCallback } from 'react'
 import 'dayjs/locale/fr'
+import 'dayjs/locale/en'
+import 'dayjs/locale/de'
 
 import { View, Text } from 'react-native'
 import {
@@ -13,6 +15,8 @@ import { Avatar } from 'react-native-paper'
 import { getUserAbbr, getUserDisplayName } from '../../../utils/user'
 import { useTranslation } from 'react-i18next'
 import { Translations } from 'core/i18n'
+import { NavigationSelectors } from 'store/navigation'
+import { useSelector } from 'react-redux'
 
 const messageTransformer = serverFormatMessage => ({
   text: serverFormatMessage.content,
@@ -38,11 +42,12 @@ const ChatRoom = ({
   const onSend = useCallback((newMessages = []) => {
     sendMessage(newMessages[0].text)
   }, [])
+  const lang = useSelector(NavigationSelectors.getApplicationLanguage)
   return (
     <GiftedChat
       messages={messages.map(messageTransformer)}
       onSend={onSend}
-      locale="fr"
+      locale={lang}
       user={{
         _id: currentUserId,
       }}

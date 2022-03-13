@@ -17,8 +17,6 @@ function* authorize(service) {
 }
 
 export function* authenticatedMutation(mutationString, headers = {}) {
-  console.log(mutationString)
-
   const { jwt } = yield select(state => state.auth)
   headers = { ...headers, Authorization: `Bearer ${jwt}` }
   return yield call(mutation, { mutationString, headers })
@@ -28,8 +26,6 @@ export function* authenticatedQuery(queryString, headers = {}) {
   const { jwt } = yield select(state => state.auth)
   headers = { ...headers, Authorization: `Bearer ${jwt}` }
 
-  console.log(queryString)
-  console.log(headers)
   return yield call(query, { queryString, headers })
 }
 

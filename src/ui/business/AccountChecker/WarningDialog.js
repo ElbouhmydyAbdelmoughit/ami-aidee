@@ -36,7 +36,6 @@ const WarningDialog = ({
   const [dialogVisible, setDialogVisible] = useState(false)
   const { t } = useTranslation()
   useEffect(() => {
-    console.log('hihi')
     const accountExpiresIn = getAccountExpiresIn(helpedUser)
 
     if (
