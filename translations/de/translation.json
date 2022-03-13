@@ -1,29 +1,29 @@
 {
   "common": {
     "after": "Nach",
-    "back_to_home": "Zurück zur Startseite",
+    "back_to_home": "Zurück zur startseite",
     "connection_in_progress": "Verbindung wird erstellt…",
     "coucou": "Hallo!",
-    "email": "E-Mail-Adresse",
+    "email": "E-mail-adresse",
     "everyday": "Täglich",
     "firstname": "Vorname",
     "forgot_password": "Passwort vergessen?",
-    "from": "Ab",
+    "from": "ab",
     "go_back": "Zurück",
     "language": "Sprache",
     "lastname": "Nachname",
     "loading": "Wird geladen…",
-    "new_messages": "Neue Nachricht",
-    "no_response": "Keine Antwort",
+    "new_messages": "Neue nachricht",
+    "no_response": "Keine antwort",
     "ok": "Ok",
-    "once_a_week": "Einmal pro Woche",
-    "one_time": "Einmal",
+    "once_a_week": "einmal pro woche",
+    "one_time": "einmal",
     "password": "Passwort",
     "phone_number": "Telefonnummer",
     "ringing": "Es klingelt…",
     "settings": "Einstellungen",
     "subject_meeting": "Termin",
-    "subject_pill": "Einnahme von Medikamenten",
+    "subject_pill": "Einnahme von medikamenten",
     "subject_to_do": "Erinnerung \"zu erledigen\"",
     "to_accept": "Akzeptieren",
     "to_cancel": "Abbrechen",
@@ -35,20 +35,20 @@
     "to_signup": "Anmelden",
     "today": "Heute",
     "tomorrow": "Morgen",
-    "unknown_error": "Unbekannter Fehler",
+    "unknown_error": "Unbekannter fehler",
     "video_call": "Videoanruf",
-    "your_email": "Ihre E-Mail-Adresse"
+    "your_email": "Ihre e-mail-adresse"
   },
   "modal": {
     "account_expired": {
-      "account_info": "E-Mail des Administrators: ami.sav@lbdc.eu",
-      "description_1": "Sie haben die 30-tägige Probezeit der Pflegeempfänger-App überschritten.",
-      "description_2": "Bitte kontaktieren Sie den Administrator der App per E-Mail, um Ihr Konto zu aktivieren und die Nutzung fortzusetzen.",
-      "title": "Abgelaufenes Konto"
+      "account_info": "e-Mail des administrators: ami.sav@lbdc.eu",
+      "description_1": "Sie haben die 30-tägige probezeit der pflegeempfänger-app überschritten.",
+      "description_2": "Bitte kontaktieren sie den administrator der App per e-Mail, um Ihr konto zu aktivieren und die Nutzung fortzusetzen.",
+      "title": "Abgelaufenes konto"
     },
     "account_suspended": {
-      "description_1": "Ihr Konto wurde ausgesetzt. Sie haben nun keinen Zugriff mehr auf die Funktionen der Pflegeempfänger-App.",
-      "description_2": "Bitte kontaktieren Sie den Administrator der App per E-Mail, wenn Sie glauben, dass es sich um einen Fehler handelt.",
+      "description_1": "Ihr Konto wurde ausgesetzt. Sie haben nun keinen zugriff mehr auf die Funktionen der Pflegeempfänger-App.",
+      "description_2": "Bitte kontaktieren sie den administrator der app per e-mail, wenn sie glauben, dass es sich um einen fehler handelt.",
       "title": "Konto ausgesetzt"
     },
     "battery_check": {
@@ -73,7 +73,7 @@
       "automatic_pickup": "Automatisches Abheben",
       "automatic_pickup_description": "Der eingehende Anruf wird nach 3 Sekunden automatisch abgehoben",
       "discharge_alert": "Benachrichtigung Trennung",
-      "discharge_alert_description": "Ist das Tablett nicht angeschlossen, wird der Assistierte mit einem Alarm informiert.",
+      "discharge_alert_description": "Ist das Tablett nicht angeschlossen, wird des/der Pflegeempfänger(in) mit einem Alarm informiert.",
       "min_volume": "Ton aktiviert",
       "min_volume_description": "Die Lautstärke ist immer aktiviert und kann nicht unter 50% sinken"
     }
@@ -117,29 +117,29 @@
       "go_back_instruction": "Klicken Sie auf den Bildschirm, um zum Startbildschirm zurückzukehren",
       "last_reminder": "Letzte Erinnerung:",
       "next_reminder": "Nächste Erinnerung:",
-      "no_new_messages": "Keine neue Nachricht",
+      "no_new_messages": "Keine neue nachricht",
       "reminder_message": "Erinnere dich an {{activity}} {{recurrence}} {{datetime}}"
     },
     "reset_password_confirmed": "Ihre Anfrage zum Zurücksetzen des Passworts wurde berücksichtigt.",
     "reset_password": {
-      "invalid_request": "Ungültige Anfrage zum Zurücksetzen des Passworts (verwendet oder abgelaufen). Bitte stellen Sie eine weitere Anfrage.",
-      "password_field_label": "Ihr neues Passwort",
-      "title": "Bitte geben Sie Ihr neues Passwort ein"
+      "invalid_request": "Ungültige Anfrage zum Zurücksetzen des Passworts (verwendet oder abgelaufen). Bitte stellen Sie eine weitere anfrage.",
+      "password_field_label": "Ihr neues passwort",
+      "title": "Bitte geben sie Ihr neues passwort ein"
     },
     "solar": {
       "daytime_description": "<0>Heute ist der <1>\n</1> <3><0>{{day}}</0></3> <5>\n</5><6>\n</6> Es ist  <8>\n</8><9><0>{{hour}}</0></9> </0",
-      "daytime_title": "Guten Tag {{name}}",
+      "daytime_title": "Guten tag {{name}}",
       "nighttime_description": "<0>Es ist <2><0>{{hour}}</0></2><3>\n </3> Schlafen ist notwendig, damit Gehirn und Körper sich regenerieren.</0>",
-      "nighttime_footer": "Geh wieder ins Bett",
-      "nighttime_title": "Es ist Nacht"
+      "nighttime_footer": "Geh wieder ins bett",
+      "nighttime_title": "Es ist nacht"
     },
     "video_call": {
-      "automatic_pickup_in": "Automatisches Abheben in {{count}} sekunde",
-      "automatic_pickup_in_plural": "Automatisches Abheben in {{count}} sekunden",
-      "hung_up": "{{Name}} hat aufgelegt",
+      "automatic_pickup_in": "Automatisches abheben in {{count}} sekunde",
+      "automatic_pickup_in_plural": "Automatisches abheben in {{count}} sekunden",
+      "hung_up": "{{name}} hat aufgelegt",
       "other_hung_up": "Der Helfer hat aufgelegt",
-      "return_in_secs": "In {{count}} Sekunde wiederkommen",
-      "return_in_secs_plural": "In {{count}} Sekunden wiederkommen"
+      "return_in_secs": "In {{count}} sekunde wiederkommen",
+      "return_in_secs_plural": "In {{count}} sekunden wiederkommen"
     }
   },
   "validation": {

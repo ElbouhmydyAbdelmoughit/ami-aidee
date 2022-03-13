@@ -8,7 +8,7 @@
     "everyday": "Every day",
     "firstname": "First name",
     "forgot_password": "Forgot password?",
-    "from": "From",
+    "from": "from",
     "go_back": "Return",
     "language": "Language",
     "lastname": "Last name",
@@ -16,8 +16,8 @@
     "new_messages": "New message",
     "no_response": "No answer",
     "ok": "Ok",
-    "once_a_week": "Once a week",
-    "one_time": "Just once",
+    "once_a_week": "once a week",
+    "one_time": "just once",
     "password": "Password",
     "phone_number": "Phone number",
     "ringing": "It's ringing…",
@@ -32,22 +32,22 @@
     "to_login": "Log In",
     "to_logout": "Logout",
     "to_send": "Send",
-    "to_signup": "Sign Up",
+    "to_signup": "Sign up",
     "today": "Today",
     "tomorrow": "Tomorrow",
     "unknown_error": "Unknown error",
-    "video_call": "Video Call",
+    "video_call": "Video call",
     "your_email": "Your email address"
   },
   "modal": {
     "account_expired": {
       "account_info": "Admin email: ami.sav@lbdc.eu",
-      "description_1": "You have exceeded the 30-day trial of the Care receiver application.",
+      "description_1": "You have exceeded the 30-day trial of the Caree's app.",
       "description_2": "Please contact the app admin via email to activate your account & continue its use.",
       "title": "Account expired"
     },
     "account_suspended": {
-      "description_1": "Your account has been suspended. You will not have access to the functionalities anymore of the Care Receiver application.",
+      "description_1": "Your account has been suspended. You will not have access to the functionalities anymore of the Caree's app",
       "description_2": "Please contact the app administrator via email if you believe this is an error.",
       "title": "Account suspended"
     },
@@ -63,7 +63,7 @@
       "title": "Last reminder before expiration"
     },
     "expiring_soon": {
-      "description_1": "Your account trial period will end in {{accountExpiresIn}} days. You will soon no longer have access to the features of the Care Receiver application",
+      "description_1": "Your account trial period will end in {{accountExpiresIn}} days. You will soon no longer have access to the features of the Caree's app.",
       "description_2": "Please contact the app admin via email to activate your account & continue its use.",
       "title": "The access period is coming to an end"
     }
@@ -73,7 +73,7 @@
       "automatic_pickup": "Auto-Answering Calls",
       "automatic_pickup_description": "The incoming call will be answered automatically after 3 seconds",
       "discharge_alert": "Unplugged Alert",
-      "discharge_alert_description": "When the tablet is unplugged, the Care receiver will receive an alert to reconnect it.",
+      "discharge_alert_description": "When the tablet is unplugged, the Caree will receive an alert to reconnect it.",
       "min_volume": "Volume activated",
       "min_volume_description": "The volume will stay activated and will be set at 50% minimum"
     }
@@ -134,9 +134,9 @@
       "nighttime_title": "It’s night time"
     },
     "video_call": {
-      "automatic_pickup_in": "Auto-Answering Call in {{count}} second",
-      "automatic_pickup_in_plural": "Auto-Answering Call in {{count}} seconds",
-      "hung_up": "{{Name}} hung up",
+      "automatic_pickup_in": "Auto-answering call in {{count}} second",
+      "automatic_pickup_in_plural": "Auto-answering call in {{count}} seconds",
+      "hung_up": "{{name}} hung up",
       "other_hung_up": "The Caregiver hung up",
       "return_in_secs": "Back in {{count}} second",
       "return_in_secs_plural": "Back in {{count}} seconds"
