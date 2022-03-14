@@ -23,3 +23,10 @@ export type HelpedUser = {
 export type Message = {
   subjet: string
 }
+
+export type Locale = 'en' | 'fr' | 'de'
+
+export type ReduxAction<S, Payload> = (
+  state: S,
+  action: Payload & { type: string }
+) => S

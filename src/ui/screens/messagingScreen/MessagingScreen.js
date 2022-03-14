@@ -10,6 +10,8 @@ import ChatRoom from '../../components/ChatRoom'
 import MessageUpdater from './MessageUpdater'
 import useActivityLog from '../../hooks/use-activity-log'
 import { Translations } from 'core/i18n'
+import { useDispatch } from 'react-redux'
+import { NavigationActions } from 'store/navigation'
 
 const styles = StyleSheet.create({
   box: {
@@ -38,6 +40,7 @@ const MessagingScreen = ({
   updateLastReadRequest,
   messagesRequest,
 }) => {
+  const dispatch = useDispatch()
   const logActivity = useActivityLog()
   useEffect(() => {
     updateLastReadRequest(auxiliary)
@@ -67,6 +70,7 @@ const MessagingScreen = ({
             <TouchableRipple
               onPress={_.debounce(() => {
                 logActivity('start_video_call')
+                dispatch(NavigationActions.enterBusyState())
                 Actions.push('videoCall', { auxiliary, startMode: 'video' })
               }, 400)}
             >

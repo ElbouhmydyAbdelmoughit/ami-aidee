@@ -5,12 +5,25 @@ import { loadState, saveState } from 'src/utils/storage'
 import appReducers, { rootSaga } from 'store'
 import { createLogger } from 'redux-logger'
 
-import { persistStore, persistReducer } from 'redux-persist'
+import { persistStore, persistReducer, createMigrate } from 'redux-persist'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import errorReporter from './error-reporter'
 
+const migrations = {
+  0: state => {
+    return {
+      ...state,
+      navigation: {
+        ...state.navigation,
+        returnToHomeState: 'idle',
+        screenSavingState: 'idle',
+      },
+    }
+  },
+}
 const persistConfig = {
   key: 'root',
+  version: 0,
   storage: AsyncStorage,
   blacklist: [
     // In message there are "view" state like message_alerted,
@@ -23,6 +36,7 @@ const persistConfig = {
     'resetPasswordRequest',
   ],
   timeout: null,
+  migrate: createMigrate(migrations, { debug: true }),
 }
 
 const logger = createLogger({
@@ -41,8 +55,8 @@ const persistedState = loadState()
 // Configure store middleware
 const middleware = [
   // Info: Apply sagaMiddleware in first !
-  applyMiddleware(logger),
   applyMiddleware(sagaMiddleware),
+  // applyMiddleware(logger),
 ].concat(
   process.env.NODE_ENV === 'development'
     ? [

@@ -1,10 +1,29 @@
-import { takeLatest, select, call } from 'redux-saga/effects'
-import { types } from './actions'
+import {
+  takeLatest,
+  select,
+  call,
+  put,
+  cancelled,
+  cancel,
+  fork,
+  take,
+  race,
+} from 'redux-saga/effects'
+import NavigationActions, { types } from './actions'
 import NavigationSelectors from './selectors'
 import { changeLanguage } from 'core/i18n'
 import { setLocale } from 'core/moment'
-
-function* setApplicationLanguage({ lang }) {
+import { delay } from 'redux-saga'
+import {
+  RETURN_TO_HOME_DURATION,
+  SCREENSAVING_DURATION,
+  WAKEUP_DURATION,
+} from 'utils/constant'
+import { Actions } from '@ami-app/react-native-router-flux'
+import { Locale } from 'core/types'
+import { types as userActivitiesTypes } from '../user-activities/actions'
+import { tasks } from 'googleapis/build/src/apis/tasks'
+function* setApplicationLanguage({ lang }: { lang: Locale }) {
   changeLanguage(lang || 'en')
   setLocale(lang || 'en')
 }
@@ -14,10 +33,113 @@ function* initializeApplicationLanguage() {
   yield call(setApplicationLanguage, { lang: appLang })
 }
 
+function* backToRootTimer(duration: number) {
+  try {
+    console.log('NavigationSagas: waiting for back to root duration')
+    yield delay(duration)
+    console.log('NavigationSagas: redirecting to root screen')
+    yield call(Actions.accueil.bind(Actions))
+  } finally {
+    if (yield cancelled()) {
+      // let's relaunch the timer
+      console.log('NavigationSagas: idle mode, resume timer')
+      yield put(NavigationActions.changeReturnToHomeState('after_1_min'))
+    }
+  }
+}
+
+function* sleepScreenTimer() {
+  console.log('NavigationSagas: waiting for sleep screen duration')
+  yield delay(SCREENSAVING_DURATION)
+  console.log('NavigationSagas: redirecting to sleep screen')
+  yield call(Actions.sleep.bind(Actions))
+  yield delay(WAKEUP_DURATION)
+  console.log('NavigationSagas: redirecting to home screen')
+  yield call(Actions.root.bind(Actions))
+}
+
+function* redirectToSleepScreenTimerTask() {
+  while (true) {
+    console.log('NavigationSagas: redirectToSleepScreen/waiting for task')
+    yield take(types.CHANGE_SCREEN_SAVING_STATE)
+    let screenSavingState = yield select(
+      NavigationSelectors.getScreenSavingState
+    )
+    console.log(
+      'NavigationSagas: redirectToSleepScreen/screenSavingState',
+      screenSavingState
+    )
+
+    if (screenSavingState === 'home') {
+      console.log('NavigationSagas: redirectToSleepScreen/launch sleep timer')
+      yield
+      const sleepScreenTask = yield fork(sleepScreenTimer)
+      yield take(types.CHANGE_SCREEN_SAVING_STATE)
+
+      const {
+        screenTouched,
+        activityLogRequest,
+        changeScreenSavingState,
+      } = yield race({
+        screenTouched: take(types.SCREEN_TOUCHED),
+        activityLogRequest: take(userActivitiesTypes.ACTIVITY_LOG_REQUEST),
+        changeScreenSavingState: take(types.CHANGE_SCREEN_SAVING_STATE),
+      })
+      if (screenTouched || activityLogRequest) {
+        console.log('NavigationSagas: cancelling return to sleep')
+        yield cancel(sleepScreenTask)
+      }
+    }
+  }
+}
+
+function* redirectToRootTimerTask() {
+  while (true) {
+    yield take(types.CHANGE_RETURN_TO_HOME_STATE)
+    let returnToHomeState = yield select(
+      NavigationSelectors.getReturnToHomeState
+    )
+
+    if (
+      returnToHomeState !== 'after_1_min' &&
+      returnToHomeState !== 'after_2_min'
+    ) {
+      continue
+    }
+
+    console.log('NavigationSagas: launch back to root timer')
+    // starts the task in the background
+    const returnToHomeTask = yield fork(
+      backToRootTimer,
+      returnToHomeState === 'after_1_min'
+        ? RETURN_TO_HOME_DURATION
+        : 2 * RETURN_TO_HOME_DURATION
+    )
+
+    const { screenTouched, activityLogRequest, enterBusyState } = yield race({
+      screenTouched: take(types.SCREEN_TOUCHED),
+      activityLogRequest: take(userActivitiesTypes.ACTIVITY_LOG_REQUEST),
+      enterBusyState: take(types.ENTER_BUSY_STATE),
+    })
+
+    yield cancel(returnToHomeTask)
+  }
+}
+
+function* exitBusyState() {
+  const prevReturnToHomeState = yield select(
+    NavigationSelectors.getReturnToHomePreviousState
+  )
+  yield put(NavigationActions.changeReturnToHomeState(prevReturnToHomeState))
+}
+
 export default [
   takeLatest(types.SET_APPLICATION_LANGUAGE, setApplicationLanguage),
   takeLatest(
     types.INITIALIZE_APPLICATION_LANGUAGE,
     initializeApplicationLanguage
   ),
+  takeLatest(types.EXIT_BUSY_STATE, exitBusyState),
+  call(redirectToRootTimerTask),
+  call(redirectToSleepScreenTimerTask),
 ]

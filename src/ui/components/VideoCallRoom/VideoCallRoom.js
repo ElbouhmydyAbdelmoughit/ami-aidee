@@ -23,6 +23,8 @@ import { playHangupTone } from '../../../utils/sound'
 import useActivityLog from '../../hooks/use-activity-log'
 import { useTranslation } from 'react-i18next'
 import { Translations } from 'core/i18n'
+import { useDispatch } from 'react-redux'
+import { NavigationActions } from 'store/navigation'
 
 const { Agora } = NativeModules
 const { FPS30, AudioProfileDefault, AudioScenarioDefault, Adaptative } = Agora
@@ -133,6 +135,7 @@ const VideoCallRoom = ({ remoteAuxiliary, mode }) => {
     RtcEngine.joinChannel(channelName, uid) //Join Channel
   }
 
+  const dispatch = useDispatch()
   const endCall = () => {
     logActivity('press_cancel_video_btn')
     if (hasEnded) {
@@ -143,6 +146,7 @@ const VideoCallRoom = ({ remoteAuxiliary, mode }) => {
     setJoinSucceed(false)
     setPeerIds([])
     Actions.pop()
+    dispatch(NavigationActions.exitBusyState())
   }
   const { t } = useTranslation()
   useEffect(() => {

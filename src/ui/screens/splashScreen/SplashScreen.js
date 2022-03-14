@@ -35,7 +35,7 @@ const useInitialURL = () => {
   }
 }
 
-const SplashScreen = ({ auth, fetchUser, onReady }) => {
+const SplashScreen = ({ auth, fetchUser }) => {
   const { url: initialUrl, processedRef, markUrlAsUsed } = useInitialURL()
   const redirectedRef = useRef(false)
 
@@ -55,7 +55,6 @@ const SplashScreen = ({ auth, fetchUser, onReady }) => {
         redirectedRef.current = true
         console.log('SplashScreen: redirecting to reset password')
         Actions.resetPassword(resetCode)
-        onReady()
         return
       }
     }
@@ -64,12 +63,10 @@ const SplashScreen = ({ auth, fetchUser, onReady }) => {
       redirectedRef.current = true
       console.log('SplashScreen: redirecting to root')
       Actions.root()
-      onReady()
     } else {
       console.log('SplashScreen: redirecting to login')
       redirectedRef.current = true
       Actions.login()
-      onReady()
     }
   }, [redirectedRef.current, initialUrl, auth && auth.jwt])
 

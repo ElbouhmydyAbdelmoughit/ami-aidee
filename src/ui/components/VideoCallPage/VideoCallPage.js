@@ -12,6 +12,7 @@ import { usePrevious } from '../../../utils/hooks'
 import { playHangupTone } from '../../../utils/sound'
 import useActivityLog from '../../hooks/use-activity-log'
 import { Translations } from 'core/i18n'
+import { useDispatch } from 'react-redux'
 
 const styles = StyleSheet.create({
   root: {
@@ -74,7 +75,7 @@ const VideoCallPage = ({
   }
 
   const previousStatus = usePrevious(status)
-
+  const dispatch = useDispatch()
   useEffect(() => {
     if (['INVITATION_SENT', 'RECEIVED'].indexOf(previousStatus) === -1) {
       return

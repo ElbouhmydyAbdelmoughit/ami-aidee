@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import React from 'react'
+import { useEffect } from 'react'
 import moment from 'moment'
 import useMinuteTick from './useMinuteTick'
 import { useDispatch } from 'react-redux'
@@ -10,7 +11,7 @@ const TimerInitiator = () => {
     dispatch(TimerActions.setMinuteTick(moment().second(0)))
   }, [])
   useMinuteTick()
-  return null
+  return <></>
 }
 
 export default TimerInitiator

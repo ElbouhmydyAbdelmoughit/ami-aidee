@@ -7,6 +7,7 @@ import { AGORA_APP_ID } from '../../utils/constant'
 import { PushNotificationService } from '../../services'
 import { AuthSelectors } from '../auth'
 import errorReporter from 'core/error-reporter'
+import { NavigationActions } from 'store/navigation'
 
 let rtmEngine
 
@@ -119,6 +120,7 @@ function* videoCallInvitationRefuseRequest() {
     yield put(VideoCallActions.invitationRefuseError({ error: e }))
   } finally {
     Actions.pop()
+    yield put(NavigationActions.exitBusyState())
   }
 }
 
@@ -152,6 +154,8 @@ function* localInvitationCancelRequest() {
     })
   } catch (e) {
     console.warn('cancel error', e)
+  } finally {
+    yield put(NavigationActions.exitBusyState())
   }
 }
 
