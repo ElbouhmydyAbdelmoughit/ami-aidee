@@ -17,6 +17,9 @@ import { AuthActions } from 'store/auth'
 import AppStyles from 'config/styles'
 import { Translations } from 'core/i18n'
 import { useTranslation } from 'react-i18next'
+import { times } from 'utils'
+import moment from 'moment'
+import colorUtils from 'utils/colors'
 
 const styles = StyleSheet.create({
   title: {
@@ -47,6 +50,9 @@ const UserSettingsScreen = ({
   userModifyRequest,
 }: Props) => {
   const [checked, setChecked] = useState(currentHelpedUser.automatic_pickup)
+  const time = times(moment(), currentHelpedUser)
+  const textColor = colorUtils.getTextColor(time)
+
   const [minVolumeChecked, setMinVolumeChecked] = useState(
     currentHelpedUser.min_volume === 0.5
   )
@@ -103,7 +109,7 @@ const UserSettingsScreen = ({
           >
             <IconButton
               size={32}
-              color="white"
+              color={textColor}
               icon="arrow-back"
               onPress={() => {
                 Actions.pop()
@@ -112,27 +118,29 @@ const UserSettingsScreen = ({
             >
               {Translations.common.go_back}
             </IconButton>
-            <H1 style={styles.title}>{Translations.common.settings}</H1>
+            <H1 style={[styles.title, { color: textColor }]}>
+              {Translations.common.settings}
+            </H1>
           </View>
         </View>
         <View>
           <View>
             <View style={{ flexDirection: 'row' }}>
               <Checkbox
-                color="white"
+                color={textColor}
                 status={checked ? 'checked' : 'unchecked'}
                 onPress={onPress}
-                uncheckedColor="white"
+                uncheckedColor={textColor}
               />
               <TouchableRipple onPress={onPress}>
                 <React.Fragment>
-                  <Text style={styles.text}>
+                  <Text style={[styles.text, { color: textColor }]}>
                     {t(
                       'sceen.settings.automatic_pickup',
                       'Décrochage automatique'
                     )}
                   </Text>
-                  <Text style={styles.helpText}>
+                  <Text style={[styles.helpText, { color: textColor }]}>
                     {t(
                       'sceen.settings.automatic_pickup_description',
                       "L'appel entrant sera décroché automatiquement après 3 secondes."
@@ -143,17 +151,17 @@ const UserSettingsScreen = ({
             </View>
             <View style={{ flexDirection: 'row', marginTop: 24 }}>
               <Checkbox
-                color="white"
+                color={textColor}
                 status={minVolumeChecked ? 'checked' : 'unchecked'}
                 onPress={onMinVolumePress}
-                uncheckedColor="white"
+                uncheckedColor={textColor}
               />
               <TouchableRipple onPress={onMinVolumePress}>
                 <React.Fragment>
-                  <Text style={styles.text}>
+                  <Text style={[styles.text, { color: textColor }]}>
                     {t('sceen.settings.min_volume', 'Volume activé')}
                   </Text>
-                  <Text style={styles.helpText}>
+                  <Text style={[styles.helpText, { color: textColor }]}>
                     {t(
                       'sceen.settings.min_volume_description',
                       'Le volume sera toujours activé et ne descend pas au dessous de 50%'
@@ -164,20 +172,20 @@ const UserSettingsScreen = ({
             </View>
             <View style={{ flexDirection: 'row', marginTop: 24 }}>
               <Checkbox
-                color="white"
+                color={textColor}
                 status={dischargingAlertChecked ? 'checked' : 'unchecked'}
                 onPress={onAlertOnDischargePress}
-                uncheckedColor="white"
+                uncheckedColor={textColor}
               />
               <TouchableRipple onPress={onAlertOnDischargePress}>
                 <React.Fragment>
-                  <Text style={styles.text}>
+                  <Text style={[styles.text, { color: textColor }]}>
                     {t(
                       'sceen.settings.discharge_alert',
                       'Alerte débranchement'
                     )}
                   </Text>
-                  <Text style={styles.helpText}>
+                  <Text style={[styles.helpText, { color: textColor }]}>
                     {t(
                       'sceen.settings.discharge_alert_description',
                       "Lorsque la tablette est débranché, l'aidé sera alerté pour rebrancher sa tablette"
@@ -188,7 +196,11 @@ const UserSettingsScreen = ({
             </View>
           </View>
           <View
-            style={{ alignItems: 'flex-start', justifyContent: 'flex-end' }}
+            style={{
+              alignItems: 'flex-start',
+              justifyContent: 'flex-end',
+              marginTop: 32,
+            }}
           >
             <TouchableRipple
               mode="outlined"

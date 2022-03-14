@@ -6,7 +6,7 @@ import { Actions } from '@ami-app/react-native-router-flux'
 import { getUserDisplayName, getUserAbbr } from '../../../utils/user'
 import useActivityLog from '../../hooks/use-activity-log'
 
-const MessagingNavBar = ({ user }) => {
+const MessagingNavBar = ({ user, textColor }) => {
   const logActivity = useActivityLog()
   return (
     <View
@@ -20,7 +20,7 @@ const MessagingNavBar = ({ user }) => {
       <IconButton
         size={24}
         style={{ marginLeft: 16 }}
-        color="white"
+        color={textColor}
         icon="arrow-back"
         onPress={() => {
           logActivity('return_from_messaging')
@@ -47,7 +47,7 @@ const MessagingNavBar = ({ user }) => {
           style={{
             marginLeft: 16,
             fontSize: 24,
-            color: 'white',
+            color: textColor,
             fontWeight: 'bold',
           }}
         >

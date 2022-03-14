@@ -12,7 +12,7 @@ import { usePrevious } from '../../../utils/hooks'
 import { playHangupTone } from '../../../utils/sound'
 import useActivityLog from '../../hooks/use-activity-log'
 import { Translations } from 'core/i18n'
-import { useDispatch } from 'react-redux'
+import useTextColor from 'ui/hooks/use-text-color'
 
 const styles = StyleSheet.create({
   root: {
@@ -38,6 +38,7 @@ const VideoCallPage = ({
   startMode,
 }) => {
   const { status, channelId, calleeId } = localInvitation || {}
+  const textColor = useTextColor()
   const logActivity = useActivityLog()
   const callTone = useRef()
   const stopSound = () => {
@@ -70,12 +71,8 @@ const VideoCallPage = ({
       }
     }
   }, [])
-  if (errored) {
-    return <VideoCallError />
-  }
 
   const previousStatus = usePrevious(status)
-  const dispatch = useDispatch()
   useEffect(() => {
     if (['INVITATION_SENT', 'RECEIVED'].indexOf(previousStatus) === -1) {
       return
@@ -115,6 +112,9 @@ const VideoCallPage = ({
         return null
     }
   }
+  if (errored) {
+    return <VideoCallError />
+  }
   if (
     ['INVITATION_SENT', 'RECEIVED'].indexOf(previousStatus) !== -1 &&
     status === 'ACCEPTED' &&
@@ -137,7 +137,9 @@ const VideoCallPage = ({
         <View style={{ flex: 1 }}>
           <UserAvatar user={auxiliary} />
           <View style={{ marginTop: 32, alignItems: 'center' }}>
-            <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 24 }}>
+            <Text
+              style={{ color: textColor, fontWeight: 'bold', fontSize: 24 }}
+            >
               {getText()}
             </Text>
           </View>

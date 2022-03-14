@@ -9,7 +9,7 @@ import { Actions } from '@ami-app/react-native-router-flux'
 import LinearGradient from 'react-native-linear-gradient'
 import { times } from 'src/utils'
 import Loader from '../../components/loader/Loader'
-import { getGradientColors } from '../../../utils/colors'
+import colorUtils, { getGradientColors } from '../../../utils/colors'
 import useActivityLog from '../../hooks/use-activity-log'
 import { Translations } from 'core/i18n'
 import { useTranslation } from 'react-i18next'
@@ -57,6 +57,7 @@ const ContactsList = ({
     return <Loader loading />
   }
   const time = times(moment(), helpedUser)
+  const textColor = colorUtils.getTextColor(time)
   const gradientColors = getGradientColors(time)
   return (
     <LinearGradient
@@ -78,7 +79,7 @@ const ContactsList = ({
             >
               <IconButton
                 size={32}
-                color="white"
+                color={textColor}
                 icon="arrow-back"
                 onPress={() => {
                   logActivity('return_from_messaging')
@@ -88,11 +89,11 @@ const ContactsList = ({
               >
                 {Translations.common.go_back}
               </IconButton>
-              <H1 style={styles.title}>
+              <H1 style={[styles.title, { color: textColor }]}>
                 {t('screen.contacts.title', 'Mes contacts')}
               </H1>
             </View>
-            <H3 style={styles.subtitle}>
+            <H3 style={[styles.subtitle, { color: textColor }]}>
               {t(
                 'screen.contacts.subtitle',
                 'Appuyer sur la carte pour contacter la personne'
@@ -102,7 +103,7 @@ const ContactsList = ({
           <View style={{ marginTop: 32, marginRight: 32 }}>
             <Button
               mode="outlined"
-              style={{ borderColor: 'white' }}
+              style={{ borderColor: textColor }}
               onPress={() => {
                 logActivity('select_user_settings')
                 Actions.userSettings()
@@ -110,7 +111,7 @@ const ContactsList = ({
             >
               <Text
                 style={{
-                  color: 'white',
+                  color: textColor,
                   textTransform: 'uppercase',
                   fontSize: 18,
                 }}
@@ -142,6 +143,7 @@ const ContactsList = ({
                 style={StyleSheet.compose(styles.box, {
                   backgroundColor: gradientColors[1],
                   paddingTop: 0,
+                  borderColor: textColor,
                 })}
               >
                 {hasNewMessages[index] ? (
@@ -154,7 +156,7 @@ const ContactsList = ({
                   >
                     <View
                       style={{
-                        borderColor: 'white',
+                        borderColor: textColor,
                         backgroundColor: 'white',
                         borderRadius: 4,
                         borderWidth: 1,
@@ -195,7 +197,7 @@ const ContactsList = ({
                 </View>
                 <Text
                   style={{
-                    color: 'white',
+                    color: textColor,
                     alignSelf: 'center',
                     fontWeight: 'bold',
                     fontSize: 24,

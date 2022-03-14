@@ -13,6 +13,7 @@ import useCountdown from '../../hooks/use-countdown'
 import useActivityLog from '../../hooks/use-activity-log'
 import { Translations } from 'core/i18n'
 import { useTranslation } from 'react-i18next'
+import useTextColor from 'ui/hooks/use-text-color'
 
 const styles = StyleSheet.create({
   root: {
@@ -34,7 +35,7 @@ const CallReceivingScreen = ({
 }) => {
   const { status, channelId, callerId } = remoteInvitationProps || {}
   const { t } = useTranslation()
-
+  const textColor = useTextColor()
   const callCanceledByCaller = status === 'CANCELED_BY_CALLER'
 
   const stopSound = () => {
@@ -136,7 +137,7 @@ const CallReceivingScreen = ({
               style={{
                 fontSize: 24,
                 fontWeight: 'bold',
-                color: 'white',
+                color: textColor,
                 marginTop: 64,
               }}
             >

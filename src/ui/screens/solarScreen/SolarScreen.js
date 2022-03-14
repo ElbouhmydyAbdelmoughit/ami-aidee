@@ -14,6 +14,7 @@ import MessageAlertManager from 'ui/business/MessageAlertManager'
 import SolarView from './SolarView'
 import ContactButton from './ContactButton'
 import { Trans, useTranslation } from 'react-i18next'
+import colorUtils from 'utils/colors'
 
 const BOLD = text => <Text style={{ fontWeight: 'bold' }}>{text}</Text>
 const BR = <Text>{'\n'}</Text>
@@ -205,16 +206,7 @@ const SolarScreen = ({
       break
   }
 
-  const getTextColor = () => {
-    if (time === 'DAWN') {
-      return '#848484'
-    }
-    if (time === 'SUN' || time === 'DUSK') {
-      return '#00000077'
-    }
-    return '#fff'
-  }
-  const textColor = getTextColor()
+  const textColor = colorUtils.getTextColor(time)
 
   return (
     <Container style={{ backgroundColor: material.brandPrimary }}>

@@ -25,4 +25,19 @@ const getGradientColors = time => {
   return color
 }
 
+const getTextColor = time => {
+  if (time === 'DAWN') {
+    return '#848484'
+  }
+  if (time === 'SUN' || time === 'DUSK') {
+    return '#00000077'
+  }
+  return '#fff'
+}
+
+const colorUtils = {
+  getTextColor,
+  getGradientColors,
+}
 export { getGradientColors }
+export default colorUtils

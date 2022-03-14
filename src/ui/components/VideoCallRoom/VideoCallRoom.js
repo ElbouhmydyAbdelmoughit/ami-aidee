@@ -25,6 +25,7 @@ import { useTranslation } from 'react-i18next'
 import { Translations } from 'core/i18n'
 import { useDispatch } from 'react-redux'
 import { NavigationActions } from 'store/navigation'
+import useTextColor from 'ui/hooks/use-text-color'
 
 const { Agora } = NativeModules
 const { FPS30, AudioProfileDefault, AudioScenarioDefault, Adaptative } = Agora
@@ -129,7 +130,7 @@ const VideoCallRoom = ({ remoteAuxiliary, mode }) => {
   const [channelName, setChannelName] = useState('abcxyz')
   const [uid, setUid] = useState(Math.floor(Math.random() * 100))
   const [status, setStatus] = useState('initial')
-
+  const textColor = useTextColor()
   const startCall = () => {
     hasEnded = false
     RtcEngine.joinChannel(channelName, uid) //Join Channel
@@ -241,7 +242,7 @@ const VideoCallRoom = ({ remoteAuxiliary, mode }) => {
         <View style={{ flex: 1, marginTop: 64 }}>
           <UserAvatar user={remoteAuxiliary} />
           <View style={{ marginTop: 32, alignItems: 'center' }}>
-            <Text style={styles.infoText}>
+            <Text style={[styles.infoText, { color: textColor }]}>
               {Translations.common.connection_in_progress}
             </Text>
           </View>
@@ -265,7 +266,7 @@ const VideoCallRoom = ({ remoteAuxiliary, mode }) => {
           <View style={{ flex: 1, marginTop: 64 }}>
             <UserAvatar user={remoteAuxiliary} />
             <View style={{ marginTop: 32, alignItems: 'center' }}>
-              <Text style={styles.infoText}>
+              <Text style={[styles.infoText, { color: textColor }]}>
                 {Translations.common.connection_in_progress}
               </Text>
             </View>

@@ -5,10 +5,12 @@ import { Actions } from '@ami-app/react-native-router-flux'
 import Br from 'src/ui/components/br'
 import GradientBackground from '../GradientBackground'
 import useActivityLog from '../../hooks/use-activity-log'
+import useTextColor from 'ui/hooks/use-text-color'
 
 const CallErrorPage = ({ errorAcknowledged }) => {
   const [countdown, setCountdown] = useState(3)
   const logActivity = useActivityLog()
+  const textColor = useTextColor()
   useEffect(() => {
     const interval = setInterval(() => {
       if (countdown > 0) {
@@ -40,7 +42,7 @@ const CallErrorPage = ({ errorAcknowledged }) => {
           style={{
             textAlign: 'center',
             fontSize: 24,
-            color: 'white',
+            color: textColor,
             fontWeight: 'bold',
           }}
         >
@@ -54,12 +56,13 @@ const CallErrorPage = ({ errorAcknowledged }) => {
             Actions.pop()
             errorAcknowledged()
           }}
-          color="white"
+          color={textColor}
         >
           <Text
             style={{
               fontSize: 24,
               fontWeight: 'bold',
+              color: textColor,
             }}
           >
             Revenir dans {countdown} secondes

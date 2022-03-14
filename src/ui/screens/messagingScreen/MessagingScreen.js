@@ -10,8 +10,12 @@ import ChatRoom from '../../components/ChatRoom'
 import MessageUpdater from './MessageUpdater'
 import useActivityLog from '../../hooks/use-activity-log'
 import { Translations } from 'core/i18n'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { NavigationActions } from 'store/navigation'
+import { times } from 'utils'
+import moment from 'moment'
+import { AuthSelectors } from 'store/auth'
+import colorUtils from 'utils/colors'
 
 const styles = StyleSheet.create({
   box: {
@@ -41,6 +45,7 @@ const MessagingScreen = ({
   messagesRequest,
 }) => {
   const dispatch = useDispatch()
+  const currentHelpedUser = useSelector(AuthSelectors.getCurrentHelpedUser)
   const logActivity = useActivityLog()
   useEffect(() => {
     updateLastReadRequest(auxiliary)
@@ -49,11 +54,14 @@ const MessagingScreen = ({
     }
   }, [])
 
+  const time = times(moment(), currentHelpedUser)
+  const textColor = colorUtils.getTextColor(time)
+
   return (
     <GradientBackground>
       <MessageUpdater messagesRequest={messagesRequest} />
       <View style={{ height: '100%', flexDirection: 'column' }}>
-        <MessagingNavBar user={auxiliary} />
+        <MessagingNavBar user={auxiliary} textColor={textColor} />
         <View style={{ flex: 1, flexDirection: 'row' }}>
           <View
             style={{
@@ -77,11 +85,12 @@ const MessagingScreen = ({
               <View
                 style={StyleSheet.compose(styles.box, {
                   marginTop: 0,
+                  borderColor: textColor,
                 })}
               >
-                <Icon name="videocam" color="white" size={60} />
+                <Icon name="videocam" color={textColor} size={60} />
                 <Text
-                  style={{ color: 'white', fontSize: 20, fontWeight: 'bold' }}
+                  style={{ color: textColor, fontSize: 20, fontWeight: 'bold' }}
                 >
                   {Translations.common.video_call}
                 </Text>
