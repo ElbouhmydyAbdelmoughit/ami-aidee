@@ -38,7 +38,7 @@ const SleepScreen = () => {
           style={{
             flex: 1,
             justifyContent: 'center',
-            backgroundColor: '#000000DD',
+            backgroundColor: '#000000EE',
           }}
         >
           <H1
