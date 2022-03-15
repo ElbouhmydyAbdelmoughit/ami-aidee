@@ -1,3 +1,4 @@
+import logger from 'core/logger'
 import { createAction } from '../../utils'
 
 export type ReturnToHomeState = 'idle' | 'after_2_min' | 'after_1_min' | 'busy'
@@ -46,7 +47,7 @@ const NavigationActions = {
     return createAction(types.CHANGE_RETURN_TO_HOME_STATE, { newState })
   },
   changeScreenSavingState(newState: ScreenSavingState) {
-    console.log('NavigationSagas: change screen saving state', newState)
+    logger.debug('change screen saving state', newState)
     return createAction(types.CHANGE_SCREEN_SAVING_STATE, { newState })
   },
   enterBusyState() {

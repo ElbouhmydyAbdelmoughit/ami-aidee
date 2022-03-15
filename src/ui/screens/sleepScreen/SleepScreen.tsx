@@ -18,10 +18,6 @@ const SleepScreen = () => {
     console.log('NavigationActions: toto')
     logActivity('wake_up')
     Actions.root()
-    // FIXME: this is duplication of AppRouter accueil scene onEnter
-    // without this the sagas is not unblocked from race waiters
-    dispatch(NavigationActions.changeReturnToHomeState('idle'))
-    dispatch(NavigationActions.changeScreenSavingState('home'))
   }
 
   return (

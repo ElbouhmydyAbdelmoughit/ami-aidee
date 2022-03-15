@@ -35,10 +35,6 @@ export const getRecurrences = () => [
 export const AGORA_APP_ID = '2c07e05a54064384b1653247599224c5'
 
 const MINUTE_TO_MS = 60000
-/**
- * Screens that enter sleep mode after SCREENSAVING_DURATION
- */
-const ECO_FRIENDLY_SCREENS = ['accueil', 'home']
 
 /**
  * Duration after which screen enters sleep mode
@@ -53,11 +49,6 @@ const WAKEUP_DURATION = 15 * MINUTE_TO_MS
  */
 const RETURN_TO_HOME_DURATION = 1 * MINUTE_TO_MS
 
-export {
-  ECO_FRIENDLY_SCREENS,
-  SCREENSAVING_DURATION,
-  WAKEUP_DURATION,
-  RETURN_TO_HOME_DURATION,
-}
+export { SCREENSAVING_DURATION, WAKEUP_DURATION, RETURN_TO_HOME_DURATION }
 
 export const TRIAL_DURATION_IN_DAYS = 30

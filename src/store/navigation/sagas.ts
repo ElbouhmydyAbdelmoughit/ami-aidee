@@ -60,9 +60,12 @@ function* sleepScreenTimer() {
 }
 
 function* redirectToSleepScreenTimerTask() {
+  let memoizedRaceChangeScreenSavingState = false
   while (true) {
     logger.debug(' redirectToSleepScreen/waiting for task')
-    yield take(types.CHANGE_SCREEN_SAVING_STATE)
+    if (!memoizedRaceChangeScreenSavingState) {
+      yield take(types.CHANGE_SCREEN_SAVING_STATE)
+    }
     let screenSavingState = yield select(
       NavigationSelectors.getScreenSavingState
     )
@@ -72,17 +75,19 @@ function* redirectToSleepScreenTimerTask() {
       logger.debug(' redirectToSleepScreen/launch sleep timer')
       yield
       const sleepScreenTask = yield fork(sleepScreenTimer)
-      yield take(types.CHANGE_SCREEN_SAVING_STATE)
 
-      const { screenTouched, activityLogRequest, enterBusyState } = yield race({
+      const { changeScreenSavingState } = yield race({
         screenTouched: take(types.SCREEN_TOUCHED),
         activityLogRequest: take(userActivitiesTypes.ACTIVITY_LOG_REQUEST),
         changeScreenSavingState: take(types.CHANGE_SCREEN_SAVING_STATE),
         enterBusyState: take(types.ENTER_BUSY_STATE),
       })
-      if (screenTouched || activityLogRequest || enterBusyState) {
+      if (changeScreenSavingState) {
+        memoizedRaceChangeScreenSavingState = true
+      } else {
         logger.debug('cancelling return to sleep')
         yield cancel(sleepScreenTask)
+        memoizedRaceChangeScreenSavingState = false
       }
     }
   }
