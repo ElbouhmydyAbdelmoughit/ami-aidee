@@ -7,10 +7,12 @@ import GradientBackground from '../GradientBackground'
 import { getUserDisplayName } from '../../../utils/user'
 import useActivityLog from '../../hooks/use-activity-log'
 import { useTranslation } from 'react-i18next'
+import useTextColor from 'ui/hooks/use-text-color'
 
 const VideoCallEnded = ({ auxiliary }) => {
   const logActivity = useActivityLog()
   const [countdown, setCountdown] = useState(3)
+  const textColor = useTextColor()
   useEffect(() => {
     const interval = setInterval(() => {
       if (countdown > 0) {
@@ -42,10 +44,10 @@ const VideoCallEnded = ({ auxiliary }) => {
           }}
         >
           <View style={{ flex: 1, marginTop: 64 }}>
-            <UserAvatar user={auxiliary} />
+            <UserAvatar user={auxiliary} textColor={textColor} />
             <View style={{ marginTop: 32, alignItems: 'center' }}>
               <Text
-                style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}
+                style={{ color: textColor, fontSize: 24, fontWeight: 'bold' }}
               >
                 {t('screen.video_call.hung_up', {
                   defaultValue: '{{name}} a raccroché',
@@ -69,6 +71,7 @@ const VideoCallEnded = ({ auxiliary }) => {
                 style={{
                   fontSize: 24,
                   fontWeight: 'bold',
+                  color: textColor,
                 }}
               >
                 {t('screen.video_call.return_in_secs', {

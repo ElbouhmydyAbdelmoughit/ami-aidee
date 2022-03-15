@@ -22,14 +22,14 @@ const MessageAlertManager = ({
     if (immediateMessage) {
       if (Actions.currentScene !== 'home') {
         redirect('after_2_min')
-        // dispatch(MessageActions.immediateMessageAlerted(immediateMessage.id))
+        dispatch(MessageActions.immediateMessageAlerted(immediateMessage.id))
       }
       return
     }
     if (messageToAlert) {
       if (Actions.currentScene !== 'home') {
         redirect('after_1_min')
-        //  dispatch(MessageActions.messageAlerted(messageToAlert.id))
+        dispatch(MessageActions.messageAlerted(messageToAlert.id))
       }
       return
     }

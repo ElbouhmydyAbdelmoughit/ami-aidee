@@ -240,7 +240,7 @@ const VideoCallRoom = ({ remoteAuxiliary, mode }) => {
     return (
       <GradientBackground>
         <View style={{ flex: 1, marginTop: 64 }}>
-          <UserAvatar user={remoteAuxiliary} />
+          <UserAvatar user={remoteAuxiliary} textColor={textColor} />
           <View style={{ marginTop: 32, alignItems: 'center' }}>
             <Text style={[styles.infoText, { color: textColor }]}>
               {Translations.common.connection_in_progress}
@@ -264,7 +264,7 @@ const VideoCallRoom = ({ remoteAuxiliary, mode }) => {
         />
         <View style={styles.overlay}>
           <View style={{ flex: 1, marginTop: 64 }}>
-            <UserAvatar user={remoteAuxiliary} />
+            <UserAvatar user={remoteAuxiliary} textColor={textColor} />
             <View style={{ marginTop: 32, alignItems: 'center' }}>
               <Text style={[styles.infoText, { color: textColor }]}>
                 {Translations.common.connection_in_progress}

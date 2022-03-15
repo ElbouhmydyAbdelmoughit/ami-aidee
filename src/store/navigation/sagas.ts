@@ -35,67 +35,66 @@ function* initializeApplicationLanguage() {
 }
 
 function* backToRootTimer(duration: number) {
-  try {
-    logger.debug(' waiting for back to root duration')
-    yield delay(duration)
-    logger.debug(' redirecting to root screen')
-    yield call(Actions.accueil.bind(Actions))
-  } finally {
-    if (yield cancelled()) {
-      // let's relaunch the timer
-      logger.debug(' idle mode, resume timer')
-      yield put(NavigationActions.changeReturnToHomeState('after_1_min'))
-    }
-  }
+  logger.debug('store.nav.root_timer', ' waiting for back to root duration')
+  yield delay(duration)
+  logger.debug('store.nav.root_timer', 'redirecting to root screen')
+  yield call(Actions.accueil.bind(Actions))
 }
 
 function* sleepScreenTimer() {
-  logger.debug(' waiting for sleep screen duration')
+  logger.debug('store.nav.sleep_timer', ' waiting for sleep screen duration')
   yield delay(SCREENSAVING_DURATION)
-  logger.debug(' redirecting to sleep screen')
+  logger.debug('store.nav.sleep_timer', 'redirecting to sleep screen')
   yield call(Actions.sleep.bind(Actions))
   yield delay(WAKEUP_DURATION)
-  logger.debug(' redirecting to home screen')
+  logger.debug('store.nav.sleep_timer', ' redirecting to home screen')
   yield call(Actions.root.bind(Actions))
 }
 
 function* redirectToSleepScreenTimerTask() {
-  let memoizedRaceChangeScreenSavingState = false
+  let shouldSkipTaskWait = false
   while (true) {
-    logger.debug(' redirectToSleepScreen/waiting for task')
-    if (!memoizedRaceChangeScreenSavingState) {
+    if (!shouldSkipTaskWait) {
+      logger.debug('store.nav.sleep_timer', 'waiting for task')
       yield take(types.CHANGE_SCREEN_SAVING_STATE)
     }
     let screenSavingState = yield select(
       NavigationSelectors.getScreenSavingState
     )
-    logger.debug('redirectToSleepScreen/screenSavingState', screenSavingState)
 
     if (screenSavingState === 'home') {
-      logger.debug(' redirectToSleepScreen/launch sleep timer')
+      logger.debug('store.nav.sleep_timer', 'launch sleep timer')
       yield
       const sleepScreenTask = yield fork(sleepScreenTimer)
 
       const { changeScreenSavingState } = yield race({
         screenTouched: take(types.SCREEN_TOUCHED),
         activityLogRequest: take(userActivitiesTypes.ACTIVITY_LOG_REQUEST),
+        // happens on back to root screen
         changeScreenSavingState: take(types.CHANGE_SCREEN_SAVING_STATE),
         enterBusyState: take(types.ENTER_BUSY_STATE),
       })
       if (changeScreenSavingState) {
-        memoizedRaceChangeScreenSavingState = true
+        // in case change screen saving state already received,
+        // let's set this to true to skip next CHANGE_SCREEN_SAVING_STATE wait
+        shouldSkipTaskWait = true
       } else {
-        logger.debug('cancelling return to sleep')
+        logger.debug('store.nav.sleep_timer', 'cancelling return to sleep')
         yield cancel(sleepScreenTask)
-        memoizedRaceChangeScreenSavingState = false
+        shouldSkipTaskWait = false
       }
     }
   }
 }
 
 function* redirectToRootTimerTask() {
+  let shouldSkipTaskWait = false
+
   while (true) {
-    yield take(types.CHANGE_RETURN_TO_HOME_STATE)
+    if (!shouldSkipTaskWait) {
+      logger.debug('store.nav.root_timer', 'waiting for task')
+      yield take(types.CHANGE_RETURN_TO_HOME_STATE)
+    }
     let returnToHomeState = yield select(
       NavigationSelectors.getReturnToHomeState
     )
@@ -107,7 +106,7 @@ function* redirectToRootTimerTask() {
       continue
     }
 
-    logger.debug(' launch back to root timer')
+    logger.debug('store.nav.root_timer', 'launch back to root timer')
     // starts the task in the background
     const returnToHomeTask = yield fork(
       backToRootTimer,
@@ -121,7 +120,12 @@ function* redirectToRootTimerTask() {
       activityLogRequest: take(userActivitiesTypes.ACTIVITY_LOG_REQUEST),
       enterBusyState: take(types.ENTER_BUSY_STATE),
     })
-
+    logger.debug('store.nav.root_timer', 'cancel task')
+    if (enterBusyState) {
+      shouldSkipTaskWait = false
+    } else {
+      shouldSkipTaskWait = true
+    }
     yield cancel(returnToHomeTask)
   }
 }
@@ -131,7 +135,11 @@ function* exitBusyState() {
     NavigationSelectors.getReturnToHomePreviousState
   )
   yield put(NavigationActions.changeReturnToHomeState(prevReturnToHomeState))
-  yield put(NavigationActions.changeScreenSavingState)
+  yield put(
+    NavigationActions.changeScreenSavingState(
+      prevReturnToHomeState === 'home' ? 'home' : 'idle'
+    )
+  )
 }
 
 export default [

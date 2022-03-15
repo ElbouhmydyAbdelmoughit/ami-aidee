@@ -135,7 +135,7 @@ const VideoCallPage = ({
     <GradientBackground>
       <View style={styles.root}>
         <View style={{ flex: 1 }}>
-          <UserAvatar user={auxiliary} />
+          <UserAvatar user={auxiliary} textColor={textColor} />
           <View style={{ marginTop: 32, alignItems: 'center' }}>
             <Text
               style={{ color: textColor, fontWeight: 'bold', fontSize: 24 }}

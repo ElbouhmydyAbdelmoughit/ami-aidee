@@ -7,7 +7,7 @@ const getAbbr = user => {
   const firstLetterLastname = user.lastname ? user.lastname[0] : ''
   return `${firstLetterFirstname}${firstLetterLastname}`
 }
-const UserAvatar = ({ user }) => {
+const UserAvatar = ({ user, textColor = 'white' }) => {
   if (!user) {
     return null
   }
@@ -31,14 +31,14 @@ const UserAvatar = ({ user }) => {
         style={{
           marginTop: 16,
           fontSize: 24,
-          color: 'rgba(255, 255, 255, 0.9 )',
+          color: textColor,
         }}
       >
         {user.firstname} {user.lastname}
       </Text>
       <Text
         style={{
-          color: 'rgba(255, 255, 255, 0.7)',
+          color: textColor,
         }}
       >
         {user.email}

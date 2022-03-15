@@ -44,16 +44,20 @@ const NavigationActions = {
     return createAction(types.SCREEN_TOUCHED)
   },
   changeReturnToHomeState(newState: ReturnToHomeState) {
+    logger.debug('store.nav.root_timer', 'change state', newState)
+
     return createAction(types.CHANGE_RETURN_TO_HOME_STATE, { newState })
   },
   changeScreenSavingState(newState: ScreenSavingState) {
-    logger.debug('change screen saving state', newState)
+    logger.debug('store.nav.sleep_timer', 'change state', newState)
     return createAction(types.CHANGE_SCREEN_SAVING_STATE, { newState })
   },
   enterBusyState() {
+    logger.debug('store.nav', 'enter busy state')
     return createAction(types.ENTER_BUSY_STATE)
   },
   exitBusyState() {
+    logger.debug('store.nav', 'exit busy state')
     return createAction(types.EXIT_BUSY_STATE)
   },
 }

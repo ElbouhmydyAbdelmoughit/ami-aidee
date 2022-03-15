@@ -131,7 +131,7 @@ const CallReceivingScreen = ({
     <GradientBackground>
       <View style={styles.root}>
         <View style={{ flex: 1, alignItems: 'center', marginTop: 64 }}>
-          <UserAvatar user={callingRemoteAuxiliary} />
+          <UserAvatar user={callingRemoteAuxiliary} textColor={textColor} />
           {text && (
             <Text
               style={{

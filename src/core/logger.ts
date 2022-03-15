@@ -1,5 +1,7 @@
-const debug = (message: string, ...args: any) => {
-  console.log(`[JS_DEBUG] ${message}`, ...args)
+const debug = (key: string, message: string, ...args: any) => {
+  if (__DEV__) {
+    console.log(`debug.${key}/ ${message}`, ...args)
+  }
 }
 
 const logger = {
