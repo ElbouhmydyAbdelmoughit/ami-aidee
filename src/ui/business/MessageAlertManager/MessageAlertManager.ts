@@ -14,21 +14,26 @@ const MessageAlertManager = ({
   const redirect = (returnToHomeState: string) => {
     if (onRedirect) {
       onRedirect(returnToHomeState)
+    } else {
+      Actions.home({ redirectFromSolarView: true, returnToHomeState })
     }
-    Actions.home({ redirectFromSolarView: true, returnToHomeState })
   }
   useEffect(() => {
     if (immediateMessage) {
       if (Actions.currentScene !== 'home') {
         redirect('after_2_min')
-        dispatch(MessageActions.immediateMessageAlerted(immediateMessage.id))
+        if (!onRedirect) {
+          dispatch(MessageActions.immediateMessageAlerted(immediateMessage.id))
+        }
       }
       return
     }
     if (messageToAlert) {
       if (Actions.currentScene !== 'home') {
         redirect('after_1_min')
-        dispatch(MessageActions.messageAlerted(messageToAlert.id))
+        if (!onRedirect) {
+          dispatch(MessageActions.messageAlerted(messageToAlert.id))
+        }
       }
       return
     }

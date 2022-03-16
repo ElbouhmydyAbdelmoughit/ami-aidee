@@ -43,7 +43,7 @@ const persistedState = loadState()
 const middleware = [
   // Info: Apply sagaMiddleware in first !
   applyMiddleware(sagaMiddleware),
-  // applyMiddleware(logger),
+  ...(__DEV__ ? [applyMiddleware(logger)] : []),
 ].concat(
   process.env.NODE_ENV === 'development'
     ? [

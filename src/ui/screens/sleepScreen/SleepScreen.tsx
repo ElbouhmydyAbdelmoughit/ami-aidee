@@ -8,8 +8,8 @@ import MessageAlertManager from 'ui/business/MessageAlertManager'
 import useActivityLog from '../../hooks/use-activity-log'
 import { useDispatch } from 'react-redux'
 import { NavigationActions } from 'store/navigation'
-import { ReturnToHomeState } from 'store/navigation/actions'
 import { WAKEUP_DURATION } from 'utils/constant'
+import TimerInitiator from 'ui/business/TimerInitiator'
 
 const SleepScreen = () => {
   const dispatch = useDispatch()
@@ -32,8 +32,9 @@ const SleepScreen = () => {
 
   return (
     <Container>
+      <TimerInitiator />
       <MessageAlertManager
-        onRedirect={(returnToHomeState: ReturnToHomeState) => {
+        onRedirect={() => {
           Actions.root()
         }}
       />
@@ -42,12 +43,12 @@ const SleepScreen = () => {
           style={{
             flex: 1,
             justifyContent: 'center',
-            backgroundColor: '#000000EE',
+            backgroundColor: '#000000',
           }}
         >
           <H1
             style={{
-              color: 'rgba(255, 255, 255, 0.05)',
+              color: 'rgba(255, 255, 255, 0.06)',
               fontFamily: 'Roboto',
               fontSize: 80,
               paddingTop: 80,

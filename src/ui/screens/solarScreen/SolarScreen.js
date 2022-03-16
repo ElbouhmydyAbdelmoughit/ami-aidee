@@ -8,7 +8,7 @@ import LinearGradient from 'react-native-linear-gradient'
 import AccountChecker from 'src/ui/business/AccountChecker'
 import moment from 'core/moment'
 import { times } from 'utils'
-import TimerInitiator from 'src/ui/business/TimerInitiator'
+import TimerInitiator from 'ui/business/TimerInitiator'
 import MessageAlertManager from 'ui/business/MessageAlertManager'
 
 import SolarView from './SolarView'

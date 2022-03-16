@@ -7,7 +7,6 @@ import { AGORA_APP_ID } from '../../utils/constant'
 import { PushNotificationService } from '../../services'
 import { AuthSelectors } from '../auth'
 import errorReporter from 'core/error-reporter'
-import { NavigationActions } from 'store/navigation'
 
 let rtmEngine
 

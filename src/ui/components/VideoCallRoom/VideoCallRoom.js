@@ -23,9 +23,9 @@ import { playHangupTone } from '../../../utils/sound'
 import useActivityLog from '../../hooks/use-activity-log'
 import { useTranslation } from 'react-i18next'
 import { Translations } from 'core/i18n'
-import { useDispatch } from 'react-redux'
-import { NavigationActions } from 'store/navigation'
 import useTextColor from 'ui/hooks/use-text-color'
+import { useSelector } from 'react-redux'
+import { AuthSelectors } from 'store/auth'
 
 const { Agora } = NativeModules
 const { FPS30, AudioProfileDefault, AudioScenarioDefault, Adaptative } = Agora
@@ -123,17 +123,15 @@ const styles = StyleSheet.create({
 // making it unusable for checking whether endCall is called.
 // This hasEnded is used as a workaround to this problem
 let hasEnded
-const VideoCallRoom = ({ remoteAuxiliary, mode }) => {
+const VideoCallRoom = ({ remoteAuxiliary, mode, channelId }) => {
   const logActivity = useActivityLog()
   const [peerIds, setPeerIds] = useState([])
   const [joinSucceed, setJoinSucceed] = useState(false)
-  const [channelName, setChannelName] = useState('abcxyz')
-  const [uid, setUid] = useState(Math.floor(Math.random() * 100))
   const [status, setStatus] = useState('initial')
   const textColor = useTextColor()
-  const startCall = () => {
+  const joinChannel = () => {
     hasEnded = false
-    RtcEngine.joinChannel(channelName, uid) //Join Channel
+    RtcEngine.joinChannel(channelId, Math.floor(Math.random() * 100)) //Join Channel
   }
 
   const endCall = () => {
@@ -214,8 +212,7 @@ const VideoCallRoom = ({ remoteAuxiliary, mode }) => {
       RtcEngine.on('error', error => {
         console.log('error', error)
       })
-
-      startCall()
+      joinChannel()
     }
     asyncFn()
     return () => {
