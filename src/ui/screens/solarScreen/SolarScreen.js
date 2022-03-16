@@ -15,6 +15,8 @@ import SolarView from './SolarView'
 import ContactButton from './ContactButton'
 import { Trans, useTranslation } from 'react-i18next'
 import colorUtils from 'utils/colors'
+import { withNavigationFocus } from 'react-navigation'
+import SleepTimer from 'ui/components/SleepTimer'
 
 const BOLD = text => <Text style={{ fontWeight: 'bold' }}>{text}</Text>
 const BR = <Text>{'\n'}</Text>
@@ -72,6 +74,7 @@ const SolarScreen = ({
     content: '',
     footer: '',
   })
+
   const { t } = useTranslation()
 
   const getMessage = dateInput => {
@@ -209,49 +212,51 @@ const SolarScreen = ({
   const textColor = colorUtils.getTextColor(time)
 
   return (
-    <Container style={{ backgroundColor: material.brandPrimary }}>
-      <TimerInitiator />
-      <MessageAlertManager />
-      <AccountChecker />
-      <LinearGradient
-        start={{ x: 0.0, y: 0.0 }}
-        end={{ x: 0.0, y: 1.0 }}
-        colors={color}
-        style={{ flex: 1 }}
-      >
-        <H1 style={{ color: textColor, ...styles.title }}>
-          {BOLD(hello.title)}
-        </H1>
-        <View style={styles.content}>
-          <H1 style={{ textAlign: 'center', color: textColor }}>
-            {hello.content}
+    <SleepTimer>
+      <Container style={{ backgroundColor: material.brandPrimary }}>
+        <TimerInitiator />
+        <MessageAlertManager />
+        <AccountChecker />
+        <LinearGradient
+          start={{ x: 0.0, y: 0.0 }}
+          end={{ x: 0.0, y: 1.0 }}
+          colors={color}
+          style={{ flex: 1 }}
+        >
+          <H1 style={{ color: textColor, ...styles.title }}>
+            {BOLD(hello.title)}
           </H1>
-          {BR}
-          <H1
-            style={{ textAlign: 'center', color: textColor, opacity: fadeIn }}
-          >
-            {hello.footer}
-          </H1>
+          <View style={styles.content}>
+            <H1 style={{ textAlign: 'center', color: textColor }}>
+              {hello.content}
+            </H1>
+            {BR}
+            <H1
+              style={{ textAlign: 'center', color: textColor, opacity: fadeIn }}
+            >
+              {hello.footer}
+            </H1>
+          </View>
+          <SolarView
+            date={date}
+            onPress={onPress}
+            solarIcon={solarIcon}
+            times={times(date, helpedUser)}
+            moonIcon={moonIcon}
+            helpedUser={helpedUser}
+          />
+        </LinearGradient>
+        <View
+          style={{
+            position: 'absolute',
+            right: 32,
+            top: 32,
+          }}
+        >
+          <ContactButton hasNewMessage={hasNewMessage} color={textColor} />
         </View>
-        <SolarView
-          date={date}
-          onPress={onPress}
-          solarIcon={solarIcon}
-          times={times(date, helpedUser)}
-          moonIcon={moonIcon}
-          helpedUser={helpedUser}
-        />
-      </LinearGradient>
-      <View
-        style={{
-          position: 'absolute',
-          right: 32,
-          top: 32,
-        }}
-      >
-        <ContactButton hasNewMessage={hasNewMessage} color={textColor} />
-      </View>
-    </Container>
+      </Container>
+    </SleepTimer>
   )
 }
 export default SolarScreen

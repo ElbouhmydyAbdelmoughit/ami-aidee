@@ -29,7 +29,7 @@ import SystemVolumeManager from 'ui/business/SystemVolumeManager'
 import BatteryChecker from 'ui/business/BatteryChecker'
 import { useDispatch } from 'react-redux'
 import { NavigationActions } from 'store/navigation'
-import { StatusBar, TouchableHighlight, View } from 'react-native'
+import { StatusBar } from 'react-native'
 
 export default () => {
   const [key, setKey] = useState(0)
@@ -43,133 +43,85 @@ export default () => {
     []
   )
   return (
-    <TouchableHighlight
-      key={key}
-      style={{ flex: 1 }}
-      onPress={() => {
-        dispatch(NavigationActions.screenTouched())
-      }}
-    >
-      <>
-        <StatusBar backgroundColor="transparent" translucent />
-        <SnackBar />
-        <RemoteEventReceiver />
-        <BatteryChecker />
-        <Router>
-          <Scene key="master" hideNavBar transitionConfig={transitionConfig}>
+    <React.Fragment key={key}>
+      <StatusBar backgroundColor="transparent" translucent />
+      <SnackBar />
+      <RemoteEventReceiver />
+      <BatteryChecker />
+      <Router>
+        <Scene key="master" hideNavBar transitionConfig={transitionConfig}>
+          <Scene
+            key="splash"
+            hideNavBar
+            initial
+            component={renderSplashScreen}
+            type={ActionConst.RESET}
+          />
+          <Scene key="login" type={ActionConst.RESET}>
             <Scene
-              key="splash"
+              key="login"
               hideNavBar
+              component={props => (
+                <LoginScreen
+                  {...props}
+                  onRefresh={() => {
+                    setKey(k => k + 1)
+                  }}
+                />
+              )}
               initial
-              component={renderSplashScreen}
-              type={ActionConst.RESET}
             />
-            <Scene key="login" type={ActionConst.RESET}>
-              <Scene
-                key="login"
-                hideNavBar
-                component={props => (
-                  <LoginScreen
-                    {...props}
-                    onRefresh={() => {
-                      setKey(k => k + 1)
-                    }}
-                  />
-                )}
-                initial
-              />
-              <Scene
-                key="register"
-                path="/register/:step"
-                hideNavBar
-                component={RegisterScreen}
-              />
-              <Scene
-                key="passwordResetRequest"
-                hideNavBar
-                component={PasswordResetRequestScreen}
-              />
-              <Scene
-                key="passwordResetRequestConfirmed"
-                hideNavBar
-                component={PasswordResetRequestConfirmedScreen}
-              />
-
-              <Scene
-                key="resetPassword"
-                hideNavBar
-                component={ResetPasswordScreen}
-              />
-              <Scene
-                key="resetPasswordConfirmed"
-                hideNavBar
-                component={ResetPasswordConfirmedScreen}
-              />
-            </Scene>
             <Scene
-              key="sleep"
-              component={SleepScreen}
-              type={ActionConst.RESET}
+              key="register"
+              path="/register/:step"
+              hideNavBar
+              component={RegisterScreen}
+            />
+            <Scene
+              key="passwordResetRequest"
+              hideNavBar
+              component={PasswordResetRequestScreen}
+            />
+            <Scene
+              key="passwordResetRequestConfirmed"
+              hideNavBar
+              component={PasswordResetRequestConfirmedScreen}
             />
 
-            <Stack key="root" type={ActionConst.REPLACE}>
-              <Scene
-                key="accueil"
-                initial
-                hideNavBar
-                component={SolarScreen}
-                onEnter={() => {
-                  dispatch(NavigationActions.changeReturnToHomeState('idle'))
-                  dispatch(NavigationActions.changeScreenSavingState('home'))
-                }}
-                onExit={state => {
-                  const currentRoute = state.routes[state.index]
-                  if (currentRoute.routeName === 'sleep') {
-                    return
-                  }
-                  const subRoute =
-                    currentRoute.routes &&
-                    currentRoute.routes[currentRoute.index]
-                  const isFromSolarView =
-                    subRoute &&
-                    subRoute.routeName === 'home' &&
-                    subRoute.params &&
-                    subRoute.params.redirectFromSolarView
-
-                  if (isFromSolarView) {
-                    dispatch(
-                      NavigationActions.changeReturnToHomeState(
-                        subRoute.params.returnToHomeState
-                      )
-                    )
-                  } else {
-                    dispatch(
-                      NavigationActions.changeReturnToHomeState('after_2_min')
-                    )
-                  }
-                  dispatch(NavigationActions.changeScreenSavingState('idle'))
-                }}
-              />
-              <Scene key="home" hideNavBar component={HomeScreen} />
-              <Scene key="contactsList" hideNavBar component={ContactsList} />
-              <Scene key="videoCall" hideNavBar component={VideoCallScreen} />
-              <Scene
-                key="userSettings"
-                hideNavBar
-                component={UserSettingsScreen}
-              />
-              <Scene key="messaging" hideNavBar component={MessagingScreen} />
-              <Scene
-                key="receivingScreen"
-                hideNavBar
-                component={VideoReceivingScreen}
-              />
-            </Stack>
+            <Scene
+              key="resetPassword"
+              hideNavBar
+              component={ResetPasswordScreen}
+            />
+            <Scene
+              key="resetPasswordConfirmed"
+              hideNavBar
+              component={ResetPasswordConfirmedScreen}
+            />
           </Scene>
-        </Router>
-        <SystemVolumeManager />
-      </>
-    </TouchableHighlight>
+          <Scene key="sleep" component={SleepScreen} type={ActionConst.RESET} />
+
+          <Stack key="root" type={ActionConst.REPLACE}>
+            <Scene key="accueil" initial hideNavBar component={SolarScreen} />
+            <Scene key="home" hideNavBar component={HomeScreen} />
+            <Scene key="contactsList" hideNavBar component={ContactsList} />
+            <Scene key="videoCall" hideNavBar component={VideoCallScreen} />
+            <Scene
+              key="userSettings"
+              hideNavBar
+              component={UserSettingsScreen}
+            />
+            <Scene key="messaging" hideNavBar component={MessagingScreen} />
+          </Stack>
+          <Scene
+            key="receivingScreen"
+            hideNavBar
+            component={VideoReceivingScreen}
+          />
+        </Scene>
+      </Router>
+      <SystemVolumeManager />
+    </React.Fragment>
   )
 }
 

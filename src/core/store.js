@@ -9,18 +9,6 @@ import { persistStore, persistReducer, createMigrate } from 'redux-persist'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import errorReporter from './error-reporter'
 
-const migrations = {
-  0: state => {
-    return {
-      ...state,
-      navigation: {
-        ...state.navigation,
-        returnToHomeState: 'idle',
-        screenSavingState: 'idle',
-      },
-    }
-  },
-}
 const persistConfig = {
   key: 'root',
   version: 0,
@@ -36,7 +24,6 @@ const persistConfig = {
     'resetPasswordRequest',
   ],
   timeout: null,
-  migrate: createMigrate(migrations, { debug: true }),
 }
 
 const logger = createLogger({

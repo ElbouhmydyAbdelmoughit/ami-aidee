@@ -1,10 +1,6 @@
 import logger from 'core/logger'
 import { createAction } from '../../utils'
 
-export type ReturnToHomeState = 'idle' | 'after_2_min' | 'after_1_min' | 'busy'
-
-export type ScreenSavingState = 'idle' | 'home' | 'sleep'
-
 export const types = {
   EXPIRATION_IN_10DAYS_WARNING_DISPLAYED:
     'EXPIRATION_IN_10DAYS_WARNING_DISPLAYED',
@@ -12,13 +8,6 @@ export const types = {
     'EXPIRATION_IN_5DAYS_WARNING_DISPLAYED',
   SET_APPLICATION_LANGUAGE: 'SET_APPLICATION_LANGUAGE',
   INITIALIZE_APPLICATION_LANGUAGE: 'INITIALIZE_APPLICATION_LANGUAGE',
-  START_SLEEP_SCREEN_TIMER: 'START_SLEEP_SCREEN_TIMER',
-  START_WAKE_UP_TIMER: 'START_WAKE_UP_TIMER',
-  SCREEN_TOUCHED: 'SCREEN_TOUCHED',
-  CHANGE_RETURN_TO_HOME_STATE: 'CHANGE_RETURN_TO_HOME_STATE',
-  EXIT_BUSY_STATE: 'EXIT_BUSY_STATE',
-  ENTER_BUSY_STATE: 'ENTER_BUSY_STATE',
-  CHANGE_SCREEN_SAVING_STATE: 'CHANGE_SCREEN_SAVING_STATE',
 }
 
 const NavigationActions = {
@@ -33,32 +22,6 @@ const NavigationActions = {
   },
   initializeApplicationLanguage() {
     return createAction(types.INITIALIZE_APPLICATION_LANGUAGE)
-  },
-  startSleepScreenTimer() {
-    return createAction(types.START_SLEEP_SCREEN_TIMER)
-  },
-  startWakeUpTimer() {
-    return createAction(types.START_WAKE_UP_TIMER)
-  },
-  screenTouched() {
-    return createAction(types.SCREEN_TOUCHED)
-  },
-  changeReturnToHomeState(newState: ReturnToHomeState) {
-    logger.debug('store.nav.root_timer', 'change state', newState)
-
-    return createAction(types.CHANGE_RETURN_TO_HOME_STATE, { newState })
-  },
-  changeScreenSavingState(newState: ScreenSavingState) {
-    logger.debug('store.nav.sleep_timer', 'change state', newState)
-    return createAction(types.CHANGE_SCREEN_SAVING_STATE, { newState })
-  },
-  enterBusyState() {
-    logger.debug('store.nav', 'enter busy state')
-    return createAction(types.ENTER_BUSY_STATE)
-  },
-  exitBusyState() {
-    logger.debug('store.nav', 'exit busy state')
-    return createAction(types.EXIT_BUSY_STATE)
   },
 }
 

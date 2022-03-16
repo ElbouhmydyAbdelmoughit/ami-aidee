@@ -9,6 +9,7 @@ import useActivityLog from '../../hooks/use-activity-log'
 import { useDispatch } from 'react-redux'
 import { NavigationActions } from 'store/navigation'
 import { ReturnToHomeState } from 'store/navigation/actions'
+import { WAKEUP_DURATION } from 'utils/constant'
 
 const SleepScreen = () => {
   const dispatch = useDispatch()
@@ -19,6 +20,15 @@ const SleepScreen = () => {
     logActivity('wake_up')
     Actions.root()
   }
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      Actions.root()
+    }, WAKEUP_DURATION)
+    return () => {
+      clearTimeout(timeout)
+    }
+  }, [])
 
   return (
     <Container>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createRef } from 'react'
+import React, { useState, useEffect, createRef, useRef } from 'react'
 import { Container, Text, H1, H3, Toast } from 'native-base'
 import { Col, Row, Grid } from 'react-native-easy-grid'
 import { Actions } from '@ami-app/react-native-router-flux'
@@ -28,6 +28,8 @@ import { Translations } from 'core/i18n'
 import { CircleButton } from 'ui/components'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { useTranslation } from 'react-i18next'
+import BacktoRootTimer from 'ui/components/BackToRootTimer'
+import { RETURN_TO_HOME_DURATION } from 'utils/constant'
 
 /**
  *
@@ -44,6 +46,7 @@ const HomeScreen = ({
   now,
   me,
   redirectFromSolarView,
+  returnToHomeState,
 }) => {
   console.log(list)
   console.log(me)
@@ -75,11 +78,13 @@ const HomeScreen = ({
     //setVolume(value)
 
     videoRef.current?.setVolume(value)
+    timerRef.current?.reset()
   }
 
   const reload = () => {
     const video = (videoRef && videoRef.current) || {}
     video.reload()
+    timerRef.current?.reset()
   }
 
   const next = () => {
@@ -90,6 +95,7 @@ const HomeScreen = ({
     if (messages.length > index + 1) {
       setMessage(messages[index + 1] || {})
     }
+    timerRef.current?.reset()
   }
 
   const previous = () => {
@@ -100,6 +106,7 @@ const HomeScreen = ({
     if (index > 0) {
       setMessage(messages[index - 1] || {})
     }
+    timerRef.current?.reset()
   }
 
   const { video_url, picture_url } = message
@@ -116,8 +123,16 @@ const HomeScreen = ({
 
   const color = ['#3FEDFF', '#8772FF']
   const [zooming, setZooming] = useState(false)
+  const timerRef = useRef()
   return (
-    <>
+    <BacktoRootTimer
+      timerRef={timerRef}
+      duration={
+        returnToHomeState === 'after_2_min'
+          ? 2 * RETURN_TO_HOME_DURATION
+          : RETURN_TO_HOME_DURATION
+      }
+    >
       {zooming && (
         <>
           <IconButton
@@ -136,6 +151,7 @@ const HomeScreen = ({
             }}
             onPress={() => {
               setZooming(false)
+              timerRef.current?.reset()
             }}
           />
         </>
@@ -259,6 +275,7 @@ const HomeScreen = ({
                       onPress={(...args) => {
                         logActivity('next_reminder')
                         next(...args)
+                        timerRef.current?.reset()
                       }}
                       size={60}
                       source={require('src/assets/images/next.png')}
@@ -289,7 +306,7 @@ const HomeScreen = ({
           />
         </LinearGradient>
       </TouchableWithoutFeedback>
-    </>
+    </BacktoRootTimer>
   )
 }
 

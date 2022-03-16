@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import GradientBackground from 'ui/components/GradientBackground'
 import { Actions } from '@ami-app/react-native-router-flux'
 import {
@@ -20,6 +20,7 @@ import { useTranslation } from 'react-i18next'
 import { times } from 'utils'
 import moment from 'moment'
 import colorUtils from 'utils/colors'
+import BacktoRootTimer from 'ui/components/BackToRootTimer'
 
 const styles = StyleSheet.create({
   title: {
@@ -59,6 +60,10 @@ const UserSettingsScreen = ({
   const [dischargingAlertChecked, setDischargingAlertChecked] = useState(
     currentHelpedUser.alert_on_discharge
   )
+  const timerRef = useRef()
+  const resetBackToRootTimer = () => {
+    timerRef.current?.reset()
+  }
 
   const logActivity = useActivityLog()
   const dispatch = useDispatch()
@@ -69,6 +74,7 @@ const UserSettingsScreen = ({
       automatic_pickup: !checked,
     })
     setChecked(c => !c)
+    resetBackToRootTimer()
   }
   const onMinVolumePress = () => {
     logActivity(TrackedActivity.TOGGLE_MIN_VOLUME_SET)
@@ -77,6 +83,7 @@ const UserSettingsScreen = ({
       min_volume: minVolumeChecked ? 0 : 0.5,
     })
     setMinVolumeChecked(c => !c)
+    resetBackToRootTimer()
   }
   const onAlertOnDischargePress = () => {
     logActivity(TrackedActivity.TOGGLE_ALERT_ON_DISCHARGE)
@@ -85,164 +92,172 @@ const UserSettingsScreen = ({
       alert_on_discharge: !dischargingAlertChecked,
     })
     setDischargingAlertChecked(c => !c)
+    resetBackToRootTimer()
   }
   const { t } = useTranslation()
   return (
-    <GradientBackground>
-      <ScrollView
-        contentContainerStyle={{
-          marginLeft: 64,
-        }}
-      >
-        <View
-          style={{
-            marginTop: 32,
-            marginBottom: 64,
+    <BacktoRootTimer timerRef={timerRef}>
+      <GradientBackground>
+        <ScrollView
+          contentContainerStyle={{
+            marginLeft: 64,
           }}
         >
           <View
             style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'flex-start',
-            }}
-          >
-            <IconButton
-              size={32}
-              color={textColor}
-              icon="arrow-back"
-              onPress={() => {
-                Actions.pop()
-              }}
-              style={{ marginBottom: 16 }}
-            >
-              {Translations.common.go_back}
-            </IconButton>
-            <H1 style={[styles.title, { color: textColor }]}>
-              {Translations.common.settings}
-            </H1>
-          </View>
-        </View>
-        <View>
-          <View>
-            <View style={{ flexDirection: 'row' }}>
-              <Checkbox
-                color={textColor}
-                status={checked ? 'checked' : 'unchecked'}
-                onPress={onPress}
-                uncheckedColor={textColor}
-              />
-              <TouchableRipple onPress={onPress}>
-                <React.Fragment>
-                  <Text style={[styles.text, { color: textColor }]}>
-                    {t(
-                      'sceen.settings.automatic_pickup',
-                      'Décrochage automatique'
-                    )}
-                  </Text>
-                  <Text style={[styles.helpText, { color: textColor }]}>
-                    {t(
-                      'sceen.settings.automatic_pickup_description',
-                      "L'appel entrant sera décroché automatiquement après 3 secondes."
-                    )}
-                  </Text>
-                </React.Fragment>
-              </TouchableRipple>
-            </View>
-            <View style={{ flexDirection: 'row', marginTop: 24 }}>
-              <Checkbox
-                color={textColor}
-                status={minVolumeChecked ? 'checked' : 'unchecked'}
-                onPress={onMinVolumePress}
-                uncheckedColor={textColor}
-              />
-              <TouchableRipple onPress={onMinVolumePress}>
-                <React.Fragment>
-                  <Text style={[styles.text, { color: textColor }]}>
-                    {t('sceen.settings.min_volume', 'Volume activé')}
-                  </Text>
-                  <Text style={[styles.helpText, { color: textColor }]}>
-                    {t(
-                      'sceen.settings.min_volume_description',
-                      'Le volume sera toujours activé et ne descend pas au dessous de 50%'
-                    )}
-                  </Text>
-                </React.Fragment>
-              </TouchableRipple>
-            </View>
-            <View style={{ flexDirection: 'row', marginTop: 24 }}>
-              <Checkbox
-                color={textColor}
-                status={dischargingAlertChecked ? 'checked' : 'unchecked'}
-                onPress={onAlertOnDischargePress}
-                uncheckedColor={textColor}
-              />
-              <TouchableRipple onPress={onAlertOnDischargePress}>
-                <React.Fragment>
-                  <Text style={[styles.text, { color: textColor }]}>
-                    {t(
-                      'sceen.settings.discharge_alert',
-                      'Alerte débranchement'
-                    )}
-                  </Text>
-                  <Text style={[styles.helpText, { color: textColor }]}>
-                    {t(
-                      'sceen.settings.discharge_alert_description',
-                      "Lorsque la tablette est débranché, l'aidé sera alerté pour rebrancher sa tablette"
-                    )}
-                  </Text>
-                </React.Fragment>
-              </TouchableRipple>
-            </View>
-          </View>
-          <View
-            style={{
-              alignItems: 'flex-start',
-              justifyContent: 'flex-end',
               marginTop: 32,
+              marginBottom: 64,
             }}
           >
-            <TouchableRipple
-              mode="outlined"
-              dark
+            <View
               style={{
-                borderColor: AppStyles.colors.danger,
-                borderRadius: 4,
-                borderWidth: 1,
-
-                marginBottom: 80,
-              }}
-              onPress={() => {
-                dispatch(AuthActions.logout())
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'flex-start',
               }}
             >
-              <View
+              <IconButton
+                size={32}
+                color={textColor}
+                icon="arrow-back"
+                onPress={() => {
+                  Actions.pop()
+                }}
+                style={{ marginBottom: 16 }}
+              >
+                {Translations.common.go_back}
+              </IconButton>
+              <H1 style={[styles.title, { color: textColor }]}>
+                {Translations.common.settings}
+              </H1>
+            </View>
+          </View>
+          <View>
+            <View>
+              <View style={{ flexDirection: 'row' }}>
+                <Checkbox
+                  color={textColor}
+                  status={checked ? 'checked' : 'unchecked'}
+                  onPress={onPress}
+                  uncheckedColor={textColor}
+                />
+                <TouchableRipple onPress={onPress}>
+                  <React.Fragment>
+                    <Text style={[styles.text, { color: textColor }]}>
+                      {t(
+                        'sceen.settings.automatic_pickup',
+                        'Décrochage automatique'
+                      )}
+                    </Text>
+                    <Text style={[styles.helpText, { color: textColor }]}>
+                      {t(
+                        'sceen.settings.automatic_pickup_description',
+                        "L'appel entrant sera décroché automatiquement après 3 secondes."
+                      )}
+                    </Text>
+                  </React.Fragment>
+                </TouchableRipple>
+              </View>
+              <View style={{ flexDirection: 'row', marginTop: 24 }}>
+                <Checkbox
+                  color={textColor}
+                  status={minVolumeChecked ? 'checked' : 'unchecked'}
+                  onPress={onMinVolumePress}
+                  uncheckedColor={textColor}
+                />
+                <TouchableRipple onPress={onMinVolumePress}>
+                  <React.Fragment>
+                    <Text style={[styles.text, { color: textColor }]}>
+                      {t('sceen.settings.min_volume', 'Volume activé')}
+                    </Text>
+                    <Text style={[styles.helpText, { color: textColor }]}>
+                      {t(
+                        'sceen.settings.min_volume_description',
+                        'Le volume sera toujours activé et ne descend pas au dessous de 50%'
+                      )}
+                    </Text>
+                  </React.Fragment>
+                </TouchableRipple>
+              </View>
+              <View style={{ flexDirection: 'row', marginTop: 24 }}>
+                <Checkbox
+                  color={textColor}
+                  status={dischargingAlertChecked ? 'checked' : 'unchecked'}
+                  onPress={onAlertOnDischargePress}
+                  uncheckedColor={textColor}
+                />
+                <TouchableRipple onPress={onAlertOnDischargePress}>
+                  <React.Fragment>
+                    <Text style={[styles.text, { color: textColor }]}>
+                      {t(
+                        'sceen.settings.discharge_alert',
+                        'Alerte débranchement'
+                      )}
+                    </Text>
+                    <Text style={[styles.helpText, { color: textColor }]}>
+                      {t(
+                        'sceen.settings.discharge_alert_description',
+                        "Lorsque la tablette est débranché, l'aidé sera alerté pour rebrancher sa tablette"
+                      )}
+                    </Text>
+                  </React.Fragment>
+                </TouchableRipple>
+              </View>
+            </View>
+            <View
+              style={{
+                alignItems: 'flex-start',
+                justifyContent: 'flex-end',
+                marginTop: 32,
+              }}
+            >
+              <TouchableRipple
+                mode="outlined"
+                dark
                 style={{
-                  alignItems: 'baseline',
-                  flexDirection: 'row',
-                  padding: 16,
-                  paddingTop: 8,
-                  paddingBottom: 8,
+                  borderColor: AppStyles.colors.danger,
+                  borderRadius: 4,
+                  borderWidth: 1,
+
+                  marginBottom: 80,
+                }}
+                onPress={() => {
+                  dispatch(AuthActions.logout())
+                  resetBackToRootTimer()
                 }}
               >
-                <Icon name="logout" size={16} color={AppStyles.colors.danger} />
-                <Text
+                <View
                   style={{
-                    color: AppStyles.colors.danger,
-                    fontSize: 18,
-                    textTransform: 'uppercase',
-                    fontWeight: '700',
-                    marginLeft: 8,
+                    alignItems: 'baseline',
+                    flexDirection: 'row',
+                    padding: 16,
+                    paddingTop: 8,
+                    paddingBottom: 8,
                   }}
                 >
-                  {Translations.common.to_signout}
-                </Text>
-              </View>
-            </TouchableRipple>
+                  <Icon
+                    name="logout"
+                    size={16}
+                    color={AppStyles.colors.danger}
+                  />
+                  <Text
+                    style={{
+                      color: AppStyles.colors.danger,
+                      fontSize: 18,
+                      textTransform: 'uppercase',
+                      fontWeight: '700',
+                      marginLeft: 8,
+                    }}
+                  >
+                    {Translations.common.to_signout}
+                  </Text>
+                </View>
+              </TouchableRipple>
+            </View>
           </View>
-        </View>
-      </ScrollView>
-    </GradientBackground>
+        </ScrollView>
+      </GradientBackground>
+    </BacktoRootTimer>
   )
 }
 

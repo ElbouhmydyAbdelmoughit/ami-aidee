@@ -33,6 +33,7 @@ const ChatRoom = ({
   sendMessage,
   messagesRequest,
   messages,
+  onAction,
 }) => {
   useEffect(() => {
     messagesRequest()
@@ -41,6 +42,7 @@ const ChatRoom = ({
   const { t } = useTranslation()
   const onSend = useCallback((newMessages = []) => {
     sendMessage(newMessages[0].text)
+    onAction()
   }, [])
   const lang = useSelector(NavigationSelectors.getApplicationLanguage)
   return (
@@ -52,6 +54,9 @@ const ChatRoom = ({
         _id: currentUserId,
       }}
       isKeyboardInternallyHandled={false}
+      onInputTextChanged={() => {
+        onAction()
+      }}
       renderAvatar={() => {
         return (
           <View style={{ width: 35 }}>

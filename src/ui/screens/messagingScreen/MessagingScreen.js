@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { View, Text, StyleSheet, Alert } from 'react-native'
 import _ from 'lodash'
 import { TouchableRipple } from 'react-native-paper'
@@ -16,6 +16,7 @@ import { times } from 'utils'
 import moment from 'moment'
 import { AuthSelectors } from 'store/auth'
 import colorUtils from 'utils/colors'
+import BacktoRootTimer from 'ui/components/BackToRootTimer'
 
 const styles = StyleSheet.create({
   box: {
@@ -56,47 +57,57 @@ const MessagingScreen = ({
 
   const time = times(moment(), currentHelpedUser)
   const textColor = colorUtils.getTextColor(time)
-
+  const timerRef = useRef()
   return (
-    <GradientBackground>
-      <MessageUpdater messagesRequest={messagesRequest} />
-      <View style={{ height: '100%', flexDirection: 'column' }}>
-        <MessagingNavBar user={auxiliary} textColor={textColor} />
-        <View style={{ flex: 1, flexDirection: 'row' }}>
-          <View
-            style={{
-              flex: 1,
-              backgroundColor: 'rgba(255,255,255,0.6)',
-              borderRadius: 16,
-              marginLeft: 16,
-              marginBottom: 48,
-            }}
-          >
-            <ChatRoom auxiliary={auxiliary} />
-          </View>
-          <View>
-            <TouchableRipple
-              onPress={_.debounce(() => {
-                logActivity('start_video_call')
-                dispatch(NavigationActions.enterBusyState())
-                Actions.push('videoCall', { auxiliary, startMode: 'video' })
-              }, 400)}
+    <BacktoRootTimer timerRef={timerRef}>
+      <GradientBackground>
+        <MessageUpdater messagesRequest={messagesRequest} />
+        <View style={{ height: '100%', flexDirection: 'column' }}>
+          <MessagingNavBar user={auxiliary} textColor={textColor} />
+          <View style={{ flex: 1, flexDirection: 'row' }}>
+            <View
+              style={{
+                flex: 1,
+                backgroundColor: 'rgba(255,255,255,0.6)',
+                borderRadius: 16,
+                marginLeft: 16,
+                marginBottom: 48,
+              }}
             >
-              <View
-                style={StyleSheet.compose(styles.box, {
-                  marginTop: 0,
-                  borderColor: textColor,
-                })}
+              <ChatRoom
+                auxiliary={auxiliary}
+                onAction={() => {
+                  timerRef.current && timerRef.current.reset()
+                }}
+              />
+            </View>
+            <View>
+              <TouchableRipple
+                onPress={_.debounce(() => {
+                  logActivity('start_video_call')
+                  dispatch(NavigationActions.enterBusyState())
+                  Actions.push('videoCall', { auxiliary, startMode: 'video' })
+                }, 400)}
               >
-                <Icon name="videocam" color={textColor} size={60} />
-                <Text
-                  style={{ color: textColor, fontSize: 20, fontWeight: 'bold' }}
+                <View
+                  style={StyleSheet.compose(styles.box, {
+                    marginTop: 0,
+                    borderColor: textColor,
+                  })}
                 >
-                  {Translations.common.video_call}
-                </Text>
-              </View>
-            </TouchableRipple>
-            {/*<TouchableRipple
+                  <Icon name="videocam" color={textColor} size={60} />
+                  <Text
+                    style={{
+                      color: textColor,
+                      fontSize: 20,
+                      fontWeight: 'bold',
+                    }}
+                  >
+                    {Translations.common.video_call}
+                  </Text>
+                </View>
+              </TouchableRipple>
+              {/*<TouchableRipple
               onPress={() => {
                 logActivity('start_audio_call')
                 Actions.push('videoCall', { auxiliary, startMode: 'audio' })
@@ -111,10 +122,11 @@ const MessagingScreen = ({
                 </Text>
               </View>
             </TouchableRipple>*/}
+            </View>
           </View>
         </View>
-      </View>
-    </GradientBackground>
+      </GradientBackground>
+    </BacktoRootTimer>
   )
 }
 

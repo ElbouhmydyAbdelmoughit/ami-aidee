@@ -5,7 +5,6 @@ import { Core } from 'src/core'
 import PushNotificationIOS from '@react-native-community/push-notification-ios'
 import PushNotification from 'react-native-push-notification'
 import { UserActions } from '../../../store/users'
-import { NavigationActions } from 'store/navigation'
 
 const RemoteEventReceiver = ({
   myUid,
@@ -53,7 +52,6 @@ const RemoteEventReceiver = ({
   useEffect(() => {
     if (incomingCall) {
       Actions.receivingScreen()
-      dispatch(NavigationActions.enterBusyState())
     }
   }, [incomingCall])
   return null
