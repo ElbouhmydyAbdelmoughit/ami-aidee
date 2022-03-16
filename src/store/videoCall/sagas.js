@@ -120,7 +120,6 @@ function* videoCallInvitationRefuseRequest() {
     yield put(VideoCallActions.invitationRefuseError({ error: e }))
   } finally {
     Actions.pop()
-    yield put(NavigationActions.exitBusyState())
   }
 }
 
@@ -154,8 +153,6 @@ function* localInvitationCancelRequest() {
     })
   } catch (e) {
     console.warn('cancel error', e)
-  } finally {
-    yield put(NavigationActions.exitBusyState())
   }
 }
 

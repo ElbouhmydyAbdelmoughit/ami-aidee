@@ -35,8 +35,6 @@ const SleepScreen = () => {
       <MessageAlertManager
         onRedirect={(returnToHomeState: ReturnToHomeState) => {
           Actions.root()
-          dispatch(NavigationActions.changeReturnToHomeState(returnToHomeState))
-          dispatch(NavigationActions.changeScreenSavingState('home'))
         }}
       />
       <TouchableHighlight style={{ flex: 1 }} onPress={handlePress}>

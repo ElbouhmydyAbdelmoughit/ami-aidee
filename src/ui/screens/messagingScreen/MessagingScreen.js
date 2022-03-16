@@ -85,7 +85,6 @@ const MessagingScreen = ({
               <TouchableRipple
                 onPress={_.debounce(() => {
                   logActivity('start_video_call')
-                  dispatch(NavigationActions.enterBusyState())
                   Actions.push('videoCall', { auxiliary, startMode: 'video' })
                 }, 400)}
               >

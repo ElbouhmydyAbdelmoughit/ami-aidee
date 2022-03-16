@@ -136,7 +136,6 @@ const VideoCallRoom = ({ remoteAuxiliary, mode }) => {
     RtcEngine.joinChannel(channelName, uid) //Join Channel
   }
 
-  const dispatch = useDispatch()
   const endCall = () => {
     logActivity('press_cancel_video_btn')
     if (hasEnded) {
@@ -147,7 +146,6 @@ const VideoCallRoom = ({ remoteAuxiliary, mode }) => {
     setJoinSucceed(false)
     setPeerIds([])
     Actions.pop()
-    dispatch(NavigationActions.exitBusyState())
   }
   const { t } = useTranslation()
   useEffect(() => {

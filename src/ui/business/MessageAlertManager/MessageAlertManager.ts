@@ -2,17 +2,16 @@ import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { MessageSelectors, MessageActions } from 'store/message'
 import { Actions } from '@ami-app/react-native-router-flux'
-import { ReturnToHomeState } from 'store/navigation/actions'
 
 const MessageAlertManager = ({
   onRedirect,
 }: {
-  onRedirect: (returnState: ReturnToHomeState) => void
+  onRedirect: (returnState: string) => void
 }) => {
   const immediateMessage = useSelector(MessageSelectors.getImmediateMessage)
   const messageToAlert = useSelector(MessageSelectors.getNextMessageToAlert)
   const dispatch = useDispatch()
-  const redirect = (returnToHomeState: ReturnToHomeState) => {
+  const redirect = (returnToHomeState: string) => {
     if (onRedirect) {
       onRedirect(returnToHomeState)
     }
