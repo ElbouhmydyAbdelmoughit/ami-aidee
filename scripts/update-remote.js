@@ -80,15 +80,18 @@ function updateRemote(auth) {
         result[1] = 'Active'
         return result
       }
-      if (newObj[key] !== oldObj[key][2]) {
+      if (
+        newObj[key].replace(/\n/g, '\\n') !==
+        oldObj[key][2].replace(/\n/g, '\\n')
+      ) {
         // conflict, print to screen for resolution
         console.log(
           chalk.red(
             '* Conflict between source defaultValue and Google Sheets: please fix now\nKey: %s\nRemote value:\n%s\nLocal value:\n%s\n\n'
           ),
           key,
-          oldObj[key][2] && oldObj[key][2].replace(/\n/g, '\n'),
-          newObj[key] && newObj[key].replace(/\n/g, '\n')
+          oldObj[key][2] && oldObj[key][2].replace(/\n/g, '\\n'),
+          newObj[key] && newObj[key].replace(/\n/g, '\\n')
         )
         // keep Google Sheets value
         return oldObj[key]
