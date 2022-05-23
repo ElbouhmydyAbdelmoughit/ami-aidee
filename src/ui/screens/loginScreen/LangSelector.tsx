@@ -36,6 +36,18 @@ const LangSelector = ({
             value: 'de',
             label: '🇩🇪 Deutsch',
           },
+          {
+            value: 'es',
+            label: '🇪🇸 Español',
+          },
+          {
+            value: 'pt',
+            label: '🇵🇹 Português',
+          },
+          {
+            value: 'nl',
+            label: '🇳🇱 Nederlands',
+          },
         ]}
       />
     </View>

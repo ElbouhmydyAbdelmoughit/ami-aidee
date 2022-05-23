@@ -8,7 +8,7 @@ const { execute } = require('./utils/google-api')
 
 const ROW_TO_BEGIN = 2
 const COLUMN_TO_BEGIN = 3
-const TRANSLATION_LANGUAGES = ['en', 'de']
+const TRANSLATION_LANGUAGES = ['en', 'de', 'es', 'pt', 'nl']
 const KEY_SEPARATOR = '.'
 const TRANSLATION_DIR = path.join(__dirname, '../translations')
 const SPREADSHEET_ID = '1rzkjtb83IZA1zhyUKb7AL9dMAPVL_aV9en2PJ1ZFRjo'

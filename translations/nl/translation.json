@@ -1,0 +1,149 @@
+{
+  "common": {
+    "after": "Erna",
+    "back_to_home": "Terug naar de startpagina",
+    "connection_in_progress": "Door verbinden…",
+    "coucou": "Goeiedag",
+    "email": "E-mailadres",
+    "everyday": "Elke dag",
+    "firstname": "Achternaam",
+    "forgot_password": "Wachtwoord vergeten?",
+    "from": "Vanaf",
+    "go_back": "Terugkeren",
+    "language": "Taal",
+    "lastname": "Achternaam",
+    "loading": "Bezig met laden…",
+    "new_messages": "Nieuw bericht",
+    "no_response": "Geen antwoord",
+    "ok": "Ok",
+    "once_a_week": "Een keer per week",
+    "one_time": "Eenmalig",
+    "password": "Wachtwoord",
+    "phone_number": "Telefoonnummer",
+    "ringing": "De telefoon gaat over…",
+    "settings": "Instellingen",
+    "subject_meeting": "Afspraak",
+    "subject_pill": "Inname van medicatie",
+    "subject_to_do": "« To Do » herinnering",
+    "to_accept": "Accepteren",
+    "to_cancel": "Annuleer",
+    "to_confirm": "Bevestig",
+    "to_continue": "Verder",
+    "to_login": "Inloggen",
+    "to_logout": "Uitloggen",
+    "to_send": "Stuur",
+    "to_signup": "Account aanmaken",
+    "today": "Vandaag",
+    "tomorrow": "Morgen",
+    "unknown_error": "Onbekende fout",
+    "video_call": "Videogesprek",
+    "your_email": "Uw e-mailadres"
+  },
+  "modal": {
+    "account_expired": {
+      "account_info": "De beheerders e-mail: ami.contact@lbdc.eu",
+      "description_1": "U heeft de proeftijd van 30 dagen van de zorg ontvanger overscheden",
+      "description_2": "Neem contact op met de app beheerder via e-mail om uw account te activeren en verder te gebruiken.",
+      "title": "Account verlopen"
+    },
+    "account_suspended": {
+      "description_1": "Uw account is geschorst. U heeft geen toegang meer tot de functionaliteit van de zorg ontvanger applicatie.",
+      "description_2": "Neem contact op met de app beheerder via e-mail als u gelooft dat dit een fout is.",
+      "title": "Account is geschorst"
+    },
+    "battery_check": {
+      "alert": "Laat de tablet op zodat de applicatie blijft werken"
+    },
+    "call_error": {
+      "no_audio_and_camera_permission": "De app heeft geen toestemming om audio en camera te gebruiken.",
+      "no_audio_permission": "De app heeft geen toestemming om audio te gebruiken.",
+      "title": "Het gesprek kan niet worden voltooid"
+    },
+    "expiring_soon_2": {
+      "title": "Laatste herinnering voor de opschorting"
+    },
+    "expiring_soon": {
+      "description_1": "De proefperiode van u account eindigt {{accountExpiresIn}} dagen. U heeft straks geen toegang meer tot de functies van de zorg ontvanger app.",
+      "description_2": "Neem contact op met de beheerder van de applicatie om uw account te activeren en verder te gebruiken",
+      "title": "Proeftijd zal binnenkort beëindigen "
+    }
+  },
+  "sceen": {
+    "settings": {
+      "automatic_pickup": "Oproep wordt automatisch beantwoord",
+      "automatic_pickup_description": "Het binnenkomend gesprek wordt automatisch beantwoord na 3 seconden",
+      "discharge_alert": "Loskoppel alert",
+      "discharge_alert_description": "Als de tablet losgekoppeld is, krijgt de verzorger een notificatie om de tablet opnieuw te verbinden",
+      "min_volume": "Volume geactiveerd",
+      "min_volume_description": "Het volume blijft geactiveerd en zal niet onder 50% zakken "
+    }
+  },
+  "screen": {
+    "chat": {
+      "begin_conversation": "Begin het gesprek met {{name}}",
+      "input_placeholder": "Schrijf een bericht"
+    },
+    "contacts": {
+      "subtitle": "Click op contactpersoon om een chat te beginnen",
+      "title": "Mijn gegevens"
+    },
+    "forget_password": "Voer uw e-mailadres in om de e-mail voor het opnieuw instellen van het wachtwoord te ontvangen.",
+    "login": {
+      "no_account": "Nog geen account?"
+    },
+    "password_reset_confirmed": "Er is rekening gehouden met uw verzoek om uw wachtwoord opnieuw in te stellen. Als uw account al bestaat, wordt er binnenkort een e-mail verzonden.",
+    "register": {
+      "account_created": "Uw account is aangemaakt",
+      "duplicate_email_error": "Er is al een account aan deze e-mail gekoppeld.",
+      "email_title": "Geef uw e-mailadres door",
+      "invalid_email_error": "Geef een geldige e-mailadres op",
+      "invalid_phone_number_error": "Geef een geldige telefoonnummer.",
+      "missing_email_error": "Geef uw geldige e-mailadres ",
+      "missing_firstname_error": "Geef uw geldige voornaam",
+      "missing_firstname_lastname_error": "Geef uw geldige voor en achternaam",
+      "missing_lastname_error": "Geef uw geldige achternaam",
+      "missing_password_error": "Voer een wachtwoord in alstublieft",
+      "missing_phone_number_error": "Voeg u telefoonnummer",
+      "missing_postal_code_error": "Land",
+      "name_title": "Voeg voor- en achternaam toe ",
+      "password_title": "Ten slofte, kies een veilige wachtwoord ",
+      "password_too_short_error": "Voeg een langere wachtwoord ",
+      "phone_title": "Voeg u telefoonnummer, Land en sponsorcode toe (optioneel)",
+      "postal_code_placeholder": "Land",
+      "referral_code_placeholder": "Sponsorcode (optioneel)",
+      "unknown_create_error": "Het account kan niet worden aangemaakt"
+    },
+    "reminders_list": {
+      "go_back_instruction": "Click op scherm aan om terug te keren naar de startpagina",
+      "last_reminder": "Laatste herinnering:",
+      "next_reminder": "Volgende herinnering ",
+      "no_new_messages": "Geen nieuw bericht",
+      "reminder_message": "Denk aan {{activity}} {{datetime}}"
+    },
+    "reset_password_confirmed": "Er is rekening gehouden met uw verzoek om uw.wachtwoord opnieuw in te stellen. ",
+    "reset_password": {
+      "invalid_request": "Ongeldig verzoek om wachtwoord opnieuw in te stellen (gebruikt of verlopen). Stuur aub nog een verzoek in.",
+      "password_field_label": "Uw nieuwe wachtwoord in",
+      "title": "Voer uw nieuwe wachtwoord in"
+    },
+    "solar": {
+      "daytime_description": "<0>Het is de <1>\\n</1> <3><0>{{day}}</0></3> <5>\\n</5><6>\\n</6> Het is </0></9> </0\n</8><9>{{hour}}</9> </0>\n",
+      "daytime_title": "Goeiemorgen {{name}}",
+      "nighttime_description": "<0>Het is <2><0>{{hour}}</0></2><3>\\n </3> Uw brein heft slap nodig om het lichaam te helen.</0>",
+      "nighttime_footer": "Ga terug naar bed",
+      "nighttime_title": "Het is avond "
+    },
+    "video_call": {
+      "automatic_pickup_in": "Terug in {{count}}  seconde",
+      "automatic_pickup_in_plural": "Terug in {{count}} seconden",
+      "hung_up": "{{Name}} heeft opgehangen",
+      "other_hung_up": "De verzorger heeft opgehangen",
+      "return_in_secs": "Terug in {{count}}  seconde",
+      "return_in_secs_plural": "Terug in {{count}} seconden"
+    }
+  },
+  "validation": {
+    "password_required": "Wachtwoord verplicht",
+    "password_too_short": "Wachtwoord te kort"
+  }
+}

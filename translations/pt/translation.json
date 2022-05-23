@@ -1,0 +1,149 @@
+{
+  "common": {
+    "after": "Depois",
+    "back_to_home": "Voltar a página inicial",
+    "connection_in_progress": "Conectando...",
+    "coucou": "Oi!",
+    "email": "Endereço de email",
+    "everyday": "Todos os dias",
+    "firstname": "Nome",
+    "forgot_password": "Senha esquecida?",
+    "from": "A partir de",
+    "go_back": "Retorno",
+    "language": "Idioma",
+    "lastname": "Sobrenome",
+    "loading": "Carregando...",
+    "new_messages": "Nova mensagem",
+    "no_response": "Sem resposta",
+    "ok": "Ok",
+    "once_a_week": "Uma vez por semana",
+    "one_time": "Uma vez",
+    "password": "Senha",
+    "phone_number": "Número de telefone",
+    "ringing": "Está tocando…",
+    "settings": "Configurações",
+    "subject_meeting": "Compromisso",
+    "subject_pill": "Ingestão de medicamentos",
+    "subject_to_do": "Lembrete \"Para fazer\"",
+    "to_accept": "Aceitar",
+    "to_cancel": "Cancelar",
+    "to_confirm": "Confirmar",
+    "to_continue": "Continuar",
+    "to_login": "Conectar-se",
+    "to_logout": "Desconectar",
+    "to_send": "Enviar",
+    "to_signup": "Cadastrar-se",
+    "today": "Hoje",
+    "tomorrow": "Amanhã",
+    "unknown_error": "Erro desconhecido",
+    "video_call": "Vídeo chamada",
+    "your_email": "Seu endereço de email"
+  },
+  "modal": {
+    "account_expired": {
+      "account_info": "Email do administrador: ami.sav@lbdc.eu",
+      "description_1": "Você excedeu a avaliação de 30 dias do aplicativo AMI Ajudado/a.",
+      "description_2": "Entre em contato com o administrador do aplicativo por email para ativar sua conta e continuar o uso.",
+      "title": "Conta expirada"
+    },
+    "account_suspended": {
+      "description_1": "Sua conta foi suspendida. Você não tem mais acesso as funcionalidades do aplicativo AMI Ajudado/a.",
+      "description_2": "Entre em contato com o administrador do aplicativo por email se pense que isso é um erro.",
+      "title": "Conta suspendida"
+    },
+    "battery_check": {
+      "alert": "Conecte o tablet a uma fonte de alimentação para garantir a operação contínua do aplicativo."
+    },
+    "call_error": {
+      "no_audio_and_camera_permission": "O aplicativo não tem a autorização para acessar ao áudio e a câmera.",
+      "no_audio_permission": "O aplicativo não tem a autorização para acessar ao áudio.",
+      "title": "A chamada não pode ser completada"
+    },
+    "expiring_soon_2": {
+      "title": "Ultimo lembrete antes do vencimento "
+    },
+    "expiring_soon": {
+      "description_1": "O período de avaliação da sua conta terminará em {{accountExpiresIn}} dias. Em breve você não terá mais acesso às funcionalidades do aplicativo AMI Ajudado/a.",
+      "description_2": "Entre em contato com o administrador do aplicativo por email para ativar sua conta e continuar o uso.",
+      "title": "O período de acesso está chegando ao fim"
+    }
+  },
+  "sceen": {
+    "settings": {
+      "automatic_pickup": "Resposta automática",
+      "automatic_pickup_description": "A chamada recebida será atendida automaticamente depois de 3 segundos.",
+      "discharge_alert": "Alerta fora da tomada",
+      "discharge_alert_description": "Quando o tablet está fora da tomada, a pessoa que está sendo ajudada será alertada para reconectar seu tablet.",
+      "min_volume": "Volume ativado",
+      "min_volume_description": "O volume estará sempre ativo e não cairá abaixo de 50%."
+    }
+  },
+  "screen": {
+    "chat": {
+      "begin_conversation": "Começar a conversa com {{name}}",
+      "input_placeholder": "Escrever uma mensagem"
+    },
+    "contacts": {
+      "subtitle": "Toque sobre o nome do contato para entrar em contato",
+      "title": "Meus contatos"
+    },
+    "forget_password": "Digite seu endereço de email para receber o email de redefinição de senha.",
+    "login": {
+      "no_account": "Não tem uma conta ainda?"
+    },
+    "password_reset_confirmed": "Sua solicitação de senha foi considerada. Se sua conta existir, um email de redefinição será enviado para você em breve.",
+    "register": {
+      "account_created": "Sua conta foi criada",
+      "duplicate_email_error": "Já existe uma conta vinculada a este email",
+      "email_title": "Preencha seu endereço de email",
+      "invalid_email_error": "Por favor informa um endereço de email válido",
+      "invalid_phone_number_error": "Por favor, preencha um número de telefone válido",
+      "missing_email_error": "Por favor insira um endereço de email",
+      "missing_firstname_error": "por favor informa seu nome",
+      "missing_firstname_lastname_error": "Por favor informa seu nome e sobrenome",
+      "missing_lastname_error": "Por favor informa seu sobrenome",
+      "missing_password_error": "Por favor escolher uma senha",
+      "missing_phone_number_error": "Por favor, preencha um número de telefone",
+      "missing_postal_code_error": "País",
+      "name_title": "Informe seu nome e sobrenome",
+      "password_title": "Por fim, escolhe uma senha segura",
+      "password_too_short_error": "Insira uma senha mais longa",
+      "phone_title": "Preencha seu número de telefone, seu país e o código de patrocínio (opcional)",
+      "postal_code_placeholder": "País",
+      "referral_code_placeholder": "Código de patrocínio (opcional)",
+      "unknown_create_error": "Não foi possível criar a conta"
+    },
+    "reminders_list": {
+      "go_back_instruction": "Toque na tela para retornar à página inicial",
+      "last_reminder": "Ultimo lembrete:",
+      "next_reminder": "Próximo lembrete:",
+      "no_new_messages": "Nenhuma nova mensagem",
+      "reminder_message": "Pensar em {{activity}} {{recurrence}} {{datetime}}"
+    },
+    "reset_password_confirmed": "Sua solicitação de redefinição de senha foi considerada",
+    "reset_password": {
+      "invalid_request": "Solicitação de redefinição de senha inválida (usada ou expirada). Por favor, faça outro pedido.",
+      "password_field_label": "Sua nova senha",
+      "title": "Por favor, digite sua nova senha"
+    },
+    "solar": {
+      "daytime_description": "<0> Hoje é <1>\\n</1> <3><0>{{day}}</0></3> <5>\\n</5><6>\\n</6> são <8>\\n</8><9><0>{{hour}}</0></9> </0>",
+      "daytime_title": "Bom dia {{name}}",
+      "nighttime_description": "<0>São <2><0>{{hour}}</0></2><3>\\n</3> Dormir é necessário para que seu cérebro repare seu corpo.</0>",
+      "nighttime_footer": "Volte para a cama",
+      "nighttime_title": "É a noite"
+    },
+    "video_call": {
+      "automatic_pickup_in": "Resposta automática em {{count}} segundo",
+      "automatic_pickup_in_plural": "Resposta automática em {{count}} segundos",
+      "hung_up": "{{name}} desligou",
+      "other_hung_up": "O cuidador desligou",
+      "return_in_secs": "Retorno em {{count}} segundo",
+      "return_in_secs_plural": "Retorno em {{count}} segundos"
+    }
+  },
+  "validation": {
+    "password_required": "Senha obrigatória",
+    "password_too_short": "Senha muito curta"
+  }
+}

@@ -5,6 +5,9 @@ import { getLocales } from 'react-native-localize'
 import fr from '../../translations/fr/translation.json'
 import en from '../../translations/en/translation.json'
 import de from '../../translations/de/translation.json'
+import es from '../../translations/es/translation.json'
+import pt from '../../translations/pt/translation.json'
+import nl from '../../translations/nl/translation.json'
 
 const getTranslations = (t: TFunction) => ({
   common: {
@@ -60,6 +63,15 @@ i18n.use(initReactI18next).init({
     },
     de: {
       translation: de,
+    },
+    es: {
+      translation: es,
+    },
+    pt: {
+      translation: pt,
+    },
+    nl: {
+      translation: nl,
     },
   },
   fallbackLng: 'en',
