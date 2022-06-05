@@ -13,6 +13,7 @@ import {
   ActivityIndicator,
   findNodeHandle,
   UIManager,
+  Platform,
 } from 'react-native'
 import VideoView from 'ui/components/videoView'
 import { Body, Card, CardItem, H3 } from 'native-base'
@@ -44,11 +45,16 @@ const VideoCard = ({ uri }, ref) => {
   const onLoad = payload => {}
 
   const reload = () => {
-    UIManager.dispatchViewManagerCommand(playerHandle, 0, null)
-    /*setReplay(true)
-    setTimeout(function () {
-      setReplay(false)
-    }, 200);*/
+    if (Platform.OS === 'ios') {
+      if (replay) {
+        setReplay(false)
+      }
+      setTimeout(() => {
+        setReplay(true)
+      }, 0)
+    } else {
+      UIManager.dispatchViewManagerCommand(playerHandle, 0, null)
+    }
   }
 
   const onReady = isReady => {
@@ -82,7 +88,7 @@ const VideoCard = ({ uri }, ref) => {
         onLoadStart={onLoadStart}
         onError={onError}
         style={{ width: '100%', height: '100%' }}
-      ></VideoView>
+      />
       {lastState == 'LOADING' && (
         <View style={styles.activityIndicatorWrapper}>
           <ActivityIndicator animating={true} />
