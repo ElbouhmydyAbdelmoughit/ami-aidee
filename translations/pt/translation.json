@@ -127,9 +127,9 @@
       "title": "Por favor, digite sua nova senha"
     },
     "solar": {
-      "daytime_description": "<0> Hoje é <1>\\n</1> <3><0>{{day}}</0></3> <5>\\n</5><6>\\n</6> são <8>\\n</8><9><0>{{hour}}</0></9> </0>",
+      "daytime_description": "<0> Hoje é <1>\n</1> <3><0>{{day}}</0></3> <5>\n</5><6>\n</6> são <8>\n</8><9><0>{{hour}}</0></9> </0>",
       "daytime_title": "Bom dia {{name}}",
-      "nighttime_description": "<0>São <2><0>{{hour}}</0></2><3>\\n</3> Dormir é necessário para que seu cérebro repare seu corpo.</0>",
+      "nighttime_description": "<0>São <2><0>{{hour}}</0></2><3>\n</3> Dormir é necessário para que seu cérebro repare seu corpo.</0>",
       "nighttime_footer": "Volte para a cama",
       "nighttime_title": "É a noite"
     },
