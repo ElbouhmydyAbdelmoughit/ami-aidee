@@ -2444,6 +2444,11 @@
   "resolved" "https://registry.npmjs.org/@react-native-community/slider/-/slider-2.0.8.tgz"
   "version" "2.0.8"
 
+"@react-native-picker/picker@^1.8.3":
+  "integrity" "sha512-pacdQDX6V6EmjF+HoiIh6u++qx4mTK0WnhgUHRc01B+Qt5eoeUwseBqmqfTSXTx/aHDEd6PiIw7UGvKgFoqgFQ=="
+  "resolved" "https://registry.npmjs.org/@react-native-picker/picker/-/picker-1.16.8.tgz"
+  "version" "1.16.8"
+
 "@react-native-picker/picker@^2.4.2":
   "integrity" "sha512-0nY8638h1J3wKz6P3IJMpOoxJDdOj7Dk/K2hP/xpqP3KnIY0lmoqYlhyNihuyVPocDGajf6SA7LFFsFepQ56ag=="
   "resolved" "https://registry.npmjs.org/@react-native-picker/picker/-/picker-2.4.2.tgz"
@@ -10833,7 +10838,7 @@
   dependencies:
     "minimist" "^1.2.5"
 
-"moment@^2.22.0", "moment@^2.24.0":
+"moment@^2.24.0":
   "integrity" "sha512-oIixUO+OamkUkwjhAVE18rAMfRJNsNe/Stid/gwHSOfHrOtw9EhAY2AHvdKZ/k/MggcYELFCJz/Sn2pL8b8JMw=="
   "resolved" "https://registry.npmjs.org/moment/-/moment-2.26.0.tgz"
   "version" "2.26.0"
@@ -12053,13 +12058,6 @@
   "resolved" "https://registry.npmjs.org/react-native-communications/-/react-native-communications-2.2.1.tgz"
   "version" "2.2.1"
 
-"react-native-datepicker@^1.7.2":
-  "integrity" "sha1-WNCCJZGgrJsyq6CCZQIioO4pZp0= sha512-ses0N1y44fYBmlejYwR2i+dGnQQ8v5/gacX2CrbFJiWxbcQaRuxexsZPB9YQuQkAy+uKz5Gti3Lrp3dh9BfkzA=="
-  "resolved" "https://registry.npmjs.org/react-native-datepicker/-/react-native-datepicker-1.7.2.tgz"
-  "version" "1.7.2"
-  dependencies:
-    "moment" "^2.22.0"
-
 "react-native-device-battery@^2.1.0":
   "integrity" "sha512-RCaKk+Fzl6+7fqBOZfNR+OiVPSxccptdIepQme8SH+m82Vl0FHEEJoKakYPJmkXcZnyWAp+odKCHw424IisoRw=="
   "resolved" "https://registry.npmjs.org/react-native-device-battery/-/react-native-device-battery-2.1.0.tgz"
@@ -12169,37 +12167,6 @@
   "resolved" "https://registry.npmjs.org/react-native-localize/-/react-native-localize-2.1.7.tgz"
   "version" "2.1.7"
 
-"react-native-material-buttons@^0.5.0":
-  "integrity" "sha1-qys+P8P1AMpxP1Hp11l4r/YCFSo= sha512-WRQyCG1hd4ZvTr+YdMoyKwoyt/onaFAh8DmyC8BxZ0JT1gy/hs9qTYAilbYb8C1l+okTusalyJeqoPh5GzA1pQ=="
-  "resolved" "https://registry.npmjs.org/react-native-material-buttons/-/react-native-material-buttons-0.5.0.tgz"
-  "version" "0.5.0"
-  dependencies:
-    "prop-types" "^15.5.9"
-    "react-native-material-ripple" "^0.7.0"
-
-"react-native-material-dropdown@git+https://github.com/harshitjee/react-native-material-dropdown.git":
-  "resolved" "git+ssh://git@github.com/harshitjee/react-native-material-dropdown.git#4ccdf40edd72db4fe7766de37dec8960dabf1dc5"
-  "version" "0.11.1"
-  dependencies:
-    "prop-types" "^15.5.9"
-    "react-native-material-buttons" "^0.5.0"
-    "react-native-material-ripple" "^0.8.0"
-    "react-native-material-textfield" "^0.12.0"
-
-"react-native-material-ripple@^0.7.0":
-  "integrity" "sha1-4q9REGgFMvFK6jw6Q4JHvi/+9lk= sha512-pHUrmxuPQMBcOssFfr+kERfAwkLhHqiP2ZTJeUsC77W9h+k2IU17T/cOb184S1jkbZP3CFJcOLd9V7RW112YGQ=="
-  "resolved" "https://registry.npmjs.org/react-native-material-ripple/-/react-native-material-ripple-0.7.5.tgz"
-  "version" "0.7.5"
-  dependencies:
-    "prop-types" "^15.5.10"
-
-"react-native-material-ripple@^0.8.0":
-  "integrity" "sha1-uMJOb96iryoh6EaLH0CzVIMBni8= sha512-ZgamZTJlrAPMg5Im8+ruK3zsSDHdPKgYA52qK7g0x/LJvzE/99M01kjmUVERqQAHxlVzOfIfVpxn9SjzNn6TEA=="
-  "resolved" "https://registry.npmjs.org/react-native-material-ripple/-/react-native-material-ripple-0.8.0.tgz"
-  "version" "0.8.0"
-  dependencies:
-    "prop-types" "^15.5.10"
-
 "react-native-material-textfield@^0.12.0":
   "integrity" "sha1-P7oZ12q4n2cFLIHgghUvwkPYKj8= sha512-eB2xjsOtdrQ4KuikXeGf0CSYS4Vg9K7ii5YsWX57VvzPSVp08P8bdqTrLY6QucBR397YWlewN/n17H34kd7teA=="
   "resolved" "https://registry.npmjs.org/react-native-material-textfield/-/react-native-material-textfield-0.12.0.tgz"
@@ -12265,6 +12232,14 @@
   "version" "0.0.22"
   dependencies:
     "prop-types" "^15.7.x"
+
+"react-native-picker-select@^8.0.4":
+  "integrity" "sha512-orBjPIwBkV5oipyVw263YNMI56f6Kj3p/ejabZoCYYNSG3AiLVVhC2RqsxMgDA7IayyURAW+AlV+mDJyVqLBkg=="
+  "resolved" "https://registry.npmjs.org/react-native-picker-select/-/react-native-picker-select-8.0.4.tgz"
+  "version" "8.0.4"
+  dependencies:
+    "@react-native-picker/picker" "^1.8.3"
+    "lodash.isequal" "^4.5.0"
 
 "react-native-progress@^4.1.2":
   "integrity" "sha512-sFHs6k6npWDOyvQoL2NeyOyHb+q1s8iOAOeyzoObN77zkxOAsgJt9FcSJLRq70Mw7qSGNJMFDqCgvYR1huYRwQ=="

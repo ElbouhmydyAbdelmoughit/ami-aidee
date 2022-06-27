@@ -1,7 +1,7 @@
 import { Translations } from 'core/i18n'
 import React, { useState } from 'react'
 import { View } from 'react-native'
-import { Dropdown } from 'react-native-material-dropdown'
+import RNPickerSelect from 'react-native-picker-select'
 import { connect } from 'react-redux'
 import { NavigationActions, NavigationSelectors } from 'store/navigation'
 
@@ -16,8 +16,8 @@ const LangSelector = ({
 }) => {
   return (
     <View style={{ width: 120, alignSelf: 'center' }}>
-      <Dropdown
-        onChangeText={(text: string) => {
+      <RNPickerSelect
+        onValueChange={(text: string) => {
           changeLang(text)
           onRefresh()
         }}
