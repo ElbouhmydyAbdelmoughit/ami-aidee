@@ -309,15 +309,17 @@ PODS:
     - React
   - RNCAsyncStorage (1.15.17):
     - React-Core
+  - RNCPicker (2.4.2):
+    - React-Core
   - RNCPushNotificationIOS (1.8.0):
     - React-Core
   - RNFS (2.14.1):
     - React
   - RNLocalize (2.1.7):
     - React-Core
-  - RNSentry (1.3.8):
-    - React
-    - Sentry (~> 4.4.0)
+  - RNSentry (4.0.2):
+    - React-Core
+    - Sentry (= 7.18.0)
   - RNSound (0.11.0):
     - React
     - RNSound/Core (= 0.11.0)
@@ -327,9 +329,9 @@ PODS:
     - React
   - RNVectorIcons (6.6.0):
     - React
-  - Sentry (4.4.3):
-    - Sentry/Core (= 4.4.3)
-  - Sentry/Core (4.4.3)
+  - Sentry (7.18.0):
+    - Sentry/Core (= 7.18.0)
+  - Sentry/Core (7.18.0)
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -377,6 +379,7 @@ DEPENDENCIES:
   - ReactNativeKeyboardManager (from `../node_modules/react-native-keyboard-manager`)
   - ReactNativeNavigation (from `../node_modules/react-native-navigation`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
+  - "RNCPicker (from `../node_modules/@react-native-picker/picker`)"
   - "RNCPushNotificationIOS (from `../node_modules/@react-native-community/push-notification-ios`)"
   - RNFS (from `../node_modules/react-native-fs`)
   - RNLocalize (from `../node_modules/react-native-localize`)
@@ -477,6 +480,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-navigation"
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-async-storage/async-storage"
+  RNCPicker:
+    :path: "../node_modules/@react-native-picker/picker"
   RNCPushNotificationIOS:
     :path: "../node_modules/@react-native-community/push-notification-ios"
   RNFS:
@@ -541,14 +546,15 @@ SPEC CHECKSUMS:
   ReactNativeKeyboardManager: 8fc2819040c5787194a890fbe3928bc5980b3f19
   ReactNativeNavigation: 55fde2ac2cb38be1d5dc5fee29e173961c559a5a
   RNCAsyncStorage: 6bd5a7ba3dde1c3facba418aa273f449bdc5437a
+  RNCPicker: 0250e95ad170569a96f5b0555cdd5e65b9084dca
   RNCPushNotificationIOS: 61a7c72bd1ebad3568025957d001e0f0e7b32191
   RNFS: a8fbe7060fa49157d819466404794ad9c58e58cf
   RNLocalize: f567ea0e35116a641cdffe6683b0d212d568f32a
-  RNSentry: 05cc998036c027785e466c896211b5c75b3e0ffd
+  RNSentry: a0db9b7879436933e78c7a3669e098eeb9c98001
   RNSound: da030221e6ac7e8290c6b43f2b5f2133a8e225b0
   RNSVG: 8ba35cbeb385a52fd960fd28db9d7d18b4c2974f
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
-  Sentry: 14bdd673870e8cf64932b149fad5bbbf39a9b390
+  Sentry: aff6fb3785973436f0bf25748f6b3bcb3e825e09
   Yoga: 3f5bfc54ce164fcd5b5d7f9f4232182d6298dd56
 
 PODFILE CHECKSUM: af2dbc8124818bc6b0726f64a2a784fc66229188
