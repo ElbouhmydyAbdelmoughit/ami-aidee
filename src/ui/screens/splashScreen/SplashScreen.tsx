@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { View, Linking } from 'react-native'
 import { Actions } from '@ami-app/react-native-router-flux'
 
-import { Container, H1 } from 'native-base'
+import { Container, Heading } from 'native-base'
 import LinearGradient from 'react-native-linear-gradient'
 
 const color = ['#3FEDFF', '#8772FF']
@@ -85,7 +85,7 @@ const SplashScreen = ({ auth, fetchUser }) => {
             backgroundColor: 'transparent',
           }}
         >
-          <H1 style={styles.title}>{'A.M.I'}</H1>
+          <Heading style={styles.title}>{'A.M.I'}</Heading>
         </View>
       </LinearGradient>
     </Container>

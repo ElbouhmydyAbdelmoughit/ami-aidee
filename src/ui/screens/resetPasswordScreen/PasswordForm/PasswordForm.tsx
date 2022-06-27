@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import { Button, Text } from 'native-base'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
-import { TextField } from 'react-native-material-textfield'
 import { View } from 'react-native'
 import { t, Translations } from 'core/i18n'
 import { useTranslation } from 'react-i18next'
+import TextInput from 'ui/components/common/TextInput'
 
 const formSchema = Yup.object().shape({
   password: Yup.string()
@@ -38,7 +38,7 @@ const PasswordForm = ({
       >
         {({ errors, values, handleChange, handleSubmit }) => (
           <React.Fragment>
-            <TextField
+            <TextInput
               label={t(
                 'screen.reset_password.password_field_label',
                 'Votre nouveau mot de passe'

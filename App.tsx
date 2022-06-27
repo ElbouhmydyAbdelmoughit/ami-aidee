@@ -7,16 +7,16 @@
  */
 
 import React, { useEffect } from 'react'
-import { StyleProvider, Root } from 'native-base'
+import { NativeBaseProvider } from 'native-base'
 import { Provider as PaperProvider } from 'react-native-paper'
 
 import { Provider } from 'react-redux'
 
 import { PersistGate } from 'redux-persist/integration/react'
 import Orientation from 'react-native-orientation'
-import { Core } from 'src/core'
+import { Core } from 'core'
 
-import { Loader } from 'src/ui/components'
+import { Loader } from 'ui/components'
 
 import AppRouter from './AppRouter'
 import getTheme from './native-base-theme/components'
@@ -32,16 +32,14 @@ const App = () => {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <StyleProvider style={getTheme(material)}>
+        <NativeBaseProvider>
           <PaperProvider>
             <>
               <Loader />
-              <Root>
-                <AppRouter />
-              </Root>
+              <AppRouter />
             </>
           </PaperProvider>
-        </StyleProvider>
+        </NativeBaseProvider>
       </PersistGate>
     </Provider>
   )

@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
-import { TextField } from 'react-native-material-textfield'
 import { Button, Text } from 'native-base'
 import { View } from 'react-native'
 import { Translations } from 'core/i18n'
+import TextInput from 'ui/components/common/TextInput'
 
 const formSchema = Yup.object().shape({
   email: Yup.string()
@@ -29,7 +29,7 @@ const ForgetPasswordForm = ({ requestPasswordReset }) => {
       >
         {({ errors, values, handleChange, handleSubmit }) => (
           <React.Fragment>
-            <TextField
+            <TextInput
               label={Translations.common.your_email}
               mode="flat"
               error={submitClicked ? errors.email : undefined}
