@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { Form, Input, View, H3, Item, Button, Text, Icon } from 'native-base'
+import { Input, View, Heading, Button, Text, Icon } from 'native-base'
 import { Actions } from '@ami-app/react-native-router-flux'
 import useActivityLog from '../../hooks/use-activity-log'
 import { useTranslation } from 'react-i18next'
 import { Translations } from 'core/i18n'
+import { TextInput } from 'react-native-paper'
 
 const PhoneForm = ({ setRegisterUser }) => {
   const [phone, setPhone] = useState('')
@@ -16,16 +17,16 @@ const PhoneForm = ({ setRegisterUser }) => {
   const { t } = useTranslation()
   return (
     <View style={{ width: '100%' }}>
-      <H3 style={{ marginBottom: 32, color: '#848484' }}>
+      <Heading style={{ marginBottom: 32, color: '#848484' }}>
         {errorText
           ? errorText
           : t(
               'screen.register.phone_title',
               'Renseigner votre numéro de téléphone, votre code départemental et le code de parrainage (optionnel)'
             )}
-      </H3>
-      <Form>
-        <Item
+      </Heading>
+      <View>
+        <View
           regular
           style={{
             borderRadius: 10,
@@ -34,7 +35,7 @@ const PhoneForm = ({ setRegisterUser }) => {
           }}
           error={errorField === 'phone'}
         >
-          <Input
+          <TextInput
             autoCapitalize="none"
             placeholder={Translations.common.phone_number}
             onChangeText={setPhone}
@@ -42,7 +43,7 @@ const PhoneForm = ({ setRegisterUser }) => {
             autoFocus
           />
           {errorField === 'phone' && <Icon name="close-circle" />}
-        </Item>
+        </View>
         <View
           style={{
             borderRadius: 10,
@@ -51,7 +52,7 @@ const PhoneForm = ({ setRegisterUser }) => {
             marginBottom: 16,
           }}
         >
-          <Item
+          <View
             regular
             style={{
               borderRadius: 10,
@@ -61,7 +62,7 @@ const PhoneForm = ({ setRegisterUser }) => {
             }}
             error={errorField === 'postalCode'}
           >
-            <Input
+            <TextInput
               autoCapitalize="none"
               placeholder={t(
                 'screen.register.postal_code_placeholder',
@@ -71,17 +72,18 @@ const PhoneForm = ({ setRegisterUser }) => {
               value={postalCode}
             />
             {errorField === 'postalCode' && <Icon name="close-circle" />}
-          </Item>
-          <Item
+          </View>
+          <View
             regular
             style={{
               borderRadius: 10,
               backgroundColor: '#EBEBEB',
               marginBottom: 16,
               flex: 1,
+              marginLeft: 8,
             }}
           >
-            <Input
+            <TextInput
               autoCapitalize="none"
               placeholder={t(
                 'screen.register.referral_code_placeholder',
@@ -90,7 +92,7 @@ const PhoneForm = ({ setRegisterUser }) => {
               onChangeText={setInvitationCode}
               value={invitationCode}
             />
-          </Item>
+          </View>
         </View>
         <Button
           full
@@ -143,9 +145,9 @@ const PhoneForm = ({ setRegisterUser }) => {
           }}
           style={{ borderRadius: 10 }}
         >
-          <Text>{Translations.common.to_continue}</Text>
+          {Translations.common.to_continue}
         </Button>
-      </Form>
+      </View>
     </View>
   )
 }

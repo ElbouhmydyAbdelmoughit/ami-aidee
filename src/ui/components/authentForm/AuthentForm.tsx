@@ -1,23 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import {
-  Form,
-  Item,
-  Input,
-  Label,
-  Button,
-  Text,
-  Body,
-  Title,
-  Icon,
-  H3,
-} from 'native-base'
-
-import { BR } from 'src/ui/components'
+import React, { useState } from 'react'
+import { Button, Text, Heading } from 'native-base'
+import Icon from 'react-native-vector-icons/MaterialIcons'
+import { BR } from 'ui/components'
 import { Actions } from '@ami-app/react-native-router-flux'
 import useActivityLog from '../../hooks/use-activity-log'
-import { View, TouchableHighlight } from 'react-native'
+import { View, TouchableHighlight, TouchableOpacity } from 'react-native'
 import { Translations } from 'core/i18n'
 import { useTranslation } from 'react-i18next'
+import { TextInput } from 'react-native-paper'
 
 export default ({ style, form, onValidate }) => {
   const [username, setUsername] = useState((form && form.username) || '')
@@ -52,39 +42,50 @@ export default ({ style, form, onValidate }) => {
   }
 
   return (
-    <Form style={style}>
-      <Item regular style={{ borderRadius: 10, backgroundColor: '#EBEBEB' }}>
-        <Icon active name="mail" style={{ color: '#6E6D6D' }} />
-        <Input
+    <View style={style}>
+      <View style={{ borderRadius: 10, backgroundColor: '#EBEBEB' }}>
+        <TextInput
           autoCapitalize="none"
           placeholder={Translations.common.email}
           onChangeText={setUsername}
+          style={{ paddingLeft: 27 }}
           value={username}
         />
-      </Item>
+        <Icon
+          acive
+          name="mail"
+          style={{ color: '#6E6D6D', position: 'absolute', left: 10, top: 18 }}
+          size={20}
+        />
+      </View>
 
-      <Item
-        regular
+      <View
         style={{ borderRadius: 10, marginTop: 16, backgroundColor: '#EBEBEB' }}
       >
-        <Icon active name="lock" style={{ color: '#6E6D6D' }} />
-        <Input
+        <TextInput
           secureTextEntry
           onChangeText={setPassword}
           placeholder={Translations.common.password}
           value={password}
+          style={{ paddingLeft: 27 }}
         />
-      </Item>
+        <Icon
+          active
+          name="lock"
+          size={20}
+          style={{ color: '#6E6D6D', position: 'absolute', left: 10, top: 18 }}
+        />
+      </View>
       <Button
         block
         disabled={!isFormValid()}
         onPress={validate}
         style={{ borderRadius: 10, marginTop: 16 }}
       >
-        <Text>{Translations.common.to_login}</Text>
+        {Translations.common.to_login}
       </Button>
       <View style={{ marginTop: 8 }}>
-        <TouchableHighlight onPress={() => Actions.passwordResetRequest()}>
+        <TouchableOpacity onPress={() => Actions.passwordResetRequest()}>
           <View>
             <Text
               style={{
@@ -94,29 +95,29 @@ export default ({ style, form, onValidate }) => {
               {Translations.common.forgot_password}
             </Text>
           </View>
-        </TouchableHighlight>
+        </TouchableOpacity>
       </View>
       <BR />
-      <H3
+      <Heading
         style={{
           textAlign: 'center',
           color: '#848484',
         }}
       >
         {t('screen.login.no_account', "Vous n'avez pas encore de compte ?")}
-      </H3>
+      </Heading>
       <Button
         full
-        bordered
+        variant="outline"
         onPress={() => {
           logActivity('press_register_btn')
           Actions.register({ step: 'name' })
         }}
         style={{ borderRadius: 10 }}
       >
-        <Text style={{}}>{Translations.common.to_signup}</Text>
+        {Translations.common.to_signup}
       </Button>
       <BR />
-    </Form>
+    </View>
   )
 }

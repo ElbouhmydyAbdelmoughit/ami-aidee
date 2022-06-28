@@ -1,21 +1,8 @@
 import React, { useState } from 'react'
 import { Image, Slider } from 'react-native'
-import {
-  Body,
-  Card,
-  CardItem,
-  View,
-  Text,
-  Button,
-  Icon,
-  Left,
-  Right,
-  H3,
-} from 'native-base'
-import { Col, Row, Grid } from 'react-native-easy-grid'
+import { View } from 'native-base'
 //import Slider from '@react-native-community/slider';
 
-import CircleButton from 'ui/components/circleButton'
 import useActivityLog from '../../hooks/use-activity-log'
 import { IconButton } from 'react-native-paper'
 

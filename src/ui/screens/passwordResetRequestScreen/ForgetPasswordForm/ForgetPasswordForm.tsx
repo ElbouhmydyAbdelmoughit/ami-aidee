@@ -36,6 +36,7 @@ const ForgetPasswordForm = ({ requestPasswordReset }) => {
               value={values.email}
               onChangeText={handleChange('email')}
               autoFocus
+              style={{ marginBottom: 16 }}
             />
             <Button
               block
@@ -44,7 +45,7 @@ const ForgetPasswordForm = ({ requestPasswordReset }) => {
                 handleSubmit(...args)
               }}
             >
-              <Text>{Translations.common.to_confirm}</Text>
+              {Translations.common.to_confirm}
             </Button>
           </React.Fragment>
         )}

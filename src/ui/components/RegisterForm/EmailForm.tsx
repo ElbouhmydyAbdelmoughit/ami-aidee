@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
-import { Form, Input, View, H3, Item, Button, Text, Icon } from 'native-base'
+import { Input, View, Button, Text, Heading } from 'native-base'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { Actions } from '@ami-app/react-native-router-flux'
 import useActivityLog from '../../hooks/use-activity-log'
 import { useTranslation } from 'react-i18next'
 import { Translations } from 'core/i18n'
+import { TextInput } from 'react-native-paper'
 
 const EmailForm = ({ setRegisterUser }) => {
   const [email, setEmail] = useState('')
@@ -12,13 +14,13 @@ const EmailForm = ({ setRegisterUser }) => {
   const { t } = useTranslation()
   return (
     <View style={{ width: '100%' }}>
-      <H3 style={{ marginBottom: 32, color: '#848484' }}>
+      <Heading style={{ marginBottom: 32, color: '#848484' }}>
         {errorText
           ? errorText
           : t('screen.register.email_title', 'Renseigner votre email')}
-      </H3>
-      <Form>
-        <Item
+      </Heading>
+      <View>
+        <View
           regular
           style={{
             borderRadius: 10,
@@ -27,15 +29,15 @@ const EmailForm = ({ setRegisterUser }) => {
           }}
           error={!!errorText}
         >
-          <Input
+          <TextInput
             autoCapitalize="none"
             placeholder={'Email'}
             autoFocus
             onChangeText={setEmail}
             value={email}
           />
-          {errorText && <Icon name="close-circle" />}
-        </Item>
+        </View>
+        {errorText && <Icon name="close-circle" />}
         <Button
           full
           block
@@ -74,9 +76,9 @@ const EmailForm = ({ setRegisterUser }) => {
           }}
           style={{ borderRadius: 10 }}
         >
-          <Text>{Translations.common.to_continue}</Text>
+          {Translations.common.to_continue}
         </Button>
-      </Form>
+      </View>
     </View>
   )
 }

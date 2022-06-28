@@ -16,7 +16,7 @@ import {
   Platform,
 } from 'react-native'
 import VideoView from 'ui/components/videoView'
-import { Body, Card, CardItem, H3 } from 'native-base'
+import { Heading } from 'native-base'
 
 let playerHandle
 const VideoCard = ({ uri }, ref) => {
@@ -96,9 +96,9 @@ const VideoCard = ({ uri }, ref) => {
       )}
       {lastState == 'ERROR' && (
         <View style={styles.activityIndicatorWrapper}>
-          <H3 style={{ textAlign: 'center', color: '#fff' }}>
+          <Heading style={{ textAlign: 'center', color: '#fff' }}>
             {'Oops. La vidéo ne peut pas être chargé.'}
-          </H3>
+          </Heading>
         </View>
       )}
     </View>

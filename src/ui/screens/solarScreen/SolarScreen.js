@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Text, View } from 'react-native'
-import { Container, H1 } from 'native-base'
+import { View } from 'react-native'
+import { Container, Heading, Text } from 'native-base'
 import material from 'AMIaide/native-base-theme/variables/material'
 
 import { Actions } from '@ami-app/react-native-router-flux'
@@ -86,12 +86,12 @@ const SolarScreen = ({
         title: t('screen.solar.nighttime_title', "C'est la nuit"),
         content: (
           <Trans i18nKey="screen.solar.nighttime_description">
-            <Text>
+            <Heading size="xl" style={{ color: 'white', fontSize: 30 }}>
               il est{' '}
               <Text style={{ fontWeight: 'bold' }}>{{ hour: hour }}</Text>
               <Text>{'\n'}</Text>Dormir est nécessaire pour que ton cerveau
               répare ton corps.
-            </Text>
+            </Heading>
           </Trans>
         ),
         footer: (
@@ -108,13 +108,13 @@ const SolarScreen = ({
       }),
       content: (
         <Trans i18nKey="screen.solar.daytime_description">
-          <Text>
+          <Heading size="xl" style={{ color: 'white', fontSize: 30 }}>
             nous sommes le <Text>{'\n'}</Text>{' '}
             <Text style={{ fontWeight: 'bold' }}>{{ day }}</Text>{' '}
             <Text>{'\n'}</Text>
             <Text>{'\n'}</Text> il est <Text>{'\n'}</Text>
             <Text style={{ fontWeight: 'bold' }}>{{ hour }}</Text>{' '}
-          </Text>
+          </Heading>
         </Trans>
       ),
     }
@@ -213,7 +213,7 @@ const SolarScreen = ({
 
   return (
     <SleepTimer>
-      <Container style={{ backgroundColor: material.brandPrimary }}>
+      <>
         <TimerInitiator />
         <MessageAlertManager />
         <AccountChecker />
@@ -223,19 +223,26 @@ const SolarScreen = ({
           colors={color}
           style={{ flex: 1 }}
         >
-          <H1 style={{ color: textColor, ...styles.title }}>
+          <Heading
+            size="xl"
+            style={{ color: textColor, ...styles.title, fontSize: 30 }}
+          >
             {BOLD(hello.title)}
-          </H1>
+          </Heading>
           <View style={styles.content}>
-            <H1 style={{ textAlign: 'center', color: textColor }}>
+            <Heading
+              size="xl"
+              style={{ textAlign: 'center', color: textColor }}
+            >
               {hello.content}
-            </H1>
+            </Heading>
             {BR}
-            <H1
+            <Heading
+              size="xl"
               style={{ textAlign: 'center', color: textColor, opacity: fadeIn }}
             >
               {hello.footer}
-            </H1>
+            </Heading>
           </View>
           <SolarView
             date={date}
@@ -255,7 +262,7 @@ const SolarScreen = ({
         >
           <ContactButton hasNewMessage={hasNewMessage} color={textColor} />
         </View>
-      </Container>
+      </>
     </SleepTimer>
   )
 }

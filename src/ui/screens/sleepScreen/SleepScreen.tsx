@@ -3,7 +3,7 @@ import { View, TouchableHighlight } from 'react-native'
 
 import { Actions } from '@ami-app/react-native-router-flux'
 
-import { Container, H1 } from 'native-base'
+import { Container, Heading } from 'native-base'
 import MessageAlertManager from 'ui/business/MessageAlertManager'
 import useActivityLog from '../../hooks/use-activity-log'
 import { useDispatch } from 'react-redux'
@@ -31,7 +31,7 @@ const SleepScreen = () => {
   }, [])
 
   return (
-    <Container>
+    <>
       <TimerInitiator />
       <MessageAlertManager
         onRedirect={() => {
@@ -46,7 +46,8 @@ const SleepScreen = () => {
             backgroundColor: '#000000',
           }}
         >
-          <H1
+          <Heading
+            size="xl"
             style={{
               color: 'rgba(255, 255, 255, 0.06)',
               fontFamily: 'Roboto',
@@ -57,10 +58,10 @@ const SleepScreen = () => {
             }}
           >
             A.M.I
-          </H1>
+          </Heading>
         </View>
       </TouchableHighlight>
-    </Container>
+    </>
   )
 }
 

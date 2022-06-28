@@ -71,24 +71,24 @@ const SplashScreen = ({ auth, fetchUser }) => {
   }, [redirectedRef.current, initialUrl, auth && auth.jwt])
 
   return (
-    <Container>
-      <LinearGradient
-        start={{ x: 0.0, y: 0.0 }}
-        end={{ x: 1.0, y: 1.0 }}
-        colors={color}
-        style={{ flex: 1 }}
+    <LinearGradient
+      start={{ x: 0.0, y: 0.0 }}
+      end={{ x: 1.0, y: 1.0 }}
+      colors={color}
+      style={{ flex: 1 }}
+    >
+      <View
+        style={{
+          flex: 1,
+          justifyContent: 'center',
+          backgroundColor: 'transparent',
+        }}
       >
-        <View
-          style={{
-            flex: 1,
-            justifyContent: 'center',
-            backgroundColor: 'transparent',
-          }}
-        >
-          <Heading style={styles.title}>{'A.M.I'}</Heading>
-        </View>
-      </LinearGradient>
-    </Container>
+        <Heading size="lg" style={styles.title}>
+          {'A.M.I'}
+        </Heading>
+      </View>
+    </LinearGradient>
   )
 }
 

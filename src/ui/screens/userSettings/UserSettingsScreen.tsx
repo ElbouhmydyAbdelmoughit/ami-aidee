@@ -7,7 +7,7 @@ import {
   TouchableRipple,
   IconButton,
 } from 'react-native-paper'
-import { H1 } from 'native-base'
+import { Heading } from 'native-base'
 import { View, StyleSheet, Text, ScrollView } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import useActivityLog from 'ui/hooks/use-activity-log'
@@ -127,9 +127,9 @@ const UserSettingsScreen = ({
               >
                 {Translations.common.go_back}
               </IconButton>
-              <H1 style={[styles.title, { color: textColor }]}>
+              <Heading size="xl" style={[styles.title, { color: textColor }]}>
                 {Translations.common.settings}
-              </H1>
+              </Heading>
             </View>
           </View>
           <View>

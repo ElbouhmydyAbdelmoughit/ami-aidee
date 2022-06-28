@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { View, Text, Dimensions, StyleSheet, ScrollView } from 'react-native'
 import { Avatar, TouchableRipple, Button, IconButton } from 'react-native-paper'
-import { H1, H3 } from 'native-base'
+import { Heading } from 'native-base'
 import { getUserAbbr } from 'src/utils/user'
 import moment from 'core/moment'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
@@ -91,16 +91,16 @@ const ContactsList = ({
                 >
                   {Translations.common.go_back}
                 </IconButton>
-                <H1 style={[styles.title, { color: textColor }]}>
+                <Heading size="xl" style={[styles.title, { color: textColor }]}>
                   {t('screen.contacts.title', 'Mes contacts')}
-                </H1>
+                </Heading>
               </View>
-              <H3 style={[styles.subtitle, { color: textColor }]}>
+              <Heading style={[styles.subtitle, { color: textColor }]}>
                 {t(
                   'screen.contacts.subtitle',
                   'Appuyer sur la carte pour contacter la personne'
                 )}
-              </H3>
+              </Heading>
             </View>
             <View style={{ marginTop: 32, marginRight: 32 }}>
               <Button

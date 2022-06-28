@@ -19,7 +19,7 @@ const PasswordResetConfirmedScreen = () => {
       </Subheading>
       <View style={{ marginTop: 20 }}>
         <Button block onPress={() => Actions.login()}>
-          <Text>{Translations.common.go_back}</Text>
+          {Translations.common.go_back}
         </Button>
       </View>
     </CenterCardLayout>

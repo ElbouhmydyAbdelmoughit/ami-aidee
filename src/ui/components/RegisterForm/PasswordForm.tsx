@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Form, Input, View, H3, Item, Button, Text } from 'native-base'
+import { Form, Input, View, Heading, Item, Button, Text } from 'native-base'
 import { Actions } from '@ami-app/react-native-router-flux'
 import useActivityLog from '../../hooks/use-activity-log'
 import { useTranslation } from 'react-i18next'
@@ -17,14 +17,14 @@ const PasswordForm = ({
   const { t } = useTranslation()
   return (
     <View style={{ width: '100%' }}>
-      <H3 style={{ marginBottom: 32, color: '#848484' }}>
+      <Heading size="xl" style={{ marginBottom: 32, color: '#848484' }}>
         {errorText
           ? errorText
           : t(
               'screen.register.password_title',
               'Enfin, choisir un mot de passe sécurisé'
             )}
-      </H3>
+      </Heading>
       <Form>
         <Item
           regular

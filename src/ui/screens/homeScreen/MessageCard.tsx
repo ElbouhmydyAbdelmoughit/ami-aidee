@@ -1,25 +1,13 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
-import {
-  Body,
-  Card,
-  CardItem,
-  Text,
-  H1,
-  H2,
-  H3,
-  Left,
-  Right,
-} from 'native-base'
-import { Animated, View } from 'react-native'
+import { Text } from 'native-base'
+import { View } from 'react-native'
 import { MessageSelectors } from 'store/message'
 import { getSubjects, getMoments, getRecurrences } from 'utils'
 import moment from 'core/moment'
-import { IconButton } from 'react-native-paper'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import ZoomableImage from './ZoomableImage'
 import { Message } from 'core/types'
-import { Translations } from 'core/i18n'
 import { useTranslation } from 'react-i18next'
 
 const BOLD = text => <Text style={{ fontWeight: 'bold' }}>{text}</Text>

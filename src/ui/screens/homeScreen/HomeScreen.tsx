@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createRef, useRef } from 'react'
-import { Container, Text, H1, H3, Toast } from 'native-base'
+import { Container, Text, Heading, Toast } from 'native-base'
 import { Col, Row, Grid } from 'react-native-easy-grid'
 import { Actions } from '@ami-app/react-native-router-flux'
 import {
@@ -174,12 +174,12 @@ const HomeScreen = ({
         >
           {messages.length == 0 && (
             <View style={{ alignItems: 'center' }}>
-              <H1 style={styles.title}>
+              <Heading size="xl" style={styles.title}>
                 {t(
                   'screen.reminders_list.no_new_messages',
                   'Pas de nouveau messages'
                 )}
-              </H1>
+              </Heading>
               <Button
                 mode="outlined"
                 style={{ borderColor: 'white' }}
@@ -266,11 +266,11 @@ const HomeScreen = ({
                       size={60}
                       source={require('src/assets/images/back.png')}
                     />
-                    <H3
+                    <Heading
                       style={{ color: '#fff', marginHorizontal: 8 }}
                     >{`${messages.indexOf(message) + 1} / ${
                       messages.length
-                    }`}</H3>
+                    }`}</Heading>
                     <CircleButton
                       onPress={(...args) => {
                         logActivity('next_reminder')

@@ -1,6 +1,6 @@
 import { Translations } from 'core/i18n'
 import React, { useState } from 'react'
-import { View } from 'react-native'
+import { Text, View } from 'react-native'
 import RNPickerSelect from 'react-native-picker-select'
 import { connect } from 'react-redux'
 import { NavigationActions, NavigationSelectors } from 'store/navigation'
@@ -15,15 +15,20 @@ const LangSelector = ({
   onRefresh: () => void
 }) => {
   return (
-    <View style={{ width: 120, alignSelf: 'center' }}>
+    <View style={{ width: 140, alignSelf: 'center' }}>
+      <Text style={{ color: '#555' }}>{Translations.common.language}</Text>
       <RNPickerSelect
         onValueChange={(text: string) => {
           changeLang(text)
           onRefresh()
         }}
+        pickerProps={{
+          style: {
+            color: '#555',
+          },
+        }}
         value={lang || ''}
-        label={Translations.common.language}
-        data={[
+        items={[
           {
             value: 'fr',
             label: '🇫🇷 Français',
