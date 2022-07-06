@@ -4,7 +4,6 @@ import { Avatar, TouchableRipple, Button, IconButton } from 'react-native-paper'
 import { Heading } from 'native-base'
 import { getUserAbbr } from 'src/utils/user'
 import moment from 'core/moment'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { Actions } from '@ami-app/react-native-router-flux'
 import LinearGradient from 'react-native-linear-gradient'
 import { times } from 'src/utils'
@@ -34,6 +33,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontFamily: 'Roboto',
     fontWeight: 'bold',
+    fontSize: 24,
   },
   subtitle: {
     color: '#fff',
@@ -60,6 +60,7 @@ const ContactsList = ({
   const time = times(moment(), helpedUser)
   const textColor = colorUtils.getTextColor(time)
   const gradientColors = getGradientColors(time)
+  console.log(auxiliaries)
   return (
     <BacktoRootTimer>
       <LinearGradient

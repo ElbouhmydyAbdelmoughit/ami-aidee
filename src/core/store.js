@@ -3,9 +3,8 @@ import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import { loadState, saveState } from 'src/utils/storage'
 import appReducers, { rootSaga } from 'store'
-import { createLogger } from 'redux-logger'
 
-import { persistStore, persistReducer, createMigrate } from 'redux-persist'
+import { persistStore, persistReducer } from 'redux-persist'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import errorReporter from './error-reporter'
 
@@ -26,10 +25,6 @@ const persistConfig = {
   timeout: null,
 }
 
-const logger = createLogger({
-  // ...options
-})
-
 const sagaMiddleware = createSagaMiddleware({
   onError: error => {
     errorReporter.report(error)
@@ -43,7 +38,6 @@ const persistedState = loadState()
 const middleware = [
   // Info: Apply sagaMiddleware in first !
   applyMiddleware(sagaMiddleware),
-  ...(__DEV__ ? [applyMiddleware(logger)] : []),
 ].concat(
   process.env.NODE_ENV === 'development'
     ? [

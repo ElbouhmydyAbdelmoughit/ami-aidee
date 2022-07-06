@@ -30,10 +30,10 @@ function* auxiliariesRequest({ filters }) {
 
   const [error, response] = yield call(AuxiliariesService.auxiliaries, filters)
   console.log(error)
-  console.log(response)
-  if (!error && response)
+  console.log('auxiliariesRequest', response)
+  if (!error && response) {
     yield put(AuxiliaryAction.auxiliariesSuccess(response.auxiliaries))
-  else {
+  } else {
     yield put(AuxiliaryAction.auxiliariesFailure())
   }
 }
@@ -64,8 +64,6 @@ function* auxiliariesModifyRequest({ auxiliary }) {
     id,
     aux,
   })
-  console.log(error)
-  console.log(response)
   const auxiliaries = response.update_auxiliaries.returning
   yield put(AuxiliaryAction.auxiliariesModifySuccess(auxiliaries))
   if (error) {
