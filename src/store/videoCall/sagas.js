@@ -1,4 +1,4 @@
-import { Actions } from '@ami-app/react-native-router-flux'
+import { Actions } from 'react-native-router-flux'
 import RtmEngine from 'agora-react-native-rtm'
 import { takeLatest, put, select, call } from 'redux-saga/effects'
 import VideoCallSelectors from './selectors'

@@ -5,7 +5,7 @@ import { CommonActions } from '../common'
 import { LoaderActions } from '../loader'
 import { types, default as AuthActions } from './actions'
 import { SnackActions } from '../snackBar'
-import { Actions } from '@ami-app/react-native-router-flux'
+import { Actions } from 'react-native-router-flux'
 import AuthSelectors from './selectors'
 import { Alert } from 'react-native'
 

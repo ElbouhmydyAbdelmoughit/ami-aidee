@@ -327,14 +327,22 @@ PODS:
     - React
   - RNCAsyncStorage (1.15.17):
     - React-Core
-  - RNCPicker (2.4.2):
-    - React-Core
   - RNCPushNotificationIOS (1.8.0):
     - React-Core
   - RNFS (2.14.1):
     - React
+  - RNGestureHandler (1.10.3):
+    - React-Core
   - RNLocalize (2.1.7):
     - React-Core
+  - RNReanimated (1.13.4):
+    - React-Core
+  - RNScreens (3.14.1):
+    - React-Core
+    - React-RCTImage
+  - RNSentry (4.1.1):
+    - React-Core
+    - Sentry (= 7.20.0)
   - RNSound (0.11.0):
     - React
     - RNSound/Core (= 0.11.0)
@@ -342,6 +350,9 @@ PODS:
     - React
   - RNSVG (9.13.6):
     - React
+  - Sentry (7.20.0):
+    - Sentry/Core (= 7.20.0)
+  - Sentry/Core (7.20.0)
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -392,10 +403,13 @@ DEPENDENCIES:
   - ReactNativeKeyboardManager (from `../node_modules/react-native-keyboard-manager`)
   - ReactNativeNavigation (from `../node_modules/react-native-navigation`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
-  - "RNCPicker (from `../node_modules/@react-native-picker/picker`)"
   - "RNCPushNotificationIOS (from `../node_modules/@react-native-community/push-notification-ios`)"
   - RNFS (from `../node_modules/react-native-fs`)
+  - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNLocalize (from `../node_modules/react-native-localize`)
+  - RNReanimated (from `../node_modules/react-native-reanimated`)
+  - RNScreens (from `../node_modules/react-native-screens`)
+  - "RNSentry (from `../node_modules/@sentry/react-native`)"
   - RNSound (from `../node_modules/react-native-sound`)
   - RNSVG (from `../node_modules/react-native-svg`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
@@ -408,6 +422,7 @@ SPEC REPOS:
     - Fabric
     - fmt
     - IQKeyboardManager
+    - Sentry
 
 EXTERNAL SOURCES:
   agora-react-native-rtm:
@@ -496,14 +511,20 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-navigation"
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-async-storage/async-storage"
-  RNCPicker:
-    :path: "../node_modules/@react-native-picker/picker"
   RNCPushNotificationIOS:
     :path: "../node_modules/@react-native-community/push-notification-ios"
   RNFS:
     :path: "../node_modules/react-native-fs"
+  RNGestureHandler:
+    :path: "../node_modules/react-native-gesture-handler"
   RNLocalize:
     :path: "../node_modules/react-native-localize"
+  RNReanimated:
+    :path: "../node_modules/react-native-reanimated"
+  RNScreens:
+    :path: "../node_modules/react-native-screens"
+  RNSentry:
+    :path: "../node_modules/@sentry/react-native"
   RNSound:
     :path: "../node_modules/react-native-sound"
   RNSVG:
@@ -541,7 +562,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 55605caf04e02f9b0e05842b786f1c12dde08f4b
   React-logger: ca970551cb7eea2fd814d0d5f6fc1a471eb53b76
   react-native-agora: 701d3d6ec5dc7142d3fa7855baed71d0b834a891
-  react-native-device-battery: a81f323a2634b22e9b7cccda97881977f0b1ed0a
+  react-native-device-battery: 8dd74a41bb4d24a686a0c85d87c37d8327374434
   react-native-orientation: f1caf84d65f1a4fd4511a18f2b924e634ad7a628
   react-native-safe-area-context: 6c12e3859b6f27b25de4fee8201cfb858432d8de
   react-native-slider: 3a1cfd00c9c31068251b536822f7192e8d1d6b6f
@@ -561,14 +582,18 @@ SPEC CHECKSUMS:
   ReactNativeKeyboardManager: 8fc2819040c5787194a890fbe3928bc5980b3f19
   ReactNativeNavigation: 55fde2ac2cb38be1d5dc5fee29e173961c559a5a
   RNCAsyncStorage: 6bd5a7ba3dde1c3facba418aa273f449bdc5437a
-  RNCPicker: 0250e95ad170569a96f5b0555cdd5e65b9084dca
   RNCPushNotificationIOS: 61a7c72bd1ebad3568025957d001e0f0e7b32191
   RNFS: a8fbe7060fa49157d819466404794ad9c58e58cf
+  RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
   RNLocalize: f567ea0e35116a641cdffe6683b0d212d568f32a
+  RNReanimated: c1b56d030d1616239861534d9adb531f8cffab68
+  RNScreens: aa9a97835afbbdc18a4757870b2b59b7d9fae16a
+  RNSentry: 7244fcc887e50a433d181d9554782a3dbaadf5ec
   RNSound: da030221e6ac7e8290c6b43f2b5f2133a8e225b0
   RNSVG: 8ba35cbeb385a52fd960fd28db9d7d18b4c2974f
+  Sentry: 9e8ec837fa37e7b397f19f75542800461b138d0e
   Yoga: 7ab6e3ee4ce47d7b789d1cb520163833e515f452
 
-PODFILE CHECKSUM: 61c389caf27d6fcb3a9f9d11ea2c1edc47c1ff43
+PODFILE CHECKSUM: 4277fe29a836a91b8ba3267fc2890cb866556356
 
 COCOAPODS: 1.11.2

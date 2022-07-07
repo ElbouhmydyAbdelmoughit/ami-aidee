@@ -2,7 +2,7 @@ import React from 'react'
 
 import { View, Text } from 'react-native'
 import { Avatar, IconButton } from 'react-native-paper'
-import { Actions } from '@ami-app/react-native-router-flux'
+import { Actions } from 'react-native-router-flux'
 import { getUserDisplayName, getUserAbbr } from '../../../utils/user'
 import useActivityLog from '../../hooks/use-activity-log'
 

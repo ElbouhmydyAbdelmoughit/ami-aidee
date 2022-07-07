@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Input, View, Button, Text, Heading } from 'native-base'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-import { Actions } from '@ami-app/react-native-router-flux'
+import { Actions } from 'react-native-router-flux'
 import useActivityLog from '../../hooks/use-activity-log'
 import { useTranslation } from 'react-i18next'
 import { Translations } from 'core/i18n'

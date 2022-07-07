@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Actions } from '@ami-app/react-native-router-flux'
+import { Actions } from 'react-native-router-flux'
 import { Core } from 'src/core'
 
 import PushNotificationIOS from '@react-native-community/push-notification-ios'

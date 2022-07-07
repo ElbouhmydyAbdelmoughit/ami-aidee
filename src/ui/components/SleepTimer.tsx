@@ -1,4 +1,4 @@
-import { Actions } from '@ami-app/react-native-router-flux'
+import { Actions } from 'react-native-router-flux'
 import logger from 'core/logger'
 import React, { useCallback, useEffect, useRef } from 'react'
 import { TouchableWithoutFeedback } from 'react-native'

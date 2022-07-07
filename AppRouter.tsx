@@ -1,11 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
 
-import {
-  Scene,
-  Router,
-  ActionConst,
-  Stack,
-} from '@ami-app/react-native-router-flux'
+import { Scene, Router, ActionConst, Stack } from 'react-native-router-flux'
 import {
   SplashScreen,
   LoginScreen,

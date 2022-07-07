@@ -1,7 +1,7 @@
 import React, { useState, useEffect, createRef, useRef } from 'react'
 import { Container, Text, Heading, Toast } from 'native-base'
 import { Col, Row, Grid } from 'react-native-easy-grid'
-import { Actions } from '@ami-app/react-native-router-flux'
+import { Actions } from 'react-native-router-flux'
 import {
   TouchableWithoutFeedback,
   View,

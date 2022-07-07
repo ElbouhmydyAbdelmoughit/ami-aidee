@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Form, Input, View, Heading, Item, Button, Text } from 'native-base'
-import { Actions } from '@ami-app/react-native-router-flux'
+import { Actions } from 'react-native-router-flux'
 import useActivityLog from '../../hooks/use-activity-log'
 import { useTranslation } from 'react-i18next'
 import { Translations } from 'core/i18n'

@@ -1,8 +1,8 @@
 platform :ios, '12.4'
 install! 'cocoapods', :deterministic_uuids => false
 
-require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
 target 'AMIaide' do
   # Pods for AMIaide
@@ -34,6 +34,8 @@ target 'AMIaide' do
   pod 'RNCPushNotificationIOS', :path => '../node_modules/@react-native-community/push-notification-ios'
 
   pod 'RCTSystemSetting', :path => '../node_modules/react-native-system-setting'
+  pod 'RNSentry', :path => '../node_modules/@sentry/react-native'
+
 
   pod 'react-native-device-battery', :path => '../node_modules/react-native-device-battery'
 

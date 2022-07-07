@@ -3,7 +3,7 @@ import { View } from 'react-native'
 import { Container, Heading, Text } from 'native-base'
 import material from 'AMIaide/native-base-theme/variables/material'
 
-import { Actions } from '@ami-app/react-native-router-flux'
+import { Actions } from 'react-native-router-flux'
 import LinearGradient from 'react-native-linear-gradient'
 import AccountChecker from 'src/ui/business/AccountChecker'
 import moment from 'core/moment'

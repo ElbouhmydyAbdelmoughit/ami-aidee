@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text } from 'react-native'
 import { TouchableRipple } from 'react-native-paper'
 
-import { Actions } from '@ami-app/react-native-router-flux'
+import { Actions } from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import useActivityLog from '../../../hooks/use-activity-log'
 import { Translations } from 'core/i18n'

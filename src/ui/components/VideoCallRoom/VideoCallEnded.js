@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { View, Text } from 'react-native'
 import { Button } from 'react-native-paper'
-import { Actions } from '@ami-app/react-native-router-flux'
+import { Actions } from 'react-native-router-flux'
 import UserAvatar from '../UserAvatar'
 import GradientBackground from '../GradientBackground'
 import { getUserDisplayName } from '../../../utils/user'

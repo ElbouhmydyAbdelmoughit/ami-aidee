@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { View, TouchableHighlight } from 'react-native'
 
-import { Actions } from '@ami-app/react-native-router-flux'
+import { Actions } from 'react-native-router-flux'
 
 import { Container, Heading } from 'native-base'
 import MessageAlertManager from 'ui/business/MessageAlertManager'

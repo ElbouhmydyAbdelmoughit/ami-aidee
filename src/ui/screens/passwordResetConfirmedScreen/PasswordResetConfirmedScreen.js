@@ -1,7 +1,7 @@
 import React from 'react'
 import { View } from 'react-native'
 import { Subheading } from 'react-native-paper'
-import { Actions } from '@ami-app/react-native-router-flux'
+import { Actions } from 'react-native-router-flux'
 import { Button, Text } from 'native-base'
 import CenterCardLayout from '../../components/layout/CenterCardLayout'
 import { useTranslation } from 'react-i18next'

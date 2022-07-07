@@ -17,7 +17,7 @@ node_modules/react-native/Libraries/polyfills/.*
 .*/node_modules/@react-native-community/cli/.*/.*
 
 [include]
-.*/node_modules/@ami-app/react-native-router-flux/.*/.*
+.*/node_modules/react-native-router-flux/.*/.*
 
 [libs]
 node_modules/react-native/interface.js

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import GradientBackground from 'ui/components/GradientBackground'
-import { Actions } from '@ami-app/react-native-router-flux'
+import { Actions } from 'react-native-router-flux'
 import {
   Checkbox,
   Button,
