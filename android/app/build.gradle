@@ -139,7 +139,7 @@ android {
         applicationId "com.amiaide"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 97
+        versionCode 98
         versionName "2.17"
         multiDexEnabled true
     }
