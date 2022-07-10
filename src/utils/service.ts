@@ -6,25 +6,13 @@ import { Env } from 'src/utils/env'
 
 /** GRAPHQL */
 import { InMemoryCache } from 'apollo-cache-inmemory'
-import { HttpLink } from 'apollo-link-http'
 import ApolloClient, { gql } from 'apollo-boost'
 import errorReporter from 'core/error-reporter'
-const defaultOptions = {
-  watchQuery: {
-    fetchPolicy: 'no-cache',
-    errorPolicy: 'ignore',
-  },
-  query: {
-    fetchPolicy: 'no-cache',
-    errorPolicy: 'all',
-  },
-}
+
 console.log(Env)
 const client = new ApolloClient({
   uri: Env.GRAPHQL_URL,
-  link: new HttpLink(),
   cache: new InMemoryCache(),
-  defaultOptions: defaultOptions,
 })
 
 /** GRAPHQL - MUTATION */

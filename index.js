@@ -1,4 +1,4 @@
-/* eslint-disable import/first */
+import 'react-native-gesture-handler'
 import * as Sentry from '@sentry/react-native'
 import './src/core/i18n'
 
@@ -11,6 +11,7 @@ Sentry.init({
       integration => integration.name !== 'Breadcrumbs'
     )
   },
+  enableNative: false,
 })
 
 import { AppRegistry } from 'react-native'

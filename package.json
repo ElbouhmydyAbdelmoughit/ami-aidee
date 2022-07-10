@@ -8,7 +8,7 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "postinstall": "jetifier",
+    "postinstall": "jetifier && patch-package",
     "bundle": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/",
     "android:bundle": "cd ./android; ./gradlew bundleRelease; cd ..",
     "assemble": "cd ./android; ./gradlew assembleRelease; cd ..",
@@ -22,7 +22,7 @@
     "@react-native-community/hooks": "^2.6.0",
     "@react-native-community/push-notification-ios": "^1.2.0",
     "@react-native-community/slider": "^2.0.0",
-    "@sentry/react-native": "^4.1.1",
+    "@sentry/react-native": "^4.1.0",
     "agora-react-native-rtm": "^1.2.2-alpha.3",
     "apollo-boost": "^0.4.3",
     "apollo-cache-inmemory": "^1.6.2",
@@ -68,7 +68,7 @@
     "react-native-picker-select": "^8.0.4",
     "react-native-progress": "^4.1.2",
     "react-native-push-notification": "^4.0.0",
-    "react-native-reanimated": "^1.13.4",
+    "react-native-reanimated": "^2.9.1",
     "react-native-router-flux": "^4.3.1",
     "react-native-safe-area-context": "^4.3.1",
     "react-native-screens": "^3.14.1",
@@ -128,6 +128,7 @@
     "jest-enzyme": "7.0.1",
     "jest-repl": "23.6.0",
     "metro-react-native-babel-preset": "^0.70.3",
+    "patch-package": "^6.4.7",
     "prettier": "1.19.1",
     "react-test-renderer": "18.0.0",
     "schedule": "0.4.0"
@@ -138,5 +139,11 @@
   "resolutions": {
     "react-native": "18.0.0"
   },
-  "postinstall": "npx jetify"
+  "postinstall": "npx jetify",
+  "overrides": {
+    "react-native-reanimated": "^2.9.1",
+    "@react-native-async-storage/async-storage": {
+      "react-native": ">0.67"
+    }
+  }
 }

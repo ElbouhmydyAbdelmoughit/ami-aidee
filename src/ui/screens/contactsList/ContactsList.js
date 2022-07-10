@@ -81,14 +81,13 @@ const ContactsList = ({
                 }}
               >
                 <IconButton
-                  size={32}
+                  size={26}
                   color={textColor}
                   icon="arrow-back"
                   onPress={() => {
                     logActivity('return_from_messaging')
                     Actions.pop()
                   }}
-                  style={{ marginBottom: 16 }}
                 >
                   {Translations.common.go_back}
                 </IconButton>

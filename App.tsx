@@ -11,6 +11,7 @@ import { extendTheme, NativeBaseProvider } from 'native-base'
 import { Provider as PaperProvider } from 'react-native-paper'
 
 import { Provider } from 'react-redux'
+import { NativeModules } from 'react-native'
 
 import { PersistGate } from 'redux-persist/integration/react'
 import Orientation from 'react-native-orientation'
@@ -23,6 +24,7 @@ import getTheme from './native-base-theme/components'
 import material from './native-base-theme/variables/material'
 
 const { store, persistor } = Core
+console.log(NativeModules)
 
 const theme = extendTheme({
   colors: {

@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Roboto',
     fontWeight: 'bold',
     marginLeft: 4,
+    fontSize: 24,
   },
   text: {
     color: '#fff',
@@ -117,13 +118,12 @@ const UserSettingsScreen = ({
               }}
             >
               <IconButton
-                size={32}
+                size={26}
                 color={textColor}
                 icon="arrow-back"
                 onPress={() => {
                   Actions.pop()
                 }}
-                style={{ marginBottom: 16 }}
               >
                 {Translations.common.go_back}
               </IconButton>
