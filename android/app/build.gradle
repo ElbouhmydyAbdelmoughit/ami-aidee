@@ -139,8 +139,8 @@ android {
         applicationId "com.amiaide"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 96
-        versionName "2.16"
+        versionCode 97
+        versionName "2.17"
         multiDexEnabled true
     }
     splits {
