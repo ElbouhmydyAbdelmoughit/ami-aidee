@@ -1,35 +1,78 @@
 {
   "project_info": {
-    "project_number": "490814614528",
-    "firebase_url": "https://ami-aidee-7f5d0.firebaseio.com",
-    "project_id": "ami-aidee-7f5d0",
-    "storage_bucket": "ami-aidee-7f5d0.appspot.com"
+    "project_number": "922128536923",
+    "firebase_url": "https://ami-aidant.firebaseio.com",
+    "project_id": "ami-aidant",
+    "storage_bucket": "ami-aidant.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:490814614528:android:80aacf58307933d1c57ce5",
+        "mobilesdk_app_id": "1:922128536923:android:27db0a34f552d25d68367e",
         "android_client_info": {
-          "package_name": "com.amiaide"
+          "package_name": "com.aidant1"
         }
       },
       "oauth_client": [
         {
-          "client_id": "490814614528-93oj2qn02gnjep9b7vq6j79ab59p30vq.apps.googleusercontent.com",
+          "client_id": "922128536923-f39jrvd3m4qu88h11l5ilv000q21rgk5.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAwXLQi-zKWxpk5GOLQR8JlN_Z_NTQrWPs"
+          "current_key": "AIzaSyDBv5Ugxc2WCU0cO5HXm7AErCkP0ieJX94"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "490814614528-93oj2qn02gnjep9b7vq6j79ab59p30vq.apps.googleusercontent.com",
+              "client_id": "922128536923-f39jrvd3m4qu88h11l5ilv000q21rgk5.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "922128536923-1601fbdll4459rohjh4s0067fdll5igu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ami.aidee"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:922128536923:android:69dbb4d6313d80aa68367e",
+        "android_client_info": {
+          "package_name": "com.amiaide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "922128536923-f39jrvd3m4qu88h11l5ilv000q21rgk5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBv5Ugxc2WCU0cO5HXm7AErCkP0ieJX94"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "922128536923-f39jrvd3m4qu88h11l5ilv000q21rgk5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "922128536923-1601fbdll4459rohjh4s0067fdll5igu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ami.aidee"
+              }
             }
           ]
         }
