@@ -58,12 +58,14 @@ video_url: ""
     },
     title: {
       fontSize: 32,
+      lineHeight: 46,
       fontWeight: 'bold',
       marginBottom: 8,
       color: 'white',
     },
     text: {
       fontSize: 24,
+      lineHeight: 32,
       fontWeight: '500',
       color: 'white',
       marginBottom: 16,

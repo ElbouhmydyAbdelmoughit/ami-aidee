@@ -24,7 +24,6 @@ import getTheme from './native-base-theme/components'
 import material from './native-base-theme/variables/material'
 
 const { store, persistor } = Core
-console.log(NativeModules)
 
 const theme = extendTheme({
   colors: {

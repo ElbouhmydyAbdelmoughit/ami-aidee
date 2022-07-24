@@ -1,15 +1,11 @@
 import React, { useState } from 'react'
-import { Form, Input, View, Heading, Item, Button, Text } from 'native-base'
-import { Actions } from 'react-native-router-flux'
+import { Input, View, Heading, Button, Text } from 'native-base'
 import useActivityLog from '../../hooks/use-activity-log'
 import { useTranslation } from 'react-i18next'
 import { Translations } from 'core/i18n'
+import { TextInput } from 'react-native-paper'
 
-const PasswordForm = ({
-  setRegisterUser,
-  registerUser,
-  requestRegistration,
-}) => {
+const PasswordForm = ({ setRegisterUser, requestRegistration }) => {
   const [password, setPassword] = useState('')
   const logActivity = useActivityLog()
 
@@ -25,60 +21,57 @@ const PasswordForm = ({
               'Enfin, choisir un mot de passe sécurisé'
             )}
       </Heading>
-      <Form>
-        <Item
-          regular
-          style={{
-            borderRadius: 10,
-            backgroundColor: '#EBEBEB',
-            marginBottom: 16,
-          }}
-        >
-          <Input
-            secureTextEntry
-            placeholder={Translations.common.password}
-            onChangeText={setPassword}
-            value={password}
-            autoFocus
-          />
-        </Item>
-        <Button
-          full
-          block
-          onPress={() => {
-            logActivity('press_register_password_step')
-            let hasError = false
-            if (!password) {
-              setErrorText(
-                t(
-                  'screen.register.missing_password_error',
-                  'Veuillez renseigner un mot de passe'
-                )
+      <View
+        style={{
+          borderRadius: 10,
+          backgroundColor: '#EBEBEB',
+          marginBottom: 16,
+        }}
+      >
+        <TextInput
+          secureTextEntry
+          placeholder={Translations.common.password}
+          onChangeText={setPassword}
+          value={password}
+          autoFocus
+        />
+      </View>
+      <Button
+        full
+        block
+        onPress={() => {
+          logActivity('press_register_password_step')
+          let hasError = false
+          if (!password) {
+            setErrorText(
+              t(
+                'screen.register.missing_password_error',
+                'Veuillez renseigner un mot de passe'
               )
-              hasError = true
-            } else if (password.length < 6) {
-              hasError = true
-              setErrorText(
-                t(
-                  'screen.register.password_too_short_error',
-                  'Veuillez renseigner un mot de passe plus long'
-                )
+            )
+            hasError = true
+          } else if (password.length < 6) {
+            hasError = true
+            setErrorText(
+              t(
+                'screen.register.password_too_short_error',
+                'Veuillez renseigner un mot de passe plus long'
               )
-            }
-            if (hasError) {
-              return
-            }
-            setErrorText(undefined)
-            setRegisterUser({
-              password,
-            })
-            requestRegistration()
-          }}
-          style={{ borderRadius: 10 }}
-        >
-          <Text>{Translations.common.to_continue}</Text>
-        </Button>
-      </Form>
+            )
+          }
+          if (hasError) {
+            return
+          }
+          setErrorText(undefined)
+          setRegisterUser({
+            password,
+          })
+          requestRegistration()
+        }}
+        style={{ borderRadius: 10 }}
+      >
+        {Translations.common.to_continue}
+      </Button>
     </View>
   )
 }

@@ -108,7 +108,7 @@ const SolarScreen = ({
       }),
       content: (
         <Trans i18nKey="screen.solar.daytime_description">
-          <Heading size="xl" style={{ color: 'white', fontSize: 30 }}>
+          <Heading size="xl" style={{ color: textColor, fontSize: 30 }}>
             nous sommes le <Text>{'\n'}</Text>{' '}
             <Text style={{ fontWeight: 'bold' }}>{{ day }}</Text>{' '}
             <Text>{'\n'}</Text>
