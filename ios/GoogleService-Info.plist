@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>922128536923-1601fbdll4459rohjh4s0067fdll5igu.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.922128536923-1601fbdll4459rohjh4s0067fdll5igu</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBUSW_If3aXRJXAIfCUqx4wP4uQ1wRN7f4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>922128536923</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.ami.aidee</string>
+	<key>PROJECT_ID</key>
+	<string>ami-aidant</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ami-aidant.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:922128536923:ios:b311fb0620b5d9c968367e</string>
+	<key>DATABASE_URL</key>
+	<string>https://ami-aidant.firebaseio.com</string>
+</dict>
+</plist>

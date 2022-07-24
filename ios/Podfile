@@ -42,6 +42,10 @@ target 'AMIaide' do
   pod 'agora-react-native-rtm', :path => '../node_modules/agora-react-native-rtm'
 
   pod 'RNLocalize', :path => '../node_modules/react-native-localize'
+  pod 'Firebase', :modular_headers => true
+  pod 'FirebaseCore', :modular_headers => true
+  pod 'GoogleUtilities', :modular_headers => true
+  $RNFirebaseAsStaticFramework = true
 
   target 'AMIaideTests' do
     inherit! :search_paths

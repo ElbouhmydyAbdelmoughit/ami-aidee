@@ -6,6 +6,10 @@ import PushNotificationIOS from '@react-native-community/push-notification-ios'
 import PushNotification from 'react-native-push-notification'
 import { UserActions } from '../../../store/users'
 
+import messaging from '@react-native-firebase/messaging'
+import { Platform } from 'react-native'
+import errorReporter from 'core/error-reporter'
+
 const RemoteEventReceiver = ({
   myUid,
   videoCallInit,
@@ -14,14 +18,17 @@ const RemoteEventReceiver = ({
   onNewInstantMessage,
 }) => {
   useEffect(() => {
+    console.log('myUid', myUid)
     if (!myUid) {
       return
     }
     PushNotification.configure({
-      // (optional) Called when Token is generated (iOS and Android)
       onRegister(token) {
-        console.log('PushNotification/ TOKEN:', token)
-        Core.store.dispatch(UserActions.registerTokenRequest(token))
+        if (Platform.OS === 'android') {
+          console.log('PushNotification/ TOKEN:', token)
+          // do not register for ios since it's APNS token
+          Core.store.dispatch(UserActions.registerTokenRequest(token))
+        }
       },
 
       // (required) Called when a remote is received or opened, or local notification is opened
@@ -47,6 +54,21 @@ const RemoteEventReceiver = ({
       requestPermissions: true,
     })
     videoCallInit({ dispatch })
+  }, [myUid])
+
+  useEffect(() => {
+    if (Platform.OS !== 'ios') {
+      return
+    }
+    messaging().registerDeviceForRemoteMessages()
+
+    messaging()
+      .getToken()
+      .then(token => {
+        console.log('FirebaseMessaging/ TOKEN:', token)
+        Core.store.dispatch(UserActions.registerTokenRequest(token))
+      })
+      .catch(e => errorReporter.report(e))
   }, [myUid])
 
   useEffect(() => {
