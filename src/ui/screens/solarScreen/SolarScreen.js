@@ -79,7 +79,7 @@ const SolarScreen = ({
 
   const getMessage = dateInput => {
     const time = times(dateInput, helpedUser)
-    const day = moment().format('dddd Do MMMM YYYY')
+    const day = moment().format('dddd D MMMM YYYY')
     const hour = moment().format('HH:mm')
     if (time === 'NIGHT') {
       return {

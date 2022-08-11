@@ -136,7 +136,7 @@
     "video_call": {
       "automatic_pickup_in": "Terug in {{count}}  seconde",
       "automatic_pickup_in_plural": "Terug in {{count}} seconden",
-      "hung_up": "{{Name}} heeft opgehangen",
+      "hung_up": "{{name}} heeft opgehangen",
       "other_hung_up": "De verzorger heeft opgehangen",
       "return_in_secs": "Terug in {{count}}  seconde",
       "return_in_secs_plural": "Terug in {{count}} seconden"

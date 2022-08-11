@@ -98,7 +98,8 @@ const MessagingScreen = ({
                   <Text
                     style={{
                       color: textColor,
-                      fontSize: 20,
+                      fontSize:
+                        Translations.common.video_call.length > 10 ? 16 : 20,
                       fontWeight: 'bold',
                     }}
                   >
