@@ -1,30 +1,21 @@
 import { Alert, Animated, View } from 'react-native'
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { IconButton } from 'react-native-paper'
-import DeviceBattery from 'react-native-device-battery'
 import { useDispatch, useSelector } from 'react-redux'
 import { HelpedUserActions } from 'store/helpedUsers'
 import { AuthSelectors } from 'store/auth'
 import { useTranslation } from 'react-i18next'
+import { usePowerState } from 'react-native-device-info'
 
 const BatteryChecker = () => {
   const opacityAnim = useRef(new Animated.Value(0)).current
-  const [isCharging, setIsCharging] = useState(true)
   const currentHelpedUser = useSelector(AuthSelectors.getCurrentHelpedUser)
   const dispatch = useDispatch()
-  const onBatteryStateChanged = useCallback(state => {
-    setIsCharging(state.charging)
-  }, [])
+
   const { t } = useTranslation()
-  useEffect(() => {
-    DeviceBattery.isCharging().then((isCharging: boolean) => {
-      setIsCharging(isCharging)
-    })
-    DeviceBattery.addListener(onBatteryStateChanged)
-    return () => {
-      DeviceBattery.removeListener(onBatteryStateChanged)
-    }
-  }, [])
+
+  const powerState = usePowerState()
+
   const loop = Animated.loop(
     Animated.sequence([
       Animated.timing(opacityAnim, {
@@ -39,8 +30,9 @@ const BatteryChecker = () => {
       }),
     ])
   )
+
   useEffect(() => {
-    if (!isCharging) {
+    if (powerState.batteryState === 'unplugged') {
       loop.start()
       dispatch(
         HelpedUserActions.usersModifyRequest({
@@ -57,8 +49,9 @@ const BatteryChecker = () => {
         })
       )
     }
-  }, [isCharging])
-  if (isCharging) {
+  }, [powerState.batteryState])
+
+  if (powerState.batteryState !== 'unplugged') {
     return null
   }
   return (

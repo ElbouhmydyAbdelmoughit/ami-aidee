@@ -448,6 +448,8 @@ PODS:
     - React-Core
   - RNCPushNotificationIOS (1.8.0):
     - React-Core
+  - RNDeviceInfo (10.2.1):
+    - React-Core
   - RNFBApp (15.1.1):
     - Firebase/CoreOnly (= 9.2.0)
     - React-Core
@@ -559,6 +561,7 @@ DEPENDENCIES:
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - "RNCPicker (from `../node_modules/@react-native-picker/picker`)"
   - "RNCPushNotificationIOS (from `../node_modules/@react-native-community/push-notification-ios`)"
+  - RNDeviceInfo (from `../node_modules/react-native-device-info`)
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - "RNFBMessaging (from `../node_modules/@react-native-firebase/messaging`)"
   - RNFS (from `../node_modules/react-native-fs`)
@@ -684,6 +687,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-picker/picker"
   RNCPushNotificationIOS:
     :path: "../node_modules/@react-native-community/push-notification-ios"
+  RNDeviceInfo:
+    :path: "../node_modules/react-native-device-info"
   RNFBApp:
     :path: "../node_modules/@react-native-firebase/app"
   RNFBMessaging:
@@ -771,6 +776,7 @@ SPEC CHECKSUMS:
   RNCAsyncStorage: 6bd5a7ba3dde1c3facba418aa273f449bdc5437a
   RNCPicker: 0991c56da7815c0cf946d6f63cf920b25296e5f6
   RNCPushNotificationIOS: 61a7c72bd1ebad3568025957d001e0f0e7b32191
+  RNDeviceInfo: c31137f22ee779fe3931d1a8d60cc1af80ef4077
   RNFBApp: e3e4af6906a891d46af60340b4313b63eb082de9
   RNFBMessaging: a6b4015aa22521335b2bb804106d2776cde8185b
   RNFS: a8fbe7060fa49157d819466404794ad9c58e58cf

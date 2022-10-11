@@ -42,7 +42,6 @@ export default () => {
       <StatusBar backgroundColor="transparent" translucent />
       <SnackBar />
       <RemoteEventReceiver />
-      <BatteryChecker />
       <Router>
         <Scene key="master" hideNavBar transitionConfig={transitionConfig}>
           <Scene
@@ -116,6 +115,7 @@ export default () => {
         </Scene>
       </Router>
       <SystemVolumeManager />
+      <BatteryChecker />
     </React.Fragment>
   )
 }

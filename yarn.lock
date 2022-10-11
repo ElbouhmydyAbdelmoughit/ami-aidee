@@ -12555,6 +12555,11 @@
   "resolved" "https://registry.npmjs.org/react-native-device-battery/-/react-native-device-battery-2.1.0.tgz"
   "version" "2.1.0"
 
+"react-native-device-info@^10.2.1":
+  "integrity" "sha512-vXmcLThnCnrdhiJr7O4jaDY/xouFRshhGAU4HYkiSi5ShSXE+QqFQwKqICdHtw06VeX3ydZg3j0puG0lbTKVEA=="
+  "resolved" "https://registry.npmjs.org/react-native-device-info/-/react-native-device-info-10.2.1.tgz"
+  "version" "10.2.1"
+
 "react-native-easy-grid@^0.2.2":
   "integrity" "sha512-MlYrNIldnEMKn6TVatQN1P64GoVlwGIuz+8ncdfJ0Wq/xtzUkQwlil8Uksyp7MhKfENE09MQnGNcba6Mx3oSAA=="
   "resolved" "https://registry.npmjs.org/react-native-easy-grid/-/react-native-easy-grid-0.2.2.tgz"
