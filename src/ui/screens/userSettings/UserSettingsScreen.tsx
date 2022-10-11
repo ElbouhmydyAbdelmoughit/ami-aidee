@@ -1,12 +1,7 @@
 import React, { useRef, useState } from 'react'
 import GradientBackground from 'ui/components/GradientBackground'
 import { Actions } from 'react-native-router-flux'
-import {
-  Checkbox,
-  Button,
-  TouchableRipple,
-  IconButton,
-} from 'react-native-paper'
+import { Button, TouchableRipple, IconButton } from 'react-native-paper'
 import { Heading } from 'native-base'
 import { View, StyleSheet, Text, ScrollView } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
@@ -21,6 +16,7 @@ import { times } from 'utils'
 import moment from 'moment'
 import colorUtils from 'utils/colors'
 import BacktoRootTimer from 'ui/components/BackToRootTimer'
+import Checkbox from 'ui/components/common/Checkbox'
 
 const styles = StyleSheet.create({
   title: {
@@ -140,6 +136,7 @@ const UserSettingsScreen = ({
                   status={checked ? 'checked' : 'unchecked'}
                   onPress={onPress}
                   uncheckedColor={textColor}
+                  style={{ marginRight: 8 }}
                 />
                 <TouchableRipple onPress={onPress}>
                   <React.Fragment>
@@ -164,6 +161,7 @@ const UserSettingsScreen = ({
                   status={minVolumeChecked ? 'checked' : 'unchecked'}
                   onPress={onMinVolumePress}
                   uncheckedColor={textColor}
+                  style={{ marginRight: 8 }}
                 />
                 <TouchableRipple onPress={onMinVolumePress}>
                   <React.Fragment>
@@ -185,6 +183,7 @@ const UserSettingsScreen = ({
                   status={dischargingAlertChecked ? 'checked' : 'unchecked'}
                   onPress={onAlertOnDischargePress}
                   uncheckedColor={textColor}
+                  style={{ marginRight: 8 }}
                 />
                 <TouchableRipple onPress={onAlertOnDischargePress}>
                   <React.Fragment>
