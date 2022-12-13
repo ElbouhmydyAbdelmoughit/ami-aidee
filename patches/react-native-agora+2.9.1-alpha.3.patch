@@ -14,288 +14,217 @@ index 0000000..5ff383e
 +o/debug
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraConst.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraConst.dex
 new file mode 100644
-index 0000000..8e87dbe
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraConst.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraManager.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraManager.dex
 new file mode 100644
-index 0000000..1ab5a01
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraManager.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$1.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$1.dex
 new file mode 100644
-index 0000000..760ceb6
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$1.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$10.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$10.dex
 new file mode 100644
-index 0000000..1528b5d
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$10.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$11.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$11.dex
 new file mode 100644
-index 0000000..79627d0
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$11.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$12.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$12.dex
 new file mode 100644
-index 0000000..ee1cfb4
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$12.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$13.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$13.dex
 new file mode 100644
-index 0000000..b0d8ece
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$13.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$14.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$14.dex
 new file mode 100644
-index 0000000..d841bf2
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$14.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$15.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$15.dex
 new file mode 100644
-index 0000000..9efccf7
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$15.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$16.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$16.dex
 new file mode 100644
-index 0000000..6cea3e2
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$16.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$17.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$17.dex
 new file mode 100644
-index 0000000..86a5ca0
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$17.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$18.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$18.dex
 new file mode 100644
-index 0000000..1d7188a
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$18.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$19.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$19.dex
 new file mode 100644
-index 0000000..ea7177d
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$19.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$2.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$2.dex
 new file mode 100644
-index 0000000..e3c78b5
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$2.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$20.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$20.dex
 new file mode 100644
-index 0000000..d4fbfa0
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$20.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$21.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$21.dex
 new file mode 100644
-index 0000000..1fe3c09
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$21.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$22.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$22.dex
 new file mode 100644
-index 0000000..b78c2f8
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$22.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$23.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$23.dex
 new file mode 100644
-index 0000000..9edf71f
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$23.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$24.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$24.dex
 new file mode 100644
-index 0000000..1d63e1f
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$24.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$25.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$25.dex
 new file mode 100644
-index 0000000..ed63ec4
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$25.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$26.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$26.dex
 new file mode 100644
-index 0000000..963e34d
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$26.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$27.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$27.dex
 new file mode 100644
-index 0000000..efed3b5
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$27.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$28.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$28.dex
 new file mode 100644
-index 0000000..77efd74
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$28.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$29.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$29.dex
 new file mode 100644
-index 0000000..9697784
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$29.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$3.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$3.dex
 new file mode 100644
-index 0000000..706947a
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$3.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$30.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$30.dex
 new file mode 100644
-index 0000000..a45de95
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$30.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$31.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$31.dex
 new file mode 100644
-index 0000000..6d3c14b
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$31.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$32.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$32.dex
 new file mode 100644
-index 0000000..a4c95a7
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$32.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$33.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$33.dex
 new file mode 100644
-index 0000000..d792074
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$33.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$34.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$34.dex
 new file mode 100644
-index 0000000..9e656d1
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$34.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$35.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$35.dex
 new file mode 100644
-index 0000000..110e8f4
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$35.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$36.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$36.dex
 new file mode 100644
-index 0000000..c13740d
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$36.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$37.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$37.dex
 new file mode 100644
-index 0000000..38c737d
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$37.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$38.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$38.dex
 new file mode 100644
-index 0000000..3363b27
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$38.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$39.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$39.dex
 new file mode 100644
-index 0000000..1cc8b4d
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$39.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$4.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$4.dex
 new file mode 100644
-index 0000000..1779353
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$4.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$40.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$40.dex
 new file mode 100644
-index 0000000..38432c5
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$40.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$41.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$41.dex
 new file mode 100644
-index 0000000..6f6fdac
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$41.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$42.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$42.dex
 new file mode 100644
-index 0000000..a76a339
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$42.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$43.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$43.dex
 new file mode 100644
-index 0000000..e0b159c
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$43.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$44.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$44.dex
 new file mode 100644
-index 0000000..4753f6f
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$44.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$45.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$45.dex
 new file mode 100644
-index 0000000..021abb0
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$45.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$46.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$46.dex
 new file mode 100644
-index 0000000..b2cfb47
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$46.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$47.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$47.dex
 new file mode 100644
-index 0000000..be581ed
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$47.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$48.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$48.dex
 new file mode 100644
-index 0000000..ba5dc76
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$48.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$49.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$49.dex
 new file mode 100644
-index 0000000..d773e48
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$49.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$5.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$5.dex
 new file mode 100644
-index 0000000..d8ba09b
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$5.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$50.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$50.dex
 new file mode 100644
-index 0000000..75dd25b
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$50.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$51.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$51.dex
 new file mode 100644
-index 0000000..58fa07b
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$51.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$52.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$52.dex
 new file mode 100644
-index 0000000..4a88f83
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$52.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$53.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$53.dex
 new file mode 100644
-index 0000000..8dbf89d
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$53.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$54.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$54.dex
 new file mode 100644
-index 0000000..e15df2c
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$54.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$55.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$55.dex
 new file mode 100644
-index 0000000..c81cdcf
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$55.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$6.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$6.dex
 new file mode 100644
-index 0000000..ca5dfb5
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$6.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$7.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$7.dex
 new file mode 100644
-index 0000000..34c673d
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$7.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$8.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$8.dex
 new file mode 100644
-index 0000000..b96f491
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$8.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$9.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$9.dex
 new file mode 100644
-index 0000000..9702d09
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1$9.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1.dex
 new file mode 100644
-index 0000000..772789c
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule$1.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule.dex
 new file mode 100644
-index 0000000..b137ed3
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraModule.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraPackage.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraPackage.dex
 new file mode 100644
-index 0000000..eec9510
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraPackage.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraVideoView.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraVideoView.dex
 new file mode 100644
-index 0000000..a0cee60
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraVideoView.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraViewManager.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraViewManager.dex
 new file mode 100644
-index 0000000..3023840
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/AgoraViewManager.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/BuildConfig.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/BuildConfig.dex
 new file mode 100644
-index 0000000..b696c6a
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/BuildConfig.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/MediaObserver.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/MediaObserver.dex
 new file mode 100644
-index 0000000..5587e3e
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/MediaObserver.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/media/DecodeDataBuffer.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/media/DecodeDataBuffer.dex
 new file mode 100644
-index 0000000..44d4eb6
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/media/DecodeDataBuffer.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/media/MediaDataAudioObserver.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/media/MediaDataAudioObserver.dex
 new file mode 100644
-index 0000000..cd05ddd
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/media/MediaDataAudioObserver.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/media/MediaDataObserverPlugin.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/media/MediaDataObserverPlugin.dex
 new file mode 100644
-index 0000000..1255de5
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/media/MediaDataObserverPlugin.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/media/MediaDataVideoObserver.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/media/MediaDataVideoObserver.dex
 new file mode 100644
-index 0000000..4380da1
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/media/MediaDataVideoObserver.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/media/MediaPreProcessing$ProgressCallback.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/media/MediaPreProcessing$ProgressCallback.dex
 new file mode 100644
-index 0000000..f7ad427
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/media/MediaPreProcessing$ProgressCallback.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/media/MediaPreProcessing.dex b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/media/MediaPreProcessing.dex
 new file mode 100644
-index 0000000..2f311a1
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/debug/com/syan/agora/media/MediaPreProcessing.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/desugar_graph.bin b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/desugar_graph.bin
 new file mode 100644
-index 0000000..601f245
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/a6f8ba07acf552a5b5324c831d42e2cc/transformed/desugar_graph.bin differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/results.bin b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/results.bin
 new file mode 100644
 index 0000000..5ff383e
@@ -305,288 +234,217 @@ index 0000000..5ff383e
 +o/debug
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraConst.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraConst.dex
 new file mode 100644
-index 0000000..334c298
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraConst.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraManager.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraManager.dex
 new file mode 100644
-index 0000000..bd2a268
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraManager.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$1.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$1.dex
 new file mode 100644
-index 0000000..f92c4b3
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$1.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$10.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$10.dex
 new file mode 100644
-index 0000000..69e5b5c
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$10.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$11.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$11.dex
 new file mode 100644
-index 0000000..9c55caf
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$11.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$12.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$12.dex
 new file mode 100644
-index 0000000..5b2b016
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$12.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$13.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$13.dex
 new file mode 100644
-index 0000000..00d6fc7
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$13.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$14.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$14.dex
 new file mode 100644
-index 0000000..22b3e88
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$14.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$15.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$15.dex
 new file mode 100644
-index 0000000..de94851
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$15.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$16.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$16.dex
 new file mode 100644
-index 0000000..b4c8f64
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$16.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$17.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$17.dex
 new file mode 100644
-index 0000000..a26b8ff
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$17.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$18.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$18.dex
 new file mode 100644
-index 0000000..e005d6f
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$18.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$19.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$19.dex
 new file mode 100644
-index 0000000..80cab41
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$19.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$2.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$2.dex
 new file mode 100644
-index 0000000..3ed7c6d
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$2.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$20.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$20.dex
 new file mode 100644
-index 0000000..5d6369e
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$20.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$21.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$21.dex
 new file mode 100644
-index 0000000..a3552d3
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$21.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$22.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$22.dex
 new file mode 100644
-index 0000000..095e863
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$22.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$23.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$23.dex
 new file mode 100644
-index 0000000..b9bb17c
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$23.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$24.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$24.dex
 new file mode 100644
-index 0000000..2201914
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$24.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$25.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$25.dex
 new file mode 100644
-index 0000000..67c1c3d
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$25.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$26.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$26.dex
 new file mode 100644
-index 0000000..b735398
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$26.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$27.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$27.dex
 new file mode 100644
-index 0000000..b21d690
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$27.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$28.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$28.dex
 new file mode 100644
-index 0000000..675f226
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$28.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$29.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$29.dex
 new file mode 100644
-index 0000000..d96b4ad
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$29.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$3.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$3.dex
 new file mode 100644
-index 0000000..62f506e
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$3.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$30.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$30.dex
 new file mode 100644
-index 0000000..d2044b9
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$30.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$31.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$31.dex
 new file mode 100644
-index 0000000..09e93ea
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$31.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$32.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$32.dex
 new file mode 100644
-index 0000000..5ec40ac
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$32.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$33.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$33.dex
 new file mode 100644
-index 0000000..75097f2
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$33.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$34.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$34.dex
 new file mode 100644
-index 0000000..383606a
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$34.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$35.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$35.dex
 new file mode 100644
-index 0000000..b6fdb55
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$35.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$36.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$36.dex
 new file mode 100644
-index 0000000..942eb50
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$36.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$37.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$37.dex
 new file mode 100644
-index 0000000..640f89c
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$37.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$38.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$38.dex
 new file mode 100644
-index 0000000..80b4a3d
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$38.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$39.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$39.dex
 new file mode 100644
-index 0000000..a3cac25
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$39.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$4.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$4.dex
 new file mode 100644
-index 0000000..7c10ba6
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$4.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$40.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$40.dex
 new file mode 100644
-index 0000000..7d081c5
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$40.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$41.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$41.dex
 new file mode 100644
-index 0000000..b8e7703
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$41.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$42.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$42.dex
 new file mode 100644
-index 0000000..7b5b3ae
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$42.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$43.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$43.dex
 new file mode 100644
-index 0000000..ee90947
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$43.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$44.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$44.dex
 new file mode 100644
-index 0000000..c585bd2
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$44.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$45.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$45.dex
 new file mode 100644
-index 0000000..05cbbba
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$45.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$46.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$46.dex
 new file mode 100644
-index 0000000..b170190
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$46.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$47.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$47.dex
 new file mode 100644
-index 0000000..6e60586
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$47.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$48.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$48.dex
 new file mode 100644
-index 0000000..71047ee
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$48.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$49.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$49.dex
 new file mode 100644
-index 0000000..60389c1
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$49.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$5.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$5.dex
 new file mode 100644
-index 0000000..55ccd12
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$5.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$50.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$50.dex
 new file mode 100644
-index 0000000..cb09250
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$50.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$51.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$51.dex
 new file mode 100644
-index 0000000..b1c9990
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$51.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$52.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$52.dex
 new file mode 100644
-index 0000000..812dddd
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$52.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$53.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$53.dex
 new file mode 100644
-index 0000000..7a6e994
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$53.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$54.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$54.dex
 new file mode 100644
-index 0000000..b807d0e
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$54.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$55.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$55.dex
 new file mode 100644
-index 0000000..e47fea1
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$55.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$6.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$6.dex
 new file mode 100644
-index 0000000..8d8f50a
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$6.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$7.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$7.dex
 new file mode 100644
-index 0000000..cc23ee0
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$7.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$8.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$8.dex
 new file mode 100644
-index 0000000..0672336
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$8.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$9.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$9.dex
 new file mode 100644
-index 0000000..fa33e31
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1$9.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1.dex
 new file mode 100644
-index 0000000..50bffdf
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule$1.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule.dex
 new file mode 100644
-index 0000000..3b76b75
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraModule.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraPackage.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraPackage.dex
 new file mode 100644
-index 0000000..9566847
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraPackage.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraVideoView.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraVideoView.dex
 new file mode 100644
-index 0000000..120c816
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraVideoView.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraViewManager.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraViewManager.dex
 new file mode 100644
-index 0000000..74e684e
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/AgoraViewManager.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/BuildConfig.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/BuildConfig.dex
 new file mode 100644
-index 0000000..b55e9f4
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/BuildConfig.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/MediaObserver.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/MediaObserver.dex
 new file mode 100644
-index 0000000..cfd22fb
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/MediaObserver.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/media/DecodeDataBuffer.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/media/DecodeDataBuffer.dex
 new file mode 100644
-index 0000000..67595f5
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/media/DecodeDataBuffer.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/media/MediaDataAudioObserver.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/media/MediaDataAudioObserver.dex
 new file mode 100644
-index 0000000..32cde17
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/media/MediaDataAudioObserver.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/media/MediaDataObserverPlugin.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/media/MediaDataObserverPlugin.dex
 new file mode 100644
-index 0000000..5bd76fc
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/media/MediaDataObserverPlugin.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/media/MediaDataVideoObserver.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/media/MediaDataVideoObserver.dex
 new file mode 100644
-index 0000000..8f33cf8
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/media/MediaDataVideoObserver.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/media/MediaPreProcessing$ProgressCallback.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/media/MediaPreProcessing$ProgressCallback.dex
 new file mode 100644
-index 0000000..389c537
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/media/MediaPreProcessing$ProgressCallback.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/media/MediaPreProcessing.dex b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/media/MediaPreProcessing.dex
 new file mode 100644
-index 0000000..30329a5
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/debug/com/syan/agora/media/MediaPreProcessing.dex differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/desugar_graph.bin b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/desugar_graph.bin
 new file mode 100644
-index 0000000..601f245
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/.transforms/cf6ee0b037a40a5872a493de99c19771/transformed/desugar_graph.bin differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/.transforms/e41b4c0193929eb7c460d1fe14b4934a/results.bin b/node_modules/react-native-agora/android/build/.transforms/e41b4c0193929eb7c460d1fe14b4934a/results.bin
 new file mode 100644
 index 0000000..1ed65e0
@@ -685,12 +543,10 @@ index 0000000..9e26dfe
 \ No newline at end of file
 diff --git a/node_modules/react-native-agora/android/build/intermediates/compile_library_classes_jar/debug/classes.jar b/node_modules/react-native-agora/android/build/intermediates/compile_library_classes_jar/debug/classes.jar
 new file mode 100644
-index 0000000..c63b8af
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/compile_library_classes_jar/debug/classes.jar differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/compile_r_class_jar/debug/R.jar b/node_modules/react-native-agora/android/build/intermediates/compile_r_class_jar/debug/R.jar
 new file mode 100644
-index 0000000..ad14bf3
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/compile_r_class_jar/debug/R.jar differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/compile_symbol_list/debug/R.txt b/node_modules/react-native-agora/android/build/intermediates/compile_symbol_list/debug/R.txt
 new file mode 100644
 index 0000000..d6d7fb8
@@ -2734,284 +2590,214 @@ index 0000000..8f760bc
 \ No newline at end of file
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraConst.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraConst.class
 new file mode 100644
-index 0000000..7bc299a
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraConst.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraManager.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraManager.class
 new file mode 100644
-index 0000000..bd7da49
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraManager.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$1.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$1.class
 new file mode 100644
-index 0000000..7efa37e
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$1.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$10.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$10.class
 new file mode 100644
-index 0000000..d289e07
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$10.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$11.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$11.class
 new file mode 100644
-index 0000000..3db610b
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$11.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$12.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$12.class
 new file mode 100644
-index 0000000..198467c
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$12.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$13.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$13.class
 new file mode 100644
-index 0000000..1bdf1bf
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$13.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$14.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$14.class
 new file mode 100644
-index 0000000..b7802a6
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$14.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$15.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$15.class
 new file mode 100644
-index 0000000..59b3f91
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$15.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$16.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$16.class
 new file mode 100644
-index 0000000..cb183d5
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$16.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$17.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$17.class
 new file mode 100644
-index 0000000..cb99ae0
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$17.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$18.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$18.class
 new file mode 100644
-index 0000000..5fc14b0
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$18.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$19.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$19.class
 new file mode 100644
-index 0000000..ca4d00a
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$19.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$2.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$2.class
 new file mode 100644
-index 0000000..ee99706
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$2.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$20.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$20.class
 new file mode 100644
-index 0000000..451be4f
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$20.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$21.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$21.class
 new file mode 100644
-index 0000000..474b2d5
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$21.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$22.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$22.class
 new file mode 100644
-index 0000000..392aea5
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$22.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$23.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$23.class
 new file mode 100644
-index 0000000..f63510c
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$23.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$24.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$24.class
 new file mode 100644
-index 0000000..e3455c8
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$24.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$25.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$25.class
 new file mode 100644
-index 0000000..6c1f28a
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$25.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$26.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$26.class
 new file mode 100644
-index 0000000..de17e8b
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$26.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$27.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$27.class
 new file mode 100644
-index 0000000..e31b6a2
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$27.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$28.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$28.class
 new file mode 100644
-index 0000000..dc7dbd9
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$28.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$29.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$29.class
 new file mode 100644
-index 0000000..3d078ca
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$29.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$3.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$3.class
 new file mode 100644
-index 0000000..0f82046
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$3.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$30.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$30.class
 new file mode 100644
-index 0000000..a892393
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$30.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$31.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$31.class
 new file mode 100644
-index 0000000..ee7dc23
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$31.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$32.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$32.class
 new file mode 100644
-index 0000000..d07d65f
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$32.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$33.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$33.class
 new file mode 100644
-index 0000000..0863841
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$33.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$34.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$34.class
 new file mode 100644
-index 0000000..a035b8c
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$34.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$35.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$35.class
 new file mode 100644
-index 0000000..6fc0342
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$35.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$36.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$36.class
 new file mode 100644
-index 0000000..f8b2d8c
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$36.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$37.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$37.class
 new file mode 100644
-index 0000000..732081a
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$37.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$38.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$38.class
 new file mode 100644
-index 0000000..8bec3e4
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$38.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$39.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$39.class
 new file mode 100644
-index 0000000..176a363
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$39.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$4.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$4.class
 new file mode 100644
-index 0000000..ed5520c
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$4.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$40.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$40.class
 new file mode 100644
-index 0000000..4bf939b
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$40.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$41.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$41.class
 new file mode 100644
-index 0000000..a274fe2
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$41.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$42.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$42.class
 new file mode 100644
-index 0000000..31cfbc2
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$42.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$43.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$43.class
 new file mode 100644
-index 0000000..6f589e8
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$43.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$44.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$44.class
 new file mode 100644
-index 0000000..27a5619
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$44.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$45.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$45.class
 new file mode 100644
-index 0000000..00153bc
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$45.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$46.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$46.class
 new file mode 100644
-index 0000000..4264832
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$46.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$47.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$47.class
 new file mode 100644
-index 0000000..7a4eddc
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$47.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$48.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$48.class
 new file mode 100644
-index 0000000..baa32e8
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$48.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$49.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$49.class
 new file mode 100644
-index 0000000..965e5c5
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$49.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$5.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$5.class
 new file mode 100644
-index 0000000..a7daae3
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$5.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$50.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$50.class
 new file mode 100644
-index 0000000..785578c
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$50.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$51.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$51.class
 new file mode 100644
-index 0000000..9c3a228
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$51.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$52.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$52.class
 new file mode 100644
-index 0000000..ae2b190
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$52.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$53.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$53.class
 new file mode 100644
-index 0000000..529980d
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$53.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$54.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$54.class
 new file mode 100644
-index 0000000..4a060e5
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$54.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$55.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$55.class
 new file mode 100644
-index 0000000..6bdd3c9
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$55.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$6.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$6.class
 new file mode 100644
-index 0000000..b6ecc48
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$6.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$7.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$7.class
 new file mode 100644
-index 0000000..61246f3
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$7.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$8.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$8.class
 new file mode 100644
-index 0000000..748c375
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$8.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$9.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$9.class
 new file mode 100644
-index 0000000..25d68fe
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1$9.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1.class
 new file mode 100644
-index 0000000..cce7c25
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule$1.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule.class
 new file mode 100644
-index 0000000..fc0dbcf
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraModule.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraPackage.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraPackage.class
 new file mode 100644
-index 0000000..e003486
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraPackage.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraVideoView.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraVideoView.class
 new file mode 100644
-index 0000000..6b576d8
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraVideoView.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraViewManager.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraViewManager.class
 new file mode 100644
-index 0000000..f2f23ae
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/AgoraViewManager.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/BuildConfig.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/BuildConfig.class
 new file mode 100644
-index 0000000..ca3c1f9
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/BuildConfig.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/MediaObserver.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/MediaObserver.class
 new file mode 100644
-index 0000000..eca58f9
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/MediaObserver.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/media/DecodeDataBuffer.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/media/DecodeDataBuffer.class
 new file mode 100644
-index 0000000..02719f8
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/media/DecodeDataBuffer.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/media/MediaDataAudioObserver.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/media/MediaDataAudioObserver.class
 new file mode 100644
-index 0000000..dc47595
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/media/MediaDataAudioObserver.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/media/MediaDataObserverPlugin.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/media/MediaDataObserverPlugin.class
 new file mode 100644
-index 0000000..665ba03
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/media/MediaDataObserverPlugin.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/media/MediaDataVideoObserver.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/media/MediaDataVideoObserver.class
 new file mode 100644
-index 0000000..3a33ddc
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/media/MediaDataVideoObserver.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/media/MediaPreProcessing$ProgressCallback.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/media/MediaPreProcessing$ProgressCallback.class
 new file mode 100644
-index 0000000..ef1ae3e
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/media/MediaPreProcessing$ProgressCallback.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/media/MediaPreProcessing.class b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/media/MediaPreProcessing.class
 new file mode 100644
-index 0000000..423d7d9
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/javac/debug/classes/com/syan/agora/media/MediaPreProcessing.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/local_only_symbol_list/debug/R-def.txt b/node_modules/react-native-agora/android/build/intermediates/local_only_symbol_list/debug/R-def.txt
 new file mode 100644
 index 0000000..34ca0ec
@@ -3147,284 +2933,214 @@ index 0000000..d13b2cc
 \ No newline at end of file
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraConst.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraConst.class
 new file mode 100644
-index 0000000..7bc299a
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraConst.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraManager.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraManager.class
 new file mode 100644
-index 0000000..bd7da49
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraManager.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$1.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$1.class
 new file mode 100644
-index 0000000..7efa37e
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$1.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$10.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$10.class
 new file mode 100644
-index 0000000..d289e07
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$10.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$11.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$11.class
 new file mode 100644
-index 0000000..3db610b
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$11.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$12.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$12.class
 new file mode 100644
-index 0000000..198467c
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$12.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$13.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$13.class
 new file mode 100644
-index 0000000..1bdf1bf
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$13.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$14.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$14.class
 new file mode 100644
-index 0000000..b7802a6
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$14.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$15.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$15.class
 new file mode 100644
-index 0000000..59b3f91
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$15.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$16.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$16.class
 new file mode 100644
-index 0000000..cb183d5
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$16.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$17.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$17.class
 new file mode 100644
-index 0000000..cb99ae0
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$17.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$18.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$18.class
 new file mode 100644
-index 0000000..5fc14b0
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$18.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$19.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$19.class
 new file mode 100644
-index 0000000..ca4d00a
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$19.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$2.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$2.class
 new file mode 100644
-index 0000000..ee99706
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$2.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$20.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$20.class
 new file mode 100644
-index 0000000..451be4f
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$20.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$21.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$21.class
 new file mode 100644
-index 0000000..474b2d5
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$21.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$22.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$22.class
 new file mode 100644
-index 0000000..392aea5
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$22.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$23.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$23.class
 new file mode 100644
-index 0000000..f63510c
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$23.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$24.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$24.class
 new file mode 100644
-index 0000000..e3455c8
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$24.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$25.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$25.class
 new file mode 100644
-index 0000000..6c1f28a
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$25.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$26.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$26.class
 new file mode 100644
-index 0000000..de17e8b
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$26.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$27.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$27.class
 new file mode 100644
-index 0000000..e31b6a2
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$27.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$28.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$28.class
 new file mode 100644
-index 0000000..dc7dbd9
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$28.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$29.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$29.class
 new file mode 100644
-index 0000000..3d078ca
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$29.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$3.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$3.class
 new file mode 100644
-index 0000000..0f82046
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$3.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$30.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$30.class
 new file mode 100644
-index 0000000..a892393
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$30.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$31.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$31.class
 new file mode 100644
-index 0000000..ee7dc23
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$31.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$32.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$32.class
 new file mode 100644
-index 0000000..d07d65f
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$32.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$33.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$33.class
 new file mode 100644
-index 0000000..0863841
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$33.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$34.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$34.class
 new file mode 100644
-index 0000000..a035b8c
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$34.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$35.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$35.class
 new file mode 100644
-index 0000000..6fc0342
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$35.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$36.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$36.class
 new file mode 100644
-index 0000000..f8b2d8c
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$36.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$37.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$37.class
 new file mode 100644
-index 0000000..732081a
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$37.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$38.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$38.class
 new file mode 100644
-index 0000000..8bec3e4
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$38.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$39.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$39.class
 new file mode 100644
-index 0000000..176a363
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$39.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$4.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$4.class
 new file mode 100644
-index 0000000..ed5520c
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$4.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$40.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$40.class
 new file mode 100644
-index 0000000..4bf939b
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$40.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$41.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$41.class
 new file mode 100644
-index 0000000..a274fe2
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$41.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$42.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$42.class
 new file mode 100644
-index 0000000..31cfbc2
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$42.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$43.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$43.class
 new file mode 100644
-index 0000000..6f589e8
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$43.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$44.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$44.class
 new file mode 100644
-index 0000000..27a5619
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$44.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$45.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$45.class
 new file mode 100644
-index 0000000..00153bc
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$45.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$46.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$46.class
 new file mode 100644
-index 0000000..4264832
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$46.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$47.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$47.class
 new file mode 100644
-index 0000000..7a4eddc
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$47.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$48.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$48.class
 new file mode 100644
-index 0000000..baa32e8
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$48.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$49.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$49.class
 new file mode 100644
-index 0000000..965e5c5
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$49.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$5.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$5.class
 new file mode 100644
-index 0000000..a7daae3
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$5.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$50.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$50.class
 new file mode 100644
-index 0000000..785578c
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$50.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$51.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$51.class
 new file mode 100644
-index 0000000..9c3a228
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$51.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$52.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$52.class
 new file mode 100644
-index 0000000..ae2b190
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$52.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$53.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$53.class
 new file mode 100644
-index 0000000..529980d
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$53.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$54.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$54.class
 new file mode 100644
-index 0000000..4a060e5
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$54.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$55.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$55.class
 new file mode 100644
-index 0000000..6bdd3c9
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$55.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$6.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$6.class
 new file mode 100644
-index 0000000..b6ecc48
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$6.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$7.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$7.class
 new file mode 100644
-index 0000000..61246f3
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$7.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$8.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$8.class
 new file mode 100644
-index 0000000..748c375
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$8.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$9.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$9.class
 new file mode 100644
-index 0000000..25d68fe
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1$9.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1.class
 new file mode 100644
-index 0000000..cce7c25
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule$1.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule.class
 new file mode 100644
-index 0000000..fc0dbcf
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraModule.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraPackage.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraPackage.class
 new file mode 100644
-index 0000000..e003486
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraPackage.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraVideoView.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraVideoView.class
 new file mode 100644
-index 0000000..6b576d8
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraVideoView.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraViewManager.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraViewManager.class
 new file mode 100644
-index 0000000..f2f23ae
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/AgoraViewManager.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/BuildConfig.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/BuildConfig.class
 new file mode 100644
-index 0000000..ca3c1f9
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/BuildConfig.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/MediaObserver.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/MediaObserver.class
 new file mode 100644
-index 0000000..eca58f9
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/MediaObserver.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/media/DecodeDataBuffer.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/media/DecodeDataBuffer.class
 new file mode 100644
-index 0000000..02719f8
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/media/DecodeDataBuffer.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/media/MediaDataAudioObserver.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/media/MediaDataAudioObserver.class
 new file mode 100644
-index 0000000..dc47595
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/media/MediaDataAudioObserver.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/media/MediaDataObserverPlugin.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/media/MediaDataObserverPlugin.class
 new file mode 100644
-index 0000000..665ba03
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/media/MediaDataObserverPlugin.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/media/MediaDataVideoObserver.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/media/MediaDataVideoObserver.class
 new file mode 100644
-index 0000000..3a33ddc
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/media/MediaDataVideoObserver.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/media/MediaPreProcessing$ProgressCallback.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/media/MediaPreProcessing$ProgressCallback.class
 new file mode 100644
-index 0000000..ef1ae3e
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/media/MediaPreProcessing$ProgressCallback.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/media/MediaPreProcessing.class b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/media/MediaPreProcessing.class
 new file mode 100644
-index 0000000..423d7d9
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/intermediates/runtime_library_classes_dir/debug/com/syan/agora/media/MediaPreProcessing.class differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt b/node_modules/react-native-agora/android/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt
 new file mode 100644
 index 0000000..3a24b8f
@@ -4949,8 +4665,7 @@ index 0000000..497083d
 +		INJECTED from /Users/zyzo/Projects/AMI/ami-aidee/node_modules/react-native-agora/android/src/main/AndroidManifest.xml
 diff --git a/node_modules/react-native-agora/android/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin b/node_modules/react-native-agora/android/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin
 new file mode 100644
-index 0000000..b79e68e
-Binary files /dev/null and b/node_modules/react-native-agora/android/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-agora/android/src/main/java/com/syan/agora/AgoraManager.java b/node_modules/react-native-agora/android/src/main/java/com/syan/agora/AgoraManager.java
 index 2cb177d..18e19c3 100755
 --- a/node_modules/react-native-agora/android/src/main/java/com/syan/agora/AgoraManager.java
@@ -4991,7 +4706,7 @@ index 8bc226f..73f0a43 100644
  import android.util.Log;
  import android.view.View;
 diff --git a/node_modules/react-native-agora/android/src/main/java/com/syan/agora/AgoraViewManager.java b/node_modules/react-native-agora/android/src/main/java/com/syan/agora/AgoraViewManager.java
-index 89ddb5a..9f896b5 100644
+index 89ddb5a..0d2ed1a 100644
 --- a/node_modules/react-native-agora/android/src/main/java/com/syan/agora/AgoraViewManager.java
 +++ b/node_modules/react-native-agora/android/src/main/java/com/syan/agora/AgoraViewManager.java
 @@ -44,7 +44,11 @@ public class AgoraViewManager extends SimpleViewManager<AgoraVideoView> {
@@ -4999,9 +4714,9 @@ index 89ddb5a..9f896b5 100644
      @ReactProp(name = "zOrderMediaOverlay")
      public void setZOrderMediaOverlay(final AgoraVideoView agoraVideoView, boolean zOrderMediaOverlay) {
 -        surfaceView.setZOrderMediaOverlay(zOrderMediaOverlay);
-+        if(surfaceView!=null){
++        if (surfaceView != null) {
 +            surfaceView.setZOrderMediaOverlay(zOrderMediaOverlay);
-+        }else{
++        } else{
 +            agoraVideoView.setZOrderMediaOverlay(zOrderMediaOverlay);
 +        }
      }
