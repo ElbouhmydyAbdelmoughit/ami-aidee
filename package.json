@@ -54,7 +54,6 @@
     "react-localize-redux": "^3.5.3",
     "react-native": "0.69.1",
     "react-native-agora": "^2.9.1-alpha.3",
-    "react-native-device-battery": "^2.1.0",
     "react-native-device-info": "^10.2.1",
     "react-native-easy-grid": "^0.2.2",
     "react-native-elements": "^3.4.2",

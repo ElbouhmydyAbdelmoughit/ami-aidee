@@ -37,7 +37,6 @@ target 'AMIaide' do
   pod 'RNSentry', :path => '../node_modules/@sentry/react-native'
 
 
-  pod 'react-native-device-battery', :path => '../node_modules/react-native-device-battery'
 
   pod 'agora-react-native-rtm', :path => '../node_modules/agora-react-native-rtm'
 

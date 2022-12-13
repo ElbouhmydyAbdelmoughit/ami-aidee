@@ -215,7 +215,6 @@ configurations.all {
 dependencies {
     implementation project(':react-native-localize')
     implementation project(':agora-react-native-rtm')
-    implementation project(':react-native-device-battery')
     implementation project(':react-native-system-setting')
     implementation project(':react-native-orientation')
     implementation project(':react-native-agora')
