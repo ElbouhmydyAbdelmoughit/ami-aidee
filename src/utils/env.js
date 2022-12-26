@@ -19,11 +19,11 @@ const getMediaUrl = () => {
   return HTTPS_MEDIA_URL
 }
 
-const HTTP_API_URL = 'http://api.ami-app.com'
-const HTTPS_API_URL = 'https://api.ami-app.com'
+const HTTP_API_URL = 'http://api.solution-ami.com'
+const HTTPS_API_URL = 'https://api.solution-ami.com'
 
 export const Env = {
   API_URL: getShouldUseHttps() ? HTTPS_API_URL : HTTP_API_URL,
-  GRAPHQL_URL: 'https://graphql.ami-app.com/v1/graphql',
+  GRAPHQL_URL: 'https://graphql.solution-ami.com/v1/graphql',
   MEDIA_URL: getMediaUrl(),
 }

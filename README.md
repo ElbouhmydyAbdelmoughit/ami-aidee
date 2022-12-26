@@ -41,3 +41,13 @@ Run IOS Project
 ```
 $ cd .. && npx react-native run-ios
 ```
+
+
+### Troubleshooting
+
+##### For Mac M1 pod install will cause build failure. In the terminal:
+
+```
+sudo arch -x86_64 gem install ffi
+arch -x86_64 pod install
+``` 
