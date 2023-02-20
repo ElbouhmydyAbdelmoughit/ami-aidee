@@ -141,6 +141,10 @@
   "resolutions": {
     "react-native": "18.0.0"
   },
+  "engines": {
+    "node":"=16.17.1",	  
+    "npm": "=8.15.0"
+  },
   "postinstall": "npx jetify",
   "overrides": {
     "react-native-reanimated": "^2.9.1",
