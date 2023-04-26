@@ -4,15 +4,15 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
   rules: {
-    'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': [
-      'error',
-      {
-        ignoreRestSiblings: true,
-        varsIgnorePattern: '_',
-        argsIgnorePattern: '^_',
-      },
-    ],
+    'no-unused-vars': 2,
+    // '@typescript-eslint/no-unused-vars': [
+    //   'error',
+    //   {
+    //     ignoreRestSiblings: true,
+    //     varsIgnorePattern: '_',
+    //     argsIgnorePattern: '^_',
+    //   },
+    // ],
     /* There is no objective advantage of separate style vs. inline style,
      * other than making the component easier to read.
      * react-native StyleSheet usage also makes no difference
@@ -38,5 +38,29 @@ module.exports = {
       },
     ],
     semi: ['error', 'never'],
+    '@typescript-eslint/ban-ts-ignore': 0,
+    '@typescript-eslint/ban-ts-comment': 0,
+    '@typescript-eslint/explicit-function-return-type': 0,
+    '@typescript-eslint/explicit-member-accessibility': 0,
+    '@typescript-eslint/explicit-module-boundary-types': 0,
+    '@typescript-eslint/indent': 0,
+    '@typescript-eslint/member-delimiter-style': 0,
+    '@typescript-eslint/no-empty-function': [
+      'error',
+      {
+        allow: ['arrowFunctions', 'functions', 'asyncFunctions'],
+      },
+    ],
+    '@typescript-eslint/no-empty-interface': 0,
+    '@typescript-eslint/no-explicit-any': 0,
+    '@typescript-eslint/no-object-literal-type-assertion': 0,
+    '@typescript-eslint/no-var-requires': 0,
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+      },
+    ],
   },
 }
