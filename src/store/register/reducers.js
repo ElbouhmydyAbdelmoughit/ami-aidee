@@ -1,5 +1,5 @@
-import { createReducer } from "reduxsauce"
-import { types } from "./actions"
+import { createReducer } from 'reduxsauce'
+import { types } from './actions'
 
 const initialState = {
   data: {},

@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux'
 import { UserActivitiesActions } from 'store/user-activities'
-import { TrackedActivity } from 'core/types'
+import { TrackedActivity } from 'core/types'
 
 const useActivityLog = () => {
   const dispatch = useDispatch()

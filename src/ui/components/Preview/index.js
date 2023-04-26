@@ -1,2 +1,2 @@
-import Preview from './Preview';
-export default Preview;
+import Preview from './Preview'
+export default Preview

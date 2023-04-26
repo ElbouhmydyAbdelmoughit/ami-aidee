@@ -1,70 +1,71 @@
-import { createReducer } from 'reduxsauce';
-import { types } from './actions';
+import { createReducer } from 'reduxsauce'
+import { types } from './actions'
 
 const initialState = {
   list: {},
   loading: false,
   hasMore: true,
-};
+}
 
-const startLoader = (state = initialState) => (
-  {...state, loading: true}
-)
+const startLoader = (state = initialState) => ({ ...state, loading: true })
 
-const stopLoader = (state = initialState) => (
-  {...state, loading: false}
-)
+const stopLoader = (state = initialState) => ({ ...state, loading: false })
 
 const usersSuccess = (state = initialState, action) => {
-  const {users} = action;
-  const {list} = state;
-  const data = {};
+  const { users } = action
+  const { list } = state
+  const data = {}
   users.forEach(user => {
-    data[user.id] = user;
+    data[user.id] = user
   })
-  return {...state, list: {...list, ...data}, loading: false, hasMore: users.length > 0};
-};
+  return {
+    ...state,
+    list: { ...list, ...data },
+    loading: false,
+    hasMore: users.length > 0,
+  }
+}
 
 const userCreateSuccess = (state = initialState, action) => {
-  const {users} = action;
-  const {list} = state;
-  const data = list;
+  const { users } = action
+  const { list } = state
+  const data = list
   users.forEach(user => {
-    data[user.id] = user;
+    data[user.id] = user
   })
 
-  return {...state, list: data, loading: false, hasMore: users.length > 0};
-};
+  return { ...state, list: data, loading: false, hasMore: users.length > 0 }
+}
 
 const userModifySuccess = (state = initialState, action) => {
-  const {users} = action;
-  const {list} = state;
-  const data = list;
-  console.log("reducer modify")
+  const { users } = action
+  const { list } = state
+  const data = list
+  console.log('reducer modify')
   console.log(data)
   users.forEach(user => {
-    data[user.id] = user;
+    data[user.id] = user
   })
 
-  return {...state, list: data, loading: false, hasMore: users.length > 0};
-};
+  return { ...state, list: data, loading: false, hasMore: users.length > 0 }
+}
 
 const deleteSuccess = (state = initialState, action) => {
-  const {id} = action;
+  const { id } = action
   console.log(action)
-  const {list} = state;
-  delete list[id];
+  const { list } = state
+  delete list[id]
 
   const users = Object.values(list)
   console.log(state)
-  const data = {};
+  const data = {}
   console.log(data)
 
   users.forEach(user => {
-    data[user.id] = user;
+    data[user.id] = user
   })
-  return {...state, list: data, loading: false, hasMore: users.length > 0};
-};
+  return { ...state, list: data, loading: false, hasMore: users.length > 0 }
+}
 
 export default createReducer(initialState, {
   [types.USERS_REQUEST]: startLoader,
@@ -79,4 +80,4 @@ export default createReducer(initialState, {
 
   [types.USERS_DELETE_REQUEST]: startLoader,
   [types.USERS_DELETE_SUCCESS]: deleteSuccess,
-});
+})

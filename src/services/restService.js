@@ -1,34 +1,34 @@
 // @flow
 
-import { set, isEmpty } from 'lodash';
+import { set, isEmpty } from 'lodash'
 
 export default async function App_Service({ url, method, params }) {
-  const headers = {};
+  const headers = {}
 
-  set(headers, 'Accept', 'application/json');
-  set(headers, 'Content-Type', 'application/json');
+  set(headers, 'Accept', 'application/json')
+  set(headers, 'Content-Type', 'application/json')
 
   const reqBody = {
     method,
-    headers
-  };
+    headers,
+  }
 
   if (!isEmpty(params)) {
-    reqBody.body = JSON.stringify(params);
+    reqBody.body = JSON.stringify(params)
   }
 
   return fetch(url, reqBody)
     .then(response => response.json())
-    .then((data) => {
+    .then(data => {
       return {
         result: 'ok',
-        data
-      };
+        data,
+      }
     })
     .catch(() => {
       return {
         result: 'error',
-        message: 'Please check your internet connection!'
-      };
-    });
+        message: 'Please check your internet connection!',
+      }
+    })
 }

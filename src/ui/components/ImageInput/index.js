@@ -1,2 +1,2 @@
-import ImageInput from './ImageInput';
-export default ImageInput;
+import ImageInput from './ImageInput'
+export default ImageInput

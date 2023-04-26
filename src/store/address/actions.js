@@ -1,4 +1,4 @@
-import { createAction } from '../../utils';
+import { createAction } from '../../utils'
 
 // Types
 export const types = {
@@ -17,35 +17,31 @@ export const types = {
 
   ADDRESSES_PDF_REQUEST: 'ADDRESSES_PDF_REQUEST',
   ADDRESSES_PDF_SUCCESS: 'ADDRESSES_PDF_SUCCESS',
-};
+}
 
 // Actions
 export default {
   /** REQUEST */
   addressesRequest: (filters = {}) =>
     createAction(types.ADDRESSES_REQUEST, { filters }),
-  addressesSuccess: (addresses) =>
+  addressesSuccess: addresses =>
     createAction(types.ADDRESSES_SUCCESS, { addresses }),
-  addressesFailure: () =>
-    createAction(types.ADDRESSES_FAILURE),
+  addressesFailure: () => createAction(types.ADDRESSES_FAILURE),
 
   addressesCreateRequest: (filters = {}) =>
     createAction(types.ADDRESSES_CREATE_REQUEST, { filters }),
-  addressesCreateSuccess: () =>
-    createAction(types.ADDRESSES_CREATE_SUCCESS),
+  addressesCreateSuccess: () => createAction(types.ADDRESSES_CREATE_SUCCESS),
 
-  addressesDeleteRequest: (id) =>
+  addressesDeleteRequest: id =>
     createAction(types.ADDRESSES_DELETE_REQUEST, { id }),
-  addressesDeleteSuccess: (id) =>
+  addressesDeleteSuccess: id =>
     createAction(types.ADDRESSES_DELETE_SUCCESS, { id }),
 
   addressesModifyRequest: (address = {}) =>
     createAction(types.ADDRESSES_MODIFY_REQUEST, { address }),
-  addressesModifySuccess: (addresses) =>
+  addressesModifySuccess: addresses =>
     createAction(types.ADDRESSES_MODIFY_SUCCESS, { addresses }),
 
-  addressesPDFRequest: (id) =>
-    createAction(types.ADDRESSES_PDF_REQUEST, { id }),
-  addressesPDFSuccess: (id) =>
-    createAction(types.ADDRESSES_PDF_SUCCESS, { id }),
-};
+  addressesPDFRequest: id => createAction(types.ADDRESSES_PDF_REQUEST, { id }),
+  addressesPDFSuccess: id => createAction(types.ADDRESSES_PDF_SUCCESS, { id }),
+}

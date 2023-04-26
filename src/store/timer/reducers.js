@@ -1,9 +1,9 @@
-import moment from "moment"
-import { createReducer } from "reduxsauce"
-import { types } from "./actions"
+import moment from 'moment'
+import { createReducer } from 'reduxsauce'
+import { types } from './actions'
 
 const initialState = {
-  mode: "awake",
+  mode: 'awake',
   minute_tick: moment()
     .second(0)
     .toISOString(),
@@ -11,11 +11,11 @@ const initialState = {
 
 // Reducers
 const displaySleep = (state = initialState) => {
-  return { ...state, mode: "sleep" }
+  return { ...state, mode: 'sleep' }
 }
 
 const displayAwake = (state = initialState) => {
-  return { ...state, mode: "awake" }
+  return { ...state, mode: 'awake' }
 }
 
 const setMinuteTick = (state = initialState, action) => {

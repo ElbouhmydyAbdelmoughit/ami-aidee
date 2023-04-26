@@ -1,3 +1,3 @@
-import  ReminderList from './ReminderList'
+import ReminderList from './ReminderList'
 
-export default ReminderList 
+export default ReminderList

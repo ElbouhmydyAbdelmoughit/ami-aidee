@@ -1,7 +1,7 @@
-import React, { useState } from "react"
-import { Image } from "react-native"
-import { Banner, Headline, TouchableRipple } from "react-native-paper"
-import Icon from "react-native-vector-icons/EvilIcons"
+import React, { useState } from 'react'
+import { Image } from 'react-native'
+import { Banner, Headline, TouchableRipple } from 'react-native-paper'
+import Icon from 'react-native-vector-icons/EvilIcons'
 
 export const SnackBar = ({ isShown, message, level, forceHide }) => {
   return (
@@ -16,14 +16,14 @@ export const SnackBar = ({ isShown, message, level, forceHide }) => {
         actions={[]}
         image={({ size }) => (
           <Icon
-            name={level == -1 ? "close-o" : "check"}
+            name={level == -1 ? 'close-o' : 'check'}
             size={size}
-            color={"#FFF"}
+            color={'#FFF'}
           />
         )}
-        style={{ backgroundColor: level == -1 ? "#B22222" : "#228B22" }}
+        style={{ backgroundColor: level == -1 ? '#B22222' : '#228B22' }}
       >
-        <Headline style={{ color: "#fff" }}>{message}</Headline>
+        <Headline style={{ color: '#fff' }}>{message}</Headline>
       </Banner>
     </TouchableRipple>
   )

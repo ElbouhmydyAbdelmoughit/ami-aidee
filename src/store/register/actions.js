@@ -1,9 +1,9 @@
-import { createAction } from "../../utils/index"
+import { createAction } from '../../utils/index'
 
 export const types = {
-  SET_REGISTER_USER: "SET_REGISTER_USER",
-  CLEAR_REGISTER_USER: "CLEAR_REGISTER_SER",
-  REGISTER_REQUEST: "REGISTER_REQUEST",
+  SET_REGISTER_USER: 'SET_REGISTER_USER',
+  CLEAR_REGISTER_USER: 'CLEAR_REGISTER_SER',
+  REGISTER_REQUEST: 'REGISTER_REQUEST',
 }
 
 export default {

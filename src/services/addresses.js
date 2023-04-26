@@ -1,12 +1,11 @@
-import { methods, query, mutation } from '../utils';
-import { service, authenticatedService } from './middleware';
+import { methods, query, mutation } from '../utils'
+import { service, authenticatedService } from './middleware'
 
-const {GET} = methods;
+const { GET } = methods
 /**
  * REST ROUTES
  */
-const routes = {
-};
+const routes = {}
 
 /**
  * GRAPHQL QUERIES
@@ -21,7 +20,7 @@ const queries = {
     created_at
     updated_at
   }`,
-  search: (address) => `addresses(where:{address1: {_like: ${address}}})  {
+  search: address => `addresses(where:{address1: {_like: ${address}}})  {
     id
     city
     address1
@@ -34,7 +33,7 @@ const queries = {
     aggregate {
       count
     }
-  }`
+  }`,
 }
 
 /**
@@ -100,9 +99,10 @@ const mutations = {
  * SERVICES
  */
 export default {
-  addresses: ({limit, offset}) => query(queries.addresses(limit, offset)),
-  search: ({address}) => query(queries.search(address)),
+  addresses: ({ limit, offset }) => query(queries.addresses(limit, offset)),
+  search: ({ address }) => query(queries.search(address)),
   createAddress: address => mutation(mutations.createAddress(address)),
   deleteAddress: id => mutation(mutations.deleteAddress(id)),
-  modifyAddress: ({id, address}) => mutation(mutations.modifyAddress(id, address)),
-};
+  modifyAddress: ({ id, address }) =>
+    mutation(mutations.modifyAddress(id, address)),
+}

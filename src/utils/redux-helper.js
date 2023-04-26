@@ -8,7 +8,7 @@ export const pathResolver = (path, obj) => {
   return path.split('.').reduce((prev, curr) => {
     return prev ? prev[curr] : null
   }, obj)
-};
+}
 
 /**
  * Validate data and return a simple action object
@@ -17,16 +17,16 @@ export const pathResolver = (path, obj) => {
  */
 export const createAction = (type, data) => {
   if (data && data.type) {
-    throw new Error('Type is a reserved name !');
+    throw new Error('Type is a reserved name !')
   }
 
   if (data) {
     Object.keys(data).forEach(key => {
       if (data[key] === undefined) {
-        throw new Error(`${key} is undefined !`);
+        throw new Error(`${key} is undefined !`)
       }
-    });
+    })
   }
 
-  return {type, ...data};
-};
+  return { type, ...data }
+}

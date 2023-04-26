@@ -1,2 +1,2 @@
 /* Core exports */
-export { default as Core } from './store';
+export { default as Core } from './store'

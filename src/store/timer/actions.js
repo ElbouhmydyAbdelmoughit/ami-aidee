@@ -1,10 +1,10 @@
-import { createAction } from "../../utils"
+import { createAction } from '../../utils'
 
 // Types
 export const types = {
-  AWAKE: "AWAKE",
-  SLEEP: "SLEEP",
-  SET_MINUTE_TICK: "SET_MINUTE_TICK",
+  AWAKE: 'AWAKE',
+  SLEEP: 'SLEEP',
+  SET_MINUTE_TICK: 'SET_MINUTE_TICK',
 }
 
 // Actions

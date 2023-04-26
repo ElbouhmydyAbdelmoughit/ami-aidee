@@ -1,8 +1,8 @@
-import React from "react"
-import NameForm from "./NameForm"
-import PhoneForm from "./PhoneForm"
-import PasswordForm from "./PasswordForm"
-import EmailForm from "./EmailForm"
+import React from 'react'
+import NameForm from './NameForm'
+import PhoneForm from './PhoneForm'
+import PasswordForm from './PasswordForm'
+import EmailForm from './EmailForm'
 
 const STEP_COMPONENT = {
   name: NameForm,
