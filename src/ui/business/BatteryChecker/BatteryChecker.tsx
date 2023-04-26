@@ -1,6 +1,6 @@
 import { Alert, Animated, View } from 'react-native'
 import React, { useEffect, useRef } from 'react'
-import { IconButton } from 'react-native-paper'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { useDispatch, useSelector } from 'react-redux'
 import { HelpedUserActions } from 'store/helpedUsers'
 import { AuthSelectors } from 'store/auth'
@@ -65,8 +65,8 @@ const BatteryChecker = () => {
           zIndex: 30,
         }}
       >
-        <IconButton
-          icon="battery-alert"
+        <Icon
+          name="power-plug-off"
           color="rgba(255,0,0,0.8)"
           size={100}
           style={{
