@@ -6,9 +6,9 @@ export default () => {
     backgroundColor: 'transparent',
     'NativeBase.Segment': {
       borderWidth: 0,
-      backgroundColor: 'transparent'
-    }
-  };
+      backgroundColor: 'transparent',
+    },
+  }
 
-  return contentTheme;
-};
+  return contentTheme
+}

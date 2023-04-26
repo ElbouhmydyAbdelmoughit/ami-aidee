@@ -4,8 +4,8 @@ export default () => {
   const leftTheme = {
     flex: 1,
     alignSelf: 'center',
-    alignItems: 'flex-start'
-  };
+    alignItems: 'flex-start',
+  }
 
-  return leftTheme;
-};
+  return leftTheme
+}

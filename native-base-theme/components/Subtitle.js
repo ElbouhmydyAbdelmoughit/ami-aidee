@@ -1,9 +1,9 @@
 // @flow
 
-import { Platform } from 'react-native';
+import { Platform } from 'react-native'
 
-import variable from './../variables/platform';
-import { PLATFORM } from './../variables/commonColor';
+import variable from './../variables/platform'
+import { PLATFORM } from './../variables/commonColor'
 
 export default (variables /* : * */ = variable) => {
   const subtitleTheme = {
@@ -12,8 +12,8 @@ export default (variables /* : * */ = variable) => {
     color: variables.subtitleColor,
     textAlign: 'center',
     paddingLeft: Platform.OS === PLATFORM.IOS ? 4 : 0,
-    marginLeft: Platform.OS === PLATFORM.IOS ? undefined : -3
-  };
+    marginLeft: Platform.OS === PLATFORM.IOS ? undefined : -3,
+  }
 
-  return subtitleTheme;
-};
+  return subtitleTheme
+}
