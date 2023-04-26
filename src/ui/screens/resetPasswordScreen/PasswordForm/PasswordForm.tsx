@@ -37,7 +37,7 @@ const PasswordForm = ({
         }}
       >
         {({ errors, values, handleChange, handleSubmit }) => (
-          <React.Fragment>
+          <>
             <TextInput
               label={t(
                 'screen.reset_password.password_field_label',
@@ -60,7 +60,7 @@ const PasswordForm = ({
             >
               <Text>{Translations.common.to_confirm}</Text>
             </Button>
-          </React.Fragment>
+          </>
         )}
       </Formik>
     </View>

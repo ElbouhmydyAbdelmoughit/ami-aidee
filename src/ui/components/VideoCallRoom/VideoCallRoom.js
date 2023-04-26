@@ -248,7 +248,7 @@ const VideoCallRoom = ({ remoteAuxiliary, mode, channelId }) => {
   }
   const getJoinSucceedView = () => {
     return (
-      <React.Fragment>
+      <>
         <AgoraView
           style={styles.full}
           zOrderMediaOverlay={true}
@@ -268,7 +268,7 @@ const VideoCallRoom = ({ remoteAuxiliary, mode, channelId }) => {
         <View style={{ marginBottom: 32, alignItems: 'center' }}>
           {getEndCallBtn()}
         </View>
-      </React.Fragment>
+      </>
     )
   }
   const getRemoteStreamView = () => {

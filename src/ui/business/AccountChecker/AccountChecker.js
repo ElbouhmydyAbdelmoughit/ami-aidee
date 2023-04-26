@@ -7,10 +7,10 @@ const AccountChecker = ({ helpedUser, isLoading }) => {
     return null
   }
   return (
-    <React.Fragment>
+    <>
       <BlockerDialog helpedUser={helpedUser} />
       <WarningDialog helpedUser={helpedUser} />
-    </React.Fragment>
+    </>
   )
 }
 

@@ -24,7 +24,7 @@ import SystemVolumeManager from 'ui/business/SystemVolumeManager'
 import BatteryChecker from 'ui/business/BatteryChecker'
 import { useDispatch } from 'react-redux'
 import { NavigationActions } from 'store/navigation'
-import { StatusBar } from 'react-native'
+import { StatusBar, View } from 'react-native'
 
 export default () => {
   const [key, setKey] = useState(0)
@@ -38,7 +38,7 @@ export default () => {
     []
   )
   return (
-    <React.Fragment key={key}>
+    <View style={{ flex: 1 }} key={key}>
       <StatusBar backgroundColor="transparent" translucent />
       <SnackBar />
       <RemoteEventReceiver />
@@ -116,7 +116,7 @@ export default () => {
       </Router>
       <SystemVolumeManager />
       <BatteryChecker />
-    </React.Fragment>
+    </View>
   )
 }
 

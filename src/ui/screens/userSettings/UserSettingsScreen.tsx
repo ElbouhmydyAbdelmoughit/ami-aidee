@@ -139,7 +139,7 @@ const UserSettingsScreen = ({
                   style={{ marginRight: 8 }}
                 />
                 <TouchableRipple onPress={onPress}>
-                  <React.Fragment>
+                  <>
                     <Text style={[styles.text, { color: textColor }]}>
                       {t(
                         'sceen.settings.automatic_pickup',
@@ -152,7 +152,7 @@ const UserSettingsScreen = ({
                         "L'appel entrant sera décroché automatiquement après 3 secondes."
                       )}
                     </Text>
-                  </React.Fragment>
+                  </>
                 </TouchableRipple>
               </View>
               <View style={{ flexDirection: 'row', marginTop: 24 }}>
@@ -164,7 +164,7 @@ const UserSettingsScreen = ({
                   style={{ marginRight: 8 }}
                 />
                 <TouchableRipple onPress={onMinVolumePress}>
-                  <React.Fragment>
+                  <>
                     <Text style={[styles.text, { color: textColor }]}>
                       {t('sceen.settings.min_volume', 'Volume activé')}
                     </Text>
@@ -174,7 +174,7 @@ const UserSettingsScreen = ({
                         'Le volume sera toujours activé et ne descend pas au dessous de 50%'
                       )}
                     </Text>
-                  </React.Fragment>
+                  </>
                 </TouchableRipple>
               </View>
               <View style={{ flexDirection: 'row', marginTop: 24 }}>
@@ -186,7 +186,7 @@ const UserSettingsScreen = ({
                   style={{ marginRight: 8 }}
                 />
                 <TouchableRipple onPress={onAlertOnDischargePress}>
-                  <React.Fragment>
+                  <>
                     <Text style={[styles.text, { color: textColor }]}>
                       {t(
                         'sceen.settings.discharge_alert',
@@ -199,7 +199,7 @@ const UserSettingsScreen = ({
                         "Lorsque la tablette est débranché, l'aidé sera alerté pour rebrancher sa tablette"
                       )}
                     </Text>
-                  </React.Fragment>
+                  </>
                 </TouchableRipple>
               </View>
             </View>

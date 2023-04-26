@@ -28,7 +28,7 @@ const ForgetPasswordForm = ({ requestPasswordReset }) => {
         }}
       >
         {({ errors, values, handleChange, handleSubmit }) => (
-          <React.Fragment>
+          <>
             <TextInput
               label={Translations.common.your_email}
               mode="flat"
@@ -47,7 +47,7 @@ const ForgetPasswordForm = ({ requestPasswordReset }) => {
             >
               {Translations.common.to_confirm}
             </Button>
-          </React.Fragment>
+          </>
         )}
       </Formik>
     </View>
