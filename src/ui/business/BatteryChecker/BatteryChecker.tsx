@@ -1,5 +1,5 @@
 import { Alert, Animated, View } from 'react-native'
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { IconButton } from 'react-native-paper'
 import { useDispatch, useSelector } from 'react-redux'
 import { HelpedUserActions } from 'store/helpedUsers'

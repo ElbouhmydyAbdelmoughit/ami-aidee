@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Input, View, Button, Text, Heading } from 'native-base'
+import { View, Button, Heading } from 'native-base'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { Actions } from 'react-native-router-flux'
 import useActivityLog from '../../hooks/use-activity-log'

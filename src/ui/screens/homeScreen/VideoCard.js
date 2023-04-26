@@ -119,7 +119,7 @@ const VideoCard = ({ uri }, ref) => {
       {lastState == "LOADING" && <View style={styles.activityIndicatorWrapper}>
           <ActivityIndicator animating={true} />
         </View>}
-        
+
       {lastState == "ERROR" && <View style={styles.activityIndicatorWrapper}>
           <H3>{"Oops. La vidéo ne peut pas être chargé."}</H3>
       </View>}

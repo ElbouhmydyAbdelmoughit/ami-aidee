@@ -6,7 +6,7 @@ const { POST } = methods
  * REST ROUTES
  */
 const routes = {
-  upload: () => `upload`,
+  upload: () => 'upload',
 }
 
 /**

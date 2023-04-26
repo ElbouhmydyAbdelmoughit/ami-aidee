@@ -1,12 +1,5 @@
-import {
-  View,
-  Animated,
-  Alert,
-  Modal,
-  useWindowDimensions,
-  StyleSheet,
-} from 'react-native'
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import { View, Animated, Modal } from 'react-native'
+import React, { useEffect, useRef, useState } from 'react'
 import Setting from 'react-native-system-setting'
 import { useSelector } from 'react-redux'
 import { AuthSelectors } from 'store/auth'

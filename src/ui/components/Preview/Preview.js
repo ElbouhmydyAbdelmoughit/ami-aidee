@@ -1,19 +1,8 @@
-import React, { Component } from 'react'
-import { FlatList, View, Text, Image } from 'react-native'
-import {
-  Avatar,
-  Button,
-  Card,
-  Title,
-  Paragraph,
-  TouchableRipple,
-  Divider,
-} from 'react-native-paper'
+import React from 'react'
+import { View, Text, Image } from 'react-native'
 
-import Icon from 'react-native-vector-icons/Foundation'
 import styles from './styles'
 
-import { RNCamera } from 'react-native-camera'
 import Video from 'react-native-video'
 
 import moment from 'moment'

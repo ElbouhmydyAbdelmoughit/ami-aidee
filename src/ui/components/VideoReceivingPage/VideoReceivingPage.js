@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { View, StyleSheet, Text } from 'react-native'
 import { IconButton } from 'react-native-paper'
 import { Actions } from 'react-native-router-flux'

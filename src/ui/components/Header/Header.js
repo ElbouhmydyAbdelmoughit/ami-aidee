@@ -1,5 +1,5 @@
-import React, { Component, PureComponent } from 'react'
-import { View, Platform, TouchableOpacity, Button } from 'react-native'
+import React from 'react'
+import { View, Button } from 'react-native'
 //import styles from './styles';
 import { Appbar } from 'react-native-paper'
 

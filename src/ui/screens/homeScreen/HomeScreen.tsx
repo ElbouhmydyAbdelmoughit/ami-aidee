@@ -1,21 +1,13 @@
 import React, { useState, useEffect, createRef, useRef } from 'react'
-import { Container, Text, Heading, Toast } from 'native-base'
+import { Text, Heading, Toast } from 'native-base'
 import { Col, Row, Grid } from 'react-native-easy-grid'
 import { Actions } from 'react-native-router-flux'
-import {
-  TouchableWithoutFeedback,
-  View,
-  StyleSheet,
-  TouchableOpacity,
-  Pressable,
-  Dimensions,
-} from 'react-native'
+import { TouchableWithoutFeedback, View } from 'react-native'
 
 import LinearGradient from 'react-native-linear-gradient'
 
 import { Env } from 'src/utils/env'
 import { closestMessage, sortMessage } from 'src/utils'
-import { Timer } from 'src/ui/components'
 
 import VideoCard from './VideoCard'
 import MessageCard from './MessageCard'
@@ -26,7 +18,6 @@ import { TrackedActivity } from 'core/types'
 import { Button, IconButton } from 'react-native-paper'
 import { Translations } from 'core/i18n'
 import { CircleButton } from 'ui/components'
-import Icon from 'react-native-vector-icons/MaterialIcons'
 import { useTranslation } from 'react-i18next'
 import BacktoRootTimer from 'ui/components/BackToRootTimer'
 import { RETURN_TO_HOME_DURATION } from 'utils/constant'

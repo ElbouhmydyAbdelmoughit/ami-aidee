@@ -1,5 +1,4 @@
 import { connect } from 'react-redux'
-import { getTranslate } from 'react-localize-redux'
 import LoginScreen from './LoginScreen'
 
 import { AuthActions } from '../../../store/auth'

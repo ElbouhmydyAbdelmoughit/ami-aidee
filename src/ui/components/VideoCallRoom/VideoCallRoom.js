@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   NativeModules,
   Platform,
@@ -24,8 +24,6 @@ import useActivityLog from '../../hooks/use-activity-log'
 import { useTranslation } from 'react-i18next'
 import { Translations } from 'core/i18n'
 import useTextColor from 'ui/hooks/use-text-color'
-import { useSelector } from 'react-redux'
-import { AuthSelectors } from 'store/auth'
 
 const { Agora } = NativeModules
 const { FPS30, AudioProfileDefault, AudioScenarioDefault, Adaptative } = Agora

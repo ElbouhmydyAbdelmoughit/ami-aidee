@@ -11,9 +11,9 @@ function* usersRequest({ filters }) {
   const [error, response] = yield call(HelpedUsersService.users, filters)
   console.log(error)
   console.log(response)
-  if (!error && response)
+  if (!error && response) {
     yield put(UserAction.usersSuccess(response.helped_users))
-  else {
+  } else {
     yield put(UserAction.usersFailure())
   }
 }

@@ -21,13 +21,13 @@ export const notifierAddMessage = message => {
   notifierAuthorization()
   const {
     activite,
-    diffusion_end_date,
+    // diffusion_end_date,
     diffusion_start_date,
     moment,
     moment_time,
-    location,
+    // location,
     subject,
-    reccurence,
+    // reccurence,
   } = message
 
   const aStr = `${diffusion_start_date.split('T')[0]}T${moment_time}`
@@ -46,7 +46,7 @@ export const notifierAddMany = messages => {
     notifierAddMessage(message)
   })
   /**
- 
+
 activite: "Prendre votre tahor"
 auxiliary: {id: 2, firstname: "aidant", lastname: "super", __typename: "auxiliaries"}
 created_at: null
@@ -60,8 +60,8 @@ picture_url: "tahor.jpeg"
 reccurence: null
 subjet: "1"
 updated_at: null
-video_url: "testounet.mp4" 
- 
+video_url: "testounet.mp4"
+
  */
   console.log(messages)
 }

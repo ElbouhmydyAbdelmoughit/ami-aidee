@@ -1,5 +1,5 @@
 import { Translations } from 'core/i18n'
-import React, { useState } from 'react'
+import React from 'react'
 import { Text, View } from 'react-native'
 import RNPickerSelect from 'react-native-picker-select'
 import { connect } from 'react-redux'

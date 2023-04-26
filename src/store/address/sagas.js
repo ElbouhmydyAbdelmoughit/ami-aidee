@@ -9,9 +9,9 @@ function* addressesRequest({ filters }) {
   const [error, response] = yield call(AddressesService.addresses, filters)
   console.log(error)
   console.log(response)
-  if (!error && response)
+  if (!error && response) {
     yield put(AddressAction.addressesSuccess(response.addresses))
-  else {
+  } else {
     yield put(AddressAction.addressesFailure())
   }
 }

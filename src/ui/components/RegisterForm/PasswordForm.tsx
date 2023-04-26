@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Input, View, Heading, Button, Text } from 'native-base'
+import { View, Heading, Button } from 'native-base'
 import useActivityLog from '../../hooks/use-activity-log'
 import { useTranslation } from 'react-i18next'
 import { Translations } from 'core/i18n'

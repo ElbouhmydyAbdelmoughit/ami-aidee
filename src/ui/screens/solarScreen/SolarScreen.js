@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { View } from 'react-native'
-import { Container, Heading, Text } from 'native-base'
-import material from 'AMIaide/native-base-theme/variables/material'
+import { Heading, Text } from 'native-base'
 
 import { Actions } from 'react-native-router-flux'
 import LinearGradient from 'react-native-linear-gradient'
@@ -15,7 +14,6 @@ import SolarView from './SolarView'
 import ContactButton from './ContactButton'
 import { Trans, useTranslation } from 'react-i18next'
 import colorUtils from 'utils/colors'
-import { withNavigationFocus } from 'react-navigation'
 import SleepTimer from 'ui/components/SleepTimer'
 
 const BOLD = text => <Text style={{ fontWeight: 'bold' }}>{text}</Text>
@@ -154,8 +152,11 @@ const SolarScreen = ({
     let add = true
     const interval = setInterval(() => {
       setFadeIn(opacity)
-      if (add) opacity += 1
-      else opacity -= 1
+      if (add) {
+        opacity += 1
+      } else {
+        opacity -= 1
+      }
 
       add = !(opacity === 1)
     }, 600)

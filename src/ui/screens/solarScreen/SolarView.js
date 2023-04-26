@@ -57,8 +57,12 @@ const SolarView = ({
 
     const pointForAngle = angle => {
       return points.reduce((prev, curr) => {
-        if (prev.angle === angle) return prev
-        if (curr.angle === angle) return curr
+        if (prev.angle === angle) {
+          return prev
+        }
+        if (curr.angle === angle) {
+          return curr
+        }
 
         return Math.abs(curr.angle - angle) < Math.abs(prev.angle - angle)
           ? curr

@@ -8,7 +8,6 @@ import {
   TouchableOpacity,
 } from 'react-native'
 import { IconButton } from 'react-native-paper'
-import errorReporter from 'core/error-reporter'
 
 const ZoomableImage = ({ uri, zooming, onUnzoom, onZoom }) => {
   const viewRef = useRef()

@@ -4,7 +4,7 @@
 //is night
 
 /**
- * 
+ *
 dawn: Mon Sep 02 2019 06:36:49 GMT+0200 (heure d’été d’Europe centrale) {}
 sunrise: Mon Sep 02 2019 07:09:34 GMT+0200 (heure d’été d’Europe centrale) {}
 sunriseEnd: Mon Sep 02 2019 07:12:53 GMT+0200 (heure d’été d’Europe centrale)
@@ -109,10 +109,18 @@ export const times = (now, helpedUser) => {
     now.isAfter(computedTimes.solarNoon) && now.isBefore(computedTimes.dusk) //is sunNoon => now > sunriseEnd && now < dusk <= default
   const isDusk = now.isBetween(computedTimes.dusk, computedTimes.night)
   const isNight = now.isAfter(computedTimes.night)
-  if (isDawn) return 'DAWN'
-  if (isSunNoon) return 'SUN'
-  if (isDusk) return 'DUSK'
-  if (isNight) return 'NIGHT'
+  if (isDawn) {
+    return 'DAWN'
+  }
+  if (isSunNoon) {
+    return 'SUN'
+  }
+  if (isDusk) {
+    return 'DUSK'
+  }
+  if (isNight) {
+    return 'NIGHT'
+  }
   return 'NIGHT'
 }
 

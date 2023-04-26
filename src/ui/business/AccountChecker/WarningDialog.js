@@ -39,7 +39,7 @@ const WarningDialog = ({
     const accountExpiresIn = getAccountExpiresIn(helpedUser)
 
     if (
-      5 < accountExpiresIn &&
+      accountExpiresIn > 5 &&
       accountExpiresIn <= 10 &&
       !isExpirationIn10DaysExpired
     ) {
@@ -56,7 +56,7 @@ const WarningDialog = ({
       setDialogVisible(true)
       expirationIn10DaysDisplayed()
     } else if (
-      0 < accountExpiresIn &&
+      accountExpiresIn > 0 &&
       accountExpiresIn <= 5 &&
       !isExpirationIn5DaysExpired
     ) {

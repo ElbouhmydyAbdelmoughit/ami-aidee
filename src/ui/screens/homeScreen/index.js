@@ -1,5 +1,4 @@
 import { connect } from 'react-redux'
-import { getTranslate } from 'react-localize-redux'
 import HomeScreen from './HomeScreen'
 
 import { MessageActions } from 'src/store/message'

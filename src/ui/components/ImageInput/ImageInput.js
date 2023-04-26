@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Text, View, Keyboard, TouchableHighlight, Image } from 'react-native'
-import {
-  Button,
-  TextInput,
-  Avatar,
-  Subheading,
-  TouchableRipple,
-} from 'react-native-paper'
+import { View, Image } from 'react-native'
+import { Subheading, TouchableRipple } from 'react-native-paper'
 import Icon from 'react-native-vector-icons/EvilIcons'
 
 import ImagePicker from 'react-native-image-picker'

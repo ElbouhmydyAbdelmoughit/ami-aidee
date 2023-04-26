@@ -5,9 +5,8 @@ import React, {
   useEffect,
   useRef,
   useImperativeHandle,
-  forwardRef,
 } from 'react'
-import { TouchableHighlight, TouchableWithoutFeedback } from 'react-native'
+import { TouchableHighlight } from 'react-native'
 import { withNavigationFocus } from 'react-navigation'
 import { RETURN_TO_HOME_DURATION } from 'utils/constant'
 

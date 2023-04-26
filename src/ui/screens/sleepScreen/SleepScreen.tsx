@@ -3,11 +3,10 @@ import { View, TouchableHighlight } from 'react-native'
 
 import { Actions } from 'react-native-router-flux'
 
-import { Container, Heading } from 'native-base'
+import { Heading } from 'native-base'
 import MessageAlertManager from 'ui/business/MessageAlertManager'
 import useActivityLog from '../../hooks/use-activity-log'
 import { useDispatch } from 'react-redux'
-import { NavigationActions } from 'store/navigation'
 import { WAKEUP_DURATION } from 'utils/constant'
 import TimerInitiator from 'ui/business/TimerInitiator'
 

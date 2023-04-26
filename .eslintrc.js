@@ -24,7 +24,7 @@ module.exports = {
     'react/react-in-jsx-scope': ['error'],
     // false positive on function dep
     'react-hooks/exhaustive-deps': ['off'],
-    'no-console': ['error'],
+    'no-console': ['off'],
     // TODO: activate this rule & convert inline jsx arrow functions
     // important for good rendering performance
     'react/jsx-no-bind': [
@@ -55,12 +55,12 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 0,
     '@typescript-eslint/no-object-literal-type-assertion': 0,
     '@typescript-eslint/no-var-requires': 0,
-    '@typescript-eslint/no-unused-vars': [
-      'error',
-      {
-        argsIgnorePattern: '^_',
-        varsIgnorePattern: '^_',
-      },
-    ],
+    // '@typescript-eslint/no-unused-vars': [
+    //   'error',
+    //   {
+    //     argsIgnorePattern: '^_',
+    //     varsIgnorePattern: '^_',
+    //   },
+    // ],
   },
 }

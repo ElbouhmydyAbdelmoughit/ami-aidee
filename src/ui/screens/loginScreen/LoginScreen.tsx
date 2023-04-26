@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Container, Card, Heading } from 'native-base'
+import { Card, Heading } from 'native-base'
 import LinearGradient from 'react-native-linear-gradient'
 import { StyleSheet, View } from 'react-native'
 import { AuthentForm } from 'ui/components'

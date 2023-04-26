@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import GradientBackground from 'ui/components/GradientBackground'
 import { Actions } from 'react-native-router-flux'
-import { Button, TouchableRipple, IconButton } from 'react-native-paper'
+import { TouchableRipple, IconButton } from 'react-native-paper'
 import { Heading } from 'native-base'
 import { View, StyleSheet, Text, ScrollView } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'

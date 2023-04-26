@@ -11,7 +11,6 @@ type Props = {
   onReload: () => void
 }
 export default ({ onReload, onVolumeChange }: Props) => {
-  const [size, setSize] = useState({ width: 50, height: 50 })
   const [volume, setVolume] = useState(1)
 
   const volumeChange = value => {

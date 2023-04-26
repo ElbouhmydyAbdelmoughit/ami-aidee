@@ -129,7 +129,7 @@ export const fileFromObjectURL = objectURL => {
     responseType: 'blob',
   }) /*.then(function(response){
      var reader = new FileReader();
-     reader.readAsDataURL(response.data); 
+     reader.readAsDataURL(response.data);
      reader.onloadend = function() {
          var base64data = reader.result;
          self.props.onMainImageDrop(base64data)

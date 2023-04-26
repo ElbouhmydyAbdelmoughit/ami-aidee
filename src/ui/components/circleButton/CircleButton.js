@@ -1,7 +1,5 @@
-import React, { Component } from 'react'
-import { Button, Image, TouchableHighlight, View } from 'react-native'
-import { Icon } from 'native-base'
-import styles from './styles'
+import React from 'react'
+import { Image, TouchableHighlight } from 'react-native'
 
 const CircleButton = ({ source, onPress, size }) => {
   return (

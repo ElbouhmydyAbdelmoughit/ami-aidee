@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { View, Linking } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 
-import { Container, Heading } from 'native-base'
+import { Heading } from 'native-base'
 import LinearGradient from 'react-native-linear-gradient'
 
 const color = ['#3FEDFF', '#8772FF']
