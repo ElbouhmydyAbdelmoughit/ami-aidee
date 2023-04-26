@@ -16,6 +16,8 @@ import { Trans, useTranslation } from 'react-i18next'
 import colorUtils from 'utils/colors'
 import SleepTimer from 'ui/components/SleepTimer'
 
+import Orientation from 'react-native-orientation'
+
 const BOLD = text => <Text style={{ fontWeight: 'bold' }}>{text}</Text>
 const BR = <Text>{'\n'}</Text>
 
@@ -73,6 +75,11 @@ const SolarScreen = ({
     footer: '',
   })
 
+  useEffect(() => {
+    Orientation.lockToLandscape()
+    return () => {}
+  }, [])
+
   const { t } = useTranslation()
 
   const getMessage = dateInput => {
@@ -99,6 +106,7 @@ const SolarScreen = ({
         ),
       }
     }
+
     return {
       title: t('screen.solar.daytime_title', {
         defaultValue: 'Bonjour {{name}}',

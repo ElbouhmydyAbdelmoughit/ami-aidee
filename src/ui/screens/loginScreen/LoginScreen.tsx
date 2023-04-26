@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import { Card, Heading } from 'native-base'
 import LinearGradient from 'react-native-linear-gradient'
 import { StyleSheet, View } from 'react-native'
 import { AuthentForm } from 'ui/components'
+import Orientation from 'react-native-orientation'
 
 import moment from 'core/moment'
 import { Translations } from 'core/i18n'
@@ -19,6 +20,11 @@ export default ({ loginRequest, onRefresh }) => {
     const { username, password } = form
     loginRequest(username, password)
   }
+
+  useEffect(() => {
+    Orientation.lockToPortrait()
+    return () => {}
+  }, [])
 
   const color = ['#3FEDFF', '#8772FF']
   return (

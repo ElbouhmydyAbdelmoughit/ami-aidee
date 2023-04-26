@@ -37,6 +37,7 @@ export default () => {
     props => <SplashScreen {...props} />,
     []
   )
+
   return (
     <View style={{ flex: 1 }} key={key}>
       <StatusBar backgroundColor="transparent" translucent />

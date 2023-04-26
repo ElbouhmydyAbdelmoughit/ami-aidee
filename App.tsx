@@ -6,14 +6,14 @@
  * @flow
  */
 
-import React, { useEffect } from 'react'
+import React from 'react'
 import { extendTheme, NativeBaseProvider } from 'native-base'
 import { Provider as PaperProvider } from 'react-native-paper'
 
 import { Provider } from 'react-redux'
 
 import { PersistGate } from 'redux-persist/integration/react'
-import Orientation from 'react-native-orientation'
+
 import { Core } from 'core'
 
 import { Loader } from 'ui/components'
@@ -50,10 +50,6 @@ const theme = extendTheme({
   },
 })
 const App = () => {
-  useEffect(() => {
-    Orientation.lockToLandscape()
-    return () => {}
-  }, [])
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
