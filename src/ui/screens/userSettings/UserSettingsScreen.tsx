@@ -3,7 +3,14 @@ import GradientBackground from 'ui/components/GradientBackground'
 import { Actions } from 'react-native-router-flux'
 import { TouchableRipple, IconButton } from 'react-native-paper'
 import { Heading } from 'native-base'
-import { View, StyleSheet, Text, ScrollView } from 'react-native'
+import {
+  View,
+  StyleSheet,
+  Text,
+  ScrollView,
+  TouchableWithoutFeedbackProps,
+  ViewStyle,
+} from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import useActivityLog from 'ui/hooks/use-activity-log'
 import { HelpedUser, TrackedActivity } from 'core/types'
@@ -17,6 +24,7 @@ import moment from 'moment'
 import colorUtils from 'utils/colors'
 import BacktoRootTimer from 'ui/components/BackToRootTimer'
 import Checkbox from 'ui/components/common/Checkbox'
+import { CheckboxProps } from 'react-native-paper'
 
 const styles = StyleSheet.create({
   title: {
@@ -36,6 +44,9 @@ const styles = StyleSheet.create({
     fontSize: 18,
     opacity: 0.8,
     fontFamily: 'Roboto',
+  },
+  checkboxRow: {
+    marginTop: 24,
   },
 })
 
@@ -92,6 +103,43 @@ const UserSettingsScreen = ({
     resetBackToRootTimer()
   }
   const { t } = useTranslation()
+
+  interface CheckboxRowProps {
+    status: CheckboxProps['status']
+    onPress: TouchableWithoutFeedbackProps['onPress']
+    title: string
+    description: string
+    style?: ViewStyle
+  }
+
+  const CheckboxRow = ({
+    description,
+    onPress: oP,
+    status,
+    style,
+    title,
+  }: CheckboxRowProps) => {
+    return (
+      <View style={{ flexDirection: 'row', ...style }}>
+        <Checkbox
+          color={textColor}
+          status={status}
+          onPress={oP}
+          uncheckedColor={textColor}
+          style={{ marginRight: 8 }}
+        />
+        <TouchableRipple onPress={oP}>
+          <>
+            <Text style={[styles.text, { color: textColor }]}>{title}</Text>
+            <Text style={[styles.helpText, { color: textColor }]}>
+              {description}
+            </Text>
+          </>
+        </TouchableRipple>
+      </View>
+    )
+  }
+
   return (
     <BacktoRootTimer timerRef={timerRef}>
       <GradientBackground>
@@ -129,80 +177,43 @@ const UserSettingsScreen = ({
             </View>
           </View>
           <View>
-            <View>
-              <View style={{ flexDirection: 'row' }}>
-                <Checkbox
-                  color={textColor}
-                  status={checked ? 'checked' : 'unchecked'}
-                  onPress={onPress}
-                  uncheckedColor={textColor}
-                  style={{ marginRight: 8 }}
-                />
-                <TouchableRipple onPress={onPress}>
-                  <>
-                    <Text style={[styles.text, { color: textColor }]}>
-                      {t(
-                        'sceen.settings.automatic_pickup',
-                        'Décrochage automatique'
-                      )}
-                    </Text>
-                    <Text style={[styles.helpText, { color: textColor }]}>
-                      {t(
-                        'sceen.settings.automatic_pickup_description',
-                        "L'appel entrant sera décroché automatiquement après 3 secondes."
-                      )}
-                    </Text>
-                  </>
-                </TouchableRipple>
-              </View>
-              <View style={{ flexDirection: 'row', marginTop: 24 }}>
-                <Checkbox
-                  color={textColor}
-                  status={minVolumeChecked ? 'checked' : 'unchecked'}
-                  onPress={onMinVolumePress}
-                  uncheckedColor={textColor}
-                  style={{ marginRight: 8 }}
-                />
-                <TouchableRipple onPress={onMinVolumePress}>
-                  <>
-                    <Text style={[styles.text, { color: textColor }]}>
-                      {t('sceen.settings.min_volume', 'Volume activé')}
-                    </Text>
-                    <Text style={[styles.helpText, { color: textColor }]}>
-                      {t(
-                        'sceen.settings.min_volume_description',
-                        'Le volume sera toujours activé et ne descend pas au dessous de 50%'
-                      )}
-                    </Text>
-                  </>
-                </TouchableRipple>
-              </View>
-              <View style={{ flexDirection: 'row', marginTop: 24 }}>
-                <Checkbox
-                  color={textColor}
-                  status={dischargingAlertChecked ? 'checked' : 'unchecked'}
-                  onPress={onAlertOnDischargePress}
-                  uncheckedColor={textColor}
-                  style={{ marginRight: 8 }}
-                />
-                <TouchableRipple onPress={onAlertOnDischargePress}>
-                  <>
-                    <Text style={[styles.text, { color: textColor }]}>
-                      {t(
-                        'sceen.settings.discharge_alert',
-                        'Alerte débranchement'
-                      )}
-                    </Text>
-                    <Text style={[styles.helpText, { color: textColor }]}>
-                      {t(
-                        'sceen.settings.discharge_alert_description',
-                        "Lorsque la tablette est débranché, l'aidé sera alerté pour rebrancher sa tablette"
-                      )}
-                    </Text>
-                  </>
-                </TouchableRipple>
-              </View>
-            </View>
+            <>
+              <CheckboxRow
+                status={checked ? 'checked' : 'unchecked'}
+                onPress={onPress}
+                title={t(
+                  'sceen.settings.automatic_pickup',
+                  'Décrochage automatique'
+                )}
+                description={t(
+                  'sceen.settings.automatic_pickup_description',
+                  "L'appel entrant sera décroché automatiquement après 3 secondes."
+                )}
+              />
+              <CheckboxRow
+                status={minVolumeChecked ? 'checked' : 'unchecked'}
+                onPress={onMinVolumePress}
+                title={t('sceen.settings.min_volume', 'Volume activé')}
+                description={t(
+                  'sceen.settings.min_volume_description',
+                  'Le volume sera toujours activé et ne descend pas au dessous de 50%'
+                )}
+                style={styles.checkboxRow}
+              />
+              <CheckboxRow
+                status={dischargingAlertChecked ? 'checked' : 'unchecked'}
+                onPress={onAlertOnDischargePress}
+                title={t(
+                  'sceen.settings.discharge_alert',
+                  'Alerte débranchement'
+                )}
+                description={t(
+                  'sceen.settings.discharge_alert_description',
+                  "Lorsque la tablette est débranché, l'aidé sera alerté pour rebrancher sa tablette"
+                )}
+                style={styles.checkboxRow}
+              />
+            </>
             <View
               style={{
                 alignItems: 'flex-start',
