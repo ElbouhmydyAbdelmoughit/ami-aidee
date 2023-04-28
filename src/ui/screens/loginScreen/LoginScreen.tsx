@@ -6,17 +6,11 @@ import { StyleSheet, View } from 'react-native'
 import { AuthentForm } from 'ui/components'
 import Orientation from 'react-native-orientation'
 
-import moment from 'core/moment'
 import { Translations } from 'core/i18n'
 import LangSelector from './LangSelector'
-console.log(LinearGradient)
 
 export default ({ loginRequest, onRefresh }) => {
-  const notifDate = moment().format('YYYY-MM-dd hh:mm')
-  console.log(notifDate)
-
   const onValidate = form => {
-    console.log(form)
     const { username, password } = form
     loginRequest(username, password)
   }
