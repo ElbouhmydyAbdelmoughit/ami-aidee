@@ -75,7 +75,9 @@
       "discharge_alert": "Alerte débranchement",
       "discharge_alert_description": "Lorsque la tablette est débranchée, l'aidé sera alerté pour rebrancher sa tablette.",
       "min_volume": "Volume activé",
-      "min_volume_description": "Le volume sera toujours activé et ne descend pas au dessous de 50%"
+      "min_volume_description": "Le volume sera toujours activé et ne descend pas au dessous de 50%",
+      "supress_account": "Supprimer mon compte",
+      "supress_account_description": "Envoyez-nous un mail pour supprimer votre compte."
     }
   },
   "screen": {
