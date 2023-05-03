@@ -10,7 +10,6 @@ import {
   ScrollView,
   TouchableWithoutFeedbackProps,
   ViewStyle,
-  Linking,
 } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import useActivityLog from 'ui/hooks/use-activity-log'
@@ -217,25 +216,6 @@ const UserSettingsScreen = ({
                   "Lorsque la tablette est débranché, l'aidé sera alerté pour rebrancher sa tablette"
                 )}
                 style={styles.checkboxRow}
-              />
-              <CheckboxRow
-                status={dischargingAlertChecked ? 'checked' : 'unchecked'}
-                //NOTE - This needs to be tested on a real device.
-                onPress={() =>
-                  Linking.openURL(
-                    'mailto:suppression@ami.eu?subject=Supression de compte&body=Je souhaite supprimer mon compte.'
-                  )
-                }
-                title={t(
-                  'sceen.settings.supress_account',
-                  'Supprimer mon compte'
-                )}
-                description={t(
-                  'sceen.settings.suppress_account_description',
-                  'Envoyez-nous un mail pour supprimer votre compte.'
-                )}
-                style={styles.checkboxRow}
-                showCheckbox={false}
               />
             </>
             <View
