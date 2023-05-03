@@ -504,6 +504,8 @@ PODS:
   - RNVectorIcons (6.7.0):
     - React
   - Sentry/HybridSDK (7.31.5)
+  - toolbar-android (0.2.1):
+    - React
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -569,6 +571,7 @@ DEPENDENCIES:
   - RNSound (from `../node_modules/react-native-sound`)
   - RNSVG (from `../node_modules/react-native-svg`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
+  - "toolbar-android (from `../node_modules/@react-native-community/toolbar-android`)"
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -706,6 +709,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-svg"
   RNVectorIcons:
     :path: "../node_modules/react-native-vector-icons"
+  toolbar-android:
+    :path: "../node_modules/@react-native-community/toolbar-android"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -785,6 +790,7 @@ SPEC CHECKSUMS:
   RNSVG: 8ba35cbeb385a52fd960fd28db9d7d18b4c2974f
   RNVectorIcons: 368d6d8b8301224e5ffb6254191f4f8876c2be0d
   Sentry: 4c9babff9034785067c896fd580b1f7de44da020
+  toolbar-android: 2a73856e98b750d7e71ce4644d3f41cc98211719
   Yoga: d24d6184b6b85f742536bd93bd07d69d7b9bb4c1
 
 PODFILE CHECKSUM: 42bdf93c99e192d12b12c57efca2a29a1c7f70c8
