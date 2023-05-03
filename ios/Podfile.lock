@@ -1,12 +1,12 @@
 PODS:
-  - agora-react-native-rtm (1.2.2-alpha.3):
-    - AgoraRtm_iOS (= 1.2.2)
-    - React
+  - agora-react-native-rtm (1.5.1):
+    - AgoraRtm_iOS (= 1.5.1)
+    - React-Core
   - AgoraRtcEngine_iOS (2.9.1)
-  - AgoraRtm_iOS (1.2.2)
+  - AgoraRtm_iOS (1.5.1)
   - boost (1.76.0)
-  - BVLinearGradient (2.5.6):
-    - React
+  - BVLinearGradient (2.6.2):
+    - React-Core
   - Crashlytics (3.14.0):
     - Fabric (~> 1.10.2)
   - DoubleConversion (1.1.6)
@@ -19,126 +19,125 @@ PODS:
     - React-Core (= 0.69.10)
     - React-jsi (= 0.69.10)
     - ReactCommon/turbomodule/core (= 0.69.10)
-  - Firebase (9.2.0):
-    - Firebase/Core (= 9.2.0)
-  - Firebase/Core (9.2.0):
+  - Firebase (8.15.0):
+    - Firebase/Core (= 8.15.0)
+  - Firebase/Core (8.15.0):
     - Firebase/CoreOnly
-    - FirebaseAnalytics (~> 9.2.0)
-  - Firebase/CoreOnly (9.2.0):
-    - FirebaseCore (= 9.2.0)
-  - Firebase/Messaging (9.2.0):
+    - FirebaseAnalytics (~> 8.15.0)
+  - Firebase/CoreOnly (8.15.0):
+    - FirebaseCore (= 8.15.0)
+  - Firebase/Messaging (8.15.0):
     - Firebase/CoreOnly
-    - FirebaseMessaging (~> 9.2.0)
-  - FirebaseAnalytics (9.2.0):
-    - FirebaseAnalytics/AdIdSupport (= 9.2.0)
-    - FirebaseCore (~> 9.0)
-    - FirebaseInstallations (~> 9.0)
+    - FirebaseMessaging (~> 8.15.0)
+  - FirebaseAnalytics (8.15.0):
+    - FirebaseAnalytics/AdIdSupport (= 8.15.0)
+    - FirebaseCore (~> 8.0)
+    - FirebaseInstallations (~> 8.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
     - GoogleUtilities/MethodSwizzler (~> 7.7)
     - GoogleUtilities/Network (~> 7.7)
     - "GoogleUtilities/NSData+zlib (~> 7.7)"
-    - nanopb (< 2.30910.0, >= 2.30908.0)
-  - FirebaseAnalytics/AdIdSupport (9.2.0):
-    - FirebaseCore (~> 9.0)
-    - FirebaseInstallations (~> 9.0)
-    - GoogleAppMeasurement (= 9.2.0)
+    - nanopb (~> 2.30908.0)
+  - FirebaseAnalytics/AdIdSupport (8.15.0):
+    - FirebaseCore (~> 8.0)
+    - FirebaseInstallations (~> 8.0)
+    - GoogleAppMeasurement (= 8.15.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
     - GoogleUtilities/MethodSwizzler (~> 7.7)
     - GoogleUtilities/Network (~> 7.7)
     - "GoogleUtilities/NSData+zlib (~> 7.7)"
-    - nanopb (< 2.30910.0, >= 2.30908.0)
-  - FirebaseCore (9.2.0):
-    - FirebaseCoreDiagnostics (~> 9.0)
-    - FirebaseCoreInternal (~> 9.0)
+    - nanopb (~> 2.30908.0)
+  - FirebaseCore (8.15.0):
+    - FirebaseCoreDiagnostics (~> 8.0)
     - GoogleUtilities/Environment (~> 7.7)
     - GoogleUtilities/Logger (~> 7.7)
-  - FirebaseCoreDiagnostics (9.6.0):
-    - GoogleDataTransport (< 10.0.0, >= 9.1.4)
+  - FirebaseCoreDiagnostics (8.15.0):
+    - GoogleDataTransport (~> 9.1)
     - GoogleUtilities/Environment (~> 7.7)
     - GoogleUtilities/Logger (~> 7.7)
-    - nanopb (< 2.30910.0, >= 2.30908.0)
-  - FirebaseCoreInternal (9.6.0):
-    - "GoogleUtilities/NSData+zlib (~> 7.7)"
-  - FirebaseInstallations (9.6.0):
-    - FirebaseCore (~> 9.0)
+    - nanopb (~> 2.30908.0)
+  - FirebaseInstallations (8.15.0):
+    - FirebaseCore (~> 8.0)
     - GoogleUtilities/Environment (~> 7.7)
     - GoogleUtilities/UserDefaults (~> 7.7)
-    - PromisesObjC (~> 2.1)
-  - FirebaseMessaging (9.2.0):
-    - FirebaseCore (~> 9.0)
-    - FirebaseInstallations (~> 9.0)
-    - GoogleDataTransport (< 10.0.0, >= 9.1.4)
+    - PromisesObjC (< 3.0, >= 1.2)
+  - FirebaseMessaging (8.15.0):
+    - FirebaseCore (~> 8.0)
+    - FirebaseInstallations (~> 8.0)
+    - GoogleDataTransport (~> 9.1)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
     - GoogleUtilities/Environment (~> 7.7)
     - GoogleUtilities/Reachability (~> 7.7)
     - GoogleUtilities/UserDefaults (~> 7.7)
-    - nanopb (< 2.30910.0, >= 2.30908.0)
+    - nanopb (~> 2.30908.0)
   - fmt (6.2.1)
   - glog (0.3.5)
-  - GoogleAppMeasurement (9.2.0):
-    - GoogleAppMeasurement/AdIdSupport (= 9.2.0)
+  - GoogleAppMeasurement (8.15.0):
+    - GoogleAppMeasurement/AdIdSupport (= 8.15.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
     - GoogleUtilities/MethodSwizzler (~> 7.7)
     - GoogleUtilities/Network (~> 7.7)
     - "GoogleUtilities/NSData+zlib (~> 7.7)"
-    - nanopb (< 2.30910.0, >= 2.30908.0)
-  - GoogleAppMeasurement/AdIdSupport (9.2.0):
-    - GoogleAppMeasurement/WithoutAdIdSupport (= 9.2.0)
+    - nanopb (~> 2.30908.0)
+  - GoogleAppMeasurement/AdIdSupport (8.15.0):
+    - GoogleAppMeasurement/WithoutAdIdSupport (= 8.15.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
     - GoogleUtilities/MethodSwizzler (~> 7.7)
     - GoogleUtilities/Network (~> 7.7)
     - "GoogleUtilities/NSData+zlib (~> 7.7)"
-    - nanopb (< 2.30910.0, >= 2.30908.0)
-  - GoogleAppMeasurement/WithoutAdIdSupport (9.2.0):
+    - nanopb (~> 2.30908.0)
+  - GoogleAppMeasurement/WithoutAdIdSupport (8.15.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
     - GoogleUtilities/MethodSwizzler (~> 7.7)
     - GoogleUtilities/Network (~> 7.7)
     - "GoogleUtilities/NSData+zlib (~> 7.7)"
-    - nanopb (< 2.30910.0, >= 2.30908.0)
-  - GoogleDataTransport (9.2.1):
+    - nanopb (~> 2.30908.0)
+  - GoogleDataTransport (9.2.2):
     - GoogleUtilities/Environment (~> 7.7)
     - nanopb (< 2.30910.0, >= 2.30908.0)
     - PromisesObjC (< 3.0, >= 1.2)
-  - GoogleUtilities (7.11.0):
-    - GoogleUtilities/AppDelegateSwizzler (= 7.11.0)
-    - GoogleUtilities/Environment (= 7.11.0)
-    - GoogleUtilities/ISASwizzler (= 7.11.0)
-    - GoogleUtilities/Logger (= 7.11.0)
-    - GoogleUtilities/MethodSwizzler (= 7.11.0)
-    - GoogleUtilities/Network (= 7.11.0)
-    - "GoogleUtilities/NSData+zlib (= 7.11.0)"
-    - GoogleUtilities/Reachability (= 7.11.0)
-    - GoogleUtilities/SwizzlerTestHelpers (= 7.11.0)
-    - GoogleUtilities/UserDefaults (= 7.11.0)
-  - GoogleUtilities/AppDelegateSwizzler (7.11.0):
+  - GoogleUtilities (7.11.1):
+    - GoogleUtilities/AppDelegateSwizzler (= 7.11.1)
+    - GoogleUtilities/Environment (= 7.11.1)
+    - GoogleUtilities/ISASwizzler (= 7.11.1)
+    - GoogleUtilities/Logger (= 7.11.1)
+    - GoogleUtilities/MethodSwizzler (= 7.11.1)
+    - GoogleUtilities/Network (= 7.11.1)
+    - "GoogleUtilities/NSData+zlib (= 7.11.1)"
+    - GoogleUtilities/Reachability (= 7.11.1)
+    - GoogleUtilities/SwizzlerTestHelpers (= 7.11.1)
+    - GoogleUtilities/UserDefaults (= 7.11.1)
+  - GoogleUtilities/AppDelegateSwizzler (7.11.1):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
     - GoogleUtilities/Network
-  - GoogleUtilities/Environment (7.11.0):
+  - GoogleUtilities/Environment (7.11.1):
     - PromisesObjC (< 3.0, >= 1.2)
-  - GoogleUtilities/ISASwizzler (7.11.0)
-  - GoogleUtilities/Logger (7.11.0):
+  - GoogleUtilities/ISASwizzler (7.11.1)
+  - GoogleUtilities/Logger (7.11.1):
     - GoogleUtilities/Environment
-  - GoogleUtilities/MethodSwizzler (7.11.0):
+  - GoogleUtilities/MethodSwizzler (7.11.1):
     - GoogleUtilities/Logger
-  - GoogleUtilities/Network (7.11.0):
+  - GoogleUtilities/Network (7.11.1):
     - GoogleUtilities/Logger
     - "GoogleUtilities/NSData+zlib"
     - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (7.11.0)"
-  - GoogleUtilities/Reachability (7.11.0):
+  - "GoogleUtilities/NSData+zlib (7.11.1)"
+  - GoogleUtilities/Reachability (7.11.1):
     - GoogleUtilities/Logger
-  - GoogleUtilities/SwizzlerTestHelpers (7.11.0):
+  - GoogleUtilities/SwizzlerTestHelpers (7.11.1):
     - GoogleUtilities/MethodSwizzler
-  - GoogleUtilities/UserDefaults (7.11.0):
+  - GoogleUtilities/UserDefaults (7.11.1):
     - GoogleUtilities/Logger
   - IQKeyboardManager (4.0.13)
-  - nanopb (2.30909.0):
-    - nanopb/decode (= 2.30909.0)
-    - nanopb/encode (= 2.30909.0)
-  - nanopb/decode (2.30909.0)
-  - nanopb/encode (2.30909.0)
+  - nanopb (2.30908.0):
+    - nanopb/decode (= 2.30908.0)
+    - nanopb/encode (= 2.30908.0)
+  - nanopb/decode (2.30908.0)
+  - nanopb/encode (2.30908.0)
   - PromisesObjC (2.2.0)
+  - PromisesSwift (2.2.0):
+    - PromisesObjC (= 2.2.0)
   - RCT-Folly (2021.06.28.00-v2):
     - boost
     - DoubleConversion
@@ -350,24 +349,25 @@ PODS:
   - React-jsinspector (0.69.10)
   - React-logger (0.69.10):
     - glog
-  - react-native-agora (2.9.1-alpha.3):
+  - react-native-agora (2.9.1-alpha.7):
     - AgoraRtcEngine_iOS (= 2.9.1)
     - React
   - react-native-orientation (3.1.3):
     - React
-  - react-native-safe-area-context (4.3.1):
+  - react-native-safe-area-context (4.5.2):
     - RCT-Folly
     - RCTRequired
     - RCTTypeSafety
-    - React
+    - React-Core
     - ReactCommon/turbomodule/core
-  - react-native-slider (2.0.8):
+  - react-native-slider (2.0.9):
     - React
-  - react-native-video (5.0.2):
-    - React
-    - react-native-video/Video (= 5.0.2)
-  - react-native-video/Video (5.0.2):
-    - React
+  - react-native-video (6.0.0-alpha.6):
+    - React-Core
+    - react-native-video/Video (= 6.0.0-alpha.6)
+  - react-native-video/Video (6.0.0-alpha.6):
+    - PromisesSwift
+    - React-Core
   - React-perflogger (0.69.10)
   - React-RCTActionSheet (0.69.10):
     - React-Core/RCTActionSheetHeaders (= 0.69.10)
@@ -434,34 +434,34 @@ PODS:
     - React-jsi (= 0.69.10)
     - React-logger (= 0.69.10)
     - React-perflogger (= 0.69.10)
-  - ReactNativeKeyboardManager (4.0.13-15):
+  - ReactNativeKeyboardManager (4.0.13-17):
     - IQKeyboardManager (= 4.0.13)
     - React
     - React-RCTText
   - ReactNativeNavigation (2.12.0):
     - React
-  - RNCAsyncStorage (1.15.17):
+  - RNCAsyncStorage (1.18.1):
     - React-Core
   - RNCPicker (1.16.8):
     - React-Core
-  - RNCPushNotificationIOS (1.8.0):
+  - RNCPushNotificationIOS (1.11.0):
     - React-Core
-  - RNDeviceInfo (10.2.1):
+  - RNDeviceInfo (10.6.0):
     - React-Core
-  - RNFBApp (15.1.1):
-    - Firebase/CoreOnly (= 9.2.0)
+  - RNFBApp (14.12.0):
+    - Firebase/CoreOnly (= 8.15.0)
     - React-Core
-  - RNFBMessaging (15.1.1):
-    - Firebase/Messaging (= 9.2.0)
+  - RNFBMessaging (14.12.0):
+    - Firebase/Messaging (= 8.15.0)
     - React-Core
     - RNFBApp
-  - RNFS (2.14.1):
-    - React
+  - RNFS (2.20.0):
+    - React-Core
   - RNGestureHandler (1.10.3):
     - React-Core
-  - RNLocalize (2.1.7):
+  - RNLocalize (2.2.6):
     - React-Core
-  - RNReanimated (2.9.1):
+  - RNReanimated (2.17.0):
     - DoubleConversion
     - FBLazyVector
     - FBReactNativeSpec
@@ -488,24 +488,22 @@ PODS:
     - React-RCTText
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNScreens (3.14.1):
+  - RNScreens (3.20.0):
     - React-Core
     - React-RCTImage
-  - RNSentry (4.1.0):
+  - RNSentry (4.15.1):
     - React-Core
-    - Sentry (= 7.18.1)
-  - RNSound (0.11.0):
-    - React
-    - RNSound/Core (= 0.11.0)
-  - RNSound/Core (0.11.0):
-    - React
+    - Sentry/HybridSDK (= 7.31.5)
+  - RNSound (0.11.2):
+    - React-Core
+    - RNSound/Core (= 0.11.2)
+  - RNSound/Core (0.11.2):
+    - React-Core
   - RNSVG (9.13.6):
     - React
-  - RNVectorIcons (6.6.0):
+  - RNVectorIcons (6.7.0):
     - React
-  - Sentry (7.18.1):
-    - Sentry/Core (= 7.18.1)
-  - Sentry/Core (7.18.1)
+  - Sentry/HybridSDK (7.31.5)
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -583,7 +581,6 @@ SPEC REPOS:
     - FirebaseAnalytics
     - FirebaseCore
     - FirebaseCoreDiagnostics
-    - FirebaseCoreInternal
     - FirebaseInstallations
     - FirebaseMessaging
     - fmt
@@ -593,6 +590,7 @@ SPEC REPOS:
     - IQKeyboardManager
     - nanopb
     - PromisesObjC
+    - PromisesSwift
     - Sentry
 
 EXTERNAL SOURCES:
@@ -712,31 +710,31 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
-  agora-react-native-rtm: e17d4992e3af6868985066b1bd87ae440cbf2d91
+  agora-react-native-rtm: 20cd594088d33caa46c75f2d079efbac62848cec
   AgoraRtcEngine_iOS: b2eedd8f9ab47b71163f3285e836bd23feb43fff
-  AgoraRtm_iOS: c6ba986a3af73dd0f02e6e2995ae4fe9c155e6ae
+  AgoraRtm_iOS: 595a9fa33a409831e6183396ea8f8bc563918403
   boost: a7c83b31436843459a1961bfd74b96033dc77234
-  BVLinearGradient: e3aad03778a456d77928f594a649e96995f1c872
+  BVLinearGradient: 34a999fda29036898a09c6a6b728b0b4189e1a44
   Crashlytics: 9220f5bc89e7a618df411b4f639389dbfb0e03d2
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
   Fabric: ea977e3cd9c20425516d3dafd3bf8c941c51223f
   FBLazyVector: a8af91c2b5a0029d12ff6b32e428863d63c48991
   FBReactNativeSpec: ec5e878f6452a3de5430e0b2324a4d4ae6ac63f6
-  Firebase: 4ba896cb8e5105d4b9e247e1c1b6222b548df55a
-  FirebaseAnalytics: af5a03a8dff7648c7b8486f6a78b1368e0268dd3
-  FirebaseCore: 0e27f2a15d8f7b7ef11e7d93e23b1cbab55d748c
-  FirebaseCoreDiagnostics: 99a495094b10a57eeb3ae8efa1665700ad0bdaa6
-  FirebaseCoreInternal: bca76517fe1ed381e989f5e7d8abb0da8d85bed3
-  FirebaseInstallations: 0a115432c4e223c5ab20b0dbbe4cbefa793a0e8e
-  FirebaseMessaging: 4eaf1b8a7464b2c5e619ad66e9b20ee3e3206b24
+  Firebase: 5f8193dff4b5b7c5d5ef72ae54bb76c08e2b841d
+  FirebaseAnalytics: 7761cbadb00a717d8d0939363eb46041526474fa
+  FirebaseCore: 5743c5785c074a794d35f2fff7ecc254a91e08b1
+  FirebaseCoreDiagnostics: 92e07a649aeb66352b319d43bdd2ee3942af84cb
+  FirebaseInstallations: 40bd9054049b2eae9a2c38ef1c3dd213df3605cd
+  FirebaseMessaging: 5e5118a2383b3531e730d974680954c679ca0a13
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 3d02b25ca00c2d456734d0bcff864cbc62f6ae1a
-  GoogleAppMeasurement: 7a33224321f975d58c166657260526775d9c6b1a
-  GoogleDataTransport: ea169759df570f4e37bdee1623ec32a7e64e67c4
-  GoogleUtilities: c2bdc4cf2ce786c4d2e6b3bcfd599a25ca78f06f
+  GoogleAppMeasurement: 4c19f031220c72464d460c9daa1fb5d1acce958e
+  GoogleDataTransport: 8378d1fa8ac49753ea6ce70d65a7cb70ce5f66e6
+  GoogleUtilities: 9aa0ad5a7bc171f8bae016300bfcfa3fb8425749
   IQKeyboardManager: 8eab4d8111418414619d1df8e4779ce5d0f8d7e2
-  nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
+  nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
+  PromisesSwift: cf9eb58666a43bbe007302226e510b16c1e10959
   RCT-Folly: b9d9fe1fc70114b751c076104e52f3b1b5e5a95a
   RCTRequired: 3581db0757e7ff9be10718a56b3d79b6a6bd3bdf
   RCTSystemSetting: 5107b7350d63b3f7b42a1277d07e4e5d9df879be
@@ -752,11 +750,11 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 388f1c99404c848141d7ea162f61233d04829ede
   React-jsinspector: a4463b3411b8b9b37153255ef694a84c77ba3c7f
   React-logger: 2a0497622cbabc47fb769d97620952df14c1f814
-  react-native-agora: 701d3d6ec5dc7142d3fa7855baed71d0b834a891
+  react-native-agora: 675d6fe3aba144b2d054758f167dae13711ba47a
   react-native-orientation: f1caf84d65f1a4fd4511a18f2b924e634ad7a628
-  react-native-safe-area-context: 6c12e3859b6f27b25de4fee8201cfb858432d8de
-  react-native-slider: 3a1cfd00c9c31068251b536822f7192e8d1d6b6f
-  react-native-video: d01ed7ff1e38fa7dcc6c15c94cf505e661b7bfd0
+  react-native-safe-area-context: 1d596539b05a78f2b346e954e7c577f6f9be7544
+  react-native-slider: e51492f1264d882a8815b71c5870f8978e52887d
+  react-native-video: fee89269ad07556d960721f3b62e39be6ace3c90
   React-perflogger: bc57c4a953c1ec913b0d984cf4f2b9842a12bde0
   React-RCTActionSheet: 3efa3546119a1050f6c34a461b386dd9e36eaf0b
   React-RCTAnimation: e58fb9f1adf7b38af329881ea2740f43ffeea854
@@ -769,24 +767,24 @@ SPEC CHECKSUMS:
   React-RCTVibration: 0039c986626b78242401931bb23c803935fae9d1
   React-runtimeexecutor: 5ebf1ddaa706bf2986123f22d2cad905443c2c5f
   ReactCommon: 65754b8932ea80272714988268bbfb9f303264a5
-  ReactNativeKeyboardManager: 8fc2819040c5787194a890fbe3928bc5980b3f19
+  ReactNativeKeyboardManager: d0e285b82ef60a861d71834d8e996fbc09607a67
   ReactNativeNavigation: 55fde2ac2cb38be1d5dc5fee29e173961c559a5a
-  RNCAsyncStorage: 6bd5a7ba3dde1c3facba418aa273f449bdc5437a
+  RNCAsyncStorage: b90b71f45b8b97be43bc4284e71a6af48ac9f547
   RNCPicker: 0991c56da7815c0cf946d6f63cf920b25296e5f6
-  RNCPushNotificationIOS: 61a7c72bd1ebad3568025957d001e0f0e7b32191
-  RNDeviceInfo: c31137f22ee779fe3931d1a8d60cc1af80ef4077
-  RNFBApp: e3e4af6906a891d46af60340b4313b63eb082de9
-  RNFBMessaging: a6b4015aa22521335b2bb804106d2776cde8185b
-  RNFS: a8fbe7060fa49157d819466404794ad9c58e58cf
+  RNCPushNotificationIOS: 64218f3c776c03d7408284a819b2abfda1834bc8
+  RNDeviceInfo: 475a4c447168d0ad4c807e48ef5e0963a0f4eb1b
+  RNFBApp: 2d39ec9a9dd25f18e96009053af087b9ed714626
+  RNFBMessaging: ed43c957c714ca8baa6c0f09704fabaa9601c48a
+  RNFS: 4ac0f0ea233904cb798630b3c077808c06931688
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
-  RNLocalize: f567ea0e35116a641cdffe6683b0d212d568f32a
-  RNReanimated: 2cf7451318bb9cc430abeec8d67693f9cf4e039c
-  RNScreens: aa9a97835afbbdc18a4757870b2b59b7d9fae16a
-  RNSentry: d27112c8fcb77c52a42c3fffb796193c333ee562
-  RNSound: da030221e6ac7e8290c6b43f2b5f2133a8e225b0
+  RNLocalize: d4b8af4e442d4bcca54e68fc687a2129b4d71a81
+  RNReanimated: c6f8f70e96dd6ca21b65aef9b3e4efe4965db905
+  RNScreens: 218801c16a2782546d30bd2026bb625c0302d70f
+  RNSentry: 9f95cf61951576c447fc90368dfdde2faa736d2c
+  RNSound: 6c156f925295bdc83e8e422e7d8b38d33bc71852
   RNSVG: 8ba35cbeb385a52fd960fd28db9d7d18b4c2974f
-  RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
-  Sentry: 2d70348d6247a29702a8317e710c5ba890672df5
+  RNVectorIcons: 368d6d8b8301224e5ffb6254191f4f8876c2be0d
+  Sentry: 4c9babff9034785067c896fd580b1f7de44da020
   Yoga: d24d6184b6b85f742536bd93bd07d69d7b9bb4c1
 
 PODFILE CHECKSUM: 42bdf93c99e192d12b12c57efca2a29a1c7f70c8
