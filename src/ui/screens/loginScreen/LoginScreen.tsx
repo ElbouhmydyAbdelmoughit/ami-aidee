@@ -38,10 +38,7 @@ export default ({ loginRequest, onRefresh }) => {
             {Translations.common.to_login}
           </Heading>
           <View style={{ flexDirection: 'row' }}>
-            <AuthentForm
-              style={{ flex: 1, paddingRight: 30, paddingLeft: 30 }}
-              onValidate={onValidate}
-            />
+            <AuthentForm style={{ flex: 1 }} onValidate={onValidate} />
           </View>
         </Card>
       </View>

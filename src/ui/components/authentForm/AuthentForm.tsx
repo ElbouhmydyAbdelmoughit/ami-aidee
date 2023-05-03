@@ -1,20 +1,22 @@
 import React, { useState } from 'react'
-import { Button, Text, Heading } from 'native-base'
+import { Button, Text } from 'native-base'
 import Icon from 'react-native-vector-icons/MaterialIcons'
-import { BR } from 'ui/components'
 import { Actions } from 'react-native-router-flux'
 import useActivityLog from '../../hooks/use-activity-log'
-import { View, TouchableOpacity } from 'react-native'
+import { View, TouchableOpacity, StyleSheet, ViewStyle } from 'react-native'
 import { Translations } from 'core/i18n'
-import { useTranslation } from 'react-i18next'
 import { TextInput } from 'react-native-paper'
 
-export default ({ style, form, onValidate }) => {
+interface IAuthentForm {
+  style: ViewStyle
+  form?: any
+  onValidate: (values: any) => void
+}
+
+const AuthentForm = ({ style, form, onValidate }: IAuthentForm) => {
   const [username, setUsername] = useState((form && form.username) || '')
   const [password, setPassword] = useState((form && form.password) || '')
   const logActivity = useActivityLog()
-  const { t } = useTranslation()
-  //const []
 
   /**
    * matches a string of six or more characters;
@@ -28,7 +30,7 @@ export default ({ style, form, onValidate }) => {
   }
 
   const isFormValid = () => {
-    return !(username == '' || password == '')
+    return !(username === '' || password === '')
   }
 
   const validate = () => {
@@ -43,81 +45,77 @@ export default ({ style, form, onValidate }) => {
 
   return (
     <View style={style}>
-      <View style={{ borderRadius: 10, backgroundColor: '#EBEBEB' }}>
+      <View style={styles.emailContainer}>
         <TextInput
           autoCapitalize="none"
+          keyboardType="email-address"
           placeholder={Translations.common.email}
           onChangeText={setUsername}
-          style={{ paddingLeft: 27 }}
+          style={styles.textInput}
           value={username}
         />
-        <Icon
-          acive
-          name="mail"
-          style={{ color: '#6E6D6D', position: 'absolute', left: 10, top: 18 }}
-          size={20}
-        />
+        <Icon name="mail" style={styles.icon} size={20} />
       </View>
 
-      <View
-        style={{ borderRadius: 10, marginTop: 16, backgroundColor: '#EBEBEB' }}
-      >
+      <View style={styles.passwordContainer}>
         <TextInput
           secureTextEntry
           onChangeText={setPassword}
           placeholder={Translations.common.password}
           value={password}
-          style={{ paddingLeft: 27 }}
+          style={styles.textInput}
         />
-        <Icon
-          active
-          name="lock"
-          size={20}
-          style={{ color: '#6E6D6D', position: 'absolute', left: 10, top: 18 }}
-        />
+        <Icon name="lock" size={20} style={styles.icon} />
       </View>
       <Button
         block
         disabled={!isFormValid()}
         onPress={validate}
-        style={{ borderRadius: 10, marginTop: 16 }}
+        style={styles.loginButton}
       >
         {Translations.common.to_login}
       </Button>
-      <View style={{ marginTop: 8 }}>
-        <TouchableOpacity onPress={() => Actions.passwordResetRequest()}>
-          <View>
-            <Text
-              style={{
-                color: '#848484',
-              }}
-            >
-              {Translations.common.forgot_password}
-            </Text>
-          </View>
-        </TouchableOpacity>
-      </View>
-      <BR />
-      <Heading
-        style={{
-          textAlign: 'center',
-          color: '#848484',
-        }}
+      <TouchableOpacity
+        style={styles.forgotPasswordTouchableOpacity}
+        onPress={Actions.passwordResetRequest}
       >
-        {t('screen.login.no_account', "Vous n'avez pas encore de compte ?")}
-      </Heading>
-      <Button
-        full
-        variant="outline"
-        onPress={() => {
-          logActivity('press_register_btn')
-          Actions.register({ step: 'name' })
-        }}
-        style={{ borderRadius: 10 }}
-      >
-        {Translations.common.to_signup}
-      </Button>
-      <BR />
+        <Text style={styles.forgotPasswordText}>
+          {Translations.common.forgot_password}
+        </Text>
+      </TouchableOpacity>
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  icon: {
+    color: '#6E6D6D',
+    position: 'absolute',
+    left: 10,
+    top: 18,
+  },
+  emailContainer: {
+    borderRadius: 10,
+    backgroundColor: '#EBEBEB',
+  },
+  passwordContainer: {
+    borderRadius: 10,
+    marginTop: 16,
+    backgroundColor: '#EBEBEB',
+  },
+  textInput: {
+    paddingLeft: 27,
+  },
+  loginButton: {
+    borderRadius: 10,
+    marginTop: 16,
+  },
+  forgotPasswordTouchableOpacity: {
+    marginTop: 8,
+  },
+  forgotPasswordText: {
+    color: '#848484',
+  },
+})
+
+export default AuthentForm
