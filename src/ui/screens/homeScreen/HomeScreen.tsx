@@ -51,7 +51,9 @@ const HomeScreen = ({
   const { t } = useTranslation()
   useEffect(() => {
     awake()
-    messagesRequest(me.helped_users[0].id)
+    if (me?.helped_users?.[0]?.id) {
+      messagesRequest(me?.helped_users?.[0]?.id)
+    }
     if (redirectFromSolarView) {
       Toast.show({
         text: t(
