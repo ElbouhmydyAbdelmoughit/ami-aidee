@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
-import HomeScreen from './HomeScreen'
 
 import { MessageActions } from 'src/store/message'
 import { TimerActions } from 'src/store/timer'
+import HomeScreen from './HomeScreen'
 import TimerSelectors from '../../../store/timer/selectors'
 
 const mapStateToProps = state => {

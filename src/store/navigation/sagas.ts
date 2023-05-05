@@ -1,9 +1,10 @@
-import { takeLatest, select, call } from 'redux-saga/effects'
-import { types } from './actions'
-import NavigationSelectors from './selectors'
 import { changeLanguage } from 'core/i18n'
 import { setLocale } from 'core/moment'
-import { Locale } from 'core/types'
+import type { Locale } from 'core/types'
+import { call,select, takeLatest } from 'redux-saga/effects'
+
+import { types } from './actions'
+import NavigationSelectors from './selectors'
 
 function* setApplicationLanguage({ lang }: { lang: Locale }) {
   changeLanguage(lang || 'en')

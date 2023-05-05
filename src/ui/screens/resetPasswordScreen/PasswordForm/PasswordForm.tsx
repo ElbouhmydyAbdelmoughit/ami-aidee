@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import { Button, Text } from 'native-base'
-import { Formik } from 'formik'
-import * as Yup from 'yup'
-import { View } from 'react-native'
 import { t, Translations } from 'core/i18n'
+import { Formik } from 'formik'
+import { Button, Text } from 'native-base'
+import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { View } from 'react-native'
 import TextInput from 'ui/components/common/TextInput'
+import * as Yup from 'yup'
 
 const formSchema = Yup.object().shape({
   password: Yup.string()
@@ -43,9 +43,9 @@ const PasswordForm = ({
                 'screen.reset_password.password_field_label',
                 'Votre nouveau mot de passe'
               )}
-              mode="flat"
+              mode={'flat'}
               secureTextEntry
-              textContentType="newPassword"
+              textContentType={'newPassword'}
               error={submitClicked ? errors.password : undefined}
               value={values.password}
               onChangeText={handleChange('password')}

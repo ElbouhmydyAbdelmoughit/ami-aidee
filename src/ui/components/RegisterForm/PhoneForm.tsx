@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
-import { View, Heading, Button, Icon } from 'native-base'
-import { Actions } from 'react-native-router-flux'
-import useActivityLog from '../../hooks/use-activity-log'
-import { useTranslation } from 'react-i18next'
 import { Translations } from 'core/i18n'
+import { Button, Heading, Icon,View } from 'native-base'
+import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { TextInput } from 'react-native-paper'
+import { Actions } from 'react-native-router-flux'
+
+import useActivityLog from '../../hooks/use-activity-log'
 
 const PhoneForm = ({ setRegisterUser }) => {
   const [phone, setPhone] = useState('')
@@ -18,12 +19,11 @@ const PhoneForm = ({ setRegisterUser }) => {
   return (
     <View style={{ width: '100%' }}>
       <Heading style={{ marginBottom: 32, color: '#848484' }}>
-        {errorText
-          ? errorText
-          : t(
-              'screen.register.phone_title',
-              'Renseigner votre numéro de téléphone, votre code départemental et le code de parrainage (optionnel)'
-            )}
+        {errorText ||
+          t(
+            'screen.register.phone_title',
+            'Renseigner votre numéro de téléphone, votre code départemental et le code de parrainage (optionnel)'
+          )}
       </Heading>
       <View>
         <View
@@ -36,13 +36,13 @@ const PhoneForm = ({ setRegisterUser }) => {
           error={errorField === 'phone'}
         >
           <TextInput
-            autoCapitalize="none"
+            autoCapitalize={'none'}
             placeholder={Translations.common.phone_number}
             onChangeText={setPhone}
             value={phone}
             autoFocus
           />
-          {errorField === 'phone' && <Icon name="close-circle" />}
+          {errorField === 'phone' && <Icon name={'close-circle'} />}
         </View>
         <View
           style={{
@@ -63,7 +63,7 @@ const PhoneForm = ({ setRegisterUser }) => {
             error={errorField === 'postalCode'}
           >
             <TextInput
-              autoCapitalize="none"
+              autoCapitalize={'none'}
               placeholder={t(
                 'screen.register.postal_code_placeholder',
                 'Code départemental (ex. : 75)'
@@ -71,7 +71,7 @@ const PhoneForm = ({ setRegisterUser }) => {
               onChangeText={setPostalCode}
               value={postalCode}
             />
-            {errorField === 'postalCode' && <Icon name="close-circle" />}
+            {errorField === 'postalCode' && <Icon name={'close-circle'} />}
           </View>
           <View
             regular
@@ -84,7 +84,7 @@ const PhoneForm = ({ setRegisterUser }) => {
             }}
           >
             <TextInput
-              autoCapitalize="none"
+              autoCapitalize={'none'}
               placeholder={t(
                 'screen.register.referral_code_placeholder',
                 'Code de parrainage (optionnel)'

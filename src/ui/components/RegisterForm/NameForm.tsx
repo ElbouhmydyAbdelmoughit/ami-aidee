@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
-import { View, Heading, Button, Icon } from 'native-base'
-import { Actions } from 'react-native-router-flux'
-import useActivityLog from '../../hooks/use-activity-log'
-import { useTranslation } from 'react-i18next'
 import { Translations } from 'core/i18n'
+import { Button, Heading, Icon,View } from 'native-base'
+import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { TextInput } from 'react-native-paper'
+import { Actions } from 'react-native-router-flux'
+
+import useActivityLog from '../../hooks/use-activity-log'
 
 const NameForm = ({ setRegisterUser }) => {
   const [firstname, setFirstname] = useState('')
@@ -17,9 +18,8 @@ const NameForm = ({ setRegisterUser }) => {
   return (
     <View style={{ width: '100%' }}>
       <Heading style={{ marginBottom: 32, color: '#848484' }}>
-        {errorText
-          ? errorText
-          : t('screen.register.name_title', 'Renseigner votre nom et prénom')}
+        {errorText ||
+          t('screen.register.name_title', 'Renseigner votre nom et prénom')}
       </Heading>
       <View>
         <View
@@ -41,7 +41,7 @@ const NameForm = ({ setRegisterUser }) => {
               value={firstname}
               autoFocus
             />
-            {firstnameError && <Icon name="close-circle" />}
+            {firstnameError && <Icon name={'close-circle'} />}
           </View>
           <View
             error={lastnameError}
@@ -57,7 +57,7 @@ const NameForm = ({ setRegisterUser }) => {
               onChangeText={setLastname}
               value={lastname}
             />
-            {lastnameError && <Icon name="close-circle" />}
+            {lastnameError && <Icon name={'close-circle'} />}
           </View>
         </View>
         <Button

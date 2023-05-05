@@ -58,7 +58,7 @@ function* auxiliariesModifyRequest({ auxiliary }) {
   console.log('SAGA')
   console.log(auxiliary)
   yield put(LoaderActions.loading())
-  const id = auxiliary.id
+  const { id } = auxiliary
   const aux = auxiliary
   const [error, response] = yield call(AuxiliariesService.modifyAuxiliary, {
     id,

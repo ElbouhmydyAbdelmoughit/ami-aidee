@@ -1,12 +1,12 @@
-import { Actions } from 'react-native-router-flux'
 import logger from 'core/logger'
 import React, {
   useCallback,
   useEffect,
-  useRef,
   useImperativeHandle,
+  useRef,
 } from 'react'
 import { TouchableHighlight } from 'react-native'
+import { Actions } from 'react-native-router-flux'
 import { withNavigationFocus } from 'react-navigation'
 import { RETURN_TO_HOME_DURATION } from 'utils/constant'
 

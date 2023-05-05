@@ -6,7 +6,7 @@ import { fetch, query, mutation } from '../utils/index'
 function* authorize(service) {
   const { jwt } = yield select(state => state.auth)
   service.headers = { ...service.headers, Authorization: `Bearer ${jwt}` }
-  let [error, response] = yield call(fetch, service)
+  const [error, response] = yield call(fetch, service)
 
   if (error && error.response.status === UNAUTHORIZED) {
     yield put(AuthActions.logout())

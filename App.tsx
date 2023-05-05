@@ -6,16 +6,12 @@
  * @flow
  */
 
-import React from 'react'
-import { extendTheme, NativeBaseProvider } from 'native-base'
-import { Provider as PaperProvider } from 'react-native-paper'
-
-import { Provider } from 'react-redux'
-
-import { PersistGate } from 'redux-persist/integration/react'
-
 import { Core } from 'core'
-
+import { extendTheme, NativeBaseProvider } from 'native-base'
+import React from 'react'
+import { Provider as PaperProvider } from 'react-native-paper'
+import { Provider } from 'react-redux'
+import { PersistGate } from 'redux-persist/integration/react'
 import { Loader } from 'ui/components'
 
 import AppRouter from './AppRouter'

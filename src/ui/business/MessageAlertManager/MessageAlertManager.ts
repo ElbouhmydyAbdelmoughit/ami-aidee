@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { MessageSelectors, MessageActions } from 'store/message'
 import { Actions } from 'react-native-router-flux'
+import { useDispatch,useSelector } from 'react-redux'
+import { MessageActions,MessageSelectors } from 'store/message'
 
 const MessageAlertManager = ({
   onRedirect,
@@ -35,7 +35,6 @@ const MessageAlertManager = ({
           dispatch(MessageActions.messageAlerted(messageToAlert.id))
         }
       }
-      return
     }
   }, [immediateMessage, messageToAlert])
 

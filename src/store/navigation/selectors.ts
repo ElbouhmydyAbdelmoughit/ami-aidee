@@ -1,4 +1,4 @@
-import { ReturnToHomeState, ScreenSavingState } from './actions'
+import type { ReturnToHomeState, ScreenSavingState } from './actions'
 
 const isExpirationIn5DaysExpired = state => {
   return state.navigation.expirationIn5DaysDisplayed

@@ -1,10 +1,10 @@
 import { connect } from 'react-redux'
-import { getTranslate } from 'react-localize-redux'
-import SplashScreen from './SplashScreen'
 import { AuthActions } from 'store/auth'
 
+import SplashScreen from './SplashScreen'
+
 const mapStateToProps = ({ auth }) => ({
-  auth: auth,
+  auth,
 })
 
 const mapDispatchToProps = dispatch => ({

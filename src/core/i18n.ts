@@ -1,13 +1,13 @@
-import i18n, { TFunction } from 'i18next'
+import type { TFunction } from 'i18next';
+import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
-import { getLocales } from 'react-native-localize'
 
-import fr from '../../translations/fr/translation.json'
-import en from '../../translations/en/translation.json'
 import de from '../../translations/de/translation.json'
+import en from '../../translations/en/translation.json'
 import es from '../../translations/es/translation.json'
-import pt from '../../translations/pt/translation.json'
+import fr from '../../translations/fr/translation.json'
 import nl from '../../translations/nl/translation.json'
+import pt from '../../translations/pt/translation.json'
 
 const getTranslations = (t: TFunction) => ({
   common: {
@@ -87,4 +87,4 @@ const changeLanguage = (lng: string) => {
   i18n.changeLanguage(lng)
   Translations = getTranslations(i18n.t.bind(i18n))
 }
-export { i18n, t, Translations, changeLanguage }
+export { changeLanguage,i18n, t, Translations }

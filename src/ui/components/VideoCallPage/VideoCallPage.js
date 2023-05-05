@@ -4,6 +4,8 @@ import { Actions } from 'react-native-router-flux'
 import Sound from 'react-native-sound'
 import { IconButton } from 'react-native-paper'
 
+import { Translations } from 'core/i18n'
+import useTextColor from 'ui/hooks/use-text-color'
 import VideoCallRoom from '../VideoCallRoom'
 import UserAvatar from '../UserAvatar'
 import VideoCallError from '../VideoCallError'
@@ -11,8 +13,6 @@ import GradientBackground from '../GradientBackground'
 import { usePrevious } from '../../../utils/hooks'
 import { playHangupTone } from '../../../utils/sound'
 import useActivityLog from '../../hooks/use-activity-log'
-import { Translations } from 'core/i18n'
-import useTextColor from 'ui/hooks/use-text-color'
 
 const styles = StyleSheet.create({
   root: {

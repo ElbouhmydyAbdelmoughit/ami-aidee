@@ -3,9 +3,9 @@ import { View, Text } from 'react-native'
 import { Headline, Button } from 'react-native-paper'
 import { Actions } from 'react-native-router-flux'
 import Br from 'src/ui/components/br'
+import useTextColor from 'ui/hooks/use-text-color'
 import GradientBackground from '../GradientBackground'
 import useActivityLog from '../../hooks/use-activity-log'
-import useTextColor from 'ui/hooks/use-text-color'
 
 const CallErrorPage = ({ errorAcknowledged }) => {
   const [countdown, setCountdown] = useState(3)

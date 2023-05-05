@@ -1,18 +1,18 @@
-import { View, Animated, Modal } from 'react-native'
+import { useAppState, useDimensions } from '@react-native-community/hooks'
+import AppStyles from 'config/styles'
+import moment from 'core/moment'
 import React, { useEffect, useRef, useState } from 'react'
+import { Animated, Modal,View } from 'react-native'
+import { IconButton } from 'react-native-paper'
+import ProgressBar from 'react-native-progress/Bar'
+import { Text } from 'react-native-svg'
 import Setting from 'react-native-system-setting'
 import { useSelector } from 'react-redux'
 import { AuthSelectors } from 'store/auth'
-import { IconButton } from 'react-native-paper'
-import { Text } from 'react-native-svg'
-import { useAppState, useDimensions } from '@react-native-community/hooks'
 import { modalStyles } from 'ui/components/loader/Loader'
-import ProgressBar from 'react-native-progress/Bar'
-import AppStyles from 'config/styles'
-import { getGradientColors } from 'utils/colors'
-import { times } from 'utils'
-import moment from 'core/moment'
 import useDebounce from 'ui/hooks/use-debounce'
+import { times } from 'utils'
+import { getGradientColors } from 'utils/colors'
 
 const SystemVolumeManager = () => {
   const helpedUser = useSelector(AuthSelectors.getCurrentHelpedUser)
@@ -89,7 +89,7 @@ const SystemVolumeManager = () => {
     <Modal
       transparent
       visible={!sufficientVolume || !sufficientVolumeDebounced}
-      pointerEvents="none"
+      pointerEvents={'none'}
     >
       <View style={modalStyles.modalBackground}>
         <View
@@ -115,7 +115,7 @@ const SystemVolumeManager = () => {
           >
             <Text>hihi</Text>
             <IconButton
-              icon="volume-off"
+              icon={'volume-off'}
               color={color}
               size={60}
               style={{
@@ -138,8 +138,8 @@ const SystemVolumeManager = () => {
               width={null}
               progress={progress}
               style={{ width: null }}
-              borderColor="transparent"
-              unfilledColor="rgba(255,255,255,0.4)"
+              borderColor={'transparent'}
+              unfilledColor={'rgba(255,255,255,0.4)'}
             />
           </View>
         </View>

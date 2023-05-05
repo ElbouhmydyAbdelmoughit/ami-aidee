@@ -1,12 +1,11 @@
 import React from 'react'
 import { View, Text, Image } from 'react-native'
 
-import styles from './styles'
-
 import Video from 'react-native-video'
 
 import moment from 'moment'
 import momentFR from 'moment/locale/fr'
+import styles from './styles'
 
 const Preview = (onValidate, form, videoUri) => {
   // const componentDidMount = () =>  {
@@ -34,7 +33,7 @@ const Preview = (onValidate, form, videoUri) => {
   }
 
   const renderBodyPreview = form => {
-    var fr = moment().locale('fr', momentFR)
+    const fr = moment().locale('fr', momentFR)
     const { name, activite, reccurence, location } = form
     const day = fr.format('dddd, MMMM Do YYYY')
     const hour = fr.format('HH:mm')

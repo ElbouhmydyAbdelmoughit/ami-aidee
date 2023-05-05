@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
-import { View, Heading, Button } from 'native-base'
-import useActivityLog from '../../hooks/use-activity-log'
-import { useTranslation } from 'react-i18next'
 import { Translations } from 'core/i18n'
+import { Button,Heading, View } from 'native-base'
+import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { TextInput } from 'react-native-paper'
+
+import useActivityLog from '../../hooks/use-activity-log'
 
 const PasswordForm = ({ setRegisterUser, requestRegistration }) => {
   const [password, setPassword] = useState('')
@@ -13,13 +14,12 @@ const PasswordForm = ({ setRegisterUser, requestRegistration }) => {
   const { t } = useTranslation()
   return (
     <View style={{ width: '100%' }}>
-      <Heading size="xl" style={{ marginBottom: 32, color: '#848484' }}>
-        {errorText
-          ? errorText
-          : t(
-              'screen.register.password_title',
-              'Enfin, choisir un mot de passe sécurisé'
-            )}
+      <Heading size={'xl'} style={{ marginBottom: 32, color: '#848484' }}>
+        {errorText ||
+          t(
+            'screen.register.password_title',
+            'Enfin, choisir un mot de passe sécurisé'
+          )}
       </Heading>
       <View
         style={{

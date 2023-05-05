@@ -1,7 +1,7 @@
-import { Actions } from 'react-native-router-flux'
 import logger from 'core/logger'
 import React, { useCallback, useEffect, useRef } from 'react'
 import { TouchableWithoutFeedback } from 'react-native'
+import { Actions } from 'react-native-router-flux'
 import { withNavigationFocus } from 'react-navigation'
 import { SCREENSAVING_DURATION } from 'utils/constant'
 

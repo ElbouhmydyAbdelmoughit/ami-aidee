@@ -5,7 +5,7 @@ import React, {
   forwardRef,
   useImperativeHandle,
 } from 'react'
-//import Video from 'react-native-video'
+// import Video from 'react-native-video'
 
 import {
   StyleSheet,

@@ -1,66 +1,86 @@
 module.exports = {
   root: true,
-  extends: '@react-native-community',
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
-  rules: {
-    'no-unused-vars': 2,
-    // '@typescript-eslint/no-unused-vars': [
-    //   'error',
-    //   {
-    //     ignoreRestSiblings: true,
-    //     varsIgnorePattern: '_',
-    //     argsIgnorePattern: '^_',
-    //   },
-    // ],
-    /* There is no objective advantage of separate style vs. inline style,
-     * other than making the component easier to read.
-     * react-native StyleSheet usage also makes no difference
-     * https://stackoverflow.com/questions/38958888/react-native-what-is-the-benefit-of-using-stylesheet-vs-a-plain-object
-     * https://stackoverflow.com/a/52994858/3061845
-     */
-    'react-native/no-inline-styles': ['off'],
-    'react/jsx-key': ['error'],
-    'react/react-in-jsx-scope': ['error'],
-    // false positive on function dep
-    'react-hooks/exhaustive-deps': ['off'],
-    'no-console': ['off'],
-    // TODO: activate this rule & convert inline jsx arrow functions
-    // important for good rendering performance
-    'react/jsx-no-bind': [
-      'off',
-      {
-        ignoreDOMComponents: false,
-        ignoreRefs: true,
-        allowArrowFunctions: false,
-        allowFunctions: false,
-        allowBind: false,
+  extends: [
+    'plugin:@rnx-kit/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react-native/all',
+    'standard',
+    'prettier',
+    // 'plugin:@tanstack/eslint-plugin-query/recommended',
+  ],
+  plugins: [
+    '@typescript-eslint',
+    'react',
+    'react-native',
+    'simple-import-sort',
+    'import',
+    'unused-imports',
+  ],
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      rules: {
+        '@typescript-eslint/ban-ts-ignore': 0,
+        '@typescript-eslint/ban-ts-comment': 0,
+        '@typescript-eslint/explicit-function-return-type': 0,
+        '@typescript-eslint/explicit-member-accessibility': 0,
+        '@typescript-eslint/explicit-module-boundary-types': 0,
+        '@typescript-eslint/indent': 0,
+        '@typescript-eslint/member-delimiter-style': 0,
+        '@typescript-eslint/no-empty-function': [
+          'error',
+          {
+            allow: ['arrowFunctions', 'functions', 'asyncFunctions'],
+          },
+        ],
+        '@typescript-eslint/no-empty-interface': 0,
+        '@typescript-eslint/no-explicit-any': 0,
+        '@typescript-eslint/no-object-literal-type-assertion': 0,
+        '@typescript-eslint/no-var-requires': 0,
+        '@typescript-eslint/no-unused-vars': 'off',
+        'unused-imports/no-unused-imports': 'error',
+        'unused-imports/no-unused-vars': [
+          'error',
+          {
+            vars: 'all',
+            varsIgnorePattern: '^_',
+            args: 'after-used',
+            argsIgnorePattern: '^_',
+          },
+        ],
+        'comma-dangle': 0,
+        'import/first': 'error',
+        'import/newline-after-import': 'error',
+        'import/no-duplicates': 'error',
+        'multiline-ternary': 0,
+        'no-empty-function': 0,
+        'no-undef': 0,
+        'no-unused-vars': 0,
+        'no-use-before-define': 0,
+        'no-global-assign': 0,
+        quotes: 0,
+        'no-new': 0,
+        'react-native/no-raw-text': 0,
+        'react/no-unescaped-entities': 0,
+        'react/prop-types': 0,
+        'simple-import-sort/imports': 'error',
+        'simple-import-sort/exports': 'error',
+        'space-before-function-paren': 0,
+        // '@tanstack/query/exhaustive-deps': 'error',
+        // '@tanstack/query/prefer-query-object-syntax': 'error',
       },
-    ],
-    semi: ['error', 'never'],
-    '@typescript-eslint/ban-ts-ignore': 0,
-    '@typescript-eslint/ban-ts-comment': 0,
-    '@typescript-eslint/explicit-function-return-type': 0,
-    '@typescript-eslint/explicit-member-accessibility': 0,
-    '@typescript-eslint/explicit-module-boundary-types': 0,
-    '@typescript-eslint/indent': 0,
-    '@typescript-eslint/member-delimiter-style': 0,
-    '@typescript-eslint/no-empty-function': [
-      'error',
-      {
-        allow: ['arrowFunctions', 'functions', 'asyncFunctions'],
+    },
+  ],
+  settings: {
+    'import/resolver': {
+      // @xxx load tsconfig.json to eslint...
+      // thx https://github.com/benmosher/eslint-plugin-import/issues/1485#issuecomment-535351922 🙏
+      typescript: {},
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
-    ],
-    '@typescript-eslint/no-empty-interface': 0,
-    '@typescript-eslint/no-explicit-any': 0,
-    '@typescript-eslint/no-object-literal-type-assertion': 0,
-    '@typescript-eslint/no-var-requires': 0,
-    // '@typescript-eslint/no-unused-vars': [
-    //   'error',
-    //   {
-    //     argsIgnorePattern: '^_',
-    //     varsIgnorePattern: '^_',
-    //   },
-    // ],
+    },
   },
 }

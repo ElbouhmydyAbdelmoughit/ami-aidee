@@ -1,6 +1,7 @@
-import { Locale, ReduxAction } from 'core/types'
+import type { Locale, ReduxAction } from 'core/types'
 import { getLocales } from 'react-native-localize'
 import { createReducer } from 'reduxsauce'
+
 import { types } from './actions'
 
 const getInitialLang = (): Locale => {

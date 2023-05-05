@@ -1,4 +1,4 @@
-//import { addTranslationForLanguage, initialize, localizeReducer } from 'react-localize-redux';
+// import { addTranslationForLanguage, initialize, localizeReducer } from 'react-localize-redux';
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import { loadState, saveState } from 'src/utils/storage'
@@ -53,7 +53,7 @@ const middleware = [
 const persistedReducer = persistReducer(
   persistConfig,
   combineReducers({
-    //locale: localizeReducer,
+    // locale: localizeReducer,
     ...appReducers,
   })
 )
@@ -75,7 +75,7 @@ rootSaga.forEach(saga =>
 )
 
 // Set up internationalization
-/*store.dispatch(initialize({
+/* store.dispatch(initialize({
   languages: languages, translation: strings.french, options: {
     renderInnerHtml: true,
     defaultLanguage: 'fr',

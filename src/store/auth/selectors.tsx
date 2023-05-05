@@ -1,4 +1,4 @@
-import { HelpedUser } from 'core/types'
+import type { HelpedUser } from 'core/types'
 
 const getUserId = state => state.auth && state.auth.user && state.auth.user.id
 

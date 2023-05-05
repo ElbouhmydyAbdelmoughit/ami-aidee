@@ -1,11 +1,11 @@
-import { Alert, Animated, View } from 'react-native'
 import React, { useEffect, useRef } from 'react'
+import { useTranslation } from 'react-i18next'
+import { Alert, Animated, View } from 'react-native'
+import { usePowerState } from 'react-native-device-info'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { useDispatch, useSelector } from 'react-redux'
-import { HelpedUserActions } from 'store/helpedUsers'
 import { AuthSelectors } from 'store/auth'
-import { useTranslation } from 'react-i18next'
-import { usePowerState } from 'react-native-device-info'
+import { HelpedUserActions } from 'store/helpedUsers'
 
 const BatteryChecker = () => {
   const opacityAnim = useRef(new Animated.Value(0)).current
@@ -66,8 +66,8 @@ const BatteryChecker = () => {
         }}
       >
         <Icon
-          name="power-plug-off"
-          color="rgba(255,0,0,0.8)"
+          name={'power-plug-off'}
+          color={'rgba(255,0,0,0.8)'}
           size={100}
           style={{
             width: 100,

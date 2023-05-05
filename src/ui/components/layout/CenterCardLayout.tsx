@@ -1,6 +1,6 @@
+import { Card } from 'native-base'
 import React from 'react'
 import { View } from 'react-native'
-import { Card } from 'native-base'
 import LinearGradient from 'react-native-linear-gradient'
 
 const color = ['#3FEDFF', '#8772FF']

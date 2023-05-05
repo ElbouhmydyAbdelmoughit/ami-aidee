@@ -1,5 +1,6 @@
 import { createReducer } from 'reduxsauce'
 import { types } from './actions'
+
 const initialState = {
   jwt: null,
   user: null,

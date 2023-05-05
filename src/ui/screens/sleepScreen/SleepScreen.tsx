@@ -1,14 +1,13 @@
-import React, { useEffect } from 'react'
-import { View, TouchableHighlight } from 'react-native'
-
-import { Actions } from 'react-native-router-flux'
-
 import { Heading } from 'native-base'
-import MessageAlertManager from 'ui/business/MessageAlertManager'
-import useActivityLog from '../../hooks/use-activity-log'
+import React, { useEffect } from 'react'
+import { TouchableHighlight,View } from 'react-native'
+import { Actions } from 'react-native-router-flux'
 import { useDispatch } from 'react-redux'
-import { WAKEUP_DURATION } from 'utils/constant'
+import MessageAlertManager from 'ui/business/MessageAlertManager'
 import TimerInitiator from 'ui/business/TimerInitiator'
+import { WAKEUP_DURATION } from 'utils/constant'
+
+import useActivityLog from '../../hooks/use-activity-log'
 
 const SleepScreen = () => {
   const dispatch = useDispatch()
@@ -46,7 +45,7 @@ const SleepScreen = () => {
           }}
         >
           <Heading
-            size="xl"
+            size={'xl'}
             style={{
               color: 'rgba(255, 255, 255, 0.06)',
               fontFamily: 'Roboto',

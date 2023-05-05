@@ -4,11 +4,6 @@ import _ from 'lodash'
 import { TouchableRipple } from 'react-native-paper'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { Actions } from 'react-native-router-flux'
-import GradientBackground from '../../components/GradientBackground'
-import MessagingNavBar from './MessagingNavBar'
-import ChatRoom from '../../components/ChatRoom'
-import MessageUpdater from './MessageUpdater'
-import useActivityLog from '../../hooks/use-activity-log'
 import { Translations } from 'core/i18n'
 import { useDispatch, useSelector } from 'react-redux'
 import { times } from 'utils'
@@ -16,6 +11,11 @@ import moment from 'moment'
 import { AuthSelectors } from 'store/auth'
 import colorUtils from 'utils/colors'
 import BacktoRootTimer from 'ui/components/BackToRootTimer'
+import useActivityLog from '../../hooks/use-activity-log'
+import MessageUpdater from './MessageUpdater'
+import ChatRoom from '../../components/ChatRoom'
+import MessagingNavBar from './MessagingNavBar'
+import GradientBackground from '../../components/GradientBackground'
 
 const styles = StyleSheet.create({
   box: {
@@ -106,7 +106,7 @@ const MessagingScreen = ({
                   </Text>
                 </View>
               </TouchableRipple>
-              {/*<TouchableRipple
+              {/* <TouchableRipple
               onPress={() => {
                 logActivity('start_audio_call')
                 Actions.push('videoCall', { auxiliary, startMode: 'audio' })
@@ -120,7 +120,7 @@ const MessagingScreen = ({
                   Appel audio
                 </Text>
               </View>
-            </TouchableRipple>*/}
+            </TouchableRipple> */}
             </View>
           </View>
         </View>

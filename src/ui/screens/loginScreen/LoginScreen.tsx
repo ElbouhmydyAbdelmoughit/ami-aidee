@@ -1,15 +1,14 @@
-import React, { useEffect } from 'react'
-
-import { Card, Heading } from 'native-base'
-import LinearGradient from 'react-native-linear-gradient'
-import { StyleSheet, View } from 'react-native'
-import { AuthentForm } from 'ui/components'
-import Orientation from 'react-native-orientation'
-
 import { Translations } from 'core/i18n'
+import { Card, Heading } from 'native-base'
+import React, { useEffect } from 'react'
+import { StyleSheet, View } from 'react-native'
+import LinearGradient from 'react-native-linear-gradient'
+import Orientation from 'react-native-orientation'
+import { AuthentForm } from 'ui/components'
+
 import LangSelector from './LangSelector'
 
-export default ({ loginRequest, onRefresh }) => {
+const LoginScreen = ({ loginRequest, onRefresh }) => {
   const onValidate = form => {
     const { username, password } = form
     loginRequest(username, password)
@@ -29,12 +28,12 @@ export default ({ loginRequest, onRefresh }) => {
       style={{ flex: 1 }}
     >
       <View style={styles.content}>
-        <Heading size="xl" style={styles.title}>
-          {'A.M.I'}
+        <Heading size={'xl'} style={styles.title}>
+          A.M.I
         </Heading>
         <LangSelector onRefresh={onRefresh} />
         <Card style={{ width: '60%', marginTop: 16, backgroundColor: 'white' }}>
-          <Heading size="md" style={styles.headerTitle}>
+          <Heading size={'md'} style={styles.headerTitle}>
             {Translations.common.to_login}
           </Heading>
           <View style={{ flexDirection: 'row' }}>
@@ -74,3 +73,5 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
 })
+
+export default LoginScreen

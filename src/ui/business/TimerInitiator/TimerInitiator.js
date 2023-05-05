@@ -1,8 +1,8 @@
 import React from 'react'
 import { useEffect } from 'react'
 import moment from 'moment'
-import useMinuteTick from './useMinuteTick'
 import { useDispatch } from 'react-redux'
+import useMinuteTick from './useMinuteTick'
 import { TimerActions } from '../../../store/timer'
 
 const TimerInitiator = () => {

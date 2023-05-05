@@ -75,7 +75,7 @@ const SolarView = ({
         : moonDegree(dateInput, helpedUser)
     const point = pointForAngle(degree)
 
-    //y: 870.8098158189582
+    // y: 870.8098158189582
     const x = point.x - SUN_WIDTH / 2
     const y = point.y - SUN_HEIGHT / 2
 
@@ -88,7 +88,7 @@ const SolarView = ({
   const onLayout = () => {
     const borderPoints = getBorderPoints(CX, CY, RX, RY)
     setPoints(borderPoints)
-    //setSunPos()
+    // setSunPos()
   }
 
   const position = positionForDate(date)

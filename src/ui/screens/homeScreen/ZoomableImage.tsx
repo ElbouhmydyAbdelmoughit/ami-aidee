@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react'
 import {
-  View,
-  findNodeHandle,
-  UIManager,
   Dimensions,
+  findNodeHandle,
   Image as RNImage,
   TouchableOpacity,
+  UIManager,
+  View,
 } from 'react-native'
 import { IconButton } from 'react-native-paper'
 
@@ -85,7 +85,7 @@ const ZoomableImage = ({ uri, zooming, onUnzoom, onZoom }) => {
             ],
           },
         ]}
-        resizeMode="contain"
+        resizeMode={'contain'}
       />
       <View
         style={{
@@ -98,7 +98,7 @@ const ZoomableImage = ({ uri, zooming, onUnzoom, onZoom }) => {
       >
         <IconButton
           disabled={imageMeasured}
-          icon="zoom-out-map"
+          icon={'zoom-out-map'}
           size={40}
           onPress={() => {
             onZoom()
@@ -108,7 +108,7 @@ const ZoomableImage = ({ uri, zooming, onUnzoom, onZoom }) => {
             height: 40,
             opacity: imageMeasured ? 1 : 0,
           }}
-          color="white"
+          color={'white'}
         />
       </View>
     </TouchableOpacity>

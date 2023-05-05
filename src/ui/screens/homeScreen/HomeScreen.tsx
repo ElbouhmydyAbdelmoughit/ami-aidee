@@ -1,26 +1,23 @@
-import React, { useState, useEffect, createRef, useRef } from 'react'
-import { Text, Heading, Toast } from 'native-base'
-import { Col, Row, Grid } from 'react-native-easy-grid'
-import { Actions } from 'react-native-router-flux'
+import { Translations } from 'core/i18n'
+import { TrackedActivity } from 'core/types'
+import { Heading, Text, Toast } from 'native-base'
+import React, { createRef, useEffect, useRef,useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { TouchableWithoutFeedback, View } from 'react-native'
-
+import { Col, Grid,Row } from 'react-native-easy-grid'
 import LinearGradient from 'react-native-linear-gradient'
-
-import { Env } from 'src/utils/env'
+import { Button, IconButton } from 'react-native-paper'
+import { Actions } from 'react-native-router-flux'
 import { closestMessage, sortMessage } from 'src/utils'
+import { Env } from 'src/utils/env'
+import { CircleButton } from 'ui/components'
+import BacktoRootTimer from 'ui/components/BackToRootTimer'
+import useActivityLog from 'ui/hooks/use-activity-log'
+import { RETURN_TO_HOME_DURATION } from 'utils/constant'
 
-import VideoCard from './VideoCard'
 import MessageCard from './MessageCard'
 import NavigateCard from './NavigateCard'
-
-import useActivityLog from 'ui/hooks/use-activity-log'
-import { TrackedActivity } from 'core/types'
-import { Button, IconButton } from 'react-native-paper'
-import { Translations } from 'core/i18n'
-import { CircleButton } from 'ui/components'
-import { useTranslation } from 'react-i18next'
-import BacktoRootTimer from 'ui/components/BackToRootTimer'
-import { RETURN_TO_HOME_DURATION } from 'utils/constant'
+import VideoCard from './VideoCard'
 
 /**
  *
@@ -46,8 +43,8 @@ const HomeScreen = ({
   const msg = closestMessage(messages || [], now)
   console.log(msg)
   const [message, setMessage] = useState(msg || {})
-  //const [volume, setVolume] = useState(1)
-  let videoRef = createRef()
+  // const [volume, setVolume] = useState(1)
+  const videoRef = createRef()
   const { t } = useTranslation()
   useEffect(() => {
     awake()
@@ -68,7 +65,7 @@ const HomeScreen = ({
 
   const onVolumeChange = value => {
     console.log(value)
-    //setVolume(value)
+    // setVolume(value)
 
     videoRef.current?.setVolume(value)
     timerRef.current?.reset()
@@ -111,7 +108,7 @@ const HomeScreen = ({
   const videoURI = video_url ? `${Env.MEDIA_URL}/${video_url}` : ''
   console.log(video_url)
   console.log(videoURI)
-  //{ uri: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" }
+  // { uri: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" }
   const imageURI = picture_url ? { uri: `${Env.MEDIA_URL}/${picture_url}` } : {}
 
   const color = ['#3FEDFF', '#8772FF']
@@ -129,8 +126,8 @@ const HomeScreen = ({
       {zooming && (
         <>
           <IconButton
-            icon="close"
-            color="#555"
+            icon={'close'}
+            color={'#555'}
             size={60}
             style={{
               position: 'absolute',
@@ -167,14 +164,14 @@ const HomeScreen = ({
         >
           {messages.length == 0 && (
             <View style={{ alignItems: 'center' }}>
-              <Heading size="xl" style={styles.title}>
+              <Heading size={'xl'} style={styles.title}>
                 {t(
                   'screen.reminders_list.no_new_messages',
                   'Pas de nouveau messages'
                 )}
               </Heading>
               <Button
-                mode="outlined"
+                mode={'outlined'}
                 style={{ borderColor: 'white' }}
                 onPress={() => {
                   logActivity(TrackedActivity.RETURN_FROM_REMINDER_LIST)
@@ -290,8 +287,8 @@ const HomeScreen = ({
               backgroundColor: 'white',
               marginBottom: 16,
             }}
-            color="#555"
-            icon="arrow-back"
+            color={'#555'}
+            icon={'arrow-back'}
             onPress={() => {
               logActivity(TrackedActivity.RETURN_FROM_REMINDER_LIST)
               Actions.pop()

@@ -1,30 +1,32 @@
-import React, { useRef, useState } from 'react'
-import GradientBackground from 'ui/components/GradientBackground'
-import { Actions } from 'react-native-router-flux'
-import { TouchableRipple, IconButton } from 'react-native-paper'
-import { Heading } from 'native-base'
-import {
-  View,
-  StyleSheet,
-  Text,
-  ScrollView,
-  TouchableWithoutFeedbackProps,
-  ViewStyle,
-} from 'react-native'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-import useActivityLog from 'ui/hooks/use-activity-log'
-import { HelpedUser, TrackedActivity } from 'core/types'
-import { useDispatch } from 'react-redux'
-import { AuthActions } from 'store/auth'
 import AppStyles from 'config/styles'
 import { Translations } from 'core/i18n'
-import { useTranslation } from 'react-i18next'
-import { times } from 'utils'
+import type { HelpedUser} from 'core/types';
+import { TrackedActivity } from 'core/types'
 import moment from 'moment'
-import colorUtils from 'utils/colors'
+import { Heading } from 'native-base'
+import React, { useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import type {
+  TouchableWithoutFeedbackProps,
+  ViewStyle} from 'react-native';
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  View
+} from 'react-native'
+import type { CheckboxProps } from 'react-native-paper'
+import { IconButton,TouchableRipple } from 'react-native-paper'
+import { Actions } from 'react-native-router-flux'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import { useDispatch } from 'react-redux'
+import { AuthActions } from 'store/auth'
 import BacktoRootTimer from 'ui/components/BackToRootTimer'
 import Checkbox from 'ui/components/common/Checkbox'
-import { CheckboxProps } from 'react-native-paper'
+import GradientBackground from 'ui/components/GradientBackground'
+import useActivityLog from 'ui/hooks/use-activity-log'
+import { times } from 'utils'
+import colorUtils from 'utils/colors'
 
 const styles = StyleSheet.create({
   title: {
@@ -168,14 +170,14 @@ const UserSettingsScreen = ({
               <IconButton
                 size={26}
                 color={textColor}
-                icon="arrow-back"
+                icon={'arrow-back'}
                 onPress={() => {
                   Actions.pop()
                 }}
               >
                 {Translations.common.go_back}
               </IconButton>
-              <Heading size="xl" style={[styles.title, { color: textColor }]}>
+              <Heading size={'xl'} style={[styles.title, { color: textColor }]}>
                 {Translations.common.settings}
               </Heading>
             </View>
@@ -226,7 +228,7 @@ const UserSettingsScreen = ({
               }}
             >
               <TouchableRipple
-                mode="outlined"
+                mode={'outlined'}
                 dark
                 style={{
                   borderColor: AppStyles.colors.danger,
@@ -250,7 +252,7 @@ const UserSettingsScreen = ({
                   }}
                 >
                   <Icon
-                    name="logout"
+                    name={'logout'}
                     size={16}
                     color={AppStyles.colors.danger}
                   />

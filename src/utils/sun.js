@@ -1,7 +1,7 @@
-//is dawn
-//is sunNoon
-//is dusk
-//is night
+// is dawn
+// is sunNoon
+// is dusk
+// is night
 
 /**
  *
@@ -104,9 +104,9 @@ const getTimes = (now, helpedUser) => {
 }
 export const times = (now, helpedUser) => {
   const computedTimes = getTimes(now, helpedUser)
-  const isDawn = now.isBetween(computedTimes.dawn, computedTimes.solarNoon) //is dawn => now >= dawn && now <= sunriseEnd
+  const isDawn = now.isBetween(computedTimes.dawn, computedTimes.solarNoon) // is dawn => now >= dawn && now <= sunriseEnd
   const isSunNoon =
-    now.isAfter(computedTimes.solarNoon) && now.isBefore(computedTimes.dusk) //is sunNoon => now > sunriseEnd && now < dusk <= default
+    now.isAfter(computedTimes.solarNoon) && now.isBefore(computedTimes.dusk) // is sunNoon => now > sunriseEnd && now < dusk <= default
   const isDusk = now.isBetween(computedTimes.dusk, computedTimes.night)
   const isNight = now.isAfter(computedTimes.night)
   if (isDawn) {
@@ -125,11 +125,11 @@ export const times = (now, helpedUser) => {
 }
 
 const getDegree = pos => {
-  //: SunCalc.getMoonPosition(/*Date*/ now.toDate(), /*Number*/ 48.84605, /*Number*/  2.34515)
-  var sunAzimuth = (pos.azimuth * 180) / Math.PI
-  var sunAltitude = (pos.altitude * 180) / Math.PI
+  // : SunCalc.getMoonPosition(/*Date*/ now.toDate(), /*Number*/ 48.84605, /*Number*/  2.34515)
+  const sunAzimuth = (pos.azimuth * 180) / Math.PI
+  const sunAltitude = (pos.altitude * 180) / Math.PI
 
-  var degree = 0.0
+  let degree = 0.0
   Math.asin
 
   if (sunAzimuth >= 0) {

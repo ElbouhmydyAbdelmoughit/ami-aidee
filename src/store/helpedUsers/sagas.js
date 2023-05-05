@@ -28,7 +28,6 @@ function* usersCreateRequest({ filters }) {
   if (error) {
     yield put(LoaderActions.loaded())
     yield put(SnackActions.displayError('user_create_error'))
-    return
   } else {
     yield put(LoaderActions.loaded())
     yield put(SnackActions.displayInfo('user_create_success'))
@@ -45,7 +44,6 @@ function* usersDeleteRequest({ id }) {
   if (error) {
     yield put(LoaderActions.loaded())
     yield put(SnackActions.displayError('user_delete_error'))
-    return
   } else {
     yield put(LoaderActions.loaded())
     yield put(SnackActions.displayInfo('user_delete_success'))

@@ -4,8 +4,8 @@ If this file become too big, make a mock folder and split your mocks in files
 */
 
 export const loginFetchMock = ({ email, password }) => {
-  let response = null,
-    error = null
+  let response = null
+  let error = null
   console.log(`${email} | ${password}`)
   if (email && password) {
     response = {

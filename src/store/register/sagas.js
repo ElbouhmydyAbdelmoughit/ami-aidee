@@ -1,11 +1,11 @@
 import { delay } from 'redux-saga'
 import { takeLatest, put, select, call } from 'redux-saga/effects'
+import { UsersService, HelpedUsersService } from 'src/services'
+import { t } from 'i18next'
 import actions, { types } from './actions'
 import { LoaderActions } from '../loader'
-import { UsersService, HelpedUsersService } from 'src/services'
 import { SnackActions } from '../snackBar'
 import { AuthActions } from '../auth'
-import { t } from 'i18next'
 
 function* userCreateOnError(error) {
   if (

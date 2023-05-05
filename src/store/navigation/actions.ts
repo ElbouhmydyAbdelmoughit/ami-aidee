@@ -1,4 +1,3 @@
-import logger from 'core/logger'
 import { createAction } from '../../utils'
 
 export const types = {

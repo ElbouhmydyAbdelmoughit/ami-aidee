@@ -6,13 +6,13 @@ import {
   take,
   takeEvery,
 } from 'redux-saga/effects'
+import { notifierAuthorization, notifierAdd, notifierAddMany } from 'src/utils'
+import axios from 'axios'
+import moment from 'moment'
 import { MessagesService, UploadService } from '../../services'
 import { LoaderActions } from '../loader'
 import { SnackActions } from '../snackBar'
 import { types, default as MessageAction } from './actions'
-import { notifierAuthorization, notifierAdd, notifierAddMany } from 'src/utils'
-import axios from 'axios'
-import moment from 'moment'
 
 /**
  * Use it for upload a file
@@ -34,10 +34,9 @@ function* sendFormData(formData) {
 
   if (uploadCall[0] != null) {
     return null
-  } else {
-    console.log(uploadCall[1].data.path)
-    return uploadCall[1].data
   }
+  console.log(uploadCall[1].data.path)
+  return uploadCall[1].data
 }
 
 /**
@@ -58,7 +57,7 @@ function* messagesRequest({ id }) {
     helpedUserId: id,
   })
   if (!error && response) {
-    //notifierAddMany(response.messages)
+    // notifierAddMany(response.messages)
     yield put(MessageAction.messagesSuccess(response.messages))
   } else {
     yield put(MessageAction.messagesFailure())
@@ -81,7 +80,7 @@ function* messageCreateRequest({ data }) {
     time_diffuse,
     reccurence,
   } = data.message
-  let message = {
+  const message = {
     auxiliary_id: 2,
     helped_user_id: 2,
     activite: activity,
@@ -99,7 +98,7 @@ function* messageCreateRequest({ data }) {
    * 1 - send Image
    * */
   const FormData = require('form-data')
-  var formData = new FormData()
+  const formData = new FormData()
   formData.append('file', imgURL.originFileObj, imgURL.originFileObj.name)
   const result = yield call(sendFormData, formData)
   if (result == null) {
@@ -115,9 +114,9 @@ function* messageCreateRequest({ data }) {
    *  */
   const fileVideo = yield call(UploadService.fileFromObjectURL, data.video)
 
-  var videoFormData = new FormData()
-  var mime = require('mime-types')
-  var contentType = fileVideo.headers['content-type']
+  const videoFormData = new FormData()
+  const mime = require('mime-types')
+  const contentType = fileVideo.headers['content-type']
   videoFormData.append(
     'file',
     fileVideo.data,

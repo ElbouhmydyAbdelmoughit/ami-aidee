@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import moment from 'core/moment'
 import { Dialog, Portal, Text, Title } from 'react-native-paper'
-import { TRIAL_DURATION_IN_DAYS } from '../../../utils/constant'
 import { useTranslation } from 'react-i18next'
+import { TRIAL_DURATION_IN_DAYS } from '../../../utils/constant'
 
 const getIsAccountSuspended = helpedUser => {
   if (helpedUser.status === 'refused') {
@@ -23,7 +23,9 @@ const getIsAccountExpired = helpedUser => {
   return false
 }
 
-let title, firstText, secondText
+let title
+let firstText
+let secondText
 
 const BlockerDialog = ({ helpedUser }) => {
   const [dialogVisible, setDialogVisible] = useState(false)

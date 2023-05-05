@@ -4,11 +4,11 @@ import { Core } from 'src/core'
 
 import PushNotificationIOS from '@react-native-community/push-notification-ios'
 import PushNotification from 'react-native-push-notification'
-import { UserActions } from '../../../store/users'
 
 import messaging from '@react-native-firebase/messaging'
 import { Platform } from 'react-native'
 import errorReporter from 'core/error-reporter'
+import { UserActions } from '../../../store/users'
 
 const RemoteEventReceiver = ({
   myUid,

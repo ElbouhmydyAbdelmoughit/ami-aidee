@@ -46,7 +46,7 @@ const queries = {
 
 export default {
   login: ({ email, password }) =>
-    service(POST, routes.login(), { email: email, password: password }),
+    service(POST, routes.login(), { email, password }),
 
   logout: () => service(POST, routes.logout()),
   me: id => authenticatedQuery(queries.me(id)),
@@ -58,6 +58,6 @@ export default {
       reset_code: resetCode,
       password: newPassword,
     }),
-  //service(POST, routes.login, JSON.stringify({email, password}), {}, {
+  // service(POST, routes.login, JSON.stringify({email, password}), {}, {
   //  'Content-Type': 'application/json', }),
 }

@@ -1,13 +1,11 @@
-import React from 'react'
-
+import { Translations } from 'core/i18n'
+import moment from 'core/moment'
 import { Card, Heading } from 'native-base'
+import React from 'react'
+import { View } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-import { View } from 'react-native'
 import { RegisterForm } from 'ui/components'
-
-import moment from 'core/moment'
-import { Translations } from 'core/i18n'
 
 const RegisterScreen = ({ loginRequest, step }) => {
   const notifDate = moment().format('YYYY-MM-dd hh:mm')
@@ -28,12 +26,12 @@ const RegisterScreen = ({ loginRequest, step }) => {
       style={{ flex: 1 }}
     >
       <View style={styles.content}>
-        <Heading size="xl" style={styles.title}>
-          {'A.M.I'}
+        <Heading size={'xl'} style={styles.title}>
+          A.M.I
         </Heading>
         <Card style={{ width: '60%', marginTop: 16, backgroundColor: 'white' }}>
           <View style={styles.header}>
-            <Icon name="account-plus" size={50} color={'#BBB'} />
+            <Icon name={'account-plus'} size={50} color={'#BBB'} />
             <Heading style={styles.headerTitle}>
               {Translations.common.to_signup}
             </Heading>

@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
-import { Button, Text } from 'native-base'
-import Icon from 'react-native-vector-icons/MaterialIcons'
-import { Actions } from 'react-native-router-flux'
-import useActivityLog from '../../hooks/use-activity-log'
-import { View, TouchableOpacity, StyleSheet, ViewStyle } from 'react-native'
 import { Translations } from 'core/i18n'
+import { Button, Text } from 'native-base'
+import React, { useState } from 'react'
+import type { ViewStyle } from 'react-native';
+import { StyleSheet, TouchableOpacity, View } from 'react-native'
 import { TextInput } from 'react-native-paper'
+import { Actions } from 'react-native-router-flux'
+import Icon from 'react-native-vector-icons/MaterialIcons'
+
+import useActivityLog from '../../hooks/use-activity-log'
 
 interface IAuthentForm {
   style: ViewStyle
@@ -37,8 +39,8 @@ const AuthentForm = ({ style, form, onValidate }: IAuthentForm) => {
     logActivity('press_login_btn')
     if (isFormValid()) {
       onValidate({
-        username: username,
-        password: password,
+        username,
+        password,
       })
     }
   }
@@ -47,14 +49,14 @@ const AuthentForm = ({ style, form, onValidate }: IAuthentForm) => {
     <View style={style}>
       <View style={styles.emailContainer}>
         <TextInput
-          autoCapitalize="none"
-          keyboardType="email-address"
+          autoCapitalize={'none'}
+          keyboardType={'email-address'}
           placeholder={Translations.common.email}
           onChangeText={setUsername}
           style={styles.textInput}
           value={username}
         />
-        <Icon name="mail" style={styles.icon} size={20} />
+        <Icon name={'mail'} style={styles.icon} size={20} />
       </View>
 
       <View style={styles.passwordContainer}>
@@ -65,7 +67,7 @@ const AuthentForm = ({ style, form, onValidate }: IAuthentForm) => {
           value={password}
           style={styles.textInput}
         />
-        <Icon name="lock" size={20} style={styles.icon} />
+        <Icon name={'lock'} size={20} style={styles.icon} />
       </View>
       <Button
         block

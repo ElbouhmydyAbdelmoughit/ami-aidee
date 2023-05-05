@@ -1,6 +1,7 @@
 import React from 'react'
 import { Platform, View } from 'react-native'
-import { Checkbox as RNCheckbox, CheckboxProps } from 'react-native-paper'
+import type { CheckboxProps } from 'react-native-paper';
+import { Checkbox as RNCheckbox } from 'react-native-paper'
 
 const Checkbox = (props: CheckboxProps) => {
   if (Platform.OS === 'android') {

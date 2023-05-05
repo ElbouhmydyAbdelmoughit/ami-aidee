@@ -4,8 +4,8 @@ import { TouchableRipple } from 'react-native-paper'
 
 import { Actions } from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-import useActivityLog from '../../../hooks/use-activity-log'
 import { Translations } from 'core/i18n'
+import useActivityLog from '../../../hooks/use-activity-log'
 
 const ContactButton = ({ hasNewMessage, color }) => {
   const primaryColor = hasNewMessage ? 'rgba(224, 41, 41, 0.9)' : color

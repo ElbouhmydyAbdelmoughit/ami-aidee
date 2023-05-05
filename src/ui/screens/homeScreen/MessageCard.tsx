@@ -1,14 +1,15 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-import { Text } from 'native-base'
-import { View } from 'react-native'
-import { MessageSelectors } from 'store/message'
-import { getSubjects, getMoments, getRecurrences } from 'utils'
 import moment from 'core/moment'
-import Icon from 'react-native-vector-icons/MaterialIcons'
-import ZoomableImage from './ZoomableImage'
-import { Message } from 'core/types'
+import type { Message } from 'core/types'
+import { Text } from 'native-base'
+import React from 'react'
 import { useTranslation } from 'react-i18next'
+import { View } from 'react-native'
+import Icon from 'react-native-vector-icons/MaterialIcons'
+import { useSelector } from 'react-redux'
+import { MessageSelectors } from 'store/message'
+import { getMoments, getRecurrences,getSubjects } from 'utils'
+
+import ZoomableImage from './ZoomableImage'
 
 const BOLD = text => <Text style={{ fontWeight: 'bold' }}>{text}</Text>
 const BR = <Text>{'\n'}</Text>

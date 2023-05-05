@@ -10,6 +10,9 @@ import {
 import { Text, IconButton } from 'react-native-paper'
 import { RtcEngine, AgoraView } from 'react-native-agora'
 import { Actions } from 'react-native-router-flux'
+import { useTranslation } from 'react-i18next'
+import { Translations } from 'core/i18n'
+import useTextColor from 'ui/hooks/use-text-color'
 import {
   requestCameraAndAudioPermission,
   requestAudioPermission,
@@ -21,15 +24,12 @@ import GradientBackground from '../GradientBackground'
 import RemoteAudioView from './RemoteAudioView'
 import { playHangupTone } from '../../../utils/sound'
 import useActivityLog from '../../hooks/use-activity-log'
-import { useTranslation } from 'react-i18next'
-import { Translations } from 'core/i18n'
-import useTextColor from 'ui/hooks/use-text-color'
 
 const { Agora } = NativeModules
 const { FPS30, AudioProfileDefault, AudioScenarioDefault, Adaptative } = Agora
 
 const config = {
-  //Setting config of the app
+  // Setting config of the app
   // AMI Project
   appid: AGORA_APP_ID,
   // CHANNEL_PROFILE_COMMUNICATION  (Default) The Communication profile.
@@ -38,7 +38,7 @@ const config = {
   // https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a1bfb76eb4365b8b97648c3d1b69f2bd6
   channelProfile: 0,
   videoEncoderConfig: {
-    //Set Video feed encoder settings
+    // Set Video feed encoder settings
     // the config for which the rate is $3.99 per/1,000 minutes
     // and not $14.99 per/1,000 minutes
     // https://www.agora.io/en/pricing/
@@ -58,7 +58,7 @@ const config = {
 }
 
 const dimensions = {
-  //get dimensions of the device to use in view styles
+  // get dimensions of the device to use in view styles
   width: Dimensions.get('window').width,
   height: Dimensions.get('window').height,
 }
@@ -129,7 +129,7 @@ const VideoCallRoom = ({ remoteAuxiliary, mode, channelId }) => {
   const textColor = useTextColor()
   const joinChannel = () => {
     hasEnded = false
-    RtcEngine.joinChannel(channelId, Math.floor(Math.random() * 100)) //Join Channel
+    RtcEngine.joinChannel(channelId, Math.floor(Math.random() * 100)) // Join Channel
   }
 
   const endCall = () => {
@@ -155,7 +155,7 @@ const VideoCallRoom = ({ remoteAuxiliary, mode, channelId }) => {
         mode: mode === 'audio' ? 0 : undefined,
       })
       if (Platform.OS === 'android') {
-        //Request required permissions from Android
+        // Request required permissions from Android
         if (mode === 'audio') {
           try {
             await requestAudioPermission()
@@ -189,20 +189,20 @@ const VideoCallRoom = ({ remoteAuxiliary, mode, channelId }) => {
 
       RtcEngine.on('userJoined', data => {
         if (peerIds.indexOf(data.uid) === -1) {
-          //If new user has joined
+          // If new user has joined
           setPeerIds(list => [...list, data.uid])
           setStatus('remote_joined')
         }
       })
       RtcEngine.on('userOffline', data => {
-        //If user leaves
+        // If user leaves
         setPeerIds(list => list.filter(uid => uid !== data.uid))
         setStatus('remote_leaved')
         playHangupTone()
       })
       RtcEngine.on('joinChannelSuccess', () => {
-        //If Local user joins RTC channel
-        RtcEngine.startPreview() //Start RTC preview
+        // If Local user joins RTC channel
+        RtcEngine.startPreview() // Start RTC preview
         setJoinSucceed(true)
         setStatus('local_joined')
       })
@@ -312,7 +312,7 @@ const VideoCallRoom = ({ remoteAuxiliary, mode, channelId }) => {
             getWaitingView()
           ) : (
             <View style={styles.fullView}>
-              {peerIds.length > 0 //view for videostream
+              {peerIds.length > 0 // view for videostream
                 ? getRemoteStreamView()
                 : getJoinSucceedView()}
             </View>

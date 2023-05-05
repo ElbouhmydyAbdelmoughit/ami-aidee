@@ -10,13 +10,13 @@ import { times } from 'utils'
 import TimerInitiator from 'ui/business/TimerInitiator'
 import MessageAlertManager from 'ui/business/MessageAlertManager'
 
-import SolarView from './SolarView'
-import ContactButton from './ContactButton'
 import { Trans, useTranslation } from 'react-i18next'
 import colorUtils from 'utils/colors'
 import SleepTimer from 'ui/components/SleepTimer'
 
 import Orientation from 'react-native-orientation'
+import ContactButton from './ContactButton'
+import SolarView from './SolarView'
 
 const BOLD = text => <Text style={{ fontWeight: 'bold' }}>{text}</Text>
 const BR = <Text>{'\n'}</Text>
@@ -92,8 +92,7 @@ const SolarScreen = ({
         content: (
           <Trans i18nKey="screen.solar.nighttime_description">
             <Heading size="xl" style={{ color: 'white', fontSize: 30 }}>
-              il est{' '}
-              <Text style={{ fontWeight: 'bold' }}>{{ hour: hour }}</Text>
+              il est <Text style={{ fontWeight: 'bold' }}>{{ hour }}</Text>
               <Text>{'\n'}</Text>Dormir est nécessaire pour que ton cerveau
               répare ton corps.
             </Heading>
@@ -132,7 +131,7 @@ const SolarScreen = ({
   }
 
   useEffect(() => {
-    //loop()
+    // loop()
     setHelloText(date)
   }, [])
 
@@ -170,7 +169,7 @@ const SolarScreen = ({
     }, 600)
 
     const tst = setTimeout(() => {
-      //blinkInter.in
+      // blinkInter.in
       clearImmediate(interval)
       setFadeIn(0)
     }, 10000)

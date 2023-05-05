@@ -22,7 +22,7 @@ export async function Save_Reminder_Service(reminder) {
   console.log('Save_Reminder_Service')
   console.log(values)
   const uuid = await UUIDGenerator.getRandomUUID()
-  var RNFS = require('react-native-fs')
+  const RNFS = require('react-native-fs')
   const reminders = await AsyncStorage.getItem('reminders')
   let reminderList = JSON.parse(reminders)
   if (!reminderList) {
@@ -31,8 +31,8 @@ export async function Save_Reminder_Service(reminder) {
 
   console.log(reminderList)
   try {
-    const imgPath = RNFS.DocumentDirectoryPath + '/img_' + uuid + '.png'
-    const videoPath = RNFS.DocumentDirectoryPath + '/video_' + uuid + '.mp4'
+    const imgPath = `${RNFS.DocumentDirectoryPath}/img_${uuid}.png`
+    const videoPath = `${RNFS.DocumentDirectoryPath}/video_${uuid}.mp4`
     // write the file
     if (
       values.imageURL != null &&
@@ -40,14 +40,14 @@ export async function Save_Reminder_Service(reminder) {
       values.imageURL != ''
     ) {
       console.log('write image file')
-      //const data = await RNFS.readFile(values.imageURL, 'ascii')
+      // const data = await RNFS.readFile(values.imageURL, 'ascii')
       await RNFS.copyFile(values.imageURL, imgPath)
-      //await RNFS.writeFile(imgPath, data, 'ascii')
+      // await RNFS.writeFile(imgPath, data, 'ascii')
     }
 
-    //write video file
-    //const videoData = await RNFS.readFile(values.videoUri, 'ascii')
-    //await RNFS.writeFile(videoPath, videoData, 'ascii')
+    // write video file
+    // const videoData = await RNFS.readFile(values.videoUri, 'ascii')
+    // await RNFS.writeFile(videoPath, videoData, 'ascii')
     if (
       values.videoUri != null &&
       values.videoUri != undefined &&
@@ -56,16 +56,16 @@ export async function Save_Reminder_Service(reminder) {
       await RNFS.copyFile(values.videoUri, videoPath)
     }
 
-    //Maybe only if android
-    values.imageURL = Platform.OS === 'android' ? 'file://' + imgPath : imgPath //
+    // Maybe only if android
+    values.imageURL = Platform.OS === 'android' ? `file://${imgPath}` : imgPath //
     values.videoUri =
-      Platform.OS === 'android' ? 'file://' + videoPath : videoPath //
+      Platform.OS === 'android' ? `file://${videoPath}` : videoPath //
 
     if (values.id != null || values.id != undefined) {
-      //TODO: replace
+      // TODO: replace
       console.log('replace')
       let index = -1
-      for (var i = 0; i < reminderList.length && index == -1; ++i) {
+      for (let i = 0; i < reminderList.length && index == -1; ++i) {
         const v = reminderList[i]
         console.log('searching...')
         console.log(v)
@@ -75,7 +75,7 @@ export async function Save_Reminder_Service(reminder) {
           continue
         }
       }
-      console.log('replace at index: ' + index)
+      console.log(`replace at index: ${index}`)
       reminderList[index] = values
     } else {
       values.id = uuid

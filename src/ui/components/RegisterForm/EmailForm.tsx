@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
-import { View, Button, Heading } from 'native-base'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-import { Actions } from 'react-native-router-flux'
-import useActivityLog from '../../hooks/use-activity-log'
-import { useTranslation } from 'react-i18next'
 import { Translations } from 'core/i18n'
+import { Button, Heading,View } from 'native-base'
+import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { TextInput } from 'react-native-paper'
+import { Actions } from 'react-native-router-flux'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+
+import useActivityLog from '../../hooks/use-activity-log'
 
 const EmailForm = ({ setRegisterUser }) => {
   const [email, setEmail] = useState('')
@@ -15,9 +16,8 @@ const EmailForm = ({ setRegisterUser }) => {
   return (
     <View style={{ width: '100%' }}>
       <Heading style={{ marginBottom: 32, color: '#848484' }}>
-        {errorText
-          ? errorText
-          : t('screen.register.email_title', 'Renseigner votre email')}
+        {errorText ||
+          t('screen.register.email_title', 'Renseigner votre email')}
       </Heading>
       <View>
         <View
@@ -30,14 +30,14 @@ const EmailForm = ({ setRegisterUser }) => {
           error={!!errorText}
         >
           <TextInput
-            autoCapitalize="none"
+            autoCapitalize={'none'}
             placeholder={'Email'}
             autoFocus
             onChangeText={setEmail}
             value={email}
           />
         </View>
-        {errorText && <Icon name="close-circle" />}
+        {errorText && <Icon name={'close-circle'} />}
         <Button
           full
           block

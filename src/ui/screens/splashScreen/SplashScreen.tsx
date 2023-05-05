@@ -1,9 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { View, Linking } from 'react-native'
-import { Actions } from 'react-native-router-flux'
-
 import { Heading } from 'native-base'
+import React, { useEffect, useRef, useState } from 'react'
+import { Linking,View } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
+import { Actions } from 'react-native-router-flux'
 
 const color = ['#3FEDFF', '#8772FF']
 
@@ -84,8 +83,8 @@ const SplashScreen = ({ auth, fetchUser }) => {
           backgroundColor: 'transparent',
         }}
       >
-        <Heading size="lg" style={styles.title}>
-          {'A.M.I'}
+        <Heading size={'lg'} style={styles.title}>
+          A.M.I
         </Heading>
       </View>
     </LinearGradient>

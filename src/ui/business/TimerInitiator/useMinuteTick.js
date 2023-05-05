@@ -23,7 +23,8 @@ const getOffsetToNextMinuteToMs = () => {
 const useMinuteTick = () => {
   const time = useSelector(TimerSelectors.getMinuteTick)
   const dispatch = useDispatch()
-  let interval, timeout
+  let interval
+  let timeout
   const beginInterval = () => {
     dispatch(TimerActions.setMinuteTick(getTimeNow()))
     interval = setInterval(() => {

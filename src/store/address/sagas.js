@@ -50,7 +50,7 @@ function* addressesDeleteRequest({ id }) {
 function* addressesModifyRequest({ address }) {
   console.log(address)
   yield put(LoaderActions.loading())
-  const id = address.id
+  const { id } = address
   const [error, response] = yield call(AddressesService.modifyAddress, {
     id,
     address,

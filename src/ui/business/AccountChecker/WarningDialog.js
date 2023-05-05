@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import moment from 'core/moment'
 import { Dialog, Portal, Text, Button } from 'react-native-paper'
+import { useTranslation } from 'react-i18next'
+import { Translations } from 'core/i18n'
 import { TRIAL_DURATION_IN_DAYS } from '../../../utils/constant'
 import {
   NavigationActions,
   NavigationSelectors,
 } from '../../../store/navigation'
-import { useTranslation } from 'react-i18next'
-import { Translations } from 'core/i18n'
 
 const getAccountExpiresIn = helpedUser => {
   if (!helpedUser) {

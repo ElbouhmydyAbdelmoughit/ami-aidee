@@ -1,13 +1,13 @@
-import { takeLatest, put, call, select } from 'redux-saga/effects'
 import jwtDecode from 'jwt-decode'
+import { Actions } from 'react-native-router-flux'
+import { call, put, select,takeLatest } from 'redux-saga/effects'
+
 import { AuthenticationService } from '../../services'
 import { CommonActions } from '../common'
 import { LoaderActions } from '../loader'
-import { types, default as AuthActions } from './actions'
 import { SnackActions } from '../snackBar'
-import { Actions } from 'react-native-router-flux'
+import { default as AuthActions,types } from './actions'
 import AuthSelectors from './selectors'
-import { Alert } from 'react-native'
 
 function* login({ username, password }) {
   yield put(LoaderActions.loading())

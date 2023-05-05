@@ -1,10 +1,10 @@
+import { View } from 'native-base'
 import React, { useState } from 'react'
 import { Image, Slider } from 'react-native'
-import { View } from 'native-base'
-//import Slider from '@react-native-community/slider';
+// import Slider from '@react-native-community/slider';
+import { IconButton } from 'react-native-paper'
 
 import useActivityLog from '../../hooks/use-activity-log'
-import { IconButton } from 'react-native-paper'
 
 type Props = {
   onVolumeChange: (value: any) => void
@@ -42,8 +42,8 @@ export default ({ onReload, onVolumeChange }: Props) => {
           step={0.1}
           value={volume}
           onValueChange={volumeChange}
-          minimumTrackTintColor="#FFFFFF"
-          maximumTrackTintColor="#C7C7C7"
+          minimumTrackTintColor={'#FFFFFF'}
+          maximumTrackTintColor={'#C7C7C7'}
         />
       </View>
       <IconButton
@@ -51,10 +51,10 @@ export default ({ onReload, onVolumeChange }: Props) => {
           logActivity('reload_video')
           onReload(...args)
         }}
-        color="white"
+        color={'white'}
         size={40}
         style={{ width: 40, height: 40 }}
-        icon="replay"
+        icon={'replay'}
       />
     </View>
   )

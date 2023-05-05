@@ -7,12 +7,12 @@ import moment from 'core/moment'
 import { Actions } from 'react-native-router-flux'
 import LinearGradient from 'react-native-linear-gradient'
 import { times } from 'src/utils'
-import Loader from '../../components/loader/Loader'
-import colorUtils, { getGradientColors } from '../../../utils/colors'
-import useActivityLog from '../../hooks/use-activity-log'
 import { Translations } from 'core/i18n'
 import { useTranslation } from 'react-i18next'
 import BacktoRootTimer from 'ui/components/BackToRootTimer'
+import Loader from '../../components/loader/Loader'
+import colorUtils, { getGradientColors } from '../../../utils/colors'
+import useActivityLog from '../../hooks/use-activity-log'
 
 const styles = StyleSheet.create({
   box: {

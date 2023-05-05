@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Button } from 'react-native'
-//import styles from './styles';
+// import styles from './styles';
 import { Appbar } from 'react-native-paper'
 
 const Header = (
@@ -53,8 +53,8 @@ const Header = (
     navigation.pop()
   }
 
-  //const index = this.props.navigation.state.index;
-  //const route = this.props.navigation.state.routes[index]
+  // const index = this.props.navigation.state.index;
+  // const route = this.props.navigation.state.routes[index]
   console.log('Header render')
   console.log(navigation)
   console.log('========')

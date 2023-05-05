@@ -12,11 +12,11 @@ import {
   MessageText,
 } from 'react-native-gifted-chat'
 import { Avatar } from 'react-native-paper'
-import { getUserAbbr, getUserDisplayName } from '../../../utils/user'
 import { useTranslation } from 'react-i18next'
 import { Translations } from 'core/i18n'
 import { NavigationSelectors } from 'store/navigation'
 import { useSelector } from 'react-redux'
+import { getUserAbbr, getUserDisplayName } from '../../../utils/user'
 
 const messageTransformer = serverFormatMessage => ({
   text: serverFormatMessage.content,
