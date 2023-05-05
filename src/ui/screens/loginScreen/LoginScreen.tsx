@@ -52,20 +52,11 @@ const styles = StyleSheet.create({
     fontFamily: 'Roboto',
     textAlign: 'center',
   },
-
-  header: {
-    backgroundColor: '#fff',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
   headerTitle: {
     padding: 10,
     textAlign: 'center',
     color: '#848484',
   },
-
   content: {
     flex: 1,
     alignItems: 'center',

@@ -68,6 +68,8 @@ module.exports = {
         'simple-import-sort/imports': 'error',
         'simple-import-sort/exports': 'error',
         'space-before-function-paren': 0,
+        'react-native/sort-styles': ['error', 'desc'],
+        'react-native/no-color-literals': 0,
         // '@tanstack/query/exhaustive-deps': 'error',
         // '@tanstack/query/prefer-query-object-syntax': 'error',
       },
