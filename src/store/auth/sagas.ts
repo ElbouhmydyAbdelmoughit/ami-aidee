@@ -1,15 +1,23 @@
 import jwtDecode from 'jwt-decode'
 import { Actions } from 'react-native-router-flux'
-import { call, put, select,takeLatest } from 'redux-saga/effects'
+import { call, put, select, takeLatest } from 'redux-saga/effects'
 
 import { AuthenticationService } from '../../services'
 import { CommonActions } from '../common'
 import { LoaderActions } from '../loader'
 import { SnackActions } from '../snackBar'
-import { default as AuthActions,types } from './actions'
+import { default as AuthActions, types } from './actions'
 import AuthSelectors from './selectors'
 
-function* login({ username, password }) {
+function* login({ username, password, invalid = false }) {
+  /**
+   * Immediately invalidates the login attempt.
+   */
+  if (invalid) {
+    yield put(SnackActions.displayError('authentication_failed'))
+    return
+  }
+
   yield put(LoaderActions.loading())
 
   const email = username

@@ -16,8 +16,8 @@ export const types = {
 
 // Actions
 export default {
-  loginRequest: (username, password) =>
-    createAction(types.LOGIN_REQUEST, { username, password }),
+  loginRequest: (username, password, invalid) =>
+    createAction(types.LOGIN_REQUEST, { username, password, invalid }),
 
   loginSuccess: jwt => createAction(types.LOGIN_SUCCESS, { jwt }),
 

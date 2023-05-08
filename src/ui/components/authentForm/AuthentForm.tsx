@@ -8,6 +8,7 @@ import { Actions } from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import useActivityLog from '../../hooks/use-activity-log'
+import { useIsHelpedUserQuery } from './hooks/useIsHelpedUserQuery';
 
 interface IAuthentForm {
   style: ViewStyle
@@ -35,12 +36,15 @@ const AuthentForm = ({ style, form, onValidate }: IAuthentForm) => {
     return !(username === '' || password === '')
   }
 
+  const { data: isHelpedUser } = useIsHelpedUserQuery(username)
+
   const validate = () => {
     logActivity('press_login_btn')
     if (isFormValid()) {
       onValidate({
         username,
         password,
+        invalid: !isHelpedUser
       })
     }
   }

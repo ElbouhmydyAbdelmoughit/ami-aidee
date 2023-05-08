@@ -1,30 +1,29 @@
 import React, { useCallback, useEffect, useState } from 'react'
-
-import { Scene, Router, ActionConst, Stack } from 'react-native-router-flux'
-import {
-  SplashScreen,
-  LoginScreen,
-  HomeScreen,
-  SolarScreen,
-  RegisterScreen,
-  SleepScreen,
-  ContactsList,
-  VideoCallScreen,
-  PasswordResetRequestScreen,
-  PasswordResetRequestConfirmedScreen,
-  ResetPasswordScreen,
-  ResetPasswordConfirmedScreen,
-} from 'ui/screens'
-import { SnackBar } from 'ui/components'
-import RemoteEventReceiver from 'ui/components/RemoteEventReceiver'
-import VideoReceivingScreen from 'ui/screens/videoReceivingScreen'
-import UserSettingsScreen from 'ui/screens/userSettings'
-import MessagingScreen from 'ui/screens/messagingScreen'
-import SystemVolumeManager from 'ui/business/SystemVolumeManager'
-import BatteryChecker from 'ui/business/BatteryChecker'
+import { StatusBar, View } from 'react-native'
+import { ActionConst, Router, Scene, Stack } from 'react-native-router-flux'
 import { useDispatch } from 'react-redux'
 import { NavigationActions } from 'store/navigation'
-import { StatusBar, View } from 'react-native'
+import BatteryChecker from 'ui/business/BatteryChecker'
+import SystemVolumeManager from 'ui/business/SystemVolumeManager'
+import { SnackBar } from 'ui/components'
+import RemoteEventReceiver from 'ui/components/RemoteEventReceiver'
+import {
+  ContactsList,
+  HomeScreen,
+  LoginScreen,
+  PasswordResetRequestConfirmedScreen,
+  PasswordResetRequestScreen,
+  RegisterScreen,
+  ResetPasswordConfirmedScreen,
+  ResetPasswordScreen,
+  SleepScreen,
+  SolarScreen,
+  SplashScreen,
+  VideoCallScreen,
+} from 'ui/screens'
+import MessagingScreen from 'ui/screens/messagingScreen'
+import UserSettingsScreen from 'ui/screens/userSettings'
+import VideoReceivingScreen from 'ui/screens/videoReceivingScreen'
 
 export default () => {
   const [key, setKey] = useState(0)
@@ -135,7 +134,7 @@ const transitionConfig = () => ({
     const { index } = scene
     const width = layout.initWidth
 
-    //right to left by replacing bottom scene
+    // right to left by replacing bottom scene
     // return {
     //     transform: [{
     //         translateX: position.interpolate({
@@ -163,9 +162,9 @@ const transitionConfig = () => ({
           transform: [
               { translateX }
           ],
-      };*/
+      }; */
 
-    //from center to corners
+    // from center to corners
     const inputRange = [index - 1, index, index + 1]
     const opacity = position.interpolate({
       inputRange,

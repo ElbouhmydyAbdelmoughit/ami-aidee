@@ -1,3 +1,4 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Translations } from 'core/i18n'
 import { Card, Heading } from 'native-base'
 import React, { useEffect } from 'react'
@@ -8,10 +9,13 @@ import { AuthentForm } from 'ui/components'
 
 import LangSelector from './LangSelector'
 
+// Create a client
+const queryClient = new QueryClient()
+
 const LoginScreen = ({ loginRequest, onRefresh }) => {
   const onValidate = form => {
-    const { username, password } = form
-    loginRequest(username, password)
+    const { username, password, invalid } = form
+    loginRequest(username, password, invalid)
   }
 
   useEffect(() => {
@@ -27,20 +31,24 @@ const LoginScreen = ({ loginRequest, onRefresh }) => {
       colors={color}
       style={{ flex: 1 }}
     >
-      <View style={styles.content}>
-        <Heading size={'xl'} style={styles.title}>
-          A.M.I
-        </Heading>
-        <LangSelector onRefresh={onRefresh} />
-        <Card style={{ width: '60%', marginTop: 16, backgroundColor: 'white' }}>
-          <Heading size={'md'} style={styles.headerTitle}>
-            {Translations.common.to_login}
+      <QueryClientProvider client={queryClient}>
+        <View style={styles.content}>
+          <Heading size={'xl'} style={styles.title}>
+            A.M.I
           </Heading>
-          <View style={{ flexDirection: 'row' }}>
-            <AuthentForm style={{ flex: 1 }} onValidate={onValidate} />
-          </View>
-        </Card>
-      </View>
+          <LangSelector onRefresh={onRefresh} />
+          <Card
+            style={{ width: '60%', marginTop: 16, backgroundColor: 'white' }}
+          >
+            <Heading size={'md'} style={styles.headerTitle}>
+              {Translations.common.to_login}
+            </Heading>
+            <View style={{ flexDirection: 'row' }}>
+              <AuthentForm style={{ flex: 1 }} onValidate={onValidate} />
+            </View>
+          </Card>
+        </View>
+      </QueryClientProvider>
     </LinearGradient>
   )
 }
