@@ -2,7 +2,13 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import AppStyles from 'config/styles'
 import React, { useEffect, useState } from 'react'
-import { Linking, Modal, StyleSheet, Text } from 'react-native'
+import {
+  Linking,
+  StyleSheet,
+  Text,
+  useWindowDimensions,
+  View,
+} from 'react-native'
 import { Button, Dialog } from 'react-native-paper'
 
 const CguModal = ({ onDismiss }) => {
@@ -18,15 +24,21 @@ const CguModal = ({ onDismiss }) => {
   const queryClient = useQueryClient()
 
   useEffect(() => {
-    if (showCguModalQuery.data === 'true') {
+    if (showCguModalQuery.data === 'true' || showCguModalQuery.data === null) {
       setShowCguModal(true)
     } else if (showCguModalQuery.data === 'false') {
       setShowCguModal(false)
     }
   }, [showCguModalQuery.data])
 
+  const { height, width } = useWindowDimensions()
+
+  if (!showCguModal) {
+    return null
+  }
+
   return (
-    <Modal animationType="none" transparent={true} visible={showCguModal}>
+    <View style={[styles.mainContainer, { width, height }]}>
       <Dialog visible={true} dismissable={false}>
         <Dialog.Title>Conditions générales d’utilisation</Dialog.Title>
         <Dialog.Content>
@@ -63,11 +75,14 @@ const CguModal = ({ onDismiss }) => {
           </Button>
         </Dialog.Actions>
       </Dialog>
-    </Modal>
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
+  mainContainer: {
+    position: 'absolute',
+  },
   dialogText: {
     color: AppStyles.colors.primary,
   },
