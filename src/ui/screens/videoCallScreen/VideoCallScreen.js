@@ -1,4 +1,5 @@
 import React from 'react'
+
 import VideoCallPage from '../../components/VideoCallPage'
 
 const VideoCallScreen = ({ auxiliary, startMode = 'video' }) => {

@@ -1,6 +1,5 @@
 // @flow
 
-import { set, isEmpty } from 'lodash'
 import { AsyncStorage, Platform } from 'react-native'
 import UUIDGenerator from 'react-native-uuid-generator'
 

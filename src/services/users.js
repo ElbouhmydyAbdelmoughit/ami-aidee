@@ -1,6 +1,7 @@
 import { call } from 'redux-saga/effects'
-import { methods, fetch } from '../utils'
-import { authenticatedQuery, authenticatedMutation } from './middleware'
+
+import { fetch,methods } from '../utils'
+import { authenticatedMutation,authenticatedQuery } from './middleware'
 
 const { POST } = methods
 

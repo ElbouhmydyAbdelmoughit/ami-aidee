@@ -1,8 +1,7 @@
-import { methods, query, mutation } from '../utils'
+import { methods, mutation } from '../utils'
 import {
-  service,
-  authenticatedQuery,
   authenticatedMutation,
+  authenticatedQuery,
 } from './middleware'
 
 const { GET } = methods

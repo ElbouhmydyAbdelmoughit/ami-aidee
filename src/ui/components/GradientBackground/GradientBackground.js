@@ -1,8 +1,8 @@
-import React from 'react'
-
 import moment from 'moment'
+import React from 'react'
 import LinearGradient from 'react-native-linear-gradient'
 import { times } from 'src/utils'
+
 import { getGradientColors } from '../../../utils/colors'
 
 const GradientBackground = ({ children, helpedUser }) => {

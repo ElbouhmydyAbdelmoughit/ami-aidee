@@ -33,4 +33,4 @@ export default async function requestCameraAndAudioPermission() {
   }
 }
 
-export { requestCameraAndAudioPermission, requestAudioPermission }
+export { requestAudioPermission,requestCameraAndAudioPermission }

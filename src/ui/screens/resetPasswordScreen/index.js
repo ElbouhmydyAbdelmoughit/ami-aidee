@@ -1,9 +1,10 @@
 import { connect } from 'react-redux'
-import ResetPasswordScreen from './ResetPassWordScreen'
+
 import {
   ResetPasswordRequestActions,
   ResetPasswordRequestSelectors,
 } from '../../../store/resetPasswordRequest'
+import ResetPasswordScreen from './ResetPassWordScreen'
 
 export default connect(
   (state, { data }) => ({

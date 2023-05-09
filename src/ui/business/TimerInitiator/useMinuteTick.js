@@ -1,6 +1,6 @@
-import { useEffect } from 'react'
 import moment from 'moment'
-import { useSelector, useDispatch } from 'react-redux'
+import { useEffect } from 'react'
+import { useDispatch,useSelector } from 'react-redux'
 import { TimerActions, TimerSelectors } from 'src/store/timer'
 
 /**

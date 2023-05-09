@@ -1,6 +1,7 @@
 import React from 'react'
 import { FlatList, View } from 'react-native'
 import Config from 'react-native-config'
+
 import ReminderItem from './ReminderItem'
 import styles from './styles'
 

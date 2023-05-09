@@ -1,5 +1,5 @@
 import { methods } from '../utils'
-import { service, authenticatedQuery } from './middleware'
+import { authenticatedQuery,service } from './middleware'
 
 const { POST } = methods
 const routes = {

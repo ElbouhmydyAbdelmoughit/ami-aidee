@@ -1,21 +1,22 @@
-import React, { useEffect, useCallback } from 'react'
 import 'dayjs/locale/fr'
 import 'dayjs/locale/en'
 import 'dayjs/locale/de'
 
-import { View, Text } from 'react-native'
+import { Translations } from 'core/i18n'
+import React, { useCallback,useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
+import { Text,View } from 'react-native'
 import {
+  Composer,
   GiftedChat,
   InputToolbar,
-  Send,
-  Composer,
   MessageText,
+  Send,
 } from 'react-native-gifted-chat'
 import { Avatar } from 'react-native-paper'
-import { useTranslation } from 'react-i18next'
-import { Translations } from 'core/i18n'
-import { NavigationSelectors } from 'store/navigation'
 import { useSelector } from 'react-redux'
+import { NavigationSelectors } from 'store/navigation'
+
 import { getUserAbbr, getUserDisplayName } from '../../../utils/user'
 
 const messageTransformer = serverFormatMessage => ({

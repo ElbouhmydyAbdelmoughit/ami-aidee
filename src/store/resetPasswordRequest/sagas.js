@@ -1,7 +1,8 @@
-import { takeLatest, call, put } from 'redux-saga/effects'
-import Actions, { types } from './actions'
+import { call, put,takeLatest } from 'redux-saga/effects'
+
 import { ResetPasswordRequestService } from '../../services'
 import { SnackActions } from '../snackBar'
+import Actions, { types } from './actions'
 
 function* resetPasswordRequestRequest({ resetCode }) {
   const [error, response] = yield call(

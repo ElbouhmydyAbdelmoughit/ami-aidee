@@ -1,22 +1,21 @@
+import { Heading } from 'native-base'
 import React, {
-  useState,
-  useEffect,
-  useRef,
   forwardRef,
+  useEffect,
   useImperativeHandle,
+  useRef,
+  useState,
 } from 'react'
 // import Video from 'react-native-video'
-
 import {
-  StyleSheet,
-  View,
   ActivityIndicator,
   findNodeHandle,
-  UIManager,
   Platform,
+  StyleSheet,
+  UIManager,
+  View,
 } from 'react-native'
 import VideoView from 'ui/components/videoView'
-import { Heading } from 'native-base'
 
 let playerHandle
 const VideoCard = ({ uri }, ref) => {
@@ -127,21 +126,21 @@ const VideoCard = ({ uri }, ref) => {
 
 var styles = StyleSheet.create({
   backgroundVideo: {
-    aspectRatio: 1,
     width: '100%',
     height: '100%',
+    aspectRatio: 1,
   },
   activityIndicatorWrapper: {
-    backgroundColor: '#000',
-    position: 'absolute',
     top: 0,
-    bottom: 0,
-    left: 0,
     right: 0,
-    borderRadius: 10,
-    display: 'flex',
-    alignItems: 'center',
+    position: 'absolute',
+    left: 0,
     justifyContent: 'space-around',
+    display: 'flex',
+    bottom: 0,
+    borderRadius: 10,
+    backgroundColor: '#000',
+    alignItems: 'center',
   },
 })
 

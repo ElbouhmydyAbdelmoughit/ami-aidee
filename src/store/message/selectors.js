@@ -1,9 +1,10 @@
 import { createSelector } from 'reselect'
 import {
-  messageToAlert,
-  immediateMessage,
   getMessageNextDiffusionDatetime,
+  immediateMessage,
+  messageToAlert,
 } from 'utils'
+
 import TimerSelectors from '../timer/selectors'
 
 const getMessages = state => {

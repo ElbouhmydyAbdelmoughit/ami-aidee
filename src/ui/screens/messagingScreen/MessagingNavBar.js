@@ -1,9 +1,9 @@
 import React from 'react'
-
-import { View, Text } from 'react-native'
+import { Text,View } from 'react-native'
 import { Avatar, IconButton } from 'react-native-paper'
 import { Actions } from 'react-native-router-flux'
-import { getUserDisplayName, getUserAbbr } from '../../../utils/user'
+
+import { getUserAbbr,getUserDisplayName } from '../../../utils/user'
 import useActivityLog from '../../hooks/use-activity-log'
 
 const MessagingNavBar = ({ user, textColor }) => {

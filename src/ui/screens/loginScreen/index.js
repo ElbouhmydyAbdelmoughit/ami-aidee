@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
-import LoginScreen from './LoginScreen'
 
 import { AuthActions } from '../../../store/auth'
+import LoginScreen from './LoginScreen'
 
 const mapStateToProps = ({ auth }) => ({})
 

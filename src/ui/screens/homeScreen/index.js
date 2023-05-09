@@ -1,9 +1,9 @@
 import { connect } from 'react-redux'
-
 import { MessageActions } from 'src/store/message'
 import { TimerActions } from 'src/store/timer'
-import HomeScreen from './HomeScreen'
+
 import TimerSelectors from '../../../store/timer/selectors'
+import HomeScreen from './HomeScreen'
 
 const mapStateToProps = state => {
   const { auth, message } = state

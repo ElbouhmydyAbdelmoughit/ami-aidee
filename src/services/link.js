@@ -1,5 +1,6 @@
-import { call } from 'redux-saga/effects'
 import moment from 'moment'
+import { call } from 'redux-saga/effects'
+
 import { authenticatedMutation } from './middleware'
 
 /**

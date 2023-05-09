@@ -1,8 +1,8 @@
 import { createReducer } from 'reduxsauce'
-import { types } from './actions'
 
 // TODO: normalizer link data into its own reducer
 import { types as linkTypes } from '../link/actions'
+import { types } from './actions'
 
 const initialState = {
   list: {},

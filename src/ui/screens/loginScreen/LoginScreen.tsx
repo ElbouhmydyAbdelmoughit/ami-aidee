@@ -55,21 +55,21 @@ const LoginScreen = ({ loginRequest, onRefresh }) => {
 
 const styles = StyleSheet.create({
   title: {
-    marginTop: 16,
-    color: '#fff',
-    fontFamily: 'Roboto',
     textAlign: 'center',
+    marginTop: 16,
+    fontFamily: 'Roboto',
+    color: '#fff',
   },
   headerTitle: {
-    padding: 10,
     textAlign: 'center',
+    padding: 10,
     color: '#848484',
   },
   content: {
-    flex: 1,
-    alignItems: 'center',
     justifyContent: 'center',
+    flex: 1,
     flexDirection: 'column',
+    alignItems: 'center',
   },
 })
 

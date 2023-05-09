@@ -1,11 +1,11 @@
 import InstantMessagesActions from './actions'
-import InstantMessagesSagas from './sagas'
 import InstantMessagesReducer from './reducers'
+import InstantMessagesSagas from './sagas'
 import InstantMessagesSelectors from './selectors'
 
 export {
   InstantMessagesActions,
-  InstantMessagesSagas,
   InstantMessagesReducer,
+  InstantMessagesSagas,
   InstantMessagesSelectors,
 }

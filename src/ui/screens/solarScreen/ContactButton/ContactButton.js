@@ -1,10 +1,10 @@
+import { Translations } from 'core/i18n'
 import React from 'react'
-import { View, Text } from 'react-native'
+import { Text,View } from 'react-native'
 import { TouchableRipple } from 'react-native-paper'
-
 import { Actions } from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-import { Translations } from 'core/i18n'
+
 import useActivityLog from '../../../hooks/use-activity-log'
 
 const ContactButton = ({ hasNewMessage, color }) => {

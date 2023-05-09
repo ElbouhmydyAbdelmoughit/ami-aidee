@@ -1,5 +1,6 @@
 import moment from 'moment'
 import { createReducer } from 'reduxsauce'
+
 import { types } from './actions'
 
 const initialState = {

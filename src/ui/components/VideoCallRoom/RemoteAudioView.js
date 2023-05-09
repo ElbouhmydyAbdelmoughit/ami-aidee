@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react'
-import { View, StyleSheet, Text } from 'react-native'
 import moment from 'core/moment'
+import React, { useEffect,useState } from 'react'
+import { StyleSheet, Text,View } from 'react-native'
+
 import UserAvatar from '../UserAvatar'
 
 const styles = StyleSheet.create({
   infoText: {
-    color: 'white',
     fontWeight: 'bold',
     fontSize: 24,
+    color: 'white',
   },
 })
 

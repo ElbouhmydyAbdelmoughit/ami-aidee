@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import { View, Image } from 'react-native'
+import React, { useEffect,useState } from 'react'
+import { Image,View } from 'react-native'
+import ImagePicker from 'react-native-image-picker'
 import { Subheading, TouchableRipple } from 'react-native-paper'
 import Icon from 'react-native-vector-icons/EvilIcons'
-
-import ImagePicker from 'react-native-image-picker'
 
 const ImageInput = ({ source, onChangeImage }) => {
   const [img, setImg] = useState(null)

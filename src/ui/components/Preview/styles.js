@@ -1,11 +1,16 @@
 import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
+  video: {
+    width: '30%',
+    height: '100%',
+  },
+
   preview: {
-    flex: 1,
     justifyContent: 'flex-end',
-    alignItems: 'center',
+    flex: 1,
     flexDirection: 'row',
+    alignItems: 'center',
   },
 
   divider: {
@@ -13,17 +18,12 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
 
-  video: {
-    width: '30%',
-    height: '100%',
-  },
-
   body: {
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    margin: 10,
     width: '70%',
+    margin: 10,
+    justifyContent: 'space-between',
     height: '90%',
+    alignItems: 'center',
   },
 })
 

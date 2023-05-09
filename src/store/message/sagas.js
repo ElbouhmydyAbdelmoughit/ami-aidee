@@ -1,18 +1,17 @@
-import {
-  takeLatest,
-  put,
-  call,
-  race,
-  take,
-  takeEvery,
-} from 'redux-saga/effects'
-import { notifierAuthorization, notifierAdd, notifierAddMany } from 'src/utils'
 import axios from 'axios'
 import moment from 'moment'
+import {
+  call,
+  put,
+  race,
+  take,
+  takeLatest,
+} from 'redux-saga/effects'
+
 import { MessagesService, UploadService } from '../../services'
 import { LoaderActions } from '../loader'
 import { SnackActions } from '../snackBar'
-import { types, default as MessageAction } from './actions'
+import { default as MessageAction,types } from './actions'
 
 /**
  * Use it for upload a file

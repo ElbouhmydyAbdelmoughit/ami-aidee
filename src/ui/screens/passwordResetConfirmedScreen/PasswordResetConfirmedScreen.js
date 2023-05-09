@@ -1,10 +1,11 @@
+import { Translations } from 'core/i18n'
+import { Button } from 'native-base'
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { View } from 'react-native'
 import { Subheading } from 'react-native-paper'
 import { Actions } from 'react-native-router-flux'
-import { Button } from 'native-base'
-import { useTranslation } from 'react-i18next'
-import { Translations } from 'core/i18n'
+
 import CenterCardLayout from '../../components/layout/CenterCardLayout'
 
 const PasswordResetConfirmedScreen = () => {

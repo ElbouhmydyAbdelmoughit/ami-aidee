@@ -1,8 +1,9 @@
 import 'react-native-gesture-handler'
-import * as Sentry from '@sentry/react-native'
 import './src/core/i18n'
 
+import * as Sentry from '@sentry/react-native'
 import { AppRegistry } from 'react-native'
+
 import App from './App'
 import { name as appName } from './app.json'
 

@@ -1,44 +1,45 @@
-import React, { useEffect } from 'react'
-import { View, Text, Dimensions, StyleSheet, ScrollView } from 'react-native'
-import { Avatar, TouchableRipple, Button, IconButton } from 'react-native-paper'
-import { Heading } from 'native-base'
-import { getUserAbbr } from 'src/utils/user'
-import moment from 'core/moment'
-import { Actions } from 'react-native-router-flux'
-import LinearGradient from 'react-native-linear-gradient'
-import { times } from 'src/utils'
 import { Translations } from 'core/i18n'
+import moment from 'core/moment'
+import { Heading } from 'native-base'
+import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Dimensions, ScrollView,StyleSheet, Text, View } from 'react-native'
+import LinearGradient from 'react-native-linear-gradient'
+import { Avatar, Button, IconButton,TouchableRipple } from 'react-native-paper'
+import { Actions } from 'react-native-router-flux'
+import { times } from 'src/utils'
+import { getUserAbbr } from 'src/utils/user'
 import BacktoRootTimer from 'ui/components/BackToRootTimer'
-import Loader from '../../components/loader/Loader'
+
 import colorUtils, { getGradientColors } from '../../../utils/colors'
+import Loader from '../../components/loader/Loader'
 import useActivityLog from '../../hooks/use-activity-log'
 
 const styles = StyleSheet.create({
-  box: {
-    borderWidth: 1,
-    borderColor: 'rgba(255, 255, 255, 0.8)',
-    borderRadius: 4,
-    padding: 16,
-    marginRight: 32,
-    width: 200,
-    height: 200,
-    alignItems: 'center',
-    marginTop: 16,
+  title: {
+    fontWeight: 'bold',
+    fontSize: 24,
+    fontFamily: 'Roboto',
+    color: '#fff',
+  },
+  subtitle: {
+    marginTop: 4,
+    fontFamily: 'Roboto',
+    color: '#fff',
   },
   returnBox: {
     paddingTop: 48,
   },
-  title: {
-    color: '#fff',
-    fontFamily: 'Roboto',
-    fontWeight: 'bold',
-    fontSize: 24,
-  },
-  subtitle: {
-    color: '#fff',
-    marginTop: 4,
-    fontFamily: 'Roboto',
+  box: {
+    width: 200,
+    padding: 16,
+    marginTop: 16,
+    marginRight: 32,
+    height: 200,
+    borderWidth: 1,
+    borderRadius: 4,
+    borderColor: 'rgba(255, 255, 255, 0.8)',
+    alignItems: 'center',
   },
 })
 const ContactsList = ({

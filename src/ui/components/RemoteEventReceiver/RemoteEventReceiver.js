@@ -1,13 +1,12 @@
+import PushNotificationIOS from '@react-native-community/push-notification-ios'
+import messaging from '@react-native-firebase/messaging'
+import errorReporter from 'core/error-reporter'
 import { useEffect } from 'react'
+import { Platform } from 'react-native'
+import PushNotification from 'react-native-push-notification'
 import { Actions } from 'react-native-router-flux'
 import { Core } from 'src/core'
 
-import PushNotificationIOS from '@react-native-community/push-notification-ios'
-import PushNotification from 'react-native-push-notification'
-
-import messaging from '@react-native-firebase/messaging'
-import { Platform } from 'react-native'
-import errorReporter from 'core/error-reporter'
 import { UserActions } from '../../../store/users'
 
 const RemoteEventReceiver = ({

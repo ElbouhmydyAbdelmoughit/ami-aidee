@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
-import ForgetPasswordForm from './ForgetPasswordForm'
+
 import { AuthActions } from '../../../../store/auth'
+import ForgetPasswordForm from './ForgetPasswordForm'
 
 export default connect(null, dispatch => ({
   requestPasswordReset: (...args) =>

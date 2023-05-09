@@ -1,20 +1,18 @@
-import React, { useState, useEffect } from 'react'
-import { View } from 'react-native'
-import { Heading, Text } from 'native-base'
-
-import { Actions } from 'react-native-router-flux'
-import LinearGradient from 'react-native-linear-gradient'
-import AccountChecker from 'src/ui/business/AccountChecker'
 import moment from 'core/moment'
-import { times } from 'utils'
-import TimerInitiator from 'ui/business/TimerInitiator'
-import MessageAlertManager from 'ui/business/MessageAlertManager'
-
+import { Heading, Text } from 'native-base'
+import React, { useEffect,useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import colorUtils from 'utils/colors'
-import SleepTimer from 'ui/components/SleepTimer'
-
+import { View } from 'react-native'
+import LinearGradient from 'react-native-linear-gradient'
 import Orientation from 'react-native-orientation'
+import { Actions } from 'react-native-router-flux'
+import AccountChecker from 'src/ui/business/AccountChecker'
+import MessageAlertManager from 'ui/business/MessageAlertManager'
+import TimerInitiator from 'ui/business/TimerInitiator'
+import SleepTimer from 'ui/components/SleepTimer'
+import { times } from 'utils'
+import colorUtils from 'utils/colors'
+
 import ContactButton from './ContactButton'
 import SolarView from './SolarView'
 

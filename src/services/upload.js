@@ -1,5 +1,5 @@
-import { methods, query, mutation, fetch, fileFromObjectURL } from '../utils'
-import { service, authenticatedService } from './middleware'
+import { fileFromObjectURL,methods } from '../utils'
+import {service } from './middleware'
 
 const { POST } = methods
 /**

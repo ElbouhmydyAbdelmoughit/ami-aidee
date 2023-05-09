@@ -1,7 +1,8 @@
 import { connect } from 'react-redux'
-import UserSettingsScreen from './UserSettingsScreen'
-import { HelpedUserActions } from '../../../store/helpedUsers'
+
 import { AuthSelectors } from '../../../store/auth'
+import { HelpedUserActions } from '../../../store/helpedUsers'
+import UserSettingsScreen from './UserSettingsScreen'
 
 export default connect(
   state => ({

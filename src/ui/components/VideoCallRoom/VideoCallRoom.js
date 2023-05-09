@@ -1,29 +1,30 @@
+import { Translations } from 'core/i18n'
 import React, { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import {
+  Alert,
+  Dimensions,
   NativeModules,
   Platform,
-  View,
   StyleSheet,
-  Dimensions,
-  Alert,
+  View,
 } from 'react-native'
-import { Text, IconButton } from 'react-native-paper'
-import { RtcEngine, AgoraView } from 'react-native-agora'
+import { AgoraView,RtcEngine } from 'react-native-agora'
+import { IconButton,Text } from 'react-native-paper'
 import { Actions } from 'react-native-router-flux'
-import { useTranslation } from 'react-i18next'
-import { Translations } from 'core/i18n'
 import useTextColor from 'ui/hooks/use-text-color'
-import {
-  requestCameraAndAudioPermission,
-  requestAudioPermission,
-} from './permission'
+
 import { AGORA_APP_ID } from '../../../utils/constant'
-import UserAvatar from '../UserAvatar'
-import VideoCallEnded from './VideoCallEnded'
-import GradientBackground from '../GradientBackground'
-import RemoteAudioView from './RemoteAudioView'
 import { playHangupTone } from '../../../utils/sound'
 import useActivityLog from '../../hooks/use-activity-log'
+import GradientBackground from '../GradientBackground'
+import UserAvatar from '../UserAvatar'
+import {
+  requestAudioPermission,
+  requestCameraAndAudioPermission,
+} from './permission'
+import RemoteAudioView from './RemoteAudioView'
+import VideoCallEnded from './VideoCallEnded'
 
 const { Agora } = NativeModules
 const { FPS30, AudioProfileDefault, AudioScenarioDefault, Adaptative } = Agora
@@ -64,56 +65,56 @@ const dimensions = {
 }
 
 const styles = StyleSheet.create({
-  max: {
-    flex: 1,
-  },
-  fullView: {
-    width: dimensions.width,
-    height: dimensions.height,
-  },
   remoteVideoStyle: {
     width: (9 * dimensions.height) / 16,
     height: dimensions.height,
     alignSelf: 'center',
   },
-  emptyView: {
-    backgroundColor: 'rgb(50, 209, 231)',
+  overlay: {
+    width: '100%',
+    position: 'absolute',
+    height: '100%',
+    backgroundColor: 'rgba(50, 209, 231, 0.44)',
+  },
+  max: {
+    flex: 1,
+  },
+  localVideoStyle: {
+    zIndex: 100,
+    width: 200,
+    top: 5,
+    right: 5,
+    position: 'absolute',
+    height: 150,
+  },
+  infoText: {
+    fontWeight: 'bold',
+    fontSize: 24,
+    color: 'white',
+  },
+
+  fullView: {
+    width: dimensions.width,
+    height: dimensions.height,
   },
   full: {
     flex: 1,
   },
-
-  localVideoStyle: {
-    width: 200,
-    height: 150,
-    position: 'absolute',
-    top: 5,
-    right: 5,
-    zIndex: 100,
-  },
-  buttonsBox: {
-    position: 'absolute',
-    bottom: 64,
-    width: dimensions.width,
-    alignItems: 'center',
-  },
   endCallBtn: {
-    backgroundColor: 'red',
     width: 60,
+    padding: 4,
     height: 60,
     borderRadius: 30,
-    padding: 4,
+    backgroundColor: 'red',
   },
-  overlay: {
+  emptyView: {
+    backgroundColor: 'rgb(50, 209, 231)',
+  },
+  buttonsBox: {
+    width: dimensions.width,
     position: 'absolute',
-    height: '100%',
-    width: '100%',
-    backgroundColor: 'rgba(50, 209, 231, 0.44)',
-  },
-  infoText: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 24,
+    bottom: 64,
+    alignItems: 'center',
   },
 })
 

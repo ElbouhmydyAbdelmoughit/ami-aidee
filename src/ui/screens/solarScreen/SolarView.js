@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
 import { Dimensions } from 'react-native'
-import { solarDegree, moonDegree } from 'src/utils'
 import Svg, {
+  Defs,
   Ellipse,
+  Image,
   LinearGradient,
   Rect,
-  Image,
-  Defs,
   Stop,
 } from 'react-native-svg'
+import { moonDegree,solarDegree } from 'src/utils'
+
 import useActivityLog from '../../hooks/use-activity-log'
 
 const { width: WINDOW_WIDTH, height: WINDOW_HEIGHT } = Dimensions.get('window')

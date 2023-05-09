@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
 import moment from 'core/moment'
-import { Dialog, Portal, Text, Title } from 'react-native-paper'
+import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Dialog, Portal, Text, Title } from 'react-native-paper'
+
 import { TRIAL_DURATION_IN_DAYS } from '../../../utils/constant'
 
 const getIsAccountSuspended = helpedUser => {

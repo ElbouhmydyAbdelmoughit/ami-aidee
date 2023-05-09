@@ -1,13 +1,14 @@
 import { connect } from 'react-redux'
-import ContactsList from './ContactsList'
+
 import {
-  AuxiliarySelectors,
   AuxiliaryActions,
+  AuxiliarySelectors,
 } from '../../../store/auxiliaries'
 import {
-  InstantMessagesSelectors,
   InstantMessagesActions,
+  InstantMessagesSelectors,
 } from '../../../store/instantMessages'
+import ContactsList from './ContactsList'
 
 const getHelpedUser = state => {
   const me = state.auth.user

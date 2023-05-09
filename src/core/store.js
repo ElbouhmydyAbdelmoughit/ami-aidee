@@ -1,11 +1,11 @@
 // import { addTranslationForLanguage, initialize, localizeReducer } from 'react-localize-redux';
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
+import { persistReducer,persistStore } from 'redux-persist'
 import createSagaMiddleware from 'redux-saga'
 import { loadState, saveState } from 'src/utils/storage'
 import appReducers, { rootSaga } from 'store'
 
-import { persistStore, persistReducer } from 'redux-persist'
-import AsyncStorage from '@react-native-async-storage/async-storage'
 import errorReporter from './error-reporter'
 
 const persistConfig = {

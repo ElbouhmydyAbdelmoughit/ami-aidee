@@ -1,7 +1,8 @@
 import { UNAUTHORIZED } from 'http-status-codes'
 import { call, put, select } from 'redux-saga/effects'
+
 import { default as AuthActions } from '../store/auth/actions'
-import { fetch, query, mutation } from '../utils/index'
+import { fetch, mutation,query } from '../utils/index'
 
 function* authorize(service) {
   const { jwt } = yield select(state => state.auth)

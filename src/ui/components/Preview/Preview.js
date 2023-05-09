@@ -1,10 +1,9 @@
-import React from 'react'
-import { View, Text, Image } from 'react-native'
-
-import Video from 'react-native-video'
-
 import moment from 'moment'
 import momentFR from 'moment/locale/fr'
+import React from 'react'
+import { Image,Text, View } from 'react-native'
+import Video from 'react-native-video'
+
 import styles from './styles'
 
 const Preview = (onValidate, form, videoUri) => {

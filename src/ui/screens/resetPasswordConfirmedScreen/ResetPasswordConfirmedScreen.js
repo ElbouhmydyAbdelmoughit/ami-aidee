@@ -1,9 +1,10 @@
-import React from 'react'
-import { Subheading } from 'react-native-paper'
-import { Button, Text } from 'native-base'
-import { Actions } from 'react-native-router-flux'
 import { Translations } from 'core/i18n'
+import { Button, Text } from 'native-base'
+import React from 'react'
 import { useTranslation } from 'react-i18next'
+import { Subheading } from 'react-native-paper'
+import { Actions } from 'react-native-router-flux'
+
 import CenterCardLayout from '../../components/layout/CenterCardLayout'
 
 const ResetPasswordConfirmedScreen = () => {

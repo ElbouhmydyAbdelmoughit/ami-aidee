@@ -1,6 +1,7 @@
 import React from 'react'
 import { Image } from 'react-native'
 import { List } from 'react-native-paper'
+
 import useActivityLog from '../../hooks/use-activity-log'
 
 const ReminderItem = ({ title, desc, onPress, image }) => {

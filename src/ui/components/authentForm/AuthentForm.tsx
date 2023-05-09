@@ -94,33 +94,33 @@ const AuthentForm = ({ style, form, onValidate }: IAuthentForm) => {
 }
 
 const styles = StyleSheet.create({
-  icon: {
-    color: '#6E6D6D',
-    position: 'absolute',
-    left: 10,
-    top: 18,
-  },
-  emailContainer: {
-    borderRadius: 10,
-    backgroundColor: '#EBEBEB',
-  },
-  passwordContainer: {
-    borderRadius: 10,
-    marginTop: 16,
-    backgroundColor: '#EBEBEB',
-  },
   textInput: {
     paddingLeft: 27,
   },
-  loginButton: {
-    borderRadius: 10,
+  passwordContainer: {
     marginTop: 16,
+    borderRadius: 10,
+    backgroundColor: '#EBEBEB',
+  },
+  loginButton: {
+    marginTop: 16,
+    borderRadius: 10,
+  },
+  icon: {
+    top: 18,
+    position: 'absolute',
+    left: 10,
+    color: '#6E6D6D',
   },
   forgotPasswordTouchableOpacity: {
     marginTop: 8,
   },
   forgotPasswordText: {
     color: '#848484',
+  },
+  emailContainer: {
+    borderRadius: 10,
+    backgroundColor: '#EBEBEB',
   },
 })
 

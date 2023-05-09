@@ -1,8 +1,8 @@
-import { takeLatest, select, call, put } from 'redux-saga/effects'
-import UserActions, { types } from './actions'
-import { UsersService } from '../../services'
+import { call, put,select, takeLatest } from 'redux-saga/effects'
 
+import { UsersService } from '../../services'
 import { AuthSelectors } from '../auth'
+import UserActions, { types } from './actions'
 
 function* registerTokenRequest({ token, os }) {
   const currentUserId = yield select(AuthSelectors.getUserId)

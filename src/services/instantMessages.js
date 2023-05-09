@@ -1,10 +1,9 @@
 import { call } from 'redux-saga/effects'
-import { methods, query, mutation } from '../utils'
+
+import { methods } from '../utils'
 import {
-  service,
-  authenticatedService,
-  authenticatedQuery,
   authenticatedMutation,
+  authenticatedQuery,
 } from './middleware'
 
 const { GET } = methods

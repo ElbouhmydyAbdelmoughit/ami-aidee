@@ -1,22 +1,22 @@
 import React from 'react'
-import { StyleSheet, View, Modal, ActivityIndicator } from 'react-native'
+import { ActivityIndicator,Modal, StyleSheet, View } from 'react-native'
 
 export const modalStyles = StyleSheet.create({
   modalBackground: {
-    flex: 1,
-    alignItems: 'center',
-    flexDirection: 'column',
     justifyContent: 'space-around',
+    flex: 1,
+    flexDirection: 'column',
     backgroundColor: '#00000040',
+    alignItems: 'center',
   },
   activityIndicatorWrapper: {
-    backgroundColor: '#FFFFFF',
-    height: 100,
     width: 100,
-    borderRadius: 10,
-    display: 'flex',
-    alignItems: 'center',
     justifyContent: 'space-around',
+    height: 100,
+    display: 'flex',
+    borderRadius: 10,
+    backgroundColor: '#FFFFFF',
+    alignItems: 'center',
   },
 })
 

@@ -1,10 +1,11 @@
 import { connect } from 'react-redux'
-import ChatRoom from './ChatRoom'
+
+import { AuthSelectors } from '../../../store/auth'
 import {
   InstantMessagesActions,
   InstantMessagesSelectors,
 } from '../../../store/instantMessages'
-import { AuthSelectors } from '../../../store/auth'
+import ChatRoom from './ChatRoom'
 
 export default connect(
   (state, { auxiliary }) => ({

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
-import MessagingScreen from './MessagingScreen'
+
 import { InstantMessagesActions } from '../../../store/instantMessages'
+import MessagingScreen from './MessagingScreen'
 
 export default connect(null, (dispatch, { auxiliary }) => ({
   updateLastReadRequest: (...args) =>

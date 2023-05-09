@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react'
-import { View, Text } from 'react-native'
+import React, { useEffect,useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { Text,View } from 'react-native'
 import { Button } from 'react-native-paper'
 import { Actions } from 'react-native-router-flux'
-import { useTranslation } from 'react-i18next'
 import useTextColor from 'ui/hooks/use-text-color'
-import UserAvatar from '../UserAvatar'
-import GradientBackground from '../GradientBackground'
+
 import { getUserDisplayName } from '../../../utils/user'
 import useActivityLog from '../../hooks/use-activity-log'
+import GradientBackground from '../GradientBackground'
+import UserAvatar from '../UserAvatar'
 
 const VideoCallEnded = ({ auxiliary }) => {
   const logActivity = useActivityLog()

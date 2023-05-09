@@ -1,11 +1,11 @@
-import { takeLatest, call, select, put } from 'redux-saga/effects'
-import InstantMessagesActions, { types } from './actions'
-import InstantMessagesService from '../../services/instantMessages'
-import { AuthSelectors } from '../auth'
-import { getCurrentTopic } from '../../utils/instantMessage'
+import { call, put,select, takeLatest } from 'redux-saga/effects'
 
 import { LinkService } from '../../services'
+import InstantMessagesService from '../../services/instantMessages'
+import { getCurrentTopic } from '../../utils/instantMessage'
+import { AuthSelectors } from '../auth'
 import { LinkActions } from '../link'
+import InstantMessagesActions, { types } from './actions'
 
 function* sendMessage({ auxiliary, content }) {
   const currentUserId = yield select(AuthSelectors.getUserId)

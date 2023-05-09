@@ -1,5 +1,5 @@
 import { methods, mutation } from '../utils'
-import { service, authenticatedService, authenticatedQuery } from './middleware'
+import { authenticatedQuery } from './middleware'
 
 const { GET } = methods
 /**

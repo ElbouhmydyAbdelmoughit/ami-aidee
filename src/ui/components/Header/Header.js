@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Button } from 'react-native'
+import { Button,View } from 'react-native'
 // import styles from './styles';
 import { Appbar } from 'react-native-paper'
 

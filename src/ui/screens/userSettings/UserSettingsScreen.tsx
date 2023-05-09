@@ -30,22 +30,22 @@ import colorUtils from 'utils/colors'
 
 const styles = StyleSheet.create({
   title: {
-    color: '#fff',
-    fontFamily: 'Roboto',
-    fontWeight: 'bold',
     marginLeft: 4,
+    fontWeight: 'bold',
     fontSize: 24,
+    fontFamily: 'Roboto',
+    color: '#fff',
   },
   text: {
-    color: '#fff',
     fontSize: 24,
+    color: '#fff',
   },
   helpText: {
-    color: '#fff',
+    opacity: 0.8,
     marginTop: 4,
     fontSize: 18,
-    opacity: 0.8,
     fontFamily: 'Roboto',
+    color: '#fff',
   },
   checkboxRow: {
     marginTop: 24,

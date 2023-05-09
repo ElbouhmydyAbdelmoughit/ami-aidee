@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import { SnackActions } from 'src/store/snackBar'
+
 import { SnackBar } from './SnackBar'
 
 const mapStateToProps = state => ({

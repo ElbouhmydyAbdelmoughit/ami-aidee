@@ -1,41 +1,42 @@
-import React, { useEffect, useRef } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
-import _ from 'lodash'
-import { TouchableRipple } from 'react-native-paper'
-import Icon from 'react-native-vector-icons/MaterialIcons'
-import { Actions } from 'react-native-router-flux'
 import { Translations } from 'core/i18n'
-import { useDispatch, useSelector } from 'react-redux'
-import { times } from 'utils'
+import _ from 'lodash'
 import moment from 'moment'
+import React, { useEffect, useRef } from 'react'
+import { StyleSheet,Text, View } from 'react-native'
+import { TouchableRipple } from 'react-native-paper'
+import { Actions } from 'react-native-router-flux'
+import Icon from 'react-native-vector-icons/MaterialIcons'
+import { useDispatch, useSelector } from 'react-redux'
 import { AuthSelectors } from 'store/auth'
-import colorUtils from 'utils/colors'
 import BacktoRootTimer from 'ui/components/BackToRootTimer'
+import { times } from 'utils'
+import colorUtils from 'utils/colors'
+
+import ChatRoom from '../../components/ChatRoom'
+import GradientBackground from '../../components/GradientBackground'
 import useActivityLog from '../../hooks/use-activity-log'
 import MessageUpdater from './MessageUpdater'
-import ChatRoom from '../../components/ChatRoom'
 import MessagingNavBar from './MessagingNavBar'
-import GradientBackground from '../../components/GradientBackground'
 
 const styles = StyleSheet.create({
   box: {
-    borderWidth: 2,
-    borderColor: 'rgba(255, 255, 255, 0.8)',
+    width: 150,
+    shadowRadius: 2,
+    shadowOpacity: 1,
     shadowOffset: {
       width: 0,
       height: 2,
     },
     shadowColor: 'white',
-    shadowOpacity: 1,
-    shadowRadius: 2,
-    borderRadius: 4,
     padding: 16,
     margin: 32,
     marginBottom: 0,
-    width: 150,
-    height: 150,
-    alignItems: 'center',
     justifyContent: 'center',
+    height: 150,
+    borderWidth: 2,
+    borderRadius: 4,
+    borderColor: 'rgba(255, 255, 255, 0.8)',
+    alignItems: 'center',
   },
 })
 

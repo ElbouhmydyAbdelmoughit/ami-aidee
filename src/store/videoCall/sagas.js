@@ -1,12 +1,13 @@
-import { Actions } from 'react-native-router-flux'
 import RtmEngine from 'agora-react-native-rtm'
-import { takeLatest, put, select, call } from 'redux-saga/effects'
 import errorReporter from 'core/error-reporter'
-import VideoCallSelectors from './selectors'
-import VideoCallActions, { types } from './actions'
-import { AGORA_APP_ID } from '../../utils/constant'
+import { Actions } from 'react-native-router-flux'
+import { call,put, select, takeLatest } from 'redux-saga/effects'
+
 import { PushNotificationService } from '../../services'
+import { AGORA_APP_ID } from '../../utils/constant'
 import { AuthSelectors } from '../auth'
+import VideoCallActions, { types } from './actions'
+import VideoCallSelectors from './selectors'
 
 let rtmEngine
 

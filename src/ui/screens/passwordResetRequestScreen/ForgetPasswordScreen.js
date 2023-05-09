@@ -1,8 +1,9 @@
 import React from 'react'
-import { Subheading } from 'react-native-paper'
 import { useTranslation } from 'react-i18next'
-import ForgetPasswordForm from './ForgetPasswordForm'
+import { Subheading } from 'react-native-paper'
+
 import CenterCardLayout from '../../components/layout/CenterCardLayout'
+import ForgetPasswordForm from './ForgetPasswordForm'
 
 const ForgetPasswordScreen = ({ componentId }) => {
   const { t } = useTranslation()
