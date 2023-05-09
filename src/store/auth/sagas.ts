@@ -1,3 +1,4 @@
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import jwtDecode from 'jwt-decode'
 import { Actions } from 'react-native-router-flux'
 import { call, put, select, takeLatest } from 'redux-saga/effects'
@@ -66,6 +67,7 @@ function* logout() {
   // yield call(AuthenticationService.logout)
   yield put(CommonActions.resetReducers())
   Actions.splash()
+  yield AsyncStorage.setItem('@showCguModal', 'true')
 }
 
 function* passwordResetRequest({ email }) {

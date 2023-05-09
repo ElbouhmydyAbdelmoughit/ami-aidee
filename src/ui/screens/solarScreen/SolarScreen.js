@@ -1,6 +1,7 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import moment from 'core/moment'
 import { Heading, Text } from 'native-base'
-import React, { useEffect,useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { View } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
@@ -13,6 +14,7 @@ import SleepTimer from 'ui/components/SleepTimer'
 import { times } from 'utils'
 import colorUtils from 'utils/colors'
 
+import CguModal from './CguModal'
 import ContactButton from './ContactButton'
 import SolarView from './SolarView'
 
@@ -54,6 +56,9 @@ const styles = {
 
 let instantMessagesFetched = false
 
+// Create a client
+const queryClient = new QueryClient()
+
 const SolarScreen = ({
   minuteTick,
   messagesRequest,
@@ -64,6 +69,7 @@ const SolarScreen = ({
   helpedUser,
   auxiliaries,
   hasNewMessage,
+  logout,
 }) => {
   const [fadeIn, setFadeIn] = useState(0)
   const [date, setDate] = useState(moment())
@@ -218,58 +224,65 @@ const SolarScreen = ({
   const textColor = colorUtils.getTextColor(time)
 
   return (
-    <SleepTimer>
-      <>
-        <TimerInitiator />
-        <MessageAlertManager />
-        <AccountChecker />
-        <LinearGradient
-          start={{ x: 0.0, y: 0.0 }}
-          end={{ x: 0.0, y: 1.0 }}
-          colors={color}
-          style={{ flex: 1 }}
-        >
-          <Heading
-            size="xl"
-            style={{ color: textColor, ...styles.title, fontSize: 30 }}
+    <QueryClientProvider client={queryClient}>
+      <SleepTimer>
+        <>
+          <TimerInitiator />
+          <MessageAlertManager />
+          <AccountChecker />
+          <LinearGradient
+            start={{ x: 0.0, y: 0.0 }}
+            end={{ x: 0.0, y: 1.0 }}
+            colors={color}
+            style={{ flex: 1 }}
           >
-            {BOLD(hello.title)}
-          </Heading>
-          <View style={styles.content}>
             <Heading
               size="xl"
-              style={{ textAlign: 'center', color: textColor }}
+              style={{ color: textColor, ...styles.title, fontSize: 30 }}
             >
-              {hello.content}
+              {BOLD(hello.title)}
             </Heading>
-            {BR}
-            <Heading
-              size="xl"
-              style={{ textAlign: 'center', color: textColor, opacity: fadeIn }}
-            >
-              {hello.footer}
-            </Heading>
+            <View style={styles.content}>
+              <Heading
+                size="xl"
+                style={{ textAlign: 'center', color: textColor }}
+              >
+                {hello.content}
+              </Heading>
+              {BR}
+              <Heading
+                size="xl"
+                style={{
+                  textAlign: 'center',
+                  color: textColor,
+                  opacity: fadeIn,
+                }}
+              >
+                {hello.footer}
+              </Heading>
+            </View>
+            <SolarView
+              date={date}
+              onPress={onPress}
+              solarIcon={solarIcon}
+              times={times(date, helpedUser)}
+              moonIcon={moonIcon}
+              helpedUser={helpedUser}
+            />
+          </LinearGradient>
+          <View
+            style={{
+              position: 'absolute',
+              right: 32,
+              top: 32,
+            }}
+          >
+            <ContactButton hasNewMessage={hasNewMessage} color={textColor} />
           </View>
-          <SolarView
-            date={date}
-            onPress={onPress}
-            solarIcon={solarIcon}
-            times={times(date, helpedUser)}
-            moonIcon={moonIcon}
-            helpedUser={helpedUser}
-          />
-        </LinearGradient>
-        <View
-          style={{
-            position: 'absolute',
-            right: 32,
-            top: 32,
-          }}
-        >
-          <ContactButton hasNewMessage={hasNewMessage} color={textColor} />
-        </View>
-      </>
-    </SleepTimer>
+          <CguModal onDismiss={logout} />
+        </>
+      </SleepTimer>
+    </QueryClientProvider>
   )
 }
 export default SolarScreen

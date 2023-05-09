@@ -3,6 +3,7 @@ import { HelpedUserActions } from 'src/store/helpedUsers'
 import { MessageActions } from 'src/store/message'
 import { TimerSelectors } from 'src/store/timer'
 
+import { AuthActions } from '../../../store/auth'
 import { AuxiliarySelectors } from '../../../store/auxiliaries'
 import {
   InstantMessagesActions,
@@ -48,6 +49,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
+  logout: () => dispatch(AuthActions.logout()),
   messagesRequest: filters => dispatch(MessageActions.messagesRequest(filters)),
   helpedUserRequest: id => dispatch(HelpedUserActions.usersRequest({ id })),
   instantMessagesRequest: auxiliaries =>
