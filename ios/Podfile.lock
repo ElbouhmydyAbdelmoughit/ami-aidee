@@ -501,8 +501,8 @@ PODS:
     - React-Core
   - RNSVG (9.13.6):
     - React
-  - RNVectorIcons (6.7.0):
-    - React
+  - RNVectorIcons (9.2.0):
+    - React-Core
   - Sentry/HybridSDK (7.31.5)
   - toolbar-android (0.2.1):
     - React
@@ -788,7 +788,7 @@ SPEC CHECKSUMS:
   RNSentry: 9f95cf61951576c447fc90368dfdde2faa736d2c
   RNSound: 6c156f925295bdc83e8e422e7d8b38d33bc71852
   RNSVG: 8ba35cbeb385a52fd960fd28db9d7d18b4c2974f
-  RNVectorIcons: 368d6d8b8301224e5ffb6254191f4f8876c2be0d
+  RNVectorIcons: fcc2f6cb32f5735b586e66d14103a74ce6ad61f8
   Sentry: 4c9babff9034785067c896fd580b1f7de44da020
   toolbar-android: 2a73856e98b750d7e71ce4644d3f41cc98211719
   Yoga: d24d6184b6b85f742536bd93bd07d69d7b9bb4c1
