@@ -1,10 +1,10 @@
 import { Translations } from 'core/i18n'
 import { TrackedActivity } from 'core/types'
 import { Heading, Text, Toast } from 'native-base'
-import React, { createRef, useEffect, useRef,useState } from 'react'
+import React, { createRef, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { TouchableWithoutFeedback, View } from 'react-native'
-import { Col, Grid,Row } from 'react-native-easy-grid'
+import { Col, Grid, Row } from 'react-native-easy-grid'
 import LinearGradient from 'react-native-linear-gradient'
 import { Button, IconButton } from 'react-native-paper'
 import { Actions } from 'react-native-router-flux'
@@ -127,7 +127,7 @@ const HomeScreen = ({
         <>
           <IconButton
             icon={'close'}
-            color={'#555'}
+            iconColor={'#555'}
             size={60}
             style={{
               position: 'absolute',
@@ -287,7 +287,7 @@ const HomeScreen = ({
               backgroundColor: 'white',
               marginBottom: 16,
             }}
-            color={'#555'}
+            iconColor={'#555'}
             icon={'arrow-left'}
             onPress={() => {
               logActivity(TrackedActivity.RETURN_FROM_REMINDER_LIST)

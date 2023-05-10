@@ -51,7 +51,7 @@ export default ({ onReload, onVolumeChange }: Props) => {
           logActivity('reload_video')
           onReload(...args)
         }}
-        color={'white'}
+        iconColor={'white'}
         size={40}
         style={{ width: 40, height: 40 }}
         icon={'replay'}

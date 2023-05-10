@@ -108,7 +108,7 @@ const ZoomableImage = ({ uri, zooming, onUnzoom, onZoom }) => {
             height: 40,
             opacity: imageMeasured ? 1 : 0,
           }}
-          color={'white'}
+          iconColor={'white'}
         />
       </View>
     </TouchableOpacity>

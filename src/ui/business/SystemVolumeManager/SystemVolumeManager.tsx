@@ -2,7 +2,7 @@ import { useAppState, useDimensions } from '@react-native-community/hooks'
 import AppStyles from 'config/styles'
 import moment from 'core/moment'
 import React, { useEffect, useRef, useState } from 'react'
-import { Animated, Modal,View } from 'react-native'
+import { Animated, Modal, View } from 'react-native'
 import { IconButton } from 'react-native-paper'
 import ProgressBar from 'react-native-progress/Bar'
 import { Text } from 'react-native-svg'
@@ -116,7 +116,7 @@ const SystemVolumeManager = () => {
             <Text>hihi</Text>
             <IconButton
               icon={'volume-off'}
-              color={color}
+              iconColor={color}
               size={60}
               style={{
                 width: 60,

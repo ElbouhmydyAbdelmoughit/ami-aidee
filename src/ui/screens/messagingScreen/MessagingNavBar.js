@@ -20,7 +20,7 @@ const MessagingNavBar = ({ user, textColor }) => {
       <IconButton
         size={24}
         style={{ marginLeft: 16 }}
-        color={textColor}
+        iconColor={textColor}
         icon="arrow-left"
         onPress={() => {
           logActivity('return_from_messaging')

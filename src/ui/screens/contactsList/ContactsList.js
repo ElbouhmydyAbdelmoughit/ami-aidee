@@ -83,7 +83,7 @@ const ContactsList = ({
               >
                 <IconButton
                   size={26}
-                  color={textColor}
+                  iconColor={textColor}
                   icon="arrow-left"
                   onPress={() => {
                     logActivity('return_from_messaging')

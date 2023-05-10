@@ -169,7 +169,7 @@ const UserSettingsScreen = ({
             >
               <IconButton
                 size={26}
-                color={textColor}
+                iconColor={textColor}
                 icon={'arrow-left'}
                 onPress={() => {
                   Actions.pop()
