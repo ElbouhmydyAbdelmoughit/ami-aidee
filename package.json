@@ -164,7 +164,7 @@
     "preset": "react-native"
   },
   "engines": {
-    "node": "=16.17.1",
+    "node": "=16.18.1",
     "npm": "=8.15.0"
   },
   "postinstall": "npx jetify"

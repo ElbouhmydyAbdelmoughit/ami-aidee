@@ -1,4 +1,9 @@
 {
   "name": "AMIaide",
-  "displayName": "AMIaide"
+  "displayName": "AMIaide",
+  "extra": {
+    "eas": {
+      "projectId": "c749ad0f-2378-49c0-beaf-21e5eaf3d444"
+    }
+  }
 }
