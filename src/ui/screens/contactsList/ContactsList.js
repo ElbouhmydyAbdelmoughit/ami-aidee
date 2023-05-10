@@ -3,9 +3,9 @@ import moment from 'core/moment'
 import { Heading } from 'native-base'
 import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Dimensions, ScrollView,StyleSheet, Text, View } from 'react-native'
+import { Dimensions, ScrollView, StyleSheet, Text, View } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
-import { Avatar, Button, IconButton,TouchableRipple } from 'react-native-paper'
+import { Avatar, Button, IconButton, TouchableRipple } from 'react-native-paper'
 import { Actions } from 'react-native-router-flux'
 import { times } from 'src/utils'
 import { getUserAbbr } from 'src/utils/user'
@@ -84,7 +84,7 @@ const ContactsList = ({
                 <IconButton
                   size={26}
                   color={textColor}
-                  icon="arrow-back"
+                  icon="arrow-left"
                   onPress={() => {
                     logActivity('return_from_messaging')
                     Actions.pop()

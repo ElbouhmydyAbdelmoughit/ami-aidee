@@ -1,9 +1,9 @@
 import React from 'react'
-import { Text,View } from 'react-native'
+import { Text, View } from 'react-native'
 import { Avatar, IconButton } from 'react-native-paper'
 import { Actions } from 'react-native-router-flux'
 
-import { getUserAbbr,getUserDisplayName } from '../../../utils/user'
+import { getUserAbbr, getUserDisplayName } from '../../../utils/user'
 import useActivityLog from '../../hooks/use-activity-log'
 
 const MessagingNavBar = ({ user, textColor }) => {
@@ -21,7 +21,7 @@ const MessagingNavBar = ({ user, textColor }) => {
         size={24}
         style={{ marginLeft: 16 }}
         color={textColor}
-        icon="arrow-back"
+        icon="arrow-left"
         onPress={() => {
           logActivity('return_from_messaging')
           Actions.pop()

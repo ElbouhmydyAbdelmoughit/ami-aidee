@@ -288,7 +288,7 @@ const HomeScreen = ({
               marginBottom: 16,
             }}
             color={'#555'}
-            icon={'arrow-back'}
+            icon={'arrow-left'}
             onPress={() => {
               logActivity(TrackedActivity.RETURN_FROM_REMINDER_LIST)
               Actions.pop()
