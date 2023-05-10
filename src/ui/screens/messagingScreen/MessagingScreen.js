@@ -114,7 +114,7 @@ const MessagingScreen = ({
               }}
             >
               <View style={styles.box}>
-                <Icon name="call" color="white" size={60} />
+                <Icon name="phone" color="white" size={60} />
                 <Text
                   style={{ color: 'white', fontSize: 20, fontWeight: 'bold' }}
                 >

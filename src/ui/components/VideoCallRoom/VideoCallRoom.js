@@ -224,7 +224,7 @@ const VideoCallRoom = ({ remoteAuxiliary, mode, channelId }) => {
   const getEndCallBtn = () => {
     return (
       <View style={styles.endCallBtn}>
-        <IconButton size={40} onPress={endCall} icon="call" color="white">
+        <IconButton size={40} onPress={endCall} icon="phone" color="white">
           {Translations.common.to_cancel}
         </IconButton>
       </View>
