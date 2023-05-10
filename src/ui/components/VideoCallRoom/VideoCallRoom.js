@@ -9,8 +9,8 @@ import {
   StyleSheet,
   View,
 } from 'react-native'
-import { AgoraView,RtcEngine } from 'react-native-agora'
-import { IconButton,Text } from 'react-native-paper'
+import { AgoraView, RtcEngine } from 'react-native-agora'
+import { IconButton, Text } from 'react-native-paper'
 import { Actions } from 'react-native-router-flux'
 import useTextColor from 'ui/hooks/use-text-color'
 

@@ -1,6 +1,6 @@
 import { Translations } from 'core/i18n'
 import React, { useEffect, useRef } from 'react'
-import { StyleSheet, Text,View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import { IconButton } from 'react-native-paper'
 import { Actions } from 'react-native-router-flux'
 import Sound from 'react-native-sound'
@@ -152,8 +152,8 @@ const VideoCallPage = ({
                 logActivity('press_cancel_video_btn')
                 onCallCancel(...args)
               }}
-              icon="call"
-              color="white"
+              icon="phone-hangup"
+              iconColor="white"
               style={{
                 width: 60,
                 height: 60,

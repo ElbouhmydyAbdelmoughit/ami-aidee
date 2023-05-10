@@ -1,7 +1,7 @@
 import { Translations } from 'core/i18n'
 import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { StyleSheet, Text,View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import { IconButton } from 'react-native-paper'
 import { Actions } from 'react-native-router-flux'
 import Sound from 'react-native-sound'
@@ -166,7 +166,7 @@ const CallReceivingScreen = ({
                 size={40}
                 onPress={onRefuseCall}
                 icon="close"
-                color="white"
+                iconColor="white"
               >
                 {Translations.common.to_cancel}
               </IconButton>
@@ -175,8 +175,8 @@ const CallReceivingScreen = ({
               <IconButton
                 size={40}
                 onPress={onAcceptCall}
-                icon="call"
-                color="white"
+                icon="phone"
+                iconColor="white"
                 style={{
                   width: 60,
                   height: 60,
