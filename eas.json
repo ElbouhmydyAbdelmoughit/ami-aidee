@@ -2,7 +2,7 @@
   "build": {
     "production": {
       "android": {
-        "gradleCommand": ":app:assembleRelease"
+        "buildType": "app-bundle"
       },
       "ios": {
         "resourceClass": "m-medium",
