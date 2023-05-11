@@ -491,9 +491,9 @@ PODS:
   - RNScreens (3.14.1):
     - React-Core
     - React-RCTImage
-  - RNSentry (4.1.0):
+  - RNSentry (5.4.2):
     - React-Core
-    - Sentry (= 7.18.1)
+    - Sentry/HybridSDK (= 8.6.0)
   - RNSound (0.11.0):
     - React
     - RNSound/Core (= 0.11.0)
@@ -503,9 +503,9 @@ PODS:
     - React
   - RNVectorIcons (9.2.0):
     - React-Core
-  - Sentry (7.18.1):
-    - Sentry/Core (= 7.18.1)
-  - Sentry/Core (7.18.1)
+  - Sentry/HybridSDK (8.6.0):
+    - SentryPrivate (= 8.6.0)
+  - SentryPrivate (8.6.0)
   - toolbar-android (0.2.1):
     - React
   - Yoga (1.14.0)
@@ -597,6 +597,7 @@ SPEC REPOS:
     - PromisesObjC
     - PromisesSwift
     - Sentry
+    - SentryPrivate
 
 EXTERNAL SOURCES:
   agora-react-native-rtm:
@@ -787,14 +788,15 @@ SPEC CHECKSUMS:
   RNLocalize: f567ea0e35116a641cdffe6683b0d212d568f32a
   RNReanimated: 2cf7451318bb9cc430abeec8d67693f9cf4e039c
   RNScreens: aa9a97835afbbdc18a4757870b2b59b7d9fae16a
-  RNSentry: d27112c8fcb77c52a42c3fffb796193c333ee562
+  RNSentry: 22c627982da1d2726f038a7393ff7000233e9a69
   RNSound: da030221e6ac7e8290c6b43f2b5f2133a8e225b0
   RNSVG: 8ba35cbeb385a52fd960fd28db9d7d18b4c2974f
   RNVectorIcons: fcc2f6cb32f5735b586e66d14103a74ce6ad61f8
-  Sentry: 2d70348d6247a29702a8317e710c5ba890672df5
+  Sentry: d80553ff85ea72def75b792aaa5a71c158e51595
+  SentryPrivate: ef1c5b3dfe44ec0c70e2eb343a5be2689164c021
   toolbar-android: 2a73856e98b750d7e71ce4644d3f41cc98211719
   Yoga: d24d6184b6b85f742536bd93bd07d69d7b9bb4c1
 
-PODFILE CHECKSUM: 42bdf93c99e192d12b12c57efca2a29a1c7f70c8
+PODFILE CHECKSUM: 2021ac1b62fa4a185047e90082640b25b3e10687
 
 COCOAPODS: 1.11.2
