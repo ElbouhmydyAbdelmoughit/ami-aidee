@@ -52,11 +52,9 @@
 		</dict>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>${PRODUCT_NAME} a besoin de l'accès à votre caméra afin d'effectuer des appels vidéos avec l'aidant</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>${PRODUCT_NAME} a besoin de l&apos;accès à votre caméra afin d&apos;effectuer des appels vidéos avec l&apos;aidant</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>${PRODUCT_NAME} a besoin de l'accès à votre micro afin d'effectuer des appels audio avec l'aidant</string>
+	<string>${PRODUCT_NAME} a besoin de l&apos;accès à votre micro afin d&apos;effectuer des appels audio avec l&apos;aidant</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>AntDesign.ttf</string>
