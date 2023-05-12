@@ -252,9 +252,10 @@ const VideoCallRoom = ({ remoteAuxiliary, mode, channelId }) => {
       <>
         <AgoraView
           style={styles.full}
-          zOrderMediaOverlay={true}
-          showLocalVideo={true}
           mode={1}
+          remoteUid={0}
+          showLocalVideo={true}
+          zOrderMediaOverlay={false}
         />
         <View style={styles.overlay}>
           <View style={{ flex: 1, marginTop: 64 }}>
@@ -287,7 +288,7 @@ const VideoCallRoom = ({ remoteAuxiliary, mode, channelId }) => {
       mode === 'audio' ? null : (
         <AgoraView
           style={styles.localVideoStyle}
-          zOrderMediaOverlay={true}
+          zOrderMediaOverlay={false}
           showLocalVideo={true}
           mode={1}
         />

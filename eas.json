@@ -1,5 +1,15 @@
 {
   "build": {
+    "preview": {
+      "distribution": "internal",
+      "android": {
+        "gradleCommand": ":app:assembleRelease"
+      },
+      "ios": {
+        "scheme": "AMIaide",
+        "resourceClass": "m-medium"
+      }
+    },
     "production": {
       "android": {
         "buildType": "app-bundle"
