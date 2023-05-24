@@ -9,17 +9,20 @@ import { name as appName } from './app.json'
 
 Sentry.init({
   dsn:
-    'https://bc5993540c3f493bb71bf2430e3640fc@o374533.ingest.sentry.io/5197127',
+    'https://f8103101b4a942cc92ef98cded6ad5f4@o4504782758805504.ingest.sentry.io/4504826261405696',
+  attachScreenshot: !__DEV__,
+  // Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
+  // We recommend adjusting this value in production.
+  tracesSampleRate: 1.0,
+  environment: __DEV__ ? 'development' : 'production',
   integrations: integrations => {
-    // integrations will be all default integrations
+    if (!__DEV__) {
+      return integrations
+    }
     return integrations.filter(
       integration => integration.name !== 'Breadcrumbs'
     )
   },
-  enableNative: false,
 })
 
-// eslint-disable-next-line no-console
-console.disableYellowBox = true
-
-AppRegistry.registerComponent(appName, () => App)
+AppRegistry.registerComponent(appName, () => Sentry.wrap(App))
