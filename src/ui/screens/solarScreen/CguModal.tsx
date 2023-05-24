@@ -11,12 +11,18 @@ import {
 } from 'react-native'
 import { Button, Dialog } from 'react-native-paper'
 
-const CguModal = ({ onDismiss }) => {
+interface ICguModal {
+  onDismiss: () => void
+  userId: number
+}
+
+const CguModal = ({ onDismiss, userId }: ICguModal) => {
   const [showCguModal, setShowCguModal] = useState(false)
   const showCguModalQuery = useQuery({
-    queryKey: ['showCguModal'],
+    enable: !!userId,
+    queryKey: ['showCguModal', userId],
     queryFn: async () => {
-      const item = await AsyncStorage.getItem('@showCguModal')
+      const item = await AsyncStorage.getItem(`@showCguModal-${userId}`)
       return item
     },
   })
@@ -67,7 +73,7 @@ const CguModal = ({ onDismiss }) => {
           <Button onPress={() => onDismiss()}>Refuser</Button>
           <Button
             onPress={async () => {
-              await AsyncStorage.setItem('@showCguModal', 'false')
+              await AsyncStorage.setItem(`@showCguModal-${userId}`, 'false')
               await queryClient.invalidateQueries()
             }}
           >

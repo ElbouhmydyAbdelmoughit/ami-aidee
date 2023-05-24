@@ -67,7 +67,6 @@ function* logout() {
   // yield call(AuthenticationService.logout)
   yield put(CommonActions.resetReducers())
   Actions.splash()
-  yield AsyncStorage.setItem('@showCguModal', 'true')
 }
 
 function* passwordResetRequest({ email }) {

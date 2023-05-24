@@ -279,7 +279,7 @@ const SolarScreen = ({
           >
             <ContactButton hasNewMessage={hasNewMessage} color={textColor} />
           </View>
-          <CguModal onDismiss={logout} />
+          <CguModal onDismiss={logout} userId={helpedUserId} />
         </>
       </SleepTimer>
     </QueryClientProvider>
