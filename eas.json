@@ -1,7 +1,6 @@
 {
   "build": {
     "preview": {
-      "resourceClass": "large",
       "distribution": "internal",
       "android": {
         "gradleCommand": ":app:assembleRelease"
@@ -11,7 +10,6 @@
       }
     },
     "production": {
-      "resourceClass": "large",
       "android": {
         "buildType": "app-bundle"
       },
