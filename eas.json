@@ -1,21 +1,21 @@
 {
   "build": {
     "preview": {
+      "resourceClass": "large",
       "distribution": "internal",
       "android": {
         "gradleCommand": ":app:assembleRelease"
       },
       "ios": {
-        "scheme": "AMIaide",
-        "resourceClass": "m-medium"
+        "scheme": "AMIaide"
       }
     },
     "production": {
+      "resourceClass": "large",
       "android": {
         "buildType": "app-bundle"
       },
       "ios": {
-        "resourceClass": "m-medium",
         "scheme": "AMIaide"
       }
     }
