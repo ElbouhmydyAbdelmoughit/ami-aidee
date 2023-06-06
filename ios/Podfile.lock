@@ -442,6 +442,8 @@ PODS:
     - React
   - RNCAsyncStorage (1.15.17):
     - React-Core
+  - RNCMaskedView (0.1.11):
+    - React
   - RNCPicker (1.16.8):
     - React-Core
   - RNCPushNotificationIOS (1.8.0):
@@ -491,7 +493,7 @@ PODS:
   - RNScreens (3.14.1):
     - React-Core
     - React-RCTImage
-  - RNSentry (5.4.2):
+  - RNSentry (5.4.1):
     - React-Core
     - Sentry/HybridSDK (= 8.6.0)
   - RNSound (0.11.0):
@@ -559,6 +561,7 @@ DEPENDENCIES:
   - ReactNativeKeyboardManager (from `../node_modules/react-native-keyboard-manager`)
   - ReactNativeNavigation (from `../node_modules/react-native-navigation`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
+  - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
   - "RNCPicker (from `../node_modules/@react-native-picker/picker`)"
   - "RNCPushNotificationIOS (from `../node_modules/@react-native-community/push-notification-ios`)"
   - RNDeviceInfo (from `../node_modules/react-native-device-info`)
@@ -684,6 +687,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-navigation"
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-async-storage/async-storage"
+  RNCMaskedView:
+    :path: "../node_modules/@react-native-community/masked-view"
   RNCPicker:
     :path: "../node_modules/@react-native-picker/picker"
   RNCPushNotificationIOS:
@@ -778,6 +783,7 @@ SPEC CHECKSUMS:
   ReactNativeKeyboardManager: 8fc2819040c5787194a890fbe3928bc5980b3f19
   ReactNativeNavigation: 55fde2ac2cb38be1d5dc5fee29e173961c559a5a
   RNCAsyncStorage: 6bd5a7ba3dde1c3facba418aa273f449bdc5437a
+  RNCMaskedView: 0e1bc4bfa8365eba5fbbb71e07fbdc0555249489
   RNCPicker: 0991c56da7815c0cf946d6f63cf920b25296e5f6
   RNCPushNotificationIOS: 61a7c72bd1ebad3568025957d001e0f0e7b32191
   RNDeviceInfo: c31137f22ee779fe3931d1a8d60cc1af80ef4077
@@ -788,7 +794,7 @@ SPEC CHECKSUMS:
   RNLocalize: f567ea0e35116a641cdffe6683b0d212d568f32a
   RNReanimated: 2cf7451318bb9cc430abeec8d67693f9cf4e039c
   RNScreens: aa9a97835afbbdc18a4757870b2b59b7d9fae16a
-  RNSentry: 22c627982da1d2726f038a7393ff7000233e9a69
+  RNSentry: 60f2359d2859591cae2d6731ae9a7ac1595ff8c2
   RNSound: da030221e6ac7e8290c6b43f2b5f2133a8e225b0
   RNSVG: 8ba35cbeb385a52fd960fd28db9d7d18b4c2974f
   RNVectorIcons: fcc2f6cb32f5735b586e66d14103a74ce6ad61f8
