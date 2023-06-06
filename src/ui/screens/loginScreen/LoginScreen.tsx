@@ -8,6 +8,7 @@ import Orientation from 'react-native-orientation'
 import { AuthentForm } from 'ui/components'
 
 import LangSelector from './LangSelector'
+import DeviceInfo from 'react-native-device-info'
 
 // Create a client
 const queryClient = new QueryClient()
@@ -19,7 +20,11 @@ const LoginScreen = ({ loginRequest, onRefresh }) => {
   }
 
   useEffect(() => {
-    Orientation.lockToPortrait()
+    if (DeviceInfo.isTablet()) { 
+      Orientation.lockToLandscape()
+    } else {
+      Orientation.lockToPortrait()
+    }
     return () => {}
   }, [])
 

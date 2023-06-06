@@ -1,11 +1,18 @@
 {
-    "editor.formatOnSave": true,
-    "eslint.validate": ["typescript", "typescriptreact"],
-    "editor.codeActionsOnSave": {
-        "source.fixAll": true
-    },
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    }
+  "editor.formatOnSave": true,
+  "eslint.validate": ["typescript", "typescriptreact"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "i18n-ally.localesPaths": [
+    "ios/Pods/RCT-Folly/folly/lang",
+    "ios/Pods/boost/boost/locale",
+    "ios/Pods/boost/boost/predef/language",
+    "ios/Pods/Headers/Private/RCT-Folly/folly/lang",
+    "ios/Pods/Headers/Public/RCT-Folly/folly/lang"
+  ]
 }
