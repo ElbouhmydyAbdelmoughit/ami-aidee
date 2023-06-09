@@ -96,7 +96,8 @@ const SolarScreen = ({
         content: (
           <Trans i18nKey="screen.solar.nighttime_description">
             <Heading size="xl" style={{ color: 'white', fontSize: 30 }}>
-              il est <Text style={{ fontWeight: 'bold' }}>{{ hour }}</Text>
+              il est{' '}
+              <Text style={{ fontWeight: 'bold' }}>{{ hour }}</Text>
               <Text>{'\n'}</Text>Dormir est nécessaire pour que ton cerveau
               répare ton corps.
             </Heading>
