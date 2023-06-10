@@ -12,8 +12,8 @@ import React from 'react'
 import { Provider as PaperProvider } from 'react-native-paper'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
-import { Loader } from 'ui/components'
 
+// import { Loader } from 'ui/components'
 import AppRouter from './AppRouter'
 
 const { store, persistor } = Core
@@ -52,7 +52,7 @@ const App = () => {
         <NativeBaseProvider theme={theme}>
           <PaperProvider>
             <>
-              <Loader />
+              {/* <Loader /> */}
               <AppRouter />
             </>
           </PaperProvider>
