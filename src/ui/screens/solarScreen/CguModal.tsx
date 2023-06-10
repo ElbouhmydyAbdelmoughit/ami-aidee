@@ -19,7 +19,7 @@ interface ICguModal {
 const CguModal = ({ onDismiss, userId }: ICguModal) => {
   const [showCguModal, setShowCguModal] = useState(false)
   const showCguModalQuery = useQuery({
-    enable: !!userId,
+    enabled: !!userId,
     queryKey: ['showCguModal', userId],
     queryFn: async () => {
       const item = await AsyncStorage.getItem(`@showCguModal-${userId}`)
