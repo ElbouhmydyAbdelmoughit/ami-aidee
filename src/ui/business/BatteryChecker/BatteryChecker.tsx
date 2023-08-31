@@ -32,9 +32,6 @@ const BatteryChecker = () => {
   )
 
   useEffect(() => {
-    // GPatrice, demande de ne rien afficher
-    return null;
-
     if (powerState.batteryState === 'unplugged') {
       loop.start()
       dispatch(
@@ -57,7 +54,9 @@ const BatteryChecker = () => {
   if (powerState.batteryState !== 'unplugged') {
     return null
   }
-  return (
+    // GPatrice, demande de ne rien afficher
+  return null;
+/*  return (
     <View style={{ position: 'absolute', left: 24, bottom: 24 }}>
       <Animated.View
         style={{
@@ -88,7 +87,7 @@ const BatteryChecker = () => {
         />
       </Animated.View>
     </View>
-  )
+  )*/
 }
 
 export default () => {
