@@ -32,6 +32,9 @@ const BatteryChecker = () => {
   )
 
   useEffect(() => {
+    // GPatrice, demande de ne rien afficher
+    return null;
+
     if (powerState.batteryState === 'unplugged') {
       loop.start()
       dispatch(
