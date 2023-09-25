@@ -14,7 +14,6 @@ const SleepScreen = () => {
 
   const logActivity = useActivityLog()
   const handlePress = () => {
-    console.log('NavigationActions: toto')
     logActivity('wake_up')
     Actions.root()
   }

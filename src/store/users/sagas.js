@@ -24,7 +24,6 @@ function* registerTokenRequest({ token, os }) {
     token,
     os,
   })
-  console.log(response2)
   yield put(
     UserActions.registerTokenSuccess(
       response2.insert_user_google_reg_tokens.returning[0].id

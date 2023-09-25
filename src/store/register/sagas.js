@@ -37,7 +37,6 @@ function* userCreateOnError(error) {
 function* registerRequest() {
   const userToRegister = yield select(state => state.register.data)
 
-  console.log(userToRegister)
   yield put(LoaderActions.loading())
   try {
     const [userCreateError, userResponse] = yield call(
