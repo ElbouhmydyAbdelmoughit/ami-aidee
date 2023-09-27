@@ -32,13 +32,20 @@ const BatteryChecker = () => {
     const deviceInfoEmitter = new NativeEventEmitter(NativeModules.RNDeviceInfo);
 
     useEffect(() => {
-        console.log('BatteryChecker')
+        console.log('BatteryChecker useEffect')
         const onChange = (event : any) => {
-            if (event === 'charging') {
+            let chargingState;
+
+            if (Platform.OS === 'iOS')
+                chargingState = event.batteryState;
+	    else
+                chargingState = event;
+
+            if (chargingState === 'charging') {
                 console.log('BatteryChecker set charging true');
                 setCharging(true);
             }
-            if (event === 'unplugged') {
+            if (chargingState === 'unplugged') {
                 console.log('BatteryChecker set charging false');
                 setCharging(false);
             }
