@@ -1,7 +1,10 @@
+## [3.3.1] - 27-09-2023
+### changed PG : adapt battery code to ios platform
+
 ## [3.3.0] - 25-09-2023
-### changed : change battery icon display strategy for android and ios
+### changed PG : change battery icon display strategy for android and ios
 
 
 ## [3.2.9] - 31-08-2023
-### changed : removal of battery icon display
+### changed PG : removal of battery icon display
 
