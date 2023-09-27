@@ -36,7 +36,7 @@ const BatteryChecker = () => {
         const onChange = (event : any) => {
             let chargingState;
 
-            if (Platform.OS === 'iOS')
+            if (Platform.OS === 'ios')
                 chargingState = event.batteryState;
 	    else
                 chargingState = event;
