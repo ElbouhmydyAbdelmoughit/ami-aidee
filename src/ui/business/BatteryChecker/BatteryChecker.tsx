@@ -70,7 +70,6 @@ const BatteryChecker = () => {
                     is_charging: false,
                 })
             )
-
         }
 
         const subscription = deviceInfoEmitter.addListener(
