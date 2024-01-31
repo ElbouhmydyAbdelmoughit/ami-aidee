@@ -1,10 +1,10 @@
 import { authenticatedService } from './middleware'
 
 const SEND_INCOMING_CALL_CF =
-  'https://us-central1-ami-aidant.cloudfunctions.net/sendIncomingCallNotification_node20'
+  'https://us-central1-ami-aidant.cloudfunctions.net/sendIncomingCallNotification'
 
 const CANCEL_INCOMING_CALL_CF =
-  'https://us-central1-ami-aidant.cloudfunctions.net/cancelIncomingCallNotification_node20'
+  'https://us-central1-ami-aidant.cloudfunctions.net/cancelIncomingCallNotification'
 
 const sendIncomingCallNotification = ({ caller, calleeId }) => {
   return authenticatedService('post', SEND_INCOMING_CALL_CF, {
