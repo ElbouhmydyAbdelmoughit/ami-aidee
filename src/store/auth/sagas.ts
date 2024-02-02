@@ -26,8 +26,6 @@ function* login({ username, password, invalid = false }) {
     email,
     password,
   })
-  console.log(error)
-  console.log(response)
   if (error) {
     yield put(LoaderActions.loaded())
     yield put(AuthActions.loginFailure())
@@ -36,10 +34,8 @@ function* login({ username, password, invalid = false }) {
   }
 
   const jwt = response.data
-  console.log(jwt)
   yield put(AuthActions.loginSuccess(jwt))
   const decodedToken = jwtDecode(jwt)
-  console.log(decodedToken)
   yield call(
     me,
     decodedToken['https://hasura.io/jwt/claims']['x-hasura-user-id']
@@ -51,15 +47,12 @@ function* login({ username, password, invalid = false }) {
 
 function* me(id) {
   const [error, response] = yield call(AuthenticationService.me, id)
-  console.log(error)
-  console.log(response)
   if (error) {
     yield put(AuthActions.loginFailure())
     yield put(SnackActions.displayError('authentication_failed'))
     return
   }
   const user = response.users[0]
-  console.log(user)
   yield put(AuthActions.loginMeSuccess(user))
 }
 

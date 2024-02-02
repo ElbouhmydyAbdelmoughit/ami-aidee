@@ -16,7 +16,6 @@ function* sendMessage({ auxiliary, content }) {
     topic_id: correspondingTopic.id,
     content,
   })
-  console.log(response)
   yield put(
     InstantMessagesActions.sendMessageSuccess(
       response.insert_instant_messages.returning[0]
