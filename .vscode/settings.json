@@ -2,7 +2,7 @@
   "editor.formatOnSave": true,
   "eslint.validate": ["typescript", "typescriptreact"],
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
+    "source.fixAll": "explicit"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[json]": {
